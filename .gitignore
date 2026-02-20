@@ -1,0 +1,38 @@
+# =========================
+# Archivos de macOS
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# =========================
+# Archivos temporales de LaTeX
+# =========================
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.synctex(auto)
+*.toc
+*.vrb
+
+# =========================
+# Archivos específicos de TeXstudio
+# =========================
+*.txss
+*.texi
