@@ -15,6 +15,7 @@
 \usepackage{pdfpages}
 \usepackage{multicol}
 \usepackage{float}
+\usepackage{titling}
 
 % Listings para código
 \usepackage{listings}
@@ -65,10 +66,9 @@
 \titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\hspace{2em}\thesubsubsection}{1em}{}
 
 % Datos de la portada
-\title{%
-	PROPUESTA DE GRUPO\\
-	\Large Nombre de la pagina\\
-	Subtitulo}
+\title{
+	\textit{CARD PARTNER}\\
+	Una web para amantes de los \textit{TCGS}}
 
 
 \author{
@@ -91,7 +91,7 @@
 		\centering
 		\includegraphics[scale=0.3]{./Recursos/UVA-3881270087.pdf}\\[0.5cm]
 		\rule{\linewidth}{0.2mm}\\[0.4cm]
-		{\huge\bfseries \thetitle}\\
+		{\huge\bfseries \thetitle\par}
 		\rule{\linewidth}{0.2mm}\\[1.5cm]
 		{\Large\bfseries Servicios y Sistemas Web}\\[0.3cm]
 		{\large\bfseries Laboratorio L2 \\ GRUPO 33}\\[1cm]
