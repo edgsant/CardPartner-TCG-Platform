@@ -271,10 +271,13 @@
 	%\newpage
     A continuación añadimos imágenes que incluyen las diferentes vistas planteadas:
     \begin{landscape}
-    	\thispagestyle{empty} % Opcional: elimina números de página para maximizar espacio
-    	\begin{figure}[p]    % El modificador [p] centra la imagen en la página
+    	\thispagestyle{empty} 
+    	\begin{figure}[p]
     		\centering
-    		\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{Recursos/Bocetos2.png}
+    		% El truco está en esta línea:
+    		\makebox[\linewidth][c]{%
+    			\includegraphics[width=1.18\linewidth, height=1.18\textheight, keepaspectratio]{Recursos/Bocetos2v2.png}
+    		}
     		\caption{Vista completa de los bocetos de Draw.io}
     	\end{figure}
     \end{landscape}
@@ -284,6 +287,8 @@
 	%	\includegraphics[width=0.85\textwidth]{Recursos/Bocetos2.png}
 	%	\caption{\textbf{Boceto limpio con todas las vistas}}
 	%\end{figure}
+	
+	\subsubsection{Página de inicio}
 
 	\begin{figure}[H]
 		\centering
@@ -291,6 +296,8 @@
 		\caption{\textbf{Boceto de la página de Inicio}}
 	\end{figure}
 	Observamos que la página inicial se compone de dos elementos clave, la barra de navegación (explicada en la siguiente captura) y los contenidos más relevantes. Hablando de los contenidos relevantes, hemos planteado que se incluya un subapartado de novedades (nuevas expansiones disponibles, información destacada sobre torneos, noticias relacionadas con el \textit{TCG}, etc.), un subapartado con las guías para principiantes y un subapartado con los mejores mazos con los que comenzar a jugar.
+	
+	\subsubsection{Barra de navegación de la página}
 	
 	\begin{figure}[H]
 		\centering
@@ -302,6 +309,23 @@
     Dentro de la sección del juego observamos, de izquierda a derecha, las siguientes categorías: \textit{TCG}, social, \textit{Decks} (mazos) y \textit{Cards} (cartas). La categoría \textit{TCG} hace referencia a los principales juegos que existen (como hemos mencionado anteriormente nos enfocaremos en el juego basado en \textit{One Piece}. En social podemos acceder a las vistas relacionadas con la interacción del usuario en la comunidad: noticias, torneos y guías de usuario. La siguiente categoría, \textit{Decks}, incluye todo aquello relacionado con mazos: Mazos empleados en el \textit{META}, mazos creados por la comunidad y el creador de mazos del usuario. Por último nos encontramos con la categoría \textit{Cards}, la cual nos lleva a la lista completa de cartas existentes. \\
 
     Ahora hablaremos de la sección del usuario. Inicialmente vemos dos opciones, la opción de \textit{Crear cuenta}, pensada para miembros sin una cuenta existente en nuestra web; y la opción de \textit{Iniciar sesión}, enfocada a que los miembros puedan entrar a sus respectivas cuentas. Una vez iniciada la sesión cambiarán los botones a uno que despliegue un menú con las diferentes opciones: Mi cuenta, mazos creados, mazos publicados, mazos guardados e interacciones.
+    
+    \subsubsection{Comunidad}
+    
+    \begin{figure}[H]
+    	\centering
+    	\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_Social.png}
+    	\caption{\textbf{Boceto de las pestañas de la comunidad}}
+    \end{figure}
+    
+    Torneos proximos/pasados y mazos y lo que sea
+    
+    Noticias, las mas importantes arriba y luego otras menos importantes o ya pasadas abajo
+    
+    Guias
+    
+  	
+  	\subsubsection{Mazos}
 	
 	\begin{figure}[H]
 		\centering
@@ -312,10 +336,21 @@
 	
 	\begin{figure}[H]
 		\centering
+		\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_CreadorMazos.png}
+		\caption{\textbf{Boceto de la pestaña del creador mazos}}
+	\end{figure}
+	El creador de mazos es similar al visualizador de mazos y al de cartas y blablabla	
+	
+	\subsubsection{Cartas}
+	
+	\begin{figure}[H]
+		\centering
 		\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_Cartas.png}
 		\caption{\textbf{Boceto de la pestaña de cartas}}
 	\end{figure}
 	Similar a la pestaña de mazos, la pestaña de cartas nos incluye la lista de todas las cartas existentes. Encontramos filtros de búsqueda. Si se selecciona una carta podemos visualizar información en detalle: El nombre de la carta, una imagen de ella, el texto de información que está incluido en la carta, el precio en la web de compraventa y links a la página oficial del juego relacionados con ella.
+	
+	
 	
 	Faltaría creador de mazos, guías y noticias
 	
