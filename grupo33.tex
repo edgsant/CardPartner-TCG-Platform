@@ -111,7 +111,7 @@
 	
 	\section{Descripción del problema}
 	El mundo de los \textit{\textbf{TCG}} (\textit{Trading Card Games}) está en auge y mucha gente necesita una manera de poder iniciarse en este universo tan complejo.\\
-	Debido a su gran cantidad, variedad de  mazos, y \textit{META}s (\textit{Most Efficience Tactiques Avaliable}) los jugadores necesitan herramientas que les permitan consultar resultados de competiciones, mazos, compartir los que hayan creado y enterarse de qué cartas están \textit{banned} (prohibidas) en los torneos oficiales\ldots \\ 
+	Debido a su gran cantidad, variedad de  mazos, y \textit{META}s (\textit{Most Efficience Tacticts Avaliable}) los jugadores necesitan herramientas que les permitan consultar resultados de competiciones, mazos, compartir los que hayan creado y enterarse de qué cartas están \textit{banned} (prohibidas) en los torneos oficiales\ldots \\ 
 	
 	Por eso hemos decidido enfocarnos en las necesidades de los jugadores y crear una web donde se podrán realizar la siguientes tareas:
 	\begin{multicols}{2} 
@@ -162,7 +162,7 @@
 		\item \href{https://www.cardmarket.com/es/OnePiece}{\textit{Card Market}}: El sitio por excelencia de la compraventa de cartas de múltiples \textit{TCGs}.
 		\item \href{https://deckbuilder.egmanevents.com/optcg/cards}{\textit{EggmanEvents}}: El lugar más popular para consultar mazos. El principal problema que tiene esta web es una carga muy lenta, con una experiencia que no está centrada en el usuario novato, sin la posibilidad de crear tus propios mazos, ya que emplea mazos utilizados en torneos.
 		\item \href{https://en.onepiece-cardgame.com/beginners/}{\textit{One Piece Card Game}}:La página oficial del juego de cartas. En ella se pueden encontrar manuales y guías rápidas sobre cómo introducirse al juego, así como una lista de todos los productos lanzados en este \textit{TCG}.
-		\item \href{https://onepiece.limitlesstcg.com}{\textit{One Piece Limitless}}: Esta cuarta web nos la hemos encontrado buscando información del juego. Principalmente incluye información de torneos con sus estadisticas, qué mazos están dominando en la comunidad, información sobre las cartas y un simulador del juego. También tiene herramientas de generación de mazos, aunque es un poco simple.
+		\item \href{https://onepiece.limitlesstcg.com}{\textit{One Piece Limitless}}: Esta cuarta web nos la hemos encontrado buscando información del juego. Principalmente incluye información de torneos con sus estadísticas, qué mazos están dominando en la comunidad, información sobre las cartas y un simulador del juego. También tiene herramientas de generación de mazos, aunque es un poco simple.
 	\end{enumerate}
 	Nuestra idea es unificar estas webs en una sóla: utilizar como referencia el esqueleto de \textit{EggmanEvents}, integrar un diseño más centrado en el usuario con la posibilidad de consultar el precio de cada una de las cartas y del total de un mazo y tener una sección enfocada en jugadores novatos donde se les de una explicación del juego y unas nociones básicas y recomendaciones de por dónde empezar.
 	
@@ -180,7 +180,7 @@
 	
 	El primer subgrupo, \textbf{los novatos}, son personas que sienten curiosidad por el juego de cartas (porque se basa en una serie que les gusta o porque un conocido se lo ha recomendado) pero no tienen experiencia previa con este. Para ellos, se implementará una sección en la web donde podrán entender el funcionamiento básico del juego, así como una sección de recomendaciones sobre qué mazos son más sencillos para poder iniciarse mundo del juego.\\
 	
-	El segundo son \textbf{los jugadores experimentados}, los cuales ya conocen las mecánicas del \textit{TCG} que buscan nuevos mazos \textit{META} o probar combinaciones de cartas, permitiendoles compartir dichas creaciones con el resto de jugadores y, a la par, dar consejos sobre mazos compartidos por otros miembros. Nuestro objetivo es ayudarles a mantenerse en la escena competitiva y fomentar la interacción entre usuarios dentro de la comunidad.
+	El segundo son \textbf{los jugadores experimentados}, los cuales ya conocen las mecánicas del \textit{TCG} que buscan nuevos mazos \textit{META} o probar combinaciones de cartas, permitiéndoles compartir dichas creaciones con el resto de jugadores y, a la par, dar consejos sobre mazos compartidos por otros miembros. Nuestro objetivo es ayudarles a mantenerse en la escena competitiva y fomentar la interacción entre usuarios dentro de la comunidad.
 	%• El grupo de usuarios a que se destine el sitio web debe ser sensato y no trivial.
 	%• Se describirá el grupo de usuarios con suficiente detalle como para poder diferenciarlo de otros.
 	%• Se describirán las necesidades y expectativas reconocidas en el grupo de usuarios objetivo.
@@ -239,9 +239,9 @@
 	
 	Para la implementación de todas las funcionalidades explicadas anteriormente, hemos optado por organizarlas en diferentes apartados:
 	\begin{itemize}
-		\item \textbf{Social:}
+		\item \textbf{Comunidad:}
 		\begin{itemize}
-			\item Guias
+			\item Guías
 			\item Noticias
 			\item Torneos
 		\end{itemize}
@@ -249,18 +249,18 @@
 		\item \textbf{Mazos:}
 		\begin{itemize}
 			\item Meta y estadísticas
-			\item Mazos de la comunidad (incluye filtros de busqueda, valoraciones y comentarios)
+			\item Mazos de la comunidad (incluye filtros de búsqueda, valoraciones y comentarios)
 			\item Creador de mazos
 		\end{itemize}
 		
 		\item \textbf{Cartas:}
 		\begin{itemize}
-			\item Listado de cartas (incluye filtros de busqueda, precio, estadísticas)
+			\item Listado de cartas (incluye filtros de búsqueda, precio, estadísticas)
 		\end{itemize}
 		
 		\item \textbf{Usuario:}
 		\begin{itemize}
-			\item Iniciar sesion/Crear cuenta
+			\item Iniciar sesión/Crear cuenta
 			\item Información personal de la cuenta (correo, contraseña, etc.)
 			\item Mazos creados
 			\item Mazos publicados
@@ -275,7 +275,7 @@
     	\begin{figure}[p]    % El modificador [p] centra la imagen en la página
     		\centering
     		\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{Recursos/Bocetos2.png}
-    		\caption{Vista completa de los bocestos de Draw.io}
+    		\caption{Vista completa de los bocetos de Draw.io}
     	\end{figure}
     \end{landscape}
     
@@ -308,14 +308,14 @@
 		\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_Mazos.png}
 		\caption{\textbf{Boceto de la pestaña de mazos}}
 	\end{figure}
-	La pestaña de mazos incluye una lista con elementos visuales de los diferentes mazos creados por la comunidad, añadiendo también la opción de filtrar la busqueda por elementos clave o buscar por nombre del mazo. Seleccionando uno se nos abre el visualizador del mazo. Aqui podemos obtener información en detalle del mismo: el nombre del mazo, la carta \textit{Lider} del mazo, una descripción de este y la lista de cartas que lo compone.
+	La pestaña de mazos incluye una lista con elementos visuales de los diferentes mazos creados por la comunidad, añadiendo también la opción de filtrar la búsqueda por elementos clave o buscar por nombre del mazo. Seleccionando uno se nos abre el visualizador del mazo. Aquí podemos obtener información en detalle del mismo: el nombre del mazo, la carta \textit{Líder} del mazo, una descripción de este y la lista de cartas que lo compone.
 	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_Cartas.png}
 		\caption{\textbf{Boceto de la pestaña de cartas}}
 	\end{figure}
-	Similar a la pestaña de mazos, la pestaña de cartas nos incluye la lista de todas las cartas existentes. Encontramos filtros de búsqueda. Si se selecciona una carta podemos visualizar información en detalle: El nombre de la carta, una imagen de ella, el texto de información que está incluido en la carta, el precio en la web de compraventa y links a la página oficial del juego relacionados con ella 
+	Similar a la pestaña de mazos, la pestaña de cartas nos incluye la lista de todas las cartas existentes. Encontramos filtros de búsqueda. Si se selecciona una carta podemos visualizar información en detalle: El nombre de la carta, una imagen de ella, el texto de información que está incluido en la carta, el precio en la web de compraventa y links a la página oficial del juego relacionados con ella.
 	
 	Faltaría creador de mazos, guías y noticias
 	
