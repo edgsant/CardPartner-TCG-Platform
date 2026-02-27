@@ -9,6 +9,7 @@
 \geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
 
 % Gráficos
+\usepackage{pdflscape}
 \usepackage{graphicx}
 \usepackage{graphics}
 \usepackage{wrapfig}
@@ -267,13 +268,22 @@
 			\item Interacciones del usuario (comentarios/valoraciones)
 		\end{itemize}
 	\end{itemize} 
-	\newpage
-    A continuación añadimos imagenes que incluyen las diferentes vistas planteadas:
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.85\textwidth]{Recursos/Bocetos2.png}
-		\caption{\textbf{Boceto limpio con todas las vistas}}
-	\end{figure}
+	%\newpage
+    A continuación añadimos imágenes que incluyen las diferentes vistas planteadas:
+    \begin{landscape}
+    	\thispagestyle{empty} % Opcional: elimina números de página para maximizar espacio
+    	\begin{figure}[p]    % El modificador [p] centra la imagen en la página
+    		\centering
+    		\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{Recursos/Bocetos2.png}
+    		\caption{Vista completa de los bocestos de Draw.io}
+    	\end{figure}
+    \end{landscape}
+    
+	%\begin{figure}[H]
+	%	\centering
+	%	\includegraphics[width=0.85\textwidth]{Recursos/Bocetos2.png}
+	%	\caption{\textbf{Boceto limpio con todas las vistas}}
+	%\end{figure}
 
 	\begin{figure}[H]
 		\centering
@@ -303,14 +313,49 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_Cartas.png}
-		\caption{\textbf{}}
+		\caption{\textbf{Boceto de la pestaña de cartas}}
 	\end{figure}
-	Similar a la pestaña de mazos, la pestaña de cartas nos incluye la lista de todas las cartas existentes. Encontramos filtros de busqueda. Si se selecciona una carta podemos visualizar informacion en detalle: El nombre de la carta, una imagen de ella, el texto de información que está incluido en la carta, el precio en la web de compraventa y links a la página oficial del juego relacionados con ella 
+	Similar a la pestaña de mazos, la pestaña de cartas nos incluye la lista de todas las cartas existentes. Encontramos filtros de búsqueda. Si se selecciona una carta podemos visualizar información en detalle: El nombre de la carta, una imagen de ella, el texto de información que está incluido en la carta, el precio en la web de compraventa y links a la página oficial del juego relacionados con ella 
 	
-	Faltaria creador de mazos, guias y noticias
+	Faltaría creador de mazos, guías y noticias
+	
+	\newpage
+	\section{Reparto de carga de trabajo}
+	Todos los integrantes hemos participado en todas las fases del trabajo y repartido el trabajo de forma equitativa, aunque encargándonos cada uno especialmente de alguna parte.\\
+	
+	\begin{table}[h]
+		\centering
+		\caption{Distribución de Responsabilidades por Miembro}
+		\begin{tabularx}{\textwidth}{llX} % La 'X' hace que la columna crezca y ajuste el texto
+			\toprule
+			\textbf{Nombre} & \textbf{Porcentaje} & \textbf{Responsabilidad principal} \\
+			\midrule
+			ÁLVAREZ FULCONIS, MARCOS PALATINO      	& 25\%                & Diseño de los bocetos digitales \\
+			LOPEZ PRIMO, ÁLVARO      				& 25\%                & Definición del problema y soluciones y bocetaje a mano\\
+			OTERO GARCÍA, SERGIO     				& 25\%                & Redacción del documento y revisión\\
+			SANTIESTEBAN MENDO, EDGAR    			& 25\%                & Organización y redacción del documento\\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+	
 	
 	\section{Declaración de Uso de Inteligencia Artificial}
-	Hemos empleado \href{https://gemini.google.com/share/938828584764}{Gemini} para dudas sobre qué se pedía en cada apartado así como de cómo realizar algunas cosas en LaTeX.
+	Para esta primera entrega más creativa, se ha usado la IA \href{https://gemini.google.com/share/938828584764}{Gemini} como herramienta únicamente para mejorar la presentación del documento PDF. \\
+	Principalmente se ha usado para dudas y mejoras del archivo LaTeX y para realizar una revisión rápida de ortografía y estructura del documento.\\
+	
+	\textbf{Ejemplos de prompts realizados:}
+	\begin{itemize}
+		\item 'En un documento LaTex necesito poner una sola página en horizontal para mostrar una imagen que ocupe la página entera'
+		\item 'El documento adjunto se trata de nuestra propuesta para la práctica. Propón posibles cambios o mejoras en la estructura o aspectos que necesiten ampliarse'
+		\item 'El documento adjunto se trata de nuestra propuesta para la práctica. Revisa el documento y di todos los errores o faltas de ortografía que se encuentren'
+		\item 'Crea una tabla en latex de 3 columnas y 4 filas.
+		Las columnas indican los apartados Nombre, Porcentaje, Responsabilidad principal'
+	\end{itemize}
+	
+	
+	
+	
+	
 	
 	
 	
