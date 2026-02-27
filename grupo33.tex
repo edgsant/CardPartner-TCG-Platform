@@ -306,7 +306,7 @@
 	\end{figure}
 	En esta imagen observamos con más detalle la barra de navegación. Esta ayudará al usuario a navegar a través de nuestros diferentes apartados. Cada elemento abrirá diferentes submenús desplegables con las diferentes opciones disponibles. Dividiremos la barra en dos secciones: sección del juego y sección del usuario. \\
     
-    Dentro de la sección del juego observamos, de izquierda a derecha, las siguientes categorías: \textit{TCG}, social, \textit{Decks} (mazos) y \textit{Cards} (cartas). La categoría \textit{TCG} hace referencia a los principales juegos que existen (como hemos mencionado anteriormente nos enfocaremos en el juego basado en \textit{One Piece}. En social podemos acceder a las vistas relacionadas con la interacción del usuario en la comunidad: noticias, torneos y guías de usuario. La siguiente categoría, \textit{Decks}, incluye todo aquello relacionado con mazos: Mazos empleados en el \textit{META}, mazos creados por la comunidad y el creador de mazos del usuario. Por último nos encontramos con la categoría \textit{Cards}, la cual nos lleva a la lista completa de cartas existentes. \\
+    Dentro de la sección del juego observamos, de izquierda a derecha, las siguientes categorías: \textit{TCG}, \textit{community} (comunidad), \textit{Decks} (mazos) y \textit{Cards} (cartas). La categoría \textit{TCG} hace referencia a los principales juegos que existen (como hemos mencionado anteriormente nos enfocaremos en el juego basado en \textit{One Piece}). En comunidad podemos acceder a las vistas relacionadas con la interacción del usuario en la comunidad: noticias, torneos y guías de usuario. La siguiente categoría, \textit{Decks}, incluye todo aquello relacionado con mazos: Mazos empleados en el \textit{META}, mazos creados por la comunidad y el creador de mazos del usuario. Por último nos encontramos con la categoría \textit{Cards}, la cual nos lleva a la lista completa de cartas existentes. \\
 
     Ahora hablaremos de la sección del usuario. Inicialmente vemos dos opciones, la opción de \textit{Crear cuenta}, pensada para miembros sin una cuenta existente en nuestra web; y la opción de \textit{Iniciar sesión}, enfocada a que los miembros puedan entrar a sus respectivas cuentas. Una vez iniciada la sesión cambiarán los botones a uno que despliegue un menú con las diferentes opciones: Mi cuenta, mazos creados, mazos publicados, mazos guardados e interacciones.
     
@@ -318,11 +318,13 @@
     	\caption{\textbf{Boceto de las pestañas de la comunidad}}
     \end{figure}
     
-    Torneos proximos/pasados y mazos y lo que sea
-    
-    Noticias, las mas importantes arriba y luego otras menos importantes o ya pasadas abajo
-    
-    Guias
+    Nos adentramos ahora en la sección de comunidad. Esta estará dividida en tres opciones diferentes: torneos, noticias y guías. \\
+
+    En el apartado de torneos tendremos una lista con los diferentes torneos que hay (torneos pasados o futuros). Al seleccionar un torneo entramos en el visualizador del torneo, el cual se compone de dos listas, la lista de \textit{Ranking}, que muestra las posiciones de los diferentes mazos participantes en orden de su desempeño en la competición; y el apartado de \textit{Win-rate}, donde nos informará con una lista sobre el porcentaje de victorias que ha tenido cada carta líder participante. \\
+
+    Pasamos ahora a las noticias. En esta vista nos encontramos con una lista con las noticias relacionadas con el mundo del \textit{TCG}. En la parte superior veremos las noticias con mayor relevancia, y en la parte inferior el listado con todas las noticias ordenadas por fecha más reciente. Cada noticia incluye un títular, una imagen y una pequeña sinopsis. Al hacer click en ella veremos la noticia elegida en su totalidad. \\
+
+    Muy similar al apartado de noticias, el apartado de guias se compone de una lista con todas lasguias públicadas hasta el momento. Cada noticia tiene un nombre, una breve explicación y una imagen relacionada con ella. Al seleccionar una guia se nos abrirá un visualizador completo de la guia, con sus instrucciones, imagenes explicativas e incluso vídeos informativos.
     
   	
   	\subsubsection{Mazos}
@@ -339,7 +341,11 @@
 		\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_CreadorMazos.png}
 		\caption{\textbf{Boceto de la pestaña del creador mazos}}
 	\end{figure}
-	El creador de mazos es similar al visualizador de mazos y al de cartas y blablabla	
+	Ahora observamos el apartado del creador de mazos. La vista es similar a la visualización de mazos de la comunidad, con la diferencia de que inicialmente no habrá cartas ni información de ningún tipo. \\
+    
+    Al seleccionar el apartado de la carta \textit{Líder} se nos abrirá un selector de cartas muy parecido a la lista entera de cartas (explicado en el siguiente apartado). Se pedirá al usuario que seleccione el color en el que esté basado el mazo que quiere crear (dentro del mundo del juego de One Piece hay cartas con diferentes colores, cada color tiene una mécanica diferente) y a raíz de eso saldrá la lista de líderes filtrada por el color seleccionado. \\
+    
+    De la misma forma se abrirá una lista de cartas normales al seleccionar el apartado de cartas normales, filtradas ya con el color del líder.
 	
 	\subsubsection{Cartas}
 	
@@ -349,10 +355,6 @@
 		\caption{\textbf{Boceto de la pestaña de cartas}}
 	\end{figure}
 	Similar a la pestaña de mazos, la pestaña de cartas nos incluye la lista de todas las cartas existentes. Encontramos filtros de búsqueda. Si se selecciona una carta podemos visualizar información en detalle: El nombre de la carta, una imagen de ella, el texto de información que está incluido en la carta, el precio en la web de compraventa y links a la página oficial del juego relacionados con ella.
-	
-	
-	
-	Faltaría creador de mazos, guías y noticias
 	
 	\newpage
 	\section{Reparto de carga de trabajo}
