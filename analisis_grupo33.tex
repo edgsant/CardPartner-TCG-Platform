@@ -170,9 +170,44 @@
 			
 	
 	\section{Modelo del dominio}
+	En esta sección se detalla el modelo conceptual de la aplicación Card Partner, identificando las entidades principales (clases), sus atributos y las relaciones establecidas entre ellas para dar soporte a la lógica del Trading Card Game (TCG) y a la interacción de la comunidad.
+	
+	Las entidades principales son:
+	\begin{itemize}
+	    \item \textbf{Usuario:} Clase base de la que heredan \textit{Jugador} y \textit{Administrador}. Contiene la información de autenticación y perfil.
+	    \item \textbf{Carta:} Representa la unidad fundamental del juego. Utiliza enumeraciones estrictas para el \textit{Tipo} (Líder, Personaje, Evento, Escenario) y \textit{Color}.
+	    \item \textbf{Mazo:} Colección de cartas creada por un jugador. Está estrictamente vinculada a una carta \textit{Líder} (relación 1 a muchos) e incluye múltiples cartas en distintas cantidades mediante la clase asociación \textit{Contiene}.
+	    \item \textbf{Torneo y Artículos:} Entidades para la gestión de la comunidad, torneos y noticias del juego.
+	\end{itemize}
+
+	\begin{figure}[H]
+		\centering
+		% --- DESCOMENTAR LA SIGUIENTE LÍNEA Y PONER LA RUTA DE VUESTRA IMAGEN ---
+		% \includegraphics[width=0.9\textwidth]{ruta/al/diagrama_dominio.png}
+		\caption{Diagrama UML del Modelo de Dominio de Card Partner.}
+		\label{fig:modelo_dominio}
+	\end{figure}
 	
 	
 	\section{Diseño del mapa del sitio web}
+	El mapa del sitio web define la jerarquía de navegación y el flujo habitual de los usuarios dentro de Card Partner. La estructura está diseñada para facilitar el acceso rápido tanto a las herramientas de construcción de mazos como a la base de datos de cartas y contenido de la comunidad.
+	
+	La navegación principal se divide en las siguientes ramas:
+	\begin{itemize}
+	    \item \textbf{Página Principal:} Punto de entrada con resumen de noticias y mazos destacados.
+	    \item \textbf{Comunidad:} Agrupa el aspecto social (Noticias, Torneos y Guías).
+	    \item \textbf{Mazos (Decks):} Acceso al meta-juego, mazos de la comunidad y la herramienta de creación (Deckbuilder).
+	    \item \textbf{Cartas (Cards):} Catálogo completo con sistema de filtrado avanzado.
+	    \item \textbf{Área de Usuario:} Gestión del perfil, mazos guardados, publicados y preferencias de la cuenta.
+	\end{itemize}
+	
+	\begin{figure}[H]
+		\centering
+		% --- DESCOMENTAR LA SIGUIENTE LÍNEA Y PONER LA RUTA DE VUESTRA IMAGEN ---
+		% \includegraphics[width=0.85\textwidth]{ruta/al/mapa_sitio.png}
+		\caption{Estructura jerárquica y mapa del sitio web de Card Partner.}
+		\label{fig:mapa_sitio}
+	\end{figure}
 	
 	
 	\newpage
