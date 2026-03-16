@@ -116,11 +116,15 @@ body {
 }
 /* 4. SECCIÓN NOTICIAS */
 .noticias {
-    width: 100%;
+    height: 300px;
     display: flex;
     align-items: center;
     border: 1px solid #999;
-    padding: 0; 
+    
+    /* ¡CAMBIO IMPORTANTE! Añadimos padding para separar la imagen del borde */
+    padding: 15px; 
+    
+    background-color: white; /* Asegura que el fondo alrededor de la foto sea blanco */
     overflow: hidden;
 }
 
@@ -142,11 +146,15 @@ body {
 .promo-link img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     display: block;
-    border: none;
+    object-fit: contain; /* O cover, lo que prefieras */
+    transition: transform 0.5s ease;
+    
+    /* --- AQUÍ ESTÁ EL ESTILO DE LA IMAGEN DE NAMI --- */
+    border: 3px solid #333; /* Borde oscuro y grueso igual que en Nami */
+    border-radius: 10px;    /* Esquinas redondeadas igual que en Nami */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra suave para darle relieve */
 }
-
 .texto-noticias h2 {
     font-size: 36px;
     margin-bottom: 15px;
@@ -161,14 +169,100 @@ body {
 
 .guias {
     border: 1px solid #999;
-    flex: 2; /* Ocupa el doble de ancho que los mazos */
+    flex: 2; /* Sigue ocupando el doble de ancho */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 20px;
+    
+    /* ¡AQUÍ ESTÁ LA CLAVE! Limitamos la altura */
+    max-height: 300px; 
+    overflow: hidden; /* Corta cualquier cosa que intente salirse */
 }
 
+/* 1. Contenedor del enlace dentro de guías */
+.enlace-guia {
+    text-decoration: none; /* Quita subrayados */
+    color: black; 
+    display: flex;
+    /* ¡AQUÍ ESTÁ LA CLAVE! Alineamos en columna (vertical) */
+    flex-direction: column; 
+    align-items: center; /* Centramos el contenido horizontalmente */
+    justify-content: center; /* Centramos el contenido verticalmente */
+    width: 100%;
+    height: 100%; /* Ocupa el 100% de la altura de .guias (que ahora son max 300px) */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Reparte el espacio entre textos e imagen */
+}
+
+/* 2. Ajuste de la imagen de la guía para que sea GRANDE */
+.enlace-guia img {
+    width: auto; /* El ancho se calcula solo */
+    height: 100%; /* Intenta ocupar el 100% de la altura disponible */
+    max-height: 180px; /* Pero limitamos a 180px para dejar sitio a los textos */
+    object-fit: contain; /* Asegura que Nami se vea ENTERA sin cortes */
+    display: block; /* Quita espacios fantasma debajo */
+    border: 3px solid #333; /* Borde un poco más pro */
+    border-radius: 10px; /* Bordes redondeados sutiles */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+/* 3. Efecto al pasar el ratón (hover) */
+.enlace-guia:hover img {
+    transform: scale(1.03); /* Pequeño zoom suave */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Añadimos sombra al hover para que "flote" */
+}
+
+/* Ajustes de texto para que queden bien centrados y legibles */
+.enlace-guia h2 {
+    font-size: 26px;
+    margin: 0;
+}
+
+.enlace-guia p {
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4; /* Mejora la legibilidad del párrafo */
+}
+
+/* Contenedor horizontal para flechas e imagen */
+.contenedor-carrusel-guia {
+    display: flex;
+    align-items: center; /* Centra las flechas verticalmente con la imagen */
+    justify-content: center;
+    width: 100%;
+    gap: 10px; /* Espacio entre flechas e imagen */
+}
+
+/* Estilo de las flechas de la guía */
+.flecha-guia {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    padding: 5px;
+    user-select: none; /* Evita que se seleccione el texto al hacer clic */
+    transition: transform 0.2s;
+}
+
+.flecha-guia:hover {
+    transform: scale(1.2);
+    color: #000;
+}
+
+/* Ajuste para que la imagen no empuje a las flechas fuera */
+.contenedor-carrusel-guia img {
+    flex-grow: 1;
+    max-width: 80%; /* Dejamos un 20% de espacio para las flechas */
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    border: 3px solid #333;
+    border-radius: 10px;
+}
 .mazos {
     border: 1px solid #999;
     flex: 1; /* Ocupa la mitad que las guías */
@@ -184,23 +278,43 @@ body {
     font-size: 18px;
 }
 
+/* Contenedor principal: fuerza la disposición vertical */
 .contenido-mazos {
-    padding: 20px;
-    text-align: center;
-    font-size: 18px;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column; /* Apila los elementos de arriba a abajo */
+    padding: 0; /* Quitamos el padding para que las líneas toquen los bordes */
+    height: 100%;
 }
 
-/* 6. ETIQUETA "Pagina inicial" (Opcional, si la quieres quitar borra esto y en el HTML) */
-.etiqueta-inferior {
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #e0e0e0;
-    border: 1px solid black;
-    padding: 5px 20px;
-    font-size: 14px;
+/* Cada mazo de la lista */
+.item-mazo {
+    display: flex;
+    align-items: center; /* Alinea la foto y el texto en el centro */
+    gap: 15px;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    
+    /* ¡LA CLAVE DE LA DIVISIÓN! Una línea gris debajo de cada mazo */
+    border-bottom: 1px solid #999; 
+    transition: background-color 0.3s ease;
+}
+
+/* Le quitamos la línea al último mazo para que no choque con el borde de la caja principal */
+.item-mazo:last-child {
+    border-bottom: none;
+}
+
+/* Estilo de la imagen miniatura */
+.item-mazo img {
+    width: 60px;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+/* Efecto hover profesional */
+.item-mazo:hover {
+    background-color: #f0f0f0;
 }
