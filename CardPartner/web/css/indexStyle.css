@@ -1,0 +1,206 @@
+/* Limpiamos márgenes por defecto */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+/* 1. EL FONDO ROSA (ahora es solo un contenedor invisible a pantalla completa) */
+.fondo-rosa {
+    min-height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+    display: flex;
+    padding: 20px; /* Un pequeño margen para que no se pegue a los bordes del monitor */
+}
+
+/* 2. EL CONTENEDOR PRINCIPAL */
+.contenedor-principal {
+    background-color: white;
+    border: 3px solid black;
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+    /* ¡HEMOS QUITADO EL MAX-WIDTH AQUÍ! */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+}
+
+/* 3. CABECERA */
+.cabecera {
+    display: flex;
+    justify-content: space-between; /*With this the browser will manage the space of the header*/
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Log style */
+.logo {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    background-color: transparent;
+    padding:0; 
+   
+    text-decoration: none; 
+}
+.logo img{
+    height: 80px;
+    width: auto;
+
+}
+.logo:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* docker for the header options */
+.menu {
+    display: flex;
+    gap: 200px;
+    
+}
+
+/* Estilos para los BOTONES REALES */
+.menu button, .login button {
+    border: 2px solid #333;
+    background-color: white;
+    color: black;
+    cursor: pointer; /* Muestra la manita al pasar el ratón */
+    padding: 15px 30px; /* Botones más grandes */
+    font-size: 18px; /* Letra más grande */
+    font-weight: bold;
+    font-family: Arial, sans-serif; /* Los botones no heredan la fuente por defecto, hay que forzarlo */
+    transition: background-color 0.3s; /* Efecto suave al pasar el ratón */
+}
+
+/* Ajuste específico para el botón de login (al tener dos líneas) */
+.login button {
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+/* Efecto Hover: Cambian de color al pasar el ratón */
+.menu button:hover, .login button:hover {
+    background-color: #e0e0e0;
+}
+/* --- CONTENIDO CENTRAL --- */
+.contenido {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Esto hace que el contenido se estire para rellenar el alto de la pantalla */
+    gap: 20px;
+}
+
+
+/* La imagen estirada al máximo */
+.promo-link img {
+    width: 100%;      /* Obliga a la imagen a ocupar todo el ancho */
+    height: 100%;     /* Obliga a la imagen a ocupar todo el alto */
+    object-fit: cover; /* Ajusta la imagen para que rellene el hueco sin deformarse */
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Efecto opcional de zoom al pasar el ratón */
+.promo-link:hover img {
+    transform: scale(1.05);
+}
+/* 4. SECCIÓN NOTICIAS */
+.noticias {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #999;
+    padding: 0; 
+    overflow: hidden;
+}
+
+.texto-noticias {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+}
+
+.promo-link {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none; /* Elimina cualquier subrayado accidental */
+    border: none;          /* Elimina bordes azules de links antiguos */
+    outline: none;
+}
+
+.promo-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: none;
+}
+
+.texto-noticias h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+/* 5. SECCIÓN INFERIOR (Guías y Mazos) */
+.columnas-inferiores {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1; /* Hace que esta fila de abajo también crezca verticalmente */
+}
+
+.guias {
+    border: 1px solid #999;
+    flex: 2; /* Ocupa el doble de ancho que los mazos */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.mazos {
+    border: 1px solid #999;
+    flex: 1; /* Ocupa la mitad que las guías */
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-mazos {
+    border-bottom: 1px solid #999;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.contenido-mazos {
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 6. ETIQUETA "Pagina inicial" (Opcional, si la quieres quitar borra esto y en el HTML) */
+.etiqueta-inferior {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e0e0e0;
+    border: 1px solid black;
+    padding: 5px 20px;
+    font-size: 14px;
+}
