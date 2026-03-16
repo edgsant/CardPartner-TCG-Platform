@@ -36,3 +36,7 @@
 # =========================
 *.txss
 *.texi
+/CardPartner/nbproject/private/
+build/
+dist/
+nbproject/private/
