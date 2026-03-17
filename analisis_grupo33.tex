@@ -1,0 +1,261 @@
+\documentclass[10pt]{article}
+
+% Idioma y codificación
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+% Márgenes
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% Gráficos y Tablas
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage[table]{xcolor} % UNA SOLA VEZ Y CON [table]
+\usepackage{booktabs}
+\usepackage{xltabular}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Listings para código
+\usepackage{listings}
+\lstdefinestyle{terminal}{
+	backgroundcolor=\color{gray!10},
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	frame=single,
+	columns=fullflexible,
+	morecomment=[l]{//}
+}
+\lstset{
+	inputencoding=utf8,
+	extendedchars=true,
+	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1
+}
+
+% Hipervínculos
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
+% Encabezados y pies de página
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+
+% Formato de títulos
+\usepackage{titlesec}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Datos de la portada
+\title{\textit{CARD PARTNER}\\ Una web para amantes de los \textit{TCGS}}
+
+\author{
+	\textbf{\small ÁLVAREZ FULCONIS, MARCOS PALATINO}\\
+	\textbf{\small LÓPEZ PRIMO, ÁLVARO}\\
+	\textbf{\small OTERO GARCÍA, SERGIO}\\
+	\textbf{\small SANTIESTEBAN MENDO, EDGAR}
+}
+
+\date{Curso 25-26}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\centering
+		% Asegúrate de que la ruta al PDF de la UVA sea correcta
+		%\includegraphics[scale=0.3]{./Recursos/UVA-3881270087.pdf}\\[0.5cm] 
+		\rule{\linewidth}{0.2mm}\\[0.4cm]
+		{\huge\bfseries CARD PARTNER\par}
+		{\large Una web para amantes de los TCGS\par}
+		\rule{\linewidth}{0.2mm}\\[1.5cm]
+		{\Large\bfseries Servicios y Sistemas Web}\\[0.3cm]
+		{\large\bfseries Laboratorio L2 \\ GRUPO 33}\\[1cm]
+		{\Large \begin{tabular}{c} ÁLVAREZ FULCONIS, MARCOS \\ LÓPEZ PRIMO, ÁLVARO \\ OTERO GARCÍA, SERGIO \\ SANTIESTEBAN MENDO, EDGAR \end{tabular}}\\[1.5cm]
+		{\Large Curso 25-26}
+	\end{titlepage}
+	
+	\pagenumbering{gobble}
+	\tableofcontents \newpage
+	
+	\pagenumbering{arabic} 
+	\setcounter{page}{1}
+	
+	\section{Especificación de requisitos}
+		\subsection{Requisitos funcionales}
+		
+			\noindent
+			\begin{xltabular}{\textwidth}{|l|l|X|}
+				\hline
+				\rowcolor{gray!20} \textbf{ID} & \textbf{Nombre} & \textbf{Descripción} \\ \hline
+				
+				\multicolumn{3}{|c|}{\cellcolor{gray!10}\textbf{1. Gestión de Usuarios y Perfiles}} \\ \hline
+				RF-1.1 & Registro & Crear cuenta con email y contraseña. \\ \hline
+				RF-1.2 & Login & Acceso seguro a funciones personalizadas. \\ \hline
+				RF-1.3 & Credenciales & Opción de cambio de contraseña desde el perfil. \\ \hline
+				RF-1.4 & Perfil & Panel central para gestionar datos y activos. \\ \hline
+				
+				\multicolumn{3}{|c|}{\cellcolor{gray!10}\textbf{2. Gestión y Creación de Mazos}} \\ \hline
+				RF-2.1 & Deckbuilder & Herramienta interactiva de selección de cartas. \\ \hline
+				RF-2.2 & Almacenamiento & Guardado de mazos en sección privada "Mis Mazos". \\ \hline
+				RF-2.3 & Publicación & Compartir mazos con la comunidad. \\ \hline
+				RF-2.4 & Biblioteca & Guardar mazos de terceros para consulta posterior. \\ \hline
+				RF-2.5 & Filtro Comunidad & Búsqueda por Líder o Expansión. \\ \hline
+				RF-2.6 & Estadísticas & Visualización de datos de rendimiento (Meta). \\ \hline
+				
+				\multicolumn{3}{|c|}{\cellcolor{gray!10}\textbf{3. Base de Datos de Cartas}} \\ \hline
+				RF-3.1 & Catálogo & Vista general de todas las cartas del juego. \\ \hline
+				RF-3.2 & Filtro Avanzado & Búsqueda por expansión, color o rareza. \\ \hline
+				RF-3.3 & Precios & Mostrar coste de mercado de cartas y mazos. \\ \hline
+				
+				\multicolumn{3}{|c|}{\cellcolor{gray!10}\textbf{4. Comunidad e Interacción}} \\ \hline
+				RF-4.1 & Comentarios & Opiniones en mazos de otros usuarios. \\ \hline
+				RF-4.2 & Valoración & Sistema de puntuación para destacar mazos. \\ \hline
+				RF-4.3 & Noticias & Sección de novedades y expansiones. \\ \hline
+				RF-4.4 & Torneos & Listado de eventos, ganadores y sus mazos. \\ \hline
+				
+				\multicolumn{3}{|c|}{\cellcolor{gray!10}\textbf{5. Recursos para Principiantes}} \\ \hline
+				RF-5.1 & Guía Básica & Explicación de reglas y mecánicas. \\ \hline
+				RF-5.2 & Recomendados & Sugerencia de mazos "budget" o sencillos. \\ \hline
+				
+				\multicolumn{3}{|c|}{\cellcolor{gray!10}\textbf{6. Administración y Configuración}} \\ \hline
+				RF-6.1 & Admin Panel & Gestión de noticias, torneos y contenidos. \\ \hline
+				RF-6.2 & Idioma & Selector de idioma para la interfaz. \\ \hline
+				
+			\end{xltabular}
+			
+		\newpage
+		\subsection{Requisitos no funcionales}
+			
+			\noindent
+			\begin{xltabular}{\textwidth}{|l|l|X|}
+				\hline
+				\rowcolor{gray!20} \textbf{ID} & \textbf{Nombre} & \textbf{Descripción} \\ \hline
+				
+				\multicolumn{3}{|c|}{\cellcolor{gray!10}\textbf{1. Rendimiento y Eficiencia}} \\ \hline
+				RNF-1.1 & Tiempo de respuesta & Carga de página principal < 2s y búsquedas < 1,5s. \\ \hline
+				RNF-1.2 & Escalabilidad & Soporte de al menos 500 usuarios simultáneos sin degradación. \\ \hline
+				RNF-1.3 & Optimización & Uso de formato WebP para imágenes de cartas para reducir ancho de banda. \\ \hline
+				
+				\multicolumn{3}{|c|}{\cellcolor{gray!10}\textbf{2. Usabilidad y UX}} \\ \hline
+				RNF-2.1 & Diseño Responsivo & Funcionalidad total en móviles, tablets y escritorio. \\ \hline
+				RNF-2.2 & Aprendizaje & Interfaz del Deckbuilder intuitiva (creación de mazo < 5 min). \\ \hline
+				RNF-2.3 & Estética & Diseño coherente con temática TCG según bocetos de Práctica 1. \\ \hline
+				
+				\multicolumn{3}{|c|}{\cellcolor{gray!10}\textbf{3. Seguridad y Privacidad}} \\ \hline
+				RNF-3.1 & Protección de datos & Cifrado (hashing) seguro para el almacenamiento de contraseñas. \\ \hline
+				RNF-3.2 & Navegación & Implementación de protocolo HTTPS en todo el sitio. \\ \hline
+				RNF-3.3 & Validación & Protección contra ataques SQL Injection y XSS en formularios. \\ \hline
+				
+				\multicolumn{3}{|c|}{\cellcolor{gray!10}\textbf{4. Disponibilidad y Mantenibilidad}} \\ \hline
+				RNF-4.1 & Disponibilidad & Tiempo de actividad (uptime) garantizado del 99\%. \\ \hline
+				RNF-4.2 & Actualización & Inserción de nuevas colecciones sin modificar el código fuente. \\ \hline
+				RNF-4.3 & Modularidad & Arquitectura preparada para añadir otros TCG sin reescribir el núcleo. \\ \hline
+				
+				\multicolumn{3}{|c|}{\cellcolor{gray!10}\textbf{5. Compatibilidad y Portabilidad}} \\ \hline
+				RNF-5.1 & Navegadores & Soporte para versiones actuales de Chrome, Firefox, Safari y Edge. \\ \hline
+				RNF-5.2 & Estándares & Cumplimiento estricto de estándares W3C (HTML5 y CSS3). \\ \hline
+				
+			\end{xltabular}
+			
+	
+	\section{Modelo del dominio}
+	En esta sección se detalla el modelo conceptual de la aplicación Card Partner, identificando las entidades principales (clases), sus atributos y las relaciones establecidas entre ellas para dar soporte a la lógica del Trading Card Game (TCG) y a la interacción de la comunidad.
+	
+	Las entidades principales son:
+	\begin{itemize}
+	    \item \textbf{Usuario:} Clase base de la que heredan \textit{Jugador} y \textit{Administrador}. Contiene la información de autenticación y perfil.
+	    \item \textbf{Carta:} Representa la unidad fundamental del juego. Utiliza enumeraciones estrictas para el \textit{Tipo} (Líder, Personaje, Evento, Escenario) y \textit{Color}.
+	    \item \textbf{Mazo:} Colección de cartas creada por un jugador. Está estrictamente vinculada a una carta \textit{Líder} (relación 1 a muchos) e incluye múltiples cartas en distintas cantidades mediante la clase asociación \textit{Contiene}.
+	    \item \textbf{Torneo y Artículos:} Entidades para la gestión de la comunidad, torneos y noticias del juego.
+	\end{itemize}
+
+	\begin{figure}[H]
+		\centering
+		% --- DESCOMENTAR LA SIGUIENTE LÍNEA Y PONER LA RUTA DE VUESTRA IMAGEN ---
+		% \includegraphics[width=0.9\textwidth]{ruta/al/diagrama_dominio.png}
+		\caption{Diagrama UML del Modelo de Dominio de Card Partner.}
+		\label{fig:modelo_dominio}
+	\end{figure}
+	
+	
+	\section{Diseño del mapa del sitio web}
+	El mapa del sitio web define la jerarquía de navegación y el flujo habitual de los usuarios dentro de Card Partner. La estructura está diseñada para facilitar el acceso rápido tanto a las herramientas de construcción de mazos como a la base de datos de cartas y contenido de la comunidad.
+	
+	La navegación principal se divide en las siguientes ramas:
+	\begin{itemize}
+	    \item \textbf{Página Principal:} Punto de entrada con resumen de noticias y mazos destacados.
+	    \item \textbf{Comunidad:} Agrupa el aspecto social (Noticias, Torneos y Guías).
+	    \item \textbf{Mazos (Decks):} Acceso al meta-juego, mazos de la comunidad y la herramienta de creación (Deckbuilder).
+	    \item \textbf{Cartas (Cards):} Catálogo completo con sistema de filtrado avanzado.
+	    \item \textbf{Área de Usuario:} Gestión del perfil, mazos guardados, publicados y preferencias de la cuenta.
+	\end{itemize}
+	
+	\begin{figure}[H]
+		\centering
+		% --- DESCOMENTAR LA SIGUIENTE LÍNEA Y PONER LA RUTA DE VUESTRA IMAGEN ---
+		% \includegraphics[width=0.85\textwidth]{ruta/al/mapa_sitio.png}
+		\caption{Estructura jerárquica y mapa del sitio web de Card Partner.}
+		\label{fig:mapa_sitio}
+	\end{figure}
+	
+	
+	\newpage
+	\section{Reparto de carga de trabajo}
+	Todos los integrantes hemos participado en todas las fases del trabajo y repartido el trabajo de forma equitativa, aunque encargándonos cada uno especialmente de alguna parte.\\
+	
+	\begin{table}[h]
+		\centering
+		\caption{Distribución de Responsabilidades por Miembro}
+		\begin{tabularx}{\textwidth}{llX} % La 'X' hace que la columna crezca y ajuste el texto
+			\toprule
+			\textbf{Nombre} & \textbf{Porcentaje} & \textbf{Responsabilidad principal} \\
+			\midrule
+			ÁLVAREZ FULCONIS, MARCOS PALATINO      	& 25\%                & Diseño de los bocetos digitales \\
+			LOPEZ PRIMO, ÁLVARO      				& 25\%                & Definición del problema y soluciones y bocetaje a mano\\
+			OTERO GARCÍA, SERGIO     				& 25\%                & Redacción del documento y revisión\\
+			SANTIESTEBAN MENDO, EDGAR    			& 25\%                & Organización y redacción del documento\\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+	
+	
+	\section{Declaración de Uso de Inteligencia Artificial}
+	Para esta primera entrega más creativa, se ha usado la IA \href{https://gemini.google.com/share/938828584764}{Gemini} como herramienta únicamente para mejorar la presentación del documento PDF. \\
+	Principalmente se ha usado para dudas y mejoras del archivo LaTeX y para realizar una revisión rápida de ortografía y estructura del documento.\\
+	
+	\textbf{Ejemplos de prompts realizados:}
+	\begin{itemize}
+		\item 'En un documento LaTex necesito poner una sola página en horizontal para mostrar una imagen que ocupe la página entera'
+		\item 'El documento adjunto se trata de nuestra propuesta para la práctica. Propón posibles cambios o mejoras en la estructura o aspectos que necesiten ampliarse'
+		\item 'El documento adjunto se trata de nuestra propuesta para la práctica. Revisa el documento y di todos los errores o faltas de ortografía que se encuentren'
+		\item 'Crea una tabla en latex de 3 columnas y 4 filas.
+		Las columnas indican los apartados Nombre, Porcentaje, Responsabilidad principal'
+	\end{itemize}
+	
+	
+	
+	
+	
+	
+	
+	
+	%\begin{itemize}
+	%   \item Herramientas utilizadas: hay que especificar qué herramientas de IA se han utilizado.
+	%  \item Propósito del uso: explicar cómo se ha utilizado cada herramienta.
+	% \item Alcance del uso: indicar en qué partes específicas del trabajo se ha recibido asistencia de una herramienta de IA.
+	%\item Prompts utilizados: incluir los prompts, preguntas o instrucciones exactas que se han
+	%introducido en la herramienta de IA.
+	%\end{itemize}
+	
+\end{document}
