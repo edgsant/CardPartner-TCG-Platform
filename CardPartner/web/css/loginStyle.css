@@ -1,0 +1,180 @@
+/* =========================================
+   ESTILOS ESPECÍFICOS PARA LA VISTA DE LOGIN
+========================================= */
+
+/* Fondo exclusivo para la página de login con efecto de transparencia */
+.body-login {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: transparent; /* Quita fondos previos */
+    margin: 0;
+    padding: 0;
+}
+
+/* El fondo rosa de login cubre toda la pantalla */
+.fondo-rosa-login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* El contenedor principal de login con efecto de cristal (glassmorphism) */
+.contenedor-login {
+    /* Fondo blanco semi-transparente estilo "cristal" */
+    background-color: rgba(255, 255, 255, 0.85); 
+    
+    /* Efecto de difuminado del fondo (muy moderno) */
+    backdrop-filter: blur(10px); 
+    
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Esquinas muy redondeadas */
+    
+    width: 100%;
+    max-width: 450px; /* Tamaño controlado para el login */
+    padding: 50px;
+    
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+    text-align: center;
+}
+
+/* --- SECCIÓN CENTRAL DEL LOGIN --- */
+.seccion-central-login {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Logo y Título */
+.login-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+.login-header p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.login-logo {
+    height: 90px;
+    width: auto;
+}
+
+/* --- FORMULARIO Y INPUTS GIGANTES --- */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Grupo de Input con Icono */
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+/* Los inputs con borde negro característico */
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 50px; /* Espacio para el icono a la izquierda */
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    border: 2px solid #333; /* Borde negro como en el menú */
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s;
+}
+
+/* Efecto focus al clicar en el input */
+.input-group input:focus {
+    outline: none;
+    border-color: #555;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* El icono FontAwesome dentro del input */
+.input-group i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+/* El icono cambia de color cuando el input tiene foco */
+.input-group input:focus + i {
+    color: #333;
+}
+
+/* --- BOTÓN DE LOGIN (MODERNIZADO) --- */
+.btn-login {
+    width: 100%;
+    padding: 18px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    background-color: white;
+    border: 2px solid #333; /* Mismo borde que los botones de arriba */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+}
+
+.btn-login:hover {
+    background-color: #333;
+    color: white;
+    transform: translateY(-2px); /* Pequeño salto hacia arriba */
+}
+
+/* --- ENLACES Y REGISTRO --- */
+.login-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.login-footer a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.login-footer a:hover {
+    color: #555;
+}
+
+.login-footer span {
+    color: #666;
+}
+
+/* --- BOTÓN DE VOLVER (Grisáceo) --- */
+.btn-volver-inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.btn-volver-inicio:hover {
+    color: #333;
+}

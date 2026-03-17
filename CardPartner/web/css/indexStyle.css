@@ -1,4 +1,6 @@
-/* Limpiamos márgenes por defecto */
+/* =========================================
+   1. CONFIGURACIÓN GLOBAL Y FUENTES (¡MODERNIZADO!)
+========================================= */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,325 +8,407 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: white;
+    /* Usamos la nueva fuente Poppins para todo el texto base */
+    font-family: 'Poppins', sans-serif; 
+    font-size: 16px;
+    color: #333; /* Un gris muy oscuro en lugar de negro puro */
+    
+    /* Configuración de tu fondo estático (asegúrate de que la ruta es correcta) */
+    background-image: url('../img/fondo-web.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
 }
 
-/* 1. EL FONDO ROSA (ahora es solo un contenedor invisible a pantalla completa) */
+/* =========================================
+   2. ESTRUCTURA PRINCIPAL (¡CON SOMBRA Y RELIEVE!)
+========================================= */
 .fondo-rosa {
-    min-height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+    min-height: 100vh;
     display: flex;
-    padding: 20px; /* Un pequeño margen para que no se pegue a los bordes del monitor */
+    /* Un buen margen para que se vea el fondo estático por los lados */
+    padding: 40px; 
 }
 
-/* 2. EL CONTENEDOR PRINCIPAL */
 .contenedor-principal {
-    background-color: white;
-    border: 3px solid black;
-    width: 100%; /* Ocupa el 100% del ancho disponible */
-    /* ¡HEMOS QUITADO EL MAX-WIDTH AQUÍ! */
+    /* Fondo blanco semi-transparente estilo "cristal" */
+    background-color: rgba(255, 255, 255, 0.95); 
+    
+    /* Borde más fino y grisáceo */
+    border: 1px solid #ddd; 
+    border-radius: 15px; /* Esquinas muy redondeadas */
+    
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 0;
     position: relative;
+    
+    /* SOMBRA SUAVE PARA DAR RELIEVE SOBRE EL FONDO */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
 }
 
-/* 3. CABECERA */
+/* =========================================
+   3. CABECERA ALINEADA Y ELEGANTE (¡REAJUSTADA!)
+========================================= */
 .cabecera {
     display: flex;
-    justify-content: space-between; /*With this the browser will manage the space of the header*/
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 30px;
+    justify-content: space-between; 
+    align-items: center; 
+    
+    /* Un espaciado generoso pero controlado */
+    padding: 30px 40px; 
+    border-bottom: 1px solid #eee; /* Línea divisoria muy sutil */
+    position: relative; 
 }
 
-/* Log style */
+/* Logo: Grande y claro */
 .logo {
-    border: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    justify-content: center;
     background-color: transparent;
-    padding:0; 
-   
     text-decoration: none; 
+    z-index: 2; 
 }
-.logo img{
-    height: 80px;
+
+.logo img {
+    height: 100px; /* Un tamaño contundente */
     width: auto;
-
 }
+
 .logo:hover {
-    background-color: #e0e0e0;
-    transition: background-color 0.3s;
-    text-decoration: none;
-    display: inline-block;
+    opacity: 0.8;
 }
 
-/* docker for the header options */
+/* Menú Central (¡ELIMINAMOS POSICIONAMIENTO ABSOLUTO PARA MÁXIMA COMPATIBILIDAD!) */
 .menu {
     display: flex;
-    gap: 200px;
-    
+    /* Reducimos el gap para que quepan todos en la misma línea */
+    gap: 180px; 
+    flex: 1; /* Ocupa el espacio libre */
+    justify-content: center; /* Centra los botones en el espacio que le toca */
 }
 
-/* Estilos para los BOTONES REALES */
+/* Contenedor del Login */
+.login {
+    display: flex;
+    z-index: 2; 
+}
+
+/* --- ESTILOS DE TODOS LOS BOTONES (¡ELEGANTES!) --- */
 .menu button, .login button {
+    /* Fuente Montserrat para los botones (más moderna y "de marca") */
+    font-family: 'Montserrat', sans-serif; 
+    border: 2px solid #333; /* Mantenemos tu borde negro característico */
+    border-radius: 8px; /* Un poco redondeados */
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    font-weight: 700; /* Negrita */
+    transition: all 0.3s ease; /* Transición suave */
+    white-space: nowrap; /* Evita que el texto se rompa */
+    text-transform: uppercase; /* Todo en mayúsculas (estilo moderno) */
+    letter-spacing: 1px; /* Un pelín de espacio entre letras */
+}
+
+/* Tamaño de los botones del menú: ¡EQUILIBRADO! */
+.menu button {
+   flex: 1;           /* ¡ESTA ES LA CLAVE! Todos crecerán hasta llenar la fila */
+    padding: 20px 0;   /* Ajustamos el padding para que no se vean raros */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
     border: 2px solid #333;
     background-color: white;
-    color: black;
-    cursor: pointer; /* Muestra la manita al pasar el ratón */
-    padding: 15px 30px; /* Botones más grandes */
-    font-size: 18px; /* Letra más grande */
-    font-weight: bold;
-    font-family: Arial, sans-serif; /* Los botones no heredan la fuente por defecto, hay que forzarlo */
-    transition: background-color 0.3s; /* Efecto suave al pasar el ratón */
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+    
+    /* Para que el texto no se amontone si la pantalla es pequeña */
+    min-width: 100px;
 }
 
-/* Ajuste específico para el botón de login (al tener dos líneas) */
+/* Tamaño del botón de Login */
 .login button {
+    padding: 10px 25px; 
     font-size: 14px;
-    padding: 10px 20px;
 }
 
-/* Efecto Hover: Cambian de color al pasar el ratón */
+/* Efecto Hover: Cambian de color suavemente */
 .menu button:hover, .login button:hover {
-    background-color: #e0e0e0;
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Letra blanca */
+    transform: translateY(-2px); /* Pequeño salto hacia arriba */
 }
-/* --- CONTENIDO CENTRAL --- */
+
+/* =========================================
+   4. CONTENIDO CENTRAL (¡CON AIRE!)
+========================================= */
 .contenido {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Esto hace que el contenido se estire para rellenar el alto de la pantalla */
-    gap: 20px;
+    flex-grow: 1;
+    /* Damos mucho gap entre las secciones principales */
+    gap: 50px; 
+    padding: 40px; 
 }
 
-
-/* La imagen estirada al máximo */
-.promo-link img {
-    width: 100%;      /* Obliga a la imagen a ocupar todo el ancho */
-    height: 100%;     /* Obliga a la imagen a ocupar todo el alto */
-    object-fit: cover; /* Ajusta la imagen para que rellene el hueco sin deformarse */
-    display: block;
-    transition: transform 0.5s ease;
+/* Títulos principales de sección ("Cosas de Interés", "Guías", "Mazos") */
+.titulo-welcome, .titulo-seccion {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px; /* Títulos grandes y claros */
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+    text-align: left; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
-/* Efecto opcional de zoom al pasar el ratón */
-.promo-link:hover img {
-    transform: scale(1.05);
+/* Título de los mazos (un poco más pequeño por estar dentro de una caja) */
+.titulo-mazos {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
 }
-/* 4. SECCIÓN NOTICIAS */
+
+/* =========================================
+   5. SECCIÓN NOTICIAS (¡MÁS LIMPIA!)
+========================================= */
+
+/* Flechas del banner (¡Grisáceas por defecto!) */
 .noticias {
-    height: 300px;
+    height: 350px; /* Un poco más de altura para que respire */
     display: flex;
+    justify-content: space-between; /* Manda las flechas a los extremos */
     align-items: center;
-    border: 1px solid #999;
-    
-    /* ¡CAMBIO IMPORTANTE! Añadimos padding para separar la imagen del borde */
-    padding: 15px; 
-    
-    background-color: white; /* Asegura que el fondo alrededor de la foto sea blanco */
-    overflow: hidden;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 10px 25px; /* Más espacio a los lados para las flechas */
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
 }
 
 .texto-noticias {
     flex-grow: 1;
     height: 100%;
     display: flex;
+    justify-content: center; /* ¡ESTO CENTRA LA IMAGEN! */
+    align-items: center;
+    padding: 0 20px;
 }
 
 .promo-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    display: block;
-    text-decoration: none; /* Elimina cualquier subrayado accidental */
-    border: none;          /* Elimina bordes azules de links antiguos */
-    outline: none;
+    text-decoration: none;
 }
 
 .promo-link img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: contain; /* O cover, lo que prefieras */
-    transition: transform 0.5s ease;
-    
-    /* --- AQUÍ ESTÁ EL ESTILO DE LA IMAGEN DE NAMI --- */
-    border: 3px solid #333; /* Borde oscuro y grueso igual que en Nami */
-    border-radius: 10px;    /* Esquinas redondeadas igual que en Nami */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra suave para darle relieve */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto; /* Evita que se estire a lo ancho si es pequeña */
+    height: auto;
+    object-fit: contain; 
+    border: 2px solid #eee;
+    border-radius: 8px;    
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    transition: all 0.5s ease;
 }
-.texto-noticias h2 {
+.flecha {
     font-size: 36px;
-    margin-bottom: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #aaa; /* Gris por defecto */
+    transition: color 0.3s;
 }
 
-/* 5. SECCIÓN INFERIOR (Guías y Mazos) */
+.flecha:hover {
+    color: #333; /* Negro al hover */
+}
+
+
+.promo-link:hover img {
+    transform: scale(1.01); /* Pequeño zoom */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+}
+
+/* =========================================
+   6. SECCIÓN INFERIOR (Guías y Mazos)
+========================================= */
 .columnas-inferiores {
     display: flex;
-    gap: 20px;
-    flex-grow: 1; /* Hace que esta fila de abajo también crezca verticalmente */
+    gap: 30px; /* Más espacio entre columnas */
+    flex-grow: 1; 
 }
 
+/* --- Lado Izquierdo: GUÍAS --- */
 .guias {
-    border: 1px solid #999;
-    flex: 2; /* Sigue ocupando el doble de ancho */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
+    /* Caja de guías más limpia */
+    border: 1px solid #eee; 
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     
-    /* ¡AQUÍ ESTÁ LA CLAVE! Limitamos la altura */
-    max-height: 300px; 
-    overflow: hidden; /* Corta cualquier cosa que intente salirse */
-}
-
-/* 1. Contenedor del enlace dentro de guías */
-.enlace-guia {
-    text-decoration: none; /* Quita subrayados */
-    color: black; 
-    display: flex;
-    /* ¡AQUÍ ESTÁ LA CLAVE! Alineamos en columna (vertical) */
-    flex-direction: column; 
-    align-items: center; /* Centramos el contenido horizontalmente */
-    justify-content: center; /* Centramos el contenido verticalmente */
-    width: 100%;
-    height: 100%; /* Ocupa el 100% de la altura de .guias (que ahora son max 300px) */
+    flex: 2; 
     display: flex;
     flex-direction: column;
-    justify-content: space-around; /* Reparte el espacio entre textos e imagen */
+    max-height: 320px; /* Un poco más alta */
+    overflow: hidden;
 }
 
-/* 2. Ajuste de la imagen de la guía para que sea GRANDE */
-.enlace-guia img {
-    width: auto; /* El ancho se calcula solo */
-    height: 100%; /* Intenta ocupar el 100% de la altura disponible */
-    max-height: 180px; /* Pero limitamos a 180px para dejar sitio a los textos */
-    object-fit: contain; /* Asegura que Nami se vea ENTERA sin cortes */
-    display: block; /* Quita espacios fantasma debajo */
-    border: 3px solid #333; /* Borde un poco más pro */
-    border-radius: 10px; /* Bordes redondeados sutiles */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+.enlace-guia {
+    text-decoration: none;
+    color: #333; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%;
+    height: 100%;
+    padding: 25px; /* Más espacio interior */
 }
 
-/* 3. Efecto al pasar el ratón (hover) */
-.enlace-guia:hover img {
-    transform: scale(1.03); /* Pequeño zoom suave */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Añadimos sombra al hover para que "flote" */
-}
-
-/* Ajustes de texto para que queden bien centrados y legibles */
 .enlace-guia h2 {
-    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
     margin: 0;
+    text-transform: uppercase;
 }
 
 .enlace-guia p {
-    font-size: 16px;
+    font-size: 15px; /* Párrafo un poco más pequeño */
     text-align: center;
+    color: #666; /* Gris más claro para el párrafo */
     margin: 0;
-    line-height: 1.4; /* Mejora la legibilidad del párrafo */
 }
 
-/* Contenedor horizontal para flechas e imagen */
+/* Carrusel de Guías */
 .contenedor-carrusel-guia {
     display: flex;
-    align-items: center; /* Centra las flechas verticalmente con la imagen */
+    align-items: center; 
     justify-content: center;
     width: 100%;
-    gap: 10px; /* Espacio entre flechas e imagen */
+    gap: 20px; /* Más espacio */
 }
 
-/* Estilo de las flechas de la guía */
 .flecha-guia {
-    font-size: 30px;
+    font-size: 36px;
     font-weight: bold;
-    color: #333;
+    color: #aaa;
     cursor: pointer;
-    padding: 5px;
-    user-select: none; /* Evita que se seleccione el texto al hacer clic */
-    transition: transform 0.2s;
+    user-select: none;
+    transition: color 0.2s;
 }
 
 .flecha-guia:hover {
-    transform: scale(1.2);
-    color: #000;
+    color: #333;
 }
 
-/* Ajuste para que la imagen no empuje a las flechas fuera */
 .contenedor-carrusel-guia img {
     flex-grow: 1;
-    max-width: 80%; /* Dejamos un 20% de espacio para las flechas */
+    max-width: 80%;
     height: auto;
-    max-height: 180px;
+    max-height: 200px; /* Un poco más grande */
     object-fit: contain;
-    border: 3px solid #333;
-    border-radius: 10px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-/* 1. Contenedor principal: ahora se alinean en Fila (horizontal) */
+.enlace-guia:hover img {
+    transform: translateY(-3px); /* Pequeño salto hacia arriba al hover */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* --- Lado Derecho: MAZOS --- */
+.mazos {
+    /* Caja de mazos más limpia */
+    border: 1px solid #eee; 
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    
+    flex: 2; 
+    display: flex;
+    flex-direction: column;
+}
+
 .titulo-mazos {
     width: 100%;
-    text-align: center; /* Centra el texto sobre las 3 imágenes */
-    font-size: 20px;
-    font-weight: bold;
-    padding: 15px;
-    background-color: #f9f9f9; /* Le da un fondito gris muy claro para destacar */
-    border-bottom: 2px solid #333; /* Una línea negra que separa el título de las fotos */
-    margin: 0; /* Asegura que no haya márgenes raros por defecto */
-}
-.contenido-mazos {
-    display: flex;
-    flex-direction: row; /* CAMBIO CLAVE: de column a row */
-    justify-content: space-around; /* Reparte el espacio disponible entre los 3 */
-    align-items: flex-start; /* Los alinea por la parte de arriba */
-    padding: 15px; /* Le devolvemos un poco de relleno para que no choquen con las paredes */
-    height: 100%;
-    gap: 10px; /* Separación entre cada mazo */
+    text-align: center;
+    padding: 20px; /* Más espacio */
+    background-color: #fafafa; /* Gris ultra claro */
+    border-bottom: 1px solid #eee; /* Línea divisoria muy sutil */
+    margin: 0;
 }
 
-/* 2. Cada mazo individual: Imagen arriba, texto abajo */
+.contenido-mazos {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around; 
+    align-items: flex-start; 
+    padding: 25px; /* Más espacio */
+    height: 100%;
+    gap: 15px; /* Espacio equilibrado */
+}
+
 .item-mazo {
     display: flex;
-    flex-direction: column; /* CAMBIO CLAVE: Apila la imagen y el texto */
-    align-items: center; /* Centra el contenido */
-    text-align: center; /* Centra el texto */
-    gap: 10px;
-    padding: 10px;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    gap: 12px;
     text-decoration: none;
-    color: black;
-    border-bottom: none; /* Quitamos la línea divisoria que teníamos antes */
-    flex: 1; /* Obliga a que los 3 mazos ocupen exactamente el mismo ancho */
+    color: #333;
+    flex: 1; 
     transition: transform 0.3s ease;
 }
 
-/* Borramos la regla antigua del last-child para evitar conflictos */
-.item-mazo:last-child {
-    border-bottom: none;
-}
-
-/* 3. Estilo de la imagen: ¡Más grandes! */
 .item-mazo img {
-    width: 100%; /* Ocupa todo el ancho que le deje su columna */
-    max-width: 180px; /* Le ponemos un tope para que no se hagan gigantes */
+    width: 100%; 
+    max-width: 190px; /* Mazos GRANDES y potentes */
     height: auto;
-    border: 2px solid #333;
-    border-radius: 5px;
+    border: 2px solid #eee; /* Borde sutil */
+    border-radius: 6px;
     object-fit: contain;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra sutil para que destaquen */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1); /* Sombras para destacar las cajas */
+    transition: all 0.3s ease;
 }
 
-/* 4. Ajuste del texto para que encaje bien debajo */
 .item-mazo span {
     font-size: 14px;
-    font-weight: bold;
-    line-height: 1.2;
+    font-weight: 600; /* Un pelín más fino que el 700 */
+    line-height: 1.3;
 }
 
-/* 5. Efecto al pasar el ratón */
-.item-mazo:hover {
-    background-color: transparent; 
-    transform: translateY(-5px); /* En lugar de fondo gris, ahora "flotan" hacia arriba */
+.item-mazo:hover img {
+    transform: translateY(-5px) scale(1.03); /* Salto y zoom suave */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* =========================================
+   7. ETIQUETA INFERIOR (¡MÁS DISCRETA!)
+========================================= */
+.etiqueta-inferior {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Redondeada */
+    padding: 6px 25px;
+    font-size: 13px; /* Letra un poco más pequeña */
+    color: #666;
 }
