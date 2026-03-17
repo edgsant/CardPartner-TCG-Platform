@@ -1,0 +1,118 @@
+/* =========================================
+   1. CONFIGURACIÓN GLOBAL Y FUENTES
+========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 16px;
+    color: #333;
+    background-image: url('../img/fondo-web.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+}
+
+/* =========================================
+   2. ESTRUCTURA PRINCIPAL
+========================================= */
+.fondo-rosa { min-height: 100vh; display: flex; padding: 40px; }
+
+.contenedor-principal {
+    background-color: rgba(255, 255, 255, 0.95); 
+    border: 1px solid #ddd; 
+    border-radius: 15px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+}
+
+/* =========================================
+   3. CABECERA ALINEADA Y ELEGANTE
+========================================= */
+.cabecera {
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 30px 40px; border-bottom: 1px solid #eee; position: relative; 
+}
+
+.logo { display: flex; align-items: center; background-color: transparent; text-decoration: none; z-index: 2; }
+.logo img { height: 100px; width: auto; }
+.logo:hover { opacity: 0.8; }
+
+.menu { display: flex; gap: 180px; flex: 1; justify-content: center; }
+.login { display: flex; z-index: 2; }
+
+.menu a { text-decoration: none; }
+
+.menu button, .login button {
+    font-family: 'Montserrat', sans-serif; 
+    border: 2px solid #333; border-radius: 8px; 
+    background-color: white; color: #333;
+    cursor: pointer; font-weight: 700; 
+    transition: all 0.3s ease; white-space: nowrap; 
+    text-transform: uppercase; letter-spacing: 1px;
+}
+
+.menu button {
+    padding: 20px 0; font-size: 18px; text-align: center;
+    min-width: 100px; padding-left: 20px; padding-right: 20px;
+}
+
+.login button { padding: 10px 25px; font-size: 14px; }
+
+.menu button:hover, .login button:hover {
+    background-color: #333; color: white; transform: translateY(-2px); 
+}
+
+/* =========================================
+   4. VISUALIZADOR DE CARTA (Específico)
+========================================= */
+.contenido-detalle { padding: 40px; flex-grow: 1; }
+
+.titulo-seccion {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.layout-carta { display: flex; gap: 40px; margin-bottom: 30px; }
+
+.vista-imagen { flex: 1; display: flex; justify-content: center; align-items: flex-start; }
+.vista-imagen img { width: 100%; max-width: 350px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border: 1px solid #eee; }
+
+.vista-info { flex: 2; display: flex; flex-direction: column; gap: 20px; }
+
+.caja-info, .caja-precios { 
+    background: #fafafa; border: 1px solid #eee; border-radius: 12px; 
+    padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+}
+
+.caja-info h3, .caja-precios h3 { 
+    font-family: 'Montserrat', sans-serif; color: #222;
+    border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 15px; 
+}
+
+.caja-info p { margin-bottom: 10px; line-height: 1.6; }
+
+.texto-efecto { 
+    background: #fff; padding: 15px; border-left: 4px solid #d32f2f; 
+    border-radius: 4px; font-style: italic; margin-top: 15px;
+}
+
+.precio-destacado { font-size: 24px; font-weight: bold; color: #d32f2f; font-family: 'Montserrat', sans-serif; }
+
+.enlaces-oficiales { text-align: center; margin-top: 20px; }
+.enlaces-oficiales a { 
+    display: inline-block; padding: 15px 30px; background: #333; 
+    color: white; text-decoration: none; font-weight: bold; border-radius: 8px; 
+    font-family: 'Montserrat', sans-serif; transition: background 0.3s; 
+}
+.enlaces-oficiales a:hover { background: #d32f2f; }

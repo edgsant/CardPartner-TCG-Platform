@@ -1,0 +1,136 @@
+/* =========================================
+   1. CONFIGURACIÓN GLOBAL Y FUENTES
+========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 16px;
+    color: #333;
+    background-image: url('../img/fondo-web.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+}
+
+/* =========================================
+   2. ESTRUCTURA PRINCIPAL
+========================================= */
+.fondo-rosa { min-height: 100vh; display: flex; padding: 40px; }
+
+.contenedor-principal {
+    background-color: rgba(255, 255, 255, 0.95); 
+    border: 1px solid #ddd; 
+    border-radius: 15px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+}
+
+/* =========================================
+   3. CABECERA ALINEADA Y ELEGANTE
+========================================= */
+.cabecera {
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 30px 40px; border-bottom: 1px solid #eee; position: relative; 
+}
+
+.logo { display: flex; align-items: center; background-color: transparent; text-decoration: none; z-index: 2; }
+.logo img { height: 100px; width: auto; }
+.logo:hover { opacity: 0.8; }
+
+.menu { display: flex; gap: 180px; flex: 1; justify-content: center; }
+.login { display: flex; z-index: 2; }
+
+.menu a { text-decoration: none; }
+
+.menu button, .login button {
+    font-family: 'Montserrat', sans-serif; 
+    border: 2px solid #333; border-radius: 8px; 
+    background-color: white; color: #333;
+    cursor: pointer; font-weight: 700; 
+    transition: all 0.3s ease; white-space: nowrap; 
+    text-transform: uppercase; letter-spacing: 1px;
+}
+
+.menu button {
+    padding: 20px 0; font-size: 18px; text-align: center;
+    min-width: 100px; padding-left: 20px; padding-right: 20px;
+}
+
+.login button { padding: 10px 25px; font-size: 14px; }
+
+.menu button:hover, .login button:hover {
+    background-color: #333; color: white; transform: translateY(-2px); 
+}
+
+/* =========================================
+   4. VISUALIZADOR DE MAZO (CORREGIDO)
+========================================= */
+.contenido-detalle { padding: 40px; flex-grow: 1; }
+.titulo-mazo-grande { font-family: 'Montserrat', sans-serif; font-size: 32px; color: #222; border-bottom: 3px solid #333; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; }
+
+.deck-header { display: flex; gap: 40px; margin-bottom: 40px; }
+
+.lider-seccion { 
+    flex: 1; display: flex; flex-direction: column; align-items: center; gap: 15px; 
+    background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 20px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+}
+
+.lider-seccion img { 
+    width: 100%; max-width: 200px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); border: 1px solid #ddd;
+}
+
+.descripcion-seccion { flex: 2; display: flex; flex-direction: column; gap: 15px; }
+
+.descripcion-seccion h3 { font-family: 'Montserrat', sans-serif; border-bottom: 2px solid #ddd; padding-bottom: 10px; color: #222; }
+.descripcion-seccion p { line-height: 1.6; }
+
+.estadisticas { display: flex; gap: 20px; margin-top: auto; }
+.estadisticas span { 
+    background: #333; color: white; padding: 10px 20px; border-radius: 8px; 
+    font-weight: bold; font-family: 'Montserrat', sans-serif; 
+}
+
+.titulo-cartas { font-family: 'Montserrat', sans-serif; font-size: 24px; margin-bottom: 20px; color: #222; }
+
+.deck-grid { 
+    display: grid; 
+    /* CAMBIO CLAVE: Usamos un tamaño fijo de 120px en lugar de 1fr */
+    /* Así, aunque haya pocas cartas, no crecerán más de 120px */
+    grid-template-columns: repeat(auto-fill, 120px); 
+    gap: 20px; 
+    background: #fafafa; 
+    padding: 25px; 
+    border-radius: 12px; 
+    border: 1px solid #eee;
+    justify-content: center; /* Centra las cartas dentro de la caja gris */
+}
+
+/* Estilo para el enlace que envuelve la carta */
+.deck-grid a {
+    text-decoration: none;
+    display: block;
+    width: 100%; /* Se ajusta a los 120px de la columna */
+}
+
+.carta-pequena { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 6px; 
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1); 
+    transition: transform 0.2s; 
+    cursor: pointer; 
+    border: 1px solid #ddd;
+    display: block;
+}
+
+.carta-pequena:hover { 
+    transform: translateY(-5px) scale(1.05); 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2); 
+}
