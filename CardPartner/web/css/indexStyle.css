@@ -263,58 +263,68 @@ body {
     border: 3px solid #333;
     border-radius: 10px;
 }
-.mazos {
-    border: 1px solid #999;
-    flex: 1; /* Ocupa la mitad que las guías */
-    display: flex;
-    flex-direction: column;
-}
 
+/* 1. Contenedor principal: ahora se alinean en Fila (horizontal) */
 .titulo-mazos {
-    border-bottom: 1px solid #999;
-    padding: 15px;
-    text-align: center;
+    width: 100%;
+    text-align: center; /* Centra el texto sobre las 3 imágenes */
+    font-size: 20px;
     font-weight: bold;
-    font-size: 18px;
+    padding: 15px;
+    background-color: #f9f9f9; /* Le da un fondito gris muy claro para destacar */
+    border-bottom: 2px solid #333; /* Una línea negra que separa el título de las fotos */
+    margin: 0; /* Asegura que no haya márgenes raros por defecto */
 }
-
-/* Contenedor principal: fuerza la disposición vertical */
 .contenido-mazos {
     display: flex;
-    flex-direction: column; /* Apila los elementos de arriba a abajo */
-    padding: 0; /* Quitamos el padding para que las líneas toquen los bordes */
+    flex-direction: row; /* CAMBIO CLAVE: de column a row */
+    justify-content: space-around; /* Reparte el espacio disponible entre los 3 */
+    align-items: flex-start; /* Los alinea por la parte de arriba */
+    padding: 15px; /* Le devolvemos un poco de relleno para que no choquen con las paredes */
     height: 100%;
+    gap: 10px; /* Separación entre cada mazo */
 }
 
-/* Cada mazo de la lista */
+/* 2. Cada mazo individual: Imagen arriba, texto abajo */
 .item-mazo {
     display: flex;
-    align-items: center; /* Alinea la foto y el texto en el centro */
-    gap: 15px;
-    padding: 15px;
+    flex-direction: column; /* CAMBIO CLAVE: Apila la imagen y el texto */
+    align-items: center; /* Centra el contenido */
+    text-align: center; /* Centra el texto */
+    gap: 10px;
+    padding: 10px;
     text-decoration: none;
     color: black;
-    
-    /* ¡LA CLAVE DE LA DIVISIÓN! Una línea gris debajo de cada mazo */
-    border-bottom: 1px solid #999; 
-    transition: background-color 0.3s ease;
+    border-bottom: none; /* Quitamos la línea divisoria que teníamos antes */
+    flex: 1; /* Obliga a que los 3 mazos ocupen exactamente el mismo ancho */
+    transition: transform 0.3s ease;
 }
 
-/* Le quitamos la línea al último mazo para que no choque con el borde de la caja principal */
+/* Borramos la regla antigua del last-child para evitar conflictos */
 .item-mazo:last-child {
     border-bottom: none;
 }
 
-/* Estilo de la imagen miniatura */
+/* 3. Estilo de la imagen: ¡Más grandes! */
 .item-mazo img {
-    width: 60px;
+    width: 100%; /* Ocupa todo el ancho que le deje su columna */
+    max-width: 180px; /* Le ponemos un tope para que no se hagan gigantes */
     height: auto;
     border: 2px solid #333;
     border-radius: 5px;
     object-fit: contain;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra sutil para que destaquen */
 }
 
-/* Efecto hover profesional */
+/* 4. Ajuste del texto para que encaje bien debajo */
+.item-mazo span {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* 5. Efecto al pasar el ratón */
 .item-mazo:hover {
-    background-color: #f0f0f0;
+    background-color: transparent; 
+    transform: translateY(-5px); /* En lugar de fondo gris, ahora "flotan" hacia arriba */
 }
