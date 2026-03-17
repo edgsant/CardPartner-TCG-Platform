@@ -1,15 +1,98 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <title>Card Partner - Cartas</title>
+    <link rel="stylesheet" href="../css/cardsStyle.css">
+</head>
+<body>
+
+    <div class="fondo-rosa">
+        <div class="contenedor-principal">
+            
+            <header class="cabecera">
+                <a href="../index.html" class="logo">
+                    <img src="../img/logo.png" alt="Card Partner">
+                </a>
+                <nav class="menu">
+                    <a href="tcg.html"><button type="button">TCG</button></a>
+                    <a href="social.html"><button type="button">SOCIAL</button></a>
+                    <a href="decks.html"><button type="button">DECKS</button></a>
+                    <a href="cards.html"><button type="button">CARDS</button></a>
+                </nav>
+                <div class="login">
+                    <a href="login.html" style="text-decoration: none;">
+                        <button type="button">SIGN IN<br>LOGIN</button>
+                    </a>
+                </div>
+            </header>
+
+            <main class="contenido-cartas">
+                
+                <div class="barra-busqueda">
+                    <h2 class="titulo-seccion">CARDS</h2>
+                    <div class="filtros">
+                        <input type="text" placeholder="Buscar personaje, ID o color...">
+                        <button class="btn-filtro" type="button">Filtros ⚙️</button>
+                    </div>
+                </div>
+
+                <section class="galeria-cartas">
+                    
+                    <a href="card-view.html" class="carta-item">
+                        <img src="../img/op01-120.jpg" alt="Shanks OP01-120">
+                        <div class="carta-info">
+                            <h3>Shanks</h3>
+                            <p>OP01-120 | SEC (Secret Rare)</p>
+                            <span class="precio">45.50 €</span>
+                        </div>
+                    </a>
+
+                    <a href="card-view.html" class="carta-item">
+                        <img src="../img/op01-025.jpg" alt="Roronoa Zoro OP01-025">
+                        <div class="carta-info">
+                            <h3>Roronoa Zoro</h3>
+                            <p>OP01-025 | SR (Super Rare)</p>
+                            <span class="precio">18.00 €</span>
+                        </div>
+                    </a>
+
+                    <a href="card-view.html" class="carta-item">
+                        <img src="../img/op05-119.jpg" alt="Monkey.D.Luffy OP05-119">
+                        <div class="carta-info">
+                            <h3>Monkey.D.Luffy</h3>
+                            <p>OP05-119 | SEC (Secret Rare)</p>
+                            <span class="precio">32.25 €</span>
+                        </div>
+                    </a>
+
+                    <a href="card-view.html" class="carta-item">
+                        <img src="../img/op01-047.jpg" alt="Trafalgar Law OP01-047">
+                        <div class="carta-info">
+                            <h3>Trafalgar Law</h3>
+                            <p>OP01-047 | SR (Super Rare)</p>
+                            <span class="precio">12.10 €</span>
+                        </div>
+                    </a>
+                    
+                    <a href="card-view.html" class="carta-item">
+                        <img src="../img/op01-016.jpg" alt="Nami OP01-016">
+                        <div class="carta-info">
+                            <h3>Nami</h3>
+                            <p>OP01-016 | R (Rare)</p>
+                            <span class="precio">5.50 €</span>
+                        </div>
+                    </a>
+
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+</body>
 </html>

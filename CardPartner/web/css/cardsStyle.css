@@ -1,0 +1,224 @@
+/* =========================================
+   1. CONFIGURACIÓN GLOBAL Y FUENTES (Heredadas de index)
+========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 16px;
+    color: #333;
+    background-image: url('../img/fondo-web.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+}
+
+/* =========================================
+   2. ESTRUCTURA PRINCIPAL (Heredada de index)
+========================================= */
+.fondo-rosa { min-height: 100vh; display: flex; padding: 40px; }
+
+.contenedor-principal {
+    background-color: rgba(255, 255, 255, 0.95); 
+    border: 1px solid #ddd; 
+    border-radius: 15px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+}
+
+/* =========================================
+   3. CABECERA ALINEADA Y ELEGANTE (Ajustada para que sea igual que en index)
+========================================= */
+.cabecera {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 30px 40px; 
+    border-bottom: 1px solid #eee; 
+    position: relative; 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    text-decoration: none; 
+    z-index: 2; 
+}
+
+.logo img { height: 100px; width: auto; }
+.logo:hover { opacity: 0.8; }
+
+.menu {
+    display: flex;
+    gap: 180px; /* Recuperamos el espaciado amplio */
+    flex: 1; 
+    justify-content: center; 
+}
+
+.login { display: flex; z-index: 2; }
+
+/* Enlaces del menú (para quitar el subrayado si el botón está dentro de un <a>) */
+.menu a { text-decoration: none; }
+
+.menu button, .login button {
+    font-family: 'Montserrat', sans-serif; 
+    border: 2px solid #333; 
+    border-radius: 8px; 
+    background-color: white; 
+    color: #333;
+    cursor: pointer; 
+    font-weight: 700; 
+    transition: all 0.3s ease; 
+    white-space: nowrap; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+.menu button {
+    padding: 20px 0; /* Mismo padding vertical que en el index */
+    font-size: 18px;
+    text-align: center;
+    min-width: 100px; /* Anchura mínima para evitar que se aplasten */
+    padding-left: 20px; /* Padding extra para los lados */
+    padding-right: 20px;
+}
+
+.login button { padding: 10px 25px; font-size: 14px; }
+
+.menu button:hover, .login button:hover {
+    background-color: #333; 
+    color: white; 
+    transform: translateY(-2px); 
+}
+
+/* =========================================
+   4. SECCIÓN CARTAS (Modernizada)
+========================================= */
+.contenido-cartas {
+    display: flex;
+    flex-direction: column;
+    padding: 40px; /* Alineado con el padding de index */
+    flex-grow: 1;
+    gap: 30px;
+}
+
+/* Título de sección (Montserrat como en el index) */
+.titulo-seccion {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Barra superior (Buscador y Título) */
+.barra-busqueda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.filtros { display: flex; gap: 15px; }
+
+.filtros input {
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.filtros input:focus { border-color: #333; }
+
+.btn-filtro {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover { background-color: #333; color: white; transform: translateY(-2px); }
+
+/* Cuadrícula (Grid) de Cartas */
+.galeria-cartas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+/* Diseño de la carta individual (Acorde al nuevo estilo) */
+.carta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 25px 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carta-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.carta-item img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border: 1px solid #eee;
+}
+
+.carta-info {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.carta-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin: 0;
+    color: #222;
+}
+
+.carta-info p {
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+}
+
+.carta-info .precio {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #d32f2f;
+    margin-top: 8px;
+}
