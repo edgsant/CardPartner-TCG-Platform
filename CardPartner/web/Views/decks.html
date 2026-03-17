@@ -1,15 +1,101 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <title>Card Partner - Mazos</title>
+    <link rel="stylesheet" href="../css/decksStyle.css">
+</head>
+<body>
+
+    <div class="fondo-rosa">
+        <div class="contenedor-principal">
+            
+            <header class="cabecera">
+                <a href="../index.html" class="logo">
+                    <img src="../img/logo.png" alt="Card Partner">
+                </a>
+                <nav class="menu">
+                    <a href="tcg.html"><button type="button">TCG</button></a>
+                    <a href="social.html"><button type="button">SOCIAL</button></a>
+                    <a href="decks.html"><button type="button">DECKS</button></a>
+                    <a href="cards.html"><button type="button">CARDS</button></a>
+                </nav>
+                <div class="login">
+                    <a href="login.html" style="text-decoration: none;">
+                        <button type="button">SIGN IN<br>LOGIN</button>
+                    </a>
+                </div>
+            </header>
+
+            <main class="contenido-mazos">
+                
+                <div class="barra-busqueda">
+                    <h2 class="titulo-seccion">DECKS</h2>
+                    <div class="filtros">
+                        <input type="text" placeholder="Buscar líder, color o creador...">
+                        <button class="btn-filtro" type="button">Filtros ⚙️</button>
+                    </div>
+                </div>
+
+                <section class="galeria-mazos">
+                    
+                    <a href="deck-view.html" class="mazo-item">
+                        <div class="mazo-imagen">
+                            <img src="../img/lider-sakazuki.jpg" alt="Líder Sakazuki">
+                        </div>
+                        <div class="mazo-info">
+                            <h3>Sakazuki Control</h3>
+                            <p class="mazo-meta">Colores: Azul / Negro</p>
+                            <p class="mazo-autor">Creador: Eggman</p>
+                            <span class="mazo-tipo">Control META</span>
+                        </div>
+                    </a>
+
+                    <a href="deck-view.html" class="mazo-item">
+                        <div class="mazo-imagen">
+                            <img src="../img/lider-zoro.jpg" alt="Líder Zoro">
+                        </div>
+                        <div class="mazo-info">
+                            <h3>Zoro Rush (Aggro)</h3>
+                            <p class="mazo-meta">Colores: Rojo</p>
+                            <p class="mazo-autor">Creador: Comunidad</p>
+                            <span class="mazo-tipo">Aggro / Rápido</span>
+                        </div>
+                    </a>
+
+                    <a href="deck-view.html" class="mazo-item">
+                        <div class="mazo-imagen">
+                            <img src="../img/lider-enel.jpg" alt="Líder Enel">
+                        </div>
+                        <div class="mazo-info">
+                            <h3>Enel Sky Island</h3>
+                            <p class="mazo-meta">Colores: Amarillo</p>
+                            <p class="mazo-autor">Creador: OP Limitless</p>
+                            <span class="mazo-tipo">Midrange</span>
+                        </div>
+                    </a>
+
+                    <a href="deck-view.html" class="mazo-item">
+                        <div class="mazo-imagen">
+                            <img src="../img/lider-katakuri.jpg" alt="Líder Katakuri">
+                        </div>
+                        <div class="mazo-info">
+                            <h3>Katakuri Big Mom</h3>
+                            <p class="mazo-meta">Colores: Amarillo</p>
+                            <p class="mazo-autor">Creador: Sergio Otero</p>
+                            <span class="mazo-tipo">META</span>
+                        </div>
+                    </a>
+
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+</body>
 </html>
