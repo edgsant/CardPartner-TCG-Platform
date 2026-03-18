@@ -1,180 +1,234 @@
 /* =========================================
-   ESTILOS ESPECÍFICOS PARA LA VISTA DE LOGIN
+   1. CONFIGURACIÓN DE FONDO (LOGIN)
 ========================================= */
-
-/* Fondo exclusivo para la página de login con efecto de transparencia */
-.body-login {
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    background-color: transparent; /* Quita fondos previos */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* El fondo rosa de login cubre toda la pantalla */
-.fondo-rosa-login {
-    min-height: 100vh;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../img/fondo.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    background-color: #333; /* Color de respaldo por si la imagen falla */
 }
 
-/* El contenedor principal de login con efecto de cristal (glassmorphism) */
+/* =========================================
+   2. LA VENTANA DE LOGIN (EFECTO CRISTAL)
+========================================= */
 .contenedor-login {
-    /* Fondo blanco semi-transparente estilo "cristal" */
-    background-color: rgba(255, 255, 255, 0.85); 
-    
-    /* Efecto de difuminado del fondo (muy moderno) */
+    /* Fondo blanco con mucha transparencia */
+    background: rgba(255, 255, 255, 0.8); 
+    /* El truco del desenfoque para el efecto cristal */
     backdrop-filter: blur(10px); 
-    
-    border: 1px solid #ddd;
-    border-radius: 20px; /* Esquinas muy redondeadas */
-    
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     width: 100%;
-    max-width: 450px; /* Tamaño controlado para el login */
-    padding: 50px;
-    
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+    max-width: 400px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
-/* --- SECCIÓN CENTRAL DEL LOGIN --- */
-.seccion-central-login {
+/* Logo y textos */
+.login-header img {
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.login-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.login-header p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   3. FORMULARIO E INPUTS
+========================================= */
+.login-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Logo y Título */
-.login-header h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #222;
-    margin-top: 15px;
-    text-transform: uppercase;
-}
-
-.login-header p {
-    font-size: 15px;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.login-logo {
-    height: 90px;
-    width: auto;
-}
-
-/* --- FORMULARIO Y INPUTS GIGANTES --- */
-.login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Grupo de Input con Icono */
 .input-group {
     position: relative;
     width: 100%;
 }
 
-/* Los inputs con borde negro característico */
+/* Los cuadros de texto */
 .input-group input {
     width: 100%;
-    padding: 15px 15px 15px 50px; /* Espacio para el icono a la izquierda */
-    font-family: 'Poppins', sans-serif;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 10px;
     font-size: 16px;
-    border: 2px solid #333; /* Borde negro como en el menú */
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    transition: all 0.3s;
-}
-
-/* Efecto focus al clicar en el input */
-.input-group input:focus {
+    background: white;
     outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
     border-color: #555;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
 }
 
-/* El icono FontAwesome dentro del input */
-.input-group i {
-    position: absolute;
-    left: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #aaa;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-/* El icono cambia de color cuando el input tiene foco */
-.input-group input:focus + i {
-    color: #333;
-}
-
-/* --- BOTÓN DE LOGIN (MODERNIZADO) --- */
+/* El botón de ENTRAR */
 .btn-login {
-    width: 100%;
-    padding: 18px 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: #333;
-    text-transform: uppercase;
-    background-color: white;
-    border: 2px solid #333; /* Mismo borde que los botones de arriba */
+    background: #333;
+    color: white;
+    padding: 15px;
+    border: none;
     border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s;
-    letter-spacing: 1px;
+    transition: 0.3s;
+    text-transform: uppercase;
 }
 
 .btn-login:hover {
-    background-color: #333;
-    color: white;
-    transform: translateY(-2px); /* Pequeño salto hacia arriba */
+    background: #000;
+    transform: translateY(-2px);
 }
 
-/* --- ENLACES Y REGISTRO --- */
-.login-footer {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-    font-size: 14px;
+/* =========================================
+   4. ENLACES INFERIORES
+========================================= */
+.login-footer p {
+    color: #666;
+    margin-top: 5px;
 }
 
-.login-footer a {
-    text-decoration: none;
-    color: #333;
+.login-footer p a {
+    color: #333; /* Color oscuro para que destaque */
+    text-decoration: underline; /* Subrayado para que parezca un link */
     font-weight: 600;
     transition: color 0.3s;
 }
 
-.login-footer a:hover {
-    color: #555;
+.login-footer p a:hover {
+    color: #000;
+    text-decoration: none; /* Quitamos el subrayado al pasar el ratón */
 }
 
-.login-footer span {
-    color: #666;
-}
-
-/* --- BOTÓN DE VOLVER (Grisáceo) --- */
+/* El botón de volver */
 .btn-volver-inicio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
     margin-top: 30px;
-    font-size: 14px;
-    color: #888;
+    display: inline-block;
+    color: #666;
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 14px;
 }
 
 .btn-volver-inicio:hover {
+    color: #000;
+}
+/* ... (Todo lo que ya tenías en el body y contenedor-login está bien) ... */
+
+/* Añade esto para arreglar los iconos que no se ven */
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    color: #333;
+    z-index: 10;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px; /* Más padding a la izquierda para el icono */
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-size: 16px;
+    background: white;
+    position: relative;
+}
+
+/* Asegúrate de que el contenedor-login sea visible */
+.contenedor-login {
+    display: block !important; /* Forzamos a que no se comporte como un flex invisible */
+    background: rgba(255, 255, 255, 0.9); 
+    backdrop-filter: blur(10px); 
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================
+   ESTILOS DEL POPUP (MODAL)
+========================================= */
+
+/* El fondo oscuro que cubre toda la pantalla */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Oscurece el fondo */
+    backdrop-filter: blur(5px);    /* Difumina lo que hay detrás */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* ESCONDIDO POR DEFECTO */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 999;
+}
+
+/* CUANDO EL ENLACE ES PULSADO (:target) */
+.modal-overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* La cajita blanca del popup */
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+/* Botón de cerrar (la X) */
+.btn-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    text-decoration: none;
+    color: #999;
+    transition: 0.3s;
+}
+
+.btn-cerrar:hover {
     color: #333;
 }
