@@ -2,52 +2,43 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - CardPartner</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/loginStyle.css">
 </head>
-<body class="body-login">
+<body>
 
-    <div class="fondo-rosa-login">
-        <main class="contenedor-login">
-            
-            <div class="seccion-central-login">
-                
-                <div class="login-header">
-                    <img src="../img/logo.png" alt="CardPartner Logo" class="login-logo">
-                    <h2>Bienvenido</h2>
-                    <p>Inicia sesión para continuar</p>
-                </div>
+    <div class="contenedor-login">
+        
+        <header class="login-header">
+            <img src="../img/logo.png" alt="Logo">
+            <h2>Bienvenido</h2>
+            <p>Inicia sesión para continuar</p>
+        </header>
 
-                <form action="#" method="post" class="login-form">
-                    
-                    <div class="input-group">
-                        <i class="fas fa-user"></i>
-                        <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required>
-                    </div>
-
-                    <div class="input-group">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
-                    </div>
-
-                    <button type="submit" class="btn-login">ENTRAR</button>
-                    
-                    <div class="login-footer">
-                        <a href="#">¿Olvidaste tu contraseña?</a>
-                        <span>¿No tienes cuenta? <a href="#">Regístrate</a></span>
-                    </div>
-                </form>
-
-                <a href="index.html" class="btn-volver-inicio">
-                    <i class="fas fa-arrow-left"></i> Volver al inicio
-                </a>
-
+        <form class="login-form">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Usuario" required>
             </div>
 
-        </main>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Contraseña" required>
+            </div>
+
+            <button type="submit" class="btn-login">ENTRAR</button>
+            
+            <div class="login-footer">
+                <a href="#">¿Olvidaste tu contraseña?</a>
+                <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
+            </div>
+        </form>
+
+        <a href="../index.html" class="btn-volver-inicio">
+            <i class="fas fa-arrow-left"></i> Volver al inicio
+        </a>
     </div>
 
 </body>
