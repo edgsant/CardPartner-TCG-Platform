@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <title>Card Partner - Creador de Mazos</title>
+    <link rel="stylesheet" href="../css/deckBuilderStyle.css">
+</head>
+<body>
+
+    <div class="fondo-rosa">
+        <div class="contenedor-principal">
+            
+            <header class="cabecera">
+                <a href="../index.html" class="logo">
+                    <img src="../img/logo.png" alt="Card Partner">
+                </a>
+                <nav class="menu">
+                    <a href="tcg.html"><button type="button">TCG</button></a>
+                    <a href="social.html"><button type="button">SOCIAL</button></a>
+                    <a href="decks.html"><button type="button">DECKS</button></a>
+                    <a href="cards.html"><button type="button">CARDS</button></a>
+                </nav>
+                <div class="login">
+                    <a href="login.html" style="text-decoration: none;">
+                        <button type="button">SIGN IN<br>LOGIN</button>
+                    </a>
+                </div>
+            </header>
+
+            <main class="contenido-builder">
+                
+                <div class="barra-superior-builder">
+                    <h2 class="titulo-seccion">DECK BUILDER</h2>
+                    <button class="btn-guardar" type="button">💾 Guardar Mazo</button>
+                </div>
+
+                <div class="builder-header">
+                    
+                    <div class="lider-slot">
+                        <h3>LÍDER SELECCIONADO</h3>
+                        <div class="imagen-contenedor">
+                            <img src="../img/lider-sakazuki.jpg" alt="Líder Sakazuki">
+                        </div>
+                        <button class="btn-cambiar">Cambiar Líder</button>
+                    </div>
+
+                    <div class="deck-detalles">
+                        <h3>INFORMACIÓN DEL MAZO</h3>
+                        
+                        <div class="campo-form">
+                            <label>Nombre del Mazo:</label>
+                            <input type="text" value="Control Sakazuki V2">
+                        </div>
+                        
+                        <div class="campo-form">
+                            <label>Descripción / Estrategia:</label>
+                            <textarea rows="3">Mazo centrado en control de mesa. Bajar coste a los personajes rivales y usar a Rob Lucci para eliminarlos.</textarea>
+                        </div>
+
+                        <div class="estadisticas-builder">
+                            <span class="stat-badge">Cartas: 5 / 50</span>
+                            <span class="stat-badge color-azul">Color: Azul</span>
+                            <span class="stat-badge color-negro">Color: Negro</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="builder-cartas-seccion">
+                    
+                    <div class="cabecera-cartas">
+                        <h3>CARTAS AÑADIDAS</h3>
+                        <button class="btn-buscar-cartas">+ Buscar Cartas</button>
+                    </div>
+
+                    <div class="deck-grid">
+                        
+                        <div class="carta-wrapper">
+                            <img src="../img/op01-120.jpg" alt="Shanks" class="carta-pequena">
+                            <button class="btn-quitar">x</button>
+                        </div>
+                        <div class="carta-wrapper">
+                            <img src="../img/op01-025.jpg" alt="Zoro" class="carta-pequena">
+                            <button class="btn-quitar">x</button>
+                        </div>
+                        <div class="carta-wrapper">
+                            <img src="../img/op05-119.jpg" alt="Luffy" class="carta-pequena">
+                            <button class="btn-quitar">x</button>
+                        </div>
+                        <div class="carta-wrapper">
+                            <img src="../img/op01-047.jpg" alt="Law" class="carta-pequena">
+                            <button class="btn-quitar">x</button>
+                        </div>
+                        <div class="carta-wrapper">
+                            <img src="../img/op01-016.jpg" alt="Nami" class="carta-pequena">
+                            <button class="btn-quitar">x</button>
+                        </div>
+
+                        <div class="slot-vacio"></div>
+                        <div class="slot-vacio"></div>
+                        <div class="slot-vacio"></div>
+                        <div class="slot-vacio"></div>
+                        <div class="slot-vacio"></div>
+                        <div class="slot-vacio"></div>
+                        <div class="slot-vacio"></div>
+                        <div class="slot-vacio"></div>
+                        <div class="slot-vacio"></div>
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+    </div>
+
+</body>
+</html>
