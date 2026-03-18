@@ -30,15 +30,35 @@
 
             <button type="submit" class="btn-login">ENTRAR</button>
             
+           
             <div class="login-footer">
-                <a href="#">¿Olvidaste tu contraseña?</a>
-                <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
+                <a href="./changepasswd.html">¿Olvidaste tu contraseña?</a>
+                <p>¿No tienes cuenta? <a href="./register.html">Regístrate</a></p>
             </div>
+           
         </form>
 
         <a href="../index.html" class="btn-volver-inicio">
             <i class="fas fa-arrow-left"></i> Volver al inicio
         </a>
+    </div>
+    <div id="modal-recuperar" class="modal-overlay">
+    <div class="modal-content">
+        <a href="#" class="btn-cerrar">&times;</a>
+        
+        <header class="login-header">
+            <i class="fas fa-key" style="font-size: 40px; color: #333; margin-bottom: 10px;"></i>
+            <h2>Recuperar Clave</h2>
+            <p>Introduce tu email para recibir instrucciones.</p>
+        </header>
+
+        <form class="login-form">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Correo electrónico" required>
+            </div>
+            <button type="submit" class="btn-login">ENVIAR ENLACE</button>
+        </form>
     </div>
 
 </body>

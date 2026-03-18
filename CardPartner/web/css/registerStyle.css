@@ -1,0 +1,46 @@
+/* =========================================
+   REGLAS CSS PARA QUE REGISTRO SE ADAPTE
+========================================= */
+
+/* ... (Todo lo que ya tienes de .body-login y .contenedor-login está bien) ... */
+
+/* Asegúrate de que los inputs tengan el padding correcto para los iconos */
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 50px; /* Más padding a la izquierda para el icono */
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-size: 16px;
+    background: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Iconos de FontAwesome centrados y visibles */
+.input-group i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333; /* Iconos en negro para que resalten */
+    font-size: 18px;
+    z-index: 10;
+}
+
+/* El texto de "Ya tienes cuenta" */
+.login-footer p {
+    color: #666;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.login-footer a {
+    color: #333;
+    text-decoration: underline; /* Subrayado para que parezca un link */
+    font-weight: 600;
+}
+
+.login-footer a:hover {
+    color: #000;
+    text-decoration: none; /* Quitamos el subrayado al pasar el ratón */
+}
