@@ -19,6 +19,7 @@ body {
     background-position: center center; 
     background-repeat: no-repeat; 
     background-attachment: fixed; 
+    background-image: url('../img/fondo.jpg'); 
 }
 
 /* =========================================
