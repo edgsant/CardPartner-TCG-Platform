@@ -2,99 +2,107 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <title>Card Partner - Inicio</title>
-    <link rel="stylesheet" href="./css/indexStyle.css?v=2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardPartner</title>
+    
+    <link rel="stylesheet" href="css/indexStyle.css?v=10">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="fondo-rosa">
-        
         <div class="contenedor-principal">
-            
+
             <header class="cabecera">
+                
                 <a href="index.html" class="logo">
-                    <img src="img/logo.png" alt="Card Partner">
+                    <img src="img/logo.png" alt="Logo de la Empresa">
                 </a>
-                <nav class="menu">
-                    <a href="Views/tcg.html">
-                        <button type="button">TCG</button>
-                    </a>
-                    <a href="Views/social.html">
-                        <button type="button">SOCIAL</button>
-                    </a>
-                    <a href="Views/decks.html">
-                        <button type="button">DECKS</button>
-                    </a>
-                    <a href="Views/cards.html">
-                        <button type="button">CARDS</button>
-                    </a>
-                </nav>
+
+                <div class="fila-de-botones">
+                    
+                    <div class="mi-desplegable">
+                        
+                        <a href="Views/tcg.html" style="text-decoration: none;">
+                            <button class="mi-boton">TCGS</button>
+                        </a>
+                    </div>
+
+                    <div class="mi-desplegable">
+                        <button class="mi-boton">SOCIAL ▾</button>
+                        <div class="mi-submenu">
+                            <a href="#">NEWS</a>
+                            <a href="#">TOURNAMENTS</a>
+                            <a href="#">GUIDES</a>
+                        </div>
+                    </div>
+
+                    <div class="mi-desplegable">
+                        
+                        <a href="Views/decks.html" style="text-decoration: none;">
+                            <button class="mi-boton">DECKS</button>
+                        </a>
+                    </div>
+
+                    <a href="Views/cards.html" class="mi-boton">CARDS</a>
+                    
+                </div>
+
                 <div class="login">
-                    <a href="Views/login.html">
-                        <button type="button">
-                            SIGN IN<br>LOGIN
-                        </button>
+                    <a href="Views/login.html" style="text-decoration: none;">
+                        <button>SIGN IN<br>LOGIN</button>
                     </a>
                 </div>
+
             </header>
 
-            <main class="contenido">
-           
-                <section class="noticias"> 
-                    <button class="flecha">&larr;</button>
-                    <div class="texto-noticias">
-                        <a href="https://optcgsim.com/" target="_blank" class="promo-link">
-                            <img src="img/Simulador.jpg" alt="Noticia promocional">
-                        </a>
-                    </div>
-                    <button class="flecha">&rarr;</button>
-                </section>
-
-                <div class="inferior">
-                    
-                  <section class="guias">
-                        <a href="https://www.youtube.com/..." target="_blank" class="enlace-guia">
-                            <h2>GUÍAS</h2>
-
-                            <div class="contenedor-carrusel-guia">
-                                <span class="flecha-guia">&larr;</span>
-                                <img src="img/maxresdefault.jpg" alt="Guía Nami">
-                                <span class="flecha-guia">&rarr;</span>
-                            </div>
-
-                        </a>
-                    </section>
-
+            <div class="contenido">
+                
+                <div class="noticias">
+                    <button class="flecha">←</button>
+                    <a href="https://optcgsim.com/" class="promo-link">
+                        <img src="img/Simulador.jpg" alt="Banner Principal">
+                    </a>
+                    <button class="flecha">→</button>
                 </div>
-                <div class="starters">
-                     <section class="mazos-iniciales">
-                      <div class="titulo-mazos">
-                        Mazos iniciales que te recomendamos
+
+                <div class="columnas-inferiores">
+                    
+                    <div class="guias">
+                        <a href="https://www.youtube.com/watch?v=TeEwfKKWmOY" class="enlace-guia">
+                            <h2>GUÍAS</h2>
+                            <div class="contenedor-carrusel-guia">
+                                <span class="flecha-guia">←</span>
+                                <img src="img/tutorial.jpg" alt="Imagen Guía">
+                                <span class="flecha-guia">→</span>
+                            </div>
+                        </a>
                     </div>
+
+                    <div class="mazos">
+                        <h2 class="titulo-mazos">Mazos iniciales que te recomendamos</h2>
                         <div class="contenido-mazos">
-                            
-                            <a href="https://disfrutalo-tcg.com/es/one-piece-mazos/1321-st-27-starter-deck-marshall-d-teach-black.html" target="_blank" class="item-mazo">
-                                <img src="img/st20.jpg" alt="ST-20 Barbanegra">
+                            <a href="#" class="item-mazo">
+                                <img src="img/st20.jpg" alt="ST-20 Marshall D. Teach">
                                 <span>ST-20 Marshall D. Teach</span>
                             </a>
 
-                            <a href="https://disfrutalo-tcg.com/es/one-piece/358-caja-de-sobres-de-alas-del-capit%C3%A1n.html" target="_blank" class="item-mazo">
-                                <img src="img/st11.jpg" alt="ST-11 Uta"> 
+                            <a href="#" class="item-mazo">
+                                <img src="img/st11.jpg" alt="ST-11 UTA">
                                 <span>ST-11 UTA</span>
                             </a>
 
-                            <a href="https://disfrutalo-tcg.com/es/one-piece/354-caja-de-sobres-de-alas-del-capit%C3%A1n.html" target="_blank" class="item-mazo">
+                            <a href="#" class="item-mazo">
                                 <img src="img/st08.jpg" alt="ST-08 Luffy">
-                                <span>ST-08 Luffy/<span>
+                                <span>ST-08 Luffy/</span>
                             </a>
+                            
                         </div>
-                         
-                    </section>
+                    </div>
+
                 </div>
-            </main>
+
+            </div>
 
         </div>
     </div>
