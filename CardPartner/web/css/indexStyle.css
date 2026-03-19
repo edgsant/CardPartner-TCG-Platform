@@ -147,6 +147,16 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     z-index: 1000;
 }
+/* EL PUENTE INVISIBLE PARA EL HOVER */
+.mi-submenu::before {
+    content: "";
+    position: absolute;
+    top: -15px; /* Sube un poco más allá del margin para cubrir el hueco */
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: transparent; /* Mantiene la separación visual */
+}
 
 /* MOSTRAR EL SUBMENÚ EN PARALELO AL PASAR EL RATÓN */
 .mi-desplegable:hover .mi-submenu {

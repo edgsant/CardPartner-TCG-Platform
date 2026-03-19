@@ -6,21 +6,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <title>Card Partner - Detalle Carta</title>
-    <link rel="stylesheet" href="../css/cardViewStyle.css?v=2">
+    <link rel="stylesheet" href="../css/cardViewStyle.css?v=3">
 </head>
 <body>
     <div class="fondo-rosa">
         <div class="contenedor-principal">
             
             <header class="cabecera">
-                <a href="../index.html" class="logo"><img src="../img/logo.png" alt="Card Partner"></a>
-                <nav class="menu">
-                    <a href="tcg.html"><button type="button">TCG</button></a>
-                    <a href="social.html"><button type="button">SOCIAL</button></a>
-                    <a href="decks.html"><button type="button">DECKS</button></a>
-                    <a href="cards.html"><button type="button">CARDS</button></a>
-                </nav>
-                <div class="login"><a href="login.html" style="text-decoration: none;"><button type="button">SIGN IN<br>LOGIN</button></a></div>
+                
+                <a href="../index.html" class="logo">
+                    <img src="../img/logo.png" alt="Logo de la Empresa">
+                </a>
+
+                <div class="fila-de-botones">
+                    
+                    <div class="mi-desplegable">
+                        <a href="tcg.html" style="text-decoration: none;">
+                            <button class="mi-boton">TCGS</button>
+                        </a>
+                    </div>
+
+                    <div class="mi-desplegable">
+                        <button class="mi-boton">SOCIAL ▾</button>
+                        <div class="mi-submenu">
+                            <a href="news.html">NEWS</a>
+                            <a href="tournaments.html">TOURNAMENTS</a>
+                            <a href="guides.html">GUIDES</a>
+                        </div>
+                    </div>
+
+                    <div class="mi-desplegable">
+                        <a href="#" style="text-decoration: none;">
+                            <button class="mi-boton">DECKS ▾</button>
+                        </a>
+                        <div class="mi-submenu">
+                            <a href="community-deck.html">Community decks</a>
+                            <a href="meta-decks.html">META Decks</a>
+                            <a href="deck-builder.html">Creador de mazos</a>
+                        </div>
+                    </div>
+
+                    <a href="cards.html" class="mi-boton">CARDS</a>
+                    
+                </div>
+
+                <div class="login">
+                    <a href="login.html" style="text-decoration: none;">
+                        <button>SIGN IN<br>LOGIN</button>
+                    </a>
+                </div>
+
             </header>
 
             <main class="contenido-detalle">
