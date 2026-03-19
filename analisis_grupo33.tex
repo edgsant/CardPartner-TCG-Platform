@@ -175,7 +175,7 @@
 	Las entidades principales son:
 	\begin{itemize}
 	    \item \textbf{Usuario:} Clase base de la que heredan \textit{Jugador} y \textit{Administrador}. Contiene la información de autenticación y perfil.
-	    \item \textbf{Carta:} Representa la unidad fundamental del juego. Utiliza enumeraciones estrictas para el \textit{Tipo} (Líder, Personaje, Evento, Escenario) y \textit{Color}.
+	    \item \textbf{Carta:} Representa la unidad fundamental del juego. Utiliza enumeraciones estrictas para el \textit{Tipo} (Líder, Personaje, Evento, Escenario) y \textit{Color} según las reglas del juego.
 	    \item \textbf{Mazo:} Colección de cartas creada por un jugador. Está estrictamente vinculada a una carta \textit{Líder} (relación 1 a muchos) e incluye múltiples cartas en distintas cantidades mediante la clase asociación \textit{Contiene}.
 	    \item \textbf{Torneo y Artículos:} Entidades para la gestión de la comunidad, torneos y noticias del juego.
 	\end{itemize}
@@ -183,25 +183,38 @@
 	\begin{figure}[H]
 		\centering
 		% --- DESCOMENTAR LA SIGUIENTE LÍNEA Y PONER LA RUTA DE VUESTRA IMAGEN ---
-		% \includegraphics[width=0.9\textwidth]{ruta/al/diagrama_dominio.png}
-		\caption{Diagrama UML del Modelo de Dominio de Card Partner.}
+		\includegraphics[width=0.9\textwidth]{Recursos/ModeloDominio_Grupo33.png}
+		\caption{Diagrama UML del Modelo de Dominio de Card Partner}
 		\label{fig:modelo_dominio}
 	\end{figure}
 	
 	
+	\newpage
 	\section{Diseño del mapa del sitio web}
 	El mapa del sitio web define la jerarquía de navegación y la reutilización de vistas y centralización de las herramientas. La estructura está diseñada para facilitar el acceso rápido a las diferentes herramientas de Card Partner a través de su menú de navegación en la barra superior de la página, disponible en cualquier momento.\\
 	
-	El mapa está estructurado en 3 niveles y diferentes subsecciones.\\
-	En el nivel 0 es la base de la estructura de la web, la \textbf{Página Principal} y es el punto de entrada de los usuarios. Desde ahí se muestra accesos rápidos a diferentes subsecciones de la web que pueden ser interesantes para usuarios nuevos o novedades para los usuarios experimentados.\\
-	
-	El nivel 1 es la base de la navegación dentro de la web. El \textbf{Menú principal} es la barra de navegación accesible en todo momento que divide la web en 4 secciones, correspondientes al nivel 2 que son las herramientas para el usuario:
+	El mapa está estructurado en 4 niveles de profundidad para facilitar una entrada sencilla y estructurada a las herramientas:.\\
 	\begin{itemize}
-		\item \textbf{SOCIAL:} Este apartado se divide en 3 subsecciones, el \textbf{Listado de Noticias}, \textbf{Listado de Torneos} y \textbf{Listado de Guías}. Funcionan de manera similar, mostrando en diferente formato los contenidos publicados, permitiendo acceder a ellos lo que les dirigirá a un visualizador con más información específica, siendo respectivamente el \textbf{Visualizador de Noticia}, el \textbf{Visualizador de Torneo} y el \textbf{Visualizador de Guia}
-		\item \textbf{CARTAS:} Este apartado llevará directamente al \textbf{Listado de cartas}, página donde se mostrarán las cartas del TCG y se podrá acceder a cada una de ellas, dirigiendo al \textbf{Visualizador de carta} que mostrará más información en detalle sobre la carta seleccionada.
-		\item \textbf{MAZOS:}
-		\item \textbf{USUARIO: }
+		\item \textbf{Nivel 0: Punto de entrada}\\
+			El nivel 0 es la base de la estructura de la web, la \textbf{Página Principal} y es el punto de entrada de los usuarios. Desde ahí se muestra accesos rápidos a diferentes subsecciones de la web que pueden ser interesantes para usuarios nuevos o novedades para los usuarios experimentados.\\
+		\item \textbf{Nivel 1: Navegación global}\\
+			El nivel 1 es la base de la navegación dentro de la web. El \textbf{Menú principal} es la barra de navegación accesible en todo momento que divide la web en 4 grandes secciones, correspondientes al nivel 2 que son las herramientas para el usuario\\
+		\item \textbf{Nivel 2: Herramientas y listados}\\
+			El nivel 2 son las diferentes herramientas y visualización de contenido que ofrece la web a los usuarios, que se han dividido en 4 secciones:
+			\begin{itemize}
+				\item \textbf{SOCIAL:} Este apartado se divide en 3 subsecciones, el \textbf{Listado de Noticias}, \textbf{Listado de Torneos} y \textbf{Listado de Guías}. Funcionan de manera similar, mostrando en diferente formato los contenidos publicados, permitiendo acceder a ellos lo que les dirigirá a un visualizador con más información específica, siendo respectivamente el \textbf{Visualizador de Noticia}, el \textbf{Visualizador de Torneo} y el \textbf{Visualizador de Guia}
+				\item \textbf{CARTAS:} Este apartado llevará directamente al \textbf{Listado de cartas}, página donde se mostrarán las cartas del TCG y se podrá acceder a cada una de ellas, dirigiendo al \textbf{Visualizador de carta} que mostrará más información en detalle sobre la carta seleccionada.
+				\item \textbf{MAZOS:} Este apartado agrupa las herramientas referidas a los mazos; el \textbf{Creador de mazos} que es la herramienta que permitirá al usuario crear su propio mazo eligiendo las cartas de la web, y el \textbf{Listado de Mazos}, que desde esta sección se podrá acceder a 2 contenidos distintos, \textbf{Listado de mazos comunidad} que son los mazos creados y publicados por los usuarios de la web y \textbf{Listado mazos META}, que son los mazos más recomendados en la actualidad por toda la comunidad de TCG por sus estadísticas.
+				\item \textbf{USUARIO:} El apartado usuario se divide en 2 secciones en función si el usuario ha iniciado sesión o no.\\
+				Si no ha iniciado sesión, se podrá crear un nuevo usuario o iniciar sesión con una cuenta registrada, lo que devolverá al usuario a la página en la que se encontrase con las nuevas funcionalidades posibles con sesión iniciada.\\
+				Con la sesión iniciada, se mostrarán las secciones de \textbf{Gestión de Mi Cuenta} y las secciones de \textbf{Gestión de Mis Mazos}, \textbf{Gestión de Mazos Publicados}, \textbf{Gestión de Mazos Guardados} y \textbf{Gestión de Mazos Vistos}, que redirigirá al \textbf{Listado de Mazos} con los diferentes contenidos respectivamente, y a su vez podrá redirigir al \textbf{Creador de mazos} para editar los mazos del usuario.
+			\end{itemize}
+			
+		\item \textbf{Nivel 3: Visualizadores y detalle}\\
+			El nivel 3 es el referido a los visualizadores mencionados que ofrecen el máximo detalle del contenido de la web, donde convergen los distintos listados de contenido del nivel 2.
 	\end{itemize}
+	
+	
 	
 	\begin{figure}[H]
 		\centering
