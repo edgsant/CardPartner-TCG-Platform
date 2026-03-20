@@ -1,0 +1,407 @@
+\documentclass[10pt]{article}
+
+% Idioma y codificación
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+% Márgenes
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% Gráficos
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{wrapfig}
+\usepackage{pdfpages}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{titling}
+
+% Listings para código
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{capt-of}
+\usepackage{titling}
+\lstdefinestyle{terminal}{
+	backgroundcolor=\color{gray!10},
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	frame=single,
+	columns=fullflexible,
+	morecomment=[l]{//}
+}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{comment}
+
+\usepackage{listings}
+\lstset{
+	inputencoding=utf8,
+	extendedchars=true,
+	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1
+}
+
+% Hipervínculos
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
+% Encabezados y pies de página
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+\usepackage{subcaption}
+
+% Formato de títulos
+\usepackage{titlesec}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\hspace{1em}\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\hspace{2em}\thesubsubsection}{1em}{}
+
+% Datos de la portada
+\title{
+	\textit{CARD PARTNER}\\
+	Una web para amantes de los \textit{TCGS}}
+
+
+\author{
+	\textbf{\small ÁLVAREZ FULCONIS, MARCOS PALATINO}\\
+	\textbf{\small LÓPEZ PRIMO, ÁLVARO}\\
+	\textbf{\small OTERO GARCÍA, SERGIO}\\
+	\textbf{\small SANTIESTEBAN MENDO, EDGAR}}
+    
+
+\date{Curso 25-26}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\begin{document}
+	
+	\begin{titlepage}
+		\centering
+		\includegraphics[scale=0.3]{./Recursos/UVA-3881270087.pdf}\\[0.5cm]
+		\rule{\linewidth}{0.2mm}\\[0.4cm]
+		{\huge\bfseries \thetitle\par}
+		\rule{\linewidth}{0.2mm}\\[1.5cm]
+		{\Large\bfseries Servicios y Sistemas Web}\\[0.3cm]
+		{\large\bfseries Laboratorio L2 \\ GRUPO 33}\\[1cm]
+		{\Large \theauthor}\\[1.5cm]
+		{\Large \thedate}
+	\end{titlepage}
+	
+	\pagenumbering{gobble}
+	
+	\renewcommand{\contentsname}{Índice}
+	\tableofcontents \newpage
+	
+	\pagenumbering{arabic} % reinicia la numeración en números arábigos
+	\setcounter{page}{1}   % empieza desde la página 1
+	
+	\section{Descripción del problema}
+	El mundo de los \textit{\textbf{TCG}} (\textit{Trading Card Games}) está en auge y mucha gente necesita una manera de poder iniciarse en este universo tan complejo.\\
+	Debido a su gran cantidad, variedad de  mazos, y \textit{META}s (\textit{Most Efficience Tacticts Avaliable}) los jugadores necesitan herramientas que les permitan consultar resultados de competiciones, mazos, compartir los que hayan creado y enterarse de qué cartas están \textit{banned} (prohibidas) en los torneos oficiales\ldots \\ 
+	
+	Por eso hemos decidido enfocarnos en las necesidades de los jugadores y crear una web donde se podrán realizar las siguientes tareas:
+	\begin{multicols}{2} 
+		\begin{itemize}
+			\item Crear cuentas de usuario
+			\begin{itemize} 
+				\item Cuenta con correo y contraseña
+				\item Cambio de contraseña
+				\item Subida de mazos creados
+				\item Listado de mazos creados
+				\item Lista de mazos guardados
+				\item Permitir comentarios y valoraciones en mazos
+			\end{itemize}
+			
+			\item Creador de mazos
+			\item Novedades del TCG
+			\item Listado de mazos
+			\begin{itemize}
+				\item Por Líder
+				\item Por expansión
+			\end{itemize}
+			
+			\item Estadísticas de los mazos
+			\item Vista para ver todas las cartas
+			\begin{itemize}
+				\item Por expansión
+				\item Por color
+			\end{itemize}
+			
+			\item Listado de torneos (ganadores/mazos)
+			\item Guía básica del juego
+			\begin{itemize}
+				\item Explicación de normas
+				\item Mazos para principiantes
+			\end{itemize}
+			
+			\item Selector de idioma
+			\item Consultar precios de cada carta
+			\item Usuario admin
+		\end{itemize}
+	\end{multicols} 
+	Con esto, conseguimos tener una web de referencia que permita, en primer lugar, iniciarse en cada uno de los \textit{TCG}, conocer su comunidad, los diferentes torneos existentes y las tiendas (locales u online) que vendan las cartas del \textit{TCG} elegido; en segundo lugar, facilitar la creación de mazos al gusto del usuario, permitir a otros miembros de la comunidad comentar posibles modificaciones a estos últimos y, a su vez, tener un lugar donde poder consultar todas las cartas, incluyendo su precio en caso de querer comprarlas.\\
+    
+	Debido a la gran variedad de \textit{TCGs} que existen, hemos decidido utilizar el del  \textbf{\textit{anime One Piece}} como referencia. \\
+    
+	En la actualidad, los usuarios emplean estas 3 webs para las tareas mencionadas anteriormente:
+	\begin{enumerate}
+		\item \href{https://www.cardmarket.com/es/OnePiece}{\textit{Card Market}}: El sitio por excelencia de la compraventa de cartas de múltiples \textit{TCGs}.
+		\item \href{https://deckbuilder.egmanevents.com/optcg/cards}{\textit{EggmanEvents}}: El lugar más popular para consultar mazos. El principal problema que tiene esta web es una carga muy lenta, con una experiencia que no está centrada en el usuario novato, sin la posibilidad de crear tus propios mazos, ya que emplea mazos utilizados en torneos.
+		\item \href{https://en.onepiece-cardgame.com/beginners/}{\textit{One Piece Card Game}}: La página oficial del juego de cartas. En ella se pueden encontrar manuales y guías rápidas sobre cómo introducirse al juego, así como una lista de todos los productos lanzados en este \textit{TCG}.
+		\item \href{https://onepiece.limitlesstcg.com}{\textit{One Piece Limitless}}: Esta cuarta web nos la hemos encontrado buscando información del juego. Principalmente incluye información de torneos con sus estadísticas, qué mazos están dominando en la comunidad, información sobre las cartas y un simulador del juego. También tiene herramientas de generación de mazos, aunque es un poco simple.
+	\end{enumerate}
+	Nuestra idea es unificar estas webs en una sóla: utilizar como referencia el esqueleto de \textit{EggmanEvents}, integrar un diseño más centrado en el usuario con la posibilidad de consultar el precio de cada una de las cartas y del total de un mazo y tener una sección enfocada en jugadores novatos donde se les de una explicación del juego y unas nociones básicas y recomendaciones de por dónde empezar.
+	
+	%• La descripción debe ser breve y concisa y limitarse a las metas de alto nivel del proyecto.
+	%• El problema se describirá en términos de tareas o funcionalidades de alto nivel que
+	%pueden realizar los usuarios y de los posibles contextos en que las tareas podrán tener
+	%lugar.
+	%• Se describirá qué aspectos de las tareas se mejorarán con la solución técnica propuesta.
+	%• Se describirá el contexto del problema de forma que mejore la comprensión y alcance del proyecto.
+	%• Se discutirán posibles soluciones existentes.
+	
+	
+	\section{Usuarios objetivo}
+	En esta parte, comentaremos para quiénes va destinada nuestra web. Comenzaremos dividiendo los usuarios en dos grupos diferentes en función del conocimiento que tengan del juego: usuarios \textbf{novatos} y usuarios \textbf{experimentados}.\\
+	
+	El primer subgrupo, \textbf{los novatos}, son personas que sienten curiosidad por el juego de cartas (porque se basa en una serie que les gusta o porque un conocido se lo ha recomendado) pero no tienen experiencia previa con este. Para ellos, se implementará una sección en la web donde podrán entender el funcionamiento básico del juego, así como una sección de recomendaciones sobre qué mazos son más sencillos para poder iniciarse mundo del juego.\\
+	
+	El segundo son \textbf{los jugadores experimentados}, los cuales ya conocen las mecánicas del \textit{TCG} que buscan nuevos mazos \textit{META} o probar combinaciones de cartas, permitiéndoles compartir dichas creaciones con el resto de jugadores y, a la par, dar consejos sobre mazos compartidos por otros miembros. Nuestro objetivo es ayudarles a mantenerse en la escena competitiva y fomentar la interacción entre usuarios dentro de la comunidad.
+	%• El grupo de usuarios a que se destine el sitio web debe ser sensato y no trivial.
+	%• Se describirá el grupo de usuarios con suficiente detalle como para poder diferenciarlo de otros.
+	%• Se describirán las necesidades y expectativas reconocidas en el grupo de usuarios objetivo.
+	\newpage
+	
+	\section{Borrador de solución}
+	%\begin{itemize}
+	%\item Se conjugará texto y bocetos (escritos a mano y escaneados si resulta más cómodo) para
+	%describir de forma general la solución propuesta.
+	%\item Se valorará claridad, generalidad y adecuación de la solución inicial propuesta.
+	%\end{itemize}
+	Para tener un visión más clara del diseño del \textit{frontend} de nuestra web hemos realizado dos fases de bocetaje:
+	\subsection{Primera versión del bocetaje}
+	En la primera fase hemos realizado unos esquemas a mano alzada sobre el aspecto y funcionalidades de la web (para consultar los bocetos con más detalle puesto que \underline{no} son imágenes vectorizadas diríjase a \href{https://uvaes-my.sharepoint.com/:b:/g/personal/alvaro_lopez_primo_estudiantes_uva_es/IQDlwgU7uvVIR4IvbixZFawhAXxjL6flgH43ePd4Q4bNtks?e=ghkMdm}{este enlace}).
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{Recursos/inicio.png}
+			\caption{Vista inicial de la página con la opción de \textit{login} y con una cuenta ya creada donde se verán unas breves noticias sobre el \textit{TCG}, un apartado de las normas básicas del juego y una sección de mazos recomendados para principiantes.}
+			\label{InicioPagina}
+		\end{subfigure}
+		\hfill 
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{Recursos/user.png}
+			\caption{Vista del usuario donde podrá ver los mazos que ha creado y una rueda de opción donde poder realizar diferentes funciones sobre su perfil (cambiar contraseña)}
+			\label{UserView}
+		\end{subfigure}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{Recursos/noticias.png}
+			\caption{Vista del apartado de noticias. En ella observamos novedades del \textit{TCG} así como una selección de cartas más caras y de accesorios típicos para dichos juegos así como una lista de los futuros torneos.}
+			\label{Noticias}
+		\end{subfigure}
+		\hfill 
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{Recursos/tournaments.png}
+			\caption{Vista de la pestaña de torneos. Incluye un ranking global de mazos y un porcentaje de victoria de cada líder.}
+			\label{fig:imagen_der}
+		\end{subfigure}
+	\end{figure}
+	\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.85\textwidth]{Recursos/decks.png}
+			\caption{Vista del apartado Deck. Se muestran los diferentes mazos creados por la comunidad, con la opción de seleccionar sobre ellos y poder consultar todas las cartas. Además se incluye una opción a las personas con una cuenta en la web de comentar en los mazos}
+	\end{figure}
+	
+	
+	\subsection{Segunda versión del bocetaje}
+	Una vez que el grupo ha dado el visto bueno, decidimos emplear la herramienta draw.io para realizar  bocetos más limpios y organizados (para consultar los bocetos con más detalle, diríjase a \href{https://drive.google.com/file/d/1g8FwPydQRjYX_IET-vt37nWVM2JCpji7/view}{este enlace}). 
+	
+	Para la implementación de todas las funcionalidades explicadas anteriormente, hemos optado por organizarlas en diferentes apartados:
+	\begin{itemize}
+		\item \textbf{Comunidad:}
+		\begin{itemize}
+			\item Guías
+			\item Noticias
+			\item Torneos
+		\end{itemize}
+		
+		\item \textbf{Mazos:}
+		\begin{itemize}
+			\item Meta y estadísticas
+			\item Mazos de la comunidad (incluye filtros de búsqueda, valoraciones y comentarios)
+			\item Creador de mazos
+		\end{itemize}
+		
+		\item \textbf{Cartas:}
+		\begin{itemize}
+			\item Listado de cartas (incluye filtros de búsqueda, precio, estadísticas)
+		\end{itemize}
+		
+		\item \textbf{Usuario:}
+		\begin{itemize}
+			\item Iniciar sesión/Crear cuenta
+			\item Información personal de la cuenta (correo, contraseña, etc.)
+			\item Mazos creados
+			\item Mazos publicados
+			\item Mazos guardados
+			\item Interacciones del usuario (comentarios/valoraciones)
+		\end{itemize}
+	\end{itemize} 
+	%\newpage
+    A continuación añadimos imágenes que incluyen las diferentes vistas planteadas:
+    \begin{landscape}
+    	\thispagestyle{empty} 
+    	\begin{figure}[p]
+    		\centering
+    		% El truco está en esta línea:
+    		\makebox[\linewidth][c]{%
+    			\includegraphics[width=1.18\linewidth, height=1.18\textheight, keepaspectratio]{Recursos/Bocetos2v2.png}
+    		}
+    		\caption{Vista completa de los bocetos de Draw.io}
+    	\end{figure}
+    \end{landscape}
+    
+	%\begin{figure}[H]
+	%	\centering
+	%	\includegraphics[width=0.85\textwidth]{Recursos/Bocetos2.png}
+	%	\caption{\textbf{Boceto limpio con todas las vistas}}
+	%\end{figure}
+	
+	\subsubsection{Página de inicio}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_Inicio.png}
+		\caption{\textbf{Boceto de la página de Inicio}}
+	\end{figure}
+	Observamos que la página inicial se compone de dos elementos clave, la barra de navegación (explicada en la siguiente captura) y los contenidos más relevantes. Hablando de los contenidos relevantes, hemos planteado que se incluya un subapartado de novedades (nuevas expansiones disponibles, información destacada sobre torneos, noticias relacionadas con el \textit{TCG}, etc.), un subapartado con las guías para principiantes y un subapartado con los mejores mazos con los que comenzar a jugar.
+	
+	\subsubsection{Barra de navegación de la página}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_Navegacion.png}
+		\caption{\textbf{Boceto de la barra de navegación}}
+	\end{figure}
+	En esta imagen observamos con más detalle la barra de navegación. Esta ayudará al usuario a navegar a través de nuestros diferentes apartados. Cada elemento abrirá diferentes submenús desplegables con las diferentes opciones disponibles. Dividiremos la barra en dos secciones: sección del juego y sección del usuario. \\
+    
+    Dentro de la sección del juego observamos, de izquierda a derecha, las siguientes categorías: \textit{TCG}, \textit{community} (comunidad), \textit{Decks} (mazos) y \textit{Cards} (cartas). La categoría \textit{TCG} hace referencia a los principales juegos que existen (como hemos mencionado anteriormente nos enfocaremos en el juego basado en \textit{One Piece}). En comunidad podemos acceder a las vistas relacionadas con la interacción del usuario en la comunidad: noticias, torneos y guías de usuario. La siguiente categoría, \textit{Decks}, incluye todo aquello relacionado con mazos: Mazos empleados en el \textit{META}, mazos creados por la comunidad y el creador de mazos del usuario. Por último nos encontramos con la categoría \textit{Cards}, la cual nos lleva a la lista completa de cartas existentes. \\
+
+    Ahora hablaremos de la sección del usuario. Inicialmente vemos dos opciones, la opción de \textit{Crear cuenta}, pensada para miembros sin una cuenta existente en nuestra web; y la opción de \textit{Iniciar sesión}, enfocada a que los miembros puedan entrar a sus respectivas cuentas. Una vez iniciada la sesión cambiarán los botones a uno que despliegue un menú con las diferentes opciones: Mi cuenta, mazos creados, mazos publicados, mazos guardados e interacciones.
+    
+    \subsubsection{Comunidad}
+    
+    \begin{figure}[H]
+    	\centering
+    	\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_Social.png}
+    	\caption{\textbf{Boceto de las pestañas de la comunidad}}
+    \end{figure}
+    
+    Nos adentramos ahora en la sección de comunidad. Esta estará dividida en tres opciones diferentes: torneos, noticias y guías. \\
+
+    En el apartado de torneos tendremos una lista con los diferentes torneos que hay (torneos pasados o futuros). Al seleccionar un torneo entramos en el visualizador del torneo, el cual se compone de dos listas, la lista de \textit{Ranking}, que muestra las posiciones de los diferentes mazos participantes en orden de su desempeño en la competición; y el apartado de \textit{Win-rate}, donde nos informará con una lista sobre el porcentaje de victorias que ha tenido cada carta líder participante. \\
+
+    Pasamos ahora a las noticias. En esta vista nos encontramos con una lista con las noticias relacionadas con el mundo del \textit{TCG}. En la parte superior veremos las noticias con mayor relevancia, y en la parte inferior el listado con todas las noticias ordenadas por fecha más reciente. Cada noticia incluye un títular, una imagen y una pequeña sinopsis. Al hacer click en ella veremos la noticia elegida en su totalidad. \\
+
+    Muy similar al apartado anterior, el de guias se compone de una lista con todas las guias publicadas hasta el momento. Cada noticia tiene un nombre, una breve explicación y una imagen relacionada con ella. Al seleccionar una guia se nos abrirá un visualizador completo de la guia, con sus instrucciones, imagenes explicativas e incluso vídeos informativos.
+    
+  	
+  	\subsubsection{Mazos}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_Mazos.png}
+		\caption{\textbf{Boceto de la pestaña de mazos}}
+	\end{figure}
+	Esta pestaña incluye una lista con los elementos visuales de los diferentes mazos, tanto mazos \textit{META} introducidos por los administradores como los creados por la comunidad y los creados por el propio usuario, añadiendo también la opción de filtrar la búsqueda por elementos clave o buscar por nombre. Seleccionando uno se nos abre el visualizador del mazo. Aquí podemos obtener información en detalle del mismo: el nombre del mazo, la carta \textit{Líder} del mazo, una descripción de este y la lista de cartas que lo compone.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_CreadorMazos.png}
+		\caption{\textbf{Boceto de la pestaña del creador mazos}}
+	\end{figure}
+	Ahora observamos el apartado del creador de mazos. La vista es similar a la visualización de mazos de la comunidad, con la diferencia de que inicialmente no habrá cartas ni información de ningún tipo. \\
+    
+    Al seleccionar el apartado de la carta \textit{Líder} se nos abrirá un selector de cartas muy parecido a la lista entera de cartas (explicado en el siguiente apartado). Se pedirá al usuario que seleccione el color en el que esté basado el mazo que quiere crear (dentro del mundo del juego de One Piece hay cartas con diferentes colores, cada color tiene una mécanica diferente) y a raíz de eso saldrá la lista de líderes filtrada por el color seleccionado. \\
+    
+    De la misma forma se abrirá una lista de cartas normales al seleccionar el apartado de cartas normales, filtradas ya con el color del líder.
+	
+	\subsubsection{Cartas}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\textwidth]{Recursos/Boceto2_Cartas.png}
+		\caption{\textbf{Boceto de la pestaña de cartas}}
+	\end{figure}
+	Similar a la pestaña de mazos, la pestaña de cartas nos incluye la lista de todas las cartas existentes. Encontramos filtros de búsqueda (color, coste, daño, mecánica, etc.) que nos ayudan a encontrar las cartas que más convengan al usuario. Si se selecciona una carta podemos visualizar información en detalle: El nombre de la carta, una imagen de ella, el texto de información que está incluido en la carta, el precio en la web de compraventa y links a la página oficial del juego relacionados con ella.
+	
+	\newpage
+	\section{Reparto de carga de trabajo}
+	Todos los integrantes hemos participado en todas las fases del trabajo y repartido el trabajo de forma equitativa, aunque encargándonos cada uno especialmente de alguna parte.\\
+	
+	\begin{table}[h]
+		\centering
+		\caption{Distribución de Responsabilidades por Miembro}
+		\begin{tabularx}{\textwidth}{llX} % La 'X' hace que la columna crezca y ajuste el texto
+			\toprule
+			\textbf{Nombre} & \textbf{Porcentaje} & \textbf{Responsabilidad principal} \\
+			\midrule
+			ÁLVAREZ FULCONIS, MARCOS PALATINO      	& 25\%                & Diseño de los bocetos digitales \\
+			LOPEZ PRIMO, ÁLVARO      				& 25\%                & Definición del problema y soluciones y bocetaje a mano\\
+			OTERO GARCÍA, SERGIO     				& 25\%                & Redacción del documento y revisión\\
+			SANTIESTEBAN MENDO, EDGAR    			& 25\%                & Organización y redacción del documento\\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+	
+	
+	\section{Declaración de Uso de Inteligencia Artificial}
+	Para esta primera entrega más creativa, se ha usado la IA \href{https://gemini.google.com/share/938828584764}{Gemini} como herramienta únicamente para mejorar la presentación del documento PDF. \\
+	Principalmente se ha usado para dudas y mejoras del archivo LaTeX y para realizar una revisión rápida de ortografía y estructura del documento.\\
+	
+	\textbf{Ejemplos de prompts realizados:}
+	\begin{itemize}
+		\item 'En un documento LaTex necesito poner una sola página en horizontal para mostrar una imagen que ocupe la página entera'
+		\item 'El documento adjunto se trata de nuestra propuesta para la práctica. Propón posibles cambios o mejoras en la estructura o aspectos que necesiten ampliarse'
+		\item 'El documento adjunto se trata de nuestra propuesta para la práctica. Revisa el documento y di todos los errores o faltas de ortografía que se encuentren'
+		\item 'Crea una tabla en latex de 3 columnas y 4 filas.
+		Las columnas indican los apartados Nombre, Porcentaje, Responsabilidad principal'
+	\end{itemize}
+	
+	
+	
+	
+	
+	
+	
+	
+	%\begin{itemize}
+	%   \item Herramientas utilizadas: hay que especificar qué herramientas de IA se han utilizado.
+	%  \item Propósito del uso: explicar cómo se ha utilizado cada herramienta.
+	% \item Alcance del uso: indicar en qué partes específicas del trabajo se ha recibido asistencia de una herramienta de IA.
+	%\item Prompts utilizados: incluir los prompts, preguntas o instrucciones exactas que se han
+	%introducido en la herramienta de IA.
+	%\end{itemize}
+	
+\end{document}
