@@ -30,6 +30,8 @@
 *.synctex(auto)
 *.toc
 *.vrb
+*.bak_*
+*.lck
 
 # =========================
 # Archivos específicos de TeXstudio
