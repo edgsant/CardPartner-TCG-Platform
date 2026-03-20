@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <title>Card Partner - Creador de Mazos</title>
-    <link rel="stylesheet" href="../css/deckBuilderStyle.css?v=3">
+    <link rel="stylesheet" href="../css/deckBuilderStyle.css?v=4">
 </head>
 <body>
 
@@ -15,19 +15,15 @@
         <div class="contenedor-principal">
             
             <header class="cabecera">
-                
                 <a href="../index.html" class="logo">
                     <img src="../img/logo.png" alt="Logo de la Empresa">
                 </a>
-
                 <div class="fila-de-botones">
-                    
                     <div class="mi-desplegable">
                         <a href="tcg.html" style="text-decoration: none;">
                             <button class="mi-boton">TCGS</button>
                         </a>
                     </div>
-
                     <div class="mi-desplegable">
                         <button class="mi-boton">SOCIAL ▾</button>
                         <div class="mi-submenu">
@@ -36,7 +32,6 @@
                             <a href="guides.html">GUIDES</a>
                         </div>
                     </div>
-
                     <div class="mi-desplegable">
                         <a href="#" style="text-decoration: none;">
                             <button class="mi-boton">DECKS ▾</button>
@@ -47,17 +42,13 @@
                             <a href="deck-builder.html">Creador de mazos</a>
                         </div>
                     </div>
-
                     <a href="cards.html" class="mi-boton">CARDS</a>
-                    
                 </div>
-
                 <div class="login">
                     <a href="login.html" style="text-decoration: none;">
                         <button>SIGN IN<br>LOGIN</button>
                     </a>
                 </div>
-
             </header>
 
             <main class="contenido-builder">
@@ -74,22 +65,19 @@
                         <div class="imagen-contenedor">
                             <img src="../img/lider-sakazuki.jpg" alt="Líder Sakazuki">
                         </div>
-                        <button class="btn-cambiar">Cambiar Líder</button>
+                        <a href="#modalLideres" class="btn-cambiar" style="text-decoration: none; text-align: center; display: inline-block;">Cambiar Líder</a>
                     </div>
 
                     <div class="deck-detalles">
                         <h3>INFORMACIÓN DEL MAZO</h3>
-                        
                         <div class="campo-form">
                             <label>Nombre del Mazo:</label>
                             <input type="text" value="Control Sakazuki V2">
                         </div>
-                        
                         <div class="campo-form">
                             <label>Descripción / Estrategia:</label>
                             <textarea rows="3">Mazo centrado en control de mesa. Bajar coste a los personajes rivales y usar a Rob Lucci para eliminarlos.</textarea>
                         </div>
-
                         <div class="estadisticas-builder">
                             <span class="stat-badge">Cartas: 5 / 50</span>
                             <span class="stat-badge color-azul">Color: Azul</span>
@@ -103,30 +91,29 @@
                     
                     <div class="cabecera-cartas">
                         <h3>CARTAS AÑADIDAS</h3>
-                        <button class="btn-buscar-cartas">+ Buscar Cartas</button>
+                        <a href="#modalCartas" class="btn-buscar-cartas" style="text-decoration: none; text-align: center; display: inline-block;">+ Buscar Cartas</a>
                     </div>
 
                     <div class="deck-grid">
-                        
                         <div class="carta-wrapper">
                             <img src="../img/op01-120.jpg" alt="Shanks" class="carta-pequena">
-                            <button class="btn-quitar">x</button>
+                            <a href="#" class="btn-quitar" style="text-decoration: none;">x</a>
                         </div>
                         <div class="carta-wrapper">
                             <img src="../img/op01-025.jpg" alt="Zoro" class="carta-pequena">
-                            <button class="btn-quitar">x</button>
+                            <a href="#" class="btn-quitar" style="text-decoration: none;">x</a>
                         </div>
                         <div class="carta-wrapper">
                             <img src="../img/op05-119.jpg" alt="Luffy" class="carta-pequena">
-                            <button class="btn-quitar">x</button>
+                            <a href="#" class="btn-quitar" style="text-decoration: none;">x</a>
                         </div>
                         <div class="carta-wrapper">
                             <img src="../img/op01-047.jpg" alt="Law" class="carta-pequena">
-                            <button class="btn-quitar">x</button>
+                            <a href="#" class="btn-quitar" style="text-decoration: none;">x</a>
                         </div>
                         <div class="carta-wrapper">
                             <img src="../img/op01-016.jpg" alt="Nami" class="carta-pequena">
-                            <button class="btn-quitar">x</button>
+                            <a href="#" class="btn-quitar" style="text-decoration: none;">x</a>
                         </div>
 
                         <div class="slot-vacio"></div>
@@ -139,11 +126,37 @@
                         <div class="slot-vacio"></div>
                         <div class="slot-vacio"></div>
                     </div>
-
                 </div>
 
             </main>
 
+        </div>
+    </div>
+
+    <div id="modalLideres" class="modal-overlay">
+        <div class="modal-content">
+            <a href="#" class="btn-cerrar">&times;</a>
+            <h2 class="titulo-seccion" style="margin-bottom: 20px; font-size: 24px;">SELECCIONA TU LÍDER</h2>
+            <div class="grid-seleccion">
+                <a href="#"><img src="../img/lider-sakazuki.jpg" alt="Sakazuki" class="img-lider-opcion"></a>
+                <a href="#"><img src="../img/lider-zoro.jpg" alt="Zoro" class="img-lider-opcion"></a>
+                <a href="#"><img src="../img/lider-enel.jpg" alt="Enel" class="img-lider-opcion"></a>
+                <a href="#"><img src="../img/lider-katakuri.jpg" alt="Katakuri" class="img-lider-opcion"></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalCartas" class="modal-overlay">
+        <div class="modal-content">
+            <a href="#" class="btn-cerrar">&times;</a>
+            <h2 class="titulo-seccion" style="margin-bottom: 20px; font-size: 24px;">AÑADIR CARTA</h2>
+            <div class="grid-seleccion">
+                <a href="#"><img src="../img/op01-120.jpg" alt="Shanks" class="img-carta-opcion"></a>
+                <a href="#"><img src="../img/op01-025.jpg" alt="Zoro" class="img-carta-opcion"></a>
+                <a href="#"><img src="../img/op05-119.jpg" alt="Luffy" class="img-carta-opcion"></a>
+                <a href="#"><img src="../img/op01-047.jpg" alt="Law" class="img-carta-opcion"></a>
+                <a href="#"><img src="../img/op01-016.jpg" alt="Nami" class="img-carta-opcion"></a>
+            </div>
         </div>
     </div>
 
