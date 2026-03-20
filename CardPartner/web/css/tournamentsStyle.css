@@ -180,12 +180,101 @@ body {
 }
 
 /* =========================================
-   5. CONTENIDO PROPIO (Añadir estilos específicos aquí)
+   5. TOURNAMENT 
 ========================================= */
-.contenido-propio {
-    padding: 100px 40px;
-    text-align: center;
-    flex-grow: 1;
+
+/* Quitamos el centrado del contenido base */
+.tournaments {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+}
+.barra_torneos {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* NOTICIA PRINCIPAL */
+.torneo-principal {
+    display: flex;
+    gap: 30px;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.torneo-principal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.torneo-principal img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+.info-torneo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-torneo h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.info-torneo p {
+    color: #555;
+    font-size: 15px;
+}
+
+/* LISTA DE NOTICIAS */
+.lista-torneos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CADA NOTICIA */
+.torneo {
+    display: flex;
+    gap: 40px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.torneo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.torneo img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.torneo h4 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5px;
+}
+
+.torneo p {
+    font-size: 14px;
+    color: #666;
 }
 
 .titulo-seccion {

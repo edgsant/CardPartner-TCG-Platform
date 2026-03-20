@@ -180,7 +180,7 @@ body {
 }
 
 /* =========================================
-   5. GUIDES 
+   5. NEWS 
 ========================================= */
 
 /* Quitamos el centrado del contenido base */
@@ -191,14 +191,15 @@ body {
     gap: 30px;
     padding: 40px;
 }
-.barra_news {
+.barra_guides {
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
 }
 
 /* NOTICIA PRINCIPAL */
-.noticia-principal {
+.guia-principal {
     display: flex;
+    width: 100%; 
     gap: 30px;
     background-color: white;
     border-radius: 12px;
@@ -206,32 +207,23 @@ body {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
+
+    text-decoration: none; 
+    color: inherit;       
 }
 
-.noticia-principal:hover {
+.guia-principal:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.link-guia,
-.link-guia:visited,
-.link-guia:hover,
-.link-guia:active {
-    text-decoration: none;
-    color: inherit;
-}
-
-.link-guia * {
-    text-decoration: none;
-    color: inherit;
-}
-
-.noticia-principal img {
+.guia-principal img {
     width: 45%;
     height: 250px;
     object-fit: cover;
 }
 
+/* TEXTO (esto estaba mal colocado antes) */
 .info-principal {
     padding: 20px;
     display: flex;
@@ -251,14 +243,14 @@ body {
 }
 
 /* LISTA DE NOTICIAS */
-.lista-noticias {
+.lista-guias {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 /* CADA NOTICIA */
-.noticia {
+.guia {
     display: flex;
     gap: 40px;
     padding: 25px;
@@ -268,24 +260,24 @@ body {
     transition: all 0.3s ease;
 }
 
-.noticia:hover {
+.guia:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.noticia img {
+.guia img {
     width: 120px;
     height: 80px;
     object-fit: cover;
     border-radius: 8px;
 }
 
-.noticia h4 {
+.guia h4 {
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 5px;
 }
 
-.noticia p {
+.guia p {
     font-size: 14px;
     color: #666;
 }
@@ -303,17 +295,4 @@ body {
 .contenido-propio p {
     font-size: 18px;
     color: #666;
-}
-
-a.link-guia,
-a.link-guia:visited,
-a.link-guia:hover,
-a.link-guia:active {
-    text-decoration: none !important;
-    color: inherit !important;
-}
-
-a.link-guia * {
-    text-decoration: none !important;
-    color: inherit !important;
 }

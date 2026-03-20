@@ -5,18 +5,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <title>Card Partner - TCGs</title>
-    <link rel="stylesheet" href="../css/tcgStyle.css?v=1">
+    
+    <title>Card Partner - Community Decks</title>
+    <link rel="stylesheet" href="../css/communityDeckStyle.css?v=4">
 </head>
 <body>
+
     <div class="fondo-rosa">
         <div class="contenedor-principal">
             
             <header class="cabecera">
-                <a href="../index.html" class="logo"><img src="../img/logo.png" alt="Logo de la Empresa"></a>
+                <a href="../index.html" class="logo">
+                    <img src="../img/logo.png" alt="Logo de la Empresa">
+                </a>
                 <div class="fila-de-botones">
                     <div class="mi-desplegable">
-                        <a href="tcg.html" style="text-decoration: none;"><button class="mi-boton">TCGS</button></a>
+                        <a href="tcg.html" style="text-decoration: none;">
+                            <button class="mi-boton">TCGS</button>
+                        </a>
                     </div>
                     <div class="mi-desplegable">
                         <button class="mi-boton">SOCIAL ▾</button>
@@ -27,7 +33,9 @@
                         </div>
                     </div>
                     <div class="mi-desplegable">
-                        <a href="#" style="text-decoration: none;"><button class="mi-boton">DECKS ▾</button></a>
+                        <a href="#" style="text-decoration: none;">
+                            <button class="mi-boton">DECKS ▾</button>
+                        </a>
                         <div class="mi-submenu">
                             <a href="community-deck.html">Community decks</a>
                             <a href="meta-decks.html">META Decks</a>
@@ -36,15 +44,53 @@
                     </div>
                     <a href="cards.html" class="mi-boton">CARDS</a>
                 </div>
-                <div class="login"><a href="login.html" style="text-decoration: none;"><button>SIGN IN<br>LOGIN</button></a></div>
+                <div class="login">
+                    <a href="login.html" style="text-decoration: none;">
+                        <button>SIGN IN<br>LOGIN</button>
+                    </a>
+                </div>
             </header>
 
-            <main class="contenido-propio">
-                <h2 class="titulo-seccion">TCGS</h2>
-                <p>Página en construcción. Próximamente añadiremos el listado de juegos disponibles.</p>
+            <main class="contenido-mazos">
+                
+                <div class="barra-busqueda">
+                    <h2 class="titulo-seccion">TCGS</h2>
+                </div>
+
+                <section class="galeria-mazos">
+                    <a href="deck-view.html" class="mazo-item">
+                        <div class="mazo-imagen">
+                            <img src="../img/one-Piece-Logo.jpg" alt="Líder Zoro">
+                        </div>
+                        <div class="mazo-info">
+                            <h3>ONE PIECE</h3>
+                        </div>
+                    </a>
+                    
+                    <a href="deck-view.html" class="mazo-item">
+                        <div class="mazo-imagen">
+                            <img src="../img/magic-The-Gathering-logo.jpg" alt="Líder Zoro">
+                        </div>
+                        <div class="mazo-info">
+                            <h3>MAGIC THE GATHERING</h3>
+                        </div>
+                    </a>
+                    
+                    <a href="deck-view.html" class="mazo-item">
+                        <div class="mazo-imagen">
+                            <img src="../img/yu-Gi-Oh-logo.jpg" alt="Líder Zoro">
+                        </div>
+                        <div class="mazo-info">
+                            <h3>YU GI OH</h3>
+                        </div>
+                    </a>
+                    
+                </section>
+
             </main>
 
         </div>
     </div>
+
 </body>
 </html>
