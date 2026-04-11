@@ -1,0 +1,4715 @@
+[
+  {
+    "id": "OP01-001",
+    "code": "OP01-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-001.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-001.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[DON!! x1] [Your Turn] All of your Characters gain +1000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-001_p1",
+    "code": "OP01-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-001_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-001_p1.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[DON!! x1] [Your Turn] All of your Characters gain +1000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-002",
+    "code": "OP01-002",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-002.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-002.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red/Green",
+    "family": "Supernovas/Heart Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] ➁ (You may rest the specified number of DON!! cards in your cost area.): If you have 5 Characters, return 1 of your Characters to the owner's hand. Then, play up to 1 Character with a cost of 5 or less from your hand that is a different color than the returned Character.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-002_p1",
+    "code": "OP01-002",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-002_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-002_p1.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red/Green",
+    "family": "Supernovas/Heart Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] ➁ (You may rest the specified number of DON!! cards in your cost area.): If you have 5 Characters, return 1 of your Characters to the owner's hand. Then, play up to 1 Character with a cost of 5 or less from your hand that is a different color than the returned Character.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-003",
+    "code": "OP01-003",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-003.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-003.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red/Green",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[Activate: Main] [Once Per Turn] ➃ (You may rest the specified number of DON!! cards in your cost area.): Set up to 1 of your {Supernovas} or {Straw Hat Crew} type Character cards with a cost of 5 or less as active. It gains +1000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-003_p1",
+    "code": "OP01-003",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Monkey.D.Luffy ",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-003_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-003_p1.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red/Green",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[Activate: Main] [Once Per Turn] ➃ (You may rest the specified number of DON!! cards in your cost area.): Set up to 1 of your {Supernovas} or {Straw Hat Crew} type Character cards with a cost of 5 or less as active. It gains +1000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-004",
+    "code": "OP01-004",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Usopp",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-004.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-004.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 3000,
+    "counter": "2000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[DON!! x1] [Your Turn] [Once Per Turn] Draw 1 card when your opponent activates an Event.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-005",
+    "code": "OP01-005",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Uta",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-005.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-005.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "-",
+    "color": "Red",
+    "family": "FILM",
+    "ability": "[On Play] Add up to 1 red Character card other than [Uta] with a cost of 3 or less from your trash to your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-005_p1",
+    "code": "OP01-005",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Uta",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-005_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-005_p1.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "-",
+    "color": "Red",
+    "family": "FILM",
+    "ability": "[On Play] Add up to 1 red Character card other than [Uta] with a cost of 3 or less from your trash to your hand.",
+    "trigger": "",
+    "set": {
+      "name": "Premium Card Collection -FILM RED Edition-"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-006",
+    "code": "OP01-006",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Otama",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-006.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-006.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": null,
+    "counter": "2000",
+    "color": "Red",
+    "family": "Land of Wano",
+    "ability": "[On Play] Give up to 1 of your opponent's Characters −2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-007",
+    "code": "OP01-007",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Caribou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-007.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-007.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Caribou Pirates",
+    "ability": "[On K.O.] K.O. up to 1 of your opponent's Characters with 4000 power or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-008",
+    "code": "OP01-008",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Cavendish",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-008.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-008.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Beautiful Pirates",
+    "ability": "[On Play] You may add 1 card from your Life area to your hand: This Character gains [Rush] during this turn. (This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-008_p1",
+    "code": "OP01-008",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Cavendish",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-008_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-008_p1.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Beautiful Pirates",
+    "ability": "[On Play] You may add 1 card from your Life area to your hand: This Character gains [Rush] during this turn. (This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-009",
+    "code": "OP01-009",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Carrot",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-009.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-009.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Minks",
+    "ability": "[Trigger] Play this card.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-010",
+    "code": "OP01-010",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Komachiyo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-010.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-010.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Animal/Land of Wano",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-011",
+    "code": "OP01-011",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Gordon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-011.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-011.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 3000,
+    "counter": "2000",
+    "color": "Red",
+    "family": "FILM",
+    "ability": "[On Play] You may place 1 card from your hand at the bottom of your deck: Draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-012",
+    "code": "OP01-012",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Sai",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-012.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-012.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Happosui Army",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-013",
+    "code": "OP01-013",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-013.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-013.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "2000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[Activate: Main] [Once Per Turn] You may add 1 card from your Life area to your hand: This Character gains +2000 power during this turn. Then, give this Character up to 2 rested DON!! cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-013_p1",
+    "code": "OP01-013",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-013_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-013_p1.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "2000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[Activate: Main] [Once Per Turn] You may add 1 card from your Life area to your hand: This Character gains +2000 power during this turn. Then, give this Character up to 2 rested DON!! cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-014",
+    "code": "OP01-014",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-014.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-014.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Fish-Man/Straw Hat Crew",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[DON!! x1] [On Block] Play up to 1 red Character card with a cost of 2 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-014_p1",
+    "code": "OP01-014",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-014_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-014_p1.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Fish-Man/Straw Hat Crew",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[DON!! x1] [On Block] Play up to 1 red Character card with a cost of 2 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "Premium Card Collection -FILM RED Edition-"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-015",
+    "code": "OP01-015",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Tony Tony.Chopper",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-015.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-015.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Animal/Straw Hat Crew",
+    "ability": "[DON!! x1] [When Attacking] You may trash 1 card from your hand: Add up to 1 {Straw Hat Crew} type Character card other than [Tony Tony.Chopper] with a cost of 4 or less from your trash to your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-016",
+    "code": "OP01-016",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-016.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-016.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Straw Hat Crew} type card other than [Nami] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      },
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_06"
+      }
+    ]
+  },
+  {
+    "id": "OP01-016_p1",
+    "code": "OP01-016",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-016_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-016_p1.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Straw Hat Crew} type card other than [Nami] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      },
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_06"
+      }
+    ]
+  },
+  {
+    "id": "OP01-016_p3",
+    "code": "OP01-016",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-016_p3.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-016_p3.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Straw Hat Crew} type card other than [Nami] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-The Three Captains-[ST-10]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-016_p4",
+    "code": "OP01-016",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-016_p4.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-016_p4.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Straw Hat Crew} type card other than [Nami] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "OP-05"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-017",
+    "code": "OP01-017",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Nico Robin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-017.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-017.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[DON!! x1] [When Attacking] K.O. up to 1 of your opponent's Characters with 3000 power or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-017_p1",
+    "code": "OP01-017",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Nico Robin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-017_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-017_p1.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[DON!! x1] [When Attacking] K.O. up to 1 of your opponent's Characters with 3000 power or less.",
+    "trigger": "",
+    "set": {
+      "name": "Premium Card Collection -FILM RED Edition-"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-018",
+    "code": "OP01-018",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Hajrudin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-018.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-018.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Giant/New Giant Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-019",
+    "code": "OP01-019",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bartolomeo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-019.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-019.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Barto Club",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[DON!! x2] [Opponent's Turn] This Character gains +3000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-020",
+    "code": "OP01-020",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Hyogoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-020.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-020.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Land of Wano",
+    "ability": "[Activate: Main] You may rest this Character: Up to 1 of your Leader or Character cards gains +2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-021",
+    "code": "OP01-021",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Franky",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-021.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-021.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 4000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[DON!! x1] This Character can also attack your opponent's active Characters.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-021_p1",
+    "code": "OP01-021",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Franky",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-021_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-021_p1.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 4000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[DON!! x1] This Character can also attack your opponent's active Characters.",
+    "trigger": "",
+    "set": {
+      "name": "Premium Card Collection -FILM RED Edition-"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-022",
+    "code": "OP01-022",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Brook",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-022.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-022.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[DON!! x1] [When Attacking] Give up to 2 of your opponent's Characters −2000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-023",
+    "code": "OP01-023",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Marco",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-023.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-023.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Former Whitebeard Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-024",
+    "code": "OP01-024",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-024.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-024.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[DON!! x2] This Character cannot be K.O.'d in battle by ＜Strike＞ attribute Characters.<br>[Activate: Main] [Once Per Turn] Give this Character up to 2 rested DON!! cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-024_p1",
+    "code": "OP01-024",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-024_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-024_p1.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[DON!! x2] This Character cannot be K.O.'d in battle by ＜Strike＞  attribute Characters.<br>[Activate: Main] [Once Per Turn] Give this Character up to 2 rested DON!! cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-025",
+    "code": "OP01-025",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-025.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-025.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[Rush] (This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-025_p1",
+    "code": "OP01-025",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-025_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-025_p1.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[Rush] (This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-025_p2",
+    "code": "OP01-025",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-025_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-025_p2.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[Rush] (This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": {
+      "name": "-The Three Captains-[ST-10]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-026",
+    "code": "OP01-026",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Gum-Gum Fire-Fist Pistol Red Hawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-026.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-026.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +4000 power during this battle. Then, K.O. up to 1 of your opponent's Characters with 4000 power or less.",
+    "trigger": "[Trigger] Give up to 1 of your opponent's Leader or Character cards −10000 power during this turn.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-027",
+    "code": "OP01-027",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Round Table",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-027.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-027.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Supernovas/Beautiful Pirates",
+    "ability": "[Main] Give up to 1 of your opponent's Characters −10000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-028",
+    "code": "OP01-028",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Green Star Rafflesia",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-028.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-028.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[Counter] Give up to 1 of your opponent's Leader or Character cards −2000 power during this turn.",
+    "trigger": "[Trigger] Activate this card's [Counter] effect.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-029",
+    "code": "OP01-029",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Radical Beam!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-029.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-029.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, if you have 2 or less Life cards, that card gains an additional +2000 power.",
+    "trigger": "[Trigger] Up to 1 of your Leader or Character cards gains +1000 power during this turn.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-030",
+    "code": "OP01-030",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "In Two Years!! At the Sabaody Archipelago!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-030.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-030.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] Look at 5 cards from the top of your deck; reveal up to 1 {Straw Hat Crew} type Character card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "[Trigger] Activate this card's [Main] effect.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-031",
+    "code": "OP01-031",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Kouzuki Oden",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-031.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-031.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano/Kouzuki Clan",
+    "ability": "[Activate: Main] [Once Per Turn] You can trash 1 {Land of Wano} type card from your hand: Set up to 2 of your DON!! cards as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-031_p1",
+    "code": "OP01-031",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Kouzuki Oden",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-031_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-031_p1.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano/Kouzuki Clan",
+    "ability": "[Activate: Main] [Once Per Turn] You can trash 1 {Land of Wano} type card from your hand: Set up to 2 of your DON!! cards as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-032",
+    "code": "OP01-032",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Ashura Doji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-032.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-032.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "[DON!! x1] If your opponent has 2 or more rested Characters, this Character gains +2000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-033",
+    "code": "OP01-033",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Izo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-033.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-033.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 3000,
+    "counter": "2000",
+    "color": "Green",
+    "family": "Land of Wano/Former Whitebeard Pirates",
+    "ability": "[On Play] Rest up to 1 of your opponent's Characters with a cost of 4 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-034",
+    "code": "OP01-034",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Inuarashi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-034.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-034.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Minks/Land of Wano/The Akazaya Nine",
+    "ability": "[DON!! x2] [When Attacking] Set up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-034_p1",
+    "code": "OP01-034",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Inuarashi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-034_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-034_p1.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Minks/Land of Wano/The Akazaya Nine",
+    "ability": "[DON!! x2] [When Attacking] Set up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-035",
+    "code": "OP01-035",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Okiku",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-035.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-035.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "[DON!! x1] [When Attacking] [Once Per Turn] Rest up to 1 of your opponent's Characters with a cost of 5 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-036",
+    "code": "OP01-036",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Otsuru",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-036.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-036.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-037",
+    "code": "OP01-037",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kawamatsu",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-037.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-037.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Fish-Man/Land of Wano/The Akazaya Nine",
+    "ability": "-",
+    "trigger": "[Trigger] Play this card.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-038",
+    "code": "OP01-038",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kanjuro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-038.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-038.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "[DON!! x1] [When Attacking] K.O. up to 1 of your opponent's rested Characters with a cost of 2 or less.<br>[On K.O.] Your opponent chooses 1 card from your hand; trash that card.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-039",
+    "code": "OP01-039",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Killer",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-039.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-039.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[DON!! x1] [On Block] If you have 3 or more Characters, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-040",
+    "code": "OP01-040",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Kin'emon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-040.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-040.png"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "[On Play] If your Leader is [Kouzuki Oden], play up to 1 {The Akazaya Nine} type Character card with a cost of 3 or less from your hand.<br>[DON!! x1] [When Attacking] [Once Per Turn] Set up to 1 of your {The Akazaya Nine} type Character cards with a cost of 3 or less as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-040_p1",
+    "code": "OP01-040",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Kin'emon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-040_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-040_p1.png"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "[On Play] If your Leader is [Kouzuki Oden], play up to 1 {The Akazaya Nine} type Character card with a cost of 3 or less from your hand.<br>[DON!! x1] [When Attacking] [Once Per Turn] Set up to 1 of your {The Akazaya Nine} type Character cards with a cost of 3 or less as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-041",
+    "code": "OP01-041",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kouzuki Momonosuke",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-041.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-041.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano/Kouzuki Clan",
+    "ability": "[Activate: Main] ➀ (You may rest the specified number of DON!! cards in your cost area) You may rest this Character: Look at 5 cards from the top of your deck; reveal up to 1 {Land of Wano} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-042",
+    "code": "OP01-042",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Komurasaki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-042.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-042.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano/Kouzuki Clan",
+    "ability": "[On Play] ③ (You may rest the specified number of DON!! cards in your cost area.): If your Leader is [Kouzuki Oden], set up to 1 of your {Land of Wano} type Character cards with a cost of 3 or less as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-043",
+    "code": "OP01-043",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Shinobu",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-043.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-043.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-044",
+    "code": "OP01-044",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Shachi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-044.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-044.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Heart Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] If you don't have [Penguin], play up to 1 [Penguin] from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-045",
+    "code": "OP01-045",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Jean Bart",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-045.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-045.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Heart Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-046",
+    "code": "OP01-046",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Denjiro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-046.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-046.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "[DON!! x1] [When Attacking] If your Leader is [Kouzuki Oden], set up to 2 of your DON!! cards as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-047",
+    "code": "OP01-047",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-047.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-047.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Heart Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] You may return 1 Character to your hand: Play up to 1 Character card with a cost of 3 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-047_p1",
+    "code": "OP01-047",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-047_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-047_p1.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Heart Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] You may return 1 Character to your hand: Play up to 1 Character card with a cost of 3 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-047_p2",
+    "code": "OP01-047",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-047_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-047_p2.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Heart Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] You may return 1 of your Characters to the owner's hand: Play up to 1 Character card with a cost of 3 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-KINGDOMS OF INTRIGUE- [OP04]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-048",
+    "code": "OP01-048",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Nekomamushi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-048.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-048.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Minks/Land of Wano/The Akazaya Nine",
+    "ability": "[On Play] Rest up to 1 of your opponent's Characters with a cost of 3 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-048_p1",
+    "code": "OP01-048",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Nekomamushi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-048_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-048_p1.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Minks/Land of Wano/The Akazaya Nine",
+    "ability": "[On Play] Rest up to 1 of your opponent's Characters with a cost of 3 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-049",
+    "code": "OP01-049",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Bepo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-049.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-049.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "2000",
+    "color": "Green",
+    "family": "Minks/Heart Pirates",
+    "ability": "[DON!! x1] [When Attacking] Play up to 1 {Heart Pirates} type Character card other than [Bepo] with a cost of 4 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-050",
+    "code": "OP01-050",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Penguin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-050.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-050.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Heart Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] If you don't have [Shachi], play up to 1 [Shachi] from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-051",
+    "code": "OP01-051",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Eustass\"Captain\"Kid",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-051.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-051.png"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[DON!! x1] [Opponent's Turn] If this Character is rested, your opponent cannot attack any card other than the Character [Eustass\"Captain\"Kid].<br>[Activate: Main] [Once Per Turn] You may rest this Character: Play up to 1 Character card with a cost of 3 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_04"
+      },
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-051_p1",
+    "code": "OP01-051",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Eustass\"Captain\"Kid",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p1.png"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[DON!! x1] [Opponent's Turn] If this Character is rested, your opponent cannot attack any card other than the Character [Eustass\"Captain\"Kid].<br>[Activate: Main] [Once Per Turn] You may rest this Character: Play up to 1 Character card with a cost of 3 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_04"
+      },
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-051_p2",
+    "code": "OP01-051",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Eustass\"Captain\"Kid",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-051_p2.png"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[DON!! x1] [Opponent's Turn] If this Character is rested, your opponent cannot attack any card other than the Character [Eustass\"Captain\"Kid].<br>[Activate: Main] [Once Per Turn] You may rest this Character: Play up to 1 Character card with a cost of 3 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-PILLARS OF STRENGTH- [OP03]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-052",
+    "code": "OP01-052",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Raizo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-052.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-052.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "[When Attacking] [Once Per Turn] If you have 2 or more rested Characters, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-052_p1",
+    "code": "OP01-052",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Raizo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-052_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-052_p1.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "[When Attacking] [Once Per Turn] If you have 2 or more rested Characters, draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "Included in Event Pack Vol.2"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-053",
+    "code": "OP01-053",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Wire",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-053.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-053.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Kid Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-054",
+    "code": "OP01-054",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "X.Drake",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-054.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-054.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Navy/Drake Pirates",
+    "ability": "[On Play] K.O. up to 1 of your opponent's rested Characters with a cost of 4 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-055",
+    "code": "OP01-055",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "You Can Be My Samurai!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-055.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-055.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano/Kouzuki Clan",
+    "ability": "[Main] You may rest 2 of your Characters: Draw 2 cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-056",
+    "code": "OP01-056",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Demon Face",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-056.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-056.png"
+    },
+    "cost": 6,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Hawkins Pirates",
+    "ability": "[Main] K.O. up to 2 of your opponent's rested Characters with a cost of 5 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-057",
+    "code": "OP01-057",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Paradise Waterfall",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-057.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-057.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano/Kouzuki Clan",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, set up to 1 of your Characters as active.",
+    "trigger": "[Trigger] K.O. up to 1 of your opponent's rested Characters with a cost of 4 or less.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-058",
+    "code": "OP01-058",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Punk Gibson",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-058.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-058.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +4000 power during this battle. Then, rest up to 1 of your opponent's Characters with a cost of 4 or less.",
+    "trigger": "[Trigger] Rest up to 1 of your opponent's Characters.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-059",
+    "code": "OP01-059",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "BE-BENG!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-059.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-059.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Land of Wano",
+    "ability": "[Main] You may trash 1 {Land of Wano} type card from your hand: Set up to 1 of your {Land of Wano} type Character cards with a cost of 3 or less as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-060",
+    "code": "OP01-060",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Donquixote Doflamingo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-060.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-060.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[DON!! x2] [When Attacking] ➀ (You may rest the specified number of DON!! cards in your cost area.): Reveal 1 card from the top of your deck. If that card is a {The Seven Warlords of the Sea} type Character card with a cost of 4 or less, you may play that card rested.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-060_p1",
+    "code": "OP01-060",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Donquixote Doflamingo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-060_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-060_p1.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[DON!! x2] [When Attacking] ➀ (You may rest the specified number of DON!! cards in your cost area.): Reveal 1 card from the top of your deck. If that card is a {The Seven Warlords of the Sea} type Character card with a cost of 4 or less, you may play that card rested.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-061",
+    "code": "OP01-061",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Kaido",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-061.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-061.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue/Purple",
+    "family": "The Four Emperors/Animal Kingdom Pirates",
+    "ability": "[DON!! x1] [Your Turn] [Once Per Turn] When your opponent's Character is K.O.'d, add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-061_p1",
+    "code": "OP01-061",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Kaido",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-061_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-061_p1.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue/Purple",
+    "family": "The Four Emperors/Animal Kingdom Pirates",
+    "ability": "[DON!! x1] [Your Turn] [Once Per Turn] When your opponent's Character is K.O.'d, add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-062",
+    "code": "OP01-062",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Crocodile",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-062.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-062.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue/Purple",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[DON!! x1] When you activate an Event, you may draw 1 card if you have 4 or less cards in your hand and haven't drawn a card using this Leader's effect during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-062_p1",
+    "code": "OP01-062",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Crocodile",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-062_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-062_p1.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue/Purple",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[DON!! x1] When you activate an Event, you may draw 1 card if you have 4 or less cards in your hand and haven't drawn a card using this Leader's effect during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-063",
+    "code": "OP01-063",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Arlong",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-063.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-063.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Fish-Man/Arlong Pirates",
+    "ability": "[DON!! x1] [Activate: Main] You may rest this Character: Choose 1 card from your opponent's hand; your opponent reveals that card. If the revealed card is an Event, place up to 1 card from your opponent's Life area at the bottom of the owner's deck.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-064",
+    "code": "OP01-064",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Alvida",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-064.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-064.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Buggy Pirates",
+    "ability": "[DON!! x1] [When Attacking] You may trash 1 card from your hand: Return up to 1 of your opponent's Characters with a cost of 3 or less to the owner's hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-064_p1",
+    "code": "OP01-064",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Alvida",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-064_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-064_p1.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Buggy Pirates",
+    "ability": "[DON!! x1] [When Attacking] You may trash 1 card from your hand: Return up to 1 of your opponent's Characters with a cost of 3 or less to the owner's hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-065",
+    "code": "OP01-065",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Vergo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-065.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-065.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Navy/Donquixote Pirates/Punk Hazard",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-066",
+    "code": "OP01-066",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Krieg",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-066.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-066.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Krieg Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-067",
+    "code": "OP01-067",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Crocodile",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-067.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-067.png"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[Banish] (When this card deals damage, the target card is trashed without activating its Trigger.)<br>[DON!! x1] Give blue Events in your hand −1 cost.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-067_p1",
+    "code": "OP01-067",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Crocodile",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-067_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-067_p1.png"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[Banish] (When this card deals damage, the target card is trashed without activating its Trigger.)<br>[DON!! x1] Give blue Events in your hand −1 cost.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-068",
+    "code": "OP01-068",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Gecko Moria",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-068.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-068.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Thriller Bark Pirates",
+    "ability": "[Your Turn] This Character gains [Double Attack] if you have 5 or more cards in your hand.<br>(This card deals 2 damage.)",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-069",
+    "code": "OP01-069",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Caesar Clown",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-069.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-069.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Scientist/Punk Hazard",
+    "ability": "[On K.O.] Play up to 1 [Smiley] from your deck, then shuffle your deck.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-070",
+    "code": "OP01-070",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Dracule Mihawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-070.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-070.png"
+    },
+    "cost": 9,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 9000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea",
+    "ability": "[On Play] Place up to 1 Character with a cost of 7 or less at the bottom of the owner's deck.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-070_p1",
+    "code": "OP01-070",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Dracule Mihawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-070_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-070_p1.png"
+    },
+    "cost": 9,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 9000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea",
+    "ability": "[On Play] Place up to 1 Character with a cost of 7 or less at the bottom of the owner's deck.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-071",
+    "code": "OP01-071",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-071.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-071.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 2000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Fish-Man/Straw Hat Crew",
+    "ability": "[On Play] Place up to 1 Character with a cost of 3 or less at the bottom of the owner's deck.",
+    "trigger": "[Trigger] Play this card.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-072",
+    "code": "OP01-072",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Smiley",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-072.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-072.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Biological Weapon/Punk Hazard",
+    "ability": "[DON!! x1] [Your Turn] This Character gains +1000 power for every card in your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-073",
+    "code": "OP01-073",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Donquixote Doflamingo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-073.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-073.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] Look at 5 cards from the top of your deck and place them at the top or bottom of the deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-073_p1",
+    "code": "OP01-073",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Donquixote Doflamingo ",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-073_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-073_p1.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] Look at 5 cards from the top of your deck and place them at the top or bottom of the deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-074",
+    "code": "OP01-074",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Bartholomew Kuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-074.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-074.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Revolutionary Army",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On K.O.] Play up to 1 [Pacifista] with a cost of 4 or less from your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-075",
+    "code": "OP01-075",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Pacifista",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-075.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-075.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Biological Weapon/Navy",
+    "ability": "Under the rules of this game, you may have any number of this card in your deck.<br>[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-076",
+    "code": "OP01-076",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bellamy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-076.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-076.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Dressrosa",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-077",
+    "code": "OP01-077",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Perona",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-077.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-077.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Thriller Bark Pirates",
+    "ability": "[On Play] Look at 5 cards from the top of your deck and place them at the top or bottom of the deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-077_p1",
+    "code": "OP01-077",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Perona",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-077_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-077_p1.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Thriller Bark Pirates",
+    "ability": "[On Play] Look at 5 cards from the top of your deck and place them at the top or bottom of the deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-078",
+    "code": "OP01-078",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-078.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-078.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[DON!! x1] [When Attacking]/[On Block] Draw 1 card if you have 5 or less cards in your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-078_p1",
+    "code": "OP01-078",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-078_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-078_p1.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[DON!! x1] [When Attacking]/[On Block] Draw 1 card if you have 5 or less cards in your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-078_p2",
+    "code": "OP01-078",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-078_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-078_p2.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[DON!! x1] [When Attacking]/[On Block] Draw 1 card if you have 5 or less cards in your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-KINGDOMS OF INTRIGUE- [OP04]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-079",
+    "code": "OP01-079",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Ms. All Sunday",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-079.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-079.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Baroque Works",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On K.O.] If your Leader has the {Baroque Works} type, add up to 1 Event from your trash to your hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-080",
+    "code": "OP01-080",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Miss Doublefinger(Zala)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-080.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-080.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Baroque Works",
+    "ability": "[On K.O.] Draw 1 card.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-081",
+    "code": "OP01-081",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Mocha",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-081.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-081.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Punk Hazard",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-082",
+    "code": "OP01-082",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Monet",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-082.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-082.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Donquixote Pirates/Punk Hazard",
+    "ability": "-",
+    "trigger": "[Trigger] Play this card.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-083",
+    "code": "OP01-083",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Mr.1(Daz.Bonez)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-083.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-083.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Baroque Works",
+    "ability": "[DON!! x1] [Your Turn] If your Leader has the {Baroque Works} type, this Character gains +1000 power for every 2 Events in your trash.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-084",
+    "code": "OP01-084",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Mr.2.Bon.Kurei(Bentham)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-084.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-084.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Baroque Works",
+    "ability": "[DON!! x1] [When Attacking] Look at 5 cards from the top of your deck; reveal up to 1 {Baroque Works} type Event card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-085",
+    "code": "OP01-085",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Mr.3(Galdino)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-085.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-085.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Baroque Works",
+    "ability": "[On Play] If your Leader has the {Baroque Works} type, select up to 1 of your opponent's Characters with a cost of 4 or less. The selected Character cannot attack until the end of your opponent's next turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-086",
+    "code": "OP01-086",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Overheat",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-086.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-086.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +4000 power during this battle. Then, return up to 1 active Character with a cost of 3 or less to the owner's hand.",
+    "trigger": "[Trigger] Return up to 1 Character with a cost of 4 or less to the owner's hand.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-087",
+    "code": "OP01-087",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Officer Agents",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-087.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-087.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Baroque Works",
+    "ability": "[Counter] Play up to 1 {Baroque Works} type Character card with a cost of 3 or less from your hand.",
+    "trigger": "[Trigger] Activate this card's [Counter] effect.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-088",
+    "code": "OP01-088",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Desert Spada",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-088.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-088.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, look at 3 cards from the top of your deck and place them at the top or bottom of the deck in any order.",
+    "trigger": "[Trigger] Draw 2 cards and trash 1 card from your hand.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-089",
+    "code": "OP01-089",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Crescent Cutlass",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-089.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-089.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[Counter] If your Leader has the {The Seven Warlords of the Sea} type, return up to 1 Character with a cost of 5 or less to the owner's hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-090",
+    "code": "OP01-090",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Baroque Works",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-090.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-090.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Baroque Works",
+    "ability": "[Main] Look at 5 cards from the top of your deck; reveal up to 1 {Baroque Works} type card other than [Baroque Works] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-091",
+    "code": "OP01-091",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "King",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-091.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-091.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[Your Turn] If you have 10 DON!! cards on your field, give all of your opponent's Characters −1000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-091_p1",
+    "code": "OP01-091",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "King",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-091_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-091_p1.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[Your Turn] If you have 10 DON!! cards on your field, give all of your opponent's Characters −1000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-092",
+    "code": "OP01-092",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Urashima",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-092.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-092.png"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 9000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Land of Wano",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-093",
+    "code": "OP01-093",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Ulti",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-093.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-093.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[On Play] ① (You may rest the specified number of DON!! cards in your cost area.): Add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-093_p1",
+    "code": "OP01-093",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Ulti",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-093_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-093_p1.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[On Play] ① (You may rest the specified number of DON!! cards in your cost area.): Add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-094",
+    "code": "OP01-094",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Kaido",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-094.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-094.png"
+    },
+    "cost": 10,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 12000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Four Emperors/Animal Kingdom Pirates",
+    "ability": "[On Play] DON!! −6 (You may return the specified number of DON!! cards from your field to your DON!! deck.): If your Leader has the {Animal Kingdom Pirates} type, K.O. all Characters other than this Character.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-094_p1",
+    "code": "OP01-094",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Kaido",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-094_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-094_p1.png"
+    },
+    "cost": 10,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 12000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Four Emperors/Animal Kingdom Pirates",
+    "ability": "[On Play] DON!! −6 (You may return the specified number of DON!! cards from your field to your DON!! deck.): If your Leader has the {Animal Kingdom Pirates} type, K.O. all Characters other than this Character.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-095",
+    "code": "OP01-095",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Kyoshirou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-095.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-095.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Land of Wano",
+    "ability": "[On Play] Draw 1 card if you have 8 or more DON!! cards on your field.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-096",
+    "code": "OP01-096",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "King",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-096.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-096.png"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[On Play] DON!! −2 (You may return the specified number of DON!! cards from your field to your DON!! deck.): K.O. up to 1 of your opponent's Characters with a cost of 3 or less and up to 1 of your opponent's Characters with a cost of 2 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-096_p1",
+    "code": "OP01-096",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "King",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-096_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-096_p1.png"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[On Play] DON!! −2 (You may return the specified number of DON!! cards from your field to your DON!! deck.): K.O. up to 1 of your opponent's Characters with a cost of 3 or less and up to 1 of your opponent's Characters with a cost of 2 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-097",
+    "code": "OP01-097",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Queen",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-097.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-097.png"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[On Play] DON!! −1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): This Character gains [Rush] during this turn. Then, give up to 1 of your opponent's Characters −2000 power during this turn.<br>(This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-097_p1",
+    "code": "OP01-097",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Queen",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-097_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-097_p1.png"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[On Play] DON!! −1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): This Character gains [Rush] during this turn. Then, give up to 1 of your opponent's Characters −2000 power during this turn.<br>(This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-098",
+    "code": "OP01-098",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Kurozumi Orochi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-098.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-098.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 2000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Land of Wano/Kurozumi Clan",
+    "ability": "[On Play] Reveal up to 1 [Artificial Devil Fruit SMILE] from your deck and add it to your hand. Then, shuffle your deck.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-099",
+    "code": "OP01-099",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kurozumi Semimaru",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-099.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-099.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Land of Wano/Kurozumi Clan",
+    "ability": "{Kurozumi Clan} type Characters other than your [Kurozumi Semimaru] cannot be K.O.'d in battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-100",
+    "code": "OP01-100",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kurozumi Higurashi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-100.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-100.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Land of Wano/Kurozumi Clan",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-101",
+    "code": "OP01-101",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Sasaki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-101.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-101.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[DON!! x1] [When Attacking] You may trash 1 card from your hand: Add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-101_p1",
+    "code": "OP01-101",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Sasaki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-101_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-101_p1.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[DON!! x1] [When Attacking] You may trash 1 card from your hand: Add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "Included in Event Pack Vol.2"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-102",
+    "code": "OP01-102",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Jack",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-102.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-102.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[When Attacking] DON!! −1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): Your opponent trashes 1 card from their hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-102_p1",
+    "code": "OP01-102",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Jack",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-102_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-102_p1.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[When Attacking] DON!! −1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): Your opponent trashes 1 card from their hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-103",
+    "code": "OP01-103",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Scratchmen Apoo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-103.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-103.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates/On-Air Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-104",
+    "code": "OP01-104",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Speed",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-104.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-104.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates/SMILE",
+    "ability": "-",
+    "trigger": "[Trigger] Play this card.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-105",
+    "code": "OP01-105",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bao Huang",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-105.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-105.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates/SMILE",
+    "ability": "[On Play] Choose 2 cards from your opponent's hand; your opponent reveals those cards.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-106",
+    "code": "OP01-106",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Basil Hawkins",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-106.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-106.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates/Hawkins Pirates",
+    "ability": "[On Play] Add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "[Trigger] Play this card.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-107",
+    "code": "OP01-107",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Babanuki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-107.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-107.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates/SMILE",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-108",
+    "code": "OP01-108",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Hitokiri Kamazo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-108.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-108.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Supernovas/Kid Pirates/SMILE",
+    "ability": "[On K.O.] DON!! −1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): K.O. up to 1 of your opponent's Characters with a cost of 5 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-109",
+    "code": "OP01-109",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Who's.Who",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-109.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-109.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[DON!! x1] [Your Turn] If you have 8 or more DON!! cards on your field, this Character gains +1000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-109_p1",
+    "code": "OP01-109",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Who's.Who",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-109_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-109_p1.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[DON!! x1] [Your Turn] If you have 8 or more DON!! cards on your field, this Character gains +1000 power.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-110",
+    "code": "OP01-110",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Fukurokuju",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-110.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-110.png"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 8000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Land of Wano/Animal Kingdom Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-111",
+    "code": "OP01-111",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Black Maria",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-111.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-111.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Block] DON!! −1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): This Character gains +1000 power during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-112",
+    "code": "OP01-112",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Page One",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-112.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-112.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] DON!! −1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): This Character can also attack your opponent's active Characters during this turn.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_03"
+      }
+    ]
+  },
+  {
+    "id": "OP01-113",
+    "code": "OP01-113",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Holedem",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-113.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-113.png"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates/SMILE",
+    "ability": "[On K.O.] Add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-114",
+    "code": "OP01-114",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "X.Drake",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-114.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-114.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Navy/Drake Pirates/Animal Kingdom Pirates",
+    "ability": "[On Play] DON!! −1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): Your opponent trashes 1 card from their hand.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-115",
+    "code": "OP01-115",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Elephant's Marchoo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-115.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-115.png"
+    },
+    "cost": 4,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates/SMILE",
+    "ability": "[Main] K.O. up to 1 of your opponent's Characters with a cost of 2 or less, then add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "trigger": "[Trigger] Activate this card's [Main] effect.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-116",
+    "code": "OP01-116",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Artificial Devil Fruit SMILE",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-116.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-116.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates/SMILE",
+    "ability": "[Main] Look at 5 cards from the top of your deck; play up to 1 {SMILE} type Character card with a cost of 3 or less. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "[Trigger] Activate this card's [Main] effect.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-117",
+    "code": "OP01-117",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Sheep's Horn",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-117.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-117.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates/SMILE",
+    "ability": "[Main] DON!! −1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): Rest up to 1 of your opponent's Characters with a cost of 6 or less.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-118",
+    "code": "OP01-118",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Ulti-Mortar",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-118.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-118.png"
+    },
+    "cost": 1,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Animal Kingdom Pirates",
+    "ability": "[Counter] DON!! −2 (You may return the specified number of DON!! cards from your field to your DON!! deck.): Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, draw 1 card.",
+    "trigger": "[Trigger] Add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-119",
+    "code": "OP01-119",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Thunder Bagua",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-119.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-119.png"
+    },
+    "cost": 2,
+    "attribute": {
+      "image": "https://en.onepiece-cardgame.comundefined"
+    },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Four Emperors/Animal Kingdom Pirates",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +4000 power during this battle. Then, if you have 2 or less Life cards, add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "[Trigger] Add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": [
+      {
+        "name": "Errata Card",
+        "url": "https://en.onepiece-cardgame.com//rules/errata_card/#errata_05"
+      }
+    ]
+  },
+  {
+    "id": "OP01-120",
+    "code": "OP01-120",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Shanks",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-120.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-120.png"
+    },
+    "cost": 9,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 10000,
+    "counter": "-",
+    "color": "Red",
+    "family": "The Four Emperors/Red-Haired Pirates",
+    "ability": "[Rush] (This card can attack on the turn in which it is played.)<br>[When Attacking] Your opponent cannot activate a [Blocker] Character that has 2000 or less power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-120_p1",
+    "code": "OP01-120",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Shanks",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-120_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-120_p1.png"
+    },
+    "cost": 9,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 10000,
+    "counter": "-",
+    "color": "Red",
+    "family": "The Four Emperors/Red-Haired Pirates",
+    "ability": "[Rush] (This card can attack on the turn in which it is played.)<br>[When Attacking] Your opponent cannot activate a [Blocker] Character that has 2000 or less power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-120_p2",
+    "code": "OP01-120",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Shanks",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-120_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-120_p2.png"
+    },
+    "cost": 9,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 10000,
+    "counter": "-",
+    "color": "Red",
+    "family": "The Four Emperors/Red-Haired Pirates",
+    "ability": "[Rush] (This card can attack on the turn in which it is played.)<br>[When Attacking] Your opponent cannot activate a [Blocker] Character that has 2000 or less power during this battle.",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-121",
+    "code": "OP01-121",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Yamato",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-121.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-121.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano",
+    "ability": "Also treat this card's name as [Kouzuki Oden] according to the rules.<br>[Double Attack] (This card deals 2 damage.)<br>[Banish] (When this card deals damage, the target card is trashed without activating its Trigger.)",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-121_p1",
+    "code": "OP01-121",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Yamato",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-121_p1.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-121_p1.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano",
+    "ability": "Also treat this card's name as [Kouzuki Oden] according to the rules.<br>[Double Attack] (This card deals 2 damage.)<br>[Banish] (When this card deals damage, the target card is trashed without activating its Trigger.)",
+    "trigger": "",
+    "set": {
+      "name": "-ROMANCE DAWN- [OP01]"
+    },
+    "notes": []
+  },
+  {
+    "id": "OP01-121_p2",
+    "code": "OP01-121",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Yamato",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-121_p2.png",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-121_p2.png"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano",
+    "ability": "Also treat this card's name as [Kouzuki Oden] according to the rules.<br>[Double Attack] (This card deals 2 damage.)<br>[Banish] (When this card deals damage, the target card is trashed without activating its Trigger.)",
+    "trigger": "",
+    "set": {
+      "name": "OP-05"
+    },
+    "notes": []
+  }
+]

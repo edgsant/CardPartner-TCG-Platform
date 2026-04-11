@@ -1,0 +1,359 @@
+[
+  {
+    "id": "OP02-093_p2",
+    "code": "OP02-093",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Smoker",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-093_p2.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-093_p2.png?241220"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[DON!! x1] [Activate: Main] [Once Per Turn] Give up to 1 of your opponent's Characters −1 cost during this turn. Then, if there is a Character with a cost of 0, this Leader gains +1000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "OP02-098_p2",
+    "code": "OP02-098",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Koby",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-098_p2.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-098_p2.png?241220"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[On Play] You may trash 1 card from your hand: K.O. up to 1 of your opponent's Characters with a cost of 3 or less.",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "OP02-106_p2",
+    "code": "OP02-106",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Tsuru",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-106_p2.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-106_p2.png?241220"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "2000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[On Play] Give up to 1 of your opponent's Characters −2 cost during this turn.",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "OP02-108_p2",
+    "code": "OP02-108",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Donquixote Rosinante",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-108_p2.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-108_p2.png?241220"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy/Donquixote Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "OP02-109_p1",
+    "code": "OP02-109",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Jaguar.D.Saul",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-109_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-109_p1.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Giant/Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "OP02-113_p1",
+    "code": "OP02-113",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Helmeppo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-113_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-113_p1.png?241220"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[When Attacking] Give up to 1 of your opponent's Characters −2 cost during this turn. Then, if there is a Character with a cost of 0, this Character gains +2000 power during this battle.",
+    "trigger": "[Trigger] Play this card.",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "OP02-116_p1",
+    "code": "OP02-116",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Yamakaji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-116_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-116_p1.png?241220"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "OP02-117_p3",
+    "code": "OP02-117",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Ice Age",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-117_p3.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-117_p3.png?241220"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[Main] Give up to 1 of your opponent's Characters −5 cost during this turn.",
+    "trigger": "[Trigger] K.O. up to 1 of your opponent's Characters with a cost of 3 or less.",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "OP03-079_p1",
+    "code": "OP03-079",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Vergo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-079_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-079_p1.png?241220"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "2000",
+    "color": "Black",
+    "family": "Navy/Donquixote Pirates",
+    "ability": "[DON!! x1] This Character cannot be K.O.'d in battle.",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "OP03-089_p2",
+    "code": "OP03-089",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Brannew",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-089_p2.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP03-089_p2.png?241220"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[On Play] Look at 3 cards from the top of your deck; reveal up to 1 {Navy} type card other than [Brannew] and add it to your hand. Then, trash the rest.",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "ST19-001",
+    "code": "ST19-001",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Smoker",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST19-001.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST19-001.png?241220"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[On Play] You may trash 1 black {Navy} type card from your hand: Up to 2 of your opponent's Characters with a cost of 4 or less cannot attack until the end of your opponent's next turn.",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "ST19-002",
+    "code": "ST19-002",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Sengoku",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST19-002.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST19-002.png?241220"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[On Play] You may trash 2 black {Navy} type cards from your hand: If your Leader has the {Navy} type, draw 3 cards.",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "ST19-003",
+    "code": "ST19-003",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Tashigi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST19-003.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST19-003.png?241220"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[On Play] If your Leader is [Smoker], give up to 1 of your opponent's Characters −4 cost during this turn.<br>[Activate: Main] [Once Per Turn] If this Character was played on this turn, trash up to 1 of your opponent's Characters with a cost of 0.",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "ST19-004",
+    "code": "ST19-004",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Hina",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST19-004.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST19-004.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[DON!! x1] [Opponent's Turn] This Character gains +4 cost.<br>[Activate: Main] [Once Per Turn] You may place 1 card from your trash at the bottom of your deck: Give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  },
+  {
+    "id": "ST19-005",
+    "code": "ST19-005",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Garp",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST19-005.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST19-005.png?241220"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[Activate: Main] [Once Per Turn] You may place 1 card from your trash at the bottom of your deck: Give up to 1 of your opponent's Characters −1 cost during this turn.",
+    "trigger": "",
+    "set": { "name": "-Black Smoker- [ST-19]" },
+    "notes": []
+  }
+]

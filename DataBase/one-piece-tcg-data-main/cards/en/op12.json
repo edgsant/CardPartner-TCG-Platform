@@ -1,0 +1,3653 @@
+[
+  {
+    "id": "OP10-063_p1",
+    "code": "OP10-063",
+    "rarity": "TR",
+    "type": "CHARACTER",
+    "name": "Vinsmoke Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-063_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-063_p1.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Kingdom of GERMA/The Vinsmoke Family",
+    "ability": "[On Play] If your Leader's type includes \"GERMA\", look at 5 cards from the top of your deck; reveal up to 1 card with a type including \"GERMA\" and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-001",
+    "code": "OP12-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Silvers Rayleigh",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-001.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-001.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Former Roger Pirates",
+    "ability": "Under the rules of this game, you cannot include cards with a cost of 5 or more in your deck.<br>[Activate: Main] [Once Per Turn] You may reveal 2 Events from your hand: Up to 1 of your Characters with 4000 base power or less gains +2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-001_p1",
+    "code": "OP12-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Silvers Rayleigh",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-001_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-001_p1.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Former Roger Pirates",
+    "ability": "Under the rules of this game, you cannot include cards with a cost of 5 or more in your deck.<br>[Activate: Main] [Once Per Turn] You may reveal 2 Events from your hand: Up to 1 of your Characters with 4000 base power or less gains +2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-002",
+    "code": "OP12-002",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Edward.Newgate",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-002.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-002.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Red",
+    "family": "Whitebeard Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-003",
+    "code": "OP12-003",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Crocus",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-003.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-003.png?250829"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Former Roger Pirates",
+    "ability": "[On K.O.] You may reveal 2 Events from your hand: Play up to 1 red Character card with 3000 power or less from your hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-004",
+    "code": "OP12-004",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Kouzuki Oden",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-004.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-004.png?250829"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Land of Wano/Kouzuki Clan/Roger Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] You may reveal 2 Events from your hand: This Character gains +2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-005",
+    "code": "OP12-005",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Shiki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-005.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-005.png?250829"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 10000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "FILM/Golden Lion Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-006",
+    "code": "OP12-006",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Shakuyaku",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-006.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-006.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Amazon Lily",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 [Monkey.D.Luffy] or 1 red Event and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-007",
+    "code": "OP12-007",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Shanks",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-007.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-007.png?250829"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Roger Pirates",
+    "ability": "[On Play] Up to 1 of your Characters with a type including \"Roger Pirates\" other than [Shanks] gains [Rush] during this turn.<br>(This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-008",
+    "code": "OP12-008",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Shanks",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-008.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-008.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Red",
+    "family": "The Four Emperors/Red-Haired Pirates",
+    "ability": "[Blocker]<br>[On Your Opponent's Attack] [Once Per Turn] You may trash 1 card from your hand: Give up to 1 of your opponent's Leader or Character cards −2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-008_p1",
+    "code": "OP12-008",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Shanks",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-008_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-008_p1.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Red",
+    "family": "The Four Emperors/Red-Haired Pirates",
+    "ability": "[Blocker]<br>[On Your Opponent's Attack] [Once Per Turn] You may trash 1 card from your hand: Give up to 1 of your opponent's Leader or Character cards −2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-009",
+    "code": "OP12-009",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-009.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-009.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Fish-Man/The Sun Pirates",
+    "ability": "[On Play] You may reveal 2 Events from your hand: This Character gains [Rush] during this turn. Then, this Character gains +1000 power until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-010",
+    "code": "OP12-010",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Douglas Bullet",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-010.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-010.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 7000,
+    "counter": "2000",
+    "color": "Red",
+    "family": "FILM/The Pirates Fest/Former Roger Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-011",
+    "code": "OP12-011",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Duval",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-011.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-011.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "The Flying Fish Riders",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-012",
+    "code": "OP12-012",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Buggy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-012.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-012.png?250829"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Roger Pirates",
+    "ability": "[On Play] Up to 1 of your Characters with a type including \"Roger Pirates\" other than [Buggy] gains [Blocker] until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-013",
+    "code": "OP12-013",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Hatchan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-013.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-013.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Fish-Man/Former Arlong Pirates",
+    "ability": "[Activate: Main] You may rest this Character and reveal 2 Events from your hand: Give up to 2 rested DON!! cards to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-014",
+    "code": "OP12-014",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-014.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-014.png?250829"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 3000,
+    "counter": "-",
+    "color": "Red",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 [Monkey.D.Luffy] or red Event and add it to your hand. Then, place the rest at the bottom of your deck in any order.<br>[Activate: Main] You may trash this Character: Give up to 2 rested DON!! cards to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-014_p1",
+    "code": "OP12-014",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-014_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-014_p1.png?250829"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 3000,
+    "counter": "-",
+    "color": "Red",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 [Monkey.D.Luffy] or red Event and add it to your hand. Then, place the rest at the bottom of your deck in any order.<br>[Activate: Main] You may trash this Character: Give up to 2 rested DON!! cards to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-015",
+    "code": "OP12-015",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-015.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-015.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "If you have a total of 2 or more given DON!! cards, this Character gains +2000 power.<br>[On Play] You may reveal 2 Events from your hand: Play up to 1 red Character card with 3000 power or less from your hand. Then, give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-015_p1",
+    "code": "OP12-015",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-015_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-015_p1.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "If you have a total of 2 or more given DON!! cards, this Character gains +2000 power.<br>[On Play] You may reveal 2 Events from your hand: Play up to 1 red Character card with 3000 power or less from your hand. Then, give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-016",
+    "code": "OP12-016",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "To Never Doubt--That Is Power!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-016.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-016.png?250829"
+    },
+    "cost": null,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Former Roger Pirates",
+    "ability": "[Main] You may give 2 active DON!! cards to 1 of your [Silvers Rayleigh]: Your opponent cannot activate [Blocker] when the card given these DON!! cards attacks during this turn.<br>[Counter] Up to 1 of your Characters or [Silvers Rayleigh] gains +2000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-017",
+    "code": "OP12-017",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Color of Observation Haki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-017.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-017.png?250829"
+    },
+    "cost": null,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Former Roger Pirates",
+    "ability": "[Main] You may give 1 active DON!! card to 1 of your [Silvers Rayleigh]: Look at 4 cards from the top of your deck; reveal up to 1 red Event or up to 1 Character card with a cost of 3 or more and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-018",
+    "code": "OP12-018",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Color of the Supreme King Haki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-018.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-018.png?250829"
+    },
+    "cost": null,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Former Roger Pirates",
+    "ability": "[Counter] Up to 1 of your Characters or [Silvers Rayleigh] gains +2000 power during this battle. Then, you may rest 1 of your DON!! cards. If you do, give your opponent's Leader and all of their Characters −1000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-019",
+    "code": "OP12-019",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Color of Arms Haki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-019.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-019.png?250829"
+    },
+    "cost": null,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Former Roger Pirates",
+    "ability": "[Main] You may give 1 active DON!! card to 1 of your [Silvers Rayleigh]: Up to 1 of your Leader or Character cards gains +1000 power during this turn.<br>[Counter] Up to 1 of your Characters or [Silvers Rayleigh] gains +2000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-020",
+    "code": "OP12-020",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-020.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-020.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[DON!! x3] [Activate: Main] [Once Per Turn] If this Leader battles your opponent's Character during this turn, set this Leader as active. Then, this Leader cannot attack your opponent's Characters with a base cost of 7 or less during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-020_p1",
+    "code": "OP12-020",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-020_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-020_p1.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[DON!! x3] [Activate: Main] [Once Per Turn] If this Leader battles your opponent's Character during this turn, set this Leader as active. Then, this Leader cannot attack your opponent's Characters with a base cost of 7 or less during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-021",
+    "code": "OP12-021",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Ipponmatsu",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-021.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-021.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Green",
+    "family": "East Blue",
+    "ability": "If your Leader has the &lt;Slash&gt; attribute and you have 6 or more rested DON!! cards, this Character cannot be rested by your opponent's effects.<br>[Blocker]",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-022",
+    "code": "OP12-022",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Inuarashi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-022.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-022.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Minks/Land of Wano/The Akazaya Nine",
+    "ability": "[Activate: Main] You may rest this Character: Up to 1 of your opponent's rested Characters with a cost of 5 or less will not become active in your opponent's next Refresh Phase.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-023",
+    "code": "OP12-023",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Kawamatsu",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-023.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-023.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Green",
+    "family": "Fish-Man/Land of Wano/The Akazaya Nine",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-024",
+    "code": "OP12-024",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Gyukimaru",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-024.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-024.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Animal/Land of Wano",
+    "ability": "If this Character is active, this Character cannot be K.O.'d by your opponent's effects.<br>[When Attacking] If you have a total of 3 or more given DON!! cards, rest up to 1 of your opponent's Characters with a base cost of 6 or less.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-025",
+    "code": "OP12-025",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kin'emon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-025.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-025.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 8000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano/The Akazaya Nine",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-026",
+    "code": "OP12-026",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Kuina",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-026.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-026.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "East Blue/Frost Moon Village",
+    "ability": "[Activate: Main] You may rest this Character: Rest up to 1 of your opponent's Characters with a base cost of 4 or less. Then, give up to 3 rested DON!! cards to your [Roronoa Zoro] Leader.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-027",
+    "code": "OP12-027",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Koushirou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-027.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-027.png?250829"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "East Blue/Frost Moon Village",
+    "ability": "If your &lt;Slash&gt; attribute Character with a cost of 5 or less other than this Character would be K.O.'d by your opponent's effect, you may rest this Character instead.<br>[Blocker]",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-028",
+    "code": "OP12-028",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kouzuki Hiyori",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-028.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-028.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Land of Wano/Kouzuki Clan",
+    "ability": "[Activate: Main] You may rest 1 of your DON!! cards and this Character: If your Leader is [Roronoa Zoro], look at 5 cards from the top of your deck; reveal up to 1 &lt;Slash&gt; attribute card or green Event and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-029",
+    "code": "OP12-029",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Shimotsuki Kouzaburou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-029.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-029.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 2000,
+    "counter": "2000",
+    "color": "Green",
+    "family": "East Blue/Frost Moon Village/Land of Wano",
+    "ability": "[On Play] Rest up to 1 of your opponent's Characters with a cost of 2 or less. Then, K.O. up to 1 of your opponent's rested Characters with a base cost of 1 or less.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-030",
+    "code": "OP12-030",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Dracule Mihawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-030.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-030.png?250829"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Muggy Kingdom/The Seven Warlords of the Sea",
+    "ability": "[Blocker]<br>[On Play] Set up to 4 of your DON!! cards as active. Then, you cannot play Character cards with a base cost of 7 or more during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-030_p1",
+    "code": "OP12-030",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Dracule Mihawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-030_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-030_p1.png?250829"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Muggy Kingdom/The Seven Warlords of the Sea",
+    "ability": "[Blocker]<br>[On Play] Set up to 4 of your DON!! cards as active. Then, you cannot play Character cards with a base cost of 7 or more during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-031",
+    "code": "OP12-031",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Tashigi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-031.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-031.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Green",
+    "family": "East Blue/Navy",
+    "ability": "[On Play] Rest up to 1 of your opponent's Characters with a base cost of 6 or less. Then, give up to 3 rested DON!! cards to your [Roronoa Zoro] Leader.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-031_p1",
+    "code": "OP12-031",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Tashigi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-031_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-031_p1.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Green",
+    "family": "East Blue/Navy",
+    "ability": "[On Play] Rest up to 1 of your opponent's Characters with a base cost of 6 or less. Then, give up to 3 rested DON!! cards to your [Roronoa Zoro] Leader.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-032",
+    "code": "OP12-032",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Nekomamushi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-032.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-032.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "2000",
+    "color": "Green",
+    "family": "Minks/Land of Wano/The Akazaya Nine",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-033",
+    "code": "OP12-033",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Helmeppo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-033.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-033.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green",
+    "family": "East Blue/Navy",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Block] Rest up to 1 of your opponent's Characters with a cost of 5 or less.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-034",
+    "code": "OP12-034",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Perona",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-034.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-034.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Muggy Kingdom/Thriller Bark Pirates",
+    "ability": "[On Play] If your Leader has the &lt;Slash&gt; attribute, look at 5 cards from the top of your deck; reveal up to 1 &lt;Slash&gt; attribute card or green Event and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-034_p1",
+    "code": "OP12-034",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Perona",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-034_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-034_p1.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Muggy Kingdom/Thriller Bark Pirates",
+    "ability": "[On Play] If your Leader has the &lt;Slash&gt; attribute, look at 5 cards from the top of your deck; reveal up to 1 &lt;Slash&gt; attribute card or green Event and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-035",
+    "code": "OP12-035",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Morgan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-035.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-035.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "East Blue/Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-036",
+    "code": "OP12-036",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-036.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-036.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "This card in your hand cannot be played by effects.<br>If your Leader has the &lt;Slash&gt; attribute, this Character cannot be K.O.'d in battle by &lt;Slash&gt; attribute cards and gains +1000 power.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-037",
+    "code": "OP12-037",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Demon Aura Nine Sword Style Asura Blades Drawn Dead Man's Game",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-037.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-037.png?250829"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] You may rest 3 of your DON!! cards: Rest up to a total of 2 of your opponent's Characters or DON!! cards.<br>[Counter] Your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-037_p1",
+    "code": "OP12-037",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Demon Aura Nine Sword Style Asura Blades Drawn Dead Man's Game",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-037_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-037_p1.png?250829"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] You may rest 3 of your DON!! cards: Rest up to a total of 2 of your opponent's Characters or DON!! cards.<br>[Counter] Your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-038",
+    "code": "OP12-038",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Two-Sword Style Rashomon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-038.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-038.png?250829"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] You may rest 2 of your DON!! cards: K.O. up to 2 of your opponent's rested Characters with a base cost of 4 or less.<br>[Counter] Your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-039",
+    "code": "OP12-039",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Luffy Is the Man Who Will Become the King of Pirates!!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-039.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-039.png?250829"
+    },
+    "cost": 3,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] Set your [Roronoa Zoro] Leader as active.",
+    "trigger": "[Trigger] Up to 1 of your Leader or Character cards gains +1000 power during this turn.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-040",
+    "code": "OP12-040",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Kuzan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-040.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-040.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "When a card is trashed from your hand by your {Navy} type card's effect, draw cards equal to the number of cards trashed.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-040_p1",
+    "code": "OP12-040",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Kuzan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-040_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-040_p1.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "When a card is trashed from your hand by your {Navy} type card's effect, draw cards equal to the number of cards trashed.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-041",
+    "code": "OP12-041",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-041.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-041.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue/Purple",
+    "family": "The Vinsmoke Family/Straw Hat Crew",
+    "ability": "[Activate: Main] [Once Per Turn] DON!! −1: Activate up to 1 {Straw Hat Crew} type Event with a base cost of 3 or less from your hand.<br>[When Attacking] If the number of DON!! cards on your field is equal to or less than the number on your opponent's field, add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-041_p1",
+    "code": "OP12-041",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-041_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-041_p1.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue/Purple",
+    "family": "The Vinsmoke Family/Straw Hat Crew",
+    "ability": "[Activate: Main] [Once Per Turn] DON!! −1: Activate up to 1 {Straw Hat Crew} type Event with a base cost of 3 or less from your hand.<br>[When Attacking] If the number of DON!! cards on your field is equal to or less than the number on your opponent's field, add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-042",
+    "code": "OP12-042",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Alvida",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-042.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-042.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Cross Guild",
+    "ability": "If you have 2 or more Characters with a base cost of 5 or more, this Character gains +1 cost.<br>[On Play] Place up to 1 of your opponent's Characters with a base cost of 1 or less at the bottom of the owner's deck.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-043",
+    "code": "OP12-043",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kuzan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-043.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-043.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "If you have 5 or more cards in your hand, this Character gains +1 cost.<br>[On Play] You may trash 1 card from your hand: Up to 1 of your opponent's Characters cannot attack until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-043_p1",
+    "code": "OP12-043",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kuzan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-043_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-043_p1.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "If you have 5 or more cards in your hand, this Character gains +1 cost.<br>[On Play] You may trash 1 card from your hand: Up to 1 of your opponent's Characters cannot attack until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-044",
+    "code": "OP12-044",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sakazuki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-044.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-044.png?250829"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "[On Play] If your Leader has the {Navy} type, draw 2 cards.<br>[Activate: Main] [Once Per Turn] You may trash 1 card from your hand: Give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-045",
+    "code": "OP12-045",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Jango",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-045.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-045.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 8000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-046",
+    "code": "OP12-046",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Zephyr(Navy)",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-046.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-046.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "FILM/Navy",
+    "ability": "[On Play] Trash 2 cards from your hand.<br>[Activate: Main] You may trash this Character: Return up to 1 Character with a cost of 5 or less to the owner's hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-047",
+    "code": "OP12-047",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sengoku",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-047.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-047.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "[On Play] You may trash 1 card from your hand: Look at 5 cards from the top of your deck; reveal up to 2 {Navy} type cards other than [Sengoku] and add them to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-048",
+    "code": "OP12-048",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Donquixote Rosinante",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-048.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-048.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "[Opponent's Turn] If your blue {Navy} type Character would be removed from the field by your opponent's effect, you may rest this Character and trash 1 card from your hand instead.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-049",
+    "code": "OP12-049",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Buggy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-049.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-049.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "The Four Emperors/Cross Guild",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-050",
+    "code": "OP12-050",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Jaguar.D.Saul",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-050.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-050.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Giant/Ohara/Navy",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-051",
+    "code": "OP12-051",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Hina",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-051.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-051.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 3000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "[Activate: Main] You may rest this Character and trash 1 card from your hand: Up to 1 of your opponent's Characters with a base cost of 4 or less cannot activate [Blocker] during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-052",
+    "code": "OP12-052",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Fullbody",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-052.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-052.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-053",
+    "code": "OP12-053",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Borsalino",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-053.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-053.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "[Once Per Turn] If this Character would be removed from the field by your opponent's effect, you may trash 1 card from your hand instead.<br>[Opponent's Turn] If your Leader has the {Navy} type, this Character gains [Blocker] and +1000 power.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-054",
+    "code": "OP12-054",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Marshall.D.Teach",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-054.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-054.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Blackbeard Pirates",
+    "ability": "[On Play] If your Leader has the {The Seven Warlords of the Sea} type, return up to 1 Character with a cost of 1 or less other than this Character to the owner's hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-055",
+    "code": "OP12-055",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Mohji & Cabaji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-055.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-055.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash / Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type11.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Cross Guild",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-056",
+    "code": "OP12-056",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Garp",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-056.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-056.png?250829"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "[On Play] You may trash 1 card from your hand: Play up to 1 blue {Navy} type Character card with 8000 power or less other than [Monkey.D.Garp] from your hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-056_p1",
+    "code": "OP12-056",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Garp",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-056_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-056_p1.png?250829"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "[On Play] You may trash 1 card from your hand: Play up to 1 blue {Navy} type Character card with 8000 power or less other than [Monkey.D.Garp] from your hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-057",
+    "code": "OP12-057",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Ice Block Pheasant Peck",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-057.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-057.png?250829"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +4000 power during this battle. Then, trash 1 card from your hand.",
+    "trigger": "[Trigger] You may trash 1 card from your hand: Draw 1 card.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-058",
+    "code": "OP12-058",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "I Will Make Whitebeard the King of the Pirates",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-058.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-058.png?250829"
+    },
+    "cost": 9,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Whitebeard Pirates",
+    "ability": "[Main] If your Leader's type includes \"Whitebeard Pirates\", reveal 1 card from the top of your deck. If that card is a Character card with a type including \"Whitebeard Pirates\" and a cost of 9 or less, you may play that card. If you do, that Character gains [Rush] during this turn.",
+    "trigger": "[Trigger] Draw 1 card.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-059",
+    "code": "OP12-059",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Concasser",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-059.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-059.png?250829"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Sky Island/Straw Hat Crew",
+    "ability": "[Main] If your Leader is [Sanji], draw 1 card.<br>[Counter] If you have 4 or more Events in your trash, up to 1 of your Leader gains +4000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-060",
+    "code": "OP12-060",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Boeuf Burst",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-060.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-060.png?250829"
+    },
+    "cost": 3,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] If your Leader is multicolored, choose one:<br>• Return up to 1 of your opponent's Characters with a cost of 4 or less to the owner's hand.<br>• If you have 6 or less cards in your hand, draw 2 cards.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-060_p1",
+    "code": "OP12-060",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Boeuf Burst",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-060_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-060_p1.png?250829"
+    },
+    "cost": 3,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] If your Leader is multicolored, choose one:<br>• Return up to 1 of your opponent's Characters with a cost of 4 or less to the owner's hand.<br>• If you have 6 or less cards in your hand, draw 2 cards.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-061",
+    "code": "OP12-061",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Donquixote Rosinante",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-061.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-061.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Purple/Yellow",
+    "family": "Navy/Donquixote Pirates",
+    "ability": "[Once Per Turn] If your [Trafalgar Law] would be K.O.'d, you may add 1 card from the top of your Life cards to your hand instead.<br>[Activate: Main] [Once Per Turn] DON!! −1: The next time you play [Trafalgar Law] with a cost of 4 or more from your hand during this turn, the cost will be reduced by 2.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-061_p1",
+    "code": "OP12-061",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Donquixote Rosinante",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-061_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-061_p1.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Purple/Yellow",
+    "family": "Navy/Donquixote Pirates",
+    "ability": "[Once Per Turn] If your [Trafalgar Law] would be K.O.'d, you may add 1 card from the top of your Life cards to your hand instead.<br>[Activate: Main] [Once Per Turn] DON!! −1: The next time you play [Trafalgar Law] with a cost of 4 or more from your hand during this turn, the cost will be reduced by 2.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-062",
+    "code": "OP12-062",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Vinsmoke Sora",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-062.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-062.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Kingdom of GERMA/The Vinsmoke Family",
+    "ability": "[On Play] If your Leader is [Sanji] and the number of DON!! cards on your field is equal to or less than the number on your opponent's field, add up to 1 DON!! card from your DON!! deck and rest it. Then, draw 1 card.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-063",
+    "code": "OP12-063",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Vinsmoke Reiju",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-063.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-063.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "The Vinsmoke Family/GERMA 66",
+    "ability": "If you have 4 or more Events in your trash, this Character gains +2000 power and +5 cost.<br>[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-063_p1",
+    "code": "OP12-063",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Vinsmoke Reiju",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-063_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-063_p1.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "The Vinsmoke Family/GERMA 66",
+    "ability": "If you have 4 or more Events in your trash, this Character gains +2000 power and +5 cost.<br>[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-064",
+    "code": "OP12-064",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Vergo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-064.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-064.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Punk Hazard/Navy/Donquixote Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-065",
+    "code": "OP12-065",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Emporio.Ivankov",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-065.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-065.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Impel Down/Revolutionary Army",
+    "ability": "If you have 4 or more Events in your trash, this Character gains [Blocker].<br>[On K.O.] Add up to 1 Event from your trash to your hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-066",
+    "code": "OP12-066",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Carne",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-066.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-066.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "East Blue",
+    "ability": "If you have 4 or more Events in your trash, this Character gains [Blocker].<br>(After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-067",
+    "code": "OP12-067",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Carmen",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-067.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-067.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "East Blue",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-068",
+    "code": "OP12-068",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Gin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-068.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-068.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "East Blue/Krieg Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-069",
+    "code": "OP12-069",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Crocodile",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-069.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-069.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[On Your Opponent's Attack] [Once Per Turn] DON!! −1: If your Leader's type includes \"Baroque Works\", up to 1 of your Leader or Character cards gains +2000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-070",
+    "code": "OP12-070",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-070.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-070.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Alabasta/Straw Hat Crew",
+    "ability": "This Character gains +1000 power for every 5 Events in your trash.<br>If this Character would be removed from the field by your opponent's effect, you may return 1 DON!! card from your field to your DON!! deck instead.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-070_p1",
+    "code": "OP12-070",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-070_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-070_p1.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Alabasta/Straw Hat Crew",
+    "ability": "This Character gains +1000 power for every 5 Events in your trash.<br>If this Character would be removed from the field by your opponent's effect, you may return 1 DON!! card from your field to your DON!! deck instead.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-071",
+    "code": "OP12-071",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Charlotte Pudding",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-071.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-071.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[On Play] Look at 4 cards from the top of your deck; reveal up to 1 [Sanji] or Event card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-072",
+    "code": "OP12-072",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Zeff",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-072.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-072.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "East Blue",
+    "ability": "When a DON!! card on your field is returned to your DON!! deck, if your Leader is [Sanji], this Character gains [Rush] during this turn.<br>(This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-073",
+    "code": "OP12-073",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-073.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-073.png?250829"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Dressrosa/Supernovas/Heart Pirates",
+    "ability": "[On Play] If the number of DON!! cards on your field is equal to or less than the number on your opponent's field, add up to 1 DON!! card from your DON!! deck and set it as active. Then, all of your [Donquixote Rosinante] and {Heart Pirates} type Characters gain +1000 power until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-073_p1",
+    "code": "OP12-073",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-073_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-073_p1.png?250829"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Dressrosa/Supernovas/Heart Pirates",
+    "ability": "[On Play] If the number of DON!! cards on your field is equal to or less than the number on your opponent's field, add up to 1 DON!! card from your DON!! deck and set it as active. Then, all of your [Donquixote Rosinante] and {Heart Pirates} type Characters gain +1000 power until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-074",
+    "code": "OP12-074",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Patty",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-074.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-074.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 2000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "East Blue",
+    "ability": "[On Play] You may trash 1 Event from your hand: If your Leader is [Sanji], add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-075",
+    "code": "OP12-075",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Ms. All Sunday",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-075.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-075.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Baroque Works",
+    "ability": "[On Play] K.O. up to 1 of your opponent's Characters with a cost of 3 or less. Then, your opponent may add 1 DON!! card from their DON!! deck and set it as active.",
+    "trigger": "[Trigger] DON!! −1: Play this card.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-076",
+    "code": "OP12-076",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Monet",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-076.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-076.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Punk Hazard/Donquixote Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-077",
+    "code": "OP12-077",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "The \"Extinguishes All Sound Created by Your Influence\" Technique",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-077.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-077.png?250829"
+    },
+    "cost": 2,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Heart Pirates",
+    "ability": "[Main] Select up to 1 of your [Trafalgar Law] cards and that card gains +2000 power during this turn. Then, if the selected card attacks during this turn, your opponent cannot activate [Blocker].",
+    "trigger": "[Trigger] Draw 1 card.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-078",
+    "code": "OP12-078",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Brochette Blow",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-078.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-078.png?250829"
+    },
+    "cost": 3,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] If the number of DON!! cards on your field is equal to or less than the number on your opponent's field, draw 1 card. Then, give up to 1 of your opponent's Characters −3000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-079",
+    "code": "OP12-079",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Luffy Is the Man Who Will Be King of the Pirates!!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-079.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-079.png?250829"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] If your Leader is [Sanji], look at 3 cards from the top of your deck and add up to 1 card to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-080",
+    "code": "OP12-080",
+    "rarity": "C",
+    "type": "STAGE",
+    "name": "Baratie",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-080.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-080.png?250829"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "East Blue",
+    "ability": "[Activate: Main] You may place this Stage at the bottom of the owner's deck: If your Leader is [Sanji], look at 3 cards from the top of your deck; reveal up to 1 Event and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "[Trigger] Play this card.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-081",
+    "code": "OP12-081",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Koala",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-081.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-081.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Black/Yellow",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "When this Leader attacks your opponent's Leader, if you have 2 or more Characters with a cost of 8 or more, draw 1 card.<br>[Once Per Turn] This effect can be activated when your opponent plays a Character with a base cost of 8 or more, or when your opponent plays a Character using a Character's effect. Your opponent adds 1 card from the top of their Life cards to their hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-081_p1",
+    "code": "OP12-081",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Koala",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-081_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-081_p1.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Black/Yellow",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "When this Leader attacks your opponent's Leader, if you have 2 or more Characters with a cost of 8 or more, draw 1 card.<br>[Once Per Turn] This effect can be activated when your opponent plays a Character with a base cost of 8 or more, or when your opponent plays a Character using a Character's effect. Your opponent adds 1 card from the top of their Life cards to their hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-082",
+    "code": "OP12-082",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Issho",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-082.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-082.png?250829"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 10000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Dressrosa/Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-083",
+    "code": "OP12-083",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Inazuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-083.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-083.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-084",
+    "code": "OP12-084",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Emporio.Ivankov",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-084.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-084.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] If your Leader has the {Revolutionary Army} type, trash 3 cards from the top of your deck.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-085",
+    "code": "OP12-085",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Karasu",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-085.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-085.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "If your Leader has the {Revolutionary Army} type, this Character gains +3 cost.<br>[When Attacking] If your Leader has the {Revolutionary Army} type and your opponent has 5 or more cards in their hand, your opponent trashes 1 card from their hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-086",
+    "code": "OP12-086",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Koala",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-086.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-086.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "[On Play] If your Leader has the {Revolutionary Army} type, look at 3 cards from the top of your deck; reveal up to 1 {Revolutionary Army} type card other than [Koala] or up to 1 [Nico Robin] and add it to your hand. Then, trash the rest.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-086_p1",
+    "code": "OP12-086",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Koala",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-086_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-086_p1.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "[On Play] If your Leader has the {Revolutionary Army} type, look at 3 cards from the top of your deck; reveal up to 1 {Revolutionary Army} type card other than [Koala] or up to 1 [Nico Robin] and add it to your hand. Then, trash the rest.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-087",
+    "code": "OP12-087",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Nico Robin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-087.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-087.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "If your Leader is [Koala] or [Monkey.D.Luffy], this Character gains [Blocker] and +3 cost.<br>[On Play] You may trash 1 card from your hand: If your opponent has 5 or more cards in their hand, your opponent trashes 2 cards from their hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-087_p1",
+    "code": "OP12-087",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Nico Robin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-087_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-087_p1.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Straw Hat Crew",
+    "ability": "If your Leader is [Koala] or [Monkey.D.Luffy], this Character gains [Blocker] and +3 cost.<br>[On Play] You may trash 1 card from your hand: If your opponent has 5 or more cards in their hand, your opponent trashes 2 cards from their hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-088",
+    "code": "OP12-088",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bastille",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-088.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-088.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 8000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Dressrosa/Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-089",
+    "code": "OP12-089",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Hack",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-089.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-089.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Fish-Man/Dressrosa/Revolutionary Army",
+    "ability": "If your Leader has the {Revolutionary Army} type, this Character gains [Blocker] and +4 cost.<br>[On K.O.] If your Leader has the {Revolutionary Army} type, K.O. up to 1 of your opponent's Characters with a base cost of 4 or less.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-090",
+    "code": "OP12-090",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Belo Betty",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-090.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-090.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "2000",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "[When Attacking] You may trash 2 cards from the top of your deck: Give up to 1 of your opponent's Characters −2 cost during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-091",
+    "code": "OP12-091",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Poker",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-091.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-091.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Animal Kingdom Pirates/SMILE",
+    "ability": "[Activate: Main] [Once Per Turn] You may place 3 cards from your trash at the bottom of your deck in any order: Up to 2 of your {SMILE} type Characters gain +2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-092",
+    "code": "OP12-092",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Mizerka",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-092.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-092.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "2000",
+    "color": "Black",
+    "family": "Animal Kingdom Pirates/SMILE",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-093",
+    "code": "OP12-093",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Morley",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-093.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-093.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "2000",
+    "color": "Black",
+    "family": "Giant/Revolutionary Army",
+    "ability": "If your Leader has the {Revolutionary Army} type, this Character gains +4 cost.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-094",
+    "code": "OP12-094",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Dragon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-094.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-094.png?250829"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "[On Play] You may place 3 {Revolutionary Army} type cards from your trash at the bottom of your deck in any order: If your Leader has the {Revolutionary Army} type, play up to 1 Character card with a cost of 6 or less from your trash.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-094_p1",
+    "code": "OP12-094",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Dragon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-094_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-094_p1.png?250829"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "[On Play] You may place 3 {Revolutionary Army} type cards from your trash at the bottom of your deck in any order: If your Leader has the {Revolutionary Army} type, play up to 1 Character card with a cost of 6 or less from your trash.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-095",
+    "code": "OP12-095",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Lindbergh",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-095.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-095.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Minks/Revolutionary Army",
+    "ability": "If your Leader has the {Revolutionary Army} type, this Character gains +4 cost.<br>[On Play] Draw 1 card and trash 1 card from your hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-096",
+    "code": "OP12-096",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Ursa Shock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-096.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-096.png?250829"
+    },
+    "cost": 4,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Black",
+    "family": "The Seven Warlords of the Sea/Revolutionary Army",
+    "ability": "[Main] K.O. up to 1 of your opponent's Characters with a cost of 4 or less. If you have a Character with a cost of 8 or more, you may select your opponent's Character with a cost of 6 or less instead.",
+    "trigger": "[Trigger] Draw 1 card and trash 1 card from the top of your deck.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-097",
+    "code": "OP12-097",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Captains Assembled",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-097.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-097.png?250829"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Black",
+    "family": "Revolutionary Army",
+    "ability": "[Main] Look at 3 cards from the top of your deck; reveal up to 1 {Revolutionary Army} type card other than [Captains Assembled] and add it to your hand. Then, trash the rest.",
+    "trigger": "[Trigger] Activate this card's [Main] effect.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-098",
+    "code": "OP12-098",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Hair Removal Fist",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-098.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-098.png?250829"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Black",
+    "family": "Impel Down/Revolutionary Army",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, if you have a {Revolutionary Army} type Character with a cost of 8 or more, that card gains an additional +2000 power during this battle.",
+    "trigger": "[Trigger] Draw 1 card and trash 1 card from the top of your deck.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-099",
+    "code": "OP12-099",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kalgara",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-099.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-099.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Jaya/Sky Island/Shandian Warrior",
+    "ability": "[Your Turn] When a card is removed from your or your opponent's Life cards, draw 1 card. Then, you cannot draw cards using your own effects during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-100",
+    "code": "OP12-100",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Sabo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-100.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-100.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Dressrosa/Revolutionary Army",
+    "ability": "If you have 3 or less Life cards, this Character gains [Blocker] and +3 cost.<br>[On Play] You may add 1 card from the top of your Life cards to your hand: Draw 2 cards and trash 1 card from your hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-101",
+    "code": "OP12-101",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-101.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-101.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Supernovas/Bonney Pirates",
+    "ability": "[Activate: Main] You may rest this Character: Your {Supernovas} type Leader gains +1000 power until the end of your opponent's next turn.",
+    "trigger": "[Trigger] If your Leader has the {Supernovas} type, play this card.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-102",
+    "code": "OP12-102",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Shirahoshi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-102.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-102.png?250829"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "If your Character with a base cost of 6 or less would be removed from the field by your opponent's effect, you may turn 1 card from the top of your Life cards face-up instead.<br>[Opponent's Turn] If you have no other [Shirahoshi] with a base cost of 2, all of your {Neptunian} type Characters gain +2000 power.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-102_p1",
+    "code": "OP12-102",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Shirahoshi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-102_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-102_p1.png?250829"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "If your Character with a base cost of 6 or less would be removed from the field by your opponent's effect, you may turn 1 card from the top of your Life cards face-up instead.<br>[Opponent's Turn] If you have no other [Shirahoshi] with a base cost of 2, all of your {Neptunian} type Characters gain +2000 power.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-103",
+    "code": "OP12-103",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Seto",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-103.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-103.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Jaya/Sky Island/Shandian Warrior",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-104",
+    "code": "OP12-104",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Sentomaru",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-104.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-104.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Egghead/Navy",
+    "ability": "-",
+    "trigger": "[Trigger] K.O. up to 1 of your opponent's Characters with a cost of 4 or less.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-105",
+    "code": "OP12-105",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Trafalgar Lammy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-105.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-105.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Flevance",
+    "ability": "[Your Turn] [On Play] Up to 1 of your [Trafalgar Law] cards gains +2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-106",
+    "code": "OP12-106",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-106.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-106.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Dressrosa/Supernovas/Heart Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-107",
+    "code": "OP12-107",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Donquixote Doflamingo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-107.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-107.png?250829"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "If you have 2 or less Life cards, this Character gains [Rush].<br>(This card can attack on the turn in which it is played.)<br>[Opponent's Turn] [On K.O.] Add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-108",
+    "code": "OP12-108",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Donquixote Rosinante",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-108.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-108.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Navy/Donquixote Pirates",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 [Trafalgar Law] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-108_p1",
+    "code": "OP12-108",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Donquixote Rosinante",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-108_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-108_p1.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Navy/Donquixote Pirates",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 [Trafalgar Law] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-109",
+    "code": "OP12-109",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Pacifista",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-109.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-109.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Biological Weapon/Egghead/Navy",
+    "ability": "-",
+    "trigger": "[Trigger] K.O. up to 1 of your opponent's Characters with a cost of 1 or less and add this card to your hand.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-110",
+    "code": "OP12-110",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Buffalo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-110.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-110.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Donquixote Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-111",
+    "code": "OP12-111",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Baby 5",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-111.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-111.png?250829"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Donquixote Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-112",
+    "code": "OP12-112",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Baby 5",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-112.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-112.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Donquixote Pirates",
+    "ability": "-",
+    "trigger": "[Trigger] If your Leader is multicolored, draw 2 cards.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-113",
+    "code": "OP12-113",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-113.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-113.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[On K.O.] If your Leader has the {Supernovas} type, play up to 1 {Supernovas} type Character card with a cost of 4 or less from your hand rested.",
+    "trigger": "[Trigger] K.O. up to 1 of your opponent's Characters with a cost of 1 or less and add this card to your hand.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-114",
+    "code": "OP12-114",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Wyper",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-114.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-114.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 7000,
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Sky Island/Shandian Warrior",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-115",
+    "code": "OP12-115",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "I Love You!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-115.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-115.png?250829"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Navy/Donquixote Pirates",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, if you have 2 or less Life cards, add up to 1 [Trafalgar Law] from your trash to your hand.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-116",
+    "code": "OP12-116",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "We'll Ring the Bell Waiting for You!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-116.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-116.png?250829"
+    },
+    "cost": 3,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Jaya/Sky Island/Shandian Warrior",
+    "ability": "[Main] Look at 5 cards from the top of your deck; reveal a total of up to 2 {Shandian Warrior} type Character cards or [Mont Blanc Noland] and add them to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "[Trigger] Draw 1 card.",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-117",
+    "code": "OP12-117",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Slam Gibson",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-117.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-117.png?250829"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[Main] You may rest 5 of your DON!! cards: If your Leader has the {Supernovas} type, add up to 1 Character with a cost of 9 or less to the top or bottom of the owner's Life cards face-down.<br>[Counter] Your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-118",
+    "code": "OP12-118",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-118.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-118.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Bonney Pirates",
+    "ability": "[Blocker]<br>[On Play] If you have 8 or more rested cards, draw 2 cards and trash 1 card from your hand. Then, set up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-118_p1",
+    "code": "OP12-118",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-118_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-118_p1.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Bonney Pirates",
+    "ability": "[Blocker]<br>[On Play] If you have 8 or more rested cards, draw 2 cards and trash 1 card from your hand. Then, set up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-118_p2",
+    "code": "OP12-118",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-118_p2.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-118_p2.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Bonney Pirates",
+    "ability": "[Blocker]<br>[On Play] If you have 8 or more rested cards, draw 2 cards and trash 1 card from your hand. Then, set up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-119",
+    "code": "OP12-119",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Bartholomew Kuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-119.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-119.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "The Seven Warlords of the Sea/Revolutionary Army",
+    "ability": "[On Play] You may trash 1 card from your hand: Add up to 1 card from the top of your deck to the top of your Life cards. Then, this Character gains +2 cost until the end of your opponent's next End Phase.<br>[Opponent's Turn] [On K.O.] Add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP12-119_p1",
+    "code": "OP12-119",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Bartholomew Kuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-119_p1.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP12-119_p1.png?250829"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "The Seven Warlords of the Sea/Revolutionary Army",
+    "ability": "[On Play] You may trash 1 card from your hand: Add up to 1 card from the top of your deck to the top of your Life cards. Then, this Character gains +2 cost until the end of your opponent's next End Phase.<br>[Opponent's Turn] [On K.O.] Add up to 1 card from the top of your deck to the top of your Life cards.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP06-050_p2",
+    "code": "OP06-050",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Tashigi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-050_p2.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-050_p2.png?250829"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Navy",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Navy} type card other than [Tashigi] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP09-013_p2",
+    "code": "OP09-013",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Yasopp",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-013_p2.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-013_p2.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Red-Haired Pirates",
+    "ability": "[On Play] Up to 1 of your Leader gains +1000 power until the end of your opponent's next turn.<br>[DON!! x1] [When Attacking] Give up to 1 of your opponent's Characters −1000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP09-037_p2",
+    "code": "OP09-037",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Lim",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-037_p2.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-037_p2.png?250829"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green",
+    "family": "ODYSSEY",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {ODYSSEY} type card other than [Lim] and add it to your hand. Then, place the rest at the bottom of your deck in any order.<br>[End of Your Turn] If you have 3 or more rested Characters, set this Character as active.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP09-093_p4",
+    "code": "OP09-093",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Marshall.D.Teach",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-093_p4.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-093_p4.png?250829"
+    },
+    "cost": 10,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 12000,
+    "counter": "-",
+    "color": "Black",
+    "family": "The Four Emperors/Blackbeard Pirates",
+    "ability": "[Blocker]<br>[Activate: Main] [Once Per Turn] If your Leader has the {Blackbeard Pirates} type and this Character was played on this turn, negate the effect of up to 1 of your opponent's Leader during this turn. Then, negate the effect of up to 1 of your opponent's Characters and that Character cannot attack until the end of your opponent's next turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP09-093_p5",
+    "code": "OP09-093",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Marshall.D.Teach",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-093_p5.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-093_p5.png?250829"
+    },
+    "cost": 10,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 12000,
+    "counter": "-",
+    "color": "Black",
+    "family": "The Four Emperors/Blackbeard Pirates",
+    "ability": "[Blocker]<br>[Activate: Main] [Once Per Turn] If your Leader has the {Blackbeard Pirates} type and this Character was played on this turn, negate the effect of up to 1 of your opponent's Leader during this turn. Then, negate the effect of up to 1 of your opponent's Characters and that Character cannot attack until the end of your opponent's next turn.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "OP10-082_p2",
+    "code": "OP10-082",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Kuzan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-082_p2.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP10-082_p2.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Former Navy/Blackbeard Pirates",
+    "ability": "This Character cannot be removed from the field by your opponent's effects.<br>[Activate: Main] You may trash this Character: Draw 1 card. Then, play up to 1 {Blackbeard Pirates} type Character card with a cost of 5 or less other than [Kuzan] from your trash.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "ST13-011_p2",
+    "code": "ST13-011",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Portgas.D.Ace",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST13-011_p2.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST13-011_p2.png?250829"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Whitebeard Pirates",
+    "ability": "[On Play] If you have 2 or less Life cards, this Character gains [Rush].<br>(This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  },
+  {
+    "id": "ST18-004_p2",
+    "code": "ST18-004",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Zoro-Juurou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-004_p2.png?250829",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-004_p2.png?250829"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 purple {Straw Hat Crew} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-LEGACY OF THE MASTER- [OP-12]" },
+    "notes": []
+  }
+]

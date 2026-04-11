@@ -1,0 +1,3680 @@
+[
+  {
+    "id": "OP09-015_p1",
+    "code": "OP09-015",
+    "rarity": "TR",
+    "type": "CHARACTER",
+    "name": "Lucky.Roux",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-015_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-015_p1.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Red-Haired Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On K.O.] If your Leader has the {Red-Haired Pirates} type, K.O. up to 1 of your opponent's Characters with a base power of 6000 or less.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-001",
+    "code": "OP11-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Koby",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-001.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-001.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red/Black",
+    "family": "Navy/SWORD",
+    "ability": "Your {SWORD} type Characters can attack Characters on the turn in which they are played.<br>[Once Per Turn] If your {Navy} type Character with 7000 base power or less would be removed from the field by your opponent's effect, you may place 3 cards from your trash at the bottom of your deck in any order instead.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-001_p1",
+    "code": "OP11-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Koby",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-001_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-001_p1.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Red/Black",
+    "family": "Navy/SWORD",
+    "ability": "Your {SWORD} type Characters can attack Characters on the turn in which they are played.<br>[Once Per Turn] If your {Navy} type Character with 7000 base power or less would be removed from the field by your opponent's effect, you may place 3 cards from your trash at the bottom of your deck in any order instead.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-002",
+    "code": "OP11-002",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Ain",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-002.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-002.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "FILM/Neo Navy",
+    "ability": "[On Play] Give up to 1 of your opponent's Characters −1000 power during this turn. Then, K.O. up to 1 of your opponent's Characters with 0 power or less.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-003",
+    "code": "OP11-003",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Usopp",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-003.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-003.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-004",
+    "code": "OP11-004",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Kujyaku",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-004.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-004.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Navy/SWORD",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Navy} type card other than [Kujyaku] and add it to your hand. Then, place the rest at the bottom of your deck in any order.<br>[Activate: Main] You may trash this Character: Up to 1 of your Characters gains +1000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-004_p1",
+    "code": "OP11-004",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Kujyaku",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-004_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-004_p1.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Navy/SWORD",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Navy} type card other than [Kujyaku] and add it to your hand. Then, place the rest at the bottom of your deck in any order.<br>[Activate: Main] You may trash this Character: Up to 1 of your Characters gains +1000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-005",
+    "code": "OP11-005",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Smoker",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-005.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-005.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Navy",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[DON!! x1] This Character cannot be K.O.'d by effects of Characters without the ＜Special＞ attribute.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-006",
+    "code": "OP11-006",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Zephyr",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-006.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-006.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "FILM/Neo Navy",
+    "ability": "[DON!! x1] [When Attacking] Give up to 1 of your opponent's ＜Special＞ attribute Characters −5000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-007",
+    "code": "OP11-007",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Tashigi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-007.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-007.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Navy",
+    "ability": "[Activate: Main] You may rest this Character: If your Leader has the {Navy} type, up to 1 of your {Navy} type Characters gains +2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-008",
+    "code": "OP11-008",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Doll",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-008.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-008.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Navy",
+    "ability": "[Blocker]<br>[On Play] You may trash 1 card from your hand: If your Leader has the {Navy} type, give up to 1 of your opponent's Characters −6000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-008_p1",
+    "code": "OP11-008",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Doll",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-008_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-008_p1.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Navy",
+    "ability": "[Blocker]<br>[On Play] You may trash 1 card from your hand: If your Leader has the {Navy} type, give up to 1 of your opponent's Characters −6000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-009",
+    "code": "OP11-009",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Nico Robin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-009.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-009.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[DON!! x2] [When Attacking] Give up to 1 of your opponent's Characters −2000 power until the end of your opponent's next turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-010",
+    "code": "OP11-010",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Hibari",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-010.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-010.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Navy/SWORD",
+    "ability": "[On Play] Give up to 1 of your opponent's Characters −2000 power during this turn.<br>[When Attacking] This Character gains +1000 power during this turn. Then, up to 1 of your {Navy} type Leader can also attack active Characters during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-010_p1",
+    "code": "OP11-010",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Hibari",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-010_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-010_p1.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Red",
+    "family": "Navy/SWORD",
+    "ability": "[On Play] Give up to 1 of your opponent's Characters −2000 power during this turn.<br>[When Attacking] This Character gains +1000 power during this turn. Then, up to 1 of your {Navy} type Leader can also attack active Characters during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-011",
+    "code": "OP11-011",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bins",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-011.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-011.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "FILM/Neo Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-012",
+    "code": "OP11-012",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Franky",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-012.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-012.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "2000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[Your Turn] [Once Per Turn] When your opponent activates an Event, all of your Characters gain +2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-013",
+    "code": "OP11-013",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Prince Grus",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-013.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-013.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "2000",
+    "color": "Red",
+    "family": "Navy/SWORD",
+    "ability": "[When Attacking] All of your opponent's Characters with 2000 power or less cannot activate [Blocker] during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-014",
+    "code": "OP11-014",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Borsalino",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-014.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-014.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "FILM/Navy",
+    "ability": "[Blocker]<br>[Activate: Main] You may rest this Character: Up to 1 of your {Navy} type Leader or Character cards can also attack active Characters during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-015",
+    "code": "OP11-015",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Mocha",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-015.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-015.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Punk Hazard",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-016",
+    "code": "OP11-016",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-016.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-016.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Straw Hat Crew",
+    "ability": "[Activate: Main] [Once Per Turn] Give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-017",
+    "code": "OP11-017",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "X.Drake",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-017.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-017.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "2000",
+    "color": "Red",
+    "family": "Navy/SWORD/Drake Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-018",
+    "code": "OP11-018",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Honesty Impact",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-018.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-018.png?250530"
+    },
+    "cost": 6,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Navy/SWORD",
+    "ability": "[Main] Give up to 1 of your opponent's Characters −4000 power during this turn. Then, K.O. up to 1 of your opponent's Characters with 6000 power or less.",
+    "trigger": "[Trigger] K.O. up to 1 of your opponent's Characters with 6000 power or less.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-018_p1",
+    "code": "OP11-018",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Honesty Impact",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-018_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-018_p1.png?250530"
+    },
+    "cost": 6,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Navy/SWORD",
+    "ability": "[Main] Give up to 1 of your opponent's Characters −4000 power during this turn. Then, K.O. up to 1 of your opponent's Characters with 6000 power or less.",
+    "trigger": "[Trigger] K.O. up to 1 of your opponent's Characters with 6000 power or less.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-019",
+    "code": "OP11-019",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Glorp Web!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-019.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-019.png?250530"
+    },
+    "cost": 2,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Navy/SWORD",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, if your opponent has a Character with 6000 power or more, up to 1 of your Leader or Character cards gains +1000 power during this turn.",
+    "trigger": "[Trigger] Up to 1 of your Leader or Character cards gains +1000 power during this turn.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-020",
+    "code": "OP11-020",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "X Calibur",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-020.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-020.png?250530"
+    },
+    "cost": 2,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Red",
+    "family": "Navy/SWORD/Drake Pirates",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, if your opponent has a Character with 6000 power or more, up to 1 of your Leader or Character cards gains +1000 power during this turn.",
+    "trigger": "[Trigger] Up to 1 of your Leader or Character cards gains +1000 power during this turn.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-021",
+    "code": "OP11-021",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-021.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-021.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Fish-Man/Straw Hat Crew",
+    "ability": "[End of Your Turn] If you have 6 or less cards in your hand, set up to 1 of your {Fish-Man} or {Merfolk} type Characters and up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-021_p1",
+    "code": "OP11-021",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-021_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-021_p1.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Fish-Man/Straw Hat Crew",
+    "ability": "[End of Your Turn] If you have 6 or less cards in your hand, set up to 1 of your {Fish-Man} or {Merfolk} type Characters and up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-022",
+    "code": "OP11-022",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Shirahoshi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-022.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-022.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green/Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "This Leader cannot attack.<br>[Activate: Main] [Once Per Turn] You may rest 1 of your DON!! cards and turn 1 card from the top of your Life cards face-up: Play up to 1 {Neptunian} type Character card or [Megalo] with a cost equal to or less than the number of DON!! cards on your field from your hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-022_p1",
+    "code": "OP11-022",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Shirahoshi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-022_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-022_p1.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green/Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "This Leader cannot attack.<br>[Activate: Main] [Once Per Turn] You may rest 1 of your DON!! cards and turn 1 card from the top of your Life cards face-up: Play up to 1 {Neptunian} type Character card or [Megalo] with a cost equal to or less than the number of DON!! cards on your field from your hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-023",
+    "code": "OP11-023",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Arlong",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-023.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-023.png?250530"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Fish-Man/Fish-Man Island/The Sun Pirates",
+    "ability": "If your Leader has the {Fish-Man} type, you have 3 or less Life cards and your opponent has 5 or more rested cards, give this card in your hand −3 cost.",
+    "trigger": "[Trigger] Rest up to 1 of your opponent's Characters with a cost of 4 or less.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-023_p1",
+    "code": "OP11-023",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Arlong",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-023_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-023_p1.png?250530"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Fish-Man/Fish-Man Island/The Sun Pirates",
+    "ability": "If your Leader has the {Fish-Man} type, you have 3 or less Life cards and your opponent has 5 or more rested cards, give this card in your hand −3 cost.",
+    "trigger": "[Trigger] Rest up to 1 of your opponent's Characters with a cost of 4 or less.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-024",
+    "code": "OP11-024",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Aladine",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-024.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-024.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Merfolk/Fish-Man Island/The Sun Pirates",
+    "ability": "When this Character is K.O.'d by your opponent's effect, you may trash 1 card from your hand and rest 1 of your DON!! cards. If you do, play up to 1 {Fish-Man} or {Merfolk} type Character card with a cost of 6 or less from your hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-025",
+    "code": "OP11-025",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Ishilly",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-025.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-025.png?250530"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "[On Your Opponent's Attack] [Once Per Turn] You may rest 1 of your DON!! cards and this Character: Up to 1 of your Leader or Character cards gains +1000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-026",
+    "code": "OP11-026",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Scaled Neptunian",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-026.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-026.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Neptunian",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-027",
+    "code": "OP11-027",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Bulge-Eyed Neptunian",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-027.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-027.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Neptunian",
+    "ability": "If your Leader is [Shirahoshi], this Character can attack Characters on the turn in which it is played.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-028",
+    "code": "OP11-028",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Lord of the Coast",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-028.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-028.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Neptunian/East Blue",
+    "ability": "[On Play] Up to 1 of your opponent's rested Characters will not become active in your opponent's next Refresh Phase.",
+    "trigger": "[Trigger] K.O. up to 1 of your opponent's rested Characters with a cost of 3 or less.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-029",
+    "code": "OP11-029",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Charlotte Praline",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-029.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-029.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Merfolk/Fish-Man Island/The Sun Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] Rest up to 1 of your opponent's Characters with a cost of 1 or less.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-030",
+    "code": "OP11-030",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Shirahoshi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-030.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-030.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "[Activate: Main] You may rest 1 of your DON!! cards and this Character: Look at 5 cards from the top of your deck; reveal up to 1 {Neptunian} or {Fish-Man Island} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-031",
+    "code": "OP11-031",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-031.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-031.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Fish-Man/Fish-Man Island/The Sun Pirates",
+    "ability": "[On Play] If your Leader has the {Fish-Man} or {Merfolk} type, rest up to 1 of your opponent's Characters with a cost of 5 or less.<br>[Activate: Main] [Once Per Turn] Up to 1 of your {Fish-Man} or {Merfolk} type Characters can attack Characters on the turn in which it is played.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-031_p1",
+    "code": "OP11-031",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-031_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-031_p1.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Fish-Man/Fish-Man Island/The Sun Pirates",
+    "ability": "[On Play] If your Leader has the {Fish-Man} or {Merfolk} type, rest up to 1 of your opponent's Characters with a cost of 5 or less.<br>[Activate: Main] [Once Per Turn] Up to 1 of your {Fish-Man} or {Merfolk} type Characters can attack Characters on the turn in which it is played.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-032",
+    "code": "OP11-032",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Surume",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-032.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-032.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Green",
+    "family": "Animal/Fish-Man Island",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-033",
+    "code": "OP11-033",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Bird Neptunian",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-033.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-033.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "2000",
+    "color": "Green",
+    "family": "Neptunian",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-034",
+    "code": "OP11-034",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Hatchan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-034.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-034.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Fish-Man/Fish-Man Island/Former Arlong Pirates",
+    "ability": "[Activate: Main] You may rest this Character: If your Leader has the {Fish-Man} or {Merfolk} type, up to 1 of your opponent's Characters with a cost of 3 or less cannot be rested until the end of your opponent's next turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-035",
+    "code": "OP11-035",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Fisher Tiger",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-035.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-035.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Fish-Man/Fish-Man Island/The Sun Pirates",
+    "ability": "When this Character is K.O.'d by your opponent's effect, you may rest 1 of your DON!! cards. If you do, play up to 1 {Fish-Man} or {Merfolk} type Character card with a cost of 4 or less from your hand.<br>[On Play] Rest up to 1 of your opponent's Characters.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-036",
+    "code": "OP11-036",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Spotted Neptunian",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-036.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-036.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Neptunian",
+    "ability": "[On Play] If your Leader is [Shirahoshi], look at 5 cards from the top of your deck; reveal up to 1 {Neptunian} type card or [Shirahoshi] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-037",
+    "code": "OP11-037",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Ancient Weapon Poseidon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-037.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-037.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Fish-Man Island",
+    "ability": "[Main] Look at 4 cards from the top of your deck; reveal up to 1 {Neptunian} or {Fish-Man Island} type Character card and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "[Trigger] Draw 1 card.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-038",
+    "code": "OP11-038",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Gum-Gum Elephant Gatling",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-038.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-038.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Fish-Man Island/Supernovas/Straw Hat Crew",
+    "ability": "[Main] You may rest 1 of your DON!! cards: Rest up to 1 of your opponent's Characters with a cost of 5 or less.<br>[Counter] Up to 1 of your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-039",
+    "code": "OP11-039",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Vagabond Drill",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-039.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-039.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Fish-Man/Fish-Man Island/The Sun Pirates",
+    "ability": "[Counter] Up to 1 of your {Fish-Man} or {Merfolk} type Leader or Character cards gains +3000 power during this battle. Then, rest up to 1 of your opponent's Characters with a cost of 3 or less.",
+    "trigger": "[Trigger] Rest up to 1 of your opponent's Characters with a cost of 4 or less.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-040",
+    "code": "OP11-040",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-040.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-040.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Blue/Purple",
+    "family": "Straw Hat Crew",
+    "ability": "This effect can be activated at the start of your turn. If you have 8 or more DON!! cards on your field, look at 5 cards from the top of your deck; reveal up to 1 {Straw Hat Crew} type card and add it to your hand. Then, place the rest at the top or bottom of the deck in any order.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-040_p1",
+    "code": "OP11-040",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-040_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-040_p1.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Blue/Purple",
+    "family": "Straw Hat Crew",
+    "ability": "This effect can be activated at the start of your turn. If you have 8 or more DON!! cards on your field, look at 5 cards from the top of your deck; reveal up to 1 {Straw Hat Crew} type card and add it to your hand. Then, place the rest at the top or bottom of the deck in any order.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-041",
+    "code": "OP11-041",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-041.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-041.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue/Yellow",
+    "family": "Straw Hat Crew",
+    "ability": "[Your Turn] [Once Per Turn] This effect can be activated when a card is removed from your or your opponent's Life cards. If you have 7 or less cards in your hand, draw 1 card.<br>[DON!! x1] [On Your Opponent's Attack] [Once Per Turn] You may trash 1 card from your hand: This Leader gains +2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-041_p1",
+    "code": "OP11-041",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-041_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-041_p1.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue/Yellow",
+    "family": "Straw Hat Crew",
+    "ability": "[Your Turn] [Once Per Turn] This effect can be activated when a card is removed from your or your opponent's Life cards. If you have 7 or less cards in your hand, draw 1 card.<br>[DON!! x1] [On Your Opponent's Attack] [Once Per Turn] You may trash 1 card from your hand: This Leader gains +2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-042",
+    "code": "OP11-042",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Vito",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-042.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-042.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Firetank Pirates",
+    "ability": "[On Play] You may trash 1 {Firetank Pirates} type card from your hand: This Character gains [Rush] during this turn.<br>(This card can attack on the turn in which it is played.)",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-043",
+    "code": "OP11-043",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Vinsmoke Ichiji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-043.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-043.png?250530"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Vinsmoke Family/GERMA 66",
+    "ability": "[Blocker]<br>[On Your Opponent's Attack] [Once Per Turn] This effect can be activated when you only have Characters with a type including \"GERMA\". Up to 1 of your Leader or Character cards gains +1000 power during this battle. Then, trash 2 cards from the top of your deck.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-044",
+    "code": "OP11-044",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Vinsmoke Judge",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-044.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-044.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Vinsmoke Family/GERMA 66",
+    "ability": "[Activate: Main] [Once Per Turn] You may trash 1 card from your hand: All of your {GERMA 66} type Characters gain +1000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-045",
+    "code": "OP11-045",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Vinsmoke Niji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-045.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-045.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "The Vinsmoke Family/GERMA 66",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-046",
+    "code": "OP11-046",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Vinsmoke Yonji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-046.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-046.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Vinsmoke Family/GERMA 66",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>If you only have Characters with a type including \"GERMA\", this Character cannot be K.O.'d or rested by your opponent's effects.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-047",
+    "code": "OP11-047",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Vinsmoke Reiju",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-047.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-047.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "The Vinsmoke Family/GERMA 66",
+    "ability": "[On Play] If your Leader has the {The Vinsmoke Family} type, look at 5 cards from the top of your deck; reveal up to 1 card with a type including \"GERMA\" and add it to your hand. Then, trash the rest.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-047_p1",
+    "code": "OP11-047",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Vinsmoke Reiju",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-047_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-047_p1.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "The Vinsmoke Family/GERMA 66",
+    "ability": "[On Play] If your Leader has the {The Vinsmoke Family} type, look at 5 cards from the top of your deck; reveal up to 1 card with a type including \"GERMA\" and add it to your hand. Then, trash the rest.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-048",
+    "code": "OP11-048",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Capone\"Gang\"Bege",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-048.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-048.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Supernovas/Firetank Pirates",
+    "ability": "[On Play] Look at 4 cards from the top of your deck; reveal up to 1 {Firetank Pirates} or {Straw Hat Crew} type card with a cost of 2 or more and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-049",
+    "code": "OP11-049",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Carrot",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-049.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-049.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Minks",
+    "ability": "[On Play] Look at 3 cards from the top of your deck and place them at the top or bottom of the deck in any order.<br>[On Your Opponent's Attack] You may trash this Character: Up to 1 of your Leader gains +1000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-050",
+    "code": "OP11-050",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Gotti",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-050.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-050.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 4000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Firetank Pirates",
+    "ability": "[When Attacking] You may trash 1 {Firetank Pirates} type card from your hand: Return up to 1 Character with a cost of 1 or less to the owner's hand or place it at the bottom of their deck.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-051",
+    "code": "OP11-051",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-051.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-051.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Vinsmoke Family/Straw Hat Crew",
+    "ability": "When this Character is K.O.'d by your opponent's effect, look at 5 cards from the top of your deck and play up to 1 {Straw Hat Crew} type Character card with a cost of 5 or less. Then, place the rest at the bottom of your deck in any order.<br>[On Play] Return up to 1 Character with 5000 base power or less to the owner's hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-051_p1",
+    "code": "OP11-051",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-051_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-051_p1.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Vinsmoke Family/Straw Hat Crew",
+    "ability": "When this Character is K.O.'d by your opponent's effect, look at 5 cards from the top of your deck and play up to 1 {Straw Hat Crew} type Character card with a cost of 5 or less. Then, place the rest at the bottom of your deck in any order.<br>[On Play] Return up to 1 Character with 5000 base power or less to the owner's hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-052",
+    "code": "OP11-052",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Charlotte Lola",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-052.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-052.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Firetank Pirates/Former Rolling Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-053",
+    "code": "OP11-053",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Tony Tony.Chopper",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-053.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-053.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Animal/Straw Hat Crew",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-054",
+    "code": "OP11-054",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-054.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-054.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] If your Leader is multicolored, draw 3 cards and place 2 cards from your hand at the top or bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-054_p1",
+    "code": "OP11-054",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-054_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-054_p1.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] If your Leader is multicolored, draw 3 cards and place 2 cards from your hand at the top or bottom of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-055",
+    "code": "OP11-055",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Bartolomeo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-055.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-055.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 7000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "Dressrosa/Supernovas",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-056",
+    "code": "OP11-056",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Brook",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-056.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-056.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] Place up to 1 Character with a base cost of 1 at the bottom of the owner's deck.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-057",
+    "code": "OP11-057",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Pedro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-057.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-057.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Minks",
+    "ability": "If you have 4 or less cards in your hand, this Character gains [Blocker].<br>(After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-058",
+    "code": "OP11-058",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-058.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-058.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "If you have 5 or more cards in your hand, this Character cannot attack.<br>[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-059",
+    "code": "OP11-059",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Gum-Gum King Cobra",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-059.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-059.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +2000 power during this battle. Then, if you have 4 or less cards in your hand, that card gains an additional +2000 power during this battle.",
+    "trigger": "[Trigger] Return up to 1 Character with a cost of 2 or less to the owner's hand.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-060",
+    "code": "OP11-060",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Let's Crash This Wedding!!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-060.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-060.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] If your Leader is multicolored, look at 5 cards from the top of your deck; reveal up to 1 {Straw Hat Crew} type card other than [Let's Crash This Wedding!!!] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "[Trigger] Activate this card's [Main] effect.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-061",
+    "code": "OP11-061",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "Gum-Gum Jet Culverin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-061.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-061.png?250530"
+    },
+    "cost": 3,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] Place up to 1 of your opponent's Characters with a base cost of 4 or less at the bottom of the owner's deck.",
+    "trigger": "[Trigger] Place up to 1 Character with a cost of 1 or less at the bottom of the owner's deck.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-062",
+    "code": "OP11-062",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Charlotte Katakuri",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-062.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-062.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[When Attacking]/[On Your Opponent's Attack] [Once Per Turn] DON!! −1: Look at 1 card from the top of your opponent's deck. Then, this Leader gains +1000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-062_p1",
+    "code": "OP11-062",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Charlotte Katakuri",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-062_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-062_p1.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[When Attacking]/[On Your Opponent's Attack] [Once Per Turn] DON!! −1: Look at 1 card from the top of your opponent's deck. Then, this Leader gains +1000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-063",
+    "code": "OP11-063",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Little Sadi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-063.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-063.png?250530"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 2000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Impel Down",
+    "ability": "[On Play] DON!! −1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): If your Leader has the {Impel Down} type, rest up to 1 of your opponent's Characters with a cost of 3 or less.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-064",
+    "code": "OP11-064",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Saldeath",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-064.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-064.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 8000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Impel Down",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-065",
+    "code": "OP11-065",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Charlotte Anana",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-065.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-065.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "If you have a purple {Big Mom Pirates} type Character other than [Charlotte Anana], this Character gains [Blocker].<br>(After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-066",
+    "code": "OP11-066",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Charlotte Oven",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-066.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-066.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[Activate: Main] You may rest this Character: Choose a cost and reveal 1 card from the top of your opponent's deck. If the revealed card has the chosen cost, K.O. up to 1 of your opponent's Characters with a base cost of 3 or less. Then, add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-067",
+    "code": "OP11-067",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Charlotte Katakuri",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-067.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-067.png?250530"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[Blocker]<br>[End of Your Turn] Set up to 2 of your {Big Mom Pirates} type Characters with a cost of 3 or more as active. Then, add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-067_p1",
+    "code": "OP11-067",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Charlotte Katakuri",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-067_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-067_p1.png?250530"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[Blocker]<br>[End of Your Turn] Set up to 2 of your {Big Mom Pirates} type Characters with a cost of 3 or more as active. Then, add up to 1 DON!! card from your DON!! deck and rest it.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-068",
+    "code": "OP11-068",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Charlotte Daifuku",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-068.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-068.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-069",
+    "code": "OP11-069",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Charlotte Brulee",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-069.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-069.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[On Play] You may add 1 card from the top of your Life cards to your hand: If your Leader has the {Big Mom Pirates} type, add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-070",
+    "code": "OP11-070",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Charlotte Pudding",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-070.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-070.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Big Mom Pirates} type card with a cost of 2 or more and add it to your hand. Then, place the rest at the bottom of your deck in any order.<br>[Activate: Main] DON!! −1, You may rest this Character: Look at 1 card from the top of your opponent's deck.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-070_p1",
+    "code": "OP11-070",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Charlotte Pudding",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-070_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-070_p1.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Big Mom Pirates} type card with a cost of 2 or more and add it to your hand. Then, place the rest at the bottom of your deck in any order.<br>[Activate: Main] DON!! −1, You may rest this Character: Look at 1 card from the top of your opponent's deck.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-071",
+    "code": "OP11-071",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Charlotte Perospero",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-071.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-071.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] You may trash 1 card from your hand: Choose a cost and reveal 1 card from the top of your opponent's deck. If the revealed card has the chosen cost, draw 1 card and add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-072",
+    "code": "OP11-072",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Charlotte Mont-d'or",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-072.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-072.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] DON!! −1, You may rest this Character: Your opponent places 2 cards from their trash at the bottom of their deck in any order. Then, add 1 card from the top of your Life cards to your hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-073",
+    "code": "OP11-073",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Charlotte Linlin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-073.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-073.png?250530"
+    },
+    "cost": 10,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 12000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Four Emperors/Big Mom Pirates",
+    "ability": "If your Leader has the {Big Mom Pirates} type, this Character gains [Rush].<br>[On Your Opponent's Attack] [Once Per Turn] DON!! −5: Choose a cost and reveal 1 card from the top of your opponent's deck. If the revealed card has the chosen cost, up to 1 of your Leader gains +2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-073_p1",
+    "code": "OP11-073",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Charlotte Linlin",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-073_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-073_p1.png?250530"
+    },
+    "cost": 10,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 12000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Four Emperors/Big Mom Pirates",
+    "ability": "If your Leader has the {Big Mom Pirates} type, this Character gains [Rush].<br>[On Your Opponent's Attack] [Once Per Turn] DON!! −5: Choose a cost and reveal 1 card from the top of your opponent's deck. If the revealed card has the chosen cost, up to 1 of your Leader gains +2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-074",
+    "code": "OP11-074",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Streusen",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-074.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-074.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 3000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] DON!! −1, You may rest this Character: Choose a cost and reveal 1 card from the top of your opponent's deck. If the revealed card has the chosen cost, rest up to 1 of your opponent's Characters with a cost of 4 or less.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-075",
+    "code": "OP11-075",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Jaguar.D.Saul",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-075.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-075.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Giant/Ohara/Former Navy",
+    "ability": "[On Play] If your Leader is [Nico Robin] and you have 7 or more DON!! cards on your field, draw 2 cards.",
+    "trigger": "[Trigger] Activate this card's [On Play] effect.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-076",
+    "code": "OP11-076",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Hannyabal",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-076.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-076.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Impel Down",
+    "ability": "[Blocker]<br>[On Play] If your Leader has the {Impel Down} type, play up to 1 {Impel Down} type Character card with a cost of 3 or less from your hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-077",
+    "code": "OP11-077",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Randolph",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-077.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-077.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Homies/Big Mom Pirates",
+    "ability": "[Your Turn] [Once Per Turn] When a DON!! card on your field is returned to your DON!! deck, up to 1 of your {Big Mom Pirates} type Characters gains +2 cost until the end of your opponent's next turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-078",
+    "code": "OP11-078",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Decuplets",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-078.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-078.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-079",
+    "code": "OP11-079",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "When Two Men Are Fighting the Last Thing I Need Is Some Half-Hearted Assistance!!!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-079.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-079.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Big Mom Pirates",
+    "ability": "[Counter] Choose a cost and reveal 1 card from the top of your opponent's deck. If the revealed card has the chosen cost, up to 1 of your Leader or Character cards gains +5000 power during this battle.",
+    "trigger": "[Trigger] Draw 1 card.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-080",
+    "code": "OP11-080",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Gear Two",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-080.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-080.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] You may rest 2 of your DON!! cards: If your Leader's colors include blue, add up to 1 DON!! card from your DON!! deck and rest it.<br>[Counter] Up to 1 of your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-080_p1",
+    "code": "OP11-080",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Gear Two",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-080_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-080_p1.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] You may rest 2 of your DON!! cards: If your Leader's colors include blue, add up to 1 DON!! card from your DON!! deck and rest it.<br>[Counter] Up to 1 of your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-081",
+    "code": "OP11-081",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Cognac Mama-Mash",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-081.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-081.png?250530"
+    },
+    "cost": 6,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Four Emperors/Big Mom Pirates",
+    "ability": "[Main] Choose a cost and reveal 1 card from the top of your opponent's deck. If the revealed card has the chosen cost, K.O. up to 1 of your opponent's Characters with a base cost of 8 or less.",
+    "trigger": "[Trigger] Add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-082",
+    "code": "OP11-082",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Aramaki",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-082.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-082.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "2000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[Activate: Main] You may trash this Character: If your Leader has the {Navy} type, up to 1 of your {Navy} type Characters can also attack active Characters during this turn. Then, trash 2 cards from the top of your deck.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-083",
+    "code": "OP11-083",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Caribou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-083.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-083.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "2000",
+    "color": "Black",
+    "family": "Caribou Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] Trash 2 cards from your hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-084",
+    "code": "OP11-084",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kuzan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-084.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-084.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[On Play] Trash 3 cards from the top of your deck.<br>[When Attacking] Up to 1 of your {Navy} type Leader or Character cards can also attack active Characters during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-084_p1",
+    "code": "OP11-084",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Kuzan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-084_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-084_p1.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[On Play] Trash 3 cards from the top of your deck.<br>[When Attacking] Up to 1 of your {Navy} type Leader or Character cards can also attack active Characters during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-085",
+    "code": "OP11-085",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Kurozumi Orochi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-085.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-085.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Land of Wano/Kurozumi Clan",
+    "ability": "[On Play] Add up to 1 {SMILE} type card with a cost of 5 or less from your trash to your hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-086",
+    "code": "OP11-086",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Coribou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-086.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-086.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Caribou Pirates",
+    "ability": "[On Play] Trash 1 card from your hand.<br>[Activate: Main] You may trash this Character: Play up to 1 [Caribou] with a cost of 4 or less from your trash.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-087",
+    "code": "OP11-087",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Miss Sarahebi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-087.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-087.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Black",
+    "family": "Animal Kingdom Pirates/SMILE",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-088",
+    "code": "OP11-088",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Shu",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-088.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-088.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[Once Per Turn] This effect can be activated when your opponent's Character attacks. If that Character has the ＜Slash＞ attribute, this Character gains +5000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-089",
+    "code": "OP11-089",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Black Maria",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-089.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-089.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Animal Kingdom Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-090",
+    "code": "OP11-090",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Briscola",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-090.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-090.png?250530"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Animal Kingdom Pirates/SMILE",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-091",
+    "code": "OP11-091",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Berry Good",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-091.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-091.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "2000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[On Play] Your opponent places 3 Events from their trash at the bottom of their deck in any order.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-092",
+    "code": "OP11-092",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Helmeppo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-092.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-092.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy/SWORD",
+    "ability": "[On Play] You may trash 1 card from your hand: Draw 1 card and play up to 1 {SWORD} type Character card with a cost of 8 or less other than [Helmeppo] from your trash. Then, place the 1 Character played by this effect at the bottom of the owner's deck at the end of this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-092_p1",
+    "code": "OP11-092",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Helmeppo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-092_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-092_p1.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy/SWORD",
+    "ability": "[On Play] You may trash 1 card from your hand: Draw 1 card and play up to 1 {SWORD} type Character card with a cost of 8 or less other than [Helmeppo] from your trash. Then, place the 1 Character played by this effect at the bottom of the owner's deck at the end of this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-093",
+    "code": "OP11-093",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Bogard",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-093.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-093.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "2000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-094",
+    "code": "OP11-094",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Morgan",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-094.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-094.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 8000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-095",
+    "code": "OP11-095",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Garp",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-095.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-095.png?250530"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[On Play] You may place 3 {Navy} type cards from your trash at the bottom of your deck in any order: Give up to 1 rested DON!! card to 1 of your Leader. Then, if there is a Character with a cost of 9 or more, K.O. up to 1 of your opponent's Characters with a cost of 7 or less.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-095_p1",
+    "code": "OP11-095",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Garp",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-095_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-095_p1.png?250530"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[On Play] You may place 3 {Navy} type cards from your trash at the bottom of your deck in any order: Give up to 1 rested DON!! card to 1 of your Leader. Then, if there is a Character with a cost of 9 or more, K.O. up to 1 of your opponent's Characters with a cost of 7 or less.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-096",
+    "code": "OP11-096",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Ripper",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-096.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-096.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Black",
+    "family": "East Blue/Navy",
+    "ability": "If you have a black {Navy} type Character other than [Ripper], this Character gains [Blocker].<br>(After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-097",
+    "code": "OP11-097",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "After All These Years I'm Losing My Edge!!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-097.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-097.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +1000 power during this battle. Then, if you have 10 or more cards in your trash, add up to 1 black Character card with a cost of 3 or less from your trash to your hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-098",
+    "code": "OP11-098",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Blue Hole",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-098.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-098.png?250530"
+    },
+    "cost": 3,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy",
+    "ability": "[Main] You may trash 3 cards from the top of your deck: K.O. up to 1 of your opponent's Characters with a cost of 2 or less.",
+    "trigger": "[Trigger] Up to 1 of your Leader or Character cards gains +1000 power during this turn.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-099",
+    "code": "OP11-099",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "I'm Gonna Be a Navy Officer!!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-099.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-099.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Black",
+    "family": "East Blue/Navy",
+    "ability": "[Main] Look at 3 cards from the top of your deck; reveal up to 1 {Navy} type card other than [I'm Gonna Be a Navy Officer!!!] and add it to your hand. Then, trash the rest.",
+    "trigger": "[Trigger] Activate this card's [Main] effect.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-100",
+    "code": "OP11-100",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Otohime",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-100.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-100.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "[On Play] If your Leader is [Shirahoshi], you may turn 1 card from the top of your Life cards face-down: Draw 1 card.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-101",
+    "code": "OP11-101",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Capone\"Gang\"Bege",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-101.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-101.png?250530"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Supernovas/Firetank Pirates",
+    "ability": "[Blocker]<br>[Once Per Turn] If your {Supernovas} type Character other than [Capone\"Gang\"Bege] would be removed from the field by your opponent's effect, you may add it to the top of your Life cards face-down instead.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-101_p1",
+    "code": "OP11-101",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Capone\"Gang\"Bege",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-101_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-101_p1.png?250530"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Supernovas/Firetank Pirates",
+    "ability": "[Blocker]<br>[Once Per Turn] If your {Supernovas} type Character other than [Capone\"Gang\"Bege] would be removed from the field by your opponent's effect, you may add it to the top of your Life cards face-down instead.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-102",
+    "code": "OP11-102",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Camie",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-102.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-102.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 1000,
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "[Your Turn] [Once Per Turn] This effect can be activated when your opponent activates an Event or [Trigger]. If your opponent has 2 or more Life cards, trash 1 card from the top of each of your and your opponent's Life cards.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-103",
+    "code": "OP11-103",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Long-Jaw Neptunian",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-103.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-103.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Neptunian",
+    "ability": "[Activate: Main] If your Leader is [Shirahoshi], you may rest this Character and turn 1 card from the top of your Life cards face-down: K.O. up to 1 of your opponent's Characters with a cost of 3 or less.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-104",
+    "code": "OP11-104",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Shirley",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-104.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-104.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "[Blocker]<br>[On Play] You may turn 1 card from the top of your Life cards face-down: Look at 3 cards from the top of your deck; reveal up to 1 {Fish-Man Island} type card and add it to your hand. Then, place the rest at the top or bottom of the deck in any order.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-105",
+    "code": "OP11-105",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Charlotte Chiffon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-105.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-105.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 6000,
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Firetank Pirates/Former Big Mom Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-106",
+    "code": "OP11-106",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Zeus",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-106.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-106.png?250530"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Homies/Big Mom Pirates",
+    "ability": "[On Play] You may add 1 card from the top or bottom of your Life cards to your hand: K.O. up to 1 of your opponent's Characters with a cost of 5 or less.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-106_p1",
+    "code": "OP11-106",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Zeus",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-106_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-106_p1.png?250530"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Homies/Big Mom Pirates",
+    "ability": "[On Play] You may add 1 card from the top or bottom of your Life cards to your hand: K.O. up to 1 of your opponent's Characters with a cost of 5 or less.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-107",
+    "code": "OP11-107",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Topknot Neptunian",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-107.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-107.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Neptunian",
+    "ability": "[Blocker]<br>[Activate: Main] [Once Per Turn] If your Leader is [Shirahoshi], you may turn 1 card from the top of your Life cards face-down: Set this Character as active at the end of this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-108",
+    "code": "OP11-108",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Neptune",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-108.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-108.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "[On Play] If your Leader is [Shirahoshi], you may turn 1 card from the top of your Life cards face-down: Draw 2 cards and trash 1 card from your hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-109",
+    "code": "OP11-109",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Pappag",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-109.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-109.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Animal/Fish-Man Island",
+    "ability": "[On Play] If you have [Camie], draw 2 cards and trash 2 cards from your hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-110",
+    "code": "OP11-110",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Fukaboshi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-110.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-110.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "If this Character would be K.O.'d, you may rest 1 of your [Fish-Man Island] or your [Shirahoshi] Leader instead.<br>[On Play] You may add 1 card from the top or bottom of your Life cards to your hand: K.O. up to 1 of your opponent's Characters with a cost of 1 or less.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-111",
+    "code": "OP11-111",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Mamboshi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-111.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-111.png?250530"
+    },
+    "cost": 6,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "2000",
+    "color": "Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-112",
+    "code": "OP11-112",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Megalo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-112.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-112.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Animal/Fish-Man Island",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[Opponent's Turn] If your Leader is [Shirahoshi], this Character gains +4000 power.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-113",
+    "code": "OP11-113",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Ryuboshi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-113.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-113.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 7000,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-114",
+    "code": "OP11-114",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Gum-Gum Fire-Fist Pistol Red Hawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-114.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-114.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] You may rest 3 of your DON!! cards: If you and your opponent have a total of 5 or more Life cards, K.O. up to 1 of your opponent's Characters with a base cost of 5 or less.<br>[Counter] Up to 1 of your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-114_p1",
+    "code": "OP11-114",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Gum-Gum Fire-Fist Pistol Red Hawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-114_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-114_p1.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Straw Hat Crew",
+    "ability": "[Main] You may rest 3 of your DON!! cards: If you and your opponent have a total of 5 or more Life cards, K.O. up to 1 of your opponent's Characters with a base cost of 5 or less.<br>[Counter] Up to 1 of your Leader gains +3000 power during this battle.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-115",
+    "code": "OP11-115",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "You're Just Not My Type!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-115.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-115.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "[Counter] If your Leader is [Shirahoshi], up to 1 of your Leader or Character cards gains +4000 power during this battle.",
+    "trigger": "[Trigger] K.O. up to 1 of your opponent's Characters with a cost of 2 or less.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-116",
+    "code": "OP11-116",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Merman Combat Ultramarine",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-116.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-116.png?250530"
+    },
+    "cost": 6,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Merfolk/Fish-Man Island",
+    "ability": "[Main] Add up to 1 Character with a cost of 6 or less to the top or bottom of the owner's Life cards face-up.",
+    "trigger": "[Trigger] Add up to 1 of your opponent's Characters with a cost of 4 or less to the top or bottom of the owner's Life cards face-up.",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-117",
+    "code": "OP11-117",
+    "rarity": "C",
+    "type": "STAGE",
+    "name": "Fish-Man Island",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-117.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-117.png?250530"
+    },
+    "cost": 2,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Yellow",
+    "family": "Fish-Man Island",
+    "ability": "[Activate: Main] [Once Per Turn] If your Leader is [Shirahoshi], you may turn 1 card from the top of your Life cards face-up: Up to 1 of your {Neptunian}, {Fish-Man}, or {Merfolk} type Characters gains +1000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-118",
+    "code": "OP11-118",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-118.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-118.png?250530"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "[Rush]<br>[When Attacking] You may trash 1 card from your hand: Return up to 1 Character with a cost of 4 or less to the owner's hand. Then, give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-118_p1",
+    "code": "OP11-118",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-118_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-118_p1.png?250530"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "[Rush]<br>[When Attacking] You may trash 1 card from your hand: Return up to 1 Character with a cost of 4 or less to the owner's hand. Then, give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-118_p2",
+    "code": "OP11-118",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-118_p2.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-118_p2.png?250530"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "[Rush]<br>[When Attacking] You may trash 1 card from your hand: Return up to 1 Character with a cost of 4 or less to the owner's hand. Then, give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-119",
+    "code": "OP11-119",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Koby",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-119.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-119.png?250530"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 9000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy/SWORD",
+    "ability": "[On Play] Up to 1 of your Characters can also attack active Characters during this turn.<br>[When Attacking] You may place 2 cards from your trash at the bottom of your deck in any order: Up to 1 of your Leader or Character cards gains +1000 power until the end of your opponent's next turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP11-119_p1",
+    "code": "OP11-119",
+    "rarity": "SEC",
+    "type": "CHARACTER",
+    "name": "Koby",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-119_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP11-119_p1.png?250530"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 9000,
+    "counter": "-",
+    "color": "Black",
+    "family": "Navy/SWORD",
+    "ability": "[On Play] Up to 1 of your Characters can also attack active Characters during this turn.<br>[When Attacking] You may place 2 cards from your trash at the bottom of your deck in any order: Up to 1 of your Leader or Character cards gains +1000 power until the end of your opponent's next turn.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "EB01-057_p2",
+    "code": "EB01-057",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Shirahoshi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB01-057_p2.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB01-057_p2.png?250530"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Yellow",
+    "family": "Merfolk",
+    "ability": "When this Character is K.O.'d by your opponent's effect, add up to 1 card from the top of your deck to the top of your Life cards.<br>[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP05-119_p7",
+    "code": "OP05-119",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-119_p7.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-119_p7.png?250530"
+    },
+    "cost": 10,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 12000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Four Emperors/Straw Hat Crew",
+    "ability": "[On Play] DON!! −10: Place all of your Characters except this Character at the bottom of your deck in any order. Then, take an extra turn after this one.<br>[Activate: Main] [Once Per Turn] You may rest 1 of your DON!! cards: Add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP05-119_p8",
+    "code": "OP05-119",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-119_p8.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-119_p8.png?250530"
+    },
+    "cost": 10,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 12000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "The Four Emperors/Straw Hat Crew",
+    "ability": "[On Play] DON!! −10: Place all of your Characters except this Character at the bottom of your deck in any order. Then, take an extra turn after this one.<br>[Activate: Main] [Once Per Turn] You may rest 1 of your DON!! cards: Add up to 1 DON!! card from your DON!! deck and set it as active.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP06-119_p2",
+    "code": "OP06-119",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Sanji",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-119_p2.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP06-119_p2.png?250530"
+    },
+    "cost": 9,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 9000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] Reveal 1 card from the top of your deck and play up to 1 Character with a cost of 9 or less other than [Sanji]. Then, place the rest at the bottom of your deck.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP07-085_p2",
+    "code": "OP07-085",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Stussy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-085_p2.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-085_p2.png?250530"
+    },
+    "cost": 9,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 9000,
+    "counter": "-",
+    "color": "Black",
+    "family": "CP0",
+    "ability": "[On Play] You may trash 1 of your Characters: K.O. up to 1 of your opponent's Characters.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "OP09-005_p1",
+    "code": "OP09-005",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Silvers Rayleigh",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-005_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP09-005_p1.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Red",
+    "family": "Roger Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] If your opponent has 2 or more Characters with a base power of 5000 or more, draw 2 cards and trash 1 card from your hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "ST16-004_p1",
+    "code": "ST16-004",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Shanks",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST16-004_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST16-004_p1.png?250530"
+    },
+    "cost": 9,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 11000,
+    "counter": "-",
+    "color": "Green",
+    "family": "FILM/The Four Emperors/Red-Haired Pirates",
+    "ability": "[On Play] K.O. up to 1 of your opponent's rested Characters.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  },
+  {
+    "id": "ST18-005_p1",
+    "code": "ST18-005",
+    "rarity": "SP CARD",
+    "type": "CHARACTER",
+    "name": "Luffy-Tarou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-005_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-005_p1.png?250530"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] DON!! −1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): Play up to 1 purple {Straw Hat Crew} type Character card with a cost of 5 or less from your hand.",
+    "trigger": "",
+    "set": { "name": "-A FIST OF DIVINE SPEED- [OP-11]" },
+    "notes": []
+  }
+]

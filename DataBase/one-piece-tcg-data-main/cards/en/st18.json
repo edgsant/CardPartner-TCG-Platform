@@ -1,0 +1,359 @@
+[
+  {
+    "id": "OP05-060_p3",
+    "code": "OP05-060",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-060_p3.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-060_p3.png?241220"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[Activate: Main] [Once Per Turn] You may add 1 card from the\n                    top of your Life cards to your hand: If you have 0 or 3 or\n                    more DON!! cards on your field, add up to 1 DON!! card from\n                    your DON!! deck and set it as active.",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "OP05-061_p1",
+    "code": "OP05-061",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Uso-Hachi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-061_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-061_p1.png?241220"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 4000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[DON!! x1] [When Attacking] If you have 8 or more DON!!\n                    cards on your field, rest up to 1 of your opponent's\n                    Characters with a cost of 4 or less.",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "OP05-063_p1",
+    "code": "OP05-063",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "O-Robi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-063_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-063_p1.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] If you have 8 or more DON!! cards on your field,\n                    K.O. up to 1 of your opponent's Characters with a cost of 3\n                    or less.",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "OP05-066_p1",
+    "code": "OP05-066",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-066_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-066_p1.png?241220"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Fish-Man/Straw Hat Crew",
+    "ability": "[Blocker] (After your opponent declares an attack, you may\n                    rest this card to make it the new target of the attack.)<br>[Opponent's\n                    Turn] If you have 10 DON!! cards on your field, this\n                    Character gains +1000 power.",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "OP05-067_p3",
+    "code": "OP05-067",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Zoro-Juurou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-067_p3.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-067_p3.png?241220"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[When Attacking] If you have 3 or less Life cards, add up to\n                    1 DON!! card from your DON!! deck and set it as active.",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "OP05-068_p1",
+    "code": "OP05-068",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Chopa-Emon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-068_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-068_p1.png?241220"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Animal/Straw Hat Crew",
+    "ability": "[On Play] If you have 8 or more DON!! cards on your field,\n                    set up to 1 of your purple {Straw Hat Crew} type Characters\n                    with 6000 power or less as active.",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "OP05-070_p1",
+    "code": "OP05-070",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Fra-Nosuke",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-070_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-070_p1.png?241220"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[DON!! x1] If you have 8 or more DON!! cards on your field,\n                    this Character gains [Rush].<br>(This card can attack on\n                    the turn in which it is played.)",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "OP05-072_p1",
+    "code": "OP05-072",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Hone-Kichi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-072_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-072_p1.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] If you have 8 or more DON!! cards on your field,\n                    give up to 2 of your opponent's Characters −2000 power\n                    during this turn.",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "OP05-076_p1",
+    "code": "OP05-076",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "\n                  When You're at Sea You Fight against Pirates!!\n                ",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-076_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP05-076_p1.png?241220"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Land of Wano",
+    "ability": "[Main] Look at 3 cards from the top of your deck; reveal up\n                    to 1 {Straw Hat Crew}, {Kid Pirates}, or {Heart Pirates}\n                    type card and add it to your hand. Then, place the rest at\n                    the bottom of your deck in any order.",
+    "trigger": "\n                    \n                    [Trigger] Activate this card's [Main] effect.\n                  ",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "P-041_p2",
+    "code": "P-041",
+    "rarity": "P",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/P-041_p2.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/P-041_p2.png?241220"
+    },
+    "cost": 10,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 12000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "The Four Emperors/Straw Hat Crew",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "ST18-001",
+    "code": "ST18-001",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Uso-Hachi",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-001.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-001.png?241220"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 3000,
+    "counter": "2000",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] If you have 8 or more DON!! cards on your field,\n                    rest up to 1 of your opponent's Characters with a cost of 5\n                    or less.",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "ST18-002",
+    "code": "ST18-002",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "O-Nami",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-002.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-002.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[Blocker] (After your opponent declares an attack, you may\n                    rest this card to make it the new target of the attack.)<br>[On\n                    Play] If you have 8 or more DON!! cards on your field, trash\n                    1 card from your hand and draw 2 cards.",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "ST18-003",
+    "code": "ST18-003",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "San-Gorou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-003.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-003.png?241220"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[When Attacking] [Once Per Turn] If you have 8 or more DON!!\n                    cards on your field, draw 1 card.",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "ST18-004",
+    "code": "ST18-004",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Zoro-Juurou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-004.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-004.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal\n                    up to 1 purple {Straw Hat Crew} type card and add it to your\n                    hand. Then, place the rest at the bottom of your deck in any\n                    order.",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  },
+  {
+    "id": "ST18-005",
+    "code": "ST18-005",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Luffy-Tarou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-005.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST18-005.png?241220"
+    },
+    "cost": 7,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 8000,
+    "counter": "-",
+    "color": "Purple",
+    "family": "Straw Hat Crew",
+    "ability": "[On Play] DON!! −1 (You may return the specified number of\n                    DON!! cards from your field to your DON!! deck.): Play up to\n                    1 purple {Straw Hat Crew} type Character card with a cost of\n                    5 or less from your hand.",
+    "trigger": "",
+    "set": { "name": "-Purple Monkey.D.Luffy- [ST-18]" },
+    "notes": []
+  }
+]

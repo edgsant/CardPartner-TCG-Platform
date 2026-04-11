@@ -1,0 +1,341 @@
+[
+  {
+    "id": "P-029_p1",
+    "code": "P-029",
+    "rarity": "P",
+    "type": "CHARACTER",
+    "name": "Bartolomeo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/P-029_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/P-029_p1.png?241220"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "FILM/Supernovas/Barto Club",
+    "ability": "[End of Your Turn] You may rest this Character: Set up to 1 of your {FILM} type Characters other than [Bartolomeo] as active.",
+    "trigger": "",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "P-057_p1",
+    "code": "P-057",
+    "rarity": "P",
+    "type": "EVENT",
+    "name": "Fleeting Lullaby",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/P-057_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/P-057_p1.png?241220"
+    },
+    "cost": 3,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Music/FILM",
+    "ability": "[Main] If your Leader is [Uta], up to 2 of your opponent's rested Characters with a cost of 4 or less will not become active in your opponent's next Refresh Phase.",
+    "trigger": "[Trigger] Activate this card's [Main] effect.",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "P-058_p1",
+    "code": "P-058",
+    "rarity": "P",
+    "type": "EVENT",
+    "name": "Where the Wind Blows",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/P-058_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/P-058_p1.png?241220"
+    },
+    "cost": 2,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Music/FILM",
+    "ability": "[Main] If your Leader is [Uta], set all of your {FILM} type Characters as active at the end of this turn.",
+    "trigger": "[Trigger] Set all of your {FILM} type Characters as active.",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "P-059_p1",
+    "code": "P-059",
+    "rarity": "P",
+    "type": "EVENT",
+    "name": "The World's Continuation",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/P-059_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/P-059_p1.png?241220"
+    },
+    "cost": 2,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Music/FILM",
+    "ability": "[Counter] If your Leader is [Uta], you may return any number of Characters on your field to the owner's hand. Up to 1 of your Leader or Character cards gains +2000 power during this battle for every returned Character.",
+    "trigger": "",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "P-060_p1",
+    "code": "P-060",
+    "rarity": "P",
+    "type": "EVENT",
+    "name": "Tot Musica",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/P-060_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/P-060_p1.png?241220"
+    },
+    "cost": 2,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Music/FILM",
+    "ability": "[Main] You may rest 1 of your [Uta] cards: Rest up to 2 of your opponent's DON!! cards.<br>",
+    "trigger": "",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "P-061_p1",
+    "code": "P-061",
+    "rarity": "P",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/P-061_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/P-061_p1.png?241220"
+    },
+    "cost": 8,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 10000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "FILM/Straw Hat Crew",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "ST11-001_p1",
+    "code": "ST11-001",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Uta",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST11-001_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST11-001_p1.png?241220"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green",
+    "family": "FILM",
+    "ability": "[DON!! x1] [When Attacking] [Once Per Turn] Reveal 1 card from the top of your deck and add up to 1 {FILM} type card to your hand. Then, place the rest at the bottom of your deck.",
+    "trigger": "",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "ST11-003_p2",
+    "code": "ST11-003",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "Backlight",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST11-003_p2.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST11-003_p2.png?241220"
+    },
+    "cost": 2,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Music/FILM",
+    "ability": "[Main] If your Leader is [Uta], choose one:<br>• Rest up to 1 of your opponent's Characters with a cost of 5 or less.<br>• K.O. up to 1 of your opponent's rested Characters with a cost of 5 or less.",
+    "trigger": "",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "ST11-004_p2",
+    "code": "ST11-004",
+    "rarity": "SR",
+    "type": "EVENT",
+    "name": "New Genesis",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST11-004_p2.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST11-004_p2.png?241220"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Music/FILM",
+    "ability": "[Main] If your Leader is [Uta], look at 3 cards from the top of your deck; reveal up to 1 {FILM} type card other than [New Genesis] and add it to your hand. Then, place the rest at the bottom of your deck in any order and set up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "ST11-005_p2",
+    "code": "ST11-005",
+    "rarity": "C",
+    "type": "EVENT",
+    "name": "I'm invincible",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST11-005_p2.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST11-005_p2.png?241220"
+    },
+    "cost": 3,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Music/FILM",
+    "ability": "[Main] Set up to 1 of your [Uta] Leader as active.",
+    "trigger": "[Trigger] Up to 1 of your Leader or Character cards gains +1000 power during this turn.",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "ST16-001",
+    "code": "ST16-001",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Uta",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST16-001.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST16-001.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Green",
+    "family": "FILM",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[Activate: Main] [Once Per Turn] You may trash 1 {FILM} type card from your hand: Give up to 1 rested DON!! card to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "ST16-002",
+    "code": "ST16-002",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Gordon",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST16-002.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST16-002.png?241220"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Wisdom",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type05.png"
+    },
+    "power": null,
+    "counter": "1000",
+    "color": "Green",
+    "family": "FILM",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Your Opponent's Attack] You may trash any number of {Music} type cards from your hand. Your Leader or 1 of your Characters gains +1000 power during this battle for every card trashed.",
+    "trigger": "",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "ST16-003",
+    "code": "ST16-003",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Charlotte Katakuri",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST16-003.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST16-003.png?241220"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "FILM/Big Mom Pirates",
+    "ability": "If your Leader has the {FILM} type and you have 6 or more rested cards, this Character gains +2000 power.",
+    "trigger": "",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "ST16-004",
+    "code": "ST16-004",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Shanks",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST16-004.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST16-004.png?241220"
+    },
+    "cost": 9,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 11000,
+    "counter": "-",
+    "color": "Green",
+    "family": "FILM/The Four Emperors/Red-Haired Pirates",
+    "ability": "[On Play] K.O. up to 1 of your opponent's rested Characters.",
+    "trigger": "",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  },
+  {
+    "id": "ST16-005",
+    "code": "ST16-005",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST16-005.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST16-005.png?241220"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "2000",
+    "color": "Green",
+    "family": "FILM/Supernovas/Straw Hat Crew",
+    "ability": "If you have a rested [Uta], this Character gains +1000 power.",
+    "trigger": "",
+    "set": { "name": "-Green Uta- [ST-16]" },
+    "notes": []
+  }
+]

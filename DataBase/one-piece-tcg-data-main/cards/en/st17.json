@@ -1,0 +1,359 @@
+[
+  {
+    "id": "OP01-060_p2",
+    "code": "OP01-060",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Donquixote Doflamingo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-060_p2.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-060_p2.png?241220"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[DON!! x2] [When Attacking] ➀ (You may rest the specified number of DON!! cards in your cost area.): Reveal 1 card from the top of your deck. If that card is a {The Seven Warlords of the Sea} type Character card with a cost of 4 or less, you may play that card rested.",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "OP01-073_p3",
+    "code": "OP01-073",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Donquixote Doflamingo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-073_p3.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-073_p3.png?241220"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] Look at 5 cards from the top of your deck and place them at the top or bottom of the deck in any order.",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "OP01-086_p1",
+    "code": "OP01-086",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Overheat",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-086_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP01-086_p1.png?241220"
+    },
+    "cost": 2,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Donquixote Pirates",
+    "ability": "[Counter] Up to 1 of your Leader or Character cards gains +4000 power during this battle. Then, return up to 1 active Character with a cost of 3 or less to the owner's hand.",
+    "trigger": "[Trigger] Return up to 1 Character with a cost of 4 or less to the owner's hand.",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "OP02-054_p1",
+    "code": "OP02-054",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Gecko Moria",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-054_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-054_p1.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Thriller Bark Pirates",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "OP02-057_p1",
+    "code": "OP02-057",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Bartholomew Kuma",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-057_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP02-057_p1.png?241220"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Revolutionary Army",
+    "ability": "[On Play] Look at 2 cards from the top of your deck; reveal up to 1 {The Seven Warlords of the Sea} type card and add it to your hand. Then, place the rest at the top or bottom of the deck in any order.",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "P-030_p1",
+    "code": "P-030",
+    "rarity": "P",
+    "type": "CHARACTER",
+    "name": "Jinbe",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/P-030_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/P-030_p1.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "Fish-Man/The Seven Warlords of the Sea/The Sun Pirates",
+    "ability": "[On K.O.] Place up to 1 Character with a cost of 3 or less at the bottom of the owner's deck.",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "ST03-002_p1",
+    "code": "ST03-002",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Edward Weevil",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST03-002_p1.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST03-002_p1.png?241220"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea",
+    "ability": "-",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "ST03-004_p2",
+    "code": "ST03-004",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Gecko Moria",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST03-004_p2.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST03-004_p2.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Thriller Bark Pirates",
+    "ability": "[On Play] Add up to 1 {The Seven Warlords of the Sea} or {Thriller Bark Pirates} type Character with a cost of 4 or less other than [Gecko Moria] from your trash to your hand.",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "ST03-005_p2",
+    "code": "ST03-005",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Dracule Mihawk",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST03-005_p2.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST03-005_p2.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea",
+    "ability": "[DON!! x1] [When Attacking] Draw 2 cards and trash 2 cards from your hand.",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "ST03-008_p4",
+    "code": "ST03-008",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST03-008_p4.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST03-008_p4.png?241220"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 1000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Heart Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "ST17-001",
+    "code": "ST17-001",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Crocodile",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST17-001.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST17-001.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Baroque Works",
+    "ability": "[On Play] Reveal 1 card from the top of your deck. If that card is a {The Seven Warlords of the Sea} type card, draw 2 cards and place 1 card from your hand at the top of your deck.",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "ST17-002",
+    "code": "ST17-002",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Trafalgar Law",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST17-002.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST17-002.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Heart Pirates",
+    "ability": "[On Play] You may return 1 of your Characters to the owner's hand: If your Leader has the {The Seven Warlords of the Sea} type, return up to 1 Character with a cost of 4 or less to the owner's hand.",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "ST17-003",
+    "code": "ST17-003",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Buggy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST17-003.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST17-003.png?241220"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 2000,
+    "counter": "2000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Buggy's Delivery",
+    "ability": "[On Play] Look at 3 cards from the top of your deck and place them at the top of your deck in any order.",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "ST17-004",
+    "code": "ST17-004",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Boa Hancock",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST17-004.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST17-004.png?241220"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 6000,
+    "counter": "-",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Kuja Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] Look at 3 cards from the top of your deck and place them at the top or bottom of your deck in any order. Then, give up to 1 rested DON!! card to 1 of your {The Seven Warlords of the Sea} type Leader or Character cards.",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  },
+  {
+    "id": "ST17-005",
+    "code": "ST17-005",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Marshall.D.Teach",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST17-005.png?241220",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST17-005.png?241220"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 3000,
+    "counter": "1000",
+    "color": "Blue",
+    "family": "The Seven Warlords of the Sea/Blackbeard Pirates",
+    "ability": "[Activate: Main] [Once Per Turn] You may place 1 card from your hand at the top of your deck: Give up to 2 rested DON!! cards to your Leader or 1 of your Characters.",
+    "trigger": "",
+    "set": { "name": "-Blue Donquixote Doflamingo- [ST-17]" },
+    "notes": []
+  }
+]

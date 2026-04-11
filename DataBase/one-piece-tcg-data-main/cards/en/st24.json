@@ -1,0 +1,356 @@
+[
+  {
+    "id": "EB01-015_p3",
+    "code": "EB01-015",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Scratchmen Apoo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/EB01-015_p3.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/EB01-015_p3.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 1000,
+    "counter": "2000",
+    "color": "Green",
+    "family": "Supernovas/On-Air Pirates",
+    "ability": "[On Play] Rest up to 1 of your opponent's Characters with a cost of 2 or less.",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "OP07-019_p3",
+    "code": "OP07-019",
+    "rarity": "L",
+    "type": "LEADER",
+    "name": "Jewelry Bonney",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-019_p3.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-019_p3.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Bonney Pirates",
+    "ability": "[On Your Opponent's Attack] [Once Per Turn] You may rest 1 of your DON!! cards: Rest up to 1 of your opponent's Leader or Character cards.",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "OP07-021_r1",
+    "code": "OP07-021",
+    "rarity": "R",
+    "type": "CHARACTER",
+    "name": "Urouge",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-021_r1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-021_r1.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Fallen Monk Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[End of Your Turn] Set up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "OP07-023_r1",
+    "code": "OP07-023",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Caribou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-023_r1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-023_r1.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 5000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Caribou Pirates",
+    "ability": "If you have 6 or more rested DON!! cards, this Character gains +1000 power.<br>[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "OP07-025_r1",
+    "code": "OP07-025",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Coribou",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-025_r1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-025_r1.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 3000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Caribou Pirates",
+    "ability": "[On Play] Play up to 1 [Caribou] with a cost of 4 or less from your hand rested.",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "OP07-031_r1",
+    "code": "OP07-031",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Bartolomeo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-031_r1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-031_r1.png?250530"
+    },
+    "cost": 3,
+    "attribute": {
+      "name": "Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type03.png"
+    },
+    "power": 4000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Barto Club",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[Your Turn] [Once Per Turn] If a Character is rested by your effect, draw 1 card and trash 1 card from your hand.",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "OP07-033_r1",
+    "code": "OP07-033",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Monkey.D.Luffy",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-033_r1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-033_r1.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type01.png"
+    },
+    "power": 6000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "If you have 3 or more Characters, your Characters with a cost of 3 or less other than [Monkey.D.Luffy] cannot be K.O.'d by your opponent's effects.",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "OP07-034_r1",
+    "code": "OP07-034",
+    "rarity": "UC",
+    "type": "CHARACTER",
+    "name": "Roronoa Zoro",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-034_r1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-034_r1.png?250530"
+    },
+    "cost": 1,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[When Attacking] If you have 3 or more Characters, this Character gains +2000 power during this turn.",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "OP07-036_p1",
+    "code": "OP07-036",
+    "rarity": "R",
+    "type": "EVENT",
+    "name": "Demonic Aura Nine-Sword Style Asura Demon Nine Flash",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-036_p1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-036_p1.png?250530"
+    },
+    "cost": 2,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Straw Hat Crew",
+    "ability": "[Main] Up to 1 of your Leader or Character cards gains +3000 power during this turn. Then, you may rest 1 of your Characters with a cost of 3 or more. If you do, rest up to 1 of your opponent's Characters with a cost of 5 or less.",
+    "trigger": "[Trigger] Rest up to 1 of your opponent's Characters with a cost of 4 or less.",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "OP07-037_r1",
+    "code": "OP07-037",
+    "rarity": "UC",
+    "type": "EVENT",
+    "name": "More Pizza!!",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-037_r1.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/OP07-037_r1.png?250530"
+    },
+    "cost": 1,
+    "attribute": { "image": "https://en.onepiece-cardgame.comundefined" },
+    "power": null,
+    "counter": "-",
+    "color": "Green",
+    "family": "Supernovas/Bonney Pirates",
+    "ability": "[Main] Look at 5 cards from the top of your deck; reveal up to 1 {Supernovas} type card other than [More Pizza!!] and add it to your hand. Then, place the rest at the bottom of your deck in any order.",
+    "trigger": "[Trigger] Draw 1 card.",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "ST24-001",
+    "code": "ST24-001",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Capone\"Gang\"Bege",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST24-001.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST24-001.png?250530"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Ranged",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type04.png"
+    },
+    "power": 1000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Firetank Pirates",
+    "ability": "[Blocker] (After your opponent declares an attack, you may rest this card to make it the new target of the attack.)<br>[On Play] If you have 6 or more rested cards, draw 1 card and trash 1 card from your hand.",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "ST24-002",
+    "code": "ST24-002",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Kid & Killer",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST24-002.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST24-002.png?250530"
+    },
+    "cost": 2,
+    "attribute": {
+      "name": "Slash/Special",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type07.png"
+    },
+    "power": 2000,
+    "counter": "1000",
+    "color": "Green",
+    "family": "Supernovas/Kid Pirates",
+    "ability": "[On Play] Look at 5 cards from the top of your deck; reveal up to 1 {Supernovas} type card and add it to your hand. Then, place the rest at the bottom of your deck in any order.<br>[On Your Opponent's Attack] You may trash this Character: Set up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "ST24-003",
+    "code": "ST24-003",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "Basil Hawkins",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST24-003.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST24-003.png?250530"
+    },
+    "cost": 4,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 4000,
+    "counter": "2000",
+    "color": "Green",
+    "family": "Supernovas/Hawkins Pirates",
+    "ability": "[End of Your Turn] Set up to 1 of your DON!! cards as active.",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "ST24-004",
+    "code": "ST24-004",
+    "rarity": "SR",
+    "type": "CHARACTER",
+    "name": "Law & Bepo",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST24-004.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST24-004.png?250530"
+    },
+    "cost": 10,
+    "attribute": {
+      "name": "Slash/Strike",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type06.png"
+    },
+    "power": 11000,
+    "counter": "-",
+    "color": "Green",
+    "family": "Minks/Supernovas/Heart Pirates",
+    "ability": "[On Play] Rest up to 1 of your opponent's Characters and that Character will not become active in your opponent's next Refresh Phase. Then, if your opponent has 2 or more rested Characters, your Leader gains +2000 power until the end of your opponent's next End Phase.",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  },
+  {
+    "id": "ST24-005",
+    "code": "ST24-005",
+    "rarity": "C",
+    "type": "CHARACTER",
+    "name": "X.Drake",
+    "images": {
+      "small": "https://en.onepiece-cardgame.com/images/cardlist/card/ST24-005.png?250530",
+      "large": "https://en.onepiece-cardgame.com/images/cardlist/card/ST24-005.png?250530"
+    },
+    "cost": 5,
+    "attribute": {
+      "name": "Slash",
+      "image": "https://en.onepiece-cardgame.com/images/cardlist/attribute/ico_type02.png"
+    },
+    "power": 5000,
+    "counter": "2000",
+    "color": "Green",
+    "family": "Supernovas/Navy/Drake Pirates",
+    "ability": "[On Play] If your Leader has the {Supernovas} type, rest up to 1 of your opponent's Characters with a cost of 5 or less. Then, set up to 1 of your DON!! cards as active at the end of this turn.",
+    "trigger": "",
+    "set": { "name": "-GREEN Jewelry Bonney- [ST-24]" },
+    "notes": []
+  }
+]
