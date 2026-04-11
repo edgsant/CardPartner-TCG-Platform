@@ -19,7 +19,7 @@
             <p>Únete a la comunidad de CardPartner</p>
         </header>
 
-        <form action="${pageContext.request.contextPath}/Views/perfil.jsp" class="login-form">
+        <form action="${pageContext.request.contextPath}/RegistroServlet" method="POST" class="login-form">
             
             <div class="input-group">
                 <i class="fas fa-user"></i>
