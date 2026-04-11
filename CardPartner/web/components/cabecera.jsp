@@ -36,8 +36,32 @@
     </div>
 
     <div class="login">
-        <a href="${pageContext.request.contextPath}/Views/login.jsp" style="text-decoration: none;">
-            <button>SIGN IN<br>LOGIN</button>
-        </a>
+        <% 
+            // Preguntamos a la sesión si hay un usuario conectado
+            modelo.Usuario usuario = (modelo.Usuario) session.getAttribute("usuarioActivo");
+            
+            if (usuario != null) { 
+                // --- SI EL USUARIO ESTÁ LOGUEADO ---
+        %>
+            <div style="display: flex; gap: 10px;">
+                <a href="${pageContext.request.contextPath}/Views/perfil.jsp" style="text-decoration: none;">
+                    <button style="background-color: #d32f2f; color: white; border-color: #d32f2f;">
+                        MI PERFIL<br><%= usuario.getNombreUsuario() %>
+                    </button>
+                </a>
+                <a href="${pageContext.request.contextPath}/LogoutServlet" style="text-decoration: none;">
+                    <button style="background-color: #333; color: white;">CERRAR<br>SESIÓN</button>
+                </a>
+            </div>
+        <% 
+            } else { 
+                // --- SI NO HAY NADIE LOGUEADO ---
+        %>
+            <a href="${pageContext.request.contextPath}/Views/login.jsp" style="text-decoration: none;">
+                <button>SIGN IN<br>LOGIN</button>
+            </a>
+        <% 
+            } 
+        %>
     </div>
 </header>
