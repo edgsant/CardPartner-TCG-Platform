@@ -1,4 +1,21 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.List"%>
+<%@page import="modelo.Mazo"%>
+<%@page import="modelo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    // --- 1. CONTROL DE SEGURIDAD ---
+    // Recogemos el usuario de la sesión. Si es null (no ha hecho login), lo echamos.
+    Usuario usuarioActual = (Usuario) session.getAttribute("usuarioActivo");
+    if (usuarioActual == null) {
+        response.sendRedirect(request.getContextPath() + "/Views/login.jsp");
+        return; // Detenemos la carga de la página
+    }
+    
+    // Formateador para que la fecha quede bonita (Ej: 15/04/2024)
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    String fechaBonita = (usuarioActual.getFechaRegistro() != null) ? sdf.format(usuarioActual.getFechaRegistro()) : "Desconocida";
+%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,9 +42,9 @@
                         <i class="fas fa-user-circle"></i>
                     </div>
                     <div class="perfil-info">
-                        <h2 class="perfil-nombre">Usuario de Prueba</h2>
-                        <p class="perfil-email"><i class="fas fa-envelope"></i> usuario.prueba@estudiantes.uva.es</p>
-                        <p class="perfil-fecha"><i class="fas fa-calendar-alt"></i> Miembro desde: Marzo 2024</p>
+                        <h2 class="perfil-nombre"><%= usuarioActual.getNombreUsuario() %></h2>
+                        <p class="perfil-email"><i class="fas fa-envelope"></i> <%= usuarioActual.getEmail() %></p>
+                        <p class="perfil-fecha"><i class="fas fa-calendar-alt"></i> Miembro desde: <%= fechaBonita %></p>
                     </div>
                     <div class="perfil-acciones">
                         <button class="btn-editar-perfil"><i class="fas fa-edit"></i> Editar Datos</button>
@@ -42,22 +59,38 @@
                     </div>
                     
                     <div class="galeria-mazos">
-                        <div class="mazo-item">
-                            <a href="${pageContext.request.contextPath}/Views/deck-view.jsp" style="text-decoration: none; color: inherit;">
-                                <div class="mazo-imagen">
-                                    <img src="${pageContext.request.contextPath}/img/lider-katakuri.jpg" alt="Líder Katakuri">
-                                </div>
-                                <div class="mazo-info">
-                                    <h3>Mi Katakuri Custom</h3>
-                                    <p class="mazo-meta">Colores: Amarillo</p>
-                                    <span class="mazo-tipo">Midrange</span>
-                                </div>
-                            </a>
-                            <div class="acciones-carta">
-                                <a href="${pageContext.request.contextPath}/Views/deck-builder.jsp" class="btn-accion btn-editar"><i class="fas fa-pen"></i> Editar</a>
-                                <button class="btn-accion btn-borrar"><i class="fas fa-trash"></i></button>
-                            </div>
-                        </div>
+                        <%
+                            // Recuperamos la lista de mazos que creamos en GuardarMazoServlet
+                            List<Mazo> misMazos = (List<Mazo>) session.getAttribute("listaMisMazos");
+                            
+                            // Si la lista tiene cosas, hacemos un bucle para pintarlos
+                            if (misMazos != null && !misMazos.isEmpty()) {
+                                for (Mazo m : misMazos) {
+                        %>
+                                    <div class="mazo-item">
+                                        <a href="${pageContext.request.contextPath}/Views/deck-view.jsp" style="text-decoration: none; color: inherit;">
+                                            <div class="mazo-imagen">
+                                                <img src="${pageContext.request.contextPath}/img/lider-sakazuki.jpg" alt="Líder Mazo">
+                                            </div>
+                                            <div class="mazo-info">
+                                                <h3><%= m.getNombre() %></h3>
+                                                <p class="mazo-meta">Privacidad: <%= m.getVisibilidad() %></p>
+                                                <span class="mazo-tipo">Personalizado</span>
+                                            </div>
+                                        </a>
+                                        <div class="acciones-carta">
+                                            <a href="${pageContext.request.contextPath}/Views/deck-builder.jsp" class="btn-accion btn-editar"><i class="fas fa-pen"></i> Editar</a>
+                                            <button class="btn-accion btn-borrar"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                        <%
+                                }
+                            } else {
+                        %>
+                                <p style="color: #666; font-style: italic;">Aún no has creado ningún mazo. ¡Anímate en el Deck Builder!</p>
+                        <%
+                            }
+                        %>
                     </div>
                 </div>
 

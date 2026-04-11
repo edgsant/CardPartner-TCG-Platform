@@ -18,11 +18,12 @@
             <jsp:include page="/components/cabecera.jsp" />
 
             <main class="contenido-builder">
+                <form action="${pageContext.request.contextPath}/GuardarMazoServlet" method="POST">
                 
-                <div class="barra-superior-builder">
-                    <h2 class="titulo-seccion">DECK BUILDER</h2>
-                    <a href="${pageContext.request.contextPath}/Views/perfil.jsp" class="btn-guardar" style="text-decoration: none; display: inline-block;">💾 Guardar Mazo</a>
-                </div>
+                    <div class="barra-superior-builder">
+                        <h2 class="titulo-seccion">DECK BUILDER</h2>
+                        <button type="submit" class="btn-guardar" style="border:none; cursor:pointer;">💾 Guardar Mazo</button>
+                    </div>
 
                 <div class="builder-header">
                     
@@ -35,22 +36,22 @@
                     </div>
 
                     <div class="deck-detalles">
-                        <h3>INFORMACIÓN DEL MAZO</h3>
-                        <div class="campo-form">
-                            <label>Nombre del Mazo:</label>
-                            <input type="text" value="Control Sakazuki V2">
-                        </div>
-                        <div class="campo-form">
-                            <label>Descripción / Estrategia:</label>
-                            <textarea rows="3">Mazo centrado en control de mesa. Bajar coste a los personajes rivales y usar a Rob Lucci para eliminarlos.</textarea>
-                        </div>
-                        <div class="campo-form">
-                            <label>Visibilidad:</label>
-                            <select style="font-family: 'Poppins', sans-serif; padding: 8px; border-radius: 8px; border: 1px solid #ccc;">
-                                <option>Público (Visible en Community Decks)</option>
-                                <option>Privado (Solo visible en mi Perfil)</option>
-                            </select>
-                        </div>
+                            <h3>INFORMACIÓN DEL MAZO</h3>
+                            <div class="campo-form">
+                                <label>Nombre del Mazo:</label>
+                                <input type="text" name="nombre_mazo" value="Control Sakazuki V2" required>
+                            </div>
+                            <div class="campo-form">
+                                <label>Descripción / Estrategia:</label>
+                                <textarea name="descripcion_mazo" rows="3">Mazo centrado en control de mesa...</textarea>
+                            </div>
+                            <div class="campo-form">
+                                <label>Visibilidad:</label>
+                                <select name="visibilidad_mazo" style="font-family: 'Poppins', sans-serif; padding: 8px; border-radius: 8px; border: 1px solid #ccc;">
+                                    <option value="Público">Público (Visible en Community Decks)</option>
+                                    <option value="Privado">Privado (Solo visible en mi Perfil)</option>
+                                </select>
+                            </div>
                         <div class="estadisticas-builder" style="margin-top: 15px;">
                             <span class="stat-badge">Cartas: 8 / 50</span>
                             <span class="stat-badge color-azul">Color: Azul</span>
@@ -101,7 +102,7 @@
                     </div>
                 </div>
 
-            </main>
+           </form> </main>
 
         </div>
     </div>
