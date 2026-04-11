@@ -318,3 +318,23 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     border-color: #d32f2f;
 }
+/* =========================================
+   8. ETIQUETA CANTIDAD CARTAS (x2, x4)
+========================================= */
+.cantidad-carta {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 5;
+    pointer-events: none; /* Evita que moleste si pasas el ratón */
+}

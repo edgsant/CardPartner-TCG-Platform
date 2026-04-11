@@ -5,15 +5,20 @@
     <title>Registro - CardPartner</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/loginStyle.css?v=2">
+    
+    <link rel="stylesheet" href="../css/loginStyle.css?v=3">
 </head>
-<body class="body-login"> <div class="contenedor-login"> <header class="login-header">
+<body> 
+    
+    <div class="contenedor-login"> 
+        
+        <header class="login-header">
             <img src="../img/logo.png" alt="CardPartner Logo">
             <h2>CREAR CUENTA</h2>
             <p>Únete a la comunidad de CardPartner</p>
         </header>
 
-        <form action="#" method="post" class="login-form">
+        <form action="perfil.html" class="login-form">
             
             <div class="input-group">
                 <i class="fas fa-user"></i>
@@ -37,14 +42,24 @@
 
             <button type="submit" class="btn-login">REGISTRARSE</button>
             
+            <div class="separador">
+                <span>O</span>
+            </div>
+            
+            <button type="button" class="btn-google">
+                <i class="fab fa-google"></i> Registrarse con Google
+            </button>
+            
             <div class="login-footer">
                 <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
             </div>
+            
         </form>
 
         <a href="../index.html" class="btn-volver-inicio">
             <i class="fas fa-arrow-left"></i> Volver al inicio
         </a>
+        
     </div>
 
 </body>

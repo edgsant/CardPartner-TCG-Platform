@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <title>Card Partner - Mi Perfil</title>
+    <link rel="stylesheet" href="../css/perfilStyle.css?v=1">
+</head>
+<body>
+
+    <div class="fondo-rosa">
+        <div class="contenedor-principal">
+            
+            <header class="cabecera">
+                <a href="../index.html" class="logo">
+                    <img src="../img/logo.png" alt="Logo de la Empresa">
+                </a>
+                <div class="fila-de-botones">
+                    <div class="mi-desplegable">
+                        <a href="tcg.html" style="text-decoration: none;"><button class="mi-boton">TCGS</button></a>
+                    </div>
+                    <div class="mi-desplegable">
+                        <button class="mi-boton">SOCIAL ▾</button>
+                        <div class="mi-submenu">
+                            <a href="news.html">NEWS</a>
+                            <a href="tournaments.html">TOURNAMENTS</a>
+                            <a href="guides.html">GUIDES</a>
+                        </div>
+                    </div>
+                    <div class="mi-desplegable">
+                        <a href="#" style="text-decoration: none;"><button class="mi-boton">DECKS ▾</button></a>
+                        <div class="mi-submenu">
+                            <a href="community-deck.html">Community decks</a>
+                            <a href="meta-decks.html">META Decks</a>
+                            <a href="deck-builder.html">Creador de mazos</a>
+                        </div>
+                    </div>
+                    <a href="cards.html" class="mi-boton">CARDS</a>
+                </div>
+                <div class="login">
+                    <a href="../index.html" style="text-decoration: none;">
+                        <button style="background-color: #333; color: white;">CERRAR<br>SESIÓN</button>
+                    </a>
+                </div>
+            </header>
+
+            <main class="contenido-perfil">
+                
+                <div class="perfil-header">
+                    <div class="perfil-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="perfil-info">
+                        <h2 class="perfil-nombre">Usuario de Prueba</h2>
+                        <p class="perfil-email"><i class="fas fa-envelope"></i> usuario.prueba@estudiantes.uva.es</p>
+                        <p class="perfil-fecha"><i class="fas fa-calendar-alt"></i> Miembro desde: Marzo 2024</p>
+                    </div>
+                    <div class="perfil-acciones">
+                        <button class="btn-editar-perfil"><i class="fas fa-edit"></i> Editar Datos</button>
+                        <a href="#modal-password" class="btn-cambiar-pass" style="text-decoration: none;"><i class="fas fa-key"></i> Cambiar Contraseña</a>
+                    </div>
+                </div>
+
+                <div class="seccion-mazos">
+                    <div class="barra-titulo">
+                        <h3 class="subtitulo-mazos">Mis Mazos Creados</h3>
+                        <a href="deck-builder.html" class="btn-crear-nuevo">+ Crear Nuevo</a>
+                    </div>
+                    
+                    <div class="galeria-mazos">
+                        <div class="mazo-item">
+                            <a href="deck-view.html" style="text-decoration: none; color: inherit;">
+                                <div class="mazo-imagen">
+                                    <img src="../img/lider-katakuri.jpg" alt="Líder Katakuri">
+                                </div>
+                                <div class="mazo-info">
+                                    <h3>Mi Katakuri Custom</h3>
+                                    <p class="mazo-meta">Colores: Amarillo</p>
+                                    <span class="mazo-tipo">Midrange</span>
+                                </div>
+                            </a>
+                            <div class="acciones-carta">
+                                <a href="deck-builder.html" class="btn-accion btn-editar"><i class="fas fa-pen"></i> Editar</a>
+                                <button class="btn-accion btn-borrar"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seccion-mazos">
+                    <h3 class="subtitulo-mazos" style="margin-top: 20px;">Mazos Guardados (Favoritos)</h3>
+                    <div class="galeria-mazos">
+                        <div class="mazo-item">
+                            <a href="deck-view.html" style="text-decoration: none; color: inherit;">
+                                <div class="mazo-imagen">
+                                    <img src="../img/lider-zoro.jpg" alt="Líder Zoro">
+                                </div>
+                                <div class="mazo-info">
+                                    <h3>Zoro Rush (Aggro)</h3>
+                                    <p class="mazo-autor">Creador: Comunidad</p>
+                                    <span class="mazo-tipo">Aggro</span>
+                                </div>
+                            </a>
+                            <div class="acciones-carta">
+                                <button class="btn-accion btn-borrar" style="width: 100%;"><i class="fas fa-heart-broken"></i> Quitar de guardados</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <div id="modal-password" class="modal-overlay">
+        <div class="modal-content">
+            <a href="#" class="btn-cerrar">&times;</a>
+            <h2 class="titulo-seccion" style="font-size: 24px; margin-bottom: 20px;"><i class="fas fa-lock"></i> Nueva Contraseña</h2>
+            <div class="campo-form">
+                <input type="password" placeholder="Contraseña actual" style="width: 100%; padding: 10px; margin-bottom: 15px;">
+                <input type="password" placeholder="Nueva contraseña" style="width: 100%; padding: 10px; margin-bottom: 15px;">
+                <input type="password" placeholder="Repetir nueva contraseña" style="width: 100%; padding: 10px; margin-bottom: 20px;">
+                <button class="btn-editar-perfil" style="width: 100%;">Actualizar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

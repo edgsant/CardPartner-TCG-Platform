@@ -103,15 +103,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px; /* Separación amplia como en tu foto */
-    flex: 1; /* Ocupa el espacio central */
+    gap: 60px; 
+    flex: 1; 
 }
 
 .mi-desplegable {
-    position: relative; /* Fundamental para el submenú */
+    position: relative; 
 }
 
-/* Tus botones (TCG, SOCIAL, DECKS, CARDS) */
 .mi-boton {
     background-color: transparent;
     border: 2px solid #333;
@@ -122,7 +121,7 @@ body {
     font-size: 16px;
     color: #333;
     cursor: pointer;
-    text-decoration: none; /* Adiós azul y subrayado */
+    text-decoration: none; 
     display: inline-block;
     transition: all 0.3s;
 }
@@ -132,9 +131,8 @@ body {
     color: white;
 }
 
-/* EL SUBMENÚ HORIZONTAL (Oculto por defecto) */
 .mi-submenu {
-    display: none; /* Escondido */
+    display: none; 
     position: absolute;
     top: 100%;
     left: 50%;
@@ -147,25 +145,23 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     z-index: 1000;
 }
-/* EL PUENTE INVISIBLE PARA EL HOVER */
+
 .mi-submenu::before {
     content: "";
     position: absolute;
-    top: -15px; /* Sube un poco más allá del margin para cubrir el hueco */
+    top: -15px; 
     left: 0;
     width: 100%;
     height: 15px;
-    background-color: transparent; /* Mantiene la separación visual */
+    background-color: transparent; 
 }
 
-/* MOSTRAR EL SUBMENÚ EN PARALELO AL PASAR EL RATÓN */
 .mi-desplegable:hover .mi-submenu {
-    display: flex; /* Lo hace visible */
-    flex-direction: row; /* ¡OPCIONES EN PARALELO! */
+    display: flex; 
+    flex-direction: row; 
     gap: 10px;
 }
 
-/* Los pequeños botones de dentro (One Piece, Pokemon...) */
 .mi-submenu a {
     padding: 10px 15px;
     background-color: #f5f5f5;
@@ -298,7 +294,6 @@ body {
     overflow: hidden;
 }
 
-/* El resto de estilos de .enlace-guia se quedan igual */
 .enlace-guia {
     text-decoration: none;
     color: #333; 
@@ -311,7 +306,6 @@ body {
     padding: 25px; 
 }
 
-/* El contenedor de la imagen y las flechas */
 .contenedor-carrusel-guia {
     display: flex;
     align-items: center; 
@@ -320,14 +314,10 @@ body {
     gap: 20px; 
 }
 
-/* LA IMAGEN (AQUÍ ESTÁ EL CAMBIO DE TAMAÑO) */
 .contenedor-carrusel-guia img {
     flex-grow: 1;
-    
-    /* MODIFICADO: Permitimos que la imagen use más ancho y alto */
-    max-width: 90%; /* Estaba en 80% */
-    max-height: 280px; /* Estaba en 200px. Esto la hace un pelín más grande */
-    
+    max-width: 90%; 
+    max-height: 280px; 
     object-fit: contain;
     border: 2px solid #eee;
     border-radius: 8px;
@@ -335,13 +325,10 @@ body {
     transition: all 0.3s ease;
 }
 
-/* El efecto hover se mantiene */
 .enlace-guia:hover img {
-    transform: translateY(-5px) scale(1.02); /* Añadimos un pelín de zoom extra al hover */
+    transform: translateY(-5px) scale(1.02); 
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
-
-.enlace-guia:hover img { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
 
 /* --- Lado Derecho: MAZOS --- */
 .mazos {
@@ -398,6 +385,35 @@ body {
 
 .item-mazo span { font-size: 14px; font-weight: 600; line-height: 1.3; }
 .item-mazo:hover img { transform: translateY(-5px) scale(1.03); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+
+/* --- Nuevo: Footer de los mazos recomendados --- */
+.footer-mazos {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    border-radius: 0 0 12px 12px;
+}
+
+.btn-ver-mas {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #333;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-ver-mas:hover {
+    background-color: #d32f2f; /* Rojo llamativo al pasar el ratón */
+    transform: translateY(-2px);
+}
 
 /* =========================================
    8. ETIQUETA INFERIOR
