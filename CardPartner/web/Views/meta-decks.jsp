@@ -1,4 +1,29 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="modelo.Mazo"%>
+<%@page import="modelo.Usuario"%>
+<%@page import="modelo.Carta"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    // ==========================================
+    // SIMULACIÓN (MOCK) - Mazos del META actual
+    // ==========================================
+    
+    List<Mazo> listaMeta = new ArrayList<>();
+    
+    // Usuario administrador para los mazos oficiales
+    Usuario admin = new Usuario(0, "Administrador", "admin@cardpartner.com", "", null);
+    
+    // Líderes del Meta
+    Carta liderSakazuki = new Carta("OP05-041", "Sakazuki", "L", "Azul/Negro", "Líder", 5, 5000, "", "/img/lider-sakazuki.jpg");
+    Carta liderKatakuri = new Carta("OP03-099", "Katakuri", "L", "Amarillo", "Líder", 5, 5000, "", "/img/lider-katakuri.jpg");
+    Carta liderEnel = new Carta("OP05-098", "Enel", "L", "Amarillo", "Líder", 5, 5000, "", "/img/lider-enel.jpg");
+
+    // Construcción de los mazos meta
+    listaMeta.add(new Mazo(101, "Sakazuki Control", "El Tier 0 del formato OP-05. Control absoluto.", "Público", admin, liderSakazuki));
+    listaMeta.add(new Mazo(102, "Katakuri Big Mom", "Estrategia Midrange agresiva con manipulación de vidas.", "Público", admin, liderKatakuri));
+    listaMeta.add(new Mazo(103, "Enel Sky Island", "Resistencia infinita gracias a su habilidad de curación.", "Público", admin, liderEnel));
+%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,36 +57,34 @@
 
                 <h3 class="subtitulo-mazos">Los mejores mazos del formato oficial</h3>
                 <section class="galeria-mazos">
-                    <a href="${pageContext.request.contextPath}/Views/deck-view.jsp" class="mazo-item">
-                        <div class="mazo-imagen">
-                            <img src="${pageContext.request.contextPath}/img/lider-sakazuki.jpg" alt="Líder Sakazuki">
-                        </div>
-                        <div class="mazo-info">
-                            <h3>Sakazuki Control</h3>
-                            <p class="mazo-meta">Colores: Azul / Negro</p>
-                            <p class="mazo-autor">Creador: Administrador</p>
-                            <span class="mazo-tipo">Control META</span>
-                        </div>
-                    </a>
+                    
+                    <%
+                        // BUCLE PARA MOSTRAR LOS MAZOS DEL META
+                        for(Mazo m : listaMeta) {
+                            String img = (m.getLider() != null) ? m.getLider().getImagenUrl() : "/img/logo.png";
+                    %>
+                        <a href="${pageContext.request.contextPath}/Views/deck-view.jsp?id=<%= m.getId() %>" class="mazo-item">
+                            <div class="mazo-imagen">
+                                <img src="${pageContext.request.contextPath}<%= img %>" alt="Líder Meta">
+                            </div>
+                            <div class="mazo-info">
+                                <h3><%= m.getNombre() %></h3>
+                                <p class="mazo-meta">Colores: <%= m.getLider().getColor() %></p>
+                                <p class="mazo-autor">Creador: <%= m.getCreador().getNombreUsuario() %></p>
+                                <span class="mazo-tipo"><%= m.getDescripcion() %></span>
+                            </div>
+                        </a>
+                    <%
+                        }
+                    %>
 
-                    <a href="${pageContext.request.contextPath}/Views/deck-view.jsp" class="mazo-item">
-                        <div class="mazo-imagen">
-                            <img src="${pageContext.request.contextPath}/img/lider-katakuri.jpg" alt="Líder Katakuri">
-                        </div>
-                        <div class="mazo-info">
-                            <h3>Katakuri Big Mom</h3>
-                            <p class="mazo-meta">Colores: Amarillo</p>
-                            <p class="mazo-autor">Creador: Administrador</p>
-                            <span class="mazo-tipo">Midrange META</span>
-                        </div>
-                    </a>
                 </section>
 
             </main>
 
         </div>
     </div>
-    
+
     <div id="modal-filtros" class="modal-overlay">
         <div class="modal-content">
             <a href="#" class="btn-cerrar">&times;</a>

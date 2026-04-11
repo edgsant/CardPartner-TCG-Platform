@@ -1,4 +1,21 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="modelo.Carta"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    // ==========================================
+    // SIMULACIÓN (MOCK) - A borrar cuando haya BD
+    // En el futuro, el Servlet te pasará la lista así: 
+    // List<Carta> listaCartas = dao.obtenerTodasLasCartas();
+    // ==========================================
+    
+    List<Carta> listaCartas = new ArrayList<>();
+    listaCartas.add(new Carta("OP01-120", "Shanks", "SEC (Secret Rare)", "Rojo", "Personaje", 9, 10000, "", "/img/op01-120.jpg"));
+    listaCartas.add(new Carta("OP01-025", "Roronoa Zoro", "SR (Super Rare)", "Rojo", "Personaje", 3, 5000, "", "/img/op01-025.jpg"));
+    listaCartas.add(new Carta("OP05-119", "Monkey.D.Luffy", "SEC (Secret Rare)", "Morado", "Personaje", 5, 6000, "", "/img/op05-119.jpg"));
+    listaCartas.add(new Carta("OP01-047", "Trafalgar Law", "SR (Super Rare)", "Verde/Rojo", "Personaje", 5, 6000, "", "/img/op01-047.jpg"));
+    listaCartas.add(new Carta("OP01-016", "Nami", "R (Rare)", "Rojo", "Personaje", 1, 1000, "", "/img/op01-016.jpg"));
+%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,50 +46,24 @@
 
                 <section class="galeria-cartas">
                     
-                    <a href="card-view.jsp" class="carta-item">
-                        <img src="${pageContext.request.contextPath}/img/op01-120.jpg" alt="Shanks OP01-120">
-                        <div class="carta-info">
-                            <h3>Shanks</h3>
-                            <p>OP01-120 | SEC (Secret Rare)</p>
-                            <span class="precio">45.50 €</span>
-                        </div>
-                    </a>
-
-                    <a href="card-view.jsp" class="carta-item">
-                        <img src="${pageContext.request.contextPath}/img/op01-025.jpg" alt="Roronoa Zoro OP01-025">
-                        <div class="carta-info">
-                            <h3>Roronoa Zoro</h3>
-                            <p>OP01-025 | SR (Super Rare)</p>
-                            <span class="precio">18.00 €</span>
-                        </div>
-                    </a>
-
-                    <a href="card-view.jsp" class="carta-item">
-                        <img src="${pageContext.request.contextPath}/img/op05-119.jpg" alt="Monkey.D.Luffy OP05-119">
-                        <div class="carta-info">
-                            <h3>Monkey.D.Luffy</h3>
-                            <p>OP05-119 | SEC (Secret Rare)</p>
-                            <span class="precio">32.25 €</span>
-                        </div>
-                    </a>
-
-                    <a href="card-view.jsp" class="carta-item">
-                        <img src="${pageContext.request.contextPath}/img/op01-047.jpg" alt="Trafalgar Law OP01-047">
-                        <div class="carta-info">
-                            <h3>Trafalgar Law</h3>
-                            <p>OP01-047 | SR (Super Rare)</p>
-                            <span class="precio">12.10 €</span>
-                        </div>
-                    </a>
-                    
-                    <a href="card-view.jsp" class="carta-item">
-                        <img src="${pageContext.request.contextPath}/img/op01-016.jpg" alt="Nami OP01-016">
-                        <div class="carta-info">
-                            <h3>Nami</h3>
-                            <p>OP01-016 | R (Rare)</p>
-                            <span class="precio">5.50 €</span>
-                        </div>
-                    </a>
+                    <%
+                        // BUCLE MÁGICO: Dibuja una caja por cada carta en la lista
+                        for(Carta c : listaCartas) {
+                            
+                            // Generamos un precio aleatorio entre 5€ y 65€ para dar realismo al prototipo
+                            double precioMercado = Math.round((Math.random() * 60 + 5) * 100.0) / 100.0;
+                    %>
+                        <a href="${pageContext.request.contextPath}/Views/card-view.jsp?id=<%= c.getIdCarta() %>" class="carta-item">
+                            <img src="${pageContext.request.contextPath}<%= c.getImagenUrl() %>" alt="<%= c.getNombre() %>">
+                            <div class="carta-info">
+                                <h3><%= c.getNombre() %></h3>
+                                <p><%= c.getIdCarta() %> | <%= c.getRareza() %></p>
+                                <span class="precio"><%= String.format("%.2f", precioMercado) %> €</span>
+                            </div>
+                        </a>
+                    <%
+                        }
+                    %>
 
                 </section>
             </main>

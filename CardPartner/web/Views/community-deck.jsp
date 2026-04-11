@@ -1,4 +1,32 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="modelo.Mazo"%>
+<%@page import="modelo.Usuario"%>
+<%@page import="modelo.Carta"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    // ==========================================
+    // SIMULACIÓN (MOCK) - A borrar cuando haya BD
+    // En el futuro: List<Mazo> listaMazos = daoMazo.obtenerMazosPublicos();
+    // ==========================================
+    
+    List<Mazo> listaMazos = new ArrayList<>();
+    
+    // 1. Creamos un par de usuarios falsos
+    Usuario u1 = new Usuario(1, "Sergio Otero", "sergio@uva.es", "1234", new Date());
+    Usuario u2 = new Usuario(2, "Álvaro López", "alvaro@uva.es", "1234", new Date());
+    
+    // 2. Creamos un par de cartas Líder falsas
+    Carta liderZoro = new Carta("OP01-001", "Zoro", "L", "Rojo", "Líder", 5, 5000, "", "/img/lider-zoro.jpg");
+    Carta liderEnel = new Carta("OP05-098", "Enel", "L", "Amarillo", "Líder", 5, 5000, "", "/img/lider-enel.jpg");
+    Carta liderLaw = new Carta("OP01-002", "Trafalgar Law", "L", "Verde/Rojo", "Líder", 5, 5000, "", "/img/lider-sakazuki.jpg"); // Reutilizamos imagen para la demo
+    
+    // 3. Creamos los mazos uniéndolo todo
+    listaMazos.add(new Mazo(1, "Zoro Rush (Aggro)", "Mazo rápido y agresivo", "Público", u1, liderZoro));
+    listaMazos.add(new Mazo(2, "Enel Sky Island", "Mazo Midrange curativo", "Público", u2, liderEnel));
+    listaMazos.add(new Mazo(3, "Law Supernovas", "Control de mesa", "Público", u1, liderLaw));
+%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,37 +54,36 @@
                             <input type="text" placeholder="Buscar líder, color o creador...">
                             <a href="#modal-filtros" class="btn-filtro" style="text-decoration: none; display: inline-block;">Filtros ⚙️</a>
                         </div>
-                        <a href="deck-builder.jsp" class="btn-crear">+ Crear Mazo</a>
+                        <a href="${pageContext.request.contextPath}/Views/deck-builder.jsp" class="btn-crear">+ Crear Mazo</a>
                     </div>
                 </div>
 
                 <h3 class="subtitulo-mazos">Mazos creados por los jugadores</h3>
                 <section class="galeria-mazos">
                     
-                    <a href="deck-view.jsp" class="mazo-item">
-                        <div class="mazo-imagen">
-                            <img src="${pageContext.request.contextPath}/img/lider-zoro.jpg" alt="Líder Zoro">
-                        </div>
-                        <div class="mazo-info">
-                            <h3>Zoro Rush (Aggro)</h3>
-                            <p class="mazo-meta">Colores: Rojo</p>
-                            <p class="mazo-autor">Creador: Sergio Otero</p>
-                            <span class="mazo-tipo">Aggro / Rápido</span>
-                        </div>
-                    </a>
+                    <%
+                        // BUCLE MÁGICO: Dibuja una caja por cada mazo en la lista
+                        for(Mazo m : listaMazos) {
+                            // Extraemos la información de forma segura
+                            String imgLider = (m.getLider() != null) ? m.getLider().getImagenUrl() : "/img/logo.png";
+                            String colorLider = (m.getLider() != null) ? m.getLider().getColor() : "Variado";
+                            String nombreCreador = (m.getCreador() != null) ? m.getCreador().getNombreUsuario() : "Desconocido";
+                    %>
+                        <a href="${pageContext.request.contextPath}/Views/deck-view.jsp?id=<%= m.getId() %>" class="mazo-item">
+                            <div class="mazo-imagen">
+                                <img src="${pageContext.request.contextPath}<%= imgLider %>" alt="Líder del mazo">
+                            </div>
+                            <div class="mazo-info">
+                                <h3><%= m.getNombre() %></h3>
+                                <p class="mazo-meta">Colores: <%= colorLider %></p>
+                                <p class="mazo-autor">Creador: <%= nombreCreador %></p>
+                                <span class="mazo-tipo"><%= m.getDescripcion() %></span>
+                            </div>
+                        </a>
+                    <%
+                        }
+                    %>
 
-                    <a href="deck-view.jsp" class="mazo-item">
-                        <div class="mazo-imagen">
-                            <img src="${pageContext.request.contextPath}/img/lider-enel.jpg" alt="Líder Enel">
-                        </div>
-                        <div class="mazo-info">
-                            <h3>Enel Sky Island</h3>
-                            <p class="mazo-meta">Colores: Amarillo</p>
-                            <p class="mazo-autor">Creador: Álvaro López</p>
-                            <span class="mazo-tipo">Midrange</span>
-                        </div>
-                    </a>
-                    
                 </section>
 
             </main>
@@ -82,29 +109,3 @@
                         <option>Amarillo</option>
                     </select>
                 </div>
-
-                <div style="margin-bottom: 15px;">
-                    <label style="font-weight: bold; display: block; margin-bottom: 5px;">Rareza:</label>
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap; font-size: 14px;">
-                        <label><input type="checkbox"> Common (C)</label>
-                        <label><input type="checkbox"> Uncommon (UC)</label>
-                        <label><input type="checkbox"> Rare (R)</label>
-                        <label><input type="checkbox"> Super Rare (SR)</label>
-                        <label><input type="checkbox"> Secret Rare (SEC)</label>
-                    </div>
-                </div>
-
-                <div style="margin-bottom: 25px;">
-                    <label style="font-weight: bold; display: block; margin-bottom: 5px;">Coste de Don!!:</label>
-                    <input type="range" min="1" max="10" style="width: 100%;">
-                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: #666;">
-                        <span>1</span><span>10</span>
-                    </div>
-                </div>
-
-                <a href="#" class="btn-filtro" style="width: 100%; background: #333; color: white; text-align: center; display: block; text-decoration: none;">APLICAR FILTROS</a>
-            </form>
-        </div>
-    </div>
-</body>
-</html>

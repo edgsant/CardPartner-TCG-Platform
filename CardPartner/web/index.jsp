@@ -1,4 +1,29 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="modelo.Mazo"%>
+<%@page import="modelo.Usuario"%>
+<%@page import="modelo.Carta"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    // ==========================================
+    // SIMULACIÓN (MOCK) - Mazos Recomendados
+    // En el futuro: List<Mazo> recomendados = daoMazo.obtenerRecomendados();
+    // ==========================================
+    List<Mazo> mazosRecomendados = new ArrayList<>();
+    
+    // Creamos un usuario "Sistema" o "Admin"
+    Usuario admin = new Usuario(0, "CardPartner Admin", "admin@cardpartner.com", "", null);
+    
+    // Creamos las cartas líderes de los Starter Decks (aprovechando tus imágenes estáticas)
+    Carta liderTeach = new Carta("ST20-001", "Marshall D. Teach", "L", "Negro", "Líder", 5, 5000, "", "/img/st20.jpg");
+    Carta liderUta = new Carta("ST11-001", "Uta", "L", "Verde", "Líder", 5, 5000, "", "/img/st11.jpg");
+    Carta liderLuffy = new Carta("ST08-001", "Monkey D. Luffy", "L", "Negro", "Líder", 5, 5000, "", "/img/st08.jpg");
+
+    // Construimos los mazos recomendados
+    mazosRecomendados.add(new Mazo(201, "ST-20 Marshall D. Teach", "Ideal para aprender control.", "Público", admin, liderTeach));
+    mazosRecomendados.add(new Mazo(202, "ST-11 UTA", "Mazo basado en la película Film Red.", "Público", admin, liderUta));
+    mazosRecomendados.add(new Mazo(203, "ST-08 Luffy", "Mazo clásico para entender lo básico.", "Público", admin, liderLuffy));
+%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,20 +67,17 @@
                     <div class="mazos">
                         <h2 class="titulo-mazos">Recomendados: Principiantes</h2>
                         <div class="contenido-mazos">
-                            <a href="${pageContext.request.contextPath}/Views/deck-view.jsp" class="item-mazo">
-                                <img src="${pageContext.request.contextPath}/img/st20.jpg" alt="ST-20 Marshall D. Teach">
-                                <span>ST-20 Marshall D. Teach</span>
-                            </a>
-
-                            <a href="${pageContext.request.contextPath}/Views/deck-view.jsp" class="item-mazo">
-                                <img src="${pageContext.request.contextPath}/img/st11.jpg" alt="ST-11 UTA">
-                                <span>ST-11 UTA</span>
-                            </a>
-
-                            <a href="${pageContext.request.contextPath}/Views/deck-view.jsp" class="item-mazo">
-                                <img src="${pageContext.request.contextPath}/img/st08.jpg" alt="ST-08 Luffy">
-                                <span>ST-08 Luffy</span>
-                            </a>
+                            <%
+                                // BUCLE MÁGICO: Dibuja los mazos recomendados desde la lista Java
+                                for(Mazo m : mazosRecomendados) {
+                            %>
+                                <a href="${pageContext.request.contextPath}/Views/deck-view.jsp?id=<%= m.getId() %>" class="item-mazo">
+                                    <img src="${pageContext.request.contextPath}<%= m.getLider().getImagenUrl() %>" alt="<%= m.getNombre() %>">
+                                    <span><%= m.getNombre() %></span>
+                                </a>
+                            <%
+                                }
+                            %>
                         </div>
                         <div class="footer-mazos">
                             <a href="${pageContext.request.contextPath}/Views/community-deck.jsp" class="btn-ver-mas">Ver todos los recomendados</a>
