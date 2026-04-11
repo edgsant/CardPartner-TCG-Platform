@@ -18,15 +18,15 @@
             <p>Inicia sesión para continuar</p>
         </header>
 
-        <form class="login-form" action="${pageContext.request.contextPath}/Views/perfil.jsp">
+        <form class="login-form" action="${pageContext.request.contextPath}/LoginServlet" method="POST">
             <div class="input-group">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Usuario" required>
+                <input type="text" name="usuario_input" placeholder="Usuario" required>
             </div>
 
             <div class="input-group">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Contraseña" required>
+                <input type="password" name="password_input" placeholder="Contraseña" required>
             </div>
 
             <button type="submit" class="btn-login">ENTRAR</button>
