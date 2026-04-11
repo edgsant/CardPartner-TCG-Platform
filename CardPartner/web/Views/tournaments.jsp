@@ -1,17 +1,63 @@
-<%-- 
-    Document   : tournaments
-    Created on : 11 abr 2026, 14:00:49
-    Author     : 0teero
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Card Partner - Tournaments</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/tournamentsStyle.css?v=1">
+</head>
+<body>
+    <div class="fondo-rosa">
+        <div class="contenedor-principal">
+            
+            <jsp:include page="/components/cabecera.jsp" />
+
+            <main class="tournaments">
+                <div class="barra_torneos">
+                    <h2 class="titulo-seccion">TOURNAMENTS</h2>
+                </div>
+                    
+                <a href="#" class="torneo-principal" style="text-decoration: none; color: inherit;">
+                    <img src="${pageContext.request.contextPath}/img/op-regionals-jun-sep24.jpg" alt="Regionals">
+                    <div class="info-torneo">
+                        <h3>Resultados y estadísticas del último torneo mundial</h3>
+                        <p>Consulta toda la información del mayor torneo del año con sus estadísticas y los mejores mazos jugados.</p>
+                    </div>
+                </a>
+
+                <section class="lista-torneos">
+
+                    <a href="#" class="torneo" style="text-decoration: none; color: inherit;">
+                        <img src="${pageContext.request.contextPath}/img/hedy-lamarr.jpg" alt="UVa">
+                        <div>
+                            <h4>Torneo en la Hedy Lamarr</h4>
+                            <p>Nuevo torneo anunciado en la Universidad de Valladolid con grandes expectativas.</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="torneo" style="text-decoration: none; color: inherit;">
+                        <img src="${pageContext.request.contextPath}/img/ranking.jpg" alt="Ranking">
+                        <div>
+                            <h4>Resolución del controversial torneo en La Flecha</h4>
+                            <p>Salen a la luz los resultados del torneo con muchas dudas debido a su organización.</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="torneo" style="text-decoration: none; color: inherit;">
+                        <img src="${pageContext.request.contextPath}/img/caja-tcg.jpg" alt="Caja">
+                        <div>
+                            <h4>Promesa de una caja del nuevo set en un pequeño torneo</h4>
+                            <p>Un patrocinador anuncia el premio de una caja del nuevo set aclarando que lo hace sin ánimo de lucro.</p>
+                        </div>
+                    </a>
+
+                </section>
+            </main>
+
+        </div>
+    </div>
+</body>
 </html>

@@ -1,17 +1,103 @@
-<%-- 
-    Document   : perfil
-    Created on : 11 abr 2026, 14:00:27
-    Author     : 0teero
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <title>Card Partner - Mi Perfil</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/perfilStyle.css?v=1">
+</head>
+<body>
+
+    <div class="fondo-rosa">
+        <div class="contenedor-principal">
+            
+            <jsp:include page="/components/cabecera.jsp" />
+
+            <main class="contenido-perfil">
+                
+                <div class="perfil-header">
+                    <div class="perfil-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="perfil-info">
+                        <h2 class="perfil-nombre">Usuario de Prueba</h2>
+                        <p class="perfil-email"><i class="fas fa-envelope"></i> usuario.prueba@estudiantes.uva.es</p>
+                        <p class="perfil-fecha"><i class="fas fa-calendar-alt"></i> Miembro desde: Marzo 2024</p>
+                    </div>
+                    <div class="perfil-acciones">
+                        <button class="btn-editar-perfil"><i class="fas fa-edit"></i> Editar Datos</button>
+                        <a href="#modal-password" class="btn-cambiar-pass" style="text-decoration: none;"><i class="fas fa-key"></i> Cambiar Contraseña</a>
+                    </div>
+                </div>
+
+                <div class="seccion-mazos">
+                    <div class="barra-titulo">
+                        <h3 class="subtitulo-mazos">Mis Mazos Creados</h3>
+                        <a href="${pageContext.request.contextPath}/Views/deck-builder.jsp" class="btn-crear-nuevo">+ Crear Nuevo</a>
+                    </div>
+                    
+                    <div class="galeria-mazos">
+                        <div class="mazo-item">
+                            <a href="${pageContext.request.contextPath}/Views/deck-view.jsp" style="text-decoration: none; color: inherit;">
+                                <div class="mazo-imagen">
+                                    <img src="${pageContext.request.contextPath}/img/lider-katakuri.jpg" alt="Líder Katakuri">
+                                </div>
+                                <div class="mazo-info">
+                                    <h3>Mi Katakuri Custom</h3>
+                                    <p class="mazo-meta">Colores: Amarillo</p>
+                                    <span class="mazo-tipo">Midrange</span>
+                                </div>
+                            </a>
+                            <div class="acciones-carta">
+                                <a href="${pageContext.request.contextPath}/Views/deck-builder.jsp" class="btn-accion btn-editar"><i class="fas fa-pen"></i> Editar</a>
+                                <button class="btn-accion btn-borrar"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seccion-mazos">
+                    <h3 class="subtitulo-mazos" style="margin-top: 20px;">Mazos Guardados (Favoritos)</h3>
+                    <div class="galeria-mazos">
+                        <div class="mazo-item">
+                            <a href="${pageContext.request.contextPath}/Views/deck-view.jsp" style="text-decoration: none; color: inherit;">
+                                <div class="mazo-imagen">
+                                    <img src="${pageContext.request.contextPath}/img/lider-zoro.jpg" alt="Líder Zoro">
+                                </div>
+                                <div class="mazo-info">
+                                    <h3>Zoro Rush (Aggro)</h3>
+                                    <p class="mazo-autor">Creador: Comunidad</p>
+                                    <span class="mazo-tipo">Aggro</span>
+                                </div>
+                            </a>
+                            <div class="acciones-carta">
+                                <button class="btn-accion btn-borrar" style="width: 100%;"><i class="fas fa-heart-broken"></i> Quitar de guardados</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <div id="modal-password" class="modal-overlay">
+        <div class="modal-content">
+            <a href="#" class="btn-cerrar">&times;</a>
+            <h2 class="titulo-seccion" style="font-size: 24px; margin-bottom: 20px;"><i class="fas fa-lock"></i> Nueva Contraseña</h2>
+            <div class="campo-form">
+                <input type="password" placeholder="Contraseña actual" style="width: 100%; padding: 10px; margin-bottom: 15px;">
+                <input type="password" placeholder="Nueva contraseña" style="width: 100%; padding: 10px; margin-bottom: 15px;">
+                <input type="password" placeholder="Repetir nueva contraseña" style="width: 100%; padding: 10px; margin-bottom: 20px;">
+                <button class="btn-editar-perfil" style="width: 100%;">Actualizar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
 </html>
