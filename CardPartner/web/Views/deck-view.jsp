@@ -1,4 +1,22 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="modelo.Mazo"%>
+<%@page import="modelo.Carta"%>
+<%@page import="modelo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    // ==========================================
+    // SIMULACIÓN (MOCK) - A borrar cuando haya BD
+    // En el futuro, el Servlet te pasará el mazo así: 
+    // Mazo mazoActual = (Mazo) request.getAttribute("mazoMostrado");
+    // ==========================================
+    
+    Mazo mazoActual = new Mazo(1, "Sakazuki Control (Dinámico)", "Mazo de control simulado en Java sin usar Base de Datos.", "Público", null, null);
+    
+    // Le añadimos unas cuantas cartas de prueba a nuestro mazo falso
+    mazoActual.añadirCarta(new Carta("OP01-120", "Shanks", "SEC", "Rojo", "Personaje", 9, 10000, "", "/img/op01-120.jpg"));
+    mazoActual.añadirCarta(new Carta("OP01-025", "Zoro", "SR", "Rojo", "Personaje", 3, 5000, "", "/img/op01-025.jpg"));
+    mazoActual.añadirCarta(new Carta("OP05-119", "Luffy", "SEC", "Morado", "Personaje", 5, 6000, "", "/img/op05-119.jpg"));
+%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,7 +35,7 @@
             <jsp:include page="/components/cabecera.jsp" />
 
             <main class="contenido-detalle">
-                <h2 class="titulo-mazo-grande">Sakazuki Control (OP-05 META)</h2>
+                <h2 class="titulo-mazo-grande"><%= mazoActual.getNombre() %></h2>
                 
                 <div class="deck-header">
                     <div class="lider-seccion">
@@ -27,14 +45,13 @@
 
                     <div class="descripcion-seccion">
                         <h3>DESCRIPCIÓN DEL MAZO</h3>
-                        <p>Mazo de control absoluto basado en la mecánica de reducir el coste de los personajes rivales para luego eliminarlos fácilmente con efectos de K.O. o enviándolos al fondo del mazo.</p>
-                        <p><strong>Estilo:</strong> Control | <strong>Dificultad:</strong> Alta</p>
+                        <p><%= mazoActual.getDescripcion() %></p>
+                        <p><strong>Privacidad:</strong> <%= mazoActual.getVisibilidad() %> | <strong>Dificultad:</strong> Alta</p>
                         
                         <div class="estadisticas">
                             <span class="badge badge-azul">Azul</span>
                             <span class="badge badge-negro">Negro</span>
-                            <span class="stat-normal">Winrate: 58%</span>
-                            <span class="stat-normal">Precio Aprox: 210 €</span>
+                            <span class="stat-normal">Cartas: <%= mazoActual.getListaCartas().size() %> / 50</span>
                         </div>
 
                         <div class="acciones-mazo">
@@ -47,26 +64,19 @@
 
                 <h3 class="titulo-cartas">LISTA DE CARTAS</h3>
                 <div class="deck-grid">
-                    <div class="carta-wrapper">
-                        <a href="${pageContext.request.contextPath}/Views/card-view.jsp"><img src="${pageContext.request.contextPath}/img/op01-120.jpg" alt="Shanks" class="carta-pequena"></a>
-                        <span class="cantidad-carta">x2</span>
-                    </div>
-                    <div class="carta-wrapper">
-                        <a href="${pageContext.request.contextPath}/Views/card-view.jsp"><img src="${pageContext.request.contextPath}/img/op01-025.jpg" alt="Zoro" class="carta-pequena"></a>
-                        <span class="cantidad-carta">x4</span>
-                    </div>
-                    <div class="carta-wrapper">
-                        <a href="${pageContext.request.contextPath}/Views/card-view.jsp"><img src="${pageContext.request.contextPath}/img/op05-119.jpg" alt="Luffy" class="carta-pequena"></a>
-                        <span class="cantidad-carta">x4</span>
-                    </div>
-                    <div class="carta-wrapper">
-                        <a href="${pageContext.request.contextPath}/Views/card-view.jsp"><img src="${pageContext.request.contextPath}/img/op01-047.jpg" alt="Law" class="carta-pequena"></a>
-                        <span class="cantidad-carta">x4</span>
-                    </div>
-                    <div class="carta-wrapper">
-                        <a href="${pageContext.request.contextPath}/Views/card-view.jsp"><img src="${pageContext.request.contextPath}/img/op01-016.jpg" alt="Nami" class="carta-pequena"></a>
-                        <span class="cantidad-carta">x4</span>
-                    </div>
+                    <%
+                        // BUCLE MÁGICO: Recorremos las cartas del mazo y dibujamos una caja por cada una
+                        for(Carta c : mazoActual.getListaCartas()) {
+                    %>
+                        <div class="carta-wrapper">
+                            <a href="${pageContext.request.contextPath}/Views/card-view.jsp?id=<%= c.getIdCarta() %>">
+                                <img src="${pageContext.request.contextPath}<%= c.getImagenUrl() %>" alt="<%= c.getNombre() %>" class="carta-pequena" title="<%= c.getNombre() %>">
+                            </a>
+                            <span class="cantidad-carta">x1</span>
+                        </div>
+                    <%
+                        }
+                    %>
                 </div>
             </main>
         </div>
