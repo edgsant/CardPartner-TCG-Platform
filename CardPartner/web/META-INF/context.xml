@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context>
-    <Resource name="jdbc/CardPartnerDB" 
-              auth="Container" 
-              type="javax.sql.DataSource"
-              maxTotal="100" 
-              maxIdle="30" 
-              maxWaitMillis="10000"
-              username="admin_cardpartner" 
-              password="123456" 
-              driverClassName="org.mariadb.jdbc.Driver"
-              url="jdbc:mariadb://localhost:3306/cardpartner_db"/>
+<Context path="/CardPartner">
+  <Resource 
+      auth="Container" 
+      driverClassName="org.mariadb.jdbc.Driver" 
+      factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" 
+      initialSize="10" 
+      jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;   
+  org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer" 
+      jmxEnabled="true" 
+      logAbandoned="true" 
+      maxActive="100" maxWait="10000" 
+      minEvictableIdleTimeMillis="30000" 
+      minIdle="10" 
+      name="jdbc/cardpartner_db" 
+      username="admin_cardpartner"
+      password="123456" removeAbandoned="true" 
+      removeAbandonedTimeout="60" 
+      testOnBorrow="true" 
+      testOnReturn="false"
+      testWhileIdle="true" 
+      timeBetweenEvictionRunsMillis="30000" 
+      type="javax.sql.DataSource" 
+      url="jdbc:mariadb://localhost:3306/cardpartner_db" 
+      
+      validationInterval="30000" 
+      validationQuery="SELECT 1"/>
 </Context>
