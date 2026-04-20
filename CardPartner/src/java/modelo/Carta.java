@@ -1,56 +1,115 @@
 package modelo;
 
-public class Carta {
-    private String idCarta; // Ejemplo: "OP01-120"
-    private String nombre;
-    private String rareza;
-    private String color;
-    private String tipo; // Líder, Personaje, Evento...
+import java.io.Serializable;
+
+public class Carta implements Serializable {
+    
+    private String idCarta;
+    private String nombreCarta;
+    private String imagen;
+    private String tipo;
+    private String arquetipo;
+    private String color; // Guardará el SET de MariaDB (Ej: "ROJO,VERDE")
     private int coste;
     private int poder;
-    private String efecto;
-    private String imagenUrl; // Ruta de la imagen, ej: "/img/op01-120.jpg"
+    private String atributoCombate;
+    private double precioMercado;
 
     public Carta() {
     }
 
-    public Carta(String idCarta, String nombre, String rareza, String color, String tipo, int coste, int poder, String efecto, String imagenUrl) {
+    public Carta(String idCarta, String nombreCarta, String imagen, String tipo, String arquetipo, String color, int coste, int poder, String atributoCombate, double precioMercado) {
         this.idCarta = idCarta;
-        this.nombre = nombre;
-        this.rareza = rareza;
-        this.color = color;
+        this.nombreCarta = nombreCarta;
+        this.imagen = imagen;
         this.tipo = tipo;
+        this.arquetipo = arquetipo;
+        this.color = color;
         this.coste = coste;
         this.poder = poder;
-        this.efecto = efecto;
-        this.imagenUrl = imagenUrl;
+        this.atributoCombate = atributoCombate;
+        this.precioMercado = precioMercado;
     }
 
-    // --- GETTERS Y SETTERS ---
-    public String getIdCarta() { return idCarta; }
-    public void setIdCarta(String idCarta) { this.idCarta = idCarta; }
+    public String getIdCarta() {
+        return idCarta;
+    }
 
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setIdCarta(String idCarta) {
+        this.idCarta = idCarta;
+    }
 
-    public String getRareza() { return rareza; }
-    public void setRareza(String rareza) { this.rareza = rareza; }
+    public String getNombreCarta() {
+        return nombreCarta;
+    }
 
-    public String getColor() { return color; }
-    public void setColor(String color) { this.color = color; }
+    public void setNombreCarta(String nombreCarta) {
+        this.nombreCarta = nombreCarta;
+    }
 
-    public String getTipo() { return tipo; }
-    public void setTipo(String tipo) { this.tipo = tipo; }
+    public String getImagen() {
+        return imagen;
+    }
 
-    public int getCoste() { return coste; }
-    public void setCoste(int coste) { this.coste = coste; }
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
 
-    public int getPoder() { return poder; }
-    public void setPoder(int poder) { this.poder = poder; }
+    public String getTipo() {
+        return tipo;
+    }
 
-    public String getEfecto() { return efecto; }
-    public void setEfecto(String efecto) { this.efecto = efecto; }
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 
-    public String getImagenUrl() { return imagenUrl; }
-    public void setImagenUrl(String imagenUrl) { this.imagenUrl = imagenUrl; }
+    public String getArquetipo() {
+        return arquetipo;
+    }
+
+    public void setArquetipo(String arquetipo) {
+        this.arquetipo = arquetipo;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getCoste() {
+        return coste;
+    }
+
+    public void setCoste(int coste) {
+        this.coste = coste;
+    }
+
+    public int getPoder() {
+        return poder;
+    }
+
+    public void setPoder(int poder) {
+        this.poder = poder;
+    }
+
+    public String getAtributoCombate() {
+        return atributoCombate;
+    }
+
+    public void setAtributoCombate(String atributoCombate) {
+        this.atributoCombate = atributoCombate;
+    }
+
+    public double getPrecioMercado() {
+        return precioMercado;
+    }
+
+    public void setPrecioMercado(double precioMercado) {
+        this.precioMercado = precioMercado;
+    }
+
+    
 }
