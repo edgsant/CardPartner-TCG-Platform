@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.sql.Timestamp;
 import modelo.Usuario;
 
 @WebServlet(name = "RegistroServlet", urlPatterns = {"/RegistroServlet"})
@@ -32,7 +33,7 @@ public class RegistroServlet extends HttpServlet {
             nuevoUsuario.setNombreUsuario(nombreUsuario);
             nuevoUsuario.setEmail(email);
             nuevoUsuario.setPassword(pass1);
-            nuevoUsuario.setFechaRegistro(new Date()); // Le asigna la fecha y hora exactas de hoy
+            nuevoUsuario.setFechaRegistro((Timestamp) new Date()); // Le asigna la fecha y hora exactas de hoy
             
             // 4. Lo guardamos en la sesión para "loguearlo" automáticamente
             HttpSession session = request.getSession();
