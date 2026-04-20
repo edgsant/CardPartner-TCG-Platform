@@ -1,57 +1,109 @@
 package modelo;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
+import java.sql.Timestamp;
 
-public class Mazo {
-    private int id;
-    private String nombre;
+public class Mazo implements Serializable {
+    
+    private int idMazo;
+    private String nombreMazo;
     private String descripcion;
-    private String visibilidad; // "Público" o "Privado"
-    private Usuario creador; // El dueño del mazo
-    private Carta lider; // La carta principal
-    private List<Carta> listaCartas; // Las 50 cartas del mazo
+    private Timestamp fechaCreacion;
+    private boolean esPublico;
+    private boolean esOficial;
+    private float winrate;
+    private int idUsuarioCreador;
+    private String idCartaLider;
 
     public Mazo() {
-        this.listaCartas = new ArrayList<>(); // Inicializamos la lista vacía
+        this.esPublico = true;
+        this.esOficial = false;
+        this.winrate = 0.0f;
     }
 
-    public Mazo(int id, String nombre, String descripcion, String visibilidad, Usuario creador, Carta lider) {
-        this.id = id;
-        this.nombre = nombre;
+    public Mazo(int idMazo, String nombreMazo, String descripcion, Timestamp fechaCreacion, boolean esPublico, boolean esOficial, float winrate, int idUsuarioCreador, String idCartaLider) {
+        this.idMazo = idMazo;
+        this.nombreMazo = nombreMazo;
         this.descripcion = descripcion;
-        this.visibilidad = visibilidad;
-        this.creador = creador;
-        this.lider = lider;
-        this.listaCartas = new ArrayList<>();
+        this.fechaCreacion = fechaCreacion;
+        this.esPublico = esPublico;
+        this.esOficial = esOficial;
+        this.winrate = winrate;
+        this.idUsuarioCreador = idUsuarioCreador;
+        this.idCartaLider = idCartaLider;
     }
 
-    // Método de utilidad para añadir una carta fácilmente
-    public void añadirCarta(Carta c) {
-        if(this.listaCartas.size() < 50) {
-            this.listaCartas.add(c);
-        }
+    public int getIdMazo() {
+        return idMazo;
     }
 
-    // --- GETTERS Y SETTERS ---
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public void setIdMazo(int idMazo) {
+        this.idMazo = idMazo;
+    }
 
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
+    public String getNombreMazo() {
+        return nombreMazo;
+    }
 
-    public String getDescripcion() { return descripcion; }
-    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
+    public void setNombreMazo(String nombreMazo) {
+        this.nombreMazo = nombreMazo;
+    }
 
-    public String getVisibilidad() { return visibilidad; }
-    public void setVisibilidad(String visibilidad) { this.visibilidad = visibilidad; }
+    public String getDescripcion() {
+        return descripcion;
+    }
 
-    public Usuario getCreador() { return creador; }
-    public void setCreador(Usuario creador) { this.creador = creador; }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
-    public Carta getLider() { return lider; }
-    public void setLider(Carta lider) { this.lider = lider; }
+    public Timestamp getFechaCreacion() {
+        return fechaCreacion;
+    }
 
-    public List<Carta> getListaCartas() { return listaCartas; }
-    public void setListaCartas(List<Carta> listaCartas) { this.listaCartas = listaCartas; }
+    public void setFechaCreacion(Timestamp fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public boolean isEsPublico() {
+        return esPublico;
+    }
+
+    public void setEsPublico(boolean esPublico) {
+        this.esPublico = esPublico;
+    }
+
+    public boolean isEsOficial() {
+        return esOficial;
+    }
+
+    public void setEsOficial(boolean esOficial) {
+        this.esOficial = esOficial;
+    }
+
+    public float getWinrate() {
+        return winrate;
+    }
+
+    public void setWinrate(float winrate) {
+        this.winrate = winrate;
+    }
+
+    public int getIdUsuarioCreador() {
+        return idUsuarioCreador;
+    }
+
+    public void setIdUsuarioCreador(int idUsuarioCreador) {
+        this.idUsuarioCreador = idUsuarioCreador;
+    }
+
+    public String getIdCartaLider() {
+        return idCartaLider;
+    }
+
+    public void setIdCartaLider(String idCartaLider) {
+        this.idCartaLider = idCartaLider;
+    }
+
+    
 }
