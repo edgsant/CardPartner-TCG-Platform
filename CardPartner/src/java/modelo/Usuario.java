@@ -1,40 +1,93 @@
 package modelo;
 
-import java.util.Date;
+import jakarta.servlet.http.Part; // (O javax.servlet.http.Part si usáis Tomcat 9)
+import java.io.Serializable;
+import java.sql.Timestamp;
 
-public class Usuario {
-    private int id;
-    private String nombreUsuario;
+public class Usuario implements Serializable {
+    
+    private int idUsuario;
+    private String apodoUsuario;
     private String email;
     private String password;
-    private Date fechaRegistro; // Añadido por feedback del profesor
+    private Part avatar; // Según apuntes para manejar subida de archivos
+    private String rol;
+    private Timestamp fechaRegistro;
 
-    // Constructor vacío
+    // Constructor vacío obligatorio
     public Usuario() {
+        this.apodoUsuario = "";
+        this.email = "";
+        this.password = "";
+        this.rol = "JUGADOR"; // Valor por defecto
     }
 
-    // Constructor con parámetros
-    public Usuario(int id, String nombreUsuario, String email, String password, Date fechaRegistro) {
-        this.id = id;
-        this.nombreUsuario = nombreUsuario;
+    // Constructor completo
+    public Usuario(int idUsuario, String apodoUsuario, String email, String password, Part avatar, String rol, Timestamp fechaRegistro) {
+        this.idUsuario = idUsuario;
+        this.apodoUsuario = apodoUsuario;
         this.email = email;
         this.password = password;
+        this.avatar = avatar;
+        this.rol = rol;
         this.fechaRegistro = fechaRegistro;
     }
 
-    // --- GETTERS Y SETTERS ---
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getIdUsuario() {
+        return idUsuario;
+    }
 
-    public String getNombreUsuario() { return nombreUsuario; }
-    public void setNombreUsuario(String nombreUsuario) { this.nombreUsuario = nombreUsuario; }
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public String getApodoUsuario() {
+        return apodoUsuario;
+    }
 
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
+    public void setApodoUsuario(String apodoUsuario) {
+        this.apodoUsuario = apodoUsuario;
+    }
 
-    public Date getFechaRegistro() { return fechaRegistro; }
-    public void setFechaRegistro(Date fechaRegistro) { this.fechaRegistro = fechaRegistro; }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Part getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Part avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public Timestamp getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public void setFechaRegistro(Timestamp fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+
+    
 }
