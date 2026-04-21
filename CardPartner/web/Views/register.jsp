@@ -19,6 +19,23 @@
             <p>Únete a la comunidad de CardPartner</p>
         </header>
 
+        <% 
+            String error = request.getParameter("error");
+            if (error != null) { 
+                String mensaje = "";
+                if ("passwords".equals(error)) {
+                    mensaje = "Las contraseñas no coinciden.";
+                } else if ("emailexiste".equals(error)) {
+                    mensaje = "Ese correo electrónico ya está registrado.";
+                } else if ("db".equals(error)) {
+                    mensaje = "Error interno del servidor. Inténtalo más tarde.";
+                }
+        %>
+            <div style="background-color: #ffebee; color: #c62828; padding: 10px; border-radius: 5px; text-align: center; margin-bottom: 15px; font-family: 'Poppins', sans-serif; font-size: 0.9em;">
+                <i class="fas fa-exclamation-circle"></i> <%= mensaje %>
+            </div>
+        <% } %>
+
         <form action="${pageContext.request.contextPath}/RegistroServlet" method="POST" class="login-form">
             
             <div class="input-group">
