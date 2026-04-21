@@ -13,19 +13,29 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
 
+// TODO: Hashear contraseña
 @WebServlet(name = "RegistroServlet", urlPatterns = {"/RegistroServlet"})
 @MultipartConfig(maxFileSize = 1024 * 1024 * 5) // Límite de 5MB por foto
 public class RegistroServlet extends HttpServlet {
 
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Si intentan entrar por URL, los devolvemos al formulario visual
+        response.sendRedirect("Views/registro.jsp");
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String apodo = request.getParameter("apodo");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        if (apodo == null || email == null || password == null || apodo.isEmpty() || email.isEmpty() || password.isEmpty()) {
+        // Mejor validación:
+        if (apodo == null || email == null || password == null
+                || apodo.trim().isEmpty() || email.trim().isEmpty() || password.trim().isEmpty()) {
             response.sendRedirect("Views/registro.jsp?error=campos_vacios");
             return;
         }
@@ -34,10 +44,11 @@ public class RegistroServlet extends HttpServlet {
         nuevoUsuario.setApodoUsuario(apodo);
         nuevoUsuario.setEmail(email);
         nuevoUsuario.setPassword(password);
+        nuevoUsuario.setRol("JUGADOR"); // <-- ¡AÑADE ESTO!
 
         // --- TRATAMIENTO DEL ARCHIVO ---
         Part filePart = request.getPart("avatar"); // Lee el input type="file"
-        
+
         if (filePart != null && filePart.getSize() > 0) {
             // Extraemos el flujo de bytes de la imagen y se lo damos al usuario
             InputStream fileContent = filePart.getInputStream();
@@ -48,9 +59,9 @@ public class RegistroServlet extends HttpServlet {
         }
 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
-        int exito = usuarioDAO.registrarUsuario(nuevoUsuario);
+        int idGenerado = usuarioDAO.registrarUsuario(nuevoUsuario);
 
-        if (exito!=0) {
+        if (idGenerado != 0) {
             response.sendRedirect("Views/login.jsp?exito=registro_ok");
         } else {
             response.sendRedirect("Views/registro.jsp?error=email_duplicado");
