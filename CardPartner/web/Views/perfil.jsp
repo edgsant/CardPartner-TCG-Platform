@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <title>Card Partner - Mi Perfil</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/perfilStyle.css?v=1">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/perfilStyle.css?v=3">
 </head>
 <body>
 
@@ -42,7 +42,7 @@
                         <i class="fas fa-user-circle"></i>
                     </div>
                     <div class="perfil-info">
-                        <h2 class="perfil-nombre"><%= usuarioActual.getNombreUsuario() %></h2>
+                        <h2 class="perfil-nombre"><%= usuarioActual.getApodoUsuario() %></h2>
                         <p class="perfil-email"><i class="fas fa-envelope"></i> <%= usuarioActual.getEmail() %></p>
                         <p class="perfil-fecha"><i class="fas fa-calendar-alt"></i> Miembro desde: <%= fechaBonita %></p>
                     </div>
@@ -60,21 +60,23 @@
                     
                     <div class="galeria-mazos">
                         <%
-                            // Recuperamos la lista de mazos que creamos en GuardarMazoServlet
+                            // Recuperamos la lista de mazos que creamos
                             List<Mazo> misMazos = (List<Mazo>) session.getAttribute("listaMisMazos");
                             
                             // Si la lista tiene cosas, hacemos un bucle para pintarlos
                             if (misMazos != null && !misMazos.isEmpty()) {
                                 for (Mazo m : misMazos) {
+                                    // Convertimos el boolean a texto
+                                    String visibilidad = m.isEsPublico() ? "Público" : "Privado";
                         %>
                                     <div class="mazo-item">
-                                        <a href="${pageContext.request.contextPath}/Views/deck-view.jsp" style="text-decoration: none; color: inherit;">
+                                        <a href="${pageContext.request.contextPath}/Views/deck-view.jsp?id=<%= m.getIdMazo() %>" style="text-decoration: none; color: inherit;">
                                             <div class="mazo-imagen">
                                                 <img src="${pageContext.request.contextPath}/img/lider-sakazuki.jpg" alt="Líder Mazo">
                                             </div>
                                             <div class="mazo-info">
-                                                <h3><%= m.getNombre() %></h3>
-                                                <p class="mazo-meta">Privacidad: <%= m.getVisibilidad() %></p>
+                                                <h3><%= m.getNombreMazo() %></h3>
+                                                <p class="mazo-meta">Privacidad: <%= visibilidad %></p>
                                                 <span class="mazo-tipo">Personalizado</span>
                                             </div>
                                         </a>
@@ -119,6 +121,7 @@
         </div>
     </div>
 
+    <!-- Modal Password (Oculto) -->
     <div id="modal-password" class="modal-overlay">
         <div class="modal-content">
             <a href="#" class="btn-cerrar">&times;</a>
