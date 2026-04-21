@@ -1,26 +1,15 @@
 <%@page import="modelo.Carta"%>
-<%@page import="datos.CartaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     // ==========================================
-    // LECTURA DINÁMICA DE LA BASE DE DATOS
+    // RECIBIMOS LA CARTA DEL SERVLET
     // ==========================================
-    String idParam = request.getParameter("id");
-    Carta cartaActual = null;
+    Carta cartaActual = (Carta) request.getAttribute("cartaParaLaVista");
     
-    // Si viene un ID por la URL, buscamos esa carta exacta
-    if (idParam != null && !idParam.isEmpty()) {
-        CartaDAO cartaDao = new CartaDAO();
-        cartaActual = cartaDao.obtenerCartaPorId(idParam);
-    }
-    
-    // Control de errores: Si alguien pone un ID falso en la URL o entra directo
+    // Medida de seguridad: Si alguien intenta acceder directamente a /Views/card-view.jsp sin pasar por el Servlet
     if (cartaActual == null) {
-        cartaActual = new Carta();
-        cartaActual.setIdCarta("ERROR");
-        cartaActual.setNombreCarta("Carta no encontrada");
-        cartaActual.setColor("-");
-        cartaActual.setTipo("-");
+        response.sendRedirect(request.getContextPath() + "/CartasServlet?accion=listar");
+        return; // Cortamos la ejecución
     }
     
     String imgCarta = (cartaActual.getImagen() != null) ? cartaActual.getImagen() : "/img/logo.png";
@@ -35,7 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Card Partner - <%= cartaActual.getNombreCarta() %></title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cardViewStyle.css?v=4">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cardViewStyle.css?v=5">
 </head>
 <body>
     <div class="fondo-rosa">

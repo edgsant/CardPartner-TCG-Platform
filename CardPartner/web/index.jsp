@@ -1,19 +1,19 @@
 <%@page import="java.util.List"%>
 <%@page import="modelo.Mazo"%>
 <%@page import="modelo.Carta"%>
-<%@page import="datos.MazoDAO"%>
-<%@page import="datos.CartaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     // ==========================================
-    // CONEXIÓN REAL A LA BASE DE DATOS
+    // PATRÓN MVC: RECIBIR DATOS
     // ==========================================
+    List<Mazo> mazosRecomendados = (List<Mazo>) request.getAttribute("mazosRecomendados");
     
-    MazoDAO mazoDao = new MazoDAO();
-    CartaDAO cartaDao = new CartaDAO();
-    
-    // Pedimos a MariaDB los 3 mazos públicos más recientes (límite 3, salto 0)
-    List<Mazo> mazosRecomendados = mazoDao.filtrarMazosPublicos(null, null, null, null, 3, 0);
+    // Si la lista es null, significa que hemos entrado directo al JSP sin pasar por el Servlet.
+    // Redirigimos al Servlet para que haga la consulta y nos devuelva aquí.
+    if (mazosRecomendados == null) {
+        response.sendRedirect(request.getContextPath() + "/InicioServlet");
+        return; 
+    }
 %>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CardPartner - Inicio</title>
     
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/indexStyle.css?v=12">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/indexStyle.css?v=13">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -59,13 +59,9 @@
                         <h2 class="titulo-mazos">Nuevos Mazos de la Comunidad</h2>
                         <div class="contenido-mazos">
                             <%
-                                // Comprobamos si la base de datos nos ha devuelto mazos
-                                if (mazosRecomendados != null && !mazosRecomendados.isEmpty()) {
+                                if (!mazosRecomendados.isEmpty()) {
                                     for(Mazo m : mazosRecomendados) {
-                                        // Usamos el CartaDAO para buscar la carta líder de este mazo concreto
-                                        Carta lider = cartaDao.obtenerCartaPorId(m.getIdCartaLider());
-                                        
-                                        // Si la carta tiene imagen en la BD, la usamos. Si no, ponemos una por defecto.
+                                        Carta lider = m.getCartaLider();
                                         String imgLider = (lider != null && lider.getImagen() != null) ? lider.getImagen() : "/img/logo.png";
                             %>
                                     <a href="${pageContext.request.contextPath}/Views/deck-view.jsp?id=<%= m.getIdMazo() %>" class="item-mazo">

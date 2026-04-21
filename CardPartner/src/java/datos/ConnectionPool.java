@@ -12,8 +12,10 @@ public class ConnectionPool {
     private ConnectionPool() {
         try {
             InitialContext ic = new InitialContext();
-            dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/cardpartner_db");     //REVISAR NOMBRE DE LA BASE DE DATOS
+            // CORREGIDO: "java:comp/env/..." (sin barra después de java:)
+            dataSource = (DataSource) ic.lookup("java:comp/env/jdbc/cardpartner_db");
         } catch (Exception e) {
+            System.out.println("Error al cargar el DataSource: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -36,10 +38,11 @@ public class ConnectionPool {
 
     public void freeConnection(Connection c) {
         try {
-            c.close();
+            if (c != null && !c.isClosed()) {
+                c.close();
+            }
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         }
     }
 }
-
