@@ -13,7 +13,7 @@ public class ConnectionPool {
         try {
             InitialContext ic = new InitialContext();
             // CORREGIDO: "java:comp/env/..." (sin barra después de java:)
-            dataSource = (DataSource) ic.lookup("java:comp/env/jdbc/cardpartner_db");
+            dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/cardpartner_db");
         } catch (Exception e) {
             System.out.println("Error al cargar el DataSource: " + e.getMessage());
             e.printStackTrace();
