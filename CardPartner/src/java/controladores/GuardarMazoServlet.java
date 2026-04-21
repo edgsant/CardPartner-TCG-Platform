@@ -10,6 +10,8 @@ import jakarta.servlet.http.HttpSession;
 
 // Importamos el DAO y los modelos correctos
 import datos.MazoDAO;
+import java.util.ArrayList;
+import modelo.ContieneCarta;
 import modelo.Mazo;
 import modelo.Usuario;
 
@@ -39,27 +41,54 @@ public class GuardarMazoServlet extends HttpServlet {
         boolean esPublico = (visibilidadStr != null && visibilidadStr.equals("Público"));
 
         // 3. CREAR EL OBJETO MAZO CON LOS MÉTODOS DEL NUEVO MODELO
+        // ... (Pasos 1 y 2 siguen igual: Sesión, nombre, descripción) ...
+
+        // 🌟 NUEVO: Recoger líder y lista de cartas que envía el Front
+        String idLider = request.getParameter("lider_mazo");
+        String stringCartas = request.getParameter("lista_cartas"); // Ej: "OP01-001:4,ST01-002:2"
+
+        // 3. CREAR EL OBJETO MAZO
         Mazo nuevoMazo = new Mazo();
         nuevoMazo.setNombreMazo(nombreMazo);
         nuevoMazo.setDescripcion(descripcionMazo);
         nuevoMazo.setEsPublico(esPublico);
-        nuevoMazo.setEsOficial(false); // Los creados por usuarios no son oficiales
-        nuevoMazo.setIdUsuarioCreador(creador.getIdUsuario()); // FK del creador
+        nuevoMazo.setEsOficial(false);
+        nuevoMazo.setIdUsuarioCreador(creador.getIdUsuario()); 
         
-        // TEMPORAL: Asignamos un líder por defecto para que la BD no dé error.
-        // En el futuro, el HTML del Deck Builder deberá enviar el ID de la carta líder elegida.
-        nuevoMazo.setIdCartaLider("OP01-001"); 
+        // Ahora el líder es dinámico, no fijo
+        nuevoMazo.setIdCartaLider(idLider != null ? idLider : "OP01-001"); 
 
-        // 4. GUARDARLO EN LA BASE DE DATOS REAL
+        // 4. GUARDAR LA "CAJA" DEL MAZO EN LA BD
         MazoDAO dao = new MazoDAO();
         int idMazoGuardado = dao.crearMazo(nuevoMazo);
 
-        // 5. COMPROBAR Y REDIRIGIR
         if (idMazoGuardado > 0) {
-            // Se guardó correctamente en MariaDB
+            
+            // 🌟 NUEVO 5. PROCESAR Y GUARDAR LAS CARTAS (Si el mazo se creó bien)
+            if (stringCartas != null && !stringCartas.isEmpty()) {
+                // Necesitas importar java.util.ArrayList y modelo.ContieneCarta arriba
+                ArrayList<ContieneCarta> listaParaGuardar = new ArrayList<>();
+                
+                // Cortamos el texto por las comas -> ["OP01-001:4", "ST01-002:2"]
+                String[] cartasArray = stringCartas.split(","); 
+                
+                for (String bloque : cartasArray) {
+                    // Cortamos cada bloque por los dos puntos -> ["OP01-001", "4"]
+                    String[] partes = bloque.split(":"); 
+                    if(partes.length == 2) {
+                        ContieneCarta cc = new ContieneCarta();
+                        cc.setIdCarta(partes[0]); // El ID
+                        cc.setCantidad(Integer.parseInt(partes[1])); // La cantidad
+                        listaParaGuardar.add(cc);
+                    }
+                }
+                
+                // ¡Llamamos por fin a tu método optimizado del DAO!
+                dao.añadirCartasAMazo(idMazoGuardado, listaParaGuardar);
+            }
+            
             response.sendRedirect(request.getContextPath() + "/Views/perfil.jsp?exito=true");
         } else {
-            // Hubo un error en la base de datos
             response.sendRedirect(request.getContextPath() + "/Views/deck-builder.jsp?error=true");
         }
     }
