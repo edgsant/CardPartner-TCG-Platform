@@ -45,6 +45,10 @@ public class CartaDAO {
                 cartaEncontrada.setPoder(rs.getInt("poder"));
                 // Si la imagen la guardas como texto (URL/ruta), es un String
                 cartaEncontrada.setImagen(rs.getString("imagen"));
+                
+                cartaEncontrada.setArquetipo(rs.getString("arquetipo"));
+                cartaEncontrada.setAtributoCarta(rs.getString("atributo"));
+                cartaEncontrada.setPrecioMercado(rs.getDouble("precio_mercado"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

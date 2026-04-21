@@ -20,9 +20,9 @@ public class CartasServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String accion = request.getParameter("accion");
-        
+
         // Si no hay acción en la URL, por defecto mostramos el catálogo
         if (accion == null || accion.isEmpty()) {
             accion = "listar";
@@ -46,9 +46,9 @@ public class CartasServlet extends HttpServlet {
     // ==========================================
     // 2. LÓGICA DEL CATÁLOGO Y FILTROS
     // ==========================================
-    private void mostrarCatalogo(HttpServletRequest request, HttpServletResponse response) 
+    private void mostrarCatalogo(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         // 1. Leer los parámetros del buscador (pueden ser null, tu DAO lo maneja)
         String color = request.getParameter("color");
         String tipo = request.getParameter("tipo");
@@ -63,12 +63,14 @@ public class CartasServlet extends HttpServlet {
         if (paginaParam != null && !paginaParam.isEmpty()) {
             try {
                 pagina = Integer.parseInt(paginaParam);
-                if (pagina < 1) pagina = 1; // Evitamos páginas negativas
+                if (pagina < 1) {
+                    pagina = 1; // Evitamos páginas negativas
+                }
             } catch (NumberFormatException e) {
                 pagina = 1; // Si escriben letras en la URL, forzamos página 1
             }
         }
-        
+
         int offset = (pagina - 1) * limite;
 
         // 3. Hablar con la base de datos
@@ -78,10 +80,13 @@ public class CartasServlet extends HttpServlet {
         // 4. Empaquetar datos para el JSP (El regalo)
         request.setAttribute("listaCartas", listaCartas);
         request.setAttribute("paginaActual", pagina); // Se lo pasamos para pintar los botones [Anterior] [Siguiente]
-        
+
         // Para que los select del HTML recuerden qué buscó el usuario:
         request.setAttribute("colorSeleccionado", color);
         request.setAttribute("tipoSeleccionado", tipo);
+
+        request.setAttribute("arquetipoSeleccionado", arquetipo);
+        request.setAttribute("atributoSeleccionado", atributo);
 
         // 5. Enviar al Frontend (Usamos FORWARD, no Redirect, para que viajen los atributos)
         request.getRequestDispatcher("/Views/catalogo.jsp").forward(request, response);
@@ -90,9 +95,9 @@ public class CartasServlet extends HttpServlet {
     // ==========================================
     // 3. LÓGICA DE UNA CARTA INDIVIDUAL
     // ==========================================
-    private void mostrarDetalle(HttpServletRequest request, HttpServletResponse response) 
+    private void mostrarDetalle(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String idParam = request.getParameter("id");
 
         if (idParam != null && !idParam.isEmpty()) {
@@ -106,7 +111,7 @@ public class CartasServlet extends HttpServlet {
                 return; // Cortamos ejecución
             }
         }
-        
+
         // Si el ID es falso o nulo, redirigimos al catálogo general con un mensaje de error
         response.sendRedirect("CartasServlet?accion=listar&error=carta_no_encontrada");
     }
