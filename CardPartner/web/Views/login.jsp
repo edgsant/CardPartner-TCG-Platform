@@ -36,6 +36,13 @@
                 <input type="password" name="password" placeholder="Contraseña" required>
             </div>
 
+            <div class="input-group" style="display: flex; align-items: center; justify-content: flex-start; gap: 10px; margin-bottom: 20px; border: none; background: transparent; padding: 0;">
+                <input type="checkbox" id="recordar" name="recordar" style="width: 18px; height: 18px; cursor: pointer; margin: 0;">
+                <label for="recordar" style="font-family: 'Poppins', sans-serif; font-size: 0.9em; cursor: pointer; color: #555; margin: 0;">
+                    Mantener sesión iniciada
+                </label>
+            </div>
+
             <button type="submit" class="btn-login">ENTRAR</button>
             
             <div class="separador">
