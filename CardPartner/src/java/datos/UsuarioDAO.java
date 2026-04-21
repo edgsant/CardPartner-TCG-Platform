@@ -85,9 +85,6 @@ public class UsuarioDAO {
      * null si el email o la contraseña son incorrectos.
      */
     public Usuario validarLogin(String email, String password) {
-        System.out.println("---- INTENTANDO LOGIN ----");
-        System.out.println("Email recibido: " + email);
-        System.out.println("Password recibida: " + password);
         Usuario usuarioLogueado = null;
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
@@ -111,7 +108,7 @@ public class UsuarioDAO {
                 
                 // Rellenamos el objeto con los datos reales de la fila encontrada
                 usuarioLogueado.setIdUsuario(rs.getInt("id_usuario"));
-                usuarioLogueado.setApodoUsuario(rs.getString("apodo"));
+                usuarioLogueado.setApodoUsuario(rs.getString("apodo_usuario")); 
                 usuarioLogueado.setEmail(rs.getString("email"));
                 usuarioLogueado.setPassword(rs.getString("password"));
                 usuarioLogueado.setRol(rs.getString("rol"));
