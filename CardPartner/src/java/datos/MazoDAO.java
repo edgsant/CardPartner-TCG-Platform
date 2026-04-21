@@ -23,8 +23,8 @@ public class MazoDAO {
     private static final String SQL_INSERT_CARTA_EN_MAZO = "INSERT INTO CONTIENE_CARTA (id_mazo, id_carta, cantidad) VALUES (?, ?, ?)";
 
     // Para listar los mazos de la comunidad PAGINADO para que no explote al consultar cientos de elementos
-    private static final String SQL_SELECT_PUBLICOS_PAGINADO = 
-    "SELECT * FROM MAZO WHERE es_publico = 1 ORDER BY fecha_creacion DESC LIMIT ? OFFSET ?";
+    private static final String SQL_SELECT_PUBLICOS_PAGINADO
+            = "SELECT * FROM MAZO WHERE es_publico = 1 ORDER BY fecha_creacion DESC LIMIT ? OFFSET ?";
 
     /**
      * Este método es idéntico a registrar un usuario. La misión es insertar la
@@ -133,37 +133,86 @@ public class MazoDAO {
     }
 
     /**
-     * Este método será el que llame vuestra página principal (el index o la
-     * sección "Comunidad") para pintar todos los mazos que ha creado la gente.
-     * Es un SELECT clásico de la Familia B.
+     * Busca mazos públicos en la comunidad aplicando filtros dinámicos. Soporta
+     * coincidencias parciales en el nombre del mazo.
      *
+     * @param esOficial
+     * @param minWinrate
+     * @param nombreBuscado
+     * @param idCartaLider
+     * @param limite
+     * @param offset
      * @return
      */
-    public ArrayList<Mazo> obtenerMazosPublicos(int limite, int offset) {
+    public ArrayList<Mazo> filtrarMazosPublicos(Boolean esOficial, Float minWinrate, String nombreBuscado, String idCartaLider, int limite, int offset) {
         ArrayList<Mazo> listaMazos = new ArrayList<>();
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
 
+        // 1. Nuestra base: SIEMPRE deben ser públicos (Esto actúa como nuestro 1=1)
+        StringBuilder sql = new StringBuilder("SELECT * FROM MAZO WHERE es_publico = 1");
+
+        // 2. Construimos el SQL dinámico
+        if (esOficial != null) {
+            sql.append(" AND es_oficial = ?");
+        }
+        if (minWinrate != null) {
+            // Para el winrate tiene sentido buscar los que tengan "igual o más" que lo pedido
+            sql.append(" AND winrate >= ?");
+        }
+        if (nombreBuscado != null && !nombreBuscado.trim().isEmpty()) {
+            // Usamos LIKE para búsquedas parciales
+            sql.append(" AND nombre_mazo LIKE ?");
+        }
+        if (idCartaLider != null && !idCartaLider.trim().isEmpty()) {
+            sql.append(" AND id_carta_lider = ?");
+        }
+
+        // Ordenamos por los más nuevos y añadimos paginación
+        sql.append(" ORDER BY fecha_creacion DESC LIMIT ? OFFSET ?");
+
         try {
-            ps = con.prepareStatement(SQL_SELECT_PUBLICOS_PAGINADO);
-            ps.setInt(1, limite); // Ej: 10 mazos por página
-            ps.setInt(2, offset); // Ej: 0 (página 1), 10 (página 2)...
+            ps = con.prepareStatement(sql.toString());
+            int paramIndex = 1;
+
+            // 3. Rellenamos los parámetros
+            if (esOficial != null) {
+                // JDBC sabe traducir el Boolean de Java al TINYINT(1) de MariaDB
+                ps.setBoolean(paramIndex++, esOficial);
+            }
+            if (minWinrate != null) {
+                ps.setFloat(paramIndex++, minWinrate);
+            }
+            if (nombreBuscado != null && !nombreBuscado.trim().isEmpty()) {
+                // TRUCO PRO: Añadimos los '%' aquí, NO en el String de SQL. 
+                // Así evitamos la inyección SQL.
+                ps.setString(paramIndex++, "%" + nombreBuscado.trim() + "%");
+            }
+            if (idCartaLider != null && !idCartaLider.trim().isEmpty()) {
+                ps.setString(paramIndex++, idCartaLider);
+            }
+
+            // Parámetros de paginación
+            ps.setInt(paramIndex++, limite);
+            ps.setInt(paramIndex, offset);
+
+            // 4. Ejecutar
             rs = ps.executeQuery();
 
-            // Mientras haya filas en el resultado...
             while (rs.next()) {
                 Mazo m = new Mazo();
                 m.setIdMazo(rs.getInt("id_mazo"));
                 m.setNombreMazo(rs.getString("nombre_mazo"));
                 m.setDescripcion(rs.getString("descripcion"));
+                m.setEsPublico(rs.getBoolean("es_publico"));
+                m.setEsOficial(rs.getBoolean("es_oficial"));
                 m.setFechaCreacion(rs.getTimestamp("fecha_creacion"));
                 m.setWinrate(rs.getFloat("winrate"));
                 m.setIdUsuarioCreador(rs.getInt("id_usuario_creador"));
                 m.setIdCartaLider(rs.getString("id_carta_lider"));
 
-                // Añadimos el mazo a la lista
                 listaMazos.add(m);
             }
         } catch (SQLException e) {
