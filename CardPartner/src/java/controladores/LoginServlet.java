@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("usuarioActivo", usuarioLogueado);
             
-            // B) 🌟 LÓGICA DE MANTENER SESIÓN (COOKIES)
+
             if (recordarUsuario != null) { 
                 // Si el usuario marcó la casilla, le creamos una Cookie con su email
                 Cookie cookie = new Cookie("correoRecordado", identificador);
