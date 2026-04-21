@@ -47,8 +47,9 @@ public class UsuarioDAO {
             ps.setString(3, u.getPassword());
 
             // Lógica del Blob para el avatar
-            if (u.getAvatar() != null && u.getAvatar().getSize() > 0) {
-                ps.setBlob(4, u.getAvatar().getInputStream());
+            if (u.getAvatar() != null) {
+                // Como getAvatar() ya devuelve un InputStream, se lo pasamos directamente
+                ps.setBlob(4, u.getAvatar());
             } else {
                 ps.setNull(4, Types.BLOB);
             }
@@ -84,42 +85,49 @@ public class UsuarioDAO {
      * null si el email o la contraseña son incorrectos.
      */
     public Usuario validarLogin(String email, String password) {
-        Usuario usuario = null;
+        Usuario usuarioLogueado = null;
         ConnectionPool pool = ConnectionPool.getInstance();
-        Connection connection = pool.getConnection();
+        Connection con = pool.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        try {
-            ps = connection.prepareStatement(SQL_LOGIN);
-            
-            // Ahora solo pasamos el email al primer ? y la contraseña al segundo ?
-            ps.setString(1, email); 
-            ps.setString(2, password);
+        // 🌟 CAMBIO: La consulta ahora es más simple, sin el "OR apodo = ?"
+        String sql = "SELECT * FROM USUARIO WHERE email = ? AND password = ?";
 
+        try {
+            ps = con.prepareStatement(sql);
+            
+            ps.setString(1, email);    // El email que viene del formulario
+            ps.setString(2, password); // La contraseña
+            
             rs = ps.executeQuery();
 
+            // Si hay un resultado, es que las credenciales son correctas
             if (rs.next()) {
-                usuario = new Usuario(); 
-                usuario.setIdUsuario(rs.getInt("id_usuario"));
-                usuario.setApodoUsuario(rs.getString("apodo_usuario"));
-                usuario.setEmail(rs.getString("email"));
-                usuario.setRol(rs.getString("rol"));
+                usuarioLogueado = new Usuario();
+                
+                // Rellenamos el objeto con los datos reales de la fila encontrada
+                usuarioLogueado.setIdUsuario(rs.getInt("id_usuario"));
+                usuarioLogueado.setApodoUsuario(rs.getString("apodo_usuario")); 
+                usuarioLogueado.setEmail(rs.getString("email"));
+                usuarioLogueado.setPassword(rs.getString("password"));
+                usuarioLogueado.setRol(rs.getString("rol"));
             }
+            
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
                 if (rs != null) rs.close();
                 if (ps != null) ps.close();
-                pool.freeConnection(connection);
+                pool.freeConnection(con);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        return usuario;
+        
+        return usuarioLogueado;
     }
-
     /**
      * Comprueba si el email ya existe en la tabla USUARIO. Devuelve true si
      * existe
