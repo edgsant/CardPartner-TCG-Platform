@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
         // 3. Comprobamos la respuesta
         if (usuarioLogueado != null) {
             
-            // A) Guardamos la sesión normal (la "pulsera" temporal)
+            
             HttpSession session = request.getSession();
             session.setAttribute("usuarioActivo", usuarioLogueado);
             
