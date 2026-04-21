@@ -1,14 +1,15 @@
 package controladores;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+
+// Importamos el DAO y los modelos correctos
+import datos.MazoDAO;
 import modelo.Mazo;
 import modelo.Usuario;
 
@@ -32,27 +33,34 @@ public class GuardarMazoServlet extends HttpServlet {
         // 2. RECOGER DATOS DEL FORMULARIO
         String nombreMazo = request.getParameter("nombre_mazo");
         String descripcionMazo = request.getParameter("descripcion_mazo");
-        String visibilidadMazo = request.getParameter("visibilidad_mazo");
-
-        // 3. CREAR EL OBJETO MAZO
-        Mazo nuevoMazo = new Mazo();
-        nuevoMazo.setId((int)(Math.random() * 1000)); // ID aleatorio temporal
-        nuevoMazo.setNombre(nombreMazo);
-        nuevoMazo.setDescripcion(descripcionMazo);
-        nuevoMazo.setVisibilidad(visibilidadMazo);
-        nuevoMazo.setCreador(creador); // Asignamos el dueño del mazo
-
-        // 4. GUARDARLO EN UNA LISTA EN LA SESIÓN (Simulando la Base de Datos)
-        // Buscamos si el usuario ya tiene una lista de mazos creada en esta sesión
-        List<Mazo> misMazos = (List<Mazo>) session.getAttribute("listaMisMazos");
-        if (misMazos == null) {
-            misMazos = new ArrayList<>(); // Si no la tiene, la creamos vacía
-        }
+        String visibilidadStr = request.getParameter("visibilidad_mazo");
         
-        misMazos.add(nuevoMazo); // Añadimos el mazo recién creado
-        session.setAttribute("listaMisMazos", misMazos); // Guardamos la lista actualizada
+        // Convertimos el texto del HTML a boolean (1 = público, 0 = privado)
+        boolean esPublico = (visibilidadStr != null && visibilidadStr.equals("Público"));
 
-        // 5. REDIRIGIR AL PERFIL
-        response.sendRedirect(request.getContextPath() + "/Views/perfil.jsp");
+        // 3. CREAR EL OBJETO MAZO CON LOS MÉTODOS DEL NUEVO MODELO
+        Mazo nuevoMazo = new Mazo();
+        nuevoMazo.setNombreMazo(nombreMazo);
+        nuevoMazo.setDescripcion(descripcionMazo);
+        nuevoMazo.setEsPublico(esPublico);
+        nuevoMazo.setEsOficial(false); // Los creados por usuarios no son oficiales
+        nuevoMazo.setIdUsuarioCreador(creador.getIdUsuario()); // FK del creador
+        
+        // TEMPORAL: Asignamos un líder por defecto para que la BD no dé error.
+        // En el futuro, el HTML del Deck Builder deberá enviar el ID de la carta líder elegida.
+        nuevoMazo.setIdCartaLider("OP01-001"); 
+
+        // 4. GUARDARLO EN LA BASE DE DATOS REAL
+        MazoDAO dao = new MazoDAO();
+        int idMazoGuardado = dao.crearMazo(nuevoMazo);
+
+        // 5. COMPROBAR Y REDIRIGIR
+        if (idMazoGuardado > 0) {
+            // Se guardó correctamente en MariaDB
+            response.sendRedirect(request.getContextPath() + "/Views/perfil.jsp?exito=true");
+        } else {
+            // Hubo un error en la base de datos
+            response.sendRedirect(request.getContextPath() + "/Views/deck-builder.jsp?error=true");
+        }
     }
 }

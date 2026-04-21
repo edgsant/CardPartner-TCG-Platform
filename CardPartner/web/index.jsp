@@ -1,28 +1,19 @@
-<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="modelo.Mazo"%>
-<%@page import="modelo.Usuario"%>
 <%@page import="modelo.Carta"%>
+<%@page import="datos.MazoDAO"%>
+<%@page import="datos.CartaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     // ==========================================
-    // SIMULACIÓN (MOCK) - Mazos Recomendados
-    // En el futuro: List<Mazo> recomendados = daoMazo.obtenerRecomendados();
+    // CONEXIÓN REAL A LA BASE DE DATOS
     // ==========================================
-    List<Mazo> mazosRecomendados = new ArrayList<>();
     
-    // Creamos un usuario "Sistema" o "Admin"
-    Usuario admin = new Usuario(0, "CardPartner Admin", "admin@cardpartner.com", "", null);
+    MazoDAO mazoDao = new MazoDAO();
+    CartaDAO cartaDao = new CartaDAO();
     
-    // Creamos las cartas líderes de los Starter Decks (aprovechando tus imágenes estáticas)
-    Carta liderTeach = new Carta("ST20-001", "Marshall D. Teach", "L", "Negro", "Líder", 5, 5000, "", "/img/st20.jpg");
-    Carta liderUta = new Carta("ST11-001", "Uta", "L", "Verde", "Líder", 5, 5000, "", "/img/st11.jpg");
-    Carta liderLuffy = new Carta("ST08-001", "Monkey D. Luffy", "L", "Negro", "Líder", 5, 5000, "", "/img/st08.jpg");
-
-    // Construimos los mazos recomendados
-    mazosRecomendados.add(new Mazo(201, "ST-20 Marshall D. Teach", "Ideal para aprender control.", "Público", admin, liderTeach));
-    mazosRecomendados.add(new Mazo(202, "ST-11 UTA", "Mazo basado en la película Film Red.", "Público", admin, liderUta));
-    mazosRecomendados.add(new Mazo(203, "ST-08 Luffy", "Mazo clásico para entender lo básico.", "Público", admin, liderLuffy));
+    // Pedimos a MariaDB los 3 mazos públicos más recientes (límite 3, salto 0)
+    List<Mazo> mazosRecomendados = mazoDao.filtrarMazosPublicos(null, null, null, null, 3, 0);
 %>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CardPartner - Inicio</title>
     
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/indexStyle.css?v=11">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/indexStyle.css?v=12">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -65,22 +56,33 @@
                     </div>
 
                     <div class="mazos">
-                        <h2 class="titulo-mazos">Recomendados: Principiantes</h2>
+                        <h2 class="titulo-mazos">Nuevos Mazos de la Comunidad</h2>
                         <div class="contenido-mazos">
                             <%
-                                // BUCLE MÁGICO: Dibuja los mazos recomendados desde la lista Java
-                                for(Mazo m : mazosRecomendados) {
+                                // Comprobamos si la base de datos nos ha devuelto mazos
+                                if (mazosRecomendados != null && !mazosRecomendados.isEmpty()) {
+                                    for(Mazo m : mazosRecomendados) {
+                                        // Usamos el CartaDAO para buscar la carta líder de este mazo concreto
+                                        Carta lider = cartaDao.obtenerCartaPorId(m.getIdCartaLider());
+                                        
+                                        // Si la carta tiene imagen en la BD, la usamos. Si no, ponemos una por defecto.
+                                        String imgLider = (lider != null && lider.getImagen() != null) ? lider.getImagen() : "/img/logo.png";
                             %>
-                                <a href="${pageContext.request.contextPath}/Views/deck-view.jsp?id=<%= m.getId() %>" class="item-mazo">
-                                    <img src="${pageContext.request.contextPath}<%= m.getLider().getImagenUrl() %>" alt="<%= m.getNombre() %>">
-                                    <span><%= m.getNombre() %></span>
-                                </a>
+                                    <a href="${pageContext.request.contextPath}/Views/deck-view.jsp?id=<%= m.getIdMazo() %>" class="item-mazo">
+                                        <img src="${pageContext.request.contextPath}<%= imgLider %>" alt="<%= m.getNombreMazo() %>">
+                                        <span><%= m.getNombreMazo() %></span>
+                                    </a>
+                            <%
+                                    }
+                                } else {
+                            %>
+                                    <p style="color: white; text-align: center; width: 100%;">Aún no hay mazos creados.</p>
                             <%
                                 }
                             %>
                         </div>
                         <div class="footer-mazos">
-                            <a href="${pageContext.request.contextPath}/Views/community-deck.jsp" class="btn-ver-mas">Ver todos los recomendados</a>
+                            <a href="${pageContext.request.contextPath}/Views/community-deck.jsp" class="btn-ver-mas">Ver todos</a>
                         </div>
                     </div>
 

@@ -1,31 +1,41 @@
 <%@page import="modelo.Carta"%>
+<%@page import="datos.CartaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     // ==========================================
-    // SIMULACIÓN (MOCK) - A borrar cuando haya BD
+    // LECTURA DINÁMICA DE LA BASE DE DATOS
     // ==========================================
-    Carta cartaActual = new Carta(
-        "OP01-120", 
-        "Shanks (Datos Dinámicos)", 
-        "SEC (Secret Rare)", 
-        "Rojo", 
-        "Personaje", 
-        9, 
-        10000, 
-        "[Rush] (Este personaje puede atacar en el turno que es jugado.)<br>[Al atacar] Tu oponente no puede activar 'Blocker'...", 
-        "/img/op01-120.jpg"
-    );
+    String idParam = request.getParameter("id");
+    Carta cartaActual = null;
+    
+    // Si viene un ID por la URL, buscamos esa carta exacta
+    if (idParam != null && !idParam.isEmpty()) {
+        CartaDAO cartaDao = new CartaDAO();
+        cartaActual = cartaDao.obtenerCartaPorId(idParam);
+    }
+    
+    // Control de errores: Si alguien pone un ID falso en la URL o entra directo
+    if (cartaActual == null) {
+        cartaActual = new Carta();
+        cartaActual.setIdCarta("ERROR");
+        cartaActual.setNombreCarta("Carta no encontrada");
+        cartaActual.setColor("-");
+        cartaActual.setTipo("-");
+    }
+    
+    String imgCarta = (cartaActual.getImagen() != null) ? cartaActual.getImagen() : "/img/logo.png";
+    String atributo = (cartaActual.getAtributoCarta() != null) ? cartaActual.getAtributoCarta() : "-";
 %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
-    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-    <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap\" rel=\"stylesheet\">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Card Partner - Detalle Carta</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cardViewStyle.css?v=3">
+    <title>Card Partner - <%= cartaActual.getNombreCarta() %></title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cardViewStyle.css?v=4">
 </head>
 <body>
     <div class="fondo-rosa">
@@ -36,25 +46,22 @@
             <main class="contenido-detalle">
                 <div class="layout-carta">
                     <div class="vista-imagen">
-                        <img src="${pageContext.request.contextPath}<%= cartaActual.getImagenUrl() %>" alt="<%= cartaActual.getNombre() %>">
+                        <img src="${pageContext.request.contextPath}<%= imgCarta %>" alt="<%= cartaActual.getNombreCarta() %>">
                     </div>
 
                     <div class="vista-info">
-                        <h2 class="titulo-seccion"><%= cartaActual.getNombre() %> (<%= cartaActual.getIdCarta() %>)</h2>
+                        <h2 class="titulo-seccion"><%= cartaActual.getNombreCarta() %> (<%= cartaActual.getIdCarta() %>)</h2>
                         <div class="caja-info">
                             <h3>INFORMACIÓN</h3>
-                            <p><strong>Expansión:</strong> Romance Dawn [OP-01]</p>
-                            <p><strong>Rareza:</strong> <%= cartaActual.getRareza() %></p>
                             <p><strong>Color:</strong> <span class="badge badge-rojo"><%= cartaActual.getColor() %></span></p>
                             <p><strong>Tipo:</strong> <span class="badge badge-tipo"><%= cartaActual.getTipo() %></span></p>
                             <p><strong>Coste:</strong> <%= cartaActual.getCoste() %> | <strong>Poder:</strong> <%= cartaActual.getPoder() %></p>
-                            <p class="texto-efecto"><em><%= cartaActual.getEfecto() %></em></p>
+                            <p><strong>Atributo:</strong> <%= atributo %></p>
                         </div>
 
                         <div class="caja-precios">
                             <h3>PRECIOS ACTUALES (CardMarket)</h3>
                             <p class="precio-destacado">Normal: 45.50 €</p>
-                            <p>Foil / Paralela: 120.00 €</p>
                             
                             <div class="acciones-carta-detalle">
                                 <button class="btn-accion-carta"><i class="fas fa-heart"></i> Añadir a Deseados</button>

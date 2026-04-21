@@ -1,4 +1,16 @@
+<%@page import="java.util.List"%>
+<%@page import="modelo.Articulo"%>
+<%@page import="datos.ArticuloDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    // ==========================================
+    // CONEXIÓN REAL A LA BD: GUÍAS
+    // ==========================================
+    ArticuloDAO articuloDao = new ArticuloDAO();
+    List<Articulo> listaGuias = articuloDao.obtenerPorCategoria("GUIA", 4, 0); 
+    
+    Articulo guiaPrincipal = (listaGuias != null && !listaGuias.isEmpty()) ? listaGuias.get(0) : null;
+%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <title>Card Partner - Guides</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/guidesStyle.css?v=1">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/guidesStyle.css?v=2">
 </head>
 <body>
     <div class="fondo-rosa">
@@ -19,41 +31,41 @@
                 <div class="barra_guides">
                     <h2 class="titulo-seccion">GUIDES</h2>
                 </div>
-                    
-                <a href="https://youtu.be/s8s7vSSb8Tk?si=dyL9eDHnf2KhwyY0" target="_blank" class="guia-principal">
-                    <img src="${pageContext.request.contextPath}/img/tutorial_guides.jpg" alt="Guia principal">
-                    <div class="info-principal">
-                        <h3>Guía completa de One Piece TCG</h3>
-                        <p>Aprende las funcionalidades básicas para comenzar a jugar.</p>
-                    </div>
-                </a>
+                
+                <% if (guiaPrincipal != null) { 
+                    String imgPortada = (guiaPrincipal.getPortada() != null) ? guiaPrincipal.getPortada() : "/img/logo.png";
+                    String enlace = (guiaPrincipal.getEnlaceExterno() != null) ? guiaPrincipal.getEnlaceExterno() : "#";
+                %>
+                    <a href="<%= enlace %>" target="_blank" class="guia-principal" style="text-decoration: none; color: inherit;">
+                        <img src="${pageContext.request.contextPath}<%= imgPortada %>" alt="<%= guiaPrincipal.getTitulo() %>">
+                        <div class="info-principal">
+                            <h3><%= guiaPrincipal.getTitulo() %></h3>
+                            <p><%= guiaPrincipal.getDescripcion() %></p>
+                        </div>
+                    </a>
+                <% } else { %>
+                    <p style="color: white; text-align: center;">No hay guías publicadas en este momento.</p>
+                <% } %>
                 
                 <section class="lista-guias">
-
-                    <a href="#" class="guia" style="text-decoration: none; color: inherit;">
-                        <img src="${pageContext.request.contextPath}/img/luffy-deck-tutorial.jpg" alt="Luffy">
-                        <div>
-                            <h4>Luffy rampeando hasta el cielo</h4>
-                            <p>Aprende todas las mecánicas para jugar lo que quieras en tus primeros turnos.</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="guia" style="text-decoration: none; color: inherit;">
-                        <img src="${pageContext.request.contextPath}/img/nami-deck-tutorial.jpg" alt="Nami">
-                        <div>
-                            <h4>A robar se ha dicho</h4>
-                            <p>Si juegas este mazo vas a aprender cómo quedarte sin cartas de robo antes de que tu oponente diga basta.</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="guia" style="text-decoration: none; color: inherit;">
-                        <img src="${pageContext.request.contextPath}/img/vegapunk-deck-tutorial.jpg" alt="Vegapunk">
-                        <div>
-                            <h4>Vidas infinitas</h4>
-                            <p>Bloquear siempre será tu segunda opción una vez sepas este pequeño combo.</p>
-                        </div>
-                    </a>
-
+                    <%
+                        if (listaGuias != null && listaGuias.size() > 1) {
+                            for (int i = 1; i < listaGuias.size(); i++) {
+                                Articulo g = listaGuias.get(i);
+                                String imgList = (g.getPortada() != null) ? g.getPortada() : "/img/logo.png";
+                                String enlaceList = (g.getEnlaceExterno() != null) ? g.getEnlaceExterno() : "#";
+                    %>
+                            <a href="<%= enlaceList %>" class="guia" style="text-decoration: none; color: inherit;" target="_blank">
+                                <img src="${pageContext.request.contextPath}<%= imgList %>" alt="<%= g.getTitulo() %>">
+                                <div>
+                                    <h4><%= g.getTitulo() %></h4>
+                                    <p><%= g.getDescripcion() %></p>
+                                </div>
+                            </a>
+                    <%
+                            }
+                        }
+                    %>
                 </section>
             </main>
 

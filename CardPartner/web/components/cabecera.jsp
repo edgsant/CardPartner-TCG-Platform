@@ -46,7 +46,7 @@
             <div style="display: flex; gap: 10px;">
                 <a href="${pageContext.request.contextPath}/Views/perfil.jsp" style="text-decoration: none;">
                     <button style="background-color: #d32f2f; color: white; border-color: #d32f2f;">
-                        MI PERFIL<br><%= usuario.getNombreUsuario() %>
+                        MI PERFIL<br><%= usuario.getApodoUsuario() %>
                     </button>
                 </a>
                 <a href="${pageContext.request.contextPath}/LogoutServlet" style="text-decoration: none;">
