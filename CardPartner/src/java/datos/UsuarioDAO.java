@@ -90,46 +90,33 @@ public class UsuarioDAO {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        // 1. Consulta SQL: Buscamos al usuario por sus dos llaves
-        String query = "SELECT * FROM USUARIO WHERE email = ? AND password = ?";
-
         try {
-            ps = connection.prepareStatement(query);
-            ps.setString(1, email);
+            ps = connection.prepareStatement(SQL_LOGIN);
+            
+            // Ahora solo pasamos el email al primer ? y la contraseña al segundo ?
+            ps.setString(1, email); 
             ps.setString(2, password);
 
-            // 2. Ejecutamos la consulta
             rs = ps.executeQuery();
 
-            // 3. Si hay un resultado, es que las credenciales son válidas
             if (rs.next()) {
-                usuario = new Usuario(); // Creamos la "caja" (DTO)
-
-                // 4. Rellenamos el DTO con los datos de la fila de MariaDB
+                usuario = new Usuario(); 
                 usuario.setIdUsuario(rs.getInt("id_usuario"));
                 usuario.setApodoUsuario(rs.getString("apodo_usuario"));
                 usuario.setEmail(rs.getString("email"));
                 usuario.setRol(rs.getString("rol"));
-                // Nota: No solemos guardar la contraseña en el objeto de sesión por seguridad
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            // 5. Limpieza absoluta de recursos
             try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
                 pool.freeConnection(connection);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-
-        // Si no entró en el 'if (rs.next())', esto devolverá null automáticamente
         return usuario;
     }
 
