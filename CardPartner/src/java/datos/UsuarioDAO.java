@@ -47,8 +47,9 @@ public class UsuarioDAO {
             ps.setString(3, u.getPassword());
 
             // Lógica del Blob para el avatar
-            if (u.getAvatar() != null && u.getAvatar().getSize() > 0) {
-                ps.setBlob(4, u.getAvatar().getInputStream());
+            if (u.getAvatar() != null) {
+                // Como getAvatar() ya devuelve un InputStream, se lo pasamos directamente
+                ps.setBlob(4, u.getAvatar());
             } else {
                 ps.setNull(4, Types.BLOB);
             }
