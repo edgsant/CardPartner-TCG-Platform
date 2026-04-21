@@ -18,15 +18,22 @@
             <p>Inicia sesión para continuar</p>
         </header>
 
+        <% if (request.getParameter("error") != null) { %>
+            <div style="background-color: #ffebee; color: #c62828; padding: 10px; border-radius: 5px; text-align: center; margin-bottom: 15px; font-family: 'Poppins', sans-serif; font-size: 0.9em;">
+                <i class="fas fa-exclamation-circle"></i> Usuario o contraseña incorrectos.
+            </div>
+        <% } %>
+
         <form class="login-form" action="${pageContext.request.contextPath}/LoginServlet" method="POST">
+            
             <div class="input-group">
                 <i class="fas fa-user"></i>
-                <input type="text" name="usuario_input" placeholder="Usuario" required>
+                <input type="text" name="identificador" placeholder="Usuario o Email" required>
             </div>
 
             <div class="input-group">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password_input" placeholder="Contraseña" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
             </div>
 
             <button type="submit" class="btn-login">ENTRAR</button>
