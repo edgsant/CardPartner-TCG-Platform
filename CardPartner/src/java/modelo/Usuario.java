@@ -1,7 +1,6 @@
 package modelo;
 
 import jakarta.servlet.http.Part; // (O javax.servlet.http.Part si usáis Tomcat 9)
-import java.io.InputStream;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -11,7 +10,7 @@ public class Usuario implements Serializable {
     private String apodoUsuario;
     private String email;
     private String password;
-    private InputStream avatar; // Según apuntes para manejar subida de archivos
+    private Part avatar; 
     private String rol;
     private Timestamp fechaRegistro;
 
@@ -24,7 +23,7 @@ public class Usuario implements Serializable {
     }
 
     // Constructor completo
-    public Usuario(int idUsuario, String apodoUsuario, String email, String password, InputStream avatar, String rol, Timestamp fechaRegistro) {
+    public Usuario(int idUsuario, String apodoUsuario, String email, String password, Part avatar, String rol, Timestamp fechaRegistro) {
         this.idUsuario = idUsuario;
         this.apodoUsuario = apodoUsuario;
         this.email = email;
@@ -66,11 +65,11 @@ public class Usuario implements Serializable {
         this.password = password;
     }
 
-    public InputStream getAvatar() {
+    public Part getAvatar() {
         return avatar;
     }
 
-    public void setAvatar(InputStream avatar) {
+    public void setAvatar(Part avatar) {
         this.avatar = avatar;
     }
 

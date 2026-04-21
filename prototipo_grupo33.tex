@@ -92,7 +92,7 @@
 	\setcounter{page}{1}
 	
 	\section{Base de datos}
-		Para la base de datos se ha elegido usar MariaDB a través de XAMPP para facilitar el trabajo de gestión y diseño, ya que permite usar phpMyAdmin desde navegadores web y gestionar la base de datos de manera visual y exportar o importar los scripts de creación e inserción de datos,  además de otras herramientas útiles (como el meter csv)
+		Para la base de datos se ha elegido usar MariaDB a través de XAMPP para facilitar el trabajo de gestión y diseño, ya que permite usar phpMyAdmin desde navegadores web y gestionar la base de datos de manera visual y exportar o importar los scripts de creación e inserción de datos,  además de otras herramientas útiles (como el meter csv).
 		
 		\subsection{Cambios del Modelo de Dominio a Entidad-Relacion}
 			Para traducir el modelo de dominio realizado en la práctica 2 al modelo entidad-relacion de la base de datos, se han realizado los siguientes cambios:
@@ -103,8 +103,6 @@
 					Al igual que con \textit{Usuario}, la clase \textit{Mazo} se ha traducido a una única tabla \texttt{Mazo} y un atributo ES\_OFICIAL para hacer la distinción.
 				\item \textbf{Relaciones *:*}: \\
 					Las relaciones muchos a muchos entre \textit{Jugador}-\textbf{GUARDA}-\textit{Mazo}, \textit{Mazo}-\textbf{CONTIENE}-\textit{Carta} y \textit{Jugador}-\textbf{VALORA}-\textit{Mazo} se han traducido como las clases intermedias \texttt{GUARDA\_MAZO}, \texttt{CONTIENE\_CARTA} y \texttt{VALORACION} respectivamente.
-				\item \textbf{}: \\
-				
 				
 			\end{itemize}
 			
@@ -180,20 +178,22 @@
 					\begin{figure}[H]
 					\centering
 					\includegraphics[width=1\textwidth]{Recursos/creacionBBDD.png}
-					\caption{Además, para que todos tengamos las mismas tablas, hemos incluido el script \textit{CreacionDBv2.sql} para que genere automáticamente las tablas (por motivos de brevedad no hemos incluido todo el script ya que se puede consultar en \textit{Files/sql} dentro del apache)}
+					\caption{Además, para que todos tengamos las mismas tablas, hemos incluido el script \textit{CreacionDBv2.sql} para que genere automáticamente las tablas (por motivos de brevedad no hemos incluido todo el script ya que se puede consultar en \textit{Files/sql} dentro del apache)}.
 					\label{fig:creacion}
 				\end{figure}
 				
 				
 			\subsection{Inserción de los datos en las tablas}
 				Para esta parte, debido al poco tiempo que hemos tenido para desarrollar la práctica por el calendario tan ajustado de entregas del curso, hemos decidido tener 2 scripts .sql para poblar la base de datos, los cuales se encuentran en \textit{FIles/sql} dentro del Apache NetBeans.\\
+				Adicionalmente, para que fuese más cómodo y por un tema de estructura y revisión del código, hay una carpeta en nuestro repositorio de git (por ende en el zip en el que hemos entregado la práctica) llamado \textit{DataBase} donde se encuentra el E/R, los scripts de creación de las tablas y  los encargados de poblararla, así como los JSONs de los que hemos partidos para las cartas.\\
+				Queda pendiente para la siguiente entrega, modificar los DAOS y DTOs para que empleando la librería de java \hyperlink{https://mvnrepository.com/artifact/com.google.code.gson/gson/2.10.1}{GSON}, se encargue atuomáticamente de llenar la base de datos de cartas en función de un JSON, pero por motivos de coplejidad no hemos podido realizar dicha tarea para la actual entrega.
 			 	\begin{figure}[htbp]
 				 	\centering
 				 	% Primera imagen
 				 	\begin{minipage}{0.45\textwidth}
 				 		\centering
 				 		\includegraphics[width=\textwidth]{Recursos/InsertUsuario.png}
-				 		\caption{Hacemos un insert, con la peculiaridad de que usamos el operando \textit{IGNORE} para que en caso de añadir más cartas, si encuentra la \textit{primarykey} en la bbdd pasa de él.}
+				 		\caption{Hacemos un insert, con la peculiaridad de que usamos el modificador de sentencia \textit{IGNORE} para que en caso de añadir más cartas, si encuentra la \textit{primarykey} en la bbdd pasa de él.}
 				 		\label{fig:imgInsert}
 				 	\end{minipage}
 				 	\hfill % Espacio elástico para separar las imágenes
@@ -201,13 +201,14 @@
 				 	\begin{minipage}{0.45\textwidth}
 				 		\centering
 				 		\includegraphics[width=\textwidth]{Recursos/InsertCartas.png}
-				 		\caption{Script de población de la bbdd de cartas donde hemos insertados todas las cartas desde op9 a 12 además de un \textit{starter deck} para que los compañeros de front tengan cartas de sobra. Al igual que en el insert anterior empleamos el operando \textit{IGNORE}.}
+				 		\caption{Script de población de la bbdd de cartas donde hemos insertados todas las cartas desde op9 a 12 además de un \textit{starter deck} para que los compañeros de front tengan cartas de sobra. Al igual que en el insert anterior empleamos el modificador de sentencia \textit{IGNORE}.}
 				 		\label{fig:insertarCartas}
 				 	\end{minipage}
 				 \end{figure}
 				 
 			\subsection{Consideraciones Técnicas}
-			El diseño implementa integridad referencial mediante el uso de \texttt{ON DELETE CASCADE}, asegurando que la eliminación de una entidad principal (como un usuario) limpie automáticamente sus datos dependientes. Además, se han optimizado los tipos de datos utilizando \texttt{ENUM} para categorías fijas y \texttt{SET} para la gestión de colores múltiples en las cartas.
+			El diseño implementa integridad referencial mediante el uso de \texttt{ON DELETE CASCADE}, asegurando que la eliminación de una entidad principal (como un usuario) limpie automáticamente sus datos dependientes. Además, se han optimizado los tipos de datos utilizando \texttt{ENUM} para categorías fijas y \texttt{SET} para la gestión de colores múltiples en las cartas.\\
+
 			\begin{itemize}
 				\item \textbf{Gestión de Tiempos (\textit{Timestamps} vs \textit{Date}):} Se ha optado por el uso de \texttt{TIMESTAMP} en lugar de \texttt{DATE} para columnas como \texttt{fecha\_registro} y \texttt{fecha\_edicion}. Esto permite una precisión de segundos y, sobre todo, aprovecha la funcionalidad \texttt{DEFAULT CURRENT\_TIMESTAMP} y \texttt{ON UPDATE CURRENT\_TIMESTAMP}, automatizando el seguimiento de cambios sin necesidad de lógica adicional en el backend.
 				
@@ -233,7 +234,7 @@
 	Para esta tercera entrega, hemos decidido cambiar la manera de trabajar, nos hemos divido en dos grupos, Sergio y Marcos se han encargado del \textit{frontend} mientras que Edgar y Álvaro se han encargado de la parte del \textit{backend}.\\
 	Es división se ha hecho con dos propositos, optimizar el tiempo de desarrollo,evitar conflictos en el git y permitir que los integrantes trabajen de la manera más cómoda posible.\\
 	Después de la segunda entrega, internamente vimos que Marcos y Sergio tenían más facilidad para el html y los estilos css por lo que se ofrecieron en encargarse de la parte más visual para seguir manteniendo una homogeneidad además de implementar las funcionalidades necesarias (los jsp). En el caso de ser necesario aportar conocimiento concreto sobre las cartas Marcos es un jugador medianamente especializado por lo que podría aportar la información necesaria.\\
-	Por otra parte, Edgar y Álvaro se encontraban más cómodos en la gestión de la bbdd, los daos,los dtos y \textit{serverless}, por lo que eligieron de manera voluntaria trabajar en este campo de la web; además, como Álvaro es el que tiene más experiencia en este tcg, construir la base de datos, ha sido una tarea muy sencilla.\\
+	Por otra parte, Edgar y Álvaro se encontraban más cómodos en la gestión de la bbdd, los daos,los dtos y \textit{servlet}, por lo que eligieron de manera voluntaria trabajar en este campo de la web; además, como Álvaro es el que tiene más experiencia en este tcg, construir la base de datos, ha sido una tarea muy sencilla.\\
 	De esta manera, al estar en dos equipos, nos hemos podido organizar mejor minimizando así los posibles conflictos en el git puesto que al acotar las tareas, ambas personas del equipo podían trabajar sin pisar al otro integrante.
 	
 	\begin{table}[h]
@@ -263,15 +264,13 @@
 	
 	\textbf{Ejemplos de prompts realizados:}
 	\begin{itemize}
-		\item 'Cómo podemos realizar un menú desplegable en html a partir de un botón'
-		\item 'Cómo podemos hcer un enlace en una imagen'
-		\item 'Cómo podemos hacer un popup para cambiar la contraseña'
-		\item 'Cómo funciona un hover en html'
-		\item 'Redimensionar los botones para que ocupen una parte proporcional del encabezado'
-		\item 'En css por qué me sale un link subrayado'
-		\item 'Como puedo hacer un popup con sobreado'
-		\item 'La estructura de un proyecto html cuál es'
-		\item 'Entre la idea X y la idea Y, dime posibles ventajas y desventajas de cada uno y cuál se adaptaría mejor al proyecto y por qué'
+		\item 'Cómo funciona un serveles en java'
+		\item 'Como hacer una conexión de MariaDB en ApacheNetBeans'
+		\item 'Haciendo push, a mis compañeros no les aparece la bbdd ¿es normal?'
+		\item 'Cómo puedo automatizar la instalación y creación de una bbdd con MariaDB'
+		\item 'Me puedes revisar los \textit{scripts} de creación de la base de datos'
+		\item 'Traduceme este \textit{script} de creación de bbdd para Windows en un .bat'
+		\item 'Cómo puedo testear que la base de datos se ha rellenado de manera correcta con los \textit{scrpts} sql'
 	\end{itemize}
 	
 	%\begin{itemize}
