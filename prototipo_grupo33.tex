@@ -93,7 +93,6 @@
 	
 	\section{Base de datos}
 		Para la base de datos se ha elegido usar MariaDB a través de XAMPP para facilitar el trabajo de gestión y diseño, ya que permite usar phpMyAdmin desde navegadores web y gestionar la base de datos de manera visual y exportar o importar los scripts de creación e inserción de datos,  además de otras herramientas útiles (como el meter csv).
-		
 		\subsection{Cambios del Modelo de Dominio a Entidad-Relacion}
 			Para traducir el modelo de dominio realizado en la práctica 2 al modelo entidad-relacion de la base de datos, se han realizado los siguientes cambios:
 			\begin{itemize}
@@ -113,7 +112,6 @@
 				\label{fig:mapa_sitio}
 			\end{figure}
 			
-		\subsection{Estructura de la base de datos}
 			
 			\section{Estructura de la Base de Datos}
 			
@@ -138,7 +136,7 @@
 			
 			\begin{table}[H]
 				\centering
-				\caption{Resumen de la Arquitectura de Datos}
+				
 				\begin{tabularx}{\textwidth}{l l X}
 					\toprule
 					\textbf{Relación} & \textbf{Tipo} & \textbf{Descripción} \\
@@ -149,6 +147,7 @@
 					Usuario $\rightarrow$ Articulo & 1:N & Relación de autoría para perfiles administrativos. \\
 					\bottomrule
 				\end{tabularx}
+				\caption{Resumen de la Arquitectura de Datos} 
 			\end{table}
 			
 			\subsection{Inserción de los datos en la BBDD en Apache NetBeans}
@@ -159,7 +158,7 @@
 					\begin{minipage}{0.45\textwidth}
 						\centering
 						\includegraphics[width=\textwidth]{Recursos/BBDD_CONEXION.png}
-						\caption{Hemos configurado la conexión en el Apache NetBeans con una base de datos MariaDB en el localhost con su puerto por defecto}
+						\caption{Hemos configurado la conexión en el Apache NetBeans con una base de datos MariaDB en el localhost con su puerto por defecto.}
 						\label{fig:img1}
 					\end{minipage}
 					\hfill % Espacio elástico para separar las imágenes
@@ -167,13 +166,13 @@
 					\begin{minipage}{0.45\textwidth}
 						\centering
 						\includegraphics[width=\textwidth]{Recursos/XMLBBDD.png}
-						\caption{Modificamos el \textit{context.xml} del editor para poder establecer la conexión permanente con la bbdd en nuestro proyecto}
+						\caption{Modificamos el \textit{context.xml} del editor para poder establecer la conexión permanente con la bbdd en nuestro proyecto.}
 						\label{fig:img2}
 					\end{minipage}
 				\end{figure}
 				
 				
-				El problema que hemos tenido es que al establecer la conexión y hacer un \textit{push} al repositorio, Edgar, no tenía la conexión establecedia en el Apache, tras una tutoría con Jordi, nos ha explicado que como no contamos con un servidor donde alojar la base de datos, realmente no había ninguna manera de hacer esta conexión persistente, por lo que tomamos la decisión de hacer unos scripts, que hagan la creación de la base de datos en local más simple, facilitando así su posterior conexión con el editor de código.\\ 
+				El problema que hemos tenido es que al establecer la conexión y hacer un \textit{push} al repositorio, Edgar, no tenía la conexión establecedia en el Apache, tras una tutoría con el profesor del laboratio, nos ha explicado que como no contamos con un servidor donde alojar la base de datos, realmente no había ninguna manera de hacer esta conexión persistente, por lo que tomamos la decisión de hacer unos scripts, que hagan la creación de la base de datos en local más simple, facilitando así su posterior conexión con el editor de código.\\ 
 				
 					\begin{figure}[H]
 					\centering
@@ -186,7 +185,7 @@
 			\subsection{Inserción de los datos en las tablas}
 				Para esta parte, debido al poco tiempo que hemos tenido para desarrollar la práctica por el calendario tan ajustado de entregas del curso, hemos decidido tener 2 scripts .sql para poblar la base de datos, los cuales se encuentran en \textit{FIles/sql} dentro del Apache NetBeans.\\
 				Adicionalmente, para que fuese más cómodo y por un tema de estructura y revisión del código, hay una carpeta en nuestro repositorio de git (por ende en el zip en el que hemos entregado la práctica) llamado \textit{DataBase} donde se encuentra el E/R, los scripts de creación de las tablas y  los encargados de poblararla, así como los JSONs de los que hemos partidos para las cartas.\\
-				Queda pendiente para la siguiente entrega, modificar los DAOS y DTOs para que empleando la librería de java \hyperlink{https://mvnrepository.com/artifact/com.google.code.gson/gson/2.10.1}{GSON}, se encargue atuomáticamente de llenar la base de datos de cartas en función de un JSON, pero por motivos de coplejidad no hemos podido realizar dicha tarea para la actual entrega.
+				Queda pendiente para la siguiente entrega, modificar los DAOS y DTOs para que al emplear la librería java \hyperlink{https://mvnrepository.com/artifact/com.google.code.gson/gson/2.10.1}{GSON}, se encargue atuomáticamente de llenar la base de datos de cartas en función de un JSON, pero por motivos de coplejidad no hemos podido realizar dicha tarea para la actual entrega.\\
 			 	\begin{figure}[htbp]
 				 	\centering
 				 	% Primera imagen
@@ -201,14 +200,13 @@
 				 	\begin{minipage}{0.45\textwidth}
 				 		\centering
 				 		\includegraphics[width=\textwidth]{Recursos/InsertCartas.png}
-				 		\caption{Script de población de la bbdd de cartas donde hemos insertados todas las cartas desde op9 a 12 además de un \textit{starter deck} para que los compañeros de front tengan cartas de sobra. Al igual que en el insert anterior empleamos el modificador de sentencia \textit{IGNORE}.}
+				 		\caption{Script de población de la bbdd de cartas donde hemos insertado todas las cartas desde OP9 a OP12 además de un \textit{starter deck} para que los compañeros de front tengan cartas de sobra. Al igual que en el insert anterior empleamos el modificador de sentencia \textit{IGNORE}.}
 				 		\label{fig:insertarCartas}
 				 	\end{minipage}
 				 \end{figure}
 				 
 			\subsection{Consideraciones Técnicas}
-			El diseño implementa integridad referencial mediante el uso de \texttt{ON DELETE CASCADE}, asegurando que la eliminación de una entidad principal (como un usuario) limpie automáticamente sus datos dependientes. Además, se han optimizado los tipos de datos utilizando \texttt{ENUM} para categorías fijas y \texttt{SET} para la gestión de colores múltiples en las cartas.\\
-
+			El diseño implementa integridad referencial mediante el uso de \texttt{ON DELETE CASCADE}, asegurando que la eliminación de una entidad principal (como un usuario) limpie automáticamente sus datos dependientes. Además, se han optimizado los tipos de datos utilizando \texttt{ENUM} para categorías fijas y \texttt{SET} para la gestión de colores múltiples en las cartas.
 			\begin{itemize}
 				\item \textbf{Gestión de Tiempos (\textit{Timestamps} vs \textit{Date}):} Se ha optado por el uso de \texttt{TIMESTAMP} en lugar de \texttt{DATE} para columnas como \texttt{fecha\_registro} y \texttt{fecha\_edicion}. Esto permite una precisión de segundos y, sobre todo, aprovecha la funcionalidad \texttt{DEFAULT CURRENT\_TIMESTAMP} y \texttt{ON UPDATE CURRENT\_TIMESTAMP}, automatizando el seguimiento de cambios sin necesidad de lógica adicional en el backend.
 				
@@ -222,7 +220,7 @@
 				
 				\item \textbf{Almacenamiento de Binarios:} Para los avatares de usuario, se ha seleccionado \texttt{MEDIUMBLOB}. Aunque el estándar suele ser guardar rutas de archivos, incluir el binario (hasta 16MB) facilita la portabilidad inicial del proyecto y simplifica la gestión de copias de seguridad de la base de datos completa.
 				
-				\item \textbf{Claves Primarias y Foráneas:} Se utilizan \texttt{INT AUTO\_INCREMENT} para entidades dinámicas (usuarios, mazos) para agilizar las búsquedas, mientras que las cartas utilizan un \texttt{VARCHAR(50)} como ID, permitiendo usar códigos alfanuméricos oficiales (ej: "OP01-001") que facilitan la integración con APIs externas.
+				\item \textbf{Claves Primarias y Foráneas:} Se utilizan \texttt{INT AUTO\_INCREMENT} para entidades dinámicas (usuarios, mazos) para agilizar las búsquedas, mientras que las cartas utilizan un \texttt{VARCHAR(50)} como ID, permitiendo usar códigos alfanuméricos oficiales (ej: \"OP01-001\") que facilitan la integración con APIs externas.
 			\end{itemize}
 			%Script creacion
 			
@@ -232,14 +230,14 @@
 	\newpage
 	\section{Reparto de carga de trabajo}
 	Para esta tercera entrega, hemos decidido cambiar la manera de trabajar, nos hemos divido en dos grupos, Sergio y Marcos se han encargado del \textit{frontend} mientras que Edgar y Álvaro se han encargado de la parte del \textit{backend}.\\
-	Es división se ha hecho con dos propositos, optimizar el tiempo de desarrollo,evitar conflictos en el git y permitir que los integrantes trabajen de la manera más cómoda posible.\\
+	Esta división se ha hecho con dos propositos, optimizar el tiempo de desarrollo,evitar conflictos en el git y permitir que los integrantes trabajen de la manera más cómoda posible.\\
 	Después de la segunda entrega, internamente vimos que Marcos y Sergio tenían más facilidad para el html y los estilos css por lo que se ofrecieron en encargarse de la parte más visual para seguir manteniendo una homogeneidad además de implementar las funcionalidades necesarias (los jsp). En el caso de ser necesario aportar conocimiento concreto sobre las cartas Marcos es un jugador medianamente especializado por lo que podría aportar la información necesaria.\\
 	Por otra parte, Edgar y Álvaro se encontraban más cómodos en la gestión de la bbdd, los daos,los dtos y \textit{servlet}, por lo que eligieron de manera voluntaria trabajar en este campo de la web; además, como Álvaro es el que tiene más experiencia en este tcg, construir la base de datos, ha sido una tarea muy sencilla.\\
 	De esta manera, al estar en dos equipos, nos hemos podido organizar mejor minimizando así los posibles conflictos en el git puesto que al acotar las tareas, ambas personas del equipo podían trabajar sin pisar al otro integrante.
 	
 	\begin{table}[h]
 		\centering
-		\caption{Distribución de Responsabilidades por Equipo y Miembro}
+	
 		\begin{tabularx}{\textwidth}{llX} 
 			\toprule
 			\textbf{Nombre} & \textbf{Porcentaje} & \textbf{Responsabilidad principal} \\
@@ -255,13 +253,13 @@
 			SANTIESTEBAN MENDO, EDGAR   & 25\% & Colaboración en el E/R, creación de los esquemas de la bbdd, daos y dtos \\
 			\bottomrule
 		\end{tabularx}
+			\caption{Distribución de Responsabilidades por Equipo y Miembro}
 	\end{table}
 	
 	
 	\section{Declaración de Uso de Inteligencia Artificial}
 	Para esta segunda entrega, se ha usado la IA Gemini como herramienta para dudas y mejoras del archivo LaTeX, revisión de los contenidos y evaluación de los mismos y diseño iterativo para mejorar lo ya realizado.\\
-	Además, se ha usado \href{https://gemini.google.com/share/7a923a0bfae8}{Gemini} para la generación del logo del proyecto.
-	
+	Además, se ha usado \href{https://gemini.google.com/share/7a923a0bfae8}{Gemini} para la generación del logo del proyecto.\\
 	\textbf{Ejemplos de prompts realizados:}
 	\begin{itemize}
 		\item 'Cómo funciona un serveles en java'
