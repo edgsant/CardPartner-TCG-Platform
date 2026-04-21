@@ -64,32 +64,40 @@ public class CartaDAO {
         return cartaEncontrada;
     }
 
-    
     /**
-     * Busca cartas y ademas puede aplicar nfiltros opcionales. Si un filtro viene a null o
-     * vacío, se ignora.
-     * @param color 
+     * Busca cartas aplicando filtros opcionales múltiples. Si un filtro viene a
+     * null o vacío, se ignora.
+     *
+     * @param color
      * @param tipo
+     * @param arquetipo
+     * @param atributo
      * @param limite
      * @param offset
-     * @return 
+     * @return
      */
-    public ArrayList<Carta> filtrarCartas(String color, String tipo, int limite, int offset) {
+    public ArrayList<Carta> filtrarCartas(String color, String tipo, String arquetipo, String atributo, int limite, int offset) {
         ArrayList<Carta> listaCartas = new ArrayList<>();
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        // 1. El truco del 1=1 nos permite encadenar 'AND' fácilmente después
+        // 1. Iniciamos con el truco del 1=1
         StringBuilder sql = new StringBuilder("SELECT * FROM CARTA WHERE 1=1");
 
-        // 2. Comprobamos qué filtros ha usado el usuario y construimos el SQL
+        // 2. Construimos el SQL dinámico según los filtros que lleguen
         if (color != null && !color.trim().isEmpty()) {
             sql.append(" AND color = ?");
         }
         if (tipo != null && !tipo.trim().isEmpty()) {
             sql.append(" AND tipo = ?");
+        }
+        if (arquetipo != null && !arquetipo.trim().isEmpty()) {
+            sql.append(" AND arquetipo = ?");
+        }
+        if (atributo != null && !atributo.trim().isEmpty()) {
+            sql.append(" AND atributo = ?");
         }
 
         // Añadimos siempre la paginación al final
@@ -98,8 +106,8 @@ public class CartaDAO {
         try {
             ps = con.prepareStatement(sql.toString());
 
-            // 3. Rellenar las interrogaciones (El reto de los índices variables)
-            int paramIndex = 1; // Un contador para saber por qué interrogación vamos
+            // 3. Rellenamos las interrogaciones en el mismo orden exacto
+            int paramIndex = 1;
 
             if (color != null && !color.trim().isEmpty()) {
                 ps.setString(paramIndex++, color);
@@ -107,25 +115,49 @@ public class CartaDAO {
             if (tipo != null && !tipo.trim().isEmpty()) {
                 ps.setString(paramIndex++, tipo);
             }
+            if (arquetipo != null && !arquetipo.trim().isEmpty()) {
+                ps.setString(paramIndex++, arquetipo);
+            }
+            if (atributo != null && !atributo.trim().isEmpty()) {
+                ps.setString(paramIndex++, atributo);
+            }
 
-            // Los dos últimos siempre son los de paginación
+            // Los dos últimos siempre son el límite y el salto
             ps.setInt(paramIndex++, limite);
             ps.setInt(paramIndex, offset);
 
-            // 4. Ejecutar
+            // 4. Ejecutar consulta
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 Carta c = new Carta();
-                // ... rellenar el objeto DTO como ya sabes ...
                 c.setIdCarta(rs.getString("id_carta"));
-                // ...
+                c.setNombreCarta(rs.getString("nombre_carta"));
+                c.setColor(rs.getString("color"));
+                c.setTipo(rs.getString("tipo"));
+                // Asegúrate de que tu DTO Carta tiene estos setters
+                c.setArquetipo(rs.getString("arquetipo"));
+                c.setAtributoCarta(rs.getString("atributo"));
+                c.setCoste(rs.getInt("coste"));
+                c.setPoder(rs.getInt("poder"));
+                c.setImagen(rs.getString("imagen"));
+
                 listaCartas.add(c);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            /* Limpieza habitual */
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return listaCartas;
     }

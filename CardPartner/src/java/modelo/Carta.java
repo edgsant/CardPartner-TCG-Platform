@@ -12,13 +12,13 @@ public class Carta implements Serializable {
     private String color; // Guardará el SET de MariaDB (Ej: "ROJO,VERDE")
     private int coste;
     private int poder;
-    private String atributoCombate;
+    private String atributoCarta;
     private double precioMercado;
 
     public Carta() {
     }
 
-    public Carta(String idCarta, String nombreCarta, String imagen, String tipo, String arquetipo, String color, int coste, int poder, String atributoCombate, double precioMercado) {
+    public Carta(String idCarta, String nombreCarta, String imagen, String tipo, String arquetipo, String color, int coste, int poder, String atributoCarta, double precioMercado) {
         this.idCarta = idCarta;
         this.nombreCarta = nombreCarta;
         this.imagen = imagen;
@@ -27,7 +27,7 @@ public class Carta implements Serializable {
         this.color = color;
         this.coste = coste;
         this.poder = poder;
-        this.atributoCombate = atributoCombate;
+        this.atributoCarta = atributoCarta;
         this.precioMercado = precioMercado;
     }
 
@@ -95,12 +95,12 @@ public class Carta implements Serializable {
         this.poder = poder;
     }
 
-    public String getAtributoCombate() {
-        return atributoCombate;
+    public String getAtributoCarta() {
+        return atributoCarta;
     }
 
-    public void setAtributoCombate(String atributoCombate) {
-        this.atributoCombate = atributoCombate;
+    public void setAtributoCarta(String atributoCarta) {
+        this.atributoCarta = atributoCarta;
     }
 
     public double getPrecioMercado() {
