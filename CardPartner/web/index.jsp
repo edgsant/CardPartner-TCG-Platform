@@ -1,19 +1,10 @@
 <%@page import="java.util.List"%>
 <%@page import="modelo.Mazo"%>
-<%@page import="modelo.Carta"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    // ==========================================
-    // PATRÓN MVC: RECIBIR DATOS
-    // ==========================================
+    // Recogemos la lista del Servlet por si acaso, 
+    // aunque para los 3 mazos de abajo usaremos tus links fijos.
     List<Mazo> mazosRecomendados = (List<Mazo>) request.getAttribute("mazosRecomendados");
-    
-    // Si la lista es null, significa que hemos entrado directo al JSP sin pasar por el Servlet.
-    // Redirigimos al Servlet para que haga la consulta y nos devuelva aquí.
-    if (mazosRecomendados == null) {
-        response.sendRedirect(request.getContextPath() + "/InicioServlet");
-        return; 
-    }
 %>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,8 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CardPartner - Inicio</title>
-    
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/indexStyle.css?v=13">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/indexStyle.css?v=12">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -58,26 +48,28 @@
                     <div class="mazos">
                         <h2 class="titulo-mazos">Nuevos Mazos de la Comunidad</h2>
                         <div class="contenido-mazos">
-                            <%
-                                if (!mazosRecomendados.isEmpty()) {
-                                    for(Mazo m : mazosRecomendados) {
-                                        Carta lider = m.getCartaLider();
-                                        String imgLider = (lider != null && lider.getImagen() != null) ? lider.getImagen() : "/img/logo.png";
-                            %>
-                                    <a href="${pageContext.request.contextPath}/Views/deck-view.jsp?id=<%= m.getIdMazo() %>" class="item-mazo">
-                                        <img src="${pageContext.request.contextPath}<%= imgLider %>" alt="<%= m.getNombreMazo() %>">
-                                        <span><%= m.getNombreMazo() %></span>
-                                    </a>
-                            <%
-                                    }
-                                } else {
-                            %>
-                                    <p style="color: white; text-align: center; width: 100%;">Aún no hay mazos creados.</p>
-                            <%
-                                }
-                            %>
+                            
+                            <%-- MAZO 1: HARDCODEADO --%>
+                            <a href="https://onepiece-cardgame.dev/deckbuilder" class="item-mazo" target="_blank">
+                                <img src="${pageContext.request.contextPath}/img/st08.jpg" alt=ST LUFFY">
+                                <span>Mazo Luffy</span>
+                            </a>
+
+                            <%-- MAZO 2: HARDCODEADO --%>
+                            <a href="https://nakamadecks.com/" class="item-mazo" target="_blank">
+                                <img src="${pageContext.request.contextPath}/img/st11.jpg" alt="ST UTA">
+                                <span>Mazo Yamato</span>
+                            </a>
+
+                            <%-- MAZO 3: HARDCODEADO --%>
+                            <a href="https://www.egmanevents.com/one-piece" class="item-mazo" target="_blank">
+                                <img src="${pageContext.request.contextPath}/img/st20.jpg" alt="ST BarbaNegra">
+                                <span>Mazo Marshall D. Teach</span>
+                            </a>
+
                         </div>
                         <div class="footer-mazos">
+                            <%-- Este botón sí te lleva a tu sección interna de comunidad --%>
                             <a href="${pageContext.request.contextPath}/Views/community-deck.jsp" class="btn-ver-mas">Ver todos</a>
                         </div>
                     </div>
