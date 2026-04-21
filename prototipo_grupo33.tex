@@ -187,13 +187,15 @@
 				
 			\subsection{Inserción de los datos en las tablas}
 				Para esta parte, debido al poco tiempo que hemos tenido para desarrollar la práctica por el calendario tan ajustado de entregas del curso, hemos decidido tener 2 scripts .sql para poblar la base de datos, los cuales se encuentran en \textit{FIles/sql} dentro del Apache NetBeans.\\
+				Adicionalmente, para que fuese más cómodo y por un tema de estructura y revisión del código, hay una carpeta en nuestro repositorio de git (por ende en el zip en el que hemos entregado la práctica) llamado \textit{DataBase} donde se encuentra el E/R, los scripts de creación de las tablas y  los encargados de poblararla, así como los JSONs de los que hemos partidos para las cartas.\\
+				Queda pendiente para la siguiente entrega, modificar los DAOS y DTOs para que empleando la librería de java \hyperlink{https://mvnrepository.com/artifact/com.google.code.gson/gson/2.10.1}{GSON}, se encargue atuomáticamente de llenar la base de datos de cartas en función de un JSON, pero por motivos de coplejidad no hemos podido realizar dicha tarea para la actual entrega.
 			 	\begin{figure}[htbp]
 				 	\centering
 				 	% Primera imagen
 				 	\begin{minipage}{0.45\textwidth}
 				 		\centering
 				 		\includegraphics[width=\textwidth]{Recursos/InsertUsuario.png}
-				 		\caption{Hacemos un insert, con la peculiaridad de que usamos el operando \textit{IGNORE} para que en caso de añadir más cartas, si encuentra la \textit{primarykey} en la bbdd pasa de él.}
+				 		\caption{Hacemos un insert, con la peculiaridad de que usamos el modificador de sentencia \textit{IGNORE} para que en caso de añadir más cartas, si encuentra la \textit{primarykey} en la bbdd pasa de él.}
 				 		\label{fig:imgInsert}
 				 	\end{minipage}
 				 	\hfill % Espacio elástico para separar las imágenes
@@ -201,13 +203,14 @@
 				 	\begin{minipage}{0.45\textwidth}
 				 		\centering
 				 		\includegraphics[width=\textwidth]{Recursos/InsertCartas.png}
-				 		\caption{Script de población de la bbdd de cartas donde hemos insertados todas las cartas desde op9 a 12 además de un \textit{starter deck} para que los compañeros de front tengan cartas de sobra. Al igual que en el insert anterior empleamos el operando \textit{IGNORE}.}
+				 		\caption{Script de población de la bbdd de cartas donde hemos insertados todas las cartas desde op9 a 12 además de un \textit{starter deck} para que los compañeros de front tengan cartas de sobra. Al igual que en el insert anterior empleamos el modificador de sentencia \textit{IGNORE}.}
 				 		\label{fig:insertarCartas}
 				 	\end{minipage}
 				 \end{figure}
 				 
 			\subsection{Consideraciones Técnicas}
-			El diseño implementa integridad referencial mediante el uso de \texttt{ON DELETE CASCADE}, asegurando que la eliminación de una entidad principal (como un usuario) limpie automáticamente sus datos dependientes. Además, se han optimizado los tipos de datos utilizando \texttt{ENUM} para categorías fijas y \texttt{SET} para la gestión de colores múltiples en las cartas.
+			El diseño implementa integridad referencial mediante el uso de \texttt{ON DELETE CASCADE}, asegurando que la eliminación de una entidad principal (como un usuario) limpie automáticamente sus datos dependientes. Además, se han optimizado los tipos de datos utilizando \texttt{ENUM} para categorías fijas y \texttt{SET} para la gestión de colores múltiples en las cartas.\\
+
 			\begin{itemize}
 				\item \textbf{Gestión de Tiempos (\textit{Timestamps} vs \textit{Date}):} Se ha optado por el uso de \texttt{TIMESTAMP} en lugar de \texttt{DATE} para columnas como \texttt{fecha\_registro} y \texttt{fecha\_edicion}. Esto permite una precisión de segundos y, sobre todo, aprovecha la funcionalidad \texttt{DEFAULT CURRENT\_TIMESTAMP} y \texttt{ON UPDATE CURRENT\_TIMESTAMP}, automatizando el seguimiento de cambios sin necesidad de lógica adicional en el backend.
 				
