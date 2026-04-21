@@ -14,6 +14,7 @@ public class Mazo implements Serializable {
     private float winrate;
     private int idUsuarioCreador;
     private String idCartaLider;
+    private Carta cartaLider;
 
     public Mazo() {
         this.esPublico = true;
@@ -21,7 +22,7 @@ public class Mazo implements Serializable {
         this.winrate = 0.0f;
     }
 
-    public Mazo(int idMazo, String nombreMazo, String descripcion, Timestamp fechaCreacion, boolean esPublico, boolean esOficial, float winrate, int idUsuarioCreador, String idCartaLider) {
+    public Mazo(int idMazo, String nombreMazo, String descripcion, Timestamp fechaCreacion, boolean esPublico, boolean esOficial, float winrate, int idUsuarioCreador, String idCartaLider, Carta cartaLider) {
         this.idMazo = idMazo;
         this.nombreMazo = nombreMazo;
         this.descripcion = descripcion;
@@ -31,6 +32,15 @@ public class Mazo implements Serializable {
         this.winrate = winrate;
         this.idUsuarioCreador = idUsuarioCreador;
         this.idCartaLider = idCartaLider;
+        this.cartaLider = cartaLider;
+    }
+
+    public Carta getCartaLider() {
+        return cartaLider;
+    }
+
+    public void setCartaLider(Carta cartaLider) {
+        this.cartaLider = cartaLider;
     }
 
     public int getIdMazo() {
