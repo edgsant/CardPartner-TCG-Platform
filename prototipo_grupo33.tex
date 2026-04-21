@@ -117,29 +117,141 @@
 			
 		\subsection{Estructura de la base de datos}
 			
-			Con el esquema entidad-relación realizado, el script de creación de la base de datos es:
+			\section{Estructura de la Base de Datos}
 			
+			La base de datos \texttt{cardpartner\_db} está diseñada bajo un modelo relacional orientado a la gestión de una comunidad de juegos de cartas coleccionables (TCG). Su arquitectura se divide en cuatro pilares fundamentales:
+			
+			\subsection{Componentes Principales}
+			
+			\begin{itemize}
+				\item \textbf{Gestión de Usuarios y Roles:} La entidad \texttt{USUARIO} centraliza el acceso y la seguridad. Mediante un sistema de roles (\textit{Jugador, Editor, Moderador, Superadmin}), se definen los niveles de interacción con la plataforma.
+				\item \textbf{Catálogo de Cartas y Mazos:} 
+				\begin{itemize}
+					\item \texttt{CARTA}: Actúa como el diccionario técnico del juego, almacenando atributos estáticos como coste, poder, color y tipo.
+					\item \texttt{MAZO}: Representa la agrupación lógica de cartas creada por un usuario, vinculada obligatoriamente a una carta líder.
+				\end{itemize}
+				\item \textbf{Módulo de Comunidad:} La interacción social se articula a través de las tablas \texttt{VALORACION}, \texttt{COMENTARIO} y \texttt{GUARDA\_MAZO}, permitiendo la retroalimentación y la creación de bibliotecas personales.
+				\item \textbf{Sistema de Contenidos:} La entidad \texttt{ARTICULO} permite a los administradores gestionar noticias, guías y torneos, manteniendo la plataforma actualizada.
+			\end{itemize}
+			
+			\subsection{Resumen de Relaciones y Cardinalidad}
+			
+			En esta sección comentamos las cardinalidades y relaciones en forma de tabla con una pequeña explicación de lo que significan para poder complementar el E/R.
+			
+			\begin{table}[H]
+				\centering
+				\caption{Resumen de la Arquitectura de Datos}
+				\begin{tabularx}{\textwidth}{l l X}
+					\toprule
+					\textbf{Relación} & \textbf{Tipo} & \textbf{Descripción} \\
+					\midrule
+					Usuario $\rightarrow$ Mazo & 1:N & Un usuario es autor de múltiples mazos. \\
+					Mazo $\leftrightarrow$ Carta & N:M & Relación gestionada por \texttt{CONTIENE\_CARTA} con cantidades. \\
+					Usuario $\leftrightarrow$ Mazo & N:M & Biblioteca personal y favoritos (\texttt{GUARDA\_MAZO}). \\
+					Usuario $\rightarrow$ Articulo & 1:N & Relación de autoría para perfiles administrativos. \\
+					\bottomrule
+				\end{tabularx}
+			\end{table}
+			
+			\subsection{Inserción de los datos en la BBDD en Apache NetBeans}
+			
+				\begin{figure}[H]
+					\centering
+					% Primera imagen
+					\begin{minipage}{0.45\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{Recursos/BBDD_CONEXION.png}
+						\caption{Hemos configurado la conexión en el Apache NetBeans con una base de datos MariaDB en el localhost con su puerto por defecto}
+						\label{fig:img1}
+					\end{minipage}
+					\hfill % Espacio elástico para separar las imágenes
+					% Segunda imagen
+					\begin{minipage}{0.45\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{Recursos/XMLBBDD.png}
+						\caption{Modificamos el \textit{context.xml} del editor para poder establecer la conexión permanente con la bbdd en nuestro proyecto}
+						\label{fig:img2}
+					\end{minipage}
+				\end{figure}
+				
+				
+				El problema que hemos tenido es que al establecer la conexión y hacer un \textit{push} al repositorio, Edgar, no tenía la conexión establecedia en el Apache, tras una tutoría con Jordi, nos ha explicado que como no contamos con un servidor donde alojar la base de datos, realmente no había ninguna manera de hacer esta conexión persistente, por lo que tomamos la decisión de hacer unos scripts, que hagan la creación de la base de datos en local más simple, facilitando así su posterior conexión con el editor de código.\\ 
+				
+					\begin{figure}[H]
+					\centering
+					\includegraphics[width=1\textwidth]{Recursos/creacionBBDD.png}
+					\caption{Además, para que todos tengamos las mismas tablas, hemos incluido el script \textit{CreacionDBv2.sql} para que genere automáticamente las tablas (por motivos de brevedad no hemos incluido todo el script ya que se puede consultar en \textit{Files/sql} dentro del apache)}
+					\label{fig:creacion}
+				\end{figure}
+				
+				
+			\subsection{Inserción de los datos en las tablas}
+				Para esta parte, debido al poco tiempo que hemos tenido para desarrollar la práctica por el calendario tan ajustado de entregas del curso, hemos decidido tener 2 scripts .sql para poblar la base de datos, los cuales se encuentran en \textit{FIles/sql} dentro del Apache NetBeans.\\
+			 	\begin{figure}[htbp]
+				 	\centering
+				 	% Primera imagen
+				 	\begin{minipage}{0.45\textwidth}
+				 		\centering
+				 		\includegraphics[width=\textwidth]{Recursos/InsertUsuario.png}
+				 		\caption{Hacemos un insert, con la peculiaridad de que usamos el operando \textit{IGNORE} para que en caso de añadir más cartas, si encuentra la \textit{primarykey} en la bbdd pasa de él.}
+				 		\label{fig:imgInsert}
+				 	\end{minipage}
+				 	\hfill % Espacio elástico para separar las imágenes
+				 	% Segunda imagen
+				 	\begin{minipage}{0.45\textwidth}
+				 		\centering
+				 		\includegraphics[width=\textwidth]{Recursos/InsertCartas.png}
+				 		\caption{Script de población de la bbdd de cartas donde hemos insertados todas las cartas desde op9 a 12 además de un \textit{starter deck} para que los compañeros de front tengan cartas de sobra. Al igual que en el insert anterior empleamos el operando \textit{IGNORE}.}
+				 		\label{fig:insertarCartas}
+				 	\end{minipage}
+				 \end{figure}
+				 
+			\subsection{Consideraciones Técnicas}
+			El diseño implementa integridad referencial mediante el uso de \texttt{ON DELETE CASCADE}, asegurando que la eliminación de una entidad principal (como un usuario) limpie automáticamente sus datos dependientes. Además, se han optimizado los tipos de datos utilizando \texttt{ENUM} para categorías fijas y \texttt{SET} para la gestión de colores múltiples en las cartas.
+			\begin{itemize}
+				\item \textbf{Gestión de Tiempos (\textit{Timestamps} vs \textit{Date}):} Se ha optado por el uso de \texttt{TIMESTAMP} en lugar de \texttt{DATE} para columnas como \texttt{fecha\_registro} y \texttt{fecha\_edicion}. Esto permite una precisión de segundos y, sobre todo, aprovecha la funcionalidad \texttt{DEFAULT CURRENT\_TIMESTAMP} y \texttt{ON UPDATE CURRENT\_TIMESTAMP}, automatizando el seguimiento de cambios sin necesidad de lógica adicional en el backend.
+				
+				\item \textbf{Uso de Tipos Enumerados (\textit{ENUM} y \textit{SET}):} 
+				\begin{itemize}
+					\item Se emplea \texttt{ENUM} para roles y categorías de artículos para restringir los valores a un conjunto cerrado, mejorando el rendimiento y evitando datos inconsistentes.
+					\item Se utiliza \texttt{SET} para el atributo \texttt{color} en las cartas, ya que permite que una sola carta pertenezca a múltiples categorías simultáneamente (cartas multicolores) de forma eficiente a nivel de bits.
+				\end{itemize}
+				
+				\item \textbf{Política de Nulidad (\textit{Nullable}):} La mayoría de los campos críticos se han definido como \texttt{NOT NULL} para garantizar la calidad del dato. Los campos \texttt{NULL} (como \texttt{enlace\_externo} o \texttt{portada}) se reservan exclusivamente para información opcional o metadatos que no interrumpen el flujo principal de la aplicación.
+				
+				\item \textbf{Almacenamiento de Binarios:} Para los avatares de usuario, se ha seleccionado \texttt{MEDIUMBLOB}. Aunque el estándar suele ser guardar rutas de archivos, incluir el binario (hasta 16MB) facilita la portabilidad inicial del proyecto y simplifica la gestión de copias de seguridad de la base de datos completa.
+				
+				\item \textbf{Claves Primarias y Foráneas:} Se utilizan \texttt{INT AUTO\_INCREMENT} para entidades dinámicas (usuarios, mazos) para agilizar las búsquedas, mientras que las cartas utilizan un \texttt{VARCHAR(50)} como ID, permitiendo usar códigos alfanuméricos oficiales (ej: "OP01-001") que facilitan la integración con APIs externas.
+			\end{itemize}
 			%Script creacion
 			
 			%Hablar de los tipos de datos que puedan ser llamativos y decisiones generales detras de nullable, timestamps vs date, defaults, etc
 		
-		\subsection{Inserción de datos}
 			
 	\newpage
 	\section{Reparto de carga de trabajo}
-	Todos los integrantes hemos participado en todas las fases del trabajo y repartido el trabajo de forma equitativa, aunque encargándonos cada uno especialmente de alguna parte.\\
+	Para esta tercera entrega, hemos decidido cambiar la manera de trabajar, nos hemos divido en dos grupos, Sergio y Marcos se han encargado del \textit{frontend} mientras que Edgar y Álvaro se han encargado de la parte del \textit{backend}.\\
+	Es división se ha hecho con dos propositos, optimizar el tiempo de desarrollo,evitar conflictos en el git y permitir que los integrantes trabajen de la manera más cómoda posible.\\
+	Después de la segunda entrega, internamente vimos que Marcos y Sergio tenían más facilidad para el html y los estilos css por lo que se ofrecieron en encargarse de la parte más visual para seguir manteniendo una homogeneidad además de implementar las funcionalidades necesarias (los jsp). En el caso de ser necesario aportar conocimiento concreto sobre las cartas Marcos es un jugador medianamente especializado por lo que podría aportar la información necesaria.\\
+	Por otra parte, Edgar y Álvaro se encontraban más cómodos en la gestión de la bbdd, los daos,los dtos y \textit{serverless}, por lo que eligieron de manera voluntaria trabajar en este campo de la web; además, como Álvaro es el que tiene más experiencia en este tcg, construir la base de datos, ha sido una tarea muy sencilla.\\
+	De esta manera, al estar en dos equipos, nos hemos podido organizar mejor minimizando así los posibles conflictos en el git puesto que al acotar las tareas, ambas personas del equipo podían trabajar sin pisar al otro integrante.
 	
 	\begin{table}[h]
 		\centering
-		\caption{Distribución de Responsabilidades por Miembro}
+		\caption{Distribución de Responsabilidades por Equipo y Miembro}
 		\begin{tabularx}{\textwidth}{llX} 
 			\toprule
 			\textbf{Nombre} & \textbf{Porcentaje} & \textbf{Responsabilidad principal} \\
 			\midrule
-			ÁLVAREZ FULCONIS, MARCOS PALATINO      	& 25\%                & Diseño de las vistas tcg, social,noticias,torneo y guías\\
-			LOPEZ PRIMO, ÁLVARO      				& 25\%                & Diseño del index, login y todas sus opciones, creación del repositorio de github, redacción del documento\\
-			OTERO GARCÍA, SERGIO     				& 25\%                & Diseño de decks y todos sus submenús, \textit{comunity decks, meta decks}, creación de mazos,vista de cartas\\
-			SANTIESTEBAN MENDO, EDGAR    			& 25\%                & Modelo de dominio,flujos de navegación, requisitos y redacción del documento\\
+			\multicolumn{3}{l}{\textit{\textbf{Equipo Frontend 50\%}}}  \\
+			\midrule
+			ÁLVAREZ FULCONIS, MARCOS P. & 25\% &  \\
+			OTERO GARCÍA, SERGIO        & 25\% &  \\
+			\midrule
+			\multicolumn{3}{l}{\textit{\textbf{Equipo Backend \& Gestión 50\%}}} \\
+			\midrule
+			LOPEZ PRIMO, ÁLVARO         & 25\% &  Creación del esquema de la bbdd, colaborar en el E/R, población de la base de datos y transformación de los JSONs en datos para la misma, scripts para la automatización de MariaDB en local. \\
+			SANTIESTEBAN MENDO, EDGAR   & 25\% & Colaboración en el E/R, creación de los esquemas de la bbdd, daos y dtos \\
 			\bottomrule
 		\end{tabularx}
 	\end{table}
