@@ -30,19 +30,19 @@ VALUES
     1
 ),
 (
-    'Deck Tech: Nami biColor', 
-    'Guía estratégica completa para el mazo de Nami, el mazo mas opresivo con lo mejor de los dos colores.', 
-    'GUIA', 
-    'https://onepiece.cardsrealm.com/es-es/articles/one-piece-tcg-deck-guide-blue-yellow-nami', 
-    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.HhHGtoIm822_DMs3ws5mxgHaEK%3Fpid%3DApi&f=1&ipt=621ff2a67ed15d4cba98167dda7c9c85d0b62192b8ec022bf5f43fd810e62fd9&ipo=images', 
-    1
-),
-(
     'Deck Tech: Kalgara', 
     'Guía estratégica completa para el mazo de Kalgara.', 
     'GUIA', 
     'https://metafy.gg/guides/view/the-kalgara-guide-star-op11-star-RuUmLRpS4t4', 
     'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FvFhH44x-dp8%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=67ff08f72194ceddb0fa4c169366aeebc1cc9457bf4a4c378a1a6aa774631d33',
+    1
+),
+(
+    'Deck Tech: Nami biColor', 
+    'Guía estratégica completa para el mazo de Nami, el mazo mas opresivo con lo mejor de los dos colores.', 
+    'GUIA', 
+    'https://onepiece.cardsrealm.com/es-es/articles/one-piece-tcg-deck-guide-blue-yellow-nami', 
+    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.HhHGtoIm822_DMs3ws5mxgHaEK%3Fpid%3DApi&f=1&ipt=621ff2a67ed15d4cba98167dda7c9c85d0b62192b8ec022bf5f43fd810e62fd9&ipo=images', 
     1
 ),
 (
