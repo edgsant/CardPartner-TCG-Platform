@@ -19,34 +19,33 @@ public class DeckBuilderServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        // 1. (Opcional) Podemos comprobar si hay sesión iniciada para evitar que 
-        // invitados intenten crear mazos, aunque el GuardarMazoServlet ya les echará.
+        // ==========================================
+        // 1. BARRERA DE SEGURIDAD (Solo usuarios logueados)
+        // ==========================================
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("usuarioActivo") == null) {
-            // Si quieres forzar el login antes de entrar al builder, descomenta esta línea:
-            // response.sendRedirect(request.getContextPath() + "/Views/login.jsp?error=necesitas_login");
-            // return;
+            // Si no hay sesión o no hay usuario activo, lo echamos al Login
+            response.sendRedirect(request.getContextPath() + "/Views/login.jsp?error=necesitas_login");
+            return; // ¡Muy importante el return para cortar la ejecución!
         }
 
-        // 2. Conectamos con el DAO de las cartas
+        // ==========================================
+        // 2. CARGA DE DATOS PARA EL CONSTRUCTOR
+        // ==========================================
         CartaDAO cartaDAO = new CartaDAO();
 
-        // 3. Usamos el método filtrarCartas buscando EXCLUSIVAMENTE los líderes
-        // Orden de parámetros: (color, tipo, arquetipo, atributo, limite, offset)
-        // Le ponemos 100 de límite para asegurarnos de traer todos los líderes disponibles.
+        // Traemos todos los líderes para llenar el modal visual
         List<Carta> listaLideres = cartaDAO.filtrarCartas(null, "LIDER", null, null, 100, 0);
 
-        // 4. Empaquetamos la lista con la etiqueta exacta que espera nuestro escudo MVC
         request.setAttribute("listaLideres", listaLideres);
 
-        // 5. Enviamos al usuario y a los datos hacia la vista del constructor de mazos
+        // Enviamos a la vista
         request.getRequestDispatcher("/Views/deck-builder.jsp").forward(request, response);
     }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Por si acaso algún enlace redirige aquí por POST, lo mandamos al GET
         doGet(request, response);
     }
 }
