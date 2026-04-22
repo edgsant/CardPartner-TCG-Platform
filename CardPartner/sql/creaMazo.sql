@@ -1,27 +1,30 @@
 -- =====================================================================
--- SCRIPT UNIFICADO DE INSERCIÓN DE MAZOS (TEACH & NAMI)
+-- SCRIPT DE REINICIO: LIMPIEZA TOTAL E INSERCIÓN DE TEACH & NAMI
 -- =====================================================================
+
+-- 1. LIMPIEZA: Borramos todos los mazos existentes. 
+-- Gracias al ON DELETE CASCADE, esto vacía también CONTIENE_CARTA.
+DELETE FROM MAZO;
+
+-- Reiniciamos el contador de IDs para que empiecen desde 1 otra vez (Opcional)
+ALTER TABLE MAZO AUTO_INCREMENT = 1;
 
 -- ---------------------------------------------------------------------
 -- BLOQUE 1: MAZO MARSHALL D. TEACH (Barbanegra)
 -- ---------------------------------------------------------------------
-
--- Definimos datos del primer mazo
-SET @creador = 1; -- Asegúrate de que este usuario ID existe en tu tabla USUARIO
+SET @creador = 1; 
 
 INSERT INTO MAZO (nombre_mazo, descripcion, id_usuario_creador, id_carta_lider, es_publico) 
 VALUES (
     'Marshall D. Teach Control', 
-    'Estrategia de descarte y control de mano usando a Barbanegra.', 
+    'ESTRATEGIA DE DESCARTE Y CONTROL DE MANO USANDO A BARBANEGRA.', 
     @creador, 
     'OP09-081', 
     1
 );
 
--- Capturamos el ID de Teach
 SET @id_teach = LAST_INSERT_ID();
 
--- Insertamos sus cartas
 INSERT INTO CONTIENE_CARTA (id_mazo, id_carta, cantidad) VALUES 
 (@id_teach, 'OP09-081', 1), (@id_teach, 'OP05-086', 4), (@id_teach, 'OP09-095', 4),
 (@id_teach, 'OP11-083', 4), (@id_teach, 'OP09-089', 3), (@id_teach, 'OP09-088', 4),
@@ -34,21 +37,17 @@ INSERT INTO CONTIENE_CARTA (id_mazo, id_carta, cantidad) VALUES
 -- ---------------------------------------------------------------------
 -- BLOQUE 2: MAZO NAMI (Mill Deck)
 -- ---------------------------------------------------------------------
-
--- Definimos datos del segundo mazo
 INSERT INTO MAZO (nombre_mazo, descripcion, id_usuario_creador, id_carta_lider, es_publico) 
 VALUES (
     'Nami Mill Control', 
-    'Mazo con condición de victoria alternativa: ganar al vaciar el mazo propio.', 
+    'MAZO CON CONDICIÓN DE VICTORIA ALTERNATIVA: GANAR AL VACIAR EL MAZO PROPIO.', 
     @creador, 
     'OP03-040', 
     1
 );
 
--- Capturamos el ID de Nami (ahora LAST_INSERT_ID ya no vale @id_teach, sino el nuevo)
 SET @id_nami = LAST_INSERT_ID();
 
--- Insertamos sus cartas
 INSERT INTO CONTIENE_CARTA (id_mazo, id_carta, cantidad) VALUES 
 (@id_nami, 'OP03-040', 1), (@id_nami, 'OP03-044', 4), (@id_nami, 'OP04-041', 4),
 (@id_nami, 'OP09-050', 4), (@id_nami, 'OP04-050', 2), (@id_nami, 'OP03-047', 2),
@@ -57,6 +56,3 @@ INSERT INTO CONTIENE_CARTA (id_mazo, id_carta, cantidad) VALUES
 (@id_nami, 'OP07-055', 3), (@id_nami, 'OP02-067', 2), (@id_nami, 'OP03-056', 4),
 (@id_nami, 'OP02-069', 1);
 
--- =====================================================================
--- VERIFICACIÓN FINAL (Opcional: Ejecuta esto para ver si se han creado bien)
--- ===================================================================
