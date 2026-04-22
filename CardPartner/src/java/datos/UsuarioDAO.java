@@ -250,7 +250,57 @@ public class UsuarioDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            // (Cierre de conexiones ps y con)
+            try {
+                if (ps != null) ps.close();
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return exito;
+    }
+    
+    /**
+     * Actualiza el perfil del usuario. Si se proporciona un nuevo avatar (InputStream),
+     * también lo actualiza en la base de datos.
+     */
+    public boolean actualizarPerfilCompleto(int idUsuario, String nuevoApodo, String nuevoEmail, InputStream nuevoAvatar) {
+        boolean exito = false;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+
+        try {
+            // Si el usuario ha subido una foto nueva
+            if (nuevoAvatar != null) {
+                String sql = "UPDATE USUARIO SET apodo_usuario = ?, email = ?, avatar = ? WHERE id_usuario = ?";
+                ps = con.prepareStatement(sql);
+                ps.setString(1, nuevoApodo);
+                ps.setString(2, nuevoEmail);
+                ps.setBlob(3, nuevoAvatar);
+                ps.setInt(4, idUsuario);
+            } 
+            // Si NO ha subido foto (solo quiere cambiar texto)
+            else {
+                String sql = "UPDATE USUARIO SET apodo_usuario = ?, email = ? WHERE id_usuario = ?";
+                ps = con.prepareStatement(sql);
+                ps.setString(1, nuevoApodo);
+                ps.setString(2, nuevoEmail);
+                ps.setInt(3, idUsuario);
+            }
+
+            if (ps.executeUpdate() > 0) {
+                exito = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) ps.close();
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return exito;
     }
@@ -279,7 +329,12 @@ public class UsuarioDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            // (Cierre de conexiones ps y con)
+            try {
+                if (ps != null) ps.close();
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return exito;
     }

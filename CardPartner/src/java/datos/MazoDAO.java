@@ -36,7 +36,7 @@ public class MazoDAO {
 
     // Borra el mazo asegurando que pertenece a ese usuario
     private static final String SQL_DELETE_MAZO = "DELETE FROM MAZO WHERE id_mazo = ? AND id_usuario_creador = ?";
-    
+
     private static final String SQL_SELECT_MAZO_POR_ID = "SELECT * FROM MAZO WHERE id_mazo = ?";
 
     // La consulta mágica que une la cantidad con los datos visuales de la carta
@@ -46,14 +46,16 @@ public class MazoDAO {
             + "INNER JOIN CARTA c ON cc.id_carta = c.id_carta "
             + "WHERE cc.id_mazo = ?";
 
-    
-    private static final String SQL_SELECT_FAVORITOS = 
-        "SELECT m.*, c.nombre_carta, c.imagen, c.color " +
-        "FROM MAZO m " +
-        "INNER JOIN GUARDA_MAZO gm ON m.id_mazo = gm.id_mazo " +
-        "INNER JOIN CARTA c ON m.id_carta_lider = c.id_carta " +
-        "WHERE gm.id_usuario = ?";
-    
+    private static final String SQL_SELECT_FAVORITOS
+            = "SELECT m.*, c.nombre_carta, c.imagen, c.color "
+            + "FROM MAZO m "
+            + "INNER JOIN GUARDA_MAZO gm ON m.id_mazo = gm.id_mazo "
+            + "INNER JOIN CARTA c ON m.id_carta_lider = c.id_carta "
+            + "WHERE gm.id_usuario = ?";
+
+    private static final String SQL_INSERT_FAVORITO = "INSERT INTO GUARDA_MAZO (id_usuario, id_mazo) VALUES (?, ?)";
+    private static final String SQL_DELETE_FAVORITO = "DELETE FROM GUARDA_MAZO WHERE id_usuario = ? AND id_mazo = ?";
+
     /**
      * Este método es idéntico a registrar un usuario. La misión es insertar la
      * cabecera del mazo (nombre, creador, líder) y recuperar el ID autogenerado
@@ -160,14 +162,13 @@ public class MazoDAO {
         return exito;
     }
 
-    
     /**
-     * 
+     *
      * Busca mazos públicos en la comunidad aplicando filtros dinámicos. Soporta
-     * coincidencias parciales en el nombre del mazo.
-     * Usa un INNER JOIN con la carta líder para optimizar
-     * consultas y permitir el filtrado por el color del líder.
-     * 
+     * coincidencias parciales en el nombre del mazo. Usa un INNER JOIN con la
+     * carta líder para optimizar consultas y permitir el filtrado por el color
+     * del líder.
+     *
      * @param esOficial
      * @param minWinrate
      * @param nombreBuscado
@@ -175,7 +176,7 @@ public class MazoDAO {
      * @param colorLider
      * @param limite
      * @param offset
-     * @return 
+     * @return
      */
     public ArrayList<Mazo> filtrarMazosPublicos(Boolean esOficial, Float minWinrate, String nombreBuscado, String idCartaLider, String colorLider, int limite, int offset) {
         ArrayList<Mazo> listaMazos = new ArrayList<>();
@@ -186,10 +187,10 @@ public class MazoDAO {
 
         // 1. BASE DE LA CONSULTA CON INNER JOIN
         StringBuilder sql = new StringBuilder(
-            "SELECT m.*, c.nombre_carta, c.imagen, c.color " +
-            "FROM MAZO m " +
-            "INNER JOIN CARTA c ON m.id_carta_lider = c.id_carta " +
-            "WHERE m.es_publico = 1"
+                "SELECT m.*, c.nombre_carta, c.imagen, c.color "
+                + "FROM MAZO m "
+                + "INNER JOIN CARTA c ON m.id_carta_lider = c.id_carta "
+                + "WHERE m.es_publico = 1"
         );
 
         // 2. APLICAMOS FILTROS
@@ -207,7 +208,7 @@ public class MazoDAO {
         }
         if (colorLider != null && !colorLider.trim().isEmpty()) {
             // Permite que un mazo "Rojo/Verde" salga si buscamos "Rojo"
-            sql.append(" AND c.color LIKE ?"); 
+            sql.append(" AND c.color LIKE ?");
         }
 
         sql.append(" ORDER BY m.fecha_creacion DESC LIMIT ? OFFSET ?");
@@ -217,8 +218,12 @@ public class MazoDAO {
             int paramIndex = 1;
 
             // 3. RELLENAMOS PARÁMETROS
-            if (esOficial != null) ps.setBoolean(paramIndex++, esOficial);
-            if (minWinrate != null) ps.setFloat(paramIndex++, minWinrate);
+            if (esOficial != null) {
+                ps.setBoolean(paramIndex++, esOficial);
+            }
+            if (minWinrate != null) {
+                ps.setFloat(paramIndex++, minWinrate);
+            }
             if (nombreBuscado != null && !nombreBuscado.trim().isEmpty()) {
                 ps.setString(paramIndex++, "%" + nombreBuscado.trim() + "%");
             }
@@ -358,12 +363,12 @@ public class MazoDAO {
         }
         return listaCartas;
     }
-    
-    
+
     /**
      * Busca un mazo específico por su ID.
+     *
      * @param idMazo
-     * @return 
+     * @return
      */
     public Mazo obtenerMazoPorId(int idMazo) {
         Mazo mazoEncontrado = null;
@@ -396,11 +401,12 @@ public class MazoDAO {
         }
         return mazoEncontrado;
     }
-    
+
     /**
      * Obtiene los mazos que el usuario ha guardado
+     *
      * @param idUsuario
-     * @return 
+     * @return
      */
     public ArrayList<Mazo> obtenerMazosGuardados(int idUsuario) {
         ArrayList<Mazo> listaFavoritos = new ArrayList<>();
@@ -420,7 +426,7 @@ public class MazoDAO {
                 m.setIdMazo(rs.getInt("id_mazo"));
                 m.setNombreMazo(rs.getString("nombre_mazo"));
                 // ... (setear todos los atributos básicos del mazo)
-                
+
                 // Montamos el líder
                 modelo.Carta lider = new modelo.Carta();
                 lider.setIdCarta(rs.getString("id_carta_lider"));
@@ -431,8 +437,72 @@ public class MazoDAO {
                 m.setCartaLider(lider);
                 listaFavoritos.add(m);
             }
-        } catch (SQLException e) { e.printStackTrace(); } 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         // ... (finally close)
         return listaFavoritos;
+    }
+
+    /**
+     * Guarda un mazo en la lista de favoritos del usuario
+     */
+    public boolean añadirMazoFavorito(int idUsuario, int idMazo) {
+        boolean exito = false;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+
+        try {
+            ps = con.prepareStatement(SQL_INSERT_FAVORITO);
+            ps.setInt(1, idUsuario);
+            ps.setInt(2, idMazo);
+            if (ps.executeUpdate() > 0) {
+                exito = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Si da error por clave duplicada, simplemente devolverá false
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return exito;
+    }
+
+    /**
+     * Elimina un mazo de la lista de favoritos del usuario
+     */
+    public boolean quitarMazoFavorito(int idUsuario, int idMazo) {
+        boolean exito = false;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+
+        try {
+            ps = con.prepareStatement(SQL_DELETE_FAVORITO);
+            ps.setInt(1, idUsuario);
+            ps.setInt(2, idMazo);
+            if (ps.executeUpdate() > 0) {
+                exito = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return exito;
     }
 }
