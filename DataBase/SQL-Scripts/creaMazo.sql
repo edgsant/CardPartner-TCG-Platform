@@ -59,5 +59,4 @@ INSERT INTO CONTIENE_CARTA (id_mazo, id_carta, cantidad) VALUES
 
 -- =====================================================================
 -- VERIFICACIÓN FINAL (Opcional: Ejecuta esto para ver si se han creado bien)
--- =====================================================================
-SELECT id_mazo, nombre_mazo, id_carta_lider FROM MAZO WHERE id_mazo IN (@id_teach, @id_nami);
+-- ===================================================================
