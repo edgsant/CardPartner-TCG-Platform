@@ -1,18 +1,19 @@
 <%@page import="java.util.List"%>
 <%@page import="modelo.Mazo"%>
 <%@page import="modelo.Carta"%>
-<%@page import="datos.MazoDAO"%>
-<%@page import="datos.CartaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     // ==========================================
-    // CONEXIÓN REAL A LA BD: MAZOS OFICIALES
+    // PATRÓN MVC: RECIBIR DATOS DEL SERVLET
     // ==========================================
-    MazoDAO mazoDao = new MazoDAO();
-    CartaDAO cartaDao = new CartaDAO();
+    // El Servlet usa la misma variable ("listaMazosComunidad") para enviar la lista
+    List<Mazo> listaMeta = (List<Mazo>) request.getAttribute("listaMazosComunidad");
     
-    // Le pasamos "true" en el primer parámetro para que solo traiga los Oficiales
-    List<Mazo> listaMeta = mazoDao.filtrarMazosPublicos(true, null, null, null, 20, 0);
+    // ESCUDO: Si entramos directo al JSP, redirigimos al Servlet indicando que queremos los oficiales
+    if (listaMeta == null) {
+        response.sendRedirect(request.getContextPath() + "/CatalogoMazosServlet?accion=listar&tipo_mazo=oficial");
+        return; 
+    }
 %>
 <!DOCTYPE html>
 <html lang="es">
@@ -23,7 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <title>Card Partner - META Decks</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/metaDecksStyle.css?v=5">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/metaDecksStyle.css?v=6">
 </head>
 <body>
 
@@ -48,13 +49,14 @@
                 <section class="galeria-mazos">
                     
                     <%
-                        if (listaMeta != null && !listaMeta.isEmpty()) {
+                        if (!listaMeta.isEmpty()) {
                             for(Mazo m : listaMeta) {
-                                Carta lider = cartaDao.obtenerCartaPorId(m.getIdCartaLider());
+                                Carta lider = m.getCartaLider();
                                 String imgLider = (lider != null && lider.getImagen() != null) ? lider.getImagen() : "/img/logo.png";
                                 String colorLider = (lider != null && lider.getColor() != null) ? lider.getColor() : "Desconocido";
                     %>
-                        <a href="${pageContext.request.contextPath}/Views/deck-view.jsp?id=<%= m.getIdMazo() %>" class="mazo-item">
+                        <!-- MUY IMPORTANTE: Ahora el enlace viaja al Servlet pidiendo el "detalle" -->
+                        <a href="${pageContext.request.contextPath}/CatalogoMazosServlet?accion=detalle&id=<%= m.getIdMazo() %>" class="mazo-item">
                             <div class="mazo-imagen">
                                 <img src="${pageContext.request.contextPath}<%= imgLider %>" alt="Líder Meta">
                             </div>
@@ -68,7 +70,7 @@
                             }
                         } else {
                     %>
-                        <p style="color: white;">Aún no hay mazos oficiales registrados en el meta actual.</p>
+                        <p style="color: white; text-align: center; width: 100%;">Aún no hay mazos oficiales registrados en el meta actual.</p>
                     <%
                         }
                     %>

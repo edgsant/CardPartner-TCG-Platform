@@ -1,18 +1,18 @@
 <%@page import="java.util.List"%>
 <%@page import="modelo.Mazo"%>
 <%@page import="modelo.Carta"%>
-<%@page import="datos.MazoDAO"%>
-<%@page import="datos.CartaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     // ==========================================
-    // CONEXIÓN REAL A LA BASE DE DATOS
+    // PATRÓN MVC: RECIBIR DATOS DEL SERVLET
     // ==========================================
-    MazoDAO mazoDao = new MazoDAO();
-    CartaDAO cartaDao = new CartaDAO();
+    List<Mazo> listaMazos = (List<Mazo>) request.getAttribute("listaMazosComunidad");
     
-    // Obtenemos los mazos públicos (limite de 20 para no saturar)
-    List<Mazo> listaMazos = mazoDao.filtrarMazosPublicos(null, null, null, null, 20, 0);
+    // ESCUDO: Si entramos directo al JSP, redirigimos al Servlet indicando que queremos los de la comunidad
+    if (listaMazos == null) {
+        response.sendRedirect(request.getContextPath() + "/CatalogoMazosServlet?accion=listar&tipo_mazo=comunidad");
+        return; 
+    }
 %>
 <!DOCTYPE html>
 <html lang="es">
@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <title>Card Partner - Community Decks</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/communityDeckStyle.css?v=5">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/communityDeckStyle.css?v=6">
 </head>
 <body>
 
@@ -49,14 +49,15 @@
                 <section class="galeria-mazos">
                     
                     <%
-                        if (listaMazos != null && !listaMazos.isEmpty()) {
+                        if (!listaMazos.isEmpty()) {
                             for(Mazo m : listaMazos) {
-                                // Buscamos al líder para sacar su foto y color
-                                Carta lider = cartaDao.obtenerCartaPorId(m.getIdCartaLider());
+                                // El Servlet ya nos incluye el objeto Carta líder dentro del Mazo
+                                Carta lider = m.getCartaLider();
                                 String imgLider = (lider != null && lider.getImagen() != null) ? lider.getImagen() : "/img/logo.png";
                                 String colorLider = (lider != null && lider.getColor() != null) ? lider.getColor() : "Desconocido";
                     %>
-                        <a href="${pageContext.request.contextPath}/Views/deck-view.jsp?id=<%= m.getIdMazo() %>" class="mazo-item">
+                        <!-- MUY IMPORTANTE: Ahora el enlace viaja al Servlet pidiendo el "detalle" -->
+                        <a href="${pageContext.request.contextPath}/CatalogoMazosServlet?accion=detalle&id=<%= m.getIdMazo() %>" class="mazo-item">
                             <div class="mazo-imagen">
                                 <img src="${pageContext.request.contextPath}<%= imgLider %>" alt="Líder del mazo">
                             </div>
@@ -71,7 +72,7 @@
                             }
                         } else {
                     %>
-                        <p style="color: white;">Aún no hay mazos en la comunidad.</p>
+                        <p style="color: white; text-align: center; width: 100%;">Aún no hay mazos en la comunidad.</p>
                     <%
                         }
                     %>
