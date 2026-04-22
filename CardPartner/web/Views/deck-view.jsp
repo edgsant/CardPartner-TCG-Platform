@@ -60,6 +60,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/deckViewStyle.css?v=20">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Fix de deformación de cartas */
         .deck-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -72,12 +73,6 @@
             aspect-ratio: 2 / 2.8; 
             background: rgba(0,0,0,0.1);
             border-radius: 10px;
-            transition: transform 0.2s ease;
-            display: block; /* Para que el enlace ocupe todo el espacio */
-        }
-        .carta-item:hover {
-            transform: scale(1.05);
-            z-index: 10;
         }
         .carta-item img {
             width: 100%;
@@ -98,17 +93,12 @@
             font-size: 1.1rem;
             border: 1px solid #ffcc00;
             z-index: 5;
-            pointer-events: none; /* Para que no interfiera con el click del enlace */
         }
         .lider-seccion img {
             width: 100%;
             max-width: 300px;
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            transition: opacity 0.3s ease;
-        }
-        .lider-seccion a:hover img {
-            opacity: 0.8;
         }
     </style>
 </head>
@@ -122,11 +112,9 @@
                 
                 <div class="deck-header">
                     <div class="lider-seccion">
-                        <a href="${pageContext.request.contextPath}/CartasServlet?accion=detalle&id=<%= mazoActual.getIdCartaLider() %>">
-                            <img src="<%= srcFinal %>" 
-                                 alt="Líder" 
-                                 onerror="this.onerror=null; this.src='${pageContext.request.contextPath}/img/logo.png';">
-                        </a>
+                        <img src="<%= srcFinal %>" 
+                             alt="Líder" 
+                             onerror="this.onerror=null; this.src='${pageContext.request.contextPath}/img/logo.png';">
                         <p><strong>Líder:</strong> <%= nombreLider %> (<%= mazoActual.getIdCartaLider() %>)</p>
                     </div>
 
@@ -152,7 +140,7 @@
                             for (ContieneCarta cc : listaCartas) {
                                 Carta c = cc.getCarta();
                                 
-                                // Omitir al líder en la lista de cartas inferior si ya se muestra arriba
+                                // Omitir al líder en la lista de cartas inferior
                                 if (c.getIdCarta().equals(mazoActual.getIdCartaLider())) {
                                     continue;
                                 }
@@ -166,11 +154,11 @@
                                     srcCarta = request.getContextPath() + (imgCartaRaw.isEmpty() ? "/img/logo.png" : imgCartaRaw);
                                 }
                     %>
-                        <a href="${pageContext.request.contextPath}/CartasServlet?accion=detalle&id=<%= c.getIdCarta() %>" class="carta-item">
+                        <div class="carta-item">
                             <img src="<%= srcCarta %>" alt="<%= c.getNombreCarta() %>" loading="lazy" 
                                  onerror="this.onerror=null; this.src='${pageContext.request.contextPath}/img/logo.png';">
                             <span class="badge-cantidad">x<%= cc.getCantidad() %></span>
-                        </a>
+                        </div>
                     <%
                             }
                         } else {
