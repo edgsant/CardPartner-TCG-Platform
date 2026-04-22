@@ -167,7 +167,44 @@
         </div>
     </div>
 
+    <!-- ========================================== -->
+    <!-- MODAL DE FILTROS AVANZADOS                 -->
+    <!-- ========================================== -->
     <div id="modal-filtros" class="modal-overlay">
+        <div class="modal-content" style="max-width: 500px;">
+            <a href="#" class="btn-cerrar">&times;</a>
+            <h2 class="titulo-seccion" style="font-size: 24px; margin-bottom: 20px;">Filtros Avanzados</h2>
+            
+            <form action="${pageContext.request.contextPath}/CartasServlet" method="GET">
+                <!-- Parámetro oculto para que el Servlet sepa qué hacer -->
+                <input type="hidden" name="accion" value="filtrar">
+                
+                <div class="campo-form" style="text-align: left;">
+                    
+                    <label style="font-weight: bold; margin-bottom: 5px; display: block;">Color de la Carta:</label>
+                    <select name="color" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc; font-family: 'Poppins', sans-serif;">
+                        <option value="">Todos los colores</option>
+                        <option value="Rojo" <%= "Rojo".equals(colorSel) ? "selected" : "" %>>Rojo</option>
+                        <option value="Verde" <%= "Verde".equals(colorSel) ? "selected" : "" %>>Verde</option>
+                        <option value="Azul" <%= "Azul".equals(colorSel) ? "selected" : "" %>>Azul</option>
+                        <option value="Amarillo" <%= "Amarillo".equals(colorSel) ? "selected" : "" %>>Amarillo</option>
+                        <option value="Negro" <%= "Negro".equals(colorSel) ? "selected" : "" %>>Negro</option>
+                        <option value="Morado" <%= "Morado".equals(colorSel) ? "selected" : "" %>>Morado</option>
+                    </select>
+
+                    <label style="font-weight: bold; margin-bottom: 5px; display: block;">Tipo de Carta:</label>
+                    <select name="tipo" style="width: 100%; padding: 10px; margin-bottom: 25px; border-radius: 8px; border: 1px solid #ccc; font-family: 'Poppins', sans-serif;">
+                        <option value="">Todos los tipos</option>
+                        <option value="LIDER" <%= "LIDER".equals(tipoSel) ? "selected" : "" %>>Líder</option>
+                        <option value="PERSONAJE" <%= "PERSONAJE".equals(tipoSel) ? "selected" : "" %>>Personaje</option>
+                        <option value="EVENTO" <%= "EVENTO".equals(tipoSel) ? "selected" : "" %>>Evento</option>
+                        <option value="ESCENARIO" <%= "ESCENARIO".equals(tipoSel) ? "selected" : "" %>>Escenario</option>
+                    </select>
+                    
+                    <button type="submit" class="btn-filtro" style="width: 100%; padding: 12px; font-size: 16px;">Aplicar Filtros</button>
+                </div>
+            </form>
         </div>
+    </div>
 </body>
 </html>
