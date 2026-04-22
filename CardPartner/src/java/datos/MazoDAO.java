@@ -22,10 +22,6 @@ public class MazoDAO {
     // Para meter las cartas dentro del mazo
     private static final String SQL_INSERT_CARTA_EN_MAZO = "INSERT INTO CONTIENE_CARTA (id_mazo, id_carta, cantidad) VALUES (?, ?, ?)";
 
-    // Para listar los mazos de la comunidad PAGINADO para que no explote al consultar cientos de elementos
-    private static final String SQL_SELECT_PUBLICOS_PAGINADO
-            = "SELECT * FROM MAZO WHERE es_publico = 1 ORDER BY fecha_creacion DESC LIMIT ? OFFSET ?";
-
     // Consulta que une el mazo con la carta líder para traer su imagen
     private static final String SQL_SELECT_POR_USUARIO
             = "SELECT m.*, c.nombre_carta, c.imagen, c.color "
@@ -397,7 +393,13 @@ public class MazoDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            // ... (cierre de conexiones habitual rs, ps, con)
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return mazoEncontrado;
     }
@@ -421,13 +423,18 @@ public class MazoDAO {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                // Montamos el Mazo igual que en los otros métodos
                 Mazo m = new Mazo();
                 m.setIdMazo(rs.getInt("id_mazo"));
                 m.setNombreMazo(rs.getString("nombre_mazo"));
-                // ... (setear todos los atributos básicos del mazo)
+                // Rellenamos el RESTO de campos
+                m.setDescripcion(rs.getString("descripcion"));
+                m.setEsPublico(rs.getBoolean("es_publico"));
+                m.setEsOficial(rs.getBoolean("es_oficial"));
+                m.setFechaCreacion(rs.getTimestamp("fecha_creacion"));
+                m.setWinrate(rs.getFloat("winrate"));
+                m.setIdUsuarioCreador(rs.getInt("id_usuario_creador"));
+                m.setIdCartaLider(rs.getString("id_carta_lider"));
 
-                // Montamos el líder
                 modelo.Carta lider = new modelo.Carta();
                 lider.setIdCarta(rs.getString("id_carta_lider"));
                 lider.setNombreCarta(rs.getString("nombre_carta"));
@@ -439,8 +446,16 @@ public class MazoDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            // AHORA SÍ CERRAMOS LA CONEXIÓN
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-        // ... (finally close)
         return listaFavoritos;
     }
 
@@ -504,5 +519,60 @@ public class MazoDAO {
             }
         }
         return exito;
+    }
+    
+    /**
+     * Obtiene todos los mazos creados por un usuario específico.
+     * Incluye los datos de la carta líder mediante el INNER JOIN.
+     */
+    public ArrayList<Mazo> obtenerMazosPorUsuario(int idUsuario) {
+        ArrayList<Mazo> listaMazos = new ArrayList<>();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            ps = con.prepareStatement(SQL_SELECT_POR_USUARIO);
+            ps.setInt(1, idUsuario);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                // 1. Creamos el mazo con todos sus atributos
+                Mazo m = new Mazo();
+                m.setIdMazo(rs.getInt("id_mazo"));
+                m.setNombreMazo(rs.getString("nombre_mazo"));
+                m.setDescripcion(rs.getString("descripcion"));
+                m.setEsPublico(rs.getBoolean("es_publico"));
+                m.setEsOficial(rs.getBoolean("es_oficial"));
+                m.setFechaCreacion(rs.getTimestamp("fecha_creacion"));
+                m.setWinrate(rs.getFloat("winrate"));
+                m.setIdUsuarioCreador(rs.getInt("id_usuario_creador"));
+                m.setIdCartaLider(rs.getString("id_carta_lider"));
+
+                // 2. Creamos la carta líder usando los datos del JOIN
+                modelo.Carta lider = new modelo.Carta();
+                lider.setIdCarta(rs.getString("id_carta_lider"));
+                lider.setNombreCarta(rs.getString("nombre_carta"));
+                lider.setImagen(rs.getString("imagen"));
+                lider.setColor(rs.getString("color"));
+
+                // 3. Guardamos la carta dentro del mazo
+                m.setCartaLider(lider);
+
+                listaMazos.add(m);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return listaMazos;
     }
 }
