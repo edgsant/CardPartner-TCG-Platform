@@ -28,10 +28,9 @@
 </head>
 <body>
 
-    <div class="fondo-rosa">
-        <div class="contenedor-principal">
-            
-            <jsp:include page="/components/cabecera.jsp" />
+        <div class="fondo-rosa">
+            <div class="contenedor-principal">
+                <jsp:include page="/components/cabecera.jsp" />
 
             <main class="contenido-cartas">
                 
@@ -59,8 +58,7 @@
                             <img src="${pageContext.request.contextPath}<%= imgCarta %>" alt="<%= c.getNombreCarta() %>">
                             <div class="carta-info">
                                 <h3><%= c.getNombreCarta() %></h3>
-                                <p><%= c.getIdCarta() %> | <%= c.getTipo() %></p>
-                                <span class="precio"><%= String.format("%.2f", precioMercado) %> €</span>
+                                <p><strong><%= c.getIdCarta() %></strong> | <%= c.getTipo() %></p>
                             </div>
                         </a>
                     <%

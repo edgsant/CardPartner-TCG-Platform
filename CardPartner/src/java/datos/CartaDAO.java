@@ -6,10 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import modelo.Carta;
 
-/**
- *
- * @author edgar
- */
+
 public class CartaDAO {
 
     // Consulta para buscar una carta específica (ej. al hacer clic en ella o añadirla a un mazo)
@@ -47,7 +44,7 @@ public class CartaDAO {
                 cartaEncontrada.setImagen(rs.getString("imagen"));
                 
                 cartaEncontrada.setArquetipo(rs.getString("arquetipo"));
-                cartaEncontrada.setAtributoCarta(rs.getString("atributo"));
+                cartaEncontrada.setAtributoCarta(rs.getString("atributo_combate"));
                 cartaEncontrada.setPrecioMercado(rs.getDouble("precio_mercado"));
             }
         } catch (SQLException e) {
@@ -101,7 +98,7 @@ public class CartaDAO {
             sql.append(" AND arquetipo = ?");
         }
         if (atributo != null && !atributo.trim().isEmpty()) {
-            sql.append(" AND atributo = ?");
+            sql.append(" AND atributo_combate = ?");
         }
 
         // Añadimos siempre la paginación al final
@@ -141,11 +138,10 @@ public class CartaDAO {
                 c.setTipo(rs.getString("tipo"));
                 // Asegúrate de que tu DTO Carta tiene estos setters
                 c.setArquetipo(rs.getString("arquetipo"));
-                c.setAtributoCarta(rs.getString("atributo"));
+                c.setAtributoCarta(rs.getString("atributo_combate"));
                 c.setCoste(rs.getInt("coste"));
                 c.setPoder(rs.getInt("poder"));
                 c.setImagen(rs.getString("imagen"));
-
                 listaCartas.add(c);
             }
         } catch (SQLException e) {

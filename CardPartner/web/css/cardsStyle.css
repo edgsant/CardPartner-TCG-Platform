@@ -248,6 +248,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    aspect-ratio: 2/3; /* Proporción estándar de carta */
     text-decoration: none;
     color: #333;
     background-color: white;
