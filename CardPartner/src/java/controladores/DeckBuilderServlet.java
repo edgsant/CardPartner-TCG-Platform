@@ -1,7 +1,10 @@
 package controladores;
 
 import datos.CartaDAO;
+import datos.MazoDAO;
 import modelo.Carta;
+import modelo.Mazo;
+import modelo.ContieneCarta;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,6 +14,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import modelo.Usuario;
 
 @WebServlet(name = "DeckBuilderServlet", urlPatterns = {"/DeckBuilderServlet"})
 public class DeckBuilderServlet extends HttpServlet {
@@ -19,27 +23,49 @@ public class DeckBuilderServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        // ==========================================
-        // 1. BARRERA DE SEGURIDAD (Solo usuarios logueados)
-        // ==========================================
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("usuarioActivo") == null) {
-            // Si no hay sesión o no hay usuario activo, lo echamos al Login
             response.sendRedirect(request.getContextPath() + "/Views/login.jsp?error=necesitas_login");
-            return; // ¡Muy importante el return para cortar la ejecución!
+            return; 
         }
+        
+        Usuario usuarioLogueado = (Usuario) session.getAttribute("usuarioActivo");
 
-        // ==========================================
-        // 2. CARGA DE DATOS PARA EL CONSTRUCTOR
-        // ==========================================
         CartaDAO cartaDAO = new CartaDAO();
-
-        // Traemos todos los líderes para llenar el modal visual
         List<Carta> listaLideres = cartaDAO.filtrarCartas(null, "LIDER", null, null, 100, 0);
-
         request.setAttribute("listaLideres", listaLideres);
 
-        // Enviamos a la vista
+        // ==========================================
+        // 🌟 NUEVO: LÓGICA DE EDICIÓN
+        // ==========================================
+        String accion = request.getParameter("accion");
+        String idParam = request.getParameter("id");
+
+        if ("editar".equals(accion) && idParam != null) {
+            try {
+                int idMazo = Integer.parseInt(idParam);
+                MazoDAO mazoDAO = new MazoDAO();
+                Mazo mazoAEditar = mazoDAO.obtenerMazoPorId(idMazo);
+                
+                // Comprobación de seguridad: El mazo debe existir y ser del usuario logueado
+                if (mazoAEditar != null && mazoAEditar.getIdUsuarioCreador() == usuarioLogueado.getIdUsuario()) {
+                    
+                    // Cargamos el líder para tener su foto
+                    Carta lider = cartaDAO.obtenerCartaPorId(mazoAEditar.getIdCartaLider());
+                    mazoAEditar.setCartaLider(lider);
+                    
+                    // Cargamos las 50 cartas
+                    List<ContieneCarta> cartasDelMazo = mazoDAO.obtenerCartasDeUnMazo(idMazo);
+                    
+                    // Enviamos todo a la vista
+                    request.setAttribute("mazoAEditar", mazoAEditar);
+                    request.setAttribute("cartasAEditar", cartasDelMazo);
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+
         request.getRequestDispatcher("/Views/deck-builder.jsp").forward(request, response);
     }
     
