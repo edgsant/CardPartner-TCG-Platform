@@ -161,5 +161,69 @@ public class CartaDAO {
         }
         return listaCartas;
     }
+    /**
+     * Cuenta el total de cartas que cumplen con los filtros aplicados.
+     * Útil para calcular el número de páginas en el frontend.
+     */
+    public int contarTotalCartas(String color, String tipo, String arquetipo, String atributo) {
+        int total = 0;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
 
+        // 1. SQL dinámico similar al de filtrarCartas, pero con COUNT(*)
+        StringBuilder sql = new StringBuilder("SELECT COUNT(*) FROM CARTA WHERE 1=1");
+
+        if (color != null && !color.trim().isEmpty()) {
+            sql.append(" AND color = ?");
+        }
+        if (tipo != null && !tipo.trim().isEmpty()) {
+            sql.append(" AND tipo = ?");
+        }
+        if (arquetipo != null && !arquetipo.trim().isEmpty()) {
+            sql.append(" AND arquetipo = ?");
+        }
+        if (atributo != null && !atributo.trim().isEmpty()) {
+            sql.append(" AND atributo_combate = ?");
+        }
+
+        try {
+            ps = con.prepareStatement(sql.toString());
+
+            // 2. Rellenamos los parámetros en el mismo orden
+            int paramIndex = 1;
+            if (color != null && !color.trim().isEmpty()) {
+                ps.setString(paramIndex++, color);
+            }
+            if (tipo != null && !tipo.trim().isEmpty()) {
+                ps.setString(paramIndex++, tipo);
+            }
+            if (arquetipo != null && !arquetipo.trim().isEmpty()) {
+                ps.setString(paramIndex++, arquetipo);
+            }
+            if (atributo != null && !atributo.trim().isEmpty()) {
+                ps.setString(paramIndex++, atributo);
+            }
+
+            // 3. Ejecutar y obtener el número
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                total = rs.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // 4. Cierre de recursos siguiendo tu estructura
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return total;
+    }
 }

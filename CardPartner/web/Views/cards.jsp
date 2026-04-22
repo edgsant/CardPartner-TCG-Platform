@@ -12,17 +12,20 @@
         return; 
     }
 
-    // Recuperamos los filtros aplicados para mantenerlos visibles y usarlos en la paginación
+    // Recuperamos los filtros aplicados
     String colorSel = (request.getAttribute("colorSeleccionado") != null) ? (String)request.getAttribute("colorSeleccionado") : "";
     String tipoSel = (request.getAttribute("tipoSeleccionado") != null) ? (String)request.getAttribute("tipoSeleccionado") : "";
     String atributoSel = (request.getAttribute("atributoSeleccionado") != null) ? (String)request.getAttribute("atributoSeleccionado") : "";
 
-    // LÓGICA DE PAGINACIÓN
+    // LÓGICA DE PAGINACIÓN AVANZADA
     int paginaActual = (request.getAttribute("paginaActual") != null) ? (Integer)request.getAttribute("paginaActual") : 1;
-    // Si la lista trae 20 cartas (el límite actual del Servlet), asumimos que hay página siguiente
-    boolean hayPaginaSiguiente = (listaCartas.size() == 20); 
+    int totalPaginas = (request.getAttribute("totalPaginas") != null) ? (Integer)request.getAttribute("totalPaginas") : 1;
+    int totalRegistros = (request.getAttribute("totalRegistros") != null) ? (Integer)request.getAttribute("totalRegistros") : 0;
     
-    // Construimos la URL de filtros para que al cambiar de página no se pierda la búsqueda
+    // Ahora la lógica es exacta: hay siguiente si no estamos en la última página
+    boolean hayPaginaSiguiente = (paginaActual < totalPaginas); 
+    
+    // Construimos la URL de filtros para la paginación
     String queryFiltros = "&color=" + colorSel + "&tipo=" + tipoSel + "&atributo=" + atributoSel;
 %>
 <!DOCTYPE html>
@@ -55,7 +58,12 @@
             align-items: center;
             gap: 20px;
             margin-top: 30px;
+            padding-bottom: 40px;
             width: 100%;
+        }
+        .info-paginas {
+            text-align: center;
+            min-width: 150px;
         }
         .btn-paginacion {
             background: #333;
@@ -64,10 +72,14 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn-paginacion:hover {
+            background: #555;
         }
         .btn-paginacion.disabled {
-            background: #555;
-            opacity: 0.5;
+            background: #ccc;
+            color: #888;
             cursor: not-allowed;
             pointer-events: none;
         }
@@ -93,6 +105,8 @@
                         <a href="#modal-filtros" class="btn-filtro" style="text-decoration: none; display: inline-block;">Filtros ⚙️</a>
                     </div>
                 </div>
+
+                <p style="color: #666; margin-bottom: 15px;">Mostrando <%= listaCartas.size() %> de <%= totalRegistros %> cartas encontradas.</p>
 
                 <section class="galeria-cartas">
                     <%
@@ -124,13 +138,12 @@
                             }
                         } else {
                     %>
-                        <p style="color: #333; text-align: center; width: 100%; margin-top: 20px;">No se han encontrado cartas con esos filtros o la base de datos está vacía.</p>
+                        <p style="color: #333; text-align: center; width: 100%; margin-top: 20px;">No se han encontrado cartas con esos filtros.</p>
                     <%
                         }
                     %>
                 </section>
 
-                <!-- CONTROLES DE PAGINACIÓN -->
                 <div class="contenedor-paginacion">
                     <% if (paginaActual > 1) { %>
                         <a href="${pageContext.request.contextPath}/CartasServlet?accion=filtrar<%= queryFiltros %>&pagina=<%= paginaActual - 1 %>" class="btn-paginacion">&laquo; Anterior</a>
@@ -138,7 +151,11 @@
                         <a href="#" class="btn-paginacion disabled">&laquo; Anterior</a>
                     <% } %>
 
-                    <span style="color: #333; font-weight: bold; font-size: 18px;">Página <%= paginaActual %></span>
+                    <div class="info-paginas">
+                        <span style="color: #333; font-weight: bold; font-size: 18px; display: block;">
+                            Página <%= paginaActual %> de <%= totalPaginas %>
+                        </span>
+                    </div>
 
                     <% if (hayPaginaSiguiente) { %>
                         <a href="${pageContext.request.contextPath}/CartasServlet?accion=filtrar<%= queryFiltros %>&pagina=<%= paginaActual + 1 %>" class="btn-paginacion">Siguiente &raquo;</a>
@@ -151,7 +168,6 @@
         </div>
     </div>
 
-    <!-- VENTANA MODAL DE FILTROS -->
     <div id="modal-filtros" class="modal-overlay">
         <div class="modal-content">
             <a href="#" class="btn-cerrar">&times;</a>
