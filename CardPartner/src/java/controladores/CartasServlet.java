@@ -89,7 +89,7 @@ public class CartasServlet extends HttpServlet {
         request.setAttribute("atributoSeleccionado", atributo);
 
         // 5. Enviar al Frontend (Usamos FORWARD, no Redirect, para que viajen los atributos)
-        request.getRequestDispatcher("/Views/catalogo.jsp").forward(request, response);
+        request.getRequestDispatcher("/Views/cards.jsp").forward(request, response);
     }
 
     // ==========================================

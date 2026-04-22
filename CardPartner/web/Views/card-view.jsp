@@ -1,10 +1,12 @@
 <%@page import="modelo.Carta"%>
+<%@page import="datos.CartaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     // ==========================================
-    // RECIBIMOS LA CARTA DEL SERVLET
+    // LECTURA DINÁMICA DE LA BASE DE DATOS
     // ==========================================
-    Carta cartaActual = (Carta) request.getAttribute("cartaParaLaVista");
+    String idParam = request.getParameter("id");
+    Carta cartaActual = null;
     
     if (idParam != null && !idParam.isEmpty()) {
         CartaDAO cartaDao = new CartaDAO();
