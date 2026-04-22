@@ -218,9 +218,13 @@ body {
 }
 
 .guia-principal img {
-    width: 45%;
-    height: 250px;
-    object-fit: cover;
+    width: 100%;       /* O el ancho fijo que tengas diseñado */
+    height: 400px;     /* O el alto fijo que tengas diseñado */
+    
+    /* ESTO ES LO IMPORTANTE */
+    object-fit: cover; /* Llena el espacio y recorta, NO DEFORMA */
+    object-position: center; /* Centra el recorte en lo más importante */
+    font-family: 'object-fit: cover; object-position: center;'; /* Fix para navegadores muy viejos */
 }
 
 /* TEXTO (esto estaba mal colocado antes) */
