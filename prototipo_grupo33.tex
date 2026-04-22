@@ -222,6 +222,27 @@
 				
 				\item \textbf{Claves Primarias y Foráneas:} Se utilizan \texttt{INT AUTO\_INCREMENT} para entidades dinámicas (usuarios, mazos) para agilizar las búsquedas, mientras que las cartas utilizan un \texttt{VARCHAR(50)} como ID, permitiendo usar códigos alfanuméricos oficiales (ej: \"OP01-001\") que facilitan la integración con APIs externas.
 			\end{itemize}
+			\section{Problemática: CORS y Hotlinking}
+			El problema principal radica en dos conceptos fundamentales de la seguridad web:
+			
+			\begin{itemize}
+				\item \textbf{CORS (Cross-Origin Resource Sharing):} Es un mecanismo de seguridad que impide que un navegador cargue recursos de un dominio $A$ si la petición proviene de un dominio $B$, a menos que el servidor $A$ lo permita explícitamente en sus cabeceras.
+				\item \textbf{Protección contra Hotlinking:} Los servidores externos detectan la cabecera \texttt{Referer} de la petición. Si detectan que la imagen se intenta mostrar en una web ajena, bloquean la entrega del archivo para ahorrar ancho de banda.
+			\end{itemize}
+			
+			\section{Solución: Uso de un Proxy Inverso}
+			Para solucionar esta limitación y evitarnos  descargar miles de imágenes en nuestros pcs más luego subirlas a github, se ha implementado un filtrado mediante el proxy \textbf{images.weserv.nl}. 
+			
+			La lógica implementada realiza la siguiente transformación de la URL original $U$:
+			
+			\begin{equation} U_{final} = \text{https://images.weserv.nl/?url=} + U_{original} \end{equation}
+			
+			\subsection{Ventajas de la implementación}
+				\begin{enumerate}
+					\item \textbf{Evasión de Referer:} El proxy actúa como intermediario. El servidor de origen ve la petición como si viniera del proxy y no de nuestra aplicación local, permitiendo la descarga, saltándonos ese bloque a peticiones desde webs de terceros por motivos de seguridad.
+					\item \textbf{Optimización:} El proxy permite redimensionar y cachear las imágenes, mejorando el tiempo de respuesta de nuestra interfaz, aunque es más lento que sacarlas directamente de la bbdd, nos beneficia en el tamaño de la misma.
+					\item \textbf{Seguridad SSL:} Convierte peticiones que podrían ser inseguras (\texttt{http}) a un entorno seguro (\texttt{https}), evitando errores de contenido mixto en el navegador.
+				\end{enumerate}
 			%Script creacion
 			
 			%Hablar de los tipos de datos que puedan ser llamativos y decisiones generales detras de nullable, timestamps vs date, defaults, etc

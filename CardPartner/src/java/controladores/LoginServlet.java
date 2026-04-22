@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
             
             HttpSession session = request.getSession();
             session.setAttribute("usuarioActivo", usuarioLogueado);
-            
+            session.setMaxInactiveInterval(60 * 60 * 24); // para que la sesión dure un día entero
 
             if (recordarUsuario != null) { 
                 // Si el usuario marcó la casilla, le creamos una Cookie con su email
