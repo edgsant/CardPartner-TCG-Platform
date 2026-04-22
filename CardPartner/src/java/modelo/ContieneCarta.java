@@ -6,6 +6,7 @@ public class ContieneCarta implements Serializable {
     private int idMazo;
     private String idCarta;
     private int cantidad;
+    private Carta carta;
 
     public ContieneCarta() {}
 
@@ -39,5 +40,14 @@ public class ContieneCarta implements Serializable {
         this.cantidad = cantidad;
     }
 
+    public Carta getCarta() {
+        return carta;
+    }
+
+    public void setCarta(Carta carta) {
+        this.carta = carta;
+    }
+
+    
     
 }

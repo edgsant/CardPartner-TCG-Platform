@@ -26,6 +26,24 @@ public class MazoDAO {
     private static final String SQL_SELECT_PUBLICOS_PAGINADO
             = "SELECT * FROM MAZO WHERE es_publico = 1 ORDER BY fecha_creacion DESC LIMIT ? OFFSET ?";
 
+    // Consulta que une el mazo con la carta líder para traer su imagen
+    private static final String SQL_SELECT_POR_USUARIO
+            = "SELECT m.*, c.nombre_carta, c.imagen, c.color "
+            + "FROM MAZO m "
+            + "INNER JOIN CARTA c ON m.id_carta_lider = c.id_carta "
+            + "WHERE m.id_usuario_creador = ? "
+            + "ORDER BY m.fecha_creacion DESC";
+
+// Borra el mazo asegurando que pertenece a ese usuario
+    private static final String SQL_DELETE_MAZO = "DELETE FROM MAZO WHERE id_mazo = ? AND id_usuario_creador = ?";
+
+    // La consulta mágica que une la cantidad con los datos visuales de la carta
+    private static final String SQL_SELECT_CARTAS_DE_MAZO
+            = "SELECT cc.cantidad, c.* "
+            + "FROM CONTIENE_CARTA cc "
+            + "INNER JOIN CARTA c ON cc.id_carta = c.id_carta "
+            + "WHERE cc.id_mazo = ?";
+
     /**
      * Este método es idéntico a registrar un usuario. La misión es insertar la
      * cabecera del mazo (nombre, creador, líder) y recuperar el ID autogenerado
@@ -232,5 +250,161 @@ public class MazoDAO {
         }
 
         return listaMazos;
+    }
+
+    /**
+     * * Devuelve todos los mazos creados por un usuario específico. Incluye un
+     * INNER JOIN para poblar automáticamente el objeto Carta del líder.
+     *
+     * @param idUsuario
+     * @return
+     */
+    public ArrayList<Mazo> obtenerMazosPorUsuario(int idUsuario) {
+        ArrayList<Mazo> listaMazos = new ArrayList<>();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            ps = con.prepareStatement(SQL_SELECT_POR_USUARIO);
+            ps.setInt(1, idUsuario);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                // 1. Creamos el mazo
+                Mazo m = new Mazo();
+                m.setIdMazo(rs.getInt("id_mazo"));
+                m.setNombreMazo(rs.getString("nombre_mazo"));
+                m.setDescripcion(rs.getString("descripcion"));
+                m.setEsPublico(rs.getBoolean("es_publico"));
+                m.setEsOficial(rs.getBoolean("es_oficial"));
+                m.setFechaCreacion(rs.getTimestamp("fecha_creacion"));
+                m.setWinrate(rs.getFloat("winrate"));
+                m.setIdUsuarioCreador(rs.getInt("id_usuario_creador"));
+                m.setIdCartaLider(rs.getString("id_carta_lider"));
+
+                // 2. Creamos la carta líder usando los datos del JOIN
+                modelo.Carta lider = new modelo.Carta();
+                lider.setIdCarta(rs.getString("id_carta_lider"));
+                lider.setNombreCarta(rs.getString("nombre_carta"));
+                lider.setImagen(rs.getString("imagen"));
+                lider.setColor(rs.getString("color"));
+
+                // 3. Guardamos la carta dentro del mazo
+                m.setCartaLider(lider);
+
+                listaMazos.add(m);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return listaMazos;
+    }
+
+    /**
+     * Elimina un mazo de la base de datos. Importante: Asume que la base de
+     * datos tiene "ON DELETE CASCADE" en la tabla CONTIENE_CARTA, de lo
+     * contrario dará error de clave foránea.
+     */
+    public boolean borrarMazo(int idMazo, int idUsuarioCreador) {
+        boolean exito = false;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+
+        try {
+            ps = con.prepareStatement(SQL_DELETE_MAZO);
+            ps.setInt(1, idMazo);
+            ps.setInt(2, idUsuarioCreador);
+
+            int filasBorradas = ps.executeUpdate();
+            if (filasBorradas > 0) {
+                exito = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return exito;
+    }
+
+    /**
+     * Recupera las 50 cartas de un mazo específico junto con su cantidad. Se
+     * usa SOLO cuando el usuario entra a ver el detalle de un mazo.
+     *
+     * @param idMazo
+     * @return
+     */
+    public ArrayList<modelo.ContieneCarta> obtenerCartasDeUnMazo(int idMazo) {
+        ArrayList<modelo.ContieneCarta> listaCartas = new ArrayList<>();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            ps = con.prepareStatement(SQL_SELECT_CARTAS_DE_MAZO);
+            ps.setInt(1, idMazo);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                // 1. Creamos el objeto puente (la cantidad)
+                modelo.ContieneCarta cc = new modelo.ContieneCarta();
+                cc.setIdMazo(idMazo);
+                cc.setIdCarta(rs.getString("id_carta"));
+                cc.setCantidad(rs.getInt("cantidad"));
+
+                // 2. Creamos la carta real con su foto, poder, etc.
+                modelo.Carta carta = new modelo.Carta();
+                carta.setIdCarta(rs.getString("id_carta"));
+                carta.setNombreCarta(rs.getString("nombre_carta"));
+                carta.setImagen(rs.getString("imagen"));
+                carta.setColor(rs.getString("color"));
+                carta.setTipo(rs.getString("tipo"));
+                carta.setCoste(rs.getInt("coste"));
+                carta.setPoder(rs.getInt("poder"));
+
+                // 3. Metemos la carta dentro del objeto puente
+                cc.setCarta(carta); // Asegúrate de tener este atributo y setter en tu clase ContieneCarta
+
+                listaCartas.add(cc);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return listaCartas;
     }
 }
