@@ -21,15 +21,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <title>Card Partner - Community Decks</title>
-    <%-- v=12 para forzar la recarga del CSS --%>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/communityDeckStyle.css?v=12">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/communityDeckStyle.css?v=13">
+    
+    <style>
+        /* Aseguramos que el contenedor de la imagen tenga consistencia visual */
+        .mazo-imagen {
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0,0,0,0.05); /* Un fondo sutil por si tarda en cargar */
+            overflow: hidden;
+        }
+        .mazo-imagen img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+    </style>
 </head>
 <body>
 
     <div class="fondo-rosa">
         <div class="contenedor-principal">
             
-            <%-- Cabecera del sitio --%>
             <jsp:include page="/components/cabecera.jsp" />
 
             <main class="contenido-mazos">
@@ -50,59 +66,56 @@
                 <section class="galeria-mazos">
                     
                     <%
-                        // Si la lista tiene datos (tus 2 mazos de la BD), los dibujamos
                         if (listaMazos != null && !listaMazos.isEmpty()) {
                             for(Mazo m : listaMazos) {
                                 
-                                // Extraemos el líder del mazo
                                 Carta lider = m.getCartaLider();
-                                
-                                // --- LÓGICA DE LA VARIABLE srcFinal ---
                                 String imgRaw = (lider != null && lider.getImagen() != null) ? lider.getImagen().trim() : "";
-                                String srcFinal;
+                                String srcFinal = "";
 
-                                if (imgRaw.isEmpty()) {
-                                    // No hay imagen: Logo por defecto
+                                // ==========================================
+                                // LÓGICA DE PROXY (Igual que en cartas.jsp)
+                                // ==========================================
+                                if (!imgRaw.isEmpty() && imgRaw.toLowerCase().startsWith("http")) {
+                                    // Usamos el proxy de weserv.nl para saltar bloqueos de la web de referencia
+                                    srcFinal = "https://images.weserv.nl/?url=" + imgRaw;
+                                } else if (imgRaw.isEmpty()) {
                                     srcFinal = request.getContextPath() + "/img/logo.png";
-                                } else if (imgRaw.toLowerCase().startsWith("http")) {
-                                    // Es una URL externa de Bandai: La usamos directa
-                                    srcFinal = imgRaw;
                                 } else {
-                                    // Es una imagen local: Buscamos en tu carpeta /img/
+                                    // Imagen local
                                     srcFinal = request.getContextPath() + "/img/" + imgRaw;
                                 }
 
-                                String colorLider = (lider != null && lider.getColor() != null) ? lider.getColor() : "Desconocido";
+                                String nombreLider = (lider != null) ? lider.getNombreCarta() : "Desconocido";
+                                String colorLider = (lider != null && lider.getColor() != null) ? lider.getColor() : "Varios";
                     %>
-                        <%-- Generamos un enlace por cada mazo real en la BD --%>
                         <a href="${pageContext.request.contextPath}/CatalogoMazosServlet?accion=detalle&id=<%= m.getIdMazo() %>" class="mazo-item">
                             <div class="mazo-imagen">
-                                <%-- Aquí usamos la variable srcFinal que acabamos de calcular --%>
-                                <img src="<%= srcFinal %>" alt="Líder del mazo">
+                                <img src="<%= srcFinal %>" 
+                                     alt="Líder: <%= nombreLider %>" 
+                                     loading="lazy"
+                                     referrerpolicy="no-referrer"
+                                     onerror="this.onerror=null; this.src='${pageContext.request.contextPath}/img/logo.png';">
                             </div>
                             <div class="mazo-info">
                                 <h3><%= m.getNombreMazo() %></h3>
-                                <p class="mazo-meta">Colores: <%= colorLider %></p>
-                                <p class="mazo-autor">Creador ID: <%= m.getIdUsuarioCreador() %></p>
-                                <span class="mazo-tipo"><%= m.getDescripcion() %></span>
+                                <p class="mazo-meta"><strong>Colores:</strong> <%= colorLider %></p>
+                                <p class="mazo-autor"><strong>Creador:</strong> Usuario #<%= m.getIdUsuarioCreador() %></p>
+                                <span class="mazo-tipo"><%= (m.getDescripcion() != null) ? m.getDescripcion() : "" %></span>
                             </div>
                         </a>
                     <%
-                            } // Fin del bucle for
+                            }
                         } else {
                     %>
-                        <%-- Si no hay mazos, mostramos un mensaje --%>
                         <p style="color: white; text-align: center; width: 100%; grid-column: 1 / -1;">
                             No se han encontrado mazos en la base de datos.
                         </p>
                     <%
                         }
                     %>
-
                 </section>
-
             </main>
-
         </div>
     </div>
 </body>
