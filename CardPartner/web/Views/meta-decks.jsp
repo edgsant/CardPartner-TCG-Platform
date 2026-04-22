@@ -5,7 +5,6 @@
 <%
     // Recuperamos la lista de mazos oficiales enviada por el Servlet
     List<Mazo> listaMeta = (List<Mazo>) request.getAttribute("listaMazosComunidad");
-    
     // Si la lista es nula, forzamos la carga a través del Servlet
     if (listaMeta == null) {
         response.sendRedirect(request.getContextPath() + "/CatalogoMazosServlet?accion=listar&tipo_mazo=oficial");
