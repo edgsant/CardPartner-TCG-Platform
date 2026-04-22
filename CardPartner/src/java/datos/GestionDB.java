@@ -33,7 +33,7 @@ public class GestionDB {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 usuarioEncontrado = new Usuario();
-                usuarioEncontrado.setNombreUsuario(rs.getString("nombre"));
+                usuarioEncontrado.setApodoUsuario(rs.getString("nombre"));
                 usuarioEncontrado.setEmail(rs.getString("email"));
             }
             
