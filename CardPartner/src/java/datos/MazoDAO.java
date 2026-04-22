@@ -34,7 +34,7 @@ public class MazoDAO {
             + "WHERE m.id_usuario_creador = ? "
             + "ORDER BY m.fecha_creacion DESC";
 
-// Borra el mazo asegurando que pertenece a ese usuario
+    // Borra el mazo asegurando que pertenece a ese usuario
     private static final String SQL_DELETE_MAZO = "DELETE FROM MAZO WHERE id_mazo = ? AND id_usuario_creador = ?";
     
     private static final String SQL_SELECT_MAZO_POR_ID = "SELECT * FROM MAZO WHERE id_mazo = ?";
@@ -46,6 +46,14 @@ public class MazoDAO {
             + "INNER JOIN CARTA c ON cc.id_carta = c.id_carta "
             + "WHERE cc.id_mazo = ?";
 
+    
+    private static final String SQL_SELECT_FAVORITOS = 
+        "SELECT m.*, c.nombre_carta, c.imagen, c.color " +
+        "FROM MAZO m " +
+        "INNER JOIN GUARDA_MAZO gm ON m.id_mazo = gm.id_mazo " +
+        "INNER JOIN CARTA c ON m.id_carta_lider = c.id_carta " +
+        "WHERE gm.id_usuario = ?";
+    
     /**
      * Este método es idéntico a registrar un usuario. La misión es insertar la
      * cabecera del mazo (nombre, creador, líder) y recuperar el ID autogenerado
@@ -387,5 +395,44 @@ public class MazoDAO {
             // ... (cierre de conexiones habitual rs, ps, con)
         }
         return mazoEncontrado;
+    }
+    
+    /**
+     * Obtiene los mazos que el usuario ha guardado
+     * @param idUsuario
+     * @return 
+     */
+    public ArrayList<Mazo> obtenerMazosGuardados(int idUsuario) {
+        ArrayList<Mazo> listaFavoritos = new ArrayList<>();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            ps = con.prepareStatement(SQL_SELECT_FAVORITOS);
+            ps.setInt(1, idUsuario);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                // Montamos el Mazo igual que en los otros métodos
+                Mazo m = new Mazo();
+                m.setIdMazo(rs.getInt("id_mazo"));
+                m.setNombreMazo(rs.getString("nombre_mazo"));
+                // ... (setear todos los atributos básicos del mazo)
+                
+                // Montamos el líder
+                modelo.Carta lider = new modelo.Carta();
+                lider.setIdCarta(rs.getString("id_carta_lider"));
+                lider.setNombreCarta(rs.getString("nombre_carta"));
+                lider.setImagen(rs.getString("imagen"));
+                lider.setColor(rs.getString("color"));
+
+                m.setCartaLider(lider);
+                listaFavoritos.add(m);
+            }
+        } catch (SQLException e) { e.printStackTrace(); } 
+        // ... (finally close)
+        return listaFavoritos;
     }
 }
