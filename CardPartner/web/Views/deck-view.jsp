@@ -124,7 +124,6 @@
                         <p><strong>Privacidad:</strong> <%= (mazoActual.isEsPublico()) ? "Público" : "Privado" %></p>
                         
                         <div class="acciones-mazo">
-                            <%-- Restauramos las clases btn-accion-mazo para recuperar el estilo --%>
                             <button class="btn-accion-mazo"><i class="fas fa-heart"></i> Guardar Mazo</button>
                             <a href="${pageContext.request.contextPath}/Views/deck-builder.jsp?idCopy=<%= mazoActual.getIdMazo() %>" class="btn-accion-mazo" style="text-decoration: none;">
                                 <i class="fas fa-edit"></i> Copiar / Editar
@@ -140,6 +139,12 @@
                         if (listaCartas != null && !listaCartas.isEmpty()) {
                             for (ContieneCarta cc : listaCartas) {
                                 Carta c = cc.getCarta();
+                                
+                                // Omitir al líder en la lista de cartas inferior
+                                if (c.getIdCarta().equals(mazoActual.getIdCartaLider())) {
+                                    continue;
+                                }
+
                                 String imgCartaRaw = (c.getImagen() != null) ? c.getImagen().trim() : "";
                                 String srcCarta = "";
                                 
