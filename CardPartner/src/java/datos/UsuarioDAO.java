@@ -18,6 +18,10 @@ public class UsuarioDAO {
     private static final String SQL_CHECK_EMAIL = "SELECT id_usuario FROM USUARIO WHERE email = ?";
     private static final String SQL_GET_AVATAR = "SELECT avatar FROM USUARIO WHERE id_usuario = ?";
 
+    //Querys para poder actualizar los perfiles
+    private static final String SQL_UPDATE_DATOS = "UPDATE USUARIO SET apodo_usuario = ?, email = ? WHERE id_usuario = ?";
+    private static final String SQL_UPDATE_PASS = "UPDATE USUARIO SET password = ? WHERE id_usuario = ?";
+
     /**
      * La Anatomía de un Método DAO
      *
@@ -96,38 +100,43 @@ public class UsuarioDAO {
 
         try {
             ps = con.prepareStatement(sql);
-            
+
             ps.setString(1, email);    // El email que viene del formulario
             ps.setString(2, password); // La contraseña
-            
+
             rs = ps.executeQuery();
 
             // Si hay un resultado, es que las credenciales son correctas
             if (rs.next()) {
                 usuarioLogueado = new Usuario();
-                
+
                 // Rellenamos el objeto con los datos reales de la fila encontrada
                 usuarioLogueado.setIdUsuario(rs.getInt("id_usuario"));
-                usuarioLogueado.setApodoUsuario(rs.getString("apodo_usuario")); 
+                usuarioLogueado.setApodoUsuario(rs.getString("apodo_usuario"));
                 usuarioLogueado.setEmail(rs.getString("email"));
                 usuarioLogueado.setPassword(rs.getString("password"));
                 usuarioLogueado.setRol(rs.getString("rol"));
             }
-            
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
                 pool.freeConnection(con);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        
+
         return usuarioLogueado;
     }
+
     /**
      * Comprueba si el email ya existe en la tabla USUARIO. Devuelve true si
      * existe
@@ -213,6 +222,66 @@ public class UsuarioDAO {
                 e.printStackTrace();
             }
         }
+    }
+
+    /**
+     * Actualiza el apodo y el email del usuario.
+     *
+     * @param idUsuario
+     * @param nuevoApodo
+     * @param nuevoEmail
+     * @return
+     */
+    public boolean actualizarDatosPerfil(int idUsuario, String nuevoApodo, String nuevoEmail) {
+        boolean exito = false;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+
+        try {
+            ps = con.prepareStatement(SQL_UPDATE_DATOS);
+            ps.setString(1, nuevoApodo);
+            ps.setString(2, nuevoEmail);
+            ps.setInt(3, idUsuario);
+
+            if (ps.executeUpdate() > 0) {
+                exito = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // (Cierre de conexiones ps y con)
+        }
+        return exito;
+    }
+
+    /**
+     * Actualiza la contraseña del usuario.
+     *
+     * @param idUsuario
+     * @param nuevaPass
+     * @return
+     */
+    public boolean actualizarPassword(int idUsuario, String nuevaPass) {
+        boolean exito = false;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+
+        try {
+            ps = con.prepareStatement(SQL_UPDATE_PASS);
+            ps.setString(1, nuevaPass);
+            ps.setInt(2, idUsuario);
+
+            if (ps.executeUpdate() > 0) {
+                exito = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // (Cierre de conexiones ps y con)
+        }
+        return exito;
     }
 
 }
