@@ -24,7 +24,7 @@ public class InicioServlet extends HttpServlet {
 
         try {
             // 1. Buscamos los mazos reales de tu base de datos (para la sección de comunidad)
-            List<Mazo> mazosRecomendados = mazoDao.filtrarMazosPublicos(null, null, null, null, 3, 0);
+            List<Mazo> mazosRecomendados = mazoDao.filtrarMazosPublicos(null, null, null, null, null, 3, 0);
 
             // 2. Si hay mazos, les asociamos su objeto Carta líder para que el JSP tenga la imagen
             if (mazosRecomendados != null) {

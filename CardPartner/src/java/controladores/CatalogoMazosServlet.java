@@ -1,0 +1,127 @@
+package controladores;
+
+import datos.MazoDAO;
+import datos.CartaDAO;
+import modelo.Mazo;
+import modelo.ContieneCarta;
+import modelo.Carta;
+
+import java.io.IOException;
+import java.util.List;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet(name = "CatalogoMazosServlet", urlPatterns = {"/CatalogoMazosServlet"})
+public class CatalogoMazosServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String accion = request.getParameter("accion");
+        if (accion == null || accion.isEmpty()) {
+            accion = "listar"; // Por defecto, mostramos la galería
+        }
+
+        switch (accion) {
+            case "listar":
+                mostrarCatalogo(request, response);
+                break;
+            case "detalle":
+                mostrarDetalleMazo(request, response);
+                break;
+            default:
+                response.sendRedirect("CatalogoMazosServlet?accion=listar");
+                break;
+        }
+    }
+
+    // ==========================================
+    // ACCIÓN: LISTAR (La Galería con Filtros)
+    // ==========================================
+    private void mostrarCatalogo(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        // 1. Recogemos parámetros del buscador/filtros del Front-End
+        String nombreBuscado = request.getParameter("nombre");
+        String idLider = request.getParameter("lider");
+        String colorLider = request.getParameter("color");
+        String tipoMazoStr = request.getParameter("tipo_mazo"); // Para saber si quieren "oficial" o "comunidad"
+
+        // 2. Procesamos el tipo de mazo
+        Boolean esOficial = null; // Por defecto null = muestra ambos
+        if ("oficial".equals(tipoMazoStr)) {
+            esOficial = true;
+        } else if ("comunidad".equals(tipoMazoStr)) {
+            esOficial = false;
+        }
+
+        MazoDAO mazoDAO = new MazoDAO();
+
+        // 3. Buscamos los mazos (¡Ahora en un solo viaje a la BD con todos los filtros!)
+        // Pasamos (esOficial, minWinrate, nombre, lider, color, limite, offset)
+        List<Mazo> listaMazos = mazoDAO.filtrarMazosPublicos(esOficial, null, nombreBuscado, idLider, colorLider, 20, 0);
+
+        // Ya NO necesitamos el CartaDAO aquí, el MazoDAO ya incluye al líder dentro del objeto.
+        // 4. Empaquetamos y mandamos a la vista
+        request.setAttribute("listaMazosComunidad", listaMazos);
+
+        // Pasamos variables para que el Front pueda mantener los filtros seleccionados
+        request.setAttribute("tipoMazoActivo", tipoMazoStr);
+        request.setAttribute("colorSeleccionado", colorLider);
+
+        String destino = "/Views/community-deck.jsp";
+
+        // Si el parámetro indica que quieren la vista META, cambiamos la ruta
+        if ("oficial".equals(tipoMazoStr)) {
+            destino = "/Views/meta-decks.jsp";
+        }
+
+        // Ejecutamos el envío a la ruta dinámica que hayamos decidido
+        request.getRequestDispatcher(destino).forward(request, response);
+    }
+
+    // ==========================================
+    // ACCIÓN: DETALLE (Ver 1 mazo y sus 50 cartas)
+    // ==========================================
+    private void mostrarDetalleMazo(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String idParam = request.getParameter("id");
+
+        if (idParam != null && !idParam.isEmpty()) {
+            try {
+                int idMazo = Integer.parseInt(idParam);
+                MazoDAO mazoDAO = new MazoDAO();
+                CartaDAO cartaDAO = new CartaDAO();
+
+                // 1. Buscamos la información general del mazo
+                Mazo mazoActual = mazoDAO.obtenerMazoPorId(idMazo);
+
+                if (mazoActual != null) {
+                    // 2. Buscamos a su líder para la portada
+                    Carta lider = cartaDAO.obtenerCartaPorId(mazoActual.getIdCartaLider());
+                    mazoActual.setCartaLider(lider);
+
+                    // 3. ¡LA MAGIA! Buscamos las 50 cartas que lo componen
+                    List<ContieneCarta> listaCartas = mazoDAO.obtenerCartasDeUnMazo(idMazo);
+
+                    // 4. Empaquetamos todo y mandamos a la vista
+                    request.setAttribute("mazoParaLaVista", mazoActual);
+                    request.setAttribute("cartasDelMazo", listaCartas);
+
+                    request.getRequestDispatcher("/Views/deck-view.jsp").forward(request, response);
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // Si hay error (mazo no existe o ID falso), devolvemos al catálogo
+        response.sendRedirect("CatalogoMazosServlet?accion=listar&error=no_encontrado");
+    }
+}
