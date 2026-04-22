@@ -389,13 +389,7 @@ public class MazoDAO {
                 mazoEncontrado.setWinrate(rs.getFloat("winrate"));
                 mazoEncontrado.setIdUsuarioCreador(rs.getInt("id_usuario_creador"));
                 mazoEncontrado.setIdCartaLider(rs.getString("id_carta_lider"));
-                // IMPORTANTE: Rellenar el objeto carta líder
-            modelo.Carta lider = new modelo.Carta();
-            lider.setIdCarta(rs.getString("id_carta_lider"));
-            lider.setNombreCarta(rs.getString("nombre_carta"));
-            lider.setImagen(rs.getString("imagen"));
-            lider.setColor(rs.getString("color"));
-            mazoEncontrado.setCartaLider(lider);
+                
             }
         } catch (SQLException e) {
             e.printStackTrace();
