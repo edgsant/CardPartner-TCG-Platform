@@ -1,3 +1,12 @@
+-- =====================================================================
+-- 1. LIMPIEZA PROFUNDA (Orden estricto para evitar error de Foreign Keys)
+-- =====================================================================
+DELETE FROM CONTIENE_CARTA;
+DELETE FROM MAZO;
+DELETE FROM CARTA;
+
+ALTER TABLE MAZO AUTO_INCREMENT = 1;
+
 INSERT INTO CARTA (id_carta, nombre_carta, tipo, color, coste, poder, atributo_combate, imagen) VALUES 
 ('OP06-022', 'Yamato', 'LIDER', 'VERDE,AMARILLO', 4, 5000, 'STRIKE', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP06-022.png'),
 ('OP06-100', 'Inuarashi', 'PERSONAJE', 'AMARILLO', 4, 5000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP06-100.png'),
@@ -156,43 +165,43 @@ INSERT INTO CARTA (id_carta, nombre_carta, tipo, color, coste, poder, atributo_c
 ('OP12-118', 'Jewelry Bonney', 'PERSONAJE', 'VERDE', 5, 6000, 'SPECIAL', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-118.png'),
 ('OP12-030', 'Dracule Mihawk', 'PERSONAJE', 'VERDE', 8, 8000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-030.png'),
 ('ST21-017', 'Gum-Gum Mole Pistol', 'EVENTO', 'ROJO', 4, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/ST21-017.png'),
-('OP12-037', 'Dead Man''s Game', 'EVENTO', 'VERDE', 1, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-037.png'),
+('OP12-037', 'Demon Aura Nine Sword Style Asura Blades Drawn Dead Mans Game', 'EVENTO', 'VERDE', 1, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-037.png'),
 ('OP04-035', 'Spiderweb', 'EVENTO', 'VERDE', 2, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP04-035.png'),
 ('OP12-020', 'Roronoa Zoro', 'LIDER', 'VERDE', 5, 5000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-020.png'),
 ('OP12-028', 'Kouzuki Hiyori', 'PERSONAJE', 'VERDE', 1, 0, 'WISDOM', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-028.png'),
 ('OP03-030', 'Nami', 'PERSONAJE', 'VERDE', 2, 2000, 'WISDOM', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-030.png'),
 ('ST12-007', 'Rika', 'PERSONAJE', 'VERDE', 2, 0, 'WISDOM', 'https://en.onepiece-cardgame.com/images/cardlist/card/ST12-007.png'),
 ('OP12-029', 'Shimotsuki Kouzaburou', 'PERSONAJE', 'VERDE', 3, 2000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-029.png'),
-('OP03-033', 'Sham', 'PERSONAJE', 'VERDE', 2, 3000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-033.png'),
+('OP03-033', 'Hatchan', 'PERSONAJE', 'VERDE', 2, 3000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-033.png'),
 ('OP12-026', 'Kuina', 'PERSONAJE', 'VERDE', 4, 1000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-026.png'),
 ('OP12-036', 'Roronoa Zoro', 'PERSONAJE', 'VERDE', 4, 5000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-036.png'),
 ('EB01-012', 'Sherry', 'PERSONAJE', 'NEGRO', 1, 3000, 'SPECIAL', 'https://en.onepiece-cardgame.com/images/cardlist/card/EB01-012.png'),
 ('OP12-031', 'Tashigi', 'PERSONAJE', 'VERDE', 5, 7000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-031.png'),
-('OP05-037', 'One-Legged Toy Soldier', 'PERSONAJE', 'VERDE', 1, 1000, 'STRIKE', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-037.png'),
+('OP05-037', 'Because the Side of Justice Will Be Wichever Side Wins!!', 'PERSONAJE', 'VERDE', 1, 1000, 'STRIKE', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-037.png'),
 ('OP08-036', 'Electrical Luna', 'EVENTO', 'VERDE', 3, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP08-036.png'),
-('OP12-039', 'Ice Age', 'EVENTO', 'NEGRO', 1, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-039.png'),
+('OP12-039', 'Luffy Is The Man Who Will Become the King of Pirates', 'EVENTO', 'NEGRO', 1, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-039.png'),
 
 
 ('OP03-040', 'Nami', 'LIDER', 'AZUL', 5, 5000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-040.png'),
-('OP03-044', 'Buggy', 'PERSONAJE', 'AZUL', 1, 2000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-044.png'),
-('OP04-041', 'Bell-amy', 'PERSONAJE', 'AZUL', 4, 5000, 'STRIKE', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP04-041.png'),
-('OP04-050', 'Alvida', 'PERSONAJE', 'AZUL', 2, 3000, 'STRIKE', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP04-050.png'),
+('OP03-044', 'Kaya', 'PERSONAJE', 'AZUL', 1, 2000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-044.png'),
+('OP04-041', 'Apis', 'PERSONAJE', 'AZUL', 4, 5000, 'STRIKE', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP04-041.png'),
+('OP04-050', 'Hanger', 'PERSONAJE', 'AZUL', 2, 3000, 'STRIKE', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP04-050.png'),
 ('OP03-047', 'Zeff', 'PERSONAJE', 'AZUL', 5, 6000, 'STRIKE', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-047.png'),
 ('OP01-088', 'Desert Spada', 'EVENTO', 'AZUL', 1, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP01-088.png'),
-('OP02-066', 'Death Wink', 'EVENTO', 'AZUL', 3, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-066.png'),
+('OP02-066', 'Impel Down AllStars', 'EVENTO', 'AZUL', 3, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-066.png'),
 ('OP03-054', 'Usopp''s Rubber Band of Doom', 'EVENTO', 'AZUL', 1, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-054.png'),
 ('OP03-055', 'Gum-Gum Giant Gavel', 'EVENTO', 'AZUL', 1, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-055.png'),
 ('ST03-017', 'Love Love Mellow', 'EVENTO', 'AZUL', 2, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/ST03-017.png'),
 ('OP06-059', 'White Out', 'EVENTO', 'AZUL', 1, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP06-059.png'),
-('OP07-055', 'Gravity Blade Raging Tiger', 'EVENTO', 'AZUL', 6, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP07-055.png'),
+('OP07-055', 'Snake Dance', 'EVENTO', 'AZUL', 6, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP07-055.png'),
 ('OP02-067', 'Arabesque Brick Fist', 'EVENTO', 'AZUL', 2, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-067.png'),
 ('OP03-056', 'Sanji''s Pilaf', 'EVENTO', 'AZUL', 3, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-056.png'),
-('OP02-069', 'Dracule Mihawk', 'PERSONAJE', 'AZUL', 4, 5000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-069.png'),
-('OP05-086', 'Tot-Tot', 'PERSONAJE', 'NEGRO', 2, 3000, 'SPECIAL', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-086.png'),
-('OP11-083', 'Sabo', 'PERSONAJE', 'NEGRO', 5, 6000, 'SPECIAL', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP11-083.png'),
-('ST27-003', 'Avalo Pizarro', 'PERSONAJE', 'NEGRO', 4, 5000, 'SPECIAL', 'https://en.onepiece-cardgame.com/images/cardlist/card/ST27-003.png'),
-('OP10-082', 'Sanjuan Wolf', 'PERSONAJE', 'NEGRO', 4, 6000, 'STRIKE', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP10-082.png'),
-('PRB02-015', 'Bartolomeo', 'PERSONAJE', 'NEGRO', 3, 3000, 'SPECIAL', 'https://en.onepiece-cardgame.com/images/cardlist/card/PRB02-015.png')
+('OP02-069', 'DEATH WINK', 'PERSONAJE', 'AZUL', 4, 5000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP02-069.png'),
+('OP05-086', 'Nefeltari Vivi', 'PERSONAJE', 'NEGRO', 2, 3000, 'SPECIAL', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-086.png'),
+('OP11-083', 'Caribou', 'PERSONAJE', 'NEGRO', 5, 6000, 'SPECIAL', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP11-083.png'),
+('ST27-003', 'Kuzan', 'PERSONAJE', 'NEGRO', 4, 5000, 'SPECIAL', 'https://en.onepiece-cardgame.com/images/cardlist/card/ST27-003.png'),
+('OP10-082', 'Kuzan', 'PERSONAJE', 'NEGRO', 4, 6000, 'STRIKE', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP10-082.png'),
+('PRB02-015', 'Shiryu', 'PERSONAJE', 'NEGRO', 3, 3000, 'SPECIAL', 'https://en.onepiece-cardgame.com/images/cardlist/card/PRB02-015.png')
 ON DUPLICATE KEY UPDATE 
     nombre_carta = VALUES(nombre_carta), 
     tipo = VALUES(tipo), 
