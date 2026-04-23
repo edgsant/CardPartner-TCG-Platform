@@ -1,15 +1,12 @@
 <%@page import="java.util.List"%>
 <%@page import="modelo.Articulo"%>
-<%@page import="datos.ArticuloDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    // ==========================================
-    // CONEXIÓN REAL A LA BD: GUÍAS
-    // ==========================================
-    ArticuloDAO articuloDao = new ArticuloDAO();
-    // Traemos los últimos artículos de la categoría "GUIA"
-    // He puesto un límite de 10, puedes ajustarlo según tu diseño
-    List<Articulo> listaGuias = articuloDao.obtenerPorCategoria("GUIA", 10, 0);
+    List<Articulo> listaGuias = (List<Articulo>) request.getAttribute("articulos");
+    if (listaGuias == null) {
+        response.sendRedirect(request.getContextPath() + "/ArticuloServlet?tipo=GUIA");
+        return;
+    }
 %>
 <!DOCTYPE html>
 <html lang="es">

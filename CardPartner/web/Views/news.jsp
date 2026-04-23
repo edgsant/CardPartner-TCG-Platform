@@ -1,13 +1,16 @@
 <%@page import="java.util.List"%>
 <%@page import="modelo.Articulo"%>
-<%@page import="datos.ArticuloDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    ArticuloDAO articuloDao = new ArticuloDAO();
-    // Traemos las noticias. Asegúrate que en la BD la categoría sea exactamente 'NOTICIA'
-    List<Articulo> listaNoticias = articuloDao.obtenerPorCategoria("NOTICIA", 4, 0); 
+    // Recibimos los datos empaquetados por el Servlet
+    List<Articulo> listaNoticias = (List<Articulo>) request.getAttribute("articulos");
     
-    Articulo noticiaPrincipal = (listaNoticias != null && !listaNoticias.isEmpty()) ? listaNoticias.get(0) : null;
+    // Si entran directamente al JSP sin pasar por el Servlet, los redirigimos
+    if (listaNoticias == null) {
+        response.sendRedirect(request.getContextPath() + "/ArticuloServlet?tipo=NOTICIA");
+        return;
+    }
+    Articulo noticiaPrincipal = (!listaNoticias.isEmpty()) ? listaNoticias.get(0) : null;
 %>
 <!DOCTYPE html>
 <html lang="es">

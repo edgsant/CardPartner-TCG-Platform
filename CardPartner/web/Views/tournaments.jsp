@@ -1,17 +1,13 @@
 <%@page import="java.util.List"%>
 <%@page import="modelo.Articulo"%>
-<%@page import="datos.ArticuloDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    // ==========================================
-    // CONEXIÓN REAL A LA BD: TORNEOS
-    // ==========================================
-    ArticuloDAO articuloDao = new ArticuloDAO();
-    // Traemos los 4 últimos artículos de la categoría "TORNEO"
-    List<Articulo> listaTorneos = articuloDao.obtenerPorCategoria("TORNEO", 4, 0); 
-    
-    // Separamos el primero para destacarlo
-    Articulo torneoPrincipal = (listaTorneos != null && !listaTorneos.isEmpty()) ? listaTorneos.get(0) : null;
+    List<Articulo> listaTorneos = (List<Articulo>) request.getAttribute("articulos");
+    if (listaTorneos == null) {
+        response.sendRedirect(request.getContextPath() + "/ArticuloServlet?tipo=TORNEO");
+        return;
+    }
+    Articulo torneoPrincipal = (!listaTorneos.isEmpty()) ? listaTorneos.get(0) : null;
 %>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,6 +25,7 @@
             
             <jsp:include page="/components/cabecera.jsp" />
 
+            
             <main class="tournaments">
                 <div class="barra_torneos">
                     <h2 class="titulo-seccion">TOURNAMENTS</h2>
@@ -94,6 +91,7 @@
                         }
                     %>
                 </section>
+                
             </main>
 
         </div>
