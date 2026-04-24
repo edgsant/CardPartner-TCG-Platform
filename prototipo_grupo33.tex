@@ -108,7 +108,7 @@
 			
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=1\textwidth]{Recursos/CardPartner_DB.png}
+				\includegraphics[width=1\textwidth]{Recursos/CardPartner_DBv2.png}
 				\caption{Entidad-Relacion de la base de datos}
 				\label{fig:mapa_sitio}
 			\end{figure}
@@ -284,6 +284,27 @@
 				\item Ejecutamos los scripts en orden para tener toda la información necesaria en nuestra base de datos.
 				\item Ejecutamos la aplicación.
 			\end{itemize}
+			
+			\subsection{Usuarios para login}
+				Para la funcionalidad de inicio de sesion, se han creado los siguientes usuarios en la base de datos:
+				
+				\begin{table}[H]
+					\centering
+					
+					\begin{tabularx}{\textwidth}{l l X}
+						\toprule
+						\textbf{apodo} & \textbf{email} & \textbf{passsword} \\
+						\midrule
+						admin & admin@test.com & 123456 \\
+						sergio & sergio@test.com & 123456 \\
+						marcos & marcos@test.com & 123456 \\
+						alvaro & admin@cardpartner.com & 123456 \\
+						edgar & edgar@test.com & 123456 \\
+						xabi & xabi@test.com & 123456 \\
+						\bottomrule
+					\end{tabularx}
+					\caption{Resumen de la Arquitectura de Datos} 
+				\end{table}
 		
 			
 	\newpage
@@ -321,7 +342,8 @@
 	Además, se ha usado \href{https://gemini.google.com/share/7a923a0bfae8}{Gemini} para la generación del logo del proyecto.\\
 	\textbf{Ejemplos de prompts realizados:}
 	\begin{itemize}
-		\item 'Cómo funciona un serveles en java'
+		\item 'Cómo funciona un servlet en java'
+		\item 'Que son los DAOs, DTOs y Servlets en java y como es el flujo de trabajo entre ellos'
 		\item 'Como hacer una conexión de MariaDB en ApacheNetBeans'
 		\item 'Haciendo push, a mis compañeros no les aparece la bbdd ¿es normal?'
 		\item 'Cómo puedo automatizar la instalación y creación de una bbdd con MariaDB'
