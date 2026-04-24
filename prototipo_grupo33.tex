@@ -11,6 +11,7 @@
 % Gráficos y Tablas
 \usepackage{pdflscape}
 \usepackage{graphicx}
+\usepackage{amsmath}
 \usepackage{pdfpages}
 \usepackage{multicol}
 \usepackage{float}
@@ -235,7 +236,7 @@
 			
 			La lógica implementada realiza la siguiente transformación de la URL original $U$, concatenándo la dirección del proxy con la dirección web donde se encuentra la carta:
 			
-			\begin{equation} U_{final} = \text{https://images.weserv.nl/?url=} + U_{original} \end{equation}
+			$U_{final} = \text{https://images.weserv.nl/?url=} + U_{original} $
 			
 			\textbf{Ventajas de la implementación}
 				\begin{enumerate}
@@ -246,6 +247,7 @@
 			%Script creacion
 			
 			%Hablar de los tipos de datos que puedan ser llamativos y decisiones generales detras de nullable, timestamps vs date, defaults, etc
+			\newpage
 		\section{Instrucciones de ejecución del código}
 			\begin{itemize}
 				\item Ejecutar el script de \textit{setup\_db} (que se encuentran en \textit{CardPartner/sql/} o en el directorio raiz de SSW si se mira desde el repositorio de GitHub)
