@@ -42,4 +42,5 @@
 build/
 dist/
 nbproject/private/
-CardPartner/nbproject/project.properties"
+CardPartner/nbproject/project.properties
+*.html
