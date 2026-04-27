@@ -1,0 +1,371 @@
+\documentclass[10pt]{article}
+
+% Idioma y codificación
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+% Márgenes
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% Gráficos y Tablas
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{pdfpages}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage[table]{xcolor} % UNA SOLA VEZ Y CON [table]
+\usepackage{booktabs}
+\usepackage{xltabular}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Listings para código
+\usepackage{listings}
+\lstdefinestyle{terminal}{
+	backgroundcolor=\color{gray!10},
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	frame=single,
+	columns=fullflexible,
+	morecomment=[l]{//}
+}
+\lstset{
+	inputencoding=utf8,
+	extendedchars=true,
+	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1
+}
+
+% Hipervínculos
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
+% Encabezados y pies de página
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+
+% Formato de títulos
+\usepackage{titlesec}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Datos de la portada
+\title{\textit{CARD PARTNER}\\ Una web para amantes de los \textit{TCGS}}
+
+\author{
+	\textbf{\small ÁLVAREZ FULCONIS, MARCOS PALATINO}\\
+	\textbf{\small LÓPEZ PRIMO, ÁLVARO}\\
+	\textbf{\small OTERO GARCÍA, SERGIO}\\
+	\textbf{\small SANTIESTEBAN MENDO, EDGAR}
+}
+
+\date{Curso 25-26}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\centering
+		% Asegúrate de que la ruta al PDF de la UVA sea correcta
+		%\includegraphics[scale=0.3]{./Recursos/UVA-3881270087.pdf}\\[0.5cm] 
+		\rule{\linewidth}{0.2mm}\\[0.4cm]
+		{\huge\bfseries CARD PARTNER\par}
+		{\large Una web para amantes de los TCGS\par}
+		\rule{\linewidth}{0.2mm}\\[1.5cm]
+		{\Large\bfseries Servicios y Sistemas Web}\\[0.3cm]
+		{\large\bfseries Laboratorio L2 \\ GRUPO 33}\\[1cm]
+		{\Large \begin{tabular}{c} ÁLVAREZ FULCONIS, MARCOS \\ LÓPEZ PRIMO, ÁLVARO \\ OTERO GARCÍA, SERGIO \\ SANTIESTEBAN MENDO, EDGAR \end{tabular}}\\[1.5cm]
+		{\Large Curso 25-26}
+	\end{titlepage}
+	
+	\pagenumbering{gobble}
+	\tableofcontents \newpage
+	
+	\pagenumbering{arabic} 
+	\setcounter{page}{1}
+	
+	\section{Base de datos}
+	aaaaaaaaa
+		Para la base de datos se ha elegido usar MariaDB a través de XAMPP para facilitar el trabajo de gestión y diseño, ya que permite usar phpMyAdmin desde navegadores web y gestionar la base de datos de manera visual y exportar o importar los scripts de creación e inserción de datos,  además de otras herramientas útiles (como el meter csv).
+		\subsection{Cambios del Modelo de Dominio a Entidad-Relacion}
+			Para traducir el modelo de dominio realizado en la práctica 2 al modelo entidad-relacion de la base de datos, se han realizado los siguientes cambios:
+			\begin{itemize}
+				\item \textbf{Usuario}: \\
+					Se ha traducido la relación de \textit{Usuario} como clase padre de \textit{Jugador} y \textit{Admin} a una sola tabla \texttt{Usuario} y un atributo ROL que especifique que tipo de usuario es.
+				\item \textbf{Mazo}: \\
+					Al igual que con \textit{Usuario}, la clase \textit{Mazo} se ha traducido a una única tabla \texttt{Mazo} y un atributo ES\_OFICIAL para hacer la distinción.
+				\item \textbf{Relaciones *:*}: \\
+					Las relaciones muchos a muchos entre \textit{Jugador}-\textbf{GUARDA}-\textit{Mazo}, \textit{Mazo}-\textbf{CONTIENE}-\textit{Carta} y \textit{Jugador}-\textbf{VALORA}-\textit{Mazo} se han traducido como las clases intermedias \texttt{GUARDA\_MAZO}, \texttt{CONTIENE\_CARTA} y \texttt{VALORACION} respectivamente.
+				
+			\end{itemize}
+			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{Recursos/CardPartner_DBv2.png}
+				\caption{Entidad-Relacion de la base de datos}
+				\label{fig:mapa_sitio}
+			\end{figure}
+			
+			
+			\section{Estructura de la Base de Datos}
+			
+			La base de datos \texttt{cardpartner\_db} está diseñada bajo un modelo relacional orientado a la gestión de una comunidad de juegos de cartas coleccionables (TCG). Su arquitectura se divide en cuatro pilares fundamentales:
+			
+			\subsection{Componentes Principales}
+			
+			\begin{itemize}
+				\item \textbf{Gestión de Usuarios y Roles:} La entidad \texttt{USUARIO} centraliza el acceso y la seguridad. Mediante un sistema de roles (\textit{Jugador, Editor, Moderador, Superadmin}), se definen los niveles de interacción con la plataforma.
+				\item \textbf{Catálogo de Cartas y Mazos:} 
+				\begin{itemize}
+					\item \texttt{CARTA}: Actúa como el diccionario técnico del juego, almacenando atributos estáticos como coste, poder, color y tipo.
+					\item \texttt{MAZO}: Representa la agrupación lógica de cartas creada por un usuario, vinculada obligatoriamente a una carta líder.
+				\end{itemize}
+				\item \textbf{Módulo de Comunidad:} La interacción social se articula a través de las tablas \texttt{VALORACION}, \texttt{COMENTARIO} y \texttt{GUARDA\_MAZO}, permitiendo la retroalimentación y la creación de bibliotecas personales.
+				\item \textbf{Sistema de Contenidos:} La entidad \texttt{ARTICULO} permite a los administradores gestionar noticias, guías y torneos, manteniendo la plataforma actualizada.
+			\end{itemize}
+			
+			\subsection{Resumen de Relaciones y Cardinalidad}
+			
+			En esta sección comentamos las cardinalidades y relaciones en forma de tabla con una pequeña explicación de lo que significan para poder complementar el E/R.
+			
+			\begin{table}[H]
+				\centering
+				
+				\begin{tabularx}{\textwidth}{l l X}
+					\toprule
+					\textbf{Relación} & \textbf{Tipo} & \textbf{Descripción} \\
+					\midrule
+					Usuario $\rightarrow$ Mazo & 1:N & Un usuario es autor de múltiples mazos. \\
+					Mazo $\leftrightarrow$ Carta & N:M & Relación gestionada por \texttt{CONTIENE\_CARTA} con cantidades. \\
+					Usuario $\leftrightarrow$ Mazo & N:M & Biblioteca personal y favoritos (\texttt{GUARDA\_MAZO}). \\
+					Usuario $\rightarrow$ Articulo & 1:N & Relación de autoría para perfiles administrativos. \\
+					\bottomrule
+				\end{tabularx}
+				\caption{Resumen de la Arquitectura de Datos} 
+			\end{table}
+			
+			\subsection{Inserción de los datos en la BBDD en Apache NetBeans}
+			
+				\begin{figure}[H]
+					\centering
+					% Primera imagen
+					\begin{minipage}{0.45\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{Recursos/BBDD_CONEXION.png}
+						\caption{Hemos configurado la conexión en el Apache NetBeans con una base de datos MariaDB en el localhost con su puerto por defecto.}
+						\label{fig:img1}
+					\end{minipage}
+					\hfill % Espacio elástico para separar las imágenes
+					% Segunda imagen
+					\begin{minipage}{0.45\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{Recursos/XMLBBDD.png}
+						\caption{Modificamos el \textit{context.xml} del editor para poder establecer la conexión permanente con la bbdd en nuestro proyecto.}
+						\label{fig:img2}
+					\end{minipage}
+				\end{figure}
+				
+				
+				El problema que hemos tenido es que al establecer la conexión y hacer un \textit{push} al repositorio, Edgar, no tenía la conexión establecedia en el Apache, tras una tutoría con el profesor del laboratio, nos ha explicado que como no contamos con un servidor donde alojar la base de datos, realmente no había ninguna manera de hacer esta conexión persistente, por lo que tomamos la decisión de hacer unos scripts, que hagan la creación de la base de datos en local más simple, facilitando así su posterior conexión con el editor de código.\\ 
+				
+					\begin{figure}[H]
+					\centering
+					\includegraphics[width=1\textwidth]{Recursos/creacionBBDD.png}
+					\caption{Además, para que todos tengamos las mismas tablas, hemos incluido el script \textit{CreacionDBv2.sql} para que genere automáticamente las tablas (por motivos de brevedad no hemos incluido todo el script ya que se puede consultar en \textit{Files/sql} dentro del apache)}.
+					\label{fig:creacion}
+				\end{figure}
+				
+				
+			\subsection{Inserción de los datos en las tablas}
+				Para esta parte, debido al poco tiempo que hemos tenido para desarrollar la práctica por el calendario tan ajustado de entregas del curso, hemos decidido tener 2 scripts .sql para poblar la base de datos, los cuales se encuentran en \textit{FIles/sql} dentro del Apache NetBeans.\\
+				Adicionalmente, para que fuese más cómodo y por un tema de estructura y revisión del código, hay una carpeta en nuestro repositorio de git (por ende en el zip en el que hemos entregado la práctica) llamado \textit{DataBase} donde se encuentra el E/R, los scripts de creación de las tablas y  los encargados de poblararla, así como los JSONs de los que hemos partidos para las cartas.\\
+				Queda pendiente para la siguiente entrega, modificar los DAOS y DTOs para que al emplear la librería java \hyperlink{https://mvnrepository.com/artifact/com.google.code.gson/gson/2.10.1}{GSON}, se encargue atuomáticamente de llenar la base de datos de cartas en función de un JSON, pero por motivos de coplejidad no hemos podido realizar dicha tarea para la actual entrega.\\
+			 	\begin{figure}[htbp]
+				 	\centering
+				 	% Primera imagen
+				 	\begin{minipage}{0.45\textwidth}
+				 		\centering
+				 		\includegraphics[width=\textwidth]{Recursos/InsertUsuario.png}
+				 		\caption{Hacemos un insert, con la peculiaridad de que usamos el modificador de sentencia \textit{IGNORE} para que en caso de añadir más cartas, si encuentra la \textit{primarykey} en la bbdd pasa de él.}
+				 		\label{fig:imgInsert}
+				 	\end{minipage}
+				 	\hfill % Espacio elástico para separar las imágenes
+				 	% Segunda imagen
+				 	\begin{minipage}{0.45\textwidth}
+				 		\centering
+				 		\includegraphics[width=\textwidth]{Recursos/InsertCartas.png}
+				 		\caption{Script de población de la bbdd de cartas donde hemos insertado todas las cartas desde OP9 a OP12 además de un \textit{starter deck} para que los compañeros de front tengan cartas de sobra. Al igual que en el insert anterior empleamos el modificador de sentencia \textit{IGNORE}.}
+				 		\label{fig:insertarCartas}
+				 	\end{minipage}
+				 \end{figure}
+				 
+			\subsection{Consideraciones Técnicas}
+			El diseño implementa integridad referencial mediante el uso de \texttt{ON DELETE CASCADE}, asegurando que la eliminación de una entidad principal (como un usuario) limpie automáticamente sus datos dependientes. Además, se han optimizado los tipos de datos utilizando \texttt{ENUM} para categorías fijas y \texttt{SET} para la gestión de colores múltiples en las cartas.
+			\begin{itemize}
+				\item \textbf{Gestión de Tiempos (\textit{Timestamps} vs \textit{Date}):} Se ha optado por el uso de \texttt{TIMESTAMP} en lugar de \texttt{DATE} para columnas como \texttt{fecha\_registro} y \texttt{fecha\_edicion}. Esto permite una precisión de segundos y, sobre todo, aprovecha la funcionalidad \texttt{DEFAULT CURRENT\_TIMESTAMP} y \texttt{ON UPDATE CURRENT\_TIMESTAMP}, automatizando el seguimiento de cambios sin necesidad de lógica adicional en el backend.
+				
+				\item \textbf{Uso de Tipos Enumerados (\textit{ENUM} y \textit{SET}):} 
+				\begin{itemize}
+					\item Se emplea \texttt{ENUM} para roles y categorías de artículos para restringir los valores a un conjunto cerrado, mejorando el rendimiento y evitando datos inconsistentes.
+					\item Se utiliza \texttt{SET} para el atributo \texttt{color} en las cartas, ya que permite que una sola carta pertenezca a múltiples categorías simultáneamente (cartas multicolores) de forma eficiente a nivel de bits.
+				\end{itemize}
+				
+				\item \textbf{Política de Nulidad (\textit{Nullable}):} La mayoría de los campos críticos se han definido como \texttt{NOT NULL} para garantizar la calidad del dato. Los campos \texttt{NULL} (como \texttt{enlace\_externo} o \texttt{portada}) se reservan exclusivamente para información opcional o metadatos que no interrumpen el flujo principal de la aplicación.
+				
+				\item \textbf{Almacenamiento de Binarios:} Para los avatares de usuario, se ha seleccionado \texttt{MEDIUMBLOB}. Aunque el estándar suele ser guardar rutas de archivos, incluir el binario (hasta 16MB) facilita la portabilidad inicial del proyecto y simplifica la gestión de copias de seguridad de la base de datos completa.
+				
+				\item \textbf{Claves Primarias y Foráneas:} Se utilizan \texttt{INT AUTO\_INCREMENT} para entidades dinámicas (usuarios, mazos) para agilizar las búsquedas, mientras que las cartas utilizan un \texttt{VARCHAR(50)} como ID, permitiendo usar códigos alfanuméricos oficiales (ej: \"OP01-001\") que facilitan la integración con APIs externas.
+			\end{itemize}
+			\section{Problemática: CORS y Hotlinking}
+			El problema principal se encuentra en dos conceptos bastante comunes de la seguridad web:
+			\begin{itemize}
+				\item \textbf{CORS (\textit{Cross-Origin Resource Sharing}):} es un mecanismo de seguridad que impide que un navegador cargue recursos de un servidor, si esté no tiene permisos dentro del mismo.
+				\item \textbf{Protección contra \textit{Hotlinking}:} los servidores externos detectan la cabecera \texttt{Referer} de la petición, como en nuestro caso estamos intentando mostrar una imagen en un servidor que no es el oficial del TCG de One Piece, este bloquea la petición para ahorrar ancho de banda
+			\end{itemize}
+			
+			\subsection{Solución: Uso de un Proxy Inverso}
+			Para solucionar esta limitación y evitarnos  descargar miles de imágenes en nuestros pcs ()más luego subirlas a GitHub), hemos implementado un filtrado mediante el proxy \textbf{images.weserv.nl}. \\
+			Con esto lo que que hacemos es solicitar la imagen y el proxy, que tiene las cabeceras de CORS abiertas hace la petición a la web oficial del TCG de One Piece como si fuese un usuario y no otro sitio web y nos la envía para que la podamos mostrar.\\
+			
+			La lógica implementada realiza la siguiente transformación de la URL original $U$, concatenándo la dirección del proxy con la dirección web donde se encuentra la carta:
+			
+			\begin{equation*}U_{final} = \text{https://images.weserv.nl/?url=} + U_{original} \end{equation*}
+			
+			\textbf{Ventajas de la implementación}
+				\begin{enumerate}
+					\item \textbf{Evasión de \textit{Referer:}} el proxy actúa como intermediario. El servidor de origen ve la petición como si viniera del proxy y no de nuestra aplicación local, permitiendo la descarga, saltándonos ese bloque a peticiones desde webs de terceros por motivos de seguridad.
+					\item \textbf{Optimización:} el proxy permite redimensionar y cachear las imágenes, mejorando el tiempo de respuesta de nuestra interfaz, aunque es mucho más lento que sacar la imagen de una consulta a nuestra bbdd tenemos la ventaja de que este proceso es lento la primera vez, puesto que después la memoria caché hace que la latencia sea mínima, porque hemos limitado la cantidad de cartas que se muestran a la vez.
+					\item \textbf{Seguridad SSL:} convierte peticiones que podrían ser inseguras (\texttt{http}) a un entorno seguro (\texttt{https}), evitando errores de contenido mixto en el navegador.
+				\end{enumerate}
+			%Script creacion
+			
+			%Hablar de los tipos de datos que puedan ser llamativos y decisiones generales detras de nullable, timestamps vs date, defaults, etc
+			\newpage
+		\section{Instrucciones de ejecución del código}
+			\begin{itemize}
+				\item Ejecutar el script de \textit{setup\_db} (que se encuentran en \textit{CardPartner/sql/} o en el directorio raiz de SSW si se mira desde el repositorio de GitHub)
+				\item Realizar la conexión con la bbdd en el Apache NetBeans
+			\end{itemize}
+			\begin{figure}[H]
+				\centering
+				% Primera imagen
+				\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{Recursos/Services.jpg}
+					\caption{Vamos al menú de \textit{services} del editor}
+				\end{subfigure}
+				\hfill % Espaciado horizontal elástico
+				% Segunda imagen
+				\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{Recursos/DriverMDB.jpg}
+					\caption{En el menú desplegable seleccionamos nuestra base de datos y buscamos el driver que se encuentra en la carpeta lib de nuestro proyecto}
+				\end{subfigure}
+				\hfill % Espaciado horizontal elástico
+				% Tercera imagen
+				\begin{subfigure}[b]{0.3\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{Recursos/ConexionBBDD.png}
+					\caption{Introducimos el nombre de nuestra base de datos (cardpartner\_db) con su usuario (admin\_cardpartner) y la contraseña (123456)}
+					
+				\end{subfigure}
+				
+			\end{figure}
+			\begin{itemize}
+				\item Vamos al menú de Files del editor
+				\item Dentro de este menú, buscamos la carpeta que se llame sql 
+				\item Ejecutamos los scripts en orden para tener toda la información necesaria en nuestra base de datos.
+				\item Ejecutamos la aplicación.
+			\end{itemize}
+			
+			\subsection{Usuarios para login}
+				Para la funcionalidad de inicio de sesion, se han creado los siguientes usuarios en la base de datos:
+				
+			\begin{table}[H]
+				\centering
+				
+				\vspace{0.3cm} % Espacio entre caption y tabla
+				\begin{tabular}{c c c} 
+					\toprule
+					\textbf{Apodo} & \textbf{Email} & \textbf{Password} \\
+					\midrule
+					admin  & admin@test.com        & 123456 \\
+					sergio & sergio@test.com       & 123456 \\
+					marcos & marcos@test.com       & 123456 \\
+					alvaro & admin@cardpartner.com & 123456 \\
+					edgar  & edgar@test.com        & 123456 \\
+					xabi   & xabi@test.com         & 123456 \\
+					\bottomrule
+				\end{tabular}
+				\caption{Credenciales de usuarios para pruebas de sistema}
+				\label{tab:usuarios_prueba}
+			\end{table}
+		
+			
+	\newpage
+	\section{Reparto de carga de trabajo}
+	Para esta tercera entrega, hemos decidido cambiar la manera de trabajar, nos hemos divido en dos grupos, Sergio y Marcos se han encargado del \textit{frontend} mientras que Edgar y Álvaro se han encargado de la parte del \textit{backend}.\\
+	Esta división se ha hecho con dos propositos, optimizar el tiempo de desarrollo,evitar conflictos en el git y permitir que los integrantes trabajen de la manera más cómoda posible.\\
+	Después de la segunda entrega, internamente vimos que Marcos y Sergio tenían más facilidad para el html y los estilos css por lo que se ofrecieron en encargarse de la parte más visual para seguir manteniendo una homogeneidad además de implementar las funcionalidades necesarias (los jsp). En el caso de ser necesario aportar conocimiento concreto sobre las cartas Marcos es un jugador medianamente especializado por lo que podría aportar la información necesaria.\\
+	Por otra parte, Edgar y Álvaro se encontraban más cómodos en la gestión de la bbdd, los daos,los dtos y \textit{servlet}, por lo que eligieron de manera voluntaria trabajar en este campo de la web; además, como Álvaro es el que tiene más experiencia en este tcg, construir la base de datos, ha sido una tarea muy sencilla.\\
+	De esta manera, al estar en dos equipos, nos hemos podido organizar mejor minimizando así los posibles conflictos en el git puesto que al acotar las tareas, ambas personas del equipo podían trabajar sin pisar al otro integrante.
+	
+	\begin{table}[h]
+		\centering
+	
+		\begin{tabularx}{\textwidth}{llX} 
+			\toprule
+			\textbf{Nombre} & \textbf{Porcentaje} & \textbf{Responsabilidad principal} \\
+			\midrule
+			\multicolumn{3}{l}{\textit{\textbf{Equipo Frontend 50\%}}}  \\
+			\midrule
+			ÁLVAREZ FULCONIS, MARCOS P. & 25\% & Todo lo relacionado con las vistas de cartas y las del apartado social, navegabilidad de las vistas, maquetación  del documento  \\
+			OTERO GARCÍA, SERGIO        & 25\% & Todo lo relacionado con  las vistas de \textit{decks} así como del login, register, página inicial de la web y redacción del documento.  \\
+			\midrule
+			\multicolumn{3}{l}{\textit{\textbf{Equipo Backend \& Gestión 50\%}}} \\
+			\midrule
+			LOPEZ PRIMO, ÁLVARO         & 25\% &  Creación del esquema de la bbdd, colaborar en el E/R, población de la base de datos y transformación de los JSONs en datos para la misma, scripts para la automatización de MariaDB en local, redacción del documento. \\
+			SANTIESTEBAN MENDO, EDGAR   & 25\% & Colaboración en el E/R, creación de los esquemas de la bbdd, daos y dtos, redacción del documento. \\
+			\bottomrule
+		\end{tabularx}
+			\caption{Distribución de Responsabilidades por Equipo y Miembro}
+	\end{table}
+	
+	
+	\section{Declaración de Uso de Inteligencia Artificial}
+	Para esta segunda entrega, se ha usado la IA Gemini como herramienta para dudas y mejoras del archivo LaTeX, revisión de los contenidos y evaluación de los mismos y diseño iterativo para mejorar lo ya realizado.\\
+	Además, se ha usado \href{https://gemini.google.com/share/7a923a0bfae8}{Gemini} para la generación del logo del proyecto.\\
+	\textbf{Ejemplos de prompts realizados:}
+	\begin{itemize}
+		\item 'Cómo funciona un servlet en java'
+		\item 'Que son los DAOs, DTOs y Servlets en java y como es el flujo de trabajo entre ellos'
+		\item 'Como hacer una conexión de MariaDB en ApacheNetBeans'
+		\item 'Haciendo push, a mis compañeros no les aparece la bbdd ¿es normal?'
+		\item 'Cómo puedo automatizar la instalación y creación de una bbdd con MariaDB'
+		\item 'Me puedes revisar los \textit{scripts} de creación de la base de datos'
+		\item 'Traduceme este \textit{script} de creación de bbdd para Windows en un .bat'
+		\item 'Cómo puedo testear que la base de datos se ha rellenado de manera correcta con los \textit{scrpts} sql'
+		\item 'Cómo me puedo saltar la política CORS para hacer peticiones a la web de bandai nanco sobre cartas del tcg de One Piece'
+		\item 'Cómo puedo cambiar la numeración de una página para sean botones y mejorar la navegabilidad por una lista de cartas'
+        \item 'Ayudame a mejorar el botón de filtros de la vista cartas'
+        \item '¿Cómo puedo añadir un mensaje de aviso que indique que no se puede acceder a esta vista sin estar loggeado?'
+        \item 'No logro que se apliquen los filtros en las cartas, ¿puedes echarme una mano?'
+	\end{itemize}
+	
+	%\begin{itemize}
+	%   \item Herramientas utilizadas: hay que especificar qué herramientas de IA se han utilizado.
+	%  \item Propósito del uso: explicar cómo se ha utilizado cada herramienta.
+	% \item Alcance del uso: indicar en qué partes específicas del trabajo se ha recibido asistencia de una herramienta de IA.
+	%\item Prompts utilizados: incluir los prompts, preguntas o instrucciones exactas que se han
+	%introducido en la herramienta de IA.
+	%\end{itemize}
+	
+\end{document}
