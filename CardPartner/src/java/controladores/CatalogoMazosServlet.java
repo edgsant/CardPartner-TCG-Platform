@@ -13,6 +13,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.sql.SQLException;
 
 @WebServlet(name = "CatalogoMazosServlet", urlPatterns = {"/CatalogoMazosServlet"})
 public class CatalogoMazosServlet extends HttpServlet {
@@ -59,29 +60,37 @@ public class CatalogoMazosServlet extends HttpServlet {
             esOficial = false;
         }
 
-        MazoDAO mazoDAO = new MazoDAO();
+        try {
 
-        // 3. Buscamos los mazos (¡Ahora en un solo viaje a la BD con todos los filtros!)
-        // Pasamos (esOficial, minWinrate, nombre, lider, color, limite, offset)
-        List<Mazo> listaMazos = mazoDAO.filtrarMazosPublicos(esOficial, null, nombreBuscado, idLider, colorLider, 20, 0);
+            MazoDAO mazoDAO = new MazoDAO();
 
-        // Ya NO necesitamos el CartaDAO aquí, el MazoDAO ya incluye al líder dentro del objeto.
-        // 4. Empaquetamos y mandamos a la vista
-        request.setAttribute("listaMazosComunidad", listaMazos);
+            // 3. Buscamos los mazos (¡Ahora en un solo viaje a la BD con todos los filtros!)
+            // Pasamos (esOficial, minWinrate, nombre, lider, color, limite, offset)
+            List<Mazo> listaMazos = mazoDAO.filtrarMazosPublicos(esOficial, null, nombreBuscado, idLider, colorLider, 20, 0);
 
-        // Pasamos variables para que el Front pueda mantener los filtros seleccionados
-        request.setAttribute("tipoMazoActivo", tipoMazoStr);
-        request.setAttribute("colorSeleccionado", colorLider);
+            // Ya NO necesitamos el CartaDAO aquí, el MazoDAO ya incluye al líder dentro del objeto.
+            // 4. Empaquetamos y mandamos a la vista
+            request.setAttribute("listaMazosComunidad", listaMazos);
 
-        String destino = "/Views/community-deck.jsp";
+            // Pasamos variables para que el Front pueda mantener los filtros seleccionados
+            request.setAttribute("tipoMazoActivo", tipoMazoStr);
+            request.setAttribute("colorSeleccionado", colorLider);
 
-        // Si el parámetro indica que quieren la vista META, cambiamos la ruta
-        if ("oficial".equals(tipoMazoStr)) {
-            destino = "/Views/meta-decks.jsp";
+            String destino = "/Views/community-deck.jsp";
+
+            // Si el parámetro indica que quieren la vista META, cambiamos la ruta
+            if ("oficial".equals(tipoMazoStr)) {
+                destino = "/Views/meta-decks.jsp";
+            }
+
+            // Ejecutamos el envío a la ruta dinámica que hayamos decidido
+            request.getRequestDispatcher(destino).forward(request, response);
+        } catch (Exception e) {
+            System.err.println("Error en CatalogoMazosServlet al mostrar catalogo: " + e.getMessage());
+            request.setAttribute("mensajeError", "No se pudo cargar la galería de mazos.");
+            request.getRequestDispatcher("/Views/error.jsp").forward(request, response);
+            return;
         }
-
-        // Ejecutamos el envío a la ruta dinámica que hayamos decidido
-        request.getRequestDispatcher(destino).forward(request, response);
     }
 
     // ==========================================
@@ -118,6 +127,12 @@ public class CatalogoMazosServlet extends HttpServlet {
                 }
             } catch (NumberFormatException e) {
                 e.printStackTrace();
+            } catch (SQLException e) {
+                
+                System.err.println("Error en CatalogoMazosServlet (detalle): " + e.getMessage());
+                request.setAttribute("mensajeError", "No hemos podido cargar los detalles de este mazo.");
+                request.getRequestDispatcher("/Views/error.jsp").forward(request, response);
+                return;
             }
         }
 
