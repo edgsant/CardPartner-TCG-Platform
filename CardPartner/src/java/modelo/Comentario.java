@@ -9,17 +9,17 @@ public class Comentario implements Serializable {
     private String contenido;
     private Timestamp fechaCreacion;
     private Timestamp fechaEdicion;
-    private int idUsuarioAutor;
+    private Usuario usuarioAutor;
     private int idMazoDestino;
 
     public Comentario() {
     }
 
     // Constructor sin fechas (se autogeneran en la BD)
-    public Comentario(int idComentario, String contenido, int idUsuarioAutor, int idMazoDestino) {
+    public Comentario(int idComentario, String contenido, Usuario usuarioAutor, int idMazoDestino) {
         this.idComentario = idComentario;
         this.contenido = contenido;
-        this.idUsuarioAutor = idUsuarioAutor;
+        this.usuarioAutor = usuarioAutor;
         this.idMazoDestino = idMazoDestino;
     }
 
@@ -55,20 +55,20 @@ public class Comentario implements Serializable {
         this.fechaEdicion = fechaEdicion;
     }
 
-    public int getIdUsuarioAutor() {
-        return idUsuarioAutor;
-    }
-
-    public void setIdUsuarioAutor(int idUsuarioAutor) {
-        this.idUsuarioAutor = idUsuarioAutor;
-    }
-
     public int getIdMazoDestino() {
         return idMazoDestino;
     }
 
     public void setIdMazoDestino(int idMazoDestino) {
         this.idMazoDestino = idMazoDestino;
+    }
+
+    public Usuario getUsuarioAutor() {
+        return usuarioAutor;
+    }
+
+    public void setUsuarioAutor(Usuario usuarioAutor) {
+        this.usuarioAutor = usuarioAutor;
     }
 
     
