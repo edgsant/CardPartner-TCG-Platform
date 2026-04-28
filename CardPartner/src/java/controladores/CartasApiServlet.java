@@ -79,9 +79,14 @@ public class CartasApiServlet extends HttpServlet {
             for (int i = 0; i < cartasFiltradas.size(); i++) {
                 Carta c = cartasFiltradas.get(i);
 
-                // Limpiamos los datos por seguridad (escapar comillas en nombres como "Luffy's")
-                String nombreSeguro = c.getNombreCarta().replace("\"", "\\\"").replace("'", "\\'");
-                String imagenSegura = (c.getImagen() != null) ? c.getImagen() : "";
+                // 1. Limpieza EXTREMA para evitar que JSON.parse() explote en el frontend
+                String nombreSeguro = c.getNombreCarta()
+                        .replace("\\", "\\\\") // IMPORTANTE: Escapar barras invertidas lo primero
+                        .replace("\"", "\\\"") // Escapar comillas dobles
+                        .replace("\n", " ") // Cambiar saltos de línea por un espacio
+                        .replace("\r", "");    // Eliminar retornos de carro
+
+                String imagenSegura = (c.getImagen() != null) ? c.getImagen().replace("\\", "/") : "";
 
                 jsonBuilder.append("{")
                         .append("\"idCarta\":\"").append(c.getIdCarta()).append("\", ")
@@ -116,11 +121,10 @@ public class CartasApiServlet extends HttpServlet {
         }
     }
 
-        @Override
-        protected void doPost
-        (HttpServletRequest request, HttpServletResponse response)
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            doGet(request, response);
-        }
-    
+        doGet(request, response);
+    }
+
 }
