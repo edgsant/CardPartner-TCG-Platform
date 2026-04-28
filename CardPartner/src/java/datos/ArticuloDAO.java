@@ -18,7 +18,15 @@ public class ArticuloDAO {
     // Consultas para contar el total (útil para saber cuántos botones de página dibujar)
     private static final String SQL_COUNT_ALL = "SELECT COUNT(*) FROM ARTICULO";
     private static final String SQL_COUNT_BY_CATEGORIA = "SELECT COUNT(*) FROM ARTICULO WHERE categoria = ?";
-    
+
+    // Consultas para ajustarse al CRUD (Create, Read, Update, Delete)
+    private static final String SQL_UPDATE = "UPDATE ARTICULO SET titulo = ?, descripcion = ?, categoria = ?, enlace_externo = ?, portada = ?, fecha_edicion = CURRENT_TIMESTAMP WHERE id_articulo = ?";
+    private static final String SQL_DELETE = "DELETE FROM ARTICULO WHERE id_articulo = ?";
+
+    // Nueva funcionalidad para posible busqueda de articulos
+    private static final String SQL_SEARCH_PAGINADO = "SELECT * FROM ARTICULO WHERE titulo LIKE ? OR descripcion LIKE ? ORDER BY fecha_creacion DESC LIMIT ? OFFSET ?";
+    private static final String SQL_COUNT_SEARCH = "SELECT COUNT(*) FROM ARTICULO WHERE titulo LIKE ? OR descripcion LIKE ?";
+
     /**
      * Inserta un nuevo artículo y devuelve su ID autogenerado. Devuelve 0 si
      * hubo un error.
@@ -261,8 +269,155 @@ public class ArticuloDAO {
         }
         return total;
     }
-    
-    
+
+    /**
+     * Actualiza los datos de un artículo existente.
+     *
+     * @return true si se actualizó correctamente.
+     * @throws SQLException si hay error en la base de datos.
+     */
+    public boolean actualizarArticulo(Articulo a) throws SQLException {
+        boolean exito = false;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+
+        try {
+            ps = con.prepareStatement(SQL_UPDATE);
+            ps.setString(1, a.getTitulo());
+            ps.setString(2, a.getDescripcion());
+            ps.setString(3, a.getCategoria());
+            ps.setString(4, a.getEnlaceExterno());
+            ps.setString(5, a.getPortada());
+            ps.setInt(6, a.getIdArticulo());
+
+            exito = ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("Error al actualizar el artículo ID " + a.getIdArticulo() + ": " + e.getMessage());
+            throw e;
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar recursos en actualizarArticulo: " + e.getMessage());
+            }
+        }
+        return exito;
+    }
+
+    /**
+     * Elimina un artículo de la base de datos.
+     *
+     * @return true si se eliminó correctamente.
+     */
+    public boolean borrarArticulo(int idArticulo) throws SQLException {
+        boolean exito = false;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+
+        try {
+            ps = con.prepareStatement(SQL_DELETE);
+            ps.setInt(1, idArticulo);
+            exito = ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("Error al borrar el artículo ID " + idArticulo + ": " + e.getMessage());
+            throw e;
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar recursos en borrarArticulo: " + e.getMessage());
+            }
+        }
+        return exito;
+    }
+
+    /**
+     * Busca artículos por título o descripción con soporte para paginación.
+     */
+    public ArrayList<Articulo> buscarArticulos(String keyword, int limite, int offset) throws SQLException {
+        ArrayList<Articulo> lista = new ArrayList<>();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            ps = con.prepareStatement(SQL_SEARCH_PAGINADO);
+            String pattern = "%" + keyword + "%";
+            ps.setString(1, pattern);
+            ps.setString(2, pattern);
+            ps.setInt(3, limite);
+            ps.setInt(4, offset);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                lista.add(mapearArticulo(rs));
+            }
+        } catch (SQLException e) {
+            System.err.println("Error en búsqueda de artículos (keyword: " + keyword + "): " + e.getMessage());
+            throw e;
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar recursos en buscarArticulos: " + e.getMessage());
+            }
+        }
+        return lista;
+    }
+
+    /**
+     * Cuenta el total de resultados para una búsqueda (necesario para la
+     * paginación del buscador).
+     */
+    public int contarPorBusqueda(String keyword) throws SQLException {
+        int total = 0;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            ps = con.prepareStatement(SQL_COUNT_SEARCH);
+            String pattern = "%" + keyword + "%";
+            ps.setString(1, pattern);
+            ps.setString(2, pattern);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                total = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al contar resultados de búsqueda: " + e.getMessage());
+            throw e;
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                pool.freeConnection(con);
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar recursos en contarPorBusqueda: " + e.getMessage());
+            }
+        }
+        return total;
+    }
 
     /**
      * Método auxiliar privado para no repetir código. Convierte una fila de
