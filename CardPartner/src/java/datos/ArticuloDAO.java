@@ -10,20 +10,20 @@ public class ArticuloDAO {
     // Constantes SQL actualizadas con paginación y conteos
     private static final String SQL_INSERT = "INSERT INTO ARTICULO (titulo, descripcion, categoria, enlace_externo, portada, id_admin_autor) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SQL_SELECT_BY_ID = "SELECT * FROM ARTICULO WHERE id_articulo = ?";
-    
+
     // Consultas paginadas
     private static final String SQL_SELECT_ALL_PAGINADO = "SELECT * FROM ARTICULO ORDER BY fecha_creacion DESC LIMIT ? OFFSET ?";
     private static final String SQL_SELECT_BY_CATEGORIA_PAGINADO = "SELECT * FROM ARTICULO WHERE categoria = ? ORDER BY fecha_creacion DESC LIMIT ? OFFSET ?";
-    
+
     // Consultas para contar el total (útil para saber cuántos botones de página dibujar)
     private static final String SQL_COUNT_ALL = "SELECT COUNT(*) FROM ARTICULO";
     private static final String SQL_COUNT_BY_CATEGORIA = "SELECT COUNT(*) FROM ARTICULO WHERE categoria = ?";
-
+    
     /**
-     * Inserta un nuevo artículo y devuelve su ID autogenerado.
-     * Devuelve 0 si hubo un error.
+     * Inserta un nuevo artículo y devuelve su ID autogenerado. Devuelve 0 si
+     * hubo un error.
      */
-    public int crearArticulo(Articulo a) {
+    public int crearArticulo(Articulo a) throws SQLException {
         int idGenerado = 0;
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
@@ -40,7 +40,7 @@ public class ArticuloDAO {
             ps.setInt(6, a.getIdAdminAutor());
 
             int filasAfectadas = ps.executeUpdate();
-            
+
             if (filasAfectadas > 0) {
                 rs = ps.getGeneratedKeys();
                 if (rs.next()) {
@@ -48,23 +48,28 @@ public class ArticuloDAO {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Error al crear el artículo " + a.getTitulo() + ": " + e.getMessage());
+            throw e;
         } finally {
             try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
                 pool.freeConnection(con);
             } catch (SQLException e) {
-                e.printStackTrace();
+                System.err.println("Error al cerrar recursos en obtenerPorId: " + e.getMessage());
             }
         }
-        return idGenerado; 
+        return idGenerado;
     }
 
     /**
      * Devuelve una lista paginada con todos los artículos.
      */
-    public ArrayList<Articulo> obtenerTodos(int limite, int offset) {
+    public ArrayList<Articulo> obtenerTodos(int limite, int offset) throws SQLException {
         ArrayList<Articulo> lista = new ArrayList<>();
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
@@ -81,23 +86,31 @@ public class ArticuloDAO {
                 lista.add(mapearArticulo(rs));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            // Logueamos el CONTEXTO de la búsqueda, no el objeto
+            System.err.println("Error al obtener la lista de artículos (Límite: " + limite + ", Offset: " + offset + "): " + e.getMessage());
+            // Lanzamos la excepción al Servlet
+            throw e;
         } finally {
             try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
                 pool.freeConnection(con);
             } catch (SQLException e) {
-                e.printStackTrace();
+                System.err.println("Error al cerrar recursos en obtenerTodos: " + e.getMessage());
             }
         }
         return lista;
     }
 
     /**
-     * Devuelve una lista paginada de artículos filtrada por categoría ("NOTICIA", "GUIA", "TORNEO").
+     * Devuelve una lista paginada de artículos filtrada por categoría
+     * ("NOTICIA", "GUIA", "TORNEO").
      */
-    public ArrayList<Articulo> obtenerPorCategoria(String categoria, int limite, int offset) {
+    public ArrayList<Articulo> obtenerPorCategoria(String categoria, int limite, int offset) throws SQLException {
         ArrayList<Articulo> lista = new ArrayList<>();
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
@@ -115,23 +128,31 @@ public class ArticuloDAO {
                 lista.add(mapearArticulo(rs));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            // Logueamos el CONTEXTO de la búsqueda, no el objeto
+            System.err.println("Error al obtener la lista de artículos (Categoría: " + categoria + ", Límite: " + limite + ", Offset: " + offset + "): " + e.getMessage());
+            // Lanzamos la excepción al Servlet
+            throw e;
         } finally {
             try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
                 pool.freeConnection(con);
             } catch (SQLException e) {
-                e.printStackTrace();
+                System.err.println("Error al cerrar recursos en obtenerPorCategoria: " + e.getMessage());
             }
         }
         return lista;
     }
 
     /**
-     * Busca un artículo concreto por su ID (para cuando haces clic en "Leer más").
+     * Busca un artículo concreto por su ID (para cuando haces clic en "Leer
+     * más").
      */
-    public Articulo obtenerPorId(int idArticulo) {
+    public Articulo obtenerPorId(int idArticulo) throws SQLException {
         Articulo articulo = null;
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
@@ -147,23 +168,29 @@ public class ArticuloDAO {
                 articulo = mapearArticulo(rs);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Error al obtener artículo con ID " + idArticulo + ": " + e.getMessage());
+            throw e;
         } finally {
             try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
                 pool.freeConnection(con);
             } catch (SQLException e) {
-                e.printStackTrace();
+                System.err.println("Error al cerrar recursos en obtenerPorId: " + e.getMessage());
             }
         }
         return articulo;
     }
 
     /**
-     * Devuelve el total de artículos en la base de datos (para calcular páginas).
+     * Devuelve el total de artículos en la base de datos (para calcular
+     * páginas).
      */
-    public int contarTodos() {
+    public int contarTodos() throws SQLException {
         int total = 0;
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
@@ -177,14 +204,21 @@ public class ArticuloDAO {
                 total = rs.getInt(1);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            // Logueamos el CONTEXTO de la búsqueda, no el objeto
+            System.err.println("Error al contar la lista de artículos (contados: " + total + " ): " + e.getMessage());
+            // Lanzamos la excepción al Servlet
+            throw e;
         } finally {
             try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
                 pool.freeConnection(con);
             } catch (SQLException e) {
-                e.printStackTrace();
+                System.err.println("Error al cerrar recursos en contarTodos: " + e.getMessage());
             }
         }
         return total;
@@ -193,7 +227,7 @@ public class ArticuloDAO {
     /**
      * Devuelve el total de artículos de una categoría específica.
      */
-    public int contarPorCategoria(String categoria) {
+    public int contarPorCategoria(String categoria) throws SQLException {
         int total = 0;
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
@@ -208,22 +242,31 @@ public class ArticuloDAO {
                 total = rs.getInt(1);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            // Logueamos el CONTEXTO de la búsqueda, no el objeto
+            System.err.println("Error al contar la lista de artículos (Categoría: " + categoria + ", contados: " + total + " ): " + e.getMessage());
+            // Lanzamos la excepción al Servlet
+            throw e;
         } finally {
             try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
                 pool.freeConnection(con);
             } catch (SQLException e) {
-                e.printStackTrace();
+                System.err.println("Error al cerrar recursos en contarPorCategoria: " + e.getMessage());
             }
         }
         return total;
     }
+    
+    
 
     /**
-     * Método auxiliar privado para no repetir código. 
-     * Convierte una fila de MariaDB en un objeto Articulo.
+     * Método auxiliar privado para no repetir código. Convierte una fila de
+     * MariaDB en un objeto Articulo.
      */
     private Articulo mapearArticulo(ResultSet rs) throws SQLException {
         Articulo a = new Articulo();
