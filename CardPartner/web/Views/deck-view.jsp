@@ -2,39 +2,21 @@
 <%@page import="modelo.Mazo"%>
 <%@page import="modelo.Carta"%>
 <%@page import="modelo.ContieneCarta"%>
-<%@page import="datos.MazoDAO"%>
-<%@page import="datos.CartaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    String idParam = request.getParameter("id");
-    Mazo mazoActual = null;
-    Carta liderActual = null;
-    List<ContieneCarta> listaCartas = null;
+    // 1. RECOGER LOS DATOS QUE ENVÍA EL SERVLET (Nada de DAOs aquí)
+    Mazo mazoActual = (Mazo) request.getAttribute("mazoParaLaVista");
+    List<ContieneCarta> listaCartas = (List<ContieneCarta>) request.getAttribute("cartasDelMazo");
     
-    MazoDAO mazoDao = new MazoDAO();
-    CartaDAO cartaDao = new CartaDAO();
-
-    if(idParam != null && !idParam.isEmpty()) {
-        try {
-            int idBusqueda = Integer.parseInt(idParam);
-            mazoActual = mazoDao.obtenerMazoPorId(idBusqueda);
-            
-            if (mazoActual != null) {
-                liderActual = cartaDao.obtenerCartaPorId(mazoActual.getIdCartaLider());
-                // Traemos las cartas del mazo
-                listaCartas = mazoDao.obtenerCartasDeUnMazo(idBusqueda);
-            }
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-
+    // 2. ESCUDO DE SEGURIDAD: Si intentan entrar a la vista sin pasar por el Servlet
     if (mazoActual == null) {
-        mazoActual = new Mazo();
-        mazoActual.setNombreMazo("Mazo no encontrado");
-        mazoActual.setDescripcion("No se ha podido cargar este mazo de la base de datos.");
+        response.sendRedirect(request.getContextPath() + "/CatalogoMazosServlet?accion=listar");
+        return;
     }
+
+    Carta liderActual = mazoActual.getCartaLider();
     
+    // 3. LÓGICA DE PROXY DE IMAGEN (Esto sí está bien en la vista)
     String imgLiderRaw = (liderActual != null && liderActual.getImagen() != null) ? liderActual.getImagen().trim() : "";
     String srcFinal = "";
 
@@ -125,7 +107,7 @@
                         
                         <div class="acciones-mazo">
                             <button class="btn-accion-mazo"><i class="fas fa-heart"></i> Guardar Mazo</button>
-                            <a href="${pageContext.request.contextPath}/Views/deck-builder.jsp?idCopy=<%= mazoActual.getIdMazo() %>" class="btn-accion-mazo" style="text-decoration: none;">
+                            <a href="${pageContext.request.contextPath}/DeckBuilderServlet?accion=editar&id=<%= mazoActual.getIdMazo() %>" class="btn-accion-mazo" style="text-decoration: none;">
                                 <i class="fas fa-edit"></i> Copiar / Editar
                             </a>
                             <button class="btn-accion-mazo"><i class="fas fa-shopping-cart"></i> Comprar Cartas</button>
