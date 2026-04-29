@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "ObtenerDetallesMazo", urlPatterns = {"/ObtenerDetallesMazo"})
-public class ObtenerDetallesMazo extends HttpServlet {
+public class MazoApiServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
