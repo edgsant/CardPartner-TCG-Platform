@@ -35,8 +35,8 @@ public class ValoracionDAO {
             ps = con.prepareStatement(SQL_UPSERT);
             ps.setInt(1, v.getIdUsuario());
             ps.setInt(2, v.getIdMazo());
-            ps.setDouble(3, v.getPuntuacion()); // Usamos double
-            ps.setDouble(4, v.getPuntuacion()); // Para el UPDATE si hay duplicado
+            ps.setFloat(3, v.getPuntuacion()); // Usamos float
+            ps.setFloat(4, v.getPuntuacion()); // Para el UPDATE si hay duplicado
             
             exito = ps.executeUpdate() > 0;
         } catch (SQLException e) {
