@@ -66,6 +66,35 @@ public class DeckBuilderServlet extends HttpServlet {
                 } catch (NumberFormatException e) {
                     //e.printStackTrace(); evitar llenar la consola de mierda
                 }
+            } else if ("copiar".equals(accion) && idParam != null) {
+                try {
+                    int idMazo = Integer.parseInt(idParam);
+                    MazoDAO mazoDAO = new MazoDAO();
+                    Mazo mazoACopiar = mazoDAO.obtenerMazoPorId(idMazo);
+
+                    // Comprobación de seguridad: El mazo debe existir (¡Pero NO nos importa quién lo creó!)
+                    if (mazoACopiar != null) {
+
+                        // TRUCO 1: Cambiamos el nombre para que el usuario sepa que es una copia
+                        mazoACopiar.setNombreMazo("Copia de " + mazoACopiar.getNombreMazo());
+
+                        // TRUCO 2: Borramos el ID original. Así evitamos sobrescribir el mazo del autor.
+                        mazoACopiar.setIdMazo(0);
+
+                        // Cargamos el líder para tener su foto
+                        Carta lider = cartaDAO.obtenerCartaPorId(mazoACopiar.getIdCartaLider());
+                        mazoACopiar.setCartaLider(lider);
+
+                        // Cargamos las 50 cartas
+                        List<ContieneCarta> cartasDelMazo = mazoDAO.obtenerCartasDeUnMazo(idMazo);
+
+                        // Enviamos todo a la vista (usamos "mazoAEditar" para que tu HTML funcione sin tocarlo)
+                        request.setAttribute("mazoAEditar", mazoACopiar);
+                        request.setAttribute("cartasAEditar", cartasDelMazo);
+                    }
+                } catch (NumberFormatException e) {
+                    // Silenciamos el error si alguien pone letras en la URL
+                }
             }
 
             request.getRequestDispatcher("/Views/deck-builder.jsp").forward(request, response);
