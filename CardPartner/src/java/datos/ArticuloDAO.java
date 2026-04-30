@@ -59,17 +59,7 @@ public class ArticuloDAO {
             System.err.println("Error al crear el artículo " + a.getTitulo() + ": " + e.getMessage());
             throw e;
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos en obtenerPorId: " + e.getMessage());
-            }
+            cerrarRecursos(con, ps, rs);
         }
         return idGenerado;
     }
@@ -99,17 +89,7 @@ public class ArticuloDAO {
             // Lanzamos la excepción al Servlet
             throw e;
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos en obtenerTodos: " + e.getMessage());
-            }
+            cerrarRecursos(con, ps, rs);
         }
         return lista;
     }
@@ -141,17 +121,7 @@ public class ArticuloDAO {
             // Lanzamos la excepción al Servlet
             throw e;
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos en obtenerPorCategoria: " + e.getMessage());
-            }
+            cerrarRecursos(con, ps, rs);
         }
         return lista;
     }
@@ -179,17 +149,7 @@ public class ArticuloDAO {
             System.err.println("Error al obtener artículo con ID " + idArticulo + ": " + e.getMessage());
             throw e;
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos en obtenerPorId: " + e.getMessage());
-            }
+            cerrarRecursos(con, ps, rs);
         }
         return articulo;
     }
@@ -217,17 +177,7 @@ public class ArticuloDAO {
             // Lanzamos la excepción al Servlet
             throw e;
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos en contarTodos: " + e.getMessage());
-            }
+            cerrarRecursos(con, ps, rs);
         }
         return total;
     }
@@ -255,17 +205,7 @@ public class ArticuloDAO {
             // Lanzamos la excepción al Servlet
             throw e;
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos en contarPorCategoria: " + e.getMessage());
-            }
+            cerrarRecursos(con, ps, rs);
         }
         return total;
     }
@@ -296,14 +236,7 @@ public class ArticuloDAO {
             System.err.println("Error al actualizar el artículo ID " + a.getIdArticulo() + ": " + e.getMessage());
             throw e;
         } finally {
-            try {
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos en actualizarArticulo: " + e.getMessage());
-            }
+            cerrarRecursos(con, ps, null);
         }
         return exito;
     }
@@ -327,14 +260,7 @@ public class ArticuloDAO {
             System.err.println("Error al borrar el artículo ID " + idArticulo + ": " + e.getMessage());
             throw e;
         } finally {
-            try {
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos en borrarArticulo: " + e.getMessage());
-            }
+            cerrarRecursos(con, ps, null);
         }
         return exito;
     }
@@ -365,17 +291,7 @@ public class ArticuloDAO {
             System.err.println("Error en búsqueda de artículos (keyword: " + keyword + "): " + e.getMessage());
             throw e;
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos en buscarArticulos: " + e.getMessage());
-            }
+            cerrarRecursos(con, ps, rs);
         }
         return lista;
     }
@@ -404,17 +320,7 @@ public class ArticuloDAO {
             System.err.println("Error al contar resultados de búsqueda: " + e.getMessage());
             throw e;
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos en contarPorBusqueda: " + e.getMessage());
-            }
+            cerrarRecursos(con, ps, rs);
         }
         return total;
     }
@@ -435,5 +341,29 @@ public class ArticuloDAO {
         a.setPortada(rs.getString("portada"));
         a.setIdAdminAutor(rs.getInt("id_admin_autor"));
         return a;
+    }
+
+    /**
+     * Método auxiliar para cerrar recursos de forma segura. Garantiza que la
+     * conexión se libere incluso si ResultSet o Statement fallan.
+     */
+    private void cerrarRecursos(Connection con, PreparedStatement ps, ResultSet rs) {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar ResultSet: " + e.getMessage());
+            }
+        }
+        if (ps != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar PreparedStatement: " + e.getMessage());
+            }
+        }
+        if (con != null) {
+            ConnectionPool.getInstance().freeConnection(con);
+        }
     }
 }
