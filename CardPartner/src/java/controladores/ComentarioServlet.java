@@ -38,10 +38,11 @@ public class ComentarioServlet extends HttpServlet {
             return;
         }
         
-        int idMazo = Integer.parseInt(idMazoStr);
         ComentarioDAO dao = new ComentarioDAO();
+        int idMazo = 0;
 
         try {
+            idMazo = Integer.parseInt(idMazoStr);
             // 3. Ejecutar la acción solicitada
             if ("crear".equals(accion)) {
                 String contenido = request.getParameter("contenido");

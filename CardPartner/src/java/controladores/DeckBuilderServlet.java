@@ -64,7 +64,7 @@ public class DeckBuilderServlet extends HttpServlet {
                         request.setAttribute("cartasAEditar", cartasDelMazo);
                     }
                 } catch (NumberFormatException e) {
-                    e.printStackTrace();
+                    //e.printStackTrace(); evitar llenar la consola de mierda
                 }
             }
 

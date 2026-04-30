@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import jakarta.servlet.ServletException;
+import java.sql.SQLException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -53,28 +54,35 @@ public class UsuarioServlet extends HttpServlet {
             accion = "mi_perfil";
         }
 
-        switch (accion) {
-            case "mi_perfil":
-                mostrarPerfil(request, response, usuarioLogueado);
-                break;
-            case "borrar_mazo":
-                eliminarMazo(request, response, usuarioLogueado);
-                break;
-            case "quitar_favorito":
-                quitarFavorito(request, response, usuarioLogueado);
-                break;
-            case "cambiar_password":
-                cambiarPassword(request, response, usuarioLogueado);
-                break;
-            case "editar_datos":
-                editarDatos(request, response, usuarioLogueado);
-                break;
-            case "guardar_favorito":
-                guardarFavorito(request, response, usuarioLogueado);
-                break;
-            default:
-                response.sendRedirect("UsuarioServlet?accion=mi_perfil");
-                break;
+        try {
+
+            switch (accion) {
+                case "mi_perfil":
+                    mostrarPerfil(request, response, usuarioLogueado);
+                    break;
+                case "borrar_mazo":
+                    eliminarMazo(request, response, usuarioLogueado);
+                    break;
+                case "quitar_favorito":
+                    quitarFavorito(request, response, usuarioLogueado);
+                    break;
+                case "cambiar_password":
+                    cambiarPassword(request, response, usuarioLogueado);
+                    break;
+                case "editar_datos":
+                    editarDatos(request, response, usuarioLogueado);
+                    break;
+                case "guardar_favorito":
+                    guardarFavorito(request, response, usuarioLogueado);
+                    break;
+                default:
+                    response.sendRedirect("UsuarioServlet?accion=mi_perfil");
+                    break;
+            }
+        } catch (SQLException e) {
+            System.err.println("Error técnico en UsuarioServlet: " + e.getMessage());
+            request.setAttribute("mensajeError", "Estamos experimentando problemas técnicos. Inténtelo más tarde.");
+            request.getRequestDispatcher("/Views/error.jsp").forward(request, response);
         }
     }
 
@@ -82,7 +90,7 @@ public class UsuarioServlet extends HttpServlet {
     // MÉTODOS DE ACCIÓN
     // ==========================================
     private void mostrarPerfil(HttpServletRequest request, HttpServletResponse response, Usuario usuario)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
 
         MazoDAO mazoDAO = new MazoDAO();
 
@@ -99,7 +107,7 @@ public class UsuarioServlet extends HttpServlet {
     }
 
     private void eliminarMazo(HttpServletRequest request, HttpServletResponse response, Usuario usuario)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         String idMazoStr = request.getParameter("id");
         if (idMazoStr != null && !idMazoStr.isEmpty()) {
             try {
@@ -117,7 +125,7 @@ public class UsuarioServlet extends HttpServlet {
     }
 
     private void quitarFavorito(HttpServletRequest request, HttpServletResponse response, Usuario usuario)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         String idMazoStr = request.getParameter("id");
         if (idMazoStr != null && !idMazoStr.isEmpty()) {
             try {
@@ -134,28 +142,30 @@ public class UsuarioServlet extends HttpServlet {
         }
         response.sendRedirect("UsuarioServlet?accion=mi_perfil&error=favorito_fail");
     }
-    
+
     private void guardarFavorito(HttpServletRequest request, HttpServletResponse response, Usuario usuario)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         String idMazoStr = request.getParameter("id");
         if (idMazoStr != null && !idMazoStr.isEmpty()) {
             try {
                 int idMazo = Integer.parseInt(idMazoStr);
                 MazoDAO mazoDAO = new MazoDAO();
-                
+
                 if (mazoDAO.añadirMazoFavorito(usuario.getIdUsuario(), idMazo)) {
                     // Si lo guarda, lo devolvemos a la vista del mazo con mensaje de éxito
                     response.sendRedirect(request.getContextPath() + "/CatalogoMazosServlet?accion=detalle&id=" + idMazo + "&exito=guardado");
                     return;
                 }
-            } catch (NumberFormatException e) { e.printStackTrace(); }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
         }
         // Si falla, lo mandamos a su perfil
         response.sendRedirect("UsuarioServlet?accion=mi_perfil&error=favorito_fail");
     }
 
     private void cambiarPassword(HttpServletRequest request, HttpServletResponse response, Usuario usuario)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
 
         String passActual = request.getParameter("passActual");
         String passNueva = request.getParameter("passNueva");
@@ -174,7 +184,7 @@ public class UsuarioServlet extends HttpServlet {
     }
 
     private void editarDatos(HttpServletRequest request, HttpServletResponse response, Usuario usuario)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
 
         String nuevoApodo = request.getParameter("apodo");
         String nuevoEmail = request.getParameter("email");

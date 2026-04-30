@@ -39,5 +39,6 @@ public class LogoutServlet extends HttpServlet {
         
         // 4. Redirigimos al usuario a la página principal limpia
         response.sendRedirect(request.getContextPath() + "/index.jsp");
+        //response.sendRedirect(request.getContextPath() + "/InicioServlet");
     }
 }

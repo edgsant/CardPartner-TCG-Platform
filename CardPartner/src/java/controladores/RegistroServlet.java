@@ -6,6 +6,7 @@ import modelo.Usuario;
 import java.io.IOException;
 import java.io.InputStream;
 import jakarta.servlet.ServletException;
+import java.sql.SQLException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -22,7 +23,7 @@ public class RegistroServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // Si intentan entrar por URL, los devolvemos al formulario visual
-        response.sendRedirect("Views/registro.jsp");
+        response.sendRedirect(request.getContextPath() + "/Views/registro.jsp");
     }
 
     @Override
@@ -58,13 +59,21 @@ public class RegistroServlet extends HttpServlet {
             nuevoUsuario.setAvatar(null);
         }
 
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
-        int idGenerado = usuarioDAO.registrarUsuario(nuevoUsuario);
+        try {
 
-        if (idGenerado != 0) {
-            response.sendRedirect("Views/login.jsp?exito=registro_ok");
-        } else {
-            response.sendRedirect("Views/registro.jsp?error=email_duplicado");
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            int idGenerado = usuarioDAO.registrarUsuario(nuevoUsuario);
+
+            if (idGenerado != 0) {
+                response.sendRedirect("Views/login.jsp?exito=registro_ok");
+            } else {
+                response.sendRedirect("Views/registro.jsp?error=email_duplicado");
+            }
+        } catch (SQLException e) {
+            // 🟢 AÑADIDO: Manejo del error si se cae la base de datos
+            System.err.println("Error crítico en RegistroServlet: " + e.getMessage());
+            request.setAttribute("mensajeError", "Problemas técnicos al crear su cuenta. Inténtelo más tarde.");
+            request.getRequestDispatcher("/Views/error.jsp").forward(request, response);
         }
     }
 }

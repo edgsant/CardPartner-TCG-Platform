@@ -71,6 +71,21 @@ public class CatalogoMazosServlet extends HttpServlet {
 
             // 3. Buscamos los mazos (¡Ahora en un solo viaje a la BD con todos los filtros!)
             // Pasamos (esOficial, minWinrate, nombre, lider, color, limite, offset)
+            int pagina = 1;
+            int limite = 20;
+            String paginaParam = request.getParameter("pagina");
+            if (paginaParam != null && !paginaParam.isEmpty()) {
+                try {
+                    pagina = Integer.parseInt(paginaParam);
+                    if (pagina < 1) {
+                        pagina = 1;
+                    }
+                } catch (NumberFormatException e) {
+                    pagina = 1;
+                }
+            }
+            int offset = (pagina - 1) * limite;
+
             List<Mazo> listaMazos = mazoDAO.filtrarMazosPublicos(esOficial, null, nombreBuscado, idLider, colorLider, 20, 0);
 
             // Ya NO necesitamos el CartaDAO aquí, el MazoDAO ya incluye al líder dentro del objeto.
@@ -90,7 +105,7 @@ public class CatalogoMazosServlet extends HttpServlet {
 
             // Ejecutamos el envío a la ruta dinámica que hayamos decidido
             request.getRequestDispatcher(destino).forward(request, response);
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.err.println("Error en CatalogoMazosServlet al mostrar catalogo: " + e.getMessage());
             request.setAttribute("mensajeError", "No se pudo cargar la galería de mazos.");
             request.getRequestDispatcher("/Views/error.jsp").forward(request, response);
@@ -148,21 +163,21 @@ public class CatalogoMazosServlet extends HttpServlet {
                         request.setAttribute("miVoto", miVoto);
                     }
 
-                        request.getRequestDispatcher("/Views/deck-view.jsp").forward(request, response);
-                        return;
-                    }
-                }catch (NumberFormatException e) {
-                e.printStackTrace();
-            }catch (SQLException e) {
-                
+                    request.getRequestDispatcher("/Views/deck-view.jsp").forward(request, response);
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                // e.printStackTrace(); no ponerlo para evitar llenar la consola de ruido
+            } catch (SQLException e) {
+
                 System.err.println("Error en CatalogoMazosServlet (detalle): " + e.getMessage());
                 request.setAttribute("mensajeError", "No hemos podido cargar los detalles de este mazo.");
                 request.getRequestDispatcher("/Views/error.jsp").forward(request, response);
                 return;
             }
-            }
-
-            // Si hay error (mazo no existe o ID falso), devolvemos al catálogo
-            response.sendRedirect("CatalogoMazosServlet?accion=listar&error=no_encontrado");
         }
+
+        // Si hay error (mazo no existe o ID falso), devolvemos al catálogo
+        response.sendRedirect("CatalogoMazosServlet?accion=listar&error=no_encontrado");
     }
+}
