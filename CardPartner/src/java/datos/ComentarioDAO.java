@@ -10,14 +10,14 @@ public class ComentarioDAO {
     // ==========================================
     // 1. CONSTANTES SQL
     // ==========================================
-    private static final String SQL_INSERT = "INSERT INTO COMENTARIO (id_usuario, id_mazo, contenido, fecha_creacion) VALUES (?, ?, ?, CURRENT_TIMESTAMP)";
+    private static final String SQL_INSERT = "INSERT INTO COMENTARIO (id_usuario_autor, id_mazo_destino, contenido, fecha_creacion) VALUES (?, ?, ?, CURRENT_TIMESTAMP)";
     
     // IMPORTANTE: Ya NO traemos u.avatar para ahorrar RAM y no saturar la conexión con BLOBs
-    private static final String SQL_SELECT_BY_MAZO = "SELECT c.*, u.apodo_usuario FROM COMENTARIO c INNER JOIN USUARIO u ON c.id_usuario = u.id_usuario WHERE c.id_mazo = ? ORDER BY c.fecha_creacion DESC";
+    private static final String SQL_SELECT_BY_MAZO = "SELECT c.*, u.apodo_usuario FROM COMENTARIO c INNER JOIN USUARIO u ON c.id_usuario_autor = u.id_usuario WHERE c.id_mazo_destino = ? ORDER BY c.fecha_creacion DESC";
     
-    private static final String SQL_UPDATE = "UPDATE COMENTARIO SET contenido = ?, fecha_edicion = CURRENT_TIMESTAMP WHERE id_comentario = ? AND id_usuario = ?";
+    private static final String SQL_UPDATE = "UPDATE COMENTARIO SET contenido = ?, fecha_edicion = CURRENT_TIMESTAMP WHERE id_comentario = ? AND id_usuario_autor = ?";
     
-    private static final String SQL_DELETE = "DELETE FROM COMENTARIO WHERE id_comentario = ? AND id_usuario = ?";
+    private static final String SQL_DELETE = "DELETE FROM COMENTARIO WHERE id_comentario = ? AND id_usuario_autor = ?";
 
     // ==========================================
     // 2. MÉTODOS CRUD
@@ -62,7 +62,7 @@ public class ComentarioDAO {
             while (rs.next()) {
                 Comentario c = new Comentario();
                 c.setIdComentario(rs.getInt("id_comentario"));
-                c.setIdMazoDestino(rs.getInt("id_mazo"));
+                c.setIdMazoDestino(rs.getInt("id_mazo_destino"));
                 c.setContenido(rs.getString("contenido"));
                 c.setFechaCreacion(rs.getTimestamp("fecha_creacion"));
                 c.setFechaEdicion(rs.getTimestamp("fecha_edicion"));
@@ -70,7 +70,7 @@ public class ComentarioDAO {
                 // 🌟 LÓGICA DE COMPOSICIÓN 🌟
                 // Creamos el usuario, le asignamos sus datos y lo guardamos en el comentario
                 Usuario autor = new Usuario();
-                autor.setIdUsuario(rs.getInt("id_usuario"));
+                autor.setIdUsuario(rs.getInt("id_usuario_autor"));
                 autor.setApodoUsuario(rs.getString("apodo_usuario"));
                 // No asignamos el avatar, se queda a null por defecto. El JSP llamará a AvatarServlet.
                 

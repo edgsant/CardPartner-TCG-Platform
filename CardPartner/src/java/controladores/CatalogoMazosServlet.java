@@ -2,6 +2,8 @@ package controladores;
 
 import datos.MazoDAO;
 import datos.CartaDAO;
+import datos.ComentarioDAO;
+import datos.ValoracionDAO;
 import modelo.Mazo;
 import modelo.ContieneCarta;
 import modelo.Carta;
@@ -14,6 +16,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
+import modelo.Comentario;
+import modelo.Usuario;
+import modelo.Valoracion;
 
 @WebServlet(name = "CatalogoMazosServlet", urlPatterns = {"/CatalogoMazosServlet"})
 public class CatalogoMazosServlet extends HttpServlet {
@@ -122,21 +127,42 @@ public class CatalogoMazosServlet extends HttpServlet {
                     request.setAttribute("mazoParaLaVista", mazoActual);
                     request.setAttribute("cartasDelMazo", listaCartas);
 
-                    request.getRequestDispatcher("/Views/deck-view.jsp").forward(request, response);
-                    return;
-                }
-            } catch (NumberFormatException e) {
+                    // Instanciamos los nuevos DAOs
+                    ComentarioDAO comentarioDAO = new ComentarioDAO();
+                    ValoracionDAO valoracionDAO = new ValoracionDAO();
+
+                    // Cargamos la parte social
+                    List<Comentario> listaComentarios = comentarioDAO.obtenerComentariosPorMazo(idMazo);
+                    double notaMedia = valoracionDAO.obtenerMediaPorMazo(idMazo);
+                    int totalVotos = valoracionDAO.contarVotosPorMazo(idMazo);
+
+                    // Empaquetamos para el JSP
+                    request.setAttribute("comentariosMazo", listaComentarios);
+                    request.setAttribute("notaMedia", notaMedia);
+                    request.setAttribute("totalVotos", totalVotos);
+
+                    // OPCIONAL: Si el usuario está logueado, le pasamos su voto anterior para marcarle las estrellas
+                    Usuario usuarioActivo = (Usuario) request.getSession().getAttribute("usuarioActivo");
+                    if (usuarioActivo != null) {
+                        Valoracion miVoto = valoracionDAO.obtenerValoracionUsuario(idMazo, usuarioActivo.getIdUsuario());
+                        request.setAttribute("miVoto", miVoto);
+                    }
+
+                        request.getRequestDispatcher("/Views/deck-view.jsp").forward(request, response);
+                        return;
+                    }
+                }catch (NumberFormatException e) {
                 e.printStackTrace();
-            } catch (SQLException e) {
+            }catch (SQLException e) {
                 
                 System.err.println("Error en CatalogoMazosServlet (detalle): " + e.getMessage());
                 request.setAttribute("mensajeError", "No hemos podido cargar los detalles de este mazo.");
                 request.getRequestDispatcher("/Views/error.jsp").forward(request, response);
                 return;
             }
-        }
+            }
 
-        // Si hay error (mazo no existe o ID falso), devolvemos al catálogo
-        response.sendRedirect("CatalogoMazosServlet?accion=listar&error=no_encontrado");
+            // Si hay error (mazo no existe o ID falso), devolvemos al catálogo
+            response.sendRedirect("CatalogoMazosServlet?accion=listar&error=no_encontrado");
+        }
     }
-}

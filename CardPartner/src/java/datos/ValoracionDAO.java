@@ -10,7 +10,7 @@ public class ValoracionDAO {
     // ==========================================
     
     // Si la clave primaria compuesta (id_usuario, id_mazo) ya existe, actualiza la puntuación.
-    private static final String SQL_UPSERT = "INSERT INTO VALORACION (id_usuario, id_mazo, puntuacion, fecha) VALUES (?, ?, ?, CURRENT_TIMESTAMP) ON DUPLICATE KEY UPDATE puntuacion = ?, fecha = CURRENT_TIMESTAMP";
+    private static final String SQL_UPSERT = "INSERT INTO VALORACION (id_usuario, id_mazo, puntuacion) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE puntuacion = ?";
     
     private static final String SQL_SELECT_MEDIA = "SELECT AVG(puntuacion) FROM VALORACION WHERE id_mazo = ?";
     
@@ -36,7 +36,6 @@ public class ValoracionDAO {
             ps.setInt(1, v.getIdUsuario());
             ps.setInt(2, v.getIdMazo());
             ps.setFloat(3, v.getPuntuacion()); // Usamos float
-            ps.setFloat(4, v.getPuntuacion()); // Para el UPDATE si hay duplicado
             
             exito = ps.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -115,7 +114,7 @@ public class ValoracionDAO {
                 v.setIdUsuario(rs.getInt("id_usuario"));
                 v.setIdMazo(rs.getInt("id_mazo"));
                 v.setPuntuacion(rs.getFloat("puntuacion"));
-                v.setFechaValoracion(rs.getTimestamp("fecha"));
+                v.setFechaValoracion(rs.getTimestamp("fecha_valoracion"));
             }
         } catch (SQLException e) {
             System.err.println("Error al obtener valoración del usuario " + idUsuario + " en mazo " + idMazo + ": " + e.getMessage());
