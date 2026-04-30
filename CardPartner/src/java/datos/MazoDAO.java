@@ -25,8 +25,7 @@ public class MazoDAO {
     // ==========================================
     // 2. MÉTODOS DE CREACIÓN Y GESTIÓN
     // ==========================================
-
-    public int crearMazo(Mazo mazo) {
+    public int crearMazo(Mazo mazo) throws SQLException {
         int idMazoGenerado = 0;
         Connection con = ConnectionPool.getInstance().getConnection();
         PreparedStatement ps = null;
@@ -41,13 +40,19 @@ public class MazoDAO {
             ps.setString(6, mazo.getIdCartaLider());
             ps.executeUpdate();
             rs = ps.getGeneratedKeys();
-            if (rs.next()) idMazoGenerado = rs.getInt(1);
-        } catch (SQLException e) { e.printStackTrace(); } 
-        finally { cerrarRecursos(con, ps, rs); }
+            if (rs.next()) {
+                idMazoGenerado = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al crear mazo: " + e.getMessage());
+            throw e; // <-- Lanzar al Servlet
+        } finally {
+            cerrarRecursos(con, ps, rs);
+        }
         return idMazoGenerado;
     }
 
-    public boolean añadirCartasAMazo(int idMazo, ArrayList<ContieneCarta> listaCartas) {
+    public boolean añadirCartasAMazo(int idMazo, ArrayList<ContieneCarta> listaCartas) throws SQLException {
         boolean exito = false;
         Connection con = ConnectionPool.getInstance().getConnection();
         PreparedStatement ps = null;
@@ -60,17 +65,22 @@ public class MazoDAO {
                 ps.addBatch();
             }
             int[] resultados = ps.executeBatch();
-            if (resultados.length > 0) exito = true;
-        } catch (SQLException e) { e.printStackTrace(); } 
-        finally { cerrarRecursos(con, ps, null); }
+            if (resultados.length > 0) {
+                exito = true;
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al annadir cartas al mazo (id = " + idMazo + "): " + e.getMessage());
+            throw e; // <-- Lanzar al Servlet
+        } finally {
+            cerrarRecursos(con, ps, null);
+        }
         return exito;
     }
 
     // ==========================================
     // 3. MÉTODOS DE FILTRADO Y CONSULTA
     // ==========================================
-
-    public ArrayList<Mazo> filtrarMazosPublicos(Boolean esOficial, Float minWinrate, String nombreBuscado, String idCartaLider, String colorLider, int limite, int offset) {
+    public ArrayList<Mazo> filtrarMazosPublicos(Boolean esOficial, Float minWinrate, String nombreBuscado, String idCartaLider, String colorLider, int limite, int offset) throws SQLException {
         ArrayList<Mazo> listaMazos = new ArrayList<>();
         Connection con = ConnectionPool.getInstance().getConnection();
         PreparedStatement ps = null;
@@ -78,22 +88,42 @@ public class MazoDAO {
 
         StringBuilder sql = new StringBuilder("SELECT m.*, c.nombre_carta, c.imagen, c.color FROM MAZO m INNER JOIN CARTA c ON m.id_carta_lider = c.id_carta WHERE m.es_publico = 1");
 
-        if (esOficial != null) sql.append(" AND m.es_oficial = ?");
-        if (minWinrate != null) sql.append(" AND m.winrate >= ?");
-        if (nombreBuscado != null && !nombreBuscado.trim().isEmpty()) sql.append(" AND m.nombre_mazo LIKE ?");
-        if (idCartaLider != null && !idCartaLider.trim().isEmpty()) sql.append(" AND m.id_carta_lider = ?");
-        if (colorLider != null && !colorLider.trim().isEmpty()) sql.append(" AND c.color LIKE ?");
+        if (esOficial != null) {
+            sql.append(" AND m.es_oficial = ?");
+        }
+        if (minWinrate != null) {
+            sql.append(" AND m.winrate >= ?");
+        }
+        if (nombreBuscado != null && !nombreBuscado.trim().isEmpty()) {
+            sql.append(" AND m.nombre_mazo LIKE ?");
+        }
+        if (idCartaLider != null && !idCartaLider.trim().isEmpty()) {
+            sql.append(" AND m.id_carta_lider = ?");
+        }
+        if (colorLider != null && !colorLider.trim().isEmpty()) {
+            sql.append(" AND c.color LIKE ?");
+        }
 
         sql.append(" ORDER BY m.fecha_creacion DESC LIMIT ? OFFSET ?");
 
         try {
             ps = con.prepareStatement(sql.toString());
             int paramIndex = 1;
-            if (esOficial != null) ps.setBoolean(paramIndex++, esOficial);
-            if (minWinrate != null) ps.setFloat(paramIndex++, minWinrate);
-            if (nombreBuscado != null && !nombreBuscado.trim().isEmpty()) ps.setString(paramIndex++, "%" + nombreBuscado.trim() + "%");
-            if (idCartaLider != null && !idCartaLider.trim().isEmpty()) ps.setString(paramIndex++, idCartaLider);
-            if (colorLider != null && !colorLider.trim().isEmpty()) ps.setString(paramIndex++, "%" + colorLider.trim() + "%");
+            if (esOficial != null) {
+                ps.setBoolean(paramIndex++, esOficial);
+            }
+            if (minWinrate != null) {
+                ps.setFloat(paramIndex++, minWinrate);
+            }
+            if (nombreBuscado != null && !nombreBuscado.trim().isEmpty()) {
+                ps.setString(paramIndex++, "%" + nombreBuscado.trim() + "%");
+            }
+            if (idCartaLider != null && !idCartaLider.trim().isEmpty()) {
+                ps.setString(paramIndex++, idCartaLider);
+            }
+            if (colorLider != null && !colorLider.trim().isEmpty()) {
+                ps.setString(paramIndex++, "%" + colorLider.trim() + "%");
+            }
 
             ps.setInt(paramIndex++, limite);
             ps.setInt(paramIndex, offset);
@@ -109,16 +139,19 @@ public class MazoDAO {
                 m.setCartaLider(lider);
                 listaMazos.add(m);
             }
-        } catch (SQLException e) { e.printStackTrace(); } 
-        finally { cerrarRecursos(con, ps, rs); }
+        } catch (SQLException e) {
+            System.err.println("Error al filtrar mazos (esOficial = " + esOficial + ", minWinrate = " + minWinrate + ", nombreBuscado = " + nombreBuscado + ", idCartaLider = " + idCartaLider + ", colorLider = " + colorLider + ", limite = " + limite + ", offset = " + offset + "): " + e.getMessage());
+            throw e; // <-- Lanzar al Servlet
+        } finally {
+            cerrarRecursos(con, ps, rs);
+        }
         return listaMazos;
     }
 
     // ==========================================
     // 4. MÉTODOS DE FAVORITOS (SOLUCIÓN ERRORES SERVLET)
     // ==========================================
-
-    public boolean añadirMazoFavorito(int idUsuario, int idMazo) {
+    public boolean añadirMazoFavorito(int idUsuario, int idMazo) throws SQLException {
         boolean exito = false;
         Connection con = ConnectionPool.getInstance().getConnection();
         PreparedStatement ps = null;
@@ -126,13 +159,19 @@ public class MazoDAO {
             ps = con.prepareStatement(SQL_INSERT_FAVORITO);
             ps.setInt(1, idUsuario);
             ps.setInt(2, idMazo);
-            if (ps.executeUpdate() > 0) exito = true;
-        } catch (SQLException e) { e.printStackTrace(); } 
-        finally { cerrarRecursos(con, ps, null); }
+            if (ps.executeUpdate() > 0) {
+                exito = true;
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al annadir mazo favorito (idUsuario = " + idUsuario + ", idMazo = " + idMazo + "): " + e.getMessage());
+            throw e; // <-- Lanzar al Servlet
+        } finally {
+            cerrarRecursos(con, ps, null);
+        }
         return exito;
     }
 
-    public boolean quitarMazoFavorito(int idUsuario, int idMazo) {
+    public boolean quitarMazoFavorito(int idUsuario, int idMazo) throws SQLException {
         boolean exito = false;
         Connection con = ConnectionPool.getInstance().getConnection();
         PreparedStatement ps = null;
@@ -140,13 +179,19 @@ public class MazoDAO {
             ps = con.prepareStatement(SQL_DELETE_FAVORITO);
             ps.setInt(1, idUsuario);
             ps.setInt(2, idMazo);
-            if (ps.executeUpdate() > 0) exito = true;
-        } catch (SQLException e) { e.printStackTrace(); } 
-        finally { cerrarRecursos(con, ps, null); }
+            if (ps.executeUpdate() > 0) {
+                exito = true;
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al quitar mazo favorito (idUsuario = " + idUsuario + ", idMazo = " + idMazo + "): " + e.getMessage());
+            throw e; // <-- Lanzar al Servlet
+        } finally {
+            cerrarRecursos(con, ps, null);
+        }
         return exito;
     }
 
-    public ArrayList<Mazo> obtenerMazosGuardados(int idUsuario) {
+    public ArrayList<Mazo> obtenerMazosGuardados(int idUsuario) throws SQLException {
         ArrayList<Mazo> lista = new ArrayList<>();
         Connection con = ConnectionPool.getInstance().getConnection();
         PreparedStatement ps = null;
@@ -165,16 +210,19 @@ public class MazoDAO {
                 m.setCartaLider(lider);
                 lista.add(m);
             }
-        } catch (SQLException e) { e.printStackTrace(); } 
-        finally { cerrarRecursos(con, ps, rs); }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener mazos guardados (idUsuario = " + idUsuario + "): " + e.getMessage());
+            throw e; // <-- Lanzar al Servlet
+        } finally {
+            cerrarRecursos(con, ps, rs);
+        }
         return lista;
     }
 
     // ==========================================
     // 5. ACTUALIZACIÓN Y BORRADO
     // ==========================================
-
-    public boolean actualizarMazo(Mazo m) {
+    public boolean actualizarMazo(Mazo m) throws SQLException {
         boolean exito = false;
         Connection con = ConnectionPool.getInstance().getConnection();
         PreparedStatement ps = null;
@@ -185,13 +233,19 @@ public class MazoDAO {
             ps.setBoolean(3, m.isEsPublico());
             ps.setString(4, m.getIdCartaLider());
             ps.setInt(5, m.getIdMazo());
-            if (ps.executeUpdate() > 0) exito = true;
-        } catch (SQLException e) { e.printStackTrace(); } 
-        finally { cerrarRecursos(con, ps, null); }
+            if (ps.executeUpdate() > 0) {
+                exito = true;
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener actualizar mazo (idMazo = " + m.getIdMazo() + "): " + e.getMessage());
+            throw e; // <-- Lanzar al Servlet
+        } finally {
+            cerrarRecursos(con, ps, null);
+        }
         return exito;
     }
 
-    public boolean borrarCartasDeMazo(int idMazo) {
+    public boolean borrarCartasDeMazo(int idMazo) throws SQLException {
         boolean exito = false;
         Connection con = ConnectionPool.getInstance().getConnection();
         PreparedStatement ps = null;
@@ -200,12 +254,16 @@ public class MazoDAO {
             ps.setInt(1, idMazo);
             ps.executeUpdate();
             exito = true;
-        } catch (SQLException e) { e.printStackTrace(); } 
-        finally { cerrarRecursos(con, ps, null); }
+        } catch (SQLException e) {
+            System.err.println("Error al borrar cartas de mazo (idMazo = " + idMazo + "): " + e.getMessage());
+            throw e; // <-- Lanzar al Servlet
+        } finally {
+            cerrarRecursos(con, ps, null);
+        }
         return exito;
     }
 
-    public boolean borrarMazo(int idMazo, int idUsuarioCreador) {
+    public boolean borrarMazo(int idMazo, int idUsuarioCreador) throws SQLException {
         boolean exito = false;
         Connection con = ConnectionPool.getInstance().getConnection();
         PreparedStatement ps = null;
@@ -213,13 +271,19 @@ public class MazoDAO {
             ps = con.prepareStatement(SQL_DELETE_MAZO);
             ps.setInt(1, idMazo);
             ps.setInt(2, idUsuarioCreador);
-            if (ps.executeUpdate() > 0) exito = true;
-        } catch (SQLException e) { e.printStackTrace(); } 
-        finally { cerrarRecursos(con, ps, null); }
+            if (ps.executeUpdate() > 0) {
+                exito = true;
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al borrar mazo (idMazo = " + idMazo + ", idUsuarioCreador = " + idUsuarioCreador + "): " + e.getMessage());
+            throw e; // <-- Lanzar al Servlet
+        } finally {
+            cerrarRecursos(con, ps, null);
+        }
         return exito;
     }
 
-    public Mazo obtenerMazoPorId(int idMazo) {
+    public Mazo obtenerMazoPorId(int idMazo) throws SQLException {
         Mazo mazo = null;
         Connection con = ConnectionPool.getInstance().getConnection();
         PreparedStatement ps = null;
@@ -228,13 +292,19 @@ public class MazoDAO {
             ps = con.prepareStatement(SQL_SELECT_MAZO_POR_ID);
             ps.setInt(1, idMazo);
             rs = ps.executeQuery();
-            if (rs.next()) mazo = mapearMazo(rs);
-        } catch (SQLException e) { e.printStackTrace(); } 
-        finally { cerrarRecursos(con, ps, rs); }
+            if (rs.next()) {
+                mazo = mapearMazo(rs);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener mazo por ID (idMazo = " + idMazo + "): " + e.getMessage());
+            throw e; // <-- Lanzar al Servlet
+        } finally {
+            cerrarRecursos(con, ps, rs);
+        }
         return mazo;
     }
 
-    public ArrayList<ContieneCarta> obtenerCartasDeUnMazo(int idMazo) {
+    public ArrayList<ContieneCarta> obtenerCartasDeUnMazo(int idMazo) throws SQLException {
         ArrayList<ContieneCarta> lista = new ArrayList<>();
         Connection con = ConnectionPool.getInstance().getConnection();
         PreparedStatement ps = null;
@@ -256,12 +326,16 @@ public class MazoDAO {
                 cc.setCarta(carta);
                 lista.add(cc);
             }
-        } catch (SQLException e) { e.printStackTrace(); } 
-        finally { cerrarRecursos(con, ps, rs); }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener cartas de un mazo (idMazo = " + idMazo + "): " + e.getMessage());
+            throw e; // <-- Lanzar al Servlet
+        } finally {
+            cerrarRecursos(con, ps, rs);
+        }
         return lista;
     }
 
-    public ArrayList<Mazo> obtenerMazosPorUsuario(int idUsuario) {
+    public ArrayList<Mazo> obtenerMazosPorUsuario(int idUsuario) throws SQLException {
         ArrayList<Mazo> lista = new ArrayList<>();
         Connection con = ConnectionPool.getInstance().getConnection();
         PreparedStatement ps = null;
@@ -280,8 +354,12 @@ public class MazoDAO {
                 m.setCartaLider(lider);
                 lista.add(m);
             }
-        } catch (SQLException e) { e.printStackTrace(); } 
-        finally { cerrarRecursos(con, ps, rs); }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener mazos por Usuario (idUsuario = " + idUsuario + "): " + e.getMessage());
+            throw e; // <-- Lanzar al Servlet
+        } finally {
+            cerrarRecursos(con, ps, rs);
+        }
         return lista;
     }
 
@@ -300,10 +378,22 @@ public class MazoDAO {
     }
 
     private void cerrarRecursos(Connection con, PreparedStatement ps, ResultSet rs) {
-        try {
-            if (rs != null) rs.close();
-            if (ps != null) ps.close();
-            if (con != null) ConnectionPool.getInstance().freeConnection(con);
-        } catch (SQLException e) { e.printStackTrace(); }
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar RS: " + e.getMessage());
+            }
+        }
+        if (ps != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar PS: " + e.getMessage());
+            }
+        }
+        if (con != null) {
+            ConnectionPool.getInstance().freeConnection(con);
+        }
     }
 }
