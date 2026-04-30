@@ -10,6 +10,7 @@ public class CartaDAO {
 
     /**
      * Busca una carta específica por su código identificador.
+     *
      * @throws SQLException si ocurre un error en la base de datos.
      */
     public Carta obtenerCartaPorId(String idCarta) throws SQLException {
@@ -47,7 +48,7 @@ public class CartaDAO {
         ResultSet rs = null;
 
         StringBuilder sql = new StringBuilder("SELECT * FROM CARTA WHERE 1=1");
-        
+
         // Aplicamos FIND_IN_SET para soportar cartas multicolores
         if (color != null && !color.trim().isEmpty()) {
             sql.append(" AND FIND_IN_SET(?, color) > 0");
@@ -61,7 +62,6 @@ public class CartaDAO {
         if (atributo != null && !atributo.trim().isEmpty()) {
             sql.append(" AND atributo_combate = ?");
         }
-       
 
         sql.append(" ORDER BY id_carta ASC LIMIT ? OFFSET ?");
 
@@ -69,11 +69,19 @@ public class CartaDAO {
             ps = con.prepareStatement(sql.toString());
             int paramIndex = 1;
 
-            if (color != null && !color.trim().isEmpty()) ps.setString(paramIndex++, color);
-            if (tipo != null && !tipo.trim().isEmpty()) ps.setString(paramIndex++, tipo);
-            if (arquetipo != null && !arquetipo.trim().isEmpty()) ps.setString(paramIndex++, arquetipo);
-            if (atributo != null && !atributo.trim().isEmpty()) ps.setString(paramIndex++, atributo);
-            
+            if (color != null && !color.trim().isEmpty()) {
+                ps.setString(paramIndex++, color);
+            }
+            if (tipo != null && !tipo.trim().isEmpty()) {
+                ps.setString(paramIndex++, tipo);
+            }
+            if (arquetipo != null && !arquetipo.trim().isEmpty()) {
+                ps.setString(paramIndex++, arquetipo);
+            }
+            if (atributo != null && !atributo.trim().isEmpty()) {
+                ps.setString(paramIndex++, atributo);
+            }
+
             ps.setInt(paramIndex++, limite);
             ps.setInt(paramIndex, offset);
 
@@ -103,19 +111,35 @@ public class CartaDAO {
 
         StringBuilder sql = new StringBuilder("SELECT COUNT(*) FROM CARTA WHERE 1=1");
 
-        if (color != null && !color.trim().isEmpty()) sql.append(" AND FIND_IN_SET(?, color) > 0");
-        if (tipo != null && !tipo.trim().isEmpty()) sql.append(" AND tipo = ?");
-        if (arquetipo != null && !arquetipo.trim().isEmpty()) sql.append(" AND arquetipo = ?");
-        if (atributo != null && !atributo.trim().isEmpty()) sql.append(" AND atributo_combate = ?");
-        
+        if (color != null && !color.trim().isEmpty()) {
+            sql.append(" AND FIND_IN_SET(?, color) > 0");
+        }
+        if (tipo != null && !tipo.trim().isEmpty()) {
+            sql.append(" AND tipo = ?");
+        }
+        if (arquetipo != null && !arquetipo.trim().isEmpty()) {
+            sql.append(" AND arquetipo = ?");
+        }
+        if (atributo != null && !atributo.trim().isEmpty()) {
+            sql.append(" AND atributo_combate = ?");
+        }
+
         try {
             ps = con.prepareStatement(sql.toString());
             int paramIndex = 1;
 
-            if (color != null && !color.trim().isEmpty()) ps.setString(paramIndex++, color);
-            if (tipo != null && !tipo.trim().isEmpty()) ps.setString(paramIndex++, tipo);
-            if (arquetipo != null && !arquetipo.trim().isEmpty()) ps.setString(paramIndex++, arquetipo);
-            if (atributo != null && !atributo.trim().isEmpty()) ps.setString(paramIndex++, atributo);
+            if (color != null && !color.trim().isEmpty()) {
+                ps.setString(paramIndex++, color);
+            }
+            if (tipo != null && !tipo.trim().isEmpty()) {
+                ps.setString(paramIndex++, tipo);
+            }
+            if (arquetipo != null && !arquetipo.trim().isEmpty()) {
+                ps.setString(paramIndex++, arquetipo);
+            }
+            if (atributo != null && !atributo.trim().isEmpty()) {
+                ps.setString(paramIndex++, atributo);
+            }
 
             rs = ps.executeQuery();
             if (rs.next()) {
@@ -129,9 +153,8 @@ public class CartaDAO {
         }
         return total;
     }
-    
-    // --- MÉTODOS AUXILIARES ---
 
+    // --- MÉTODOS AUXILIARES ---
     /**
      * Centraliza el mapeo de ResultSet a objeto Carta.
      */
@@ -151,15 +174,26 @@ public class CartaDAO {
     }
 
     /**
-     * Centraliza el cierre de recursos para mantener el código limpio.
+     * Centraliza el cierre de recursos de forma segura (sin fugas de conexión).
      */
     private void cerrarRecursos(ConnectionPool pool, Connection con, PreparedStatement ps, ResultSet rs, String nombreMetodo) {
-        try {
-            if (rs != null) rs.close();
-            if (ps != null) ps.close();
-            if (pool != null && con != null) pool.freeConnection(con);
-        } catch (SQLException e) {
-            System.err.println("Error al cerrar recursos en " + nombreMetodo + ": " + e.getMessage());
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar ResultSet en " + nombreMetodo + ": " + e.getMessage());
+            }
+        }
+        if (ps != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar PreparedStatement en " + nombreMetodo + ": " + e.getMessage());
+            }
+        }
+        // Liberamos la conexión SIEMPRE, pase lo que pase arriba
+        if (pool != null && con != null) {
+            pool.freeConnection(con);
         }
     }
 }
