@@ -8,6 +8,9 @@
     Mazo mazoActual = (Mazo) request.getAttribute("mazoParaLaVista");
     List<ContieneCarta> listaCartas = (List<ContieneCarta>) request.getAttribute("cartasDelMazo");
 
+    modelo.Usuario usuarioLogueado = (modelo.Usuario) session.getAttribute("usuarioActivo");
+    boolean esMiMazo = (usuarioLogueado != null && mazoActual.getIdUsuarioCreador() == usuarioLogueado.getIdUsuario());
+
     // 2. ESCUDO DE SEGURIDAD: Si intentan entrar a la vista sin pasar por el Servlet
     if (mazoActual == null) {
         response.sendRedirect(request.getContextPath() + "/CatalogoMazosServlet?accion=listar");
@@ -109,9 +112,20 @@
                                 <a href="${pageContext.request.contextPath}/UsuarioServlet?accion=guardar_favorito&id=<%= mazoActual.getIdMazo()%>" class="btn-accion-mazo" style="text-decoration: none;">
                                     <i class="fas fa-heart"></i> Guardar Mazo
                                 </a>
-                                <a href="${pageContext.request.contextPath}/DeckBuilderServlet?accion=copiar&id=<%= mazoActual.getIdMazo()%>" class="btn-accion-mazo" style="text-decoration: none;">
-                                    <i class="fas fa-edit"></i> Copiar / Editar
+                                <% if (esMiMazo) {%>
+                                <!-- Si soy el autor, puedo editar el original o hacer una variante -->
+                                <a href="${pageContext.request.contextPath}/DeckBuilderServlet?accion=editar&id=<%= mazoActual.getIdMazo()%>" class="btn-accion-mazo" style="text-decoration: none;">
+                                    <i class="fas fa-edit"></i> Editar Mi Mazo
                                 </a>
+                                <a href="${pageContext.request.contextPath}/DeckBuilderServlet?accion=copiar&id=<%= mazoActual.getIdMazo()%>" class="btn-accion-mazo" style="text-decoration: none;">
+                                    <i class="fas fa-copy"></i> Crear Copia
+                                </a>
+                                <% } else {%>
+                                <!-- Si NO soy el autor, solo puedo copiarlo a mi cuenta -->
+                                <a href="${pageContext.request.contextPath}/DeckBuilderServlet?accion=copiar&id=<%= mazoActual.getIdMazo()%>" class="btn-accion-mazo" style="text-decoration: none;">
+                                    <i class="fas fa-copy"></i> Copiar Mazo
+                                </a>
+                                <% } %>
                                 <a href="https://www.cardmarket.com/es/OnePiece" target="_blank" class="btn-accion-mazo" style="text-decoration: none;">
                                     <i class="fas fa-shopping-cart"></i> Comprar Cartas
                                 </a>

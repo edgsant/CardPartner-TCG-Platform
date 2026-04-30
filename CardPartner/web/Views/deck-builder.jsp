@@ -75,9 +75,9 @@
 
             <main class="contenido-builder">
                 <form action="${pageContext.request.contextPath}/GuardarMazoServlet" method="POST" id="form-guardar-mazo">
+                    
+                    <input type="hidden" name="id_mazo" value="${mazoAEditar != null ? mazoAEditar.idMazo : '0'}">
                 
-                    <!-- NUEVO: Campo oculto para avisar al backend de que esto es una actualización, no un mazo nuevo -->
-                    <input type="hidden" name="id_mazo_existente" value="<%= formIdMazo %>">
                     
                     <input type="hidden" name="lider_mazo" id="input_lider_mazo" value="<%= formLiderId %>"> 
                     <input type="hidden" name="lista_cartas" id="input_lista_cartas" value=""> 
