@@ -11,18 +11,17 @@ public class ComentarioDAO {
     // 1. CONSTANTES SQL
     // ==========================================
     private static final String SQL_INSERT = "INSERT INTO COMENTARIO (id_usuario_autor, id_mazo_destino, contenido, fecha_creacion) VALUES (?, ?, ?, CURRENT_TIMESTAMP)";
-    
+
     // IMPORTANTE: Ya NO traemos u.avatar para ahorrar RAM y no saturar la conexión con BLOBs
     private static final String SQL_SELECT_BY_MAZO = "SELECT c.*, u.apodo_usuario FROM COMENTARIO c INNER JOIN USUARIO u ON c.id_usuario_autor = u.id_usuario WHERE c.id_mazo_destino = ? ORDER BY c.fecha_creacion DESC";
-    
+
     private static final String SQL_UPDATE = "UPDATE COMENTARIO SET contenido = ?, fecha_edicion = CURRENT_TIMESTAMP WHERE id_comentario = ? AND id_usuario_autor = ?";
-    
+
     private static final String SQL_DELETE = "DELETE FROM COMENTARIO WHERE id_comentario = ? AND id_usuario_autor = ?";
 
     // ==========================================
     // 2. MÉTODOS CRUD
     // ==========================================
-
     /**
      * Inserta un nuevo comentario asociado a un mazo.
      */
@@ -36,7 +35,7 @@ public class ComentarioDAO {
             ps.setInt(1, c.getUsuarioAutor().getIdUsuario());
             ps.setInt(2, c.getIdMazoDestino());
             ps.setString(3, c.getContenido());
-            
+
             exito = ps.executeUpdate() > 0;
         } catch (SQLException e) {
             System.err.println("Error al insertar comentario del usuario " + c.getUsuarioAutor().getIdUsuario() + " en mazo " + c.getIdMazoDestino() + ": " + e.getMessage());
@@ -66,16 +65,16 @@ public class ComentarioDAO {
                 c.setContenido(rs.getString("contenido"));
                 c.setFechaCreacion(rs.getTimestamp("fecha_creacion"));
                 c.setFechaEdicion(rs.getTimestamp("fecha_edicion"));
-                
+
                 // 🌟 LÓGICA DE COMPOSICIÓN 🌟
                 // Creamos el usuario, le asignamos sus datos y lo guardamos en el comentario
                 Usuario autor = new Usuario();
                 autor.setIdUsuario(rs.getInt("id_usuario_autor"));
                 autor.setApodoUsuario(rs.getString("apodo_usuario"));
                 // No asignamos el avatar, se queda a null por defecto. El JSP llamará a AvatarServlet.
-                
+
                 c.setUsuarioAutor(autor);
-                
+
                 lista.add(c);
             }
         } catch (SQLException e) {
@@ -99,7 +98,7 @@ public class ComentarioDAO {
             ps.setString(1, nuevoContenido);
             ps.setInt(2, idComentario);
             ps.setInt(3, idUsuario); // Seguridad: solo el dueño puede editar
-            
+
             exito = ps.executeUpdate() > 0;
         } catch (SQLException e) {
             System.err.println("Error al editar el comentario ID " + idComentario + ": " + e.getMessage());
@@ -121,7 +120,7 @@ public class ComentarioDAO {
             ps = con.prepareStatement(SQL_DELETE);
             ps.setInt(1, idComentario);
             ps.setInt(2, idUsuario); // Seguridad: solo el dueño puede borrar
-            
+
             exito = ps.executeUpdate() > 0;
         } catch (SQLException e) {
             System.err.println("Error al borrar el comentario ID " + idComentario + ": " + e.getMessage());
@@ -132,13 +131,27 @@ public class ComentarioDAO {
         return exito;
     }
 
+    /**
+     * Centraliza el cierre de recursos de forma segura (sin fugas de conexión).
+     */
     private void cerrarRecursos(Connection con, PreparedStatement ps, ResultSet rs) {
-        try {
-            if (rs != null) rs.close();
-            if (ps != null) ps.close();
-            if (con != null) ConnectionPool.getInstance().freeConnection(con);
-        } catch (SQLException e) {
-            System.err.println("Error al cerrar recursos en ComentarioDAO: " + e.getMessage());
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar ResultSet en ComentarioDAO: " + e.getMessage());
+            }
+        }
+        if (ps != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar PreparedStatement en ComentarioDAO: " + e.getMessage());
+            }
+        }
+        // Liberamos la conexión SIEMPRE, de forma independiente
+        if (con != null) {
+            ConnectionPool.getInstance().freeConnection(con);
         }
     }
 }
