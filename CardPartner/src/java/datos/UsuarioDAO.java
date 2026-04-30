@@ -1,5 +1,6 @@
 package datos;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import modelo.Usuario;
@@ -12,16 +13,20 @@ import java.sql.*;
  */
 public class UsuarioDAO {
 
-    // Las consultas SQL se definen como constantes para facilitar modificaciones
+    // ==========================================
+    // 1. CONSTANTES SQL
+    // ==========================================
     private static final String SQL_INSERT = "INSERT INTO USUARIO (apodo_usuario, email, password, avatar, rol) VALUES (?, ?, ?, ?, ?)";
     private static final String SQL_LOGIN = "SELECT * FROM USUARIO WHERE email = ? AND password = ?";
     private static final String SQL_CHECK_EMAIL = "SELECT id_usuario FROM USUARIO WHERE email = ?";
     private static final String SQL_GET_AVATAR = "SELECT avatar FROM USUARIO WHERE id_usuario = ?";
 
-    //Querys para poder actualizar los perfiles
+    // Querys para poder actualizar los perfiles
     private static final String SQL_UPDATE_DATOS = "UPDATE USUARIO SET apodo_usuario = ?, email = ? WHERE id_usuario = ?";
     private static final String SQL_UPDATE_PASS = "UPDATE USUARIO SET password = ? WHERE id_usuario = ?";
-
+    
+    
+    
     /**
      * La Anatomía de un Método DAO
      *
@@ -33,10 +38,12 @@ public class UsuarioDAO {
      * un INSERT/UPDATE/DELETE, usa executeUpdate(). Desconectar: Devuelve la
      * conexión.
      */
+    
+    
     /**
      * Inserta usuario y devuelve su ID generado por la base de datos
      */
-    public int registrarUsuario(Usuario u) {
+    public int registrarUsuario(Usuario u) throws SQLException {
 
         int idGenerado = 0;
         ConnectionPool pool = ConnectionPool.getInstance();
@@ -66,20 +73,11 @@ public class UsuarioDAO {
             if (rs.next()) {
                 idGenerado = rs.getInt(1);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            System.err.println("Error al registrar el usuario " + u.getEmail() + ": " + e.getMessage());
+            throw e; // Lanzamos el error al Servlet
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            cerrarRecursos(con, ps, rs);
         }
         return idGenerado;
     }
@@ -88,50 +86,34 @@ public class UsuarioDAO {
      * Verifica las credenciales y devuelve el usuario con sus datos. Devuelve
      * null si el email o la contraseña son incorrectos.
      */
-    public Usuario validarLogin(String email, String password) {
+    public Usuario validarLogin(String email, String password) throws SQLException {
         Usuario usuarioLogueado = null;
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        // 🌟 CAMBIO: La consulta ahora es más simple, sin el "OR apodo = ?"
-        String sql = "SELECT * FROM USUARIO WHERE email = ? AND password = ?";
-
+        
         try {
-            ps = con.prepareStatement(sql);
-
-            ps.setString(1, email);    // El email que viene del formulario
-            ps.setString(2, password); // La contraseña
+            ps = con.prepareStatement(SQL_LOGIN); // Usamos la constante
+            ps.setString(1, email);    
+            ps.setString(2, password); 
 
             rs = ps.executeQuery();
 
-            // Si hay un resultado, es que las credenciales son correctas
             if (rs.next()) {
                 usuarioLogueado = new Usuario();
-
-                // Rellenamos el objeto con los datos reales de la fila encontrada
                 usuarioLogueado.setIdUsuario(rs.getInt("id_usuario"));
                 usuarioLogueado.setApodoUsuario(rs.getString("apodo_usuario"));
                 usuarioLogueado.setEmail(rs.getString("email"));
                 usuarioLogueado.setPassword(rs.getString("password"));
                 usuarioLogueado.setRol(rs.getString("rol"));
             }
-
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Error al validar login del email " + email + ": " + e.getMessage());
+            throw e;
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            cerrarRecursos(con, ps, rs);
         }
 
         return usuarioLogueado;
@@ -141,7 +123,7 @@ public class UsuarioDAO {
      * Comprueba si el email ya existe en la tabla USUARIO. Devuelve true si
      * existe
      */
-    public boolean existeEmail(String email) {
+    public boolean existeEmail(String email) throws SQLException {
         boolean existe = false;
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
@@ -158,19 +140,10 @@ public class UsuarioDAO {
             // Si el cursor puede moverse a la primera fila, el email existe[cite: 396].
             existe = rs.next();
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Error al comprobar si existe el email " + email + ": " + e.getMessage());
+            throw e;
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(connection);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            cerrarRecursos(connection, ps, rs);
         }
         return existe;
     }
@@ -179,7 +152,7 @@ public class UsuarioDAO {
      * Lee el BLOB de la base de datos y lo envía al flujo de salida
      * (navegador)[cite: 807].
      */
-    public void obtenerAvatar(int idUsuario, OutputStream respuesta) {
+    public void obtenerAvatar(int idUsuario, OutputStream respuesta) throws SQLException, IOException {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
@@ -207,22 +180,17 @@ public class UsuarioDAO {
                     imagen.close();
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException | IOException e) {
+            System.err.println("Error al obtener el avatar del usuario ID " + idUsuario + ": " + e.getMessage());
+            throw e; // Lanzamos tanto SQL como IO exceptions
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                pool.freeConnection(connection);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            cerrarRecursos(connection, ps, rs);
         }
     }
+    
+    // ==========================================
+    // 3. MÉTODOS DE ACTUALIZACIÓN DE PERFIL
+    // ==========================================
 
     /**
      * Actualiza el apodo y el email del usuario.
@@ -232,7 +200,7 @@ public class UsuarioDAO {
      * @param nuevoEmail
      * @return
      */
-    public boolean actualizarDatosPerfil(int idUsuario, String nuevoApodo, String nuevoEmail) {
+    public boolean actualizarDatosPerfil(int idUsuario, String nuevoApodo, String nuevoEmail) throws SQLException {
         boolean exito = false;
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
@@ -248,14 +216,10 @@ public class UsuarioDAO {
                 exito = true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Error al actualizar datos del usuario ID " + idUsuario + ": " + e.getMessage());
+            throw e;
         } finally {
-            try {
-                if (ps != null) ps.close();
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            cerrarRecursos(con, ps, null);
         }
         return exito;
     }
@@ -264,7 +228,7 @@ public class UsuarioDAO {
      * Actualiza el perfil del usuario. Si se proporciona un nuevo avatar (InputStream),
      * también lo actualiza en la base de datos.
      */
-    public boolean actualizarPerfilCompleto(int idUsuario, String nuevoApodo, String nuevoEmail, InputStream nuevoAvatar) {
+    public boolean actualizarPerfilCompleto(int idUsuario, String nuevoApodo, String nuevoEmail, InputStream nuevoAvatar) throws SQLException {
         boolean exito = false;
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
@@ -293,14 +257,10 @@ public class UsuarioDAO {
                 exito = true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Error al actualizar perfil completo del usuario ID " + idUsuario + ": " + e.getMessage());
+            throw e;
         } finally {
-            try {
-                if (ps != null) ps.close();
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            cerrarRecursos(con, ps, null);
         }
         return exito;
     }
@@ -312,7 +272,7 @@ public class UsuarioDAO {
      * @param nuevaPass
      * @return
      */
-    public boolean actualizarPassword(int idUsuario, String nuevaPass) {
+    public boolean actualizarPassword(int idUsuario, String nuevaPass) throws SQLException {
         boolean exito = false;
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
@@ -327,16 +287,35 @@ public class UsuarioDAO {
                 exito = true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Error al actualizar contraseña del usuario ID " + idUsuario + ": " + e.getMessage());
+            throw e;
         } finally {
-            try {
-                if (ps != null) ps.close();
-                pool.freeConnection(con);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            cerrarRecursos(con, ps, null);
         }
         return exito;
+    }
+    
+    /**
+     * Centraliza el cierre de recursos de forma segura (sin fugas de conexión).
+     */
+    private void cerrarRecursos(Connection con, PreparedStatement ps, ResultSet rs) {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar ResultSet: " + e.getMessage());
+            }
+        }
+        if (ps != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar PreparedStatement: " + e.getMessage());
+            }
+        }
+        if (con != null) {
+            ConnectionPool.getInstance().freeConnection(con);
+        }
     }
 
 }
