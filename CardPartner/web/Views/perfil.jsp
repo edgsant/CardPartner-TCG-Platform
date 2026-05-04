@@ -60,6 +60,7 @@
                         else if (exito.equals("perfil_actualizado")) msg = "¡Perfil actualizado correctamente!";
                         else if (exito.equals("mazo_borrado")) msg = "Mazo eliminado correctamente.";
                         else if (exito.equals("favorito_quitado")) msg = "Mazo quitado de favoritos.";
+                        else if (exito.equals("bienvenida")) msg = "¡Bienvenido a CardPartner! Tu cuenta ha sido creada con éxito.";
                 %>
                     <div style="background-color: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600;">
                         <i class="fas fa-check-circle"></i> <%= msg %>

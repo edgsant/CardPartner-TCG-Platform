@@ -244,3 +244,22 @@ body {
 .btn-cerrar:hover {
     color: #333;
 }
+
+/* =========================================
+   7. VISIBILIDAD DE CONTRASEÑA (OJITO)
+   ========================================= */
+.input-group i.toggle-password {
+    position: absolute;
+    left: auto; /* FIX: Anula el left:15px del icono general */
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s;
+    z-index: 10;
+}
+
+.input-group i.toggle-password:hover {
+    color: #333;
+}
