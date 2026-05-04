@@ -182,8 +182,14 @@
                     <input type="email" name="email" value="<%= usuarioActual.getEmail() %>" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc;">
                     
                     <label style="font-weight: bold; margin-bottom: 5px; display: block;">Foto de Perfil (Avatar):</label>
-                    <p style="font-size: 12px; color: #666; margin-bottom: 5px;">Deja este campo vacío si no quieres cambiar tu foto actual.</p>
-                    <input type="file" name="avatar" accept="image/*" style="width: 100%; padding: 10px; margin-bottom: 20px; background: #fff; border-radius: 8px; border: 1px dashed #ccc;">
+                    <p style="font-size: 12px; color: #666; margin-bottom: 5px;">Sube una nueva imagen o marca la casilla para eliminar la actual.</p>
+                    <input type="file" name="avatar" accept="image/*" style="width: 100%; padding: 10px; margin-bottom: 10px; background: #fff; border-radius: 8px; border: 1px dashed #ccc;">
+                    
+                    <!-- NUEVO: Checkbox para eliminar foto -->
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                        <input type="checkbox" id="eliminar_avatar" name="eliminar_avatar" style="width: 18px; height: 18px; cursor: pointer;">
+                        <label for="eliminar_avatar" style="font-size: 14px; color: #d32f2f; cursor: pointer; font-weight: 600;">Eliminar foto de perfil actual</label>
+                    </div>
                     
                     <button type="submit" class="btn-editar-perfil" style="width: 100%;">Guardar Cambios</button>
                 </div>

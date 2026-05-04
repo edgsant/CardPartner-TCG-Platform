@@ -312,5 +312,26 @@ public class UsuarioDAO {
             ConnectionPool.getInstance().freeConnection(con);
         }
     }
+    
+    /**
+     * Elimina la foto de perfil del usuario (la pone a NULL en la BD).
+     */
+    public boolean eliminarAvatar(int idUsuario) throws SQLException {
+        boolean exito = false;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement("UPDATE USUARIO SET avatar = NULL WHERE id_usuario = ?");
+            ps.setInt(1, idUsuario);
+            exito = ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("Error al eliminar el avatar del usuario ID " + idUsuario + ": " + e.getMessage());
+            throw e;
+        } finally {
+            cerrarRecursos(con, ps, null);
+        }
+        return exito;
+    }
 
 }

@@ -203,22 +203,27 @@ public class UsuarioServlet extends HttpServlet {
 
     private void editarDatos(HttpServletRequest request, HttpServletResponse response, Usuario usuario)
             throws ServletException, IOException, SQLException {
-
+        
         String nuevoApodo = request.getParameter("apodo");
         String nuevoEmail = request.getParameter("email");
-        Part filePart = request.getPart("avatar"); // Recogemos la imagen subida
-
+        String eliminarAvatar = request.getParameter("eliminar_avatar"); // NUEVO: Recogemos el checkbox
+        
+        Part filePart = request.getPart("avatar");
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         InputStream inputStream = null;
-
+        
         if (filePart != null && filePart.getSize() > 0) {
             inputStream = filePart.getInputStream();
         }
 
-        // Llamamos al método que actualizará todo. (Debes crearlo en UsuarioDAO)
-        // Ejemplo: usuarioDAO.actualizarPerfilCompleto(id, apodo, email, inputStream)
-        boolean actualizado = usuarioDAO.actualizarPerfilCompleto(usuario.getIdUsuario(), nuevoApodo, nuevoEmail, inputStream);
+        // NUEVA LÓGICA: Si marcó la casilla de eliminar avatar, lo borramos
+        if (eliminarAvatar != null && eliminarAvatar.equals("on")) {
+            usuarioDAO.eliminarAvatar(usuario.getIdUsuario());
+        }
 
+        // Llamamos al método que actualizará el resto de datos (apodo, email y/o nueva foto)
+        boolean actualizado = usuarioDAO.actualizarPerfilCompleto(usuario.getIdUsuario(), nuevoApodo, nuevoEmail, inputStream);
+        
         if (actualizado) {
             // Actualizamos los datos en vivo en la sesión
             usuario.setApodoUsuario(nuevoApodo);
