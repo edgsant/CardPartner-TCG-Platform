@@ -1,4 +1,4 @@
-package datos;
+    package datos;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -152,7 +152,8 @@ public class UsuarioDAO {
      * Lee el BLOB de la base de datos y lo envía al flujo de salida
      * (navegador)[cite: 807].
      */
-    public void obtenerAvatar(int idUsuario, OutputStream respuesta) throws SQLException, IOException {
+    public byte[] obtenerAvatar(int idUsuario) throws SQLException, IOException {
+        byte[] imagenBytes = null;
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
@@ -169,23 +170,17 @@ public class UsuarioDAO {
                 Blob blob = rs.getBlob("avatar");
                 // Verificamos que no sea nulo y tenga contenido[cite: 818].
                 if (blob != null && blob.length() > 0) {
-                    InputStream imagen = blob.getBinaryStream();
-                    byte[] buffer = new byte[1024]; // Buffer de 1KB.
-                    int len;
-
-                    // Leemos por trozos y escribimos en la respuesta [cite: 821-825].
-                    while ((len = imagen.read(buffer)) != -1) {
-                        respuesta.write(buffer, 0, len);
-                    }
-                    imagen.close();
+                    // Extraemos todos los bytes de golpe
+                    imagenBytes = blob.getBytes(1, (int) blob.length());
                 }
             }
-        } catch (SQLException | IOException e) {
+        } catch (SQLException e) {
             System.err.println("Error al obtener el avatar del usuario ID " + idUsuario + ": " + e.getMessage());
             throw e; // Lanzamos tanto SQL como IO exceptions
         } finally {
             cerrarRecursos(connection, ps, rs);
         }
+        return imagenBytes;
     }
     
     // ==========================================
