@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <title>Card Partner - Mi Perfil</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/perfilStyle.css?v=8">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/perfilStyle.css?v=9">
 </head>
 <body>
     <div class="fondo-rosa">
@@ -48,20 +48,22 @@
             <main class="contenido-perfil">
                 
                 <div class="perfil-header">
-                    <!-- Mantenemos el icono de FontAwesome al no haber Servlet de Avatar -->
+                    <!-- AvatarServlet cargando la foto -->
                     <div class="perfil-avatar">
-                        <i class="fas fa-user-circle"></i>
+                        <img src="${pageContext.request.contextPath}/AvatarServlet?id=<%= usuarioActual.getIdUsuario() %>" alt="Avatar de <%= usuarioActual.getApodoUsuario() %>" onerror="this.onerror=null; this.src='${pageContext.request.contextPath}/img/default-avatar.png';">
                     </div>
+                    
                     <div class="perfil-info">
                         <h2 class="perfil-nombre"><%= usuarioActual.getApodoUsuario() %></h2>
                         <p class="perfil-email"><i class="fas fa-envelope"></i> <%= usuarioActual.getEmail() %></p>
                         <p class="perfil-fecha"><i class="fas fa-calendar-alt"></i> Miembro desde: <%= fechaBonita %></p>
                     </div>
+                    
                     <div class="perfil-acciones">
                         <a href="#modal-editar-perfil" class="btn-editar-perfil" style="text-decoration: none; display: inline-block; text-align: center;"><i class="fas fa-edit"></i> Editar Datos</a>
                         <a href="#modal-password" class="btn-cambiar-pass" style="text-decoration: none;"><i class="fas fa-key"></i> Cambiar Contraseña</a>
                     </div>
-                </div>
+                </div> <!-- ¡AQUÍ ESTABA EL DIV QUE ME COMÍ ANTES! -->
 
                 <!-- SECCIÓN: MIS MAZOS CREADOS -->
                 <div class="seccion-mazos">
