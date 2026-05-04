@@ -171,12 +171,19 @@ public class UsuarioServlet extends HttpServlet {
 
     private void cambiarPassword(HttpServletRequest request, HttpServletResponse response, Usuario usuario)
             throws ServletException, IOException, SQLException {
-
+            
         String passActual = request.getParameter("passActual");
         String passNueva = request.getParameter("passNueva");
+        String passConfirmacion = request.getParameter("passConfirmacion"); // NUEVO CAMPO
 
-        if (passActual != null && passNueva != null) {
+        if (passActual != null && passNueva != null && passConfirmacion != null) {
             
+            // 0. Validar que las contraseñas nuevas coinciden
+            if (!passNueva.equals(passConfirmacion)) {
+                response.sendRedirect("UsuarioServlet?accion=mi_perfil&error=pass_no_coincide");
+                return;
+            }
+
             // 1. Transformamos la contraseña actual que ha escrito al formato Hash
             String hashActual = hashearConSHA256(passActual);
             
@@ -196,6 +203,10 @@ public class UsuarioServlet extends HttpServlet {
                     response.sendRedirect("UsuarioServlet?accion=mi_perfil&exito=pass_ok");
                     return;
                 }
+            } else {
+                 // La contraseña actual no era correcta
+                 response.sendRedirect("UsuarioServlet?accion=mi_perfil&error=pass_incorrecta");
+                 return;
             }
         }
         response.sendRedirect("UsuarioServlet?accion=mi_perfil&error=pass_incorrecta");

@@ -463,3 +463,23 @@ body {
 .btn-cerrar:hover { 
     color: #333; 
 }
+/* =========================================
+   8. VISIBILIDAD DE CONTRASEÑA
+   ========================================= */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s;
+}
+.toggle-password:hover {
+    color: #333;
+}
