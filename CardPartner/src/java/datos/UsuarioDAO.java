@@ -333,5 +333,38 @@ public class UsuarioDAO {
         }
         return exito;
     }
+    
+    /**
+     * Recupera un usuario de la BD usando solo su email (Útil para Login con Google).
+     */
+    public Usuario obtenerUsuarioPorEmail(String email) throws SQLException {
+        Usuario usuario = null;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            ps = con.prepareStatement("SELECT * FROM USUARIO WHERE email = ?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            
+            if (rs.next()) {
+                usuario = new Usuario();
+                usuario.setIdUsuario(rs.getInt("id_usuario"));
+                usuario.setApodoUsuario(rs.getString("apodo_usuario"));
+                usuario.setEmail(rs.getString("email"));
+                usuario.setPassword(rs.getString("password"));
+                usuario.setRol(rs.getString("rol"));
+                usuario.setFechaRegistro(rs.getTimestamp("fecha_registro"));
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener usuario por email: " + e.getMessage());
+            throw e;
+        } finally {
+            cerrarRecursos(con, ps, rs);
+        }
+        return usuario;
+    }
 
 }

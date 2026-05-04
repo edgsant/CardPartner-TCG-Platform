@@ -6,7 +6,7 @@
         <title>Login - CardPartner</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/loginStyle.css?v=4">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/loginStyle.css?v=6">
     </head>
     <body>
         <div class="contenedor-login">
@@ -18,13 +18,14 @@
             
             <%-- Mensajes de feedback --%>
             <% if (request.getParameter("error") != null) { %>
-            <div style="background-color: #ffebee; color: #c62828; padding: 10px; border-radius: 5px; text-align: center; margin-bottom: 15px; font-family: 'Poppins', sans-serif; font-size: 0.9em;">
-                <i class="fas fa-exclamation-circle"></i> Usuario o contraseña incorrectos.
-            </div>
+                <div style="background-color: #ffebee; color: #c62828; padding: 10px; border-radius: 5px; text-align: center; margin-bottom: 15px; font-family: 'Poppins', sans-serif; font-size: 0.9em;">
+                    <i class="fas fa-exclamation-circle"></i> 
+                    <%= request.getParameter("error").equals("google_fail") ? "Error al iniciar sesión con Google." : "Usuario o contraseña incorrectos." %>
+                </div>
             <% } else if (request.getParameter("exito") != null && request.getParameter("exito").equals("registro_ok")) { %>
-            <div style="background-color: #e8f5e9; color: #2e7d32; padding: 10px; border-radius: 5px; text-align: center; margin-bottom: 15px; font-family: 'Poppins', sans-serif; font-size: 0.9em;">
-                <i class="fas fa-check-circle"></i> Cuenta creada con éxito. Ya puedes iniciar sesión.
-            </div>
+                <div style="background-color: #e8f5e9; color: #2e7d32; padding: 10px; border-radius: 5px; text-align: center; margin-bottom: 15px; font-family: 'Poppins', sans-serif; font-size: 0.9em;">
+                    <i class="fas fa-check-circle"></i> Cuenta creada con éxito. Ya puedes iniciar sesión.
+                </div>
             <% } %>
 
             <form class="login-form" action="${pageContext.request.contextPath}/LoginServlet" method="POST">
@@ -44,12 +45,52 @@
                     </label>
                 </div>
                 <button type="submit" class="btn-login">ENTRAR</button>
+                
                 <div class="separador">
                     <span>O</span>
                 </div>
-                <button type="button" class="btn-google">
-                    <i class="fab fa-google"></i> Continuar con Google
-                </button>
+                
+                <!-- INICIO INTEGRACIÓN GOOGLE -->
+            <script src="https://accounts.google.com/gsi/client" async defer></script>
+            <div id="g_id_onload"
+                 data-client_id="825568955910-g3ogkeqqj3ajurck5gd7bgfci04irrot.apps.googleusercontent.com"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-callback="handleCredentialResponse"
+                 data-auto_prompt="false">
+            </div>
+            
+            <!-- AQUÍ ESTÁ LA MAGIA DEL DISEÑO -->
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="continue_with" 
+                 data-size="large"
+                 data-locale="es"
+                 data-width="340"
+                 data-logo_alignment="center"
+                 style="display: flex; justify-content: center; margin-bottom: 20px;">
+            </div>
+            
+            <script>
+              function handleCredentialResponse(response) {
+                  var form = document.createElement('form');
+                  form.method = 'POST';
+                  form.action = '${pageContext.request.contextPath}/GoogleLoginServlet';
+            
+                  var input = document.createElement('input');
+                  input.type = 'hidden';
+                  input.name = 'credential';
+                  input.value = response.credential;
+                  
+                  form.appendChild(input);
+                  document.body.appendChild(form);
+                  form.submit();
+              }
+            </script>
+            <!-- FIN INTEGRACIÓN GOOGLE -->
+
                 <div class="login-footer">
                     <a href="#modal-recuperar">¿Olvidaste tu contraseña?</a>
                     <p>¿No tienes cuenta? <a href="${pageContext.request.contextPath}/Views/register.jsp">Regístrate</a></p>
