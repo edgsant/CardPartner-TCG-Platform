@@ -59,7 +59,7 @@ public class MazoApiServlet extends HttpServlet {
                 if (i < cartas.size() - 1) json.append(", ");
             }
             json.append("]}");
-
+            out.print(json.toString()); // Fix de imprimir el JSON
             
         } catch (Exception e) {
             e.printStackTrace();
