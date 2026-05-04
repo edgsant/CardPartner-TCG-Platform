@@ -340,7 +340,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 .titulo-mazos {
     width: 100%;
     text-align: center;
@@ -349,7 +348,6 @@ body {
     border-bottom: 1px solid #eee; 
     margin: 0;
 }
-
 .contenido-mazos {
     display: flex;
     flex-direction: row; 
@@ -369,13 +367,16 @@ body {
     text-decoration: none;
     color: #333;
     flex: 1; 
+    /* FIX: El truco mágico para que Flexbox no estalle con textos largos */
+    min-width: 0; 
     transition: transform 0.3s ease;
 }
 
 .item-mazo img {
     width: 100%; 
-    max-width: 190px; 
-    height: auto;
+    max-width: 180px; 
+    /* FIX: Fija la proporción de carta para que todas midan igual de alto */
+    aspect-ratio: 2 / 2.8; 
     border: 2px solid #eee; 
     border-radius: 6px;
     object-fit: contain;
@@ -383,10 +384,26 @@ body {
     transition: all 0.3s ease;
 }
 
-.item-mazo span { font-size: 14px; font-weight: 600; line-height: 1.3; }
-.item-mazo:hover img { transform: translateY(-5px) scale(1.03); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+.item-mazo:hover img { 
+    transform: translateY(-5px) scale(1.03); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+}
 
-/* --- Nuevo: Footer de los mazos recomendados --- */
+.item-mazo span {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    width: 100%;
+    
+    /* FIX: Acortar el texto a 2 líneas y poner puntos suspensivos */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+/* --- Footer de los mazos recomendados --- */
 .footer-mazos {
     width: 100%;
     text-align: center;
@@ -395,7 +412,6 @@ body {
     border-top: 1px solid #eee;
     border-radius: 0 0 12px 12px;
 }
-
 .btn-ver-mas {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
@@ -409,9 +425,8 @@ body {
     text-transform: uppercase;
     transition: all 0.3s ease;
 }
-
 .btn-ver-mas:hover {
-    background-color: #d32f2f; /* Rojo llamativo al pasar el ratón */
+    background-color: #d32f2f;
     transform: translateY(-2px);
 }
 
