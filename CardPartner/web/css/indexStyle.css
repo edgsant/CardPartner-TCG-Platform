@@ -281,7 +281,6 @@ body {
 }
 
 /* --- Lado Izquierdo: GUÍAS --- */
-
 .guias {
     border: 1px solid #eee; 
     border-radius: 12px;
@@ -290,44 +289,49 @@ body {
     flex: 2; 
     display: flex;
     flex-direction: column;
- 
     overflow: hidden;
 }
 
-.enlace-guia {
+/* Nuevo estilo para la tarjeta de la guía */
+.item-guia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
     text-decoration: none;
-    color: #333; 
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: space-evenly; 
+    color: #333;
     width: 100%;
-    height: 100%;
-    padding: 25px; 
+    max-width: 380px; /* Evita que la foto se haga gigante en monitores grandes */
+    transition: transform 0.3s ease;
 }
 
-.contenedor-carrusel-guia {
-    display: flex;
-    align-items: center; 
-    justify-content: center;
+.item-guia img {
     width: 100%;
-    gap: 20px; 
-}
-
-.contenedor-carrusel-guia img {
-    flex-grow: 1;
-    max-width: 90%; 
-    max-height: 280px; 
-    object-fit: contain;
-    border: 2px solid #eee;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    object-fit: cover;
+    aspect-ratio: 16 / 9; /* Proporción perfecta para miniaturas de YouTube/Guías */
 }
 
-.enlace-guia:hover img {
-    transform: translateY(-5px) scale(1.02); 
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+.item-guia:hover img {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.titulo-guia-index {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #222;
+    /* Límite de 2 líneas con puntos suspensivos */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
 }
 
 /* --- Lado Derecho: MAZOS --- */

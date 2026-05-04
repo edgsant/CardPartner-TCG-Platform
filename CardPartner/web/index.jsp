@@ -48,31 +48,33 @@
                 <div class="columnas-inferiores">
                     
                     <div class="guias">
-                        <% if (guiaPrincipal != null) { 
-                            // Lógica de proxy para la portada de la guía
-                            String imgRawGuia = (guiaPrincipal.getPortada() != null) ? guiaPrincipal.getPortada().trim() : "";
-                            String srcGuia = "";
-                            if (!imgRawGuia.isEmpty() && imgRawGuia.toLowerCase().startsWith("http")) {
-                                srcGuia = "https://wsrv.nl/?url=" + imgRawGuia;
-                            } else {
-                                srcGuia = request.getContextPath() + (imgRawGuia.isEmpty() ? "/img/tutorial.jpg" : imgRawGuia);
-                            }
-                        %>
-                        <a href="<%= guiaPrincipal.getEnlaceExterno() %>" class="enlace-guia" target="_blank">
-                            <h2 style="text-align: center; margin-bottom: 15px; font-size: 22px; text-transform: uppercase;">GUÍAS: <%= guiaPrincipal.getTitulo() %></h2>
-                            <div class="contenedor-carrusel-guia">
-                                <img src="<%= srcGuia %>" alt="<%= guiaPrincipal.getTitulo() %>" referrerpolicy="no-referrer" style="max-height: 250px; border-radius: 8px;">
-                            </div>
-                        </a>
-                        <% } else { %>
-                        <!-- Fallback por si no hay guías en la base de datos -->
-                        <a href="${pageContext.request.contextPath}/ArticuloServlet?tipo=GUIA" class="enlace-guia">
-                            <h2>GUÍAS</h2>
-                            <div class="contenedor-carrusel-guia">
-                                <img src="${pageContext.request.contextPath}/img/tutorial.jpg" alt="Imagen Guía" style="max-height: 250px; border-radius: 8px;">
-                            </div>
-                        </a>
-                        <% } %>
+                        <h2 class="titulo-mazos">Última Guía de Estrategia</h2>
+                        <div class="contenido-mazos" style="justify-content: center; align-items: center;">
+                            <% if (guiaPrincipal != null) { 
+                                // Lógica de proxy para la portada de la guía
+                                String imgRawGuia = (guiaPrincipal.getPortada() != null) ? guiaPrincipal.getPortada().trim() : "";
+                                String srcGuia = "";
+                                if (!imgRawGuia.isEmpty() && imgRawGuia.toLowerCase().startsWith("http")) {
+                                    srcGuia = "https://wsrv.nl/?url=" + imgRawGuia;
+                                } else {
+                                    srcGuia = request.getContextPath() + (imgRawGuia.isEmpty() ? "/img/tutorial.jpg" : imgRawGuia);
+                                }
+                            %>
+                            <a href="<%= guiaPrincipal.getEnlaceExterno() %>" class="item-guia" target="_blank">
+                                <img src="<%= srcGuia %>" alt="<%= guiaPrincipal.getTitulo() %>" referrerpolicy="no-referrer">
+                                <span class="titulo-guia-index"><%= guiaPrincipal.getTitulo() %></span>
+                            </a>
+                            <% } else { %>
+                            <!-- Fallback por si no hay guías en la base de datos -->
+                            <a href="${pageContext.request.contextPath}/ArticuloServlet?tipo=GUIA" class="item-guia">
+                                <img src="${pageContext.request.contextPath}/img/tutorial.jpg" alt="Imagen Guía">
+                                <span class="titulo-guia-index">Introducción al Juego</span>
+                            </a>
+                            <% } %>
+                        </div>
+                        <div class="footer-mazos">
+                            <a href="${pageContext.request.contextPath}/ArticuloServlet?tipo=GUIA" class="btn-ver-mas">Ver todas</a>
+                        </div>
                     </div>
 
                     <div class="mazos">
