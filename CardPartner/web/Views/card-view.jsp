@@ -1,36 +1,27 @@
 <%@page import="modelo.Carta"%>
-<%@page import="datos.CartaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     // ==========================================
-    // LECTURA DINÁMICA DE LA BASE DE DATOS
+    // 1. PATRÓN MVC: RECIBIR DATOS DEL SERVLET
     // ==========================================
-    String idParam = request.getParameter("id");
-    Carta cartaActual = null;
+    // Recogemos la carta que el CartasServlet ha buscado por nosotros
+    Carta cartaActual = (Carta) request.getAttribute("cartaParaLaVista");
     
-    if (idParam != null && !idParam.isEmpty()) {
-        CartaDAO cartaDao = new CartaDAO();
-        cartaActual = cartaDao.obtenerCartaPorId(idParam);
-    }
-    
+    // 2. ESCUDO DE SEGURIDAD
+    // Si entran directamente a la URL de la vista sin pasar por el Servlet, los echamos al catálogo
     if (cartaActual == null) {
-        cartaActual = new Carta();
-        cartaActual.setIdCarta("ERROR");
-        cartaActual.setNombreCarta("Carta no encontrada");
-        cartaActual.setColor("-");
-        cartaActual.setTipo("-");
+        response.sendRedirect(request.getContextPath() + "/CartasServlet?accion=listar");
+        return;
     }
     
     // --- LÓGICA DE IMAGEN CON PROXY ---
     String imgRaw = cartaActual.getImagen();
     String srcFinal = "";
-
     if (imgRaw != null && imgRaw.toLowerCase().trim().startsWith("http")) {
         // Si es externa, usamos el proxy para evitar el bloqueo de Bandai
         srcFinal = "https://wsrv.nl/?url=" + imgRaw.trim();
     } else {
         // Si es interna o nula, usamos el logo local
-        // NOTA: Aquí SÍ incluimos el ContextPath para el logo interno
         srcFinal = request.getContextPath() + "/img/logo.png";
     }
     
@@ -44,6 +35,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <title>Card Partner - <%= cartaActual.getNombreCarta() %></title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cardViewStyle.css?v=<%= System.currentTimeMillis() %>">
 </head>
@@ -56,13 +48,11 @@
             <main class="contenido-detalle">
                 <div class="layout-carta">
                     <div class="vista-imagen">
-                        <%-- He quitado el ContextPath de aquí porque ya va incluido en srcFinal cuando es necesario --%>
                         <img src="<%= srcFinal %>" 
-                             alt="<%= cartaActual.getNombreCarta() %>"
-                             referrerpolicy="no-referrer"
+                             alt="<%= cartaActual.getNombreCarta() %>" 
+                             referrerpolicy="no-referrer" 
                              onerror="this.onerror=null; this.src='${pageContext.request.contextPath}/img/logo.png';">
                     </div>
-
                     <div class="vista-info">
                         <h2 class="titulo-seccion"><%= cartaActual.getNombreCarta() %> (<%= cartaActual.getIdCarta() %>)</h2>
                         <div class="caja-info">
