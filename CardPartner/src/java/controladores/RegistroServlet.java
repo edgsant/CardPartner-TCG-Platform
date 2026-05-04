@@ -3,6 +3,10 @@ package controladores;
 import datos.UsuarioDAO;
 import modelo.Usuario;
 
+//Para el hasheo
+import java.security.MessageDigest;
+import java.nio.charset.StandardCharsets;
+
 import java.io.IOException;
 import java.io.InputStream;
 import jakarta.servlet.ServletException;
@@ -32,19 +36,21 @@ public class RegistroServlet extends HttpServlet {
 
         String apodo = request.getParameter("apodo");
         String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        String passwordPlana = request.getParameter("password");
 
         // Mejor validación:
-        if (apodo == null || email == null || password == null
-                || apodo.trim().isEmpty() || email.trim().isEmpty() || password.trim().isEmpty()) {
+        if (apodo == null || email == null || passwordPlana == null
+                || apodo.trim().isEmpty() || email.trim().isEmpty() || passwordPlana.trim().isEmpty()) {
             response.sendRedirect("Views/registro.jsp?error=campos_vacios");
             return;
         }
 
+        String passwordHasheada = hashearConSHA256(passwordPlana);
+
         Usuario nuevoUsuario = new Usuario();
         nuevoUsuario.setApodoUsuario(apodo);
         nuevoUsuario.setEmail(email);
-        nuevoUsuario.setPassword(password);
+        nuevoUsuario.setPassword(passwordHasheada);
         nuevoUsuario.setRol("JUGADOR"); // <-- ¡AÑADE ESTO!
 
         // --- TRATAMIENTO DEL ARCHIVO ---
@@ -74,6 +80,30 @@ public class RegistroServlet extends HttpServlet {
             System.err.println("Error crítico en RegistroServlet: " + e.getMessage());
             request.setAttribute("mensajeError", "Problemas técnicos al crear su cuenta. Inténtelo más tarde.");
             request.getRequestDispatcher("/Views/error.jsp").forward(request, response);
+        }
+    }
+
+    private String hashearConSHA256(String passwordPlana) {
+        try {
+            // Le pedimos a Java que use el algoritmo SHA-256
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+
+            // Convertimos la contraseña en bytes y la hasheamos
+            byte[] hashBytes = digest.digest(passwordPlana.getBytes(StandardCharsets.UTF_8));
+
+            // Convertimos los bytes del hash a texto hexadecimal (para poder guardarlo en el VARCHAR de tu BD)
+            StringBuilder hexString = new StringBuilder(2 * hashBytes.length);
+            for (byte b : hashBytes) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+            return hexString.toString(); // Esto devuelve un texto de 64 caracteres
+
+        } catch (Exception e) {
+            throw new RuntimeException("Error al hashear la contraseña", e);
         }
     }
 }

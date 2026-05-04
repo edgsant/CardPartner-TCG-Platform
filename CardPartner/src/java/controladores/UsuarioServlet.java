@@ -5,6 +5,11 @@ import datos.UsuarioDAO;
 import modelo.Mazo;
 import modelo.Usuario;
 
+//Para el hasheo
+import java.security.MessageDigest;
+import java.nio.charset.StandardCharsets;
+
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -170,14 +175,27 @@ public class UsuarioServlet extends HttpServlet {
         String passActual = request.getParameter("passActual");
         String passNueva = request.getParameter("passNueva");
 
-        if (passActual != null && passActual.equals(usuario.getPassword())) {
-            UsuarioDAO usuarioDAO = new UsuarioDAO();
-            // Necesitas implementar actualizarPassword en UsuarioDAO
-            if (usuarioDAO.actualizarPassword(usuario.getIdUsuario(), passNueva)) {
-                // Actualizamos la sesión para que no se le cierre la cuenta
-                usuario.setPassword(passNueva);
-                response.sendRedirect("UsuarioServlet?accion=mi_perfil&exito=pass_ok");
-                return;
+        if (passActual != null && passNueva != null) {
+            
+            // 1. Transformamos la contraseña actual que ha escrito al formato Hash
+            String hashActual = hashearConSHA256(passActual);
+            
+            // 2. Comparamos los hashes (Hash del formulario VS Hash de la sesión)
+            if (hashActual.equals(usuario.getPassword())) {
+                
+                // 3. Hasheamos la NUEVA contraseña ANTES de mandarla al DAO
+                String hashNuevo = hashearConSHA256(passNueva);
+                
+                UsuarioDAO usuarioDAO = new UsuarioDAO();
+                
+                // 4. Mandamos el Hash a la BD, no el texto plano
+                if (usuarioDAO.actualizarPassword(usuario.getIdUsuario(), hashNuevo)) {
+                    
+                    // Actualizamos la sesión para que no se le cierre la cuenta
+                    usuario.setPassword(hashNuevo);
+                    response.sendRedirect("UsuarioServlet?accion=mi_perfil&exito=pass_ok");
+                    return;
+                }
             }
         }
         response.sendRedirect("UsuarioServlet?accion=mi_perfil&error=pass_incorrecta");
@@ -208,6 +226,30 @@ public class UsuarioServlet extends HttpServlet {
             response.sendRedirect("UsuarioServlet?accion=mi_perfil&exito=perfil_actualizado");
         } else {
             response.sendRedirect("UsuarioServlet?accion=mi_perfil&error=perfil_fail");
+        }
+    }
+    
+    private String hashearConSHA256(String passwordPlana) {
+        try {
+            // Le pedimos a Java que use el algoritmo SHA-256
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+
+            // Convertimos la contraseña en bytes y la hasheamos
+            byte[] hashBytes = digest.digest(passwordPlana.getBytes(StandardCharsets.UTF_8));
+
+            // Convertimos los bytes del hash a texto hexadecimal (para poder guardarlo en el VARCHAR de tu BD)
+            StringBuilder hexString = new StringBuilder(2 * hashBytes.length);
+            for (byte b : hashBytes) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+            return hexString.toString(); // Esto devuelve un texto de 64 caracteres
+
+        } catch (Exception e) {
+            throw new RuntimeException("Error al hashear la contraseña", e);
         }
     }
 }

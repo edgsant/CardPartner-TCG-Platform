@@ -12,6 +12,10 @@ import jakarta.servlet.http.HttpSession;
 import modelo.Usuario;
 import datos.UsuarioDAO;
 
+//Para el hasheo
+import java.security.MessageDigest;
+import java.nio.charset.StandardCharsets;
+
 @WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
 
@@ -22,6 +26,8 @@ public class LoginServlet extends HttpServlet {
         // 1. Recogemos los datos del formulario
         String identificador = request.getParameter("email");
         String passIngresada = request.getParameter("password");
+        String passHasheada = hashearConSHA256(passIngresada);
+        
 
         // 🌟 NUEVO: Recogemos el valor de la casilla "Mantener sesión iniciada"
         String recordarUsuario = request.getParameter("recordar");
@@ -30,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 
             // 2. Llamamos al DAO para que busque en MariaDB
             UsuarioDAO dao = new UsuarioDAO();
-            Usuario usuarioLogueado = dao.validarLogin(identificador, passIngresada);
+            Usuario usuarioLogueado = dao.validarLogin(identificador, passHasheada);
 
             // 3. Comprobamos la respuesta
             if (usuarioLogueado != null) {
@@ -64,6 +70,30 @@ public class LoginServlet extends HttpServlet {
             System.err.println("Error de base de datos en LoginServlet: " + e.getMessage());
             request.setAttribute("mensajeError", "Problemas técnicos al intentar iniciar sesión. Inténtelo más tarde.");
             request.getRequestDispatcher("/Views/error.jsp").forward(request, response);
+        }
+    }
+    
+    private String hashearConSHA256(String passwordPlana) {
+        try {
+            // Le pedimos a Java que use el algoritmo SHA-256
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+
+            // Convertimos la contraseña en bytes y la hasheamos
+            byte[] hashBytes = digest.digest(passwordPlana.getBytes(StandardCharsets.UTF_8));
+
+            // Convertimos los bytes del hash a texto hexadecimal (para poder guardarlo en el VARCHAR de tu BD)
+            StringBuilder hexString = new StringBuilder(2 * hashBytes.length);
+            for (byte b : hashBytes) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+            return hexString.toString(); // Esto devuelve un texto de 64 caracteres
+
+        } catch (Exception e) {
+            throw new RuntimeException("Error al hashear la contraseña", e);
         }
     }
 }
