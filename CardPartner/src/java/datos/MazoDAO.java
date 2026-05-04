@@ -147,6 +147,44 @@ public class MazoDAO {
         }
         return listaMazos;
     }
+    
+    
+    public int contarTotalMazosFiltrados(Boolean esOficial, Float minWinrate, String nombreBuscado, String idCartaLider, String colorLider) throws SQLException {
+        int total = 0;
+        Connection con = ConnectionPool.getInstance().getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        // Misma base SQL que el filtro, pero con COUNT(*)
+        StringBuilder sql = new StringBuilder("SELECT COUNT(*) FROM MAZO m INNER JOIN CARTA c ON m.id_carta_lider = c.id_carta WHERE m.es_publico = 1");
+
+        if (esOficial != null) { sql.append(" AND m.es_oficial = ?"); }
+        if (minWinrate != null) { sql.append(" AND m.winrate >= ?"); }
+        if (nombreBuscado != null && !nombreBuscado.trim().isEmpty()) { sql.append(" AND m.nombre_mazo LIKE ?"); }
+        if (idCartaLider != null && !idCartaLider.trim().isEmpty()) { sql.append(" AND m.id_carta_lider = ?"); }
+        if (colorLider != null && !colorLider.trim().isEmpty()) { sql.append(" AND c.color LIKE ?"); }
+
+        try {
+            ps = con.prepareStatement(sql.toString());
+            int paramIndex = 1;
+            if (esOficial != null) { ps.setBoolean(paramIndex++, esOficial); }
+            if (minWinrate != null) { ps.setFloat(paramIndex++, minWinrate); }
+            if (nombreBuscado != null && !nombreBuscado.trim().isEmpty()) { ps.setString(paramIndex++, "%" + nombreBuscado.trim() + "%"); }
+            if (idCartaLider != null && !idCartaLider.trim().isEmpty()) { ps.setString(paramIndex++, idCartaLider); }
+            if (colorLider != null && !colorLider.trim().isEmpty()) { ps.setString(paramIndex++, "%" + colorLider.trim() + "%"); }
+
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                total = rs.getInt(1); // Recogemos el número de mazos
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al contar mazos filtrados: " + e.getMessage());
+            throw e; 
+        } finally {
+            cerrarRecursos(con, ps, rs);
+        }
+        return total;
+    }
 
     // ==========================================
     // 4. MÉTODOS DE FAVORITOS (SOLUCIÓN ERRORES SERVLET)

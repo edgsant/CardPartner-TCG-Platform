@@ -72,7 +72,7 @@ public class CatalogoMazosServlet extends HttpServlet {
             // 3. Buscamos los mazos (¡Ahora en un solo viaje a la BD con todos los filtros!)
             // Pasamos (esOficial, minWinrate, nombre, lider, color, limite, offset)
             int pagina = 1;
-            int limite = 20;
+            int limite = 15;
             String paginaParam = request.getParameter("pagina");
             if (paginaParam != null && !paginaParam.isEmpty()) {
                 try {
@@ -86,11 +86,20 @@ public class CatalogoMazosServlet extends HttpServlet {
             }
             int offset = (pagina - 1) * limite;
 
-            List<Mazo> listaMazos = mazoDAO.filtrarMazosPublicos(esOficial, null, nombreBuscado, idLider, colorLider, 20, 0);
+            // 1. Buscamos los mazos de esta página (OJO: Usamos limite y offset)
+            List<Mazo> listaMazos = mazoDAO.filtrarMazosPublicos(esOficial, null, nombreBuscado, idLider, colorLider, limite, offset);
 
+            // 2. Contamos cuántos hay en TOTAL en la base de datos con esos filtros
+            int totalMazos = mazoDAO.contarTotalMazosFiltrados(esOficial, null, nombreBuscado, idLider, colorLider);
+            
+            // 3. Calculamos cuántas páginas salen (redondeando hacia arriba)
+            int totalPaginas = (int) Math.ceil((double) totalMazos / limite);
+            
             // Ya NO necesitamos el CartaDAO aquí, el MazoDAO ya incluye al líder dentro del objeto.
             // 4. Empaquetamos y mandamos a la vista
             request.setAttribute("listaMazosComunidad", listaMazos);
+            request.setAttribute("paginaActual", pagina);
+            request.setAttribute("totalPaginas", totalPaginas);
 
             // Pasamos variables para que el Front pueda mantener los filtros seleccionados
             request.setAttribute("tipoMazoActivo", tipoMazoStr);

@@ -50,7 +50,7 @@ public class CartasServlet extends HttpServlet {
 
         // 2. Matemáticas de Paginación
         int pagina = 1;
-        int limite = 20;
+        int limite = 18;
 
         String paginaParam = request.getParameter("pagina");
         if (paginaParam != null && !paginaParam.isEmpty()) {
