@@ -21,28 +21,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <title>Card Partner - Community Decks</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/communityDeckStyle.css?v=13">
-    
-    <style>
-        /* Aseguramos que el contenedor de la imagen tenga consistencia visual */
-        .mazo-imagen {
-            min-height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(0,0,0,0.05); /* Un fondo sutil por si tarda en cargar */
-            overflow: hidden;
-        }
-        .mazo-imagen img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
-        }
-    </style>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/communityDeckStyle.css?v=14">
 </head>
 <body>
-
     <div class="fondo-rosa">
         <div class="contenedor-principal">
             
@@ -74,15 +55,13 @@
                                 String srcFinal = "";
 
                                 // ==========================================
-                                // LÓGICA DE PROXY (Igual que en cartas.jsp)
+                                // LÓGICA DE PROXY
                                 // ==========================================
                                 if (!imgRaw.isEmpty() && imgRaw.toLowerCase().startsWith("http")) {
-                                    // Usamos el proxy de weserv.nl para saltar bloqueos de la web de referencia
                                     srcFinal = "https://images.weserv.nl/?url=" + imgRaw;
                                 } else if (imgRaw.isEmpty()) {
                                     srcFinal = request.getContextPath() + "/img/logo.png";
                                 } else {
-                                    // Imagen local
                                     srcFinal = request.getContextPath() + "/img/" + imgRaw;
                                 }
 
@@ -108,7 +87,7 @@
                             }
                         } else {
                     %>
-                        <p style="color: white; text-align: center; width: 100%; grid-column: 1 / -1;">
+                        <p style="color: #666; text-align: center; width: 100%; grid-column: 1 / -1;">
                             No se han encontrado mazos en la base de datos.
                         </p>
                     <%

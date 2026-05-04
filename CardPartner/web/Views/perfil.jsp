@@ -11,7 +11,7 @@
     Usuario usuarioActual = (Usuario) session.getAttribute("usuarioActivo");
     if (usuarioActual == null) {
         response.sendRedirect(request.getContextPath() + "/Views/login.jsp");
-        return; 
+        return;
     }
     
     // ==========================================
@@ -24,7 +24,6 @@
         response.sendRedirect(request.getContextPath() + "/UsuarioServlet?accion=mi_perfil");
         return;
     }
-
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     String fechaBonita = (usuarioActual.getFechaRegistro() != null) ? sdf.format(usuarioActual.getFechaRegistro()) : "Desconocida";
 %>
@@ -38,10 +37,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <title>Card Partner - Mi Perfil</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/perfilStyle.css?v=6">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/perfilStyle.css?v=8">
 </head>
 <body>
-
     <div class="fondo-rosa">
         <div class="contenedor-principal">
             
@@ -50,6 +48,7 @@
             <main class="contenido-perfil">
                 
                 <div class="perfil-header">
+                    <!-- Mantenemos el icono de FontAwesome al no haber Servlet de Avatar -->
                     <div class="perfil-avatar">
                         <i class="fas fa-user-circle"></i>
                     </div>
@@ -59,7 +58,6 @@
                         <p class="perfil-fecha"><i class="fas fa-calendar-alt"></i> Miembro desde: <%= fechaBonita %></p>
                     </div>
                     <div class="perfil-acciones">
-                        <!-- Botón para abrir el Modal de Editar Datos -->
                         <a href="#modal-editar-perfil" class="btn-editar-perfil" style="text-decoration: none; display: inline-block; text-align: center;"><i class="fas fa-edit"></i> Editar Datos</a>
                         <a href="#modal-password" class="btn-cambiar-pass" style="text-decoration: none;"><i class="fas fa-key"></i> Cambiar Contraseña</a>
                     </div>
@@ -81,11 +79,11 @@
                                     Carta lider = m.getCartaLider();
                                     String imgRaw = (lider != null && lider.getImagen() != null) ? lider.getImagen().trim() : "";
                                     String imgFinal = (!imgRaw.isEmpty() && imgRaw.toLowerCase().startsWith("http")) 
-                                          ? "https://images.weserv.nl/?url=" + imgRaw 
-                                          : request.getContextPath() + (imgRaw.isEmpty() ? "/img/logo.png" : imgRaw);
+                                           ? "https://images.weserv.nl/?url=" + imgRaw 
+                                           : request.getContextPath() + (imgRaw.isEmpty() ? "/img/logo.png" : imgRaw);
                         %>
                                     <div class="mazo-item">
-                                        <a href="${pageContext.request.contextPath}/CatalogoMazosServlet?accion=detalle&id=<%= m.getIdMazo() %>" style="text-decoration: none; color: inherit;">
+                                        <a href="${pageContext.request.contextPath}/CatalogoMazosServlet?accion=detalle&id=<%= m.getIdMazo() %>">
                                             <div class="mazo-imagen">
                                                 <img src="<%= imgFinal %>" alt="Líder del mazo" loading="lazy" referrerpolicy="no-referrer">
                                             </div>
@@ -126,11 +124,11 @@
                                     Carta lider = fav.getCartaLider();
                                     String imgRaw = (lider != null && lider.getImagen() != null) ? lider.getImagen().trim() : "";
                                     String imgFinal = (!imgRaw.isEmpty() && imgRaw.toLowerCase().startsWith("http")) 
-                                          ? "https://images.weserv.nl/?url=" + imgRaw 
-                                          : request.getContextPath() + (imgRaw.isEmpty() ? "/img/logo.png" : imgRaw);
+                                           ? "https://images.weserv.nl/?url=" + imgRaw 
+                                           : request.getContextPath() + (imgRaw.isEmpty() ? "/img/logo.png" : imgRaw);
                         %>
                                     <div class="mazo-item">
-                                        <a href="${pageContext.request.contextPath}/CatalogoMazosServlet?accion=detalle&id=<%= fav.getIdMazo() %>" style="text-decoration: none; color: inherit;">
+                                        <a href="${pageContext.request.contextPath}/CatalogoMazosServlet?accion=detalle&id=<%= fav.getIdMazo() %>">
                                             <div class="mazo-imagen">
                                                 <img src="<%= imgFinal %>" alt="Líder Meta" loading="lazy" referrerpolicy="no-referrer">
                                             </div>
@@ -171,7 +169,6 @@
             <a href="#" class="btn-cerrar">&times;</a>
             <h2 class="titulo-seccion" style="font-size: 24px; margin-bottom: 20px;"><i class="fas fa-user-edit"></i> Editar Perfil</h2>
             
-            <!-- IMPORTANTE: enctype="multipart/form-data" es OBLIGATORIO para enviar archivos al Servlet -->
             <form action="${pageContext.request.contextPath}/UsuarioServlet" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="accion" value="editar_datos">
                 

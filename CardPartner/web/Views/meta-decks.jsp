@@ -5,6 +5,7 @@
 <%
     // Recuperamos la lista de mazos oficiales enviada por el Servlet
     List<Mazo> listaMeta = (List<Mazo>) request.getAttribute("listaMazosComunidad");
+    
     // Si la lista es nula, forzamos la carga a través del Servlet
     if (listaMeta == null) {
         response.sendRedirect(request.getContextPath() + "/CatalogoMazosServlet?accion=listar&tipo_mazo=oficial");
@@ -21,23 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <title>Card Partner - META Decks</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/metaDecksStyle.css?v=10">
-    <style>
-        /* Ajuste para que las imágenes de los líderes meta no se deformen */
-        .mazo-imagen {
-            width: 100%;
-            aspect-ratio: 2 / 2.8;
-            background: rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .mazo-imagen img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/metaDecksStyle.css?v=11">
 </head>
 <body>
 
@@ -83,7 +68,6 @@
                                 String colorLider = (lider != null && lider.getColor() != null) ? lider.getColor() : "Varios";
                                 String nombreLider = (lider != null) ? lider.getNombreCarta() : "Desconocido";
                     %>
-                        <%-- Este enlace ahora apunta al detalle del mazo pasando el ID --%>
                         <a href="${pageContext.request.contextPath}/CatalogoMazosServlet?accion=detalle&id=<%= m.getIdMazo() %>" class="mazo-item">
                             <div class="mazo-imagen">
                                 <img src="<%= srcFinal %>" 

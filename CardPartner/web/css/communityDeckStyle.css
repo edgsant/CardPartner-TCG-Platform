@@ -1,281 +1,89 @@
 /* =========================================
    1. CONFIGURACIÓN GLOBAL Y FUENTES
 ========================================= */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
     font-family: 'Poppins', sans-serif; 
-    font-size: 16px;
-    color: #333; 
+    font-size: 16px; color: #333; 
     background-image: url('../img/fondo.jpg'); 
-    background-size: cover; 
-    background-position: center center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-size: cover; background-position: center center; 
+    background-repeat: no-repeat; background-attachment: fixed; 
 }
 
-/* =========================================
-   2. ESTRUCTURA PRINCIPAL (FONDO Y CRISTAL)
-========================================= */
-.fondo-rosa {
-    min-height: 100vh;
-    display: flex;
-    padding: 40px; 
-}
-
+.fondo-rosa { min-height: 100vh; display: flex; padding: 40px; }
 .contenedor-principal {
     background-color: rgba(255, 255, 255, 0.95); 
-    border: 1px solid #ddd; 
-    border-radius: 15px; 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #ddd; border-radius: 15px; 
+    width: 100%; display: flex; flex-direction: column;
+    padding: 0; position: relative; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
 }
 
 /* =========================================
-   3. CABECERA ALINEADA Y ELEGANTE
+   CABECERA ALINEADA Y ELEGANTE
 ========================================= */
-.cabecera {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 30px 40px; 
-    border-bottom: 1px solid #eee; 
-    position: relative; 
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    text-decoration: none; 
-    z-index: 2; 
-}
-
-.logo img {
-    height: 100px; 
-    width: auto;
-}
-
-.logo:hover {
-    opacity: 0.8;
-}
-
-.login {
-    display: flex;
-    z-index: 2; 
-}
-
+.cabecera { display: flex; justify-content: space-between; align-items: center; padding: 30px 40px; border-bottom: 1px solid #eee; position: relative; }
+.logo { display: flex; align-items: center; background-color: transparent; text-decoration: none; z-index: 2; }
+.logo img { height: 100px; width: auto; }
+.logo:hover { opacity: 0.8; }
+.login { display: flex; z-index: 2; }
 .login button {
-    font-family: 'Montserrat', sans-serif;
-    background-color: white;
-    color: #333;
-    border: 2px solid #333;
-    padding: 10px 25px; 
-    font-size: 14px;
-    font-weight: 700;
-    border-radius: 8px;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif; background-color: white; color: #333;
+    border: 2px solid #333; padding: 10px 25px; font-size: 14px; font-weight: 700;
+    border-radius: 8px; cursor: pointer; text-transform: uppercase; transition: all 0.3s ease;
 }
-
-.login button:hover {
-    background-color: #333;
-    color: white;
-    transform: translateY(-2px);
-}
+.login button:hover { background-color: #333; color: white; transform: translateY(-2px); }
 
 /* =========================================
-   4. MEGA-MENÚ (LA MAGIA DE LOS BOTONES)
+   MEGA-MENÚ
 ========================================= */
-.fila-de-botones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px; 
-    flex: 1; 
-}
-
-.mi-desplegable {
-    position: relative; 
-}
-
+.fila-de-botones { display: flex; justify-content: center; align-items: center; gap: 60px; flex: 1; }
+.mi-desplegable { position: relative; }
 .mi-boton {
-    background-color: transparent;
-    border: 2px solid #333;
-    border-radius: 6px; 
-    padding: 15px 30px; 
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    color: #333;
-    cursor: pointer;
-    text-decoration: none; 
-    display: inline-block;
-    transition: all 0.3s;
+    background-color: transparent; border: 2px solid #333; border-radius: 6px; 
+    padding: 15px 30px; font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: 16px; color: #333; cursor: pointer; text-decoration: none; 
+    display: inline-block; transition: all 0.3s;
 }
-
-.mi-boton:hover {
-    background-color: #333;
-    color: white;
-}
-
+.mi-boton:hover { background-color: #333; color: white; }
 .mi-submenu {
-    display: none; 
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 10px;
-    background-color: white;
-    border: 2px solid #333;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    z-index: 1000;
+    display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    margin-top: 10px; background-color: white; border: 2px solid #333; border-radius: 8px;
+    padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); z-index: 1000;
 }
-
-.mi-submenu::before {
-    content: "";
-    position: absolute;
-    top: -15px; 
-    left: 0;
-    width: 100%;
-    height: 15px;
-    background-color: transparent; 
-}
-
-.mi-desplegable:hover .mi-submenu {
-    display: flex; 
-    flex-direction: row; 
-    gap: 10px;
-}
-
+.mi-submenu::before { content: ""; position: absolute; top: -15px; left: 0; width: 100%; height: 15px; background-color: transparent; }
+.mi-desplegable:hover .mi-submenu { display: flex; flex-direction: row; gap: 10px; }
 .mi-submenu a {
-    padding: 10px 15px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    color: #333;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    white-space: nowrap; 
-    transition: all 0.3s;
+    padding: 10px 15px; background-color: #f5f5f5; border: 1px solid #ccc;
+    border-radius: 6px; color: #333; text-decoration: none; font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 13px; white-space: nowrap; transition: all 0.3s;
 }
-
-.mi-submenu a:hover {
-    background-color: #333;
-    color: white;
-    border-color: #333;
-}
+.mi-submenu a:hover { background-color: #333; color: white; border-color: #333; }
 
 /* =========================================
-   5. SECCIÓN MAZOS (Específico de la vista general)
+   SECCIÓN MAZOS
 ========================================= */
-.contenido-mazos {
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    flex-grow: 1;
-}
-
-.titulo-seccion {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #222;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-.barra-busqueda {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-}
-
-/* Agrupador para los filtros y el botón de crear */
-.acciones-derecha {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
+.contenido-mazos { display: flex; flex-direction: column; padding: 40px; flex-grow: 1; }
+.titulo-seccion { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 700; color: #222; margin: 0; text-transform: uppercase; letter-spacing: 1.5px; }
+.barra-busqueda { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+.acciones-derecha { display: flex; align-items: center; gap: 25px; }
 .filtros { display: flex; gap: 15px; }
-
-.filtros input {
-    font-family: 'Poppins', sans-serif;
-    padding: 10px 20px;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 320px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
+.filtros input { font-family: 'Poppins', sans-serif; padding: 10px 20px; font-size: 15px; border: 1px solid #ccc; border-radius: 8px; width: 320px; outline: none; transition: border-color 0.3s; }
 .filtros input:focus { border-color: #333; }
-
-.btn-filtro {
-    font-family: 'Montserrat', sans-serif;
-    padding: 10px 20px;
-    font-size: 15px;
-    font-weight: 700;
-    border: 2px solid #333;
-    border-radius: 8px;
-    background-color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
+.btn-filtro { font-family: 'Montserrat', sans-serif; padding: 10px 20px; font-size: 15px; font-weight: 700; border: 2px solid #333; border-radius: 8px; background-color: white; cursor: pointer; transition: all 0.3s ease; }
 .btn-filtro:hover { background-color: #333; color: white; transform: translateY(-2px); }
 
-/* Nuevo Botón de Crear Mazo */
 .btn-crear {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #d32f2f; 
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 15px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+    font-family: 'Montserrat', sans-serif; background-color: #d32f2f; color: white;
+    padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700;
+    font-size: 15px; text-transform: uppercase; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
 }
+.btn-crear:hover { background-color: #b71c1c; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(211, 47, 47, 0.4); }
 
-.btn-crear:hover {
-    background-color: #b71c1c;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(211, 47, 47, 0.4);
-}
+.subtitulo-mazos { font-family: 'Montserrat', sans-serif; font-size: 22px; color: #333; margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
 
-/* Subtítulos de las secciones (META y Comunidad) */
-.subtitulo-mazos {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 22px;
-    color: #333;
-    margin-top: 40px; 
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-}
-
-/* Cuadrícula (Grid) de Mazos */
+/* =========================================
+   DISEÑO DE LAS TARJETAS (CARTAS)
+========================================= */
 .galeria-mazos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -283,7 +91,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Diseño de la "Caja" del mazo */
 .mazo-item {
     display: flex;
     flex-direction: column;
@@ -295,8 +102,8 @@ body {
     overflow: hidden; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* FIX: Obliga a igualar alturas */
 }
-
 .mazo-item:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
@@ -304,11 +111,10 @@ body {
 
 .mazo-imagen {
     width: 100%;
-    height: 160px; 
+    height: 160px; /* Banner style */
     background-color: #f5f5f5; 
     border-bottom: 2px solid #eee;
 }
-
 .mazo-imagen img {
     width: 100%;
     height: 100%;
@@ -321,13 +127,20 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex-grow: 1; /* FIX: Empuja el contenido hacia abajo */
 }
 
+/* FIX: Control de nombres largos con puntos suspensivos */
 .mazo-info h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     margin: 0;
     color: #222;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
 }
 
 .mazo-meta, .mazo-autor {
@@ -345,38 +158,20 @@ body {
     background-color: #333;
     padding: 5px 12px;
     border-radius: 20px;
-    margin-top: 10px;
+    margin-top: auto; /* FIX: Lo ancla siempre a la parte inferior de la tarjeta */
     text-transform: uppercase;
 }
+
 /* =========================================
-   6. MODAL DE FILTROS (CSS PURO)
+   MODAL DE FILTROS 
 ========================================= */
 .modal-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.6); 
-    backdrop-filter: blur(5px);    
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px);    
     display: flex; justify-content: center; align-items: center;
-    
-    visibility: hidden; opacity: 0; 
-    transition: all 0.3s ease-in-out;
-    z-index: 9999;
+    visibility: hidden; opacity: 0; transition: all 0.3s ease-in-out; z-index: 9999;
 }
-
-.modal-overlay:target {
-    visibility: visible; opacity: 1;
-}
-
-.modal-content {
-    background: white; padding: 40px; border-radius: 20px;
-    width: 90%; max-width: 500px; position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.btn-cerrar {
-    position: absolute; top: 15px; right: 20px;
-    font-size: 28px; text-decoration: none; color: #999;
-    transition: 0.3s;
-}
-
+.modal-overlay:target { visibility: visible; opacity: 1; }
+.modal-content { background: white; padding: 40px; border-radius: 20px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.btn-cerrar { position: absolute; top: 15px; right: 20px; font-size: 28px; text-decoration: none; color: #999; transition: 0.3s; }
 .btn-cerrar:hover { color: #333; }
