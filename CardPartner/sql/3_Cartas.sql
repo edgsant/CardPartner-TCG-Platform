@@ -175,7 +175,7 @@ INSERT INTO CARTA (id_carta, nombre_carta, tipo, color, coste, poder, atributo_c
 ('OP03-033', 'Hatchan', 'PERSONAJE', 'VERDE', 2, 3000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP03-033.png'),
 ('OP12-026', 'Kuina', 'PERSONAJE', 'VERDE', 4, 1000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-026.png'),
 ('OP12-036', 'Roronoa Zoro', 'PERSONAJE', 'VERDE', 4, 5000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-036.png'),
-('EB01-012', 'Sherry', 'PERSONAJE', 'NEGRO', 1, 3000, 'SPECIAL', 'https://en.onepiece-cardgame.com/images/cardlist/card/EB01-012.png'),
+('EB01-012', 'Cavendish', 'PERSONAJE', 'VERDE', 5, 6000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/EB01-012.png'),
 ('OP12-031', 'Tashigi', 'PERSONAJE', 'VERDE', 5, 7000, 'SLASH', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP12-031.png'),
 ('OP05-037', 'Because the Side of Justice Will Be Wichever Side Wins!!', 'PERSONAJE', 'VERDE', 1, 1000, 'STRIKE', 'https://en.onepiece-cardgame.com/images/cardlist/card/OP05-037.png'),
 ('OP08-036', 'Electrical Luna', 'EVENTO', 'VERDE', 3, NULL, NULL, 'https://en.onepiece-cardgame.com/images/cardlist/card/OP08-036.png'),
