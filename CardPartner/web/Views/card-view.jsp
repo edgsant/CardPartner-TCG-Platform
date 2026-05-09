@@ -70,7 +70,9 @@
                             <div class="acciones-carta-detalle">
                                 <button class="btn-accion-carta"><i class="fas fa-heart"></i> Añadir a Deseados</button>
                                 <a href="${pageContext.request.contextPath}/Views/meta-decks.jsp" class="btn-accion-carta" style="text-decoration: none;"><i class="fas fa-layer-group"></i> Ver mazos</a>
-                                <a href="#" class="btn-comprar"><i class="fas fa-shopping-cart"></i> Comprar</a>
+                                <a href="https://www.cardmarket.com/es/OnePiece/Products/Search?searchString=<%= cartaActual.getIdCarta() %>" target="_blank" class="btn-comprar">
+                                    <i class="fas fa-shopping-cart"></i> Comprar en CardMarket
+                                </a>
                             </div>
                         </div>
                     </div>
