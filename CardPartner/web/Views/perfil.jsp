@@ -5,20 +5,16 @@
 <%@page import="modelo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    // ==========================================
-    // 1. CONTROL DE SEGURIDAD (Login)
-    // ==========================================
     Usuario usuarioActual = (Usuario) session.getAttribute("usuarioActivo");
     if (usuarioActual == null) {
         response.sendRedirect(request.getContextPath() + "/Views/login.jsp");
         return;
     }
     
-    // ==========================================
-    // 2. PATRÓN MVC: ESCUDO DE PROTECCIÓN
-    // ==========================================
     List<Mazo> misMazos = (List<Mazo>) request.getAttribute("listaMisMazos");
     List<Mazo> misFavoritos = (List<Mazo>) request.getAttribute("listaMisFavoritos");
+    // NUEVO: Recogemos la lista de cartas deseadas
+    List<Carta> misCartasDeseadas = (List<Carta>) request.getAttribute("listaMisCartas");
     
     if (misMazos == null || misFavoritos == null) {
         response.sendRedirect(request.getContextPath() + "/UsuarioServlet?accion=mi_perfil");
@@ -47,9 +43,6 @@
 
             <main class="contenido-perfil">
                 
-                <%-- ========================================== --%>
-                <%-- MENSAJES DE FEEDBACK (Éxito o Error)       --%>
-                <%-- ========================================== --%>
                 <% 
                     String exito = request.getParameter("exito");
                     String error = request.getParameter("error");
@@ -61,6 +54,7 @@
                         else if (exito.equals("mazo_borrado")) msg = "Mazo eliminado correctamente.";
                         else if (exito.equals("favorito_quitado")) msg = "Mazo quitado de favoritos.";
                         else if (exito.equals("bienvenida")) msg = "¡Bienvenido a CardPartner! Tu cuenta ha sido creada con éxito.";
+                        else if (exito.equals("wishlist_quitada")) msg = "Carta eliminada de tu Wishlist.";
                 %>
                     <div style="background-color: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600;">
                         <i class="fas fa-check-circle"></i> <%= msg %>
@@ -77,7 +71,6 @@
                 <%  } %>
 
                 <div class="perfil-header">
-                    <!-- AvatarServlet cargando la foto con truco anti-caché -->
                     <div class="perfil-avatar">
                         <img src="${pageContext.request.contextPath}/AvatarServlet?id=<%= usuarioActual.getIdUsuario() %>&t=<%= System.currentTimeMillis() %>" alt="Avatar de <%= usuarioActual.getApodoUsuario() %>" onerror="this.onerror=null; this.src='${pageContext.request.contextPath}/img/default-avatar.png';">
                     </div>
@@ -87,26 +80,22 @@
                         <p class="perfil-email"><i class="fas fa-envelope"></i> <%= usuarioActual.getEmail() %></p>
                         <p class="perfil-fecha"><i class="fas fa-calendar-alt"></i> Miembro desde: <%= fechaBonita %></p>
                     </div>
-                    
+                   
                     <div class="perfil-acciones">
                         <a href="#modal-editar-perfil" class="btn-editar-perfil" style="text-decoration: none; display: inline-block; text-align: center;"><i class="fas fa-edit"></i> Editar Datos</a>
                         <a href="#modal-password" class="btn-cambiar-pass" style="text-decoration: none;"><i class="fas fa-key"></i> Cambiar Contraseña</a>
                     </div>
                 </div> 
 
-                <!-- SECCIÓN: MIS MAZOS CREADOS -->
                 <div class="seccion-mazos">
                     <div class="barra-titulo">
                         <h3 class="subtitulo-mazos">Mis Mazos Creados</h3>
                         <a href="${pageContext.request.contextPath}/DeckBuilderServlet" class="btn-crear-nuevo">+ Crear Nuevo</a>
                     </div>
-                    
                     <div class="galeria-mazos">
-                        <%
-                            if (!misMazos.isEmpty()) {
+                        <% if (!misMazos.isEmpty()) {
                                 for (Mazo m : misMazos) {
                                     String visibilidad = m.isEsPublico() ? "Público" : "Privado";
-                                    
                                     Carta lider = m.getCartaLider();
                                     String imgRaw = (lider != null && lider.getImagen() != null) ? lider.getImagen().trim() : "";
                                     String imgFinal = (!imgRaw.isEmpty() && imgRaw.toLowerCase().startsWith("http")) 
@@ -126,7 +115,6 @@
                                         </a>
                                         <div class="acciones-carta">
                                             <a href="${pageContext.request.contextPath}/DeckBuilderServlet?accion=editar&id=<%= m.getIdMazo() %>" class="btn-accion btn-editar" style="text-decoration:none;"><i class="fas fa-pen"></i> Editar</a>
-                                            
                                             <form action="${pageContext.request.contextPath}/UsuarioServlet" method="POST" style="margin:0; padding:0; display:inline;" onsubmit="return confirm('¿Seguro que quieres borrar este mazo?');">
                                                 <input type="hidden" name="accion" value="borrar_mazo">
                                                 <input type="hidden" name="id" value="<%= m.getIdMazo() %>">
@@ -134,23 +122,18 @@
                                             </form>
                                         </div>
                                     </div>
-                        <%
-                                }
+                        <%      }
                             } else {
                         %>
                                 <p style="color: #666; font-style: italic;">Aún no has creado ningún mazo. ¡Anímate en el Deck Builder!</p>
-                        <%
-                            }
-                        %>
+                        <% } %>
                     </div>
                 </div>
 
-                <!-- SECCIÓN: MAZOS GUARDADOS (FAVORITOS) -->
                 <div class="seccion-mazos">
                     <h3 class="subtitulo-mazos" style="margin-top: 20px;">Mazos Guardados (Favoritos)</h3>
                     <div class="galeria-mazos">
-                        <%
-                            if (!misFavoritos.isEmpty()) {
+                        <% if (!misFavoritos.isEmpty()) {
                                 for (Mazo fav : misFavoritos) {
                                     Carta lider = fav.getCartaLider();
                                     String imgRaw = (lider != null && lider.getImagen() != null) ? lider.getImagen().trim() : "";
@@ -177,14 +160,47 @@
                                             </form>
                                         </div>
                                     </div>
-                        <%
-                                }
+                        <%      }
                             } else {
                         %>
                                 <p style="color: #666; font-style: italic;">No tienes ningún mazo guardado en favoritos.</p>
-                        <%
-                            }
+                        <% } %>
+                    </div>
+                </div>
+
+                <div class="seccion-mazos">
+                    <h3 class="subtitulo-mazos" style="margin-top: 20px;">Mi Wishlist (Cartas Deseadas)</h3>
+                    <div class="galeria-mazos">
+                        <% if (misCartasDeseadas != null && !misCartasDeseadas.isEmpty()) {
+                                for (Carta c : misCartasDeseadas) {
+                                    String imgRawC = (c.getImagen() != null) ? c.getImagen().trim() : "";
+                                    String imgFinalC = (!imgRawC.isEmpty() && imgRawC.toLowerCase().startsWith("http")) 
+                                           ? "https://images.weserv.nl/?url=" + imgRawC 
+                                           : request.getContextPath() + (imgRawC.isEmpty() ? "/img/logo.png" : imgRawC);
                         %>
+                                    <div class="mazo-item" style="text-align:center;">
+                                        <a href="${pageContext.request.contextPath}/CartasServlet?accion=detalle&id=<%= c.getIdCarta() %>">
+                                            <div class="mazo-imagen" style="height: auto; padding: 10px;">
+                                                <img src="<%= imgFinalC %>" alt="<%= c.getNombreCarta() %>" style="max-height: 200px; width: auto; border-radius: 8px;" loading="lazy" referrerpolicy="no-referrer">
+                                            </div>
+                                            <div class="mazo-info">
+                                                <h3 style="font-size: 1rem;"><%= c.getNombreCarta() %></h3>
+                                                <span class="mazo-tipo"><%= c.getIdCarta() %></span>
+                                            </div>
+                                        </a>
+                                        <div class="acciones-carta">
+                                            <form action="${pageContext.request.contextPath}/UsuarioServlet" method="POST" style="margin:0; padding:0; width:100%;">
+                                                <input type="hidden" name="accion" value="quitar_wishlist">
+                                                <input type="hidden" name="idCarta" value="<%= c.getIdCarta() %>">
+                                                <button type="submit" class="btn-accion btn-borrar" style="width: 100%;"><i class="fas fa-trash"></i> Quitar de Wishlist</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                        <%      }
+                            } else {
+                        %>
+                                <p style="color: #666; font-style: italic;">No tienes ninguna carta en tu Wishlist.</p>
+                        <% } %>
                     </div>
                 </div>
 
@@ -192,9 +208,6 @@
         </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- MODAL: EDITAR DATOS DEL PERFIL             -->
-    <!-- ========================================== -->
     <div id="modal-editar-perfil" class="modal-overlay">
         <div class="modal-content">
             <a href="#" class="btn-cerrar">&times;</a>
@@ -225,9 +238,6 @@
         </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- MODAL: CAMBIAR CONTRASEÑA                  -->
-    <!-- ========================================== -->
     <div id="modal-password" class="modal-overlay">
         <div class="modal-content">
             <a href="#" class="btn-cerrar">&times;</a>
@@ -236,20 +246,14 @@
             <form action="${pageContext.request.contextPath}/UsuarioServlet" method="POST">
                 <input type="hidden" name="accion" value="cambiar_password">
                 <div class="campo-form">
-                    
-                    <!-- INPUT 1: Password actual -->
                     <div class="password-wrapper">
                         <input type="password" id="passActual" name="passActual" placeholder="Contraseña actual" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; padding-right: 40px;">
                         <i class="fas fa-eye toggle-password" onclick="togglePassword('passActual', this)"></i>
                     </div>
-
-                    <!-- INPUT 2: Nueva Password -->
                     <div class="password-wrapper">
                         <input type="password" id="passNueva" name="passNueva" placeholder="Nueva contraseña" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; padding-right: 40px;">
                         <i class="fas fa-eye toggle-password" onclick="togglePassword('passNueva', this)"></i>
                     </div>
-
-                    <!-- INPUT 3: Confirmación -->
                     <div class="password-wrapper">
                         <input type="password" id="passConfirmacion" name="passConfirmacion" placeholder="Repite la nueva contraseña" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; padding-right: 40px;">
                         <i class="fas fa-eye toggle-password" onclick="togglePassword('passConfirmacion', this)"></i>
@@ -261,9 +265,6 @@
         </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- SCRIPT PARA MOSTRAR/OCULTAR CONTRASEÑAS    -->
-    <!-- ========================================== -->
     <script>
         function togglePassword(inputId, iconElement) {
             var input = document.getElementById(inputId);

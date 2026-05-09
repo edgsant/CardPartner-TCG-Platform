@@ -3,6 +3,9 @@ package controladores;
 import datos.CartaDAO;
 import modelo.Carta;
 
+import jakarta.servlet.http.HttpSession;
+import datos.UsuarioDAO;
+
 import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -102,16 +105,26 @@ public class CartasServlet extends HttpServlet {
 
         if (idParam != null && !idParam.isEmpty()) {
             try {
-
                 CartaDAO cartaDAO = new CartaDAO();
                 Carta cartaActual = cartaDAO.obtenerCartaPorId(idParam);
 
                 if (cartaActual != null) {
+                    
+                    // --- NUEVO: COMPROBAR WISHLIST ---
+                    boolean enWishlist = false;
+                    HttpSession session = request.getSession(false);
+                    if (session != null && session.getAttribute("usuarioActivo") != null) {
+                        modelo.Usuario usuarioLogueado = (modelo.Usuario) session.getAttribute("usuarioActivo");
+                        UsuarioDAO uDao = new UsuarioDAO();
+                        enWishlist = uDao.estaEnWishlist(usuarioLogueado.getIdUsuario(), cartaActual.getIdCarta());
+                    }
+                    
                     request.setAttribute("cartaParaLaVista", cartaActual);
+                    request.setAttribute("enWishlist", enWishlist); // Pasamos el booleano a la vista
+                    
                     request.getRequestDispatcher("/Views/card-view.jsp").forward(request, response);
                     return;
                 } else {
-                    // Lógica: el ID no existe en BD
                     response.sendRedirect("CartasServlet?accion=listar&error=carta_no_encontrada");
                     return;
                 }

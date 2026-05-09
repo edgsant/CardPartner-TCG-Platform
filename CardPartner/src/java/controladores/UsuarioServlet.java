@@ -80,6 +80,9 @@ public class UsuarioServlet extends HttpServlet {
                 case "guardar_favorito":
                     guardarFavorito(request, response, usuarioLogueado);
                     break;
+                case "quitar_wishlist":
+                    quitarWishlist(request, response, usuarioLogueado);
+                    break;
                 default:
                     response.sendRedirect("UsuarioServlet?accion=mi_perfil");
                     break;
@@ -94,19 +97,19 @@ public class UsuarioServlet extends HttpServlet {
     // ==========================================
     // MÉTODOS DE ACCIÓN
     // ==========================================
-    private void mostrarPerfil(HttpServletRequest request, HttpServletResponse response, Usuario usuario)
-            throws ServletException, IOException, SQLException {
-
+    private void mostrarPerfil(HttpServletRequest request, HttpServletResponse response, Usuario usuario) throws ServletException, IOException, SQLException {
         MazoDAO mazoDAO = new MazoDAO();
+        UsuarioDAO usuarioDAO = new UsuarioDAO(); // Asegúrate de instanciar esto
 
-        // Carga 1: Los mazos que YO he creado
         ArrayList<Mazo> misMazos = mazoDAO.obtenerMazosPorUsuario(usuario.getIdUsuario());
-
-        // Carga 2: Los mazos de otros que yo he GUARDADO (Favoritos)
         ArrayList<Mazo> misFavoritos = mazoDAO.obtenerMazosGuardados(usuario.getIdUsuario());
+        
+        // ¡NUEVO!: Cargamos la wishlist
+        ArrayList<modelo.Carta> misCartasDeseadas = usuarioDAO.obtenerCartasWishlist(usuario.getIdUsuario()); 
 
         request.setAttribute("listaMisMazos", misMazos);
         request.setAttribute("listaMisFavoritos", misFavoritos);
+        request.setAttribute("listaMisCartas", misCartasDeseadas); // Pasamos las cartas a la vista
 
         request.getRequestDispatcher("/Views/perfil.jsp").forward(request, response);
     }
@@ -146,6 +149,18 @@ public class UsuarioServlet extends HttpServlet {
             }
         }
         response.sendRedirect("UsuarioServlet?accion=mi_perfil&error=favorito_fail");
+    }
+    
+    private void quitarWishlist(HttpServletRequest request, HttpServletResponse response, Usuario usuario) throws ServletException, IOException, SQLException {
+        String idCarta = request.getParameter("idCarta");
+        if (idCarta != null && !idCarta.isEmpty()) {
+            UsuarioDAO dao = new UsuarioDAO();
+            if (dao.quitarDeWishlist(usuario.getIdUsuario(), idCarta)) {
+                response.sendRedirect("UsuarioServlet?accion=mi_perfil&exito=wishlist_quitada");
+                return;
+            }
+        }
+        response.sendRedirect("UsuarioServlet?accion=mi_perfil");
     }
 
     private void guardarFavorito(HttpServletRequest request, HttpServletResponse response, Usuario usuario)

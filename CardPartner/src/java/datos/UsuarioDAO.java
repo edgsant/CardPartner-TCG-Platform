@@ -366,5 +366,84 @@ public class UsuarioDAO {
         }
         return usuario;
     }
+    
+    public boolean añadirAWishlist(int idUsuario, String idCarta) throws SQLException {
+        boolean exito = false;
+        Connection con = ConnectionPool.getInstance().getConnection();
+        PreparedStatement ps = null;
+        try {
+            String sql = "INSERT INTO WISHLIST (id_usuario, id_carta) VALUES (?, ?)";
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idUsuario);
+            ps.setString(2, idCarta);
+            exito = ps.executeUpdate() > 0;
+        } finally {
+            // Usa tu método cerrarRecursos existente
+            cerrarRecursos(con, ps, null);
+        }
+        return exito;
+    }
+    
+    // Devuelve las cartas que el usuario ha guardado en su Wishlist
+    public java.util.ArrayList<modelo.Carta> obtenerCartasWishlist(int idUsuario) throws SQLException {
+        java.util.ArrayList<modelo.Carta> cartas = new java.util.ArrayList<>();
+        Connection con = ConnectionPool.getInstance().getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            String sql = "SELECT c.* FROM CARTA c JOIN WISHLIST w ON c.id_carta = w.id_carta WHERE w.id_usuario = ? ORDER BY w.fecha_añadido DESC";
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idUsuario);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                modelo.Carta c = new modelo.Carta();
+                c.setIdCarta(rs.getString("id_carta"));
+                c.setNombreCarta(rs.getString("nombre_carta"));
+                c.setImagen(rs.getString("imagen"));
+                cartas.add(c);
+            }
+        } finally {
+            cerrarRecursos(con, ps, rs);
+        }
+        return cartas;
+    }
+
+    // Permite al usuario borrar una carta de su Wishlist
+    public boolean quitarDeWishlist(int idUsuario, String idCarta) throws SQLException {
+        boolean exito = false;
+        Connection con = ConnectionPool.getInstance().getConnection();
+        PreparedStatement ps = null;
+        try {
+            String sql = "DELETE FROM WISHLIST WHERE id_usuario = ? AND id_carta = ?";
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idUsuario);
+            ps.setString(2, idCarta);
+            exito = ps.executeUpdate() > 0;
+        } finally {
+            cerrarRecursos(con, ps, null);
+        }
+        return exito;
+    }
+    
+    /**
+     * Comprueba si una carta ya está en la Wishlist del usuario
+     */
+    public boolean estaEnWishlist(int idUsuario, String idCarta) throws SQLException {
+        boolean existe = false;
+        Connection con = ConnectionPool.getInstance().getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            String sql = "SELECT 1 FROM WISHLIST WHERE id_usuario = ? AND id_carta = ?";
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idUsuario);
+            ps.setString(2, idCarta);
+            rs = ps.executeQuery();
+            existe = rs.next();
+        } finally {
+            cerrarRecursos(con, ps, rs);
+        }
+        return existe;
+    }
 
 }

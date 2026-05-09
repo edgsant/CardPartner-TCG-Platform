@@ -1,14 +1,14 @@
+<%@page import="modelo.Usuario"%>
 <%@page import="modelo.Carta"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     // ==========================================
     // 1. PATRÓN MVC: RECIBIR DATOS DEL SERVLET
     // ==========================================
-    // Recogemos la carta que el CartasServlet ha buscado por nosotros
     Carta cartaActual = (Carta) request.getAttribute("cartaParaLaVista");
-    
+    Usuario usuarioLogueado = (Usuario) session.getAttribute("usuarioActivo");
+
     // 2. ESCUDO DE SEGURIDAD
-    // Si entran directamente a la URL de la vista sin pasar por el Servlet, los echamos al catálogo
     if (cartaActual == null) {
         response.sendRedirect(request.getContextPath() + "/CartasServlet?accion=listar");
         return;
@@ -18,10 +18,8 @@
     String imgRaw = cartaActual.getImagen();
     String srcFinal = "";
     if (imgRaw != null && imgRaw.toLowerCase().trim().startsWith("http")) {
-        // Si es externa, usamos el proxy para evitar el bloqueo de Bandai
         srcFinal = "https://images.weserv.nl/?url=" + imgRaw.trim();
     } else {
-        // Si es interna o nula, usamos el logo local
         srcFinal = request.getContextPath() + "/img/logo.png";
     }
     
@@ -46,6 +44,21 @@
             <jsp:include page="/components/cabecera.jsp" />
 
             <main class="contenido-detalle">
+                
+                <%-- MENSAJES DE WISHLIST --%>
+                <% if ("wishlist_ok".equals(request.getParameter("exito"))) { %>
+                    <div style="background: #e8f5e9; color: #2e7d32; padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: center; font-weight: bold;">
+                        <i class="fas fa-check-circle"></i> ¡Carta añadida a tu Wishlist!
+                    </div>
+                <% } else if ("ya_existe".equals(request.getParameter("error"))) { %>
+                    <div style="background: #fff3cd; color: #856404; padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: center; font-weight: bold;">
+                        <i class="fas fa-exclamation-triangle"></i> Esta carta ya estaba en tus deseados.
+                    </div>
+                <% } else if ("wishlist_quitada".equals(request.getParameter("exito"))) { %>
+                    <div style="background: #e3f2fd; color: #1565c0; padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: center; font-weight: bold;">
+                        <i class="fas fa-info-circle"></i> Carta eliminada de tus deseados.
+                    </div>
+                <% } %>
                 <div class="layout-carta">
                     <div class="vista-imagen">
                         <img src="<%= srcFinal %>" 
@@ -67,12 +80,47 @@
                             <h3>PRECIOS ACTUALES (CardMarket)</h3>
                             <p class="precio-destacado">Normal: 45.50 €</p>
                             
-                            <div class="acciones-carta-detalle">
-                                <button class="btn-accion-carta"><i class="fas fa-heart"></i> Añadir a Deseados</button>
-                                <a href="${pageContext.request.contextPath}/Views/meta-decks.jsp" class="btn-accion-carta" style="text-decoration: none;"><i class="fas fa-layer-group"></i> Ver mazos</a>
-                                <a href="https://www.cardmarket.com/es/OnePiece/Products/Search?searchString=<%= cartaActual.getIdCarta() %>" target="_blank" class="btn-comprar">
-                                    <i class="fas fa-shopping-cart"></i> Comprar en CardMarket
-                                </a>
+                            <div class="acciones-carta-detalle" style="display: flex; flex-direction: column; gap: 15px;">
+                                
+                                <%-- LÓGICA DEL BOTÓN AÑADIR/QUITAR DESEADOS --%>
+                                <% 
+                                    boolean enWishlist = (request.getAttribute("enWishlist") != null) ? (Boolean) request.getAttribute("enWishlist") : false;
+                                    
+                                    if (usuarioLogueado != null) { 
+                                        if (enWishlist) {
+                                %>
+                                            <form action="${pageContext.request.contextPath}/WishlistServlet" method="POST" style="margin:0; width: 100%;">
+                                                <input type="hidden" name="accion" value="quitar">
+                                                <input type="hidden" name="idCarta" value="<%= cartaActual.getIdCarta() %>">
+                                                <button type="submit" class="btn-accion-carta" style="width: 100%; background-color: #d32f2f; color: white; border-color: #b71c1c;">
+                                                    <i class="fas fa-heart-broken"></i> Quitar de Deseados
+                                                </button>
+                                            </form>
+                                <%      } else { %>
+                                            <form action="${pageContext.request.contextPath}/WishlistServlet" method="POST" style="margin:0; width: 100%;">
+                                                <input type="hidden" name="accion" value="añadir">
+                                                <input type="hidden" name="idCarta" value="<%= cartaActual.getIdCarta() %>">
+                                                <button type="submit" class="btn-accion-carta" style="width: 100%;">
+                                                    <i class="fas fa-heart"></i> Añadir a Deseados
+                                                </button>
+                                            </form>
+                                <%      } 
+                                    } else { 
+                                %>
+                                        <div style="text-align: center; padding: 12px; border: 1px dashed #ccc; border-radius: 8px; background-color: #f9f9f9;">
+                                            <i class="fas fa-lock" style="color: #666;"></i> 
+                                            <a href="${pageContext.request.contextPath}/Views/login.jsp" style="color: #d32f2f; font-weight: bold; text-decoration: none;">Inicia sesión</a> para añadir a deseados
+                                        </div>
+                                <%  } %>
+
+                                <div style="display: flex; gap: 10px; width: 100%;">
+                                    <a href="${pageContext.request.contextPath}/Views/meta-decks.jsp" class="btn-accion-carta" style="flex: 1; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                        <i class="fas fa-layer-group"></i> Ver mazos
+                                    </a>
+                                    <a href="https://www.cardmarket.com/es/OnePiece/Products/Search?searchString=<%= cartaActual.getIdCarta() %>" target="_blank" class="btn-comprar" style="flex: 1; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 0;">
+                                        <i class="fas fa-shopping-cart"></i> CardMarket
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

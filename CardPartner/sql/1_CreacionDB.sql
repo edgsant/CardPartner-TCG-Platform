@@ -16,7 +16,7 @@ CREATE TABLE USUARIO (
     password VARCHAR(255) NOT NULL, -- Nota: Deberá guardar un hash (bcrypt/argon2)
     avatar MEDIUMBLOB, -- Permite imágenes de hasta 16MB
     rol ENUM('JUGADOR', 'SUPERADMIN', 'EDITOR', 'MODERADOR') NOT NULL DEFAULT 'JUGADOR',
-    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- CORRECCIÓN: Faltaba en el script
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 );
 
 -- Tabla: CARTA (Catálogo estático)
@@ -24,7 +24,7 @@ CREATE TABLE CARTA (
     id_carta VARCHAR(50) PRIMARY KEY, 
     nombre_carta VARCHAR(255) NOT NULL,
     imagen VARCHAR(255), 
-    tipo ENUM('LIDER', 'PERSONAJE', 'EVENTO', 'ESCENARIO', 'DON') NOT NULL, -- Añadido DON por si acaso
+    tipo ENUM('LIDER', 'PERSONAJE', 'EVENTO', 'ESCENARIO', 'DON') NOT NULL,
     arquetipo VARCHAR(255),
     color SET('ROJO', 'VERDE', 'AZUL', 'MORADO', 'NEGRO', 'AMARILLO', 'MULTICOLOR') NOT NULL,
     coste INT,
@@ -38,8 +38,7 @@ CREATE TABLE MAZO (
     id_mazo INT AUTO_INCREMENT PRIMARY KEY,
     nombre_mazo VARCHAR(255) NOT NULL,
     descripcion TEXT,
-    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- MEJORA: Autogenerado
-    -- Eliminado 'precio_total': Debe calcularse sumando el valor actual de las cartas
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     es_publico TINYINT(1) DEFAULT 1, 
     es_oficial TINYINT(1) DEFAULT 0,
     winrate FLOAT DEFAULT 0.0,
@@ -55,8 +54,8 @@ CREATE TABLE ARTICULO (
     titulo VARCHAR(255) NOT NULL,
     descripcion TEXT,
     categoria ENUM('NOTICIA', 'GUIA', 'TORNEO') NOT NULL,
-    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- CORRECCIÓN: Faltaba en el script
-    fecha_edicion TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP, -- MEJORA: Se actualiza solo
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_edicion TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
     enlace_externo VARCHAR(255),
     portada VARCHAR(255), 
     id_admin_autor INT NOT NULL, 
@@ -86,11 +85,21 @@ CREATE TABLE GUARDA_MAZO (
     FOREIGN KEY (id_mazo) REFERENCES MAZO(id_mazo) ON DELETE CASCADE
 );
 
+-- NUEVA Tabla: WISHLIST (Cartas deseadas por el usuario)
+CREATE TABLE WISHLIST (
+    id_usuario INT NOT NULL,
+    id_carta VARCHAR(50) NOT NULL,
+    fecha_añadido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id_usuario, id_carta),
+    FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (id_carta) REFERENCES CARTA(id_carta) ON DELETE CASCADE
+);
+
 -- Tabla: VALORACION (Puntuación de mazos)
 CREATE TABLE VALORACION (
     id_usuario INT NOT NULL,
     id_mazo INT NOT NULL,
-    puntuacion FLOAT NOT NULL, -- FLOAT es suficiente para puntuaciones de 1 a 5 o 1 a 10
+    puntuacion FLOAT NOT NULL, 
     fecha_valoracion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id_usuario, id_mazo),
     FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) ON DELETE CASCADE,
@@ -105,8 +114,8 @@ CREATE TABLE VALORACION (
 CREATE TABLE COMENTARIO (
     id_comentario INT AUTO_INCREMENT PRIMARY KEY,
     contenido TEXT NOT NULL,
-    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- CORRECCIÓN: Faltaba en el script
-    fecha_edicion TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP, -- MEJORA
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_edicion TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
     id_usuario_autor INT NOT NULL, 
     id_mazo_destino INT NOT NULL, 
     FOREIGN KEY (id_usuario_autor) REFERENCES USUARIO(id_usuario) ON DELETE CASCADE,
