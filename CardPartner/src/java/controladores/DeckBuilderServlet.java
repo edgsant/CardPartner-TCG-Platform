@@ -34,7 +34,7 @@ public class DeckBuilderServlet extends HttpServlet {
 
         try {
             CartaDAO cartaDAO = new CartaDAO();
-            List<Carta> listaLideres = cartaDAO.filtrarCartas(null, "LIDER", null, null, 100, 0);
+            List<Carta> listaLideres = cartaDAO.filtrarCartas(null, null, new String[]{"LIDER"}, null, 100, 0);
             request.setAttribute("listaLideres", listaLideres);
 
             // ==========================================

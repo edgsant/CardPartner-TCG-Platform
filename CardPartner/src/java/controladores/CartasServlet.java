@@ -42,66 +42,57 @@ public class CartasServlet extends HttpServlet {
     private void mostrarCatalogo(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // 1. Leer los parámetros del buscador
-        String color = request.getParameter("color");
-        String tipo = request.getParameter("tipo");
-        String arquetipo = request.getParameter("arquetipo");
-        String atributo = request.getParameter("atributo");
+        // 1. Recoger parámetros múltiples (Arrays)
+        String nombre = request.getParameter("nombre");
+        String[] colores = request.getParameterValues("color");
+        String[] tipos = request.getParameterValues("tipo");
+        String[] atributos = request.getParameterValues("atributo");
 
         // 2. Matemáticas de Paginación
         int pagina = 1;
         int limite = 18;
-
         String paginaParam = request.getParameter("pagina");
         if (paginaParam != null && !paginaParam.isEmpty()) {
-            try {
-                pagina = Integer.parseInt(paginaParam);
-                if (pagina < 1) {
-                    pagina = 1;
-                }
-            } catch (NumberFormatException e) {
-                pagina = 1;
-            }
+            try { pagina = Integer.parseInt(paginaParam); if (pagina < 1) pagina = 1; } 
+            catch (NumberFormatException e) { pagina = 1; }
         }
-
         int offset = (pagina - 1) * limite;
 
         try {
-
-            // 3. Hablar con la base de datos
             CartaDAO cartaDAO = new CartaDAO();
 
-            // Obtenemos las cartas de la página actual
-            ArrayList<Carta> listaCartas = cartaDAO.filtrarCartas(color, tipo, arquetipo, atributo, limite, offset);
-
-            // --- NUEVA LÓGICA DE CONTEO ---
-            // Obtenemos cuántas cartas hay en total con esos filtros
-            int totalCartas = cartaDAO.contarTotalCartas(color, tipo, arquetipo, atributo);
-
-            // Calculamos el total de páginas (redondeando hacia arriba)
+            // 3. Ejecutar consultas inteligentes
+            ArrayList<Carta> listaCartas = cartaDAO.filtrarCartas(nombre, colores, tipos, atributos, limite, offset);
+            int totalCartas = cartaDAO.contarTotalCartas(nombre, colores, tipos, atributos);
             int totalPaginas = (int) Math.ceil((double) totalCartas / limite);
-            // ------------------------------
 
-            // 4. Empaquetar datos para el JSP
+            // 4. Empaquetar para la vista
             request.setAttribute("listaCartas", listaCartas);
             request.setAttribute("paginaActual", pagina);
-            request.setAttribute("totalPaginas", totalPaginas); // Enviamos el total de páginas
-            request.setAttribute("totalRegistros", totalCartas); // Enviamos el total de cartas encontradas
+            request.setAttribute("totalPaginas", totalPaginas);
+            request.setAttribute("totalRegistros", totalCartas);
 
-            // Para que los select del HTML recuerden qué buscó el usuario:
-            request.setAttribute("colorSeleccionado", color);
-            request.setAttribute("tipoSeleccionado", tipo);
-            request.setAttribute("arquetipoSeleccionado", arquetipo);
-            request.setAttribute("atributoSeleccionado", atributo);
+            // 5. Guardar selecciones para el Frontend (para que las casillas se queden marcadas)
+            request.setAttribute("nombreBuscado", nombre);
+            request.setAttribute("coloresSeleccionados", colores);
+            request.setAttribute("tiposSeleccionados", tipos);
+            request.setAttribute("atributosSeleccionados", atributos);
 
-            // 5. Enviar al Frontend
+            // 6. Construir la URL de paginación para mantener los filtros al cambiar de página
+            StringBuilder queryFiltros = new StringBuilder();
+            if (nombre != null && !nombre.isEmpty()) queryFiltros.append("&nombre=").append(nombre);
+            if (colores != null) for (String c : colores) queryFiltros.append("&color=").append(c);
+            if (tipos != null) for (String t : tipos) queryFiltros.append("&tipo=").append(t);
+            if (atributos != null) for (String a : atributos) queryFiltros.append("&atributo=").append(a);
+            
+            request.setAttribute("queryFiltros", queryFiltros.toString());
+
             request.getRequestDispatcher("/Views/cards.jsp").forward(request, response);
         } catch (SQLException e) {
-            System.err.println("Error en CartasServlet al cargar catálogo: " + e.getMessage());
-            request.setAttribute("mensajeError", "Error técnico al cargar la galería de cartas. Inténtelo más tarde.");
+            System.err.println("Error en CartasServlet: " + e.getMessage());
+            request.setAttribute("mensajeError", "Error técnico al cargar la galería de cartas.");
             request.getRequestDispatcher("/Views/error.jsp").forward(request, response);
         }
-
     }
 
     private void mostrarDetalle(HttpServletRequest request, HttpServletResponse response)

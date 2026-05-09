@@ -38,9 +38,9 @@ public class CartaDAO {
     }
 
     /**
-     * Busca cartas aplicando filtros opcionales.
+     * Busca cartas aplicando filtros MÚLTIPLES (Arrays).
      */
-    public ArrayList<Carta> filtrarCartas(String color, String tipo, String arquetipo, String atributo, int limite, int offset) throws SQLException {
+    public ArrayList<Carta> filtrarCartas(String nombre, String[] colores, String[] tipos, String[] atributos, int limite, int offset) throws SQLException {
         ArrayList<Carta> listaCartas = new ArrayList<>();
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
@@ -48,50 +48,23 @@ public class CartaDAO {
         ResultSet rs = null;
 
         StringBuilder sql = new StringBuilder("SELECT * FROM CARTA WHERE 1=1");
-
-        // Aplicamos FIND_IN_SET para soportar cartas multicolores
-        if (color != null && !color.trim().isEmpty()) {
-            sql.append(" AND FIND_IN_SET(?, color) > 0");
-        }
-        if (tipo != null && !tipo.trim().isEmpty()) {
-            sql.append(" AND tipo = ?");
-        }
-        if (arquetipo != null && !arquetipo.trim().isEmpty()) {
-            sql.append(" AND arquetipo = ?");
-        }
-        if (atributo != null && !atributo.trim().isEmpty()) {
-            sql.append(" AND atributo_combate = ?");
-        }
-
+        construirFiltrosDinamicos(sql, nombre, colores, tipos, atributos);
         sql.append(" ORDER BY id_carta ASC LIMIT ? OFFSET ?");
 
         try {
             ps = con.prepareStatement(sql.toString());
-            int paramIndex = 1;
-
-            if (color != null && !color.trim().isEmpty()) {
-                ps.setString(paramIndex++, color);
-            }
-            if (tipo != null && !tipo.trim().isEmpty()) {
-                ps.setString(paramIndex++, tipo);
-            }
-            if (arquetipo != null && !arquetipo.trim().isEmpty()) {
-                ps.setString(paramIndex++, arquetipo);
-            }
-            if (atributo != null && !atributo.trim().isEmpty()) {
-                ps.setString(paramIndex++, atributo);
-            }
-
+            int paramIndex = asignarParametrosDinamicos(ps, nombre, colores, tipos, atributos, 1);
+            
+            // Asignamos límite y offset al final
             ps.setInt(paramIndex++, limite);
             ps.setInt(paramIndex, offset);
 
             rs = ps.executeQuery();
-
             while (rs.next()) {
                 listaCartas.add(mapearCarta(rs));
             }
         } catch (SQLException e) {
-            System.err.println("Error al filtrar cartas: " + e.getMessage());
+            System.err.println("Error al filtrar cartas múltiples: " + e.getMessage());
             throw e;
         } finally {
             cerrarRecursos(pool, con, ps, rs, "filtrarCartas");
@@ -100,9 +73,9 @@ public class CartaDAO {
     }
 
     /**
-     * Cuenta el total de cartas que cumplen con los filtros.
+     * Cuenta el total de cartas que cumplen con los filtros MÚLTIPLES.
      */
-    public int contarTotalCartas(String color, String tipo, String arquetipo, String atributo) throws SQLException {
+    public int contarTotalCartas(String nombre, String[] colores, String[] tipos, String[] atributos) throws SQLException {
         int total = 0;
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection con = pool.getConnection();
@@ -110,48 +83,75 @@ public class CartaDAO {
         ResultSet rs = null;
 
         StringBuilder sql = new StringBuilder("SELECT COUNT(*) FROM CARTA WHERE 1=1");
-
-        if (color != null && !color.trim().isEmpty()) {
-            sql.append(" AND FIND_IN_SET(?, color) > 0");
-        }
-        if (tipo != null && !tipo.trim().isEmpty()) {
-            sql.append(" AND tipo = ?");
-        }
-        if (arquetipo != null && !arquetipo.trim().isEmpty()) {
-            sql.append(" AND arquetipo = ?");
-        }
-        if (atributo != null && !atributo.trim().isEmpty()) {
-            sql.append(" AND atributo_combate = ?");
-        }
+        construirFiltrosDinamicos(sql, nombre, colores, tipos, atributos);
 
         try {
             ps = con.prepareStatement(sql.toString());
-            int paramIndex = 1;
-
-            if (color != null && !color.trim().isEmpty()) {
-                ps.setString(paramIndex++, color);
-            }
-            if (tipo != null && !tipo.trim().isEmpty()) {
-                ps.setString(paramIndex++, tipo);
-            }
-            if (arquetipo != null && !arquetipo.trim().isEmpty()) {
-                ps.setString(paramIndex++, arquetipo);
-            }
-            if (atributo != null && !atributo.trim().isEmpty()) {
-                ps.setString(paramIndex++, atributo);
-            }
+            asignarParametrosDinamicos(ps, nombre, colores, tipos, atributos, 1);
 
             rs = ps.executeQuery();
             if (rs.next()) {
                 total = rs.getInt(1);
             }
         } catch (SQLException e) {
-            System.err.println("Error al contar el total de cartas filtradas: " + e.getMessage());
+            System.err.println("Error al contar cartas múltiples: " + e.getMessage());
             throw e;
         } finally {
             cerrarRecursos(pool, con, ps, rs, "contarTotalCartas");
         }
         return total;
+    }
+
+    // --- MÉTODOS AUXILIARES PARA NO REPETIR CÓDIGO ---
+
+    private void construirFiltrosDinamicos(StringBuilder sql, String nombre, String[] colores, String[] tipos, String[] atributos) {
+        // NUEVO: Buscador Global (Nombre OR Atributo OR Tipo)
+        if (nombre != null && !nombre.trim().isEmpty()) {
+            sql.append(" AND (nombre_carta LIKE ? OR atributo_combate LIKE ? OR tipo LIKE ?)");
+        }
+        if (colores != null && colores.length > 0) {
+            sql.append(" AND (");
+            for (int i = 0; i < colores.length; i++) {
+                sql.append("FIND_IN_SET(?, color) > 0");
+                if (i < colores.length - 1) sql.append(" OR ");
+            }
+            sql.append(")");
+        }
+        if (tipos != null && tipos.length > 0) {
+            sql.append(" AND tipo IN (");
+            for (int i = 0; i < tipos.length; i++) {
+                sql.append("?");
+                if (i < tipos.length - 1) sql.append(", ");
+            }
+            sql.append(")");
+        }
+        if (atributos != null && atributos.length > 0) {
+            sql.append(" AND atributo_combate IN (");
+            for (int i = 0; i < atributos.length; i++) {
+                sql.append("?");
+                if (i < atributos.length - 1) sql.append(", ");
+            }
+            sql.append(")");
+        }
+    }
+
+    private int asignarParametrosDinamicos(PreparedStatement ps, String nombre, String[] colores, String[] tipos, String[] atributos, int startIndex) throws SQLException {
+        if (nombre != null && !nombre.trim().isEmpty()) {
+            String busqueda = "%" + nombre.trim() + "%";
+            ps.setString(startIndex++, busqueda); // Para nombre_carta
+            ps.setString(startIndex++, busqueda); // Para atributo_combate
+            ps.setString(startIndex++, busqueda); // Para tipo
+        }
+        if (colores != null) {
+            for (String c : colores) ps.setString(startIndex++, c);
+        }
+        if (tipos != null) {
+            for (String t : tipos) ps.setString(startIndex++, t);
+        }
+        if (atributos != null) {
+            for (String a : atributos) ps.setString(startIndex++, a);
+        }
+        return startIndex;
     }
 
     // --- MÉTODOS AUXILIARES ---
