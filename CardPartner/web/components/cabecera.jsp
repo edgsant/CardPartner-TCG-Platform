@@ -43,12 +43,16 @@
             if (usuario != null) { 
                 // --- SI EL USUARIO ESTÁ LOGUEADO ---
         %>
-            <div style="display: flex; gap: 10px;">
-                <a href="${pageContext.request.contextPath}/Views/perfil.jsp" style="text-decoration: none;">
-                    <button style="background-color: #d32f2f; color: white; border-color: #d32f2f;">
-                        MI PERFIL<br><%= usuario.getApodoUsuario() %>
-                    </button>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                
+                <a href="${pageContext.request.contextPath}/Views/perfil.jsp" title="Ir al perfil de <%= usuario.getApodoUsuario() %>">
+                    <img src="${pageContext.request.contextPath}/AvatarServlet?id=<%= usuario.getIdUsuario() %>" 
+                         alt="Mi Avatar" 
+                         style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #d32f2f; cursor: pointer; background-color: #fff; transition: transform 0.2s ease;"
+                         onmouseover="this.style.transform='scale(1.1)'"
+                         onmouseout="this.style.transform='scale(1)'">
                 </a>
+
                 <a href="${pageContext.request.contextPath}/LogoutServlet" style="text-decoration: none;">
                     <button style="background-color: #333; color: white;">CERRAR<br>SESIÓN</button>
                 </a>

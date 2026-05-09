@@ -178,9 +178,14 @@
                                     String fechaLimpia = (c.getFechaCreacion() != null) ? c.getFechaCreacion().toString().substring(0, 16) : "";
                             %>
                                 <div class="comentario-item">
-                                    <div class="comentario-header">
-                                        <strong><i class="fas fa-user"></i> <%= c.getUsuarioAutor().getApodoUsuario() %></strong>
-                                        <span><%= fechaLimpia %></span>
+                                    <div class="comentario-header" style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
+                                        <img src="${pageContext.request.contextPath}/AvatarServlet?id=<%= c.getUsuarioAutor().getIdUsuario() %>" 
+                                             alt="Avatar de <%= c.getUsuarioAutor().getApodoUsuario() %>" 
+                                             style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; border: 1px solid #ccc; background-color: #fff;">
+                                             
+                                        <strong style="margin-right: auto;"><%= c.getUsuarioAutor().getApodoUsuario() %></strong>
+                                        
+                                        <span style="font-size: 0.85em; color: #777;"><%= fechaLimpia %></span>
                                     </div>
                                     <p class="comentario-texto"><%= c.getContenido() %></p>
 
