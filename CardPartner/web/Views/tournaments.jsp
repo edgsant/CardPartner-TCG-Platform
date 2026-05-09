@@ -37,7 +37,7 @@
                     String srcFinal;
                     
                     if (!imgRaw.isEmpty() && imgRaw.toLowerCase().startsWith("http")) {
-                        srcFinal = "https://wsrv.nl/?url=" + imgRaw;
+                        srcFinal = "https://images.weserv.nl/?url=" + imgRaw;
                     } else {
                         srcFinal = request.getContextPath() + (imgRaw.isEmpty() ? "/img/logo.png" : imgRaw);
                     }
@@ -69,7 +69,7 @@
                                 String srcList;
                                 
                                 if (!imgRawList.isEmpty() && imgRawList.toLowerCase().startsWith("http")) {
-                                    srcList = "https://wsrv.nl/?url=" + imgRawList;
+                                    srcList = "https://images.weserv.nl/?url=" + imgRawList;
                                 } else {
                                     srcList = request.getContextPath() + (imgRawList.isEmpty() ? "/img/logo.png" : imgRawList);
                                 }

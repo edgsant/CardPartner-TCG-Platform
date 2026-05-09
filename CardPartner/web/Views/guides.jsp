@@ -35,7 +35,7 @@
                             // 1. Extraemos la primera guía para el formato "Principal"
                             Articulo principal = listaGuias.get(0);
                             String imgPri = (principal.getPortada() != null && principal.getPortada().trim().startsWith("http"))
-                                    ? "https://wsrv.nl/?url=" + principal.getPortada().trim()
+                                    ? "https://images.weserv.nl/?url=" + principal.getPortada().trim()
                                     : request.getContextPath() + "/img/logo.png";
                     %>
                     <a href="<%= principal.getEnlaceExterno()%>" class="guia-principal" target="_blank" style="text-decoration: none; color: inherit;">
@@ -51,7 +51,7 @@
                             for (int i = 1; i < listaGuias.size(); i++) {
                                 Articulo g = listaGuias.get(i);
                                 String imgSec = (g.getPortada() != null && g.getPortada().trim().startsWith("http"))
-                                        ? "https://wsrv.nl/?url=" + g.getPortada().trim()
+                                        ? "https://images.weserv.nl/?url=" + g.getPortada().trim()
                                         : request.getContextPath() + "/img/logo.png";
                         %>
                         <a href="<%= g.getEnlaceExterno()%>" class="guia" target="_blank" style="text-decoration: none; color: inherit;">

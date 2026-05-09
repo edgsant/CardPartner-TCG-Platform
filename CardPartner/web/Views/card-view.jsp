@@ -19,7 +19,7 @@
     String srcFinal = "";
     if (imgRaw != null && imgRaw.toLowerCase().trim().startsWith("http")) {
         // Si es externa, usamos el proxy para evitar el bloqueo de Bandai
-        srcFinal = "https://wsrv.nl/?url=" + imgRaw.trim();
+        srcFinal = "https://images.weserv.nl/?url=" + imgRaw.trim();
     } else {
         // Si es interna o nula, usamos el logo local
         srcFinal = request.getContextPath() + "/img/logo.png";

@@ -38,7 +38,7 @@
                     
                     if (!imgRaw.isEmpty() && imgRaw.toLowerCase().startsWith("http")) {
                         // IGUAL QUE EN CARDS: Proxy para saltar el hotlinking
-                        srcFinal = "https://wsrv.nl/?url=" + imgRaw;
+                        srcFinal = "https://images.weserv.nl/?url=" + imgRaw;
                     } else {
                         // Imagen por defecto o local
                         srcFinal = request.getContextPath() + "/img/logo.png";
@@ -81,7 +81,7 @@
                                 String srcList;
                                 
                                 if (!imgRawList.isEmpty() && imgRawList.toLowerCase().startsWith("https")) {
-                                    srcList = "https://wsrv.nl/?url=" + imgRawList;
+                                    srcList = "https://images.weserv.nl/?url=" + imgRawList;
                                 } else {
                                     srcList = request.getContextPath() + "/img/logo.png";
                                 }

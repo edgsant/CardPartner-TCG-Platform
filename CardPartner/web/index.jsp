@@ -55,7 +55,7 @@
                                 String imgRawGuia = (guiaPrincipal.getPortada() != null) ? guiaPrincipal.getPortada().trim() : "";
                                 String srcGuia = "";
                                 if (!imgRawGuia.isEmpty() && imgRawGuia.toLowerCase().startsWith("http")) {
-                                    srcGuia = "https://wsrv.nl/?url=" + imgRawGuia;
+                                    srcGuia = "https://images.weserv.nl/?url=" + imgRawGuia;
                                 } else {
                                     srcGuia = request.getContextPath() + (imgRawGuia.isEmpty() ? "/img/tutorial.jpg" : imgRawGuia);
                                 }
