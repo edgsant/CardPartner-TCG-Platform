@@ -4,6 +4,7 @@
 <%@page import="modelo.ContieneCarta"%>
 <%@page import="modelo.Comentario"%>
 <%@page import="modelo.Valoracion"%>
+<%@page import="controladores.GeminiAPI"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     // 1. RECOGER LOS DATOS QUE ENVÍA EL SERVLET
@@ -68,6 +69,16 @@
                         <div class="descripcion-seccion">
                             <h3>DESCRIPCIÓN DEL MAZO</h3>
                             <p><%= mazoActual.getDescripcion()%></p>
+
+                            <a href="?accion=detalle&id=<%= mazoActual.getIdMazo() %>&traducirMazo=true" style="font-size: 0.8rem; color: #e83e8c; text-decoration: none; display: inline-block; margin-bottom: 10px;">
+                                <i class="fas fa-language"></i> Traducir estrategia al inglés (IA)
+                            </a>
+                            <% if ("true".equals(request.getParameter("traducirMazo"))) { %>
+                                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 15px; font-style: italic; border-left: 4px solid #e83e8c;">
+                                    <%= GeminiAPI.traducir(mazoActual.getDescripcion(), "MAZO") %>
+                                </div>
+                            <% } %>
+
                             <p><strong>Privacidad:</strong> <%= (mazoActual.isEsPublico()) ? "Público" : "Privado"%></p>
                             
                             <!-- SECCIÓN VALORACIONES -->
@@ -172,7 +183,16 @@
                                         <span><%= fechaLimpia %></span>
                                     </div>
                                     <p class="comentario-texto"><%= c.getContenido() %></p>
-                                    
+
+                                    <a href="?accion=detalle&id=<%= mazoActual.getIdMazo() %>&traducirCom=<%= c.getIdComentario() %>" style="font-size: 0.75rem; color: #007bff; text-decoration: none;">
+                                        <i class="fas fa-language"></i> Traducir
+                                    </a>
+                                    <% if (String.valueOf(c.getIdComentario()).equals(request.getParameter("traducirCom"))) { %>
+                                        <div style="background: #e9ecef; padding: 10px; border-radius: 6px; margin-top: 5px; font-size: 0.9rem;">
+                                            <%= GeminiAPI.traducir(c.getContenido(), "COMENTARIO") %>
+                                        </div>
+                                    <% } %>
+
                                     <%-- Si el comentario es mío, muestro botón de borrar --%>
                                     <% if (usuarioLogueado != null && usuarioLogueado.getIdUsuario() == c.getUsuarioAutor().getIdUsuario()) { %>
                                         <form action="${pageContext.request.contextPath}/ComentarioServlet" method="POST" onsubmit="return confirm('¿Seguro que quieres borrar tu comentario?');">

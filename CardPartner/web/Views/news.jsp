@@ -1,5 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="modelo.Articulo"%>
+<%@page import="controladores.GeminiAPI"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     // Recibimos los datos empaquetados por el Servlet
@@ -51,10 +52,22 @@
                              referrerpolicy="no-referrer"
                              onerror="this.onerror=null; this.src='${pageContext.request.contextPath}/img/logo.png';">
                         <div class="info-principal">
-                            <h3><%= noticiaPrincipal.getTitulo() %></h3>
-                            <p><%= noticiaPrincipal.getDescripcion() %></p>
-                        </div>
+                        <h3><%= noticiaPrincipal.getTitulo() %></h3>
+                        <p><%= noticiaPrincipal.getDescripcion() %></p>
+                    </div>
+                </a>
+
+                <div style="text-align: right; margin-top: 5px;">
+                    <a href="?tipo=NOTICIA&traducir=<%= noticiaPrincipal.getIdArticulo() %>" style="font-size: 0.85rem; color: #e83e8c; text-decoration: none;">
+                        <i class="fas fa-language"></i> Traducir noticia con IA
                     </a>
+                </div>
+                <% if (String.valueOf(noticiaPrincipal.getIdArticulo()).equals(request.getParameter("traducir"))) { %>
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin-top: 10px; border-left: 4px solid #e83e8c; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <strong>Traducción:</strong><br>
+                        <%= GeminiAPI.traducir(noticiaPrincipal.getDescripcion(), "ARTICULO") %>
+                    </div>
+                <% } %>
                 <% } %>
 
                 <%-- SECCIÓN LISTA DE NOTICIAS SECUNDARIAS --%>
