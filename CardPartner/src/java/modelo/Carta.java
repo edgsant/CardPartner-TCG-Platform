@@ -13,12 +13,12 @@ public class Carta implements Serializable {
     private int coste;
     private int poder;
     private String atributoCarta;
-    private double precioMercado;
+    private float precio;
 
     public Carta() {
     }
 
-    public Carta(String idCarta, String nombreCarta, String imagen, String tipo, String arquetipo, String color, int coste, int poder, String atributoCarta, double precioMercado) {
+    public Carta(String idCarta, String nombreCarta, String imagen, String tipo, String arquetipo, String color, int coste, int poder, String atributoCarta, float precio) {
         this.idCarta = idCarta;
         this.nombreCarta = nombreCarta;
         this.imagen = imagen;
@@ -28,7 +28,7 @@ public class Carta implements Serializable {
         this.coste = coste;
         this.poder = poder;
         this.atributoCarta = atributoCarta;
-        this.precioMercado = precioMercado;
+        this.precio = precio;
     }
 
     public String getIdCarta() {
@@ -103,12 +103,12 @@ public class Carta implements Serializable {
         this.atributoCarta = atributoCarta;
     }
 
-    public double getPrecioMercado() {
-        return precioMercado;
+    public float getPrecio() {
+        return precio;
     }
 
-    public void setPrecioMercado(double precioMercado) {
-        this.precioMercado = precioMercado;
+    public void setPrecio(float precio) {
+        this.precio = precio;
     }
 
     

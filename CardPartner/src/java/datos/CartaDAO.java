@@ -169,7 +169,7 @@ public class CartaDAO {
         c.setCoste(rs.getInt("coste"));
         c.setPoder(rs.getInt("poder"));
         c.setImagen(rs.getString("imagen"));
-        c.setPrecioMercado(rs.getDouble("precio_mercado"));
+        c.setPrecio(rs.getFloat("precio_mercado"));
         return c;
     }
 
@@ -194,6 +194,43 @@ public class CartaDAO {
         // Liberamos la conexión SIEMPRE, pase lo que pase arriba
         if (pool != null && con != null) {
             pool.freeConnection(con);
+        }
+    }
+    
+    /**
+     * Inserta una carta nueva desde la API, o actualiza su precio/imagen si ya existe.
+     */
+    public boolean insertarOActualizarCarta(Carta c) throws SQLException {
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+        try {
+            String sql = "INSERT INTO CARTA (id_carta, nombre_carta, imagen, tipo, arquetipo, color, coste, poder, atributo_combate, precio_mercado) " +
+                         "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
+                         "ON DUPLICATE KEY UPDATE precio_mercado = ?, imagen = ?";
+            
+            ps = con.prepareStatement(sql);
+            ps.setString(1, c.getIdCarta());
+            ps.setString(2, c.getNombreCarta());
+            ps.setString(3, c.getImagen());
+            ps.setString(4, c.getTipo());
+            ps.setString(5, c.getArquetipo());
+            ps.setString(6, c.getColor());
+            ps.setInt(7, c.getCoste());
+            ps.setInt(8, c.getPoder());
+            ps.setString(9, c.getAtributoCarta()); // Puede ser null
+            ps.setFloat(10, c.getPrecio());
+            
+            // Valores para la parte de UPDATE si la carta ya existe
+            ps.setFloat(11, c.getPrecio());
+            ps.setString(12, c.getImagen());
+            
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("Error al insertar/actualizar carta " + c.getIdCarta() + ": " + e.getMessage());
+            return false;
+        } finally {
+            cerrarRecursos(pool, con, ps, null, "insertarOActualizarCarta");
         }
     }
 }
