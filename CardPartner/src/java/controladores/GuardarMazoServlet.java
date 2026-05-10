@@ -38,13 +38,38 @@ public class GuardarMazoServlet extends HttpServlet {
         String idLider = request.getParameter("lider_mazo");
         String stringCartas = request.getParameter("lista_cartas"); 
         
+        // RECOGER EL WINRATE COMO FLOAT
+        String winrateStr = request.getParameter("winrate_mazo");
+        float winrate = 0.0f;
+        if (winrateStr != null && !winrateStr.isEmpty()) {
+            try {
+                winrate = Float.parseFloat(winrateStr);
+            } catch (NumberFormatException e) {
+                winrate = 0.0f;
+            }
+        }
+        
         // El ID oculto que nos dirá si estamos creando (0) o editando (>0)
         String idMazoStr = request.getParameter("id_mazo");
         int idMazoFront = (idMazoStr != null && !idMazoStr.isEmpty()) ? Integer.parseInt(idMazoStr) : 0;
 
-        boolean esPublico = (visibilidadStr != null && visibilidadStr.equals("Público"));
+        // LÓGICA DE TRADUCCIÓN: Leer desplegable y asignar booleanos
+        boolean esPublico = false;
+        boolean esOficial = false;
 
-        // 3. PREPARAR LA LISTA DE CARTAS (Tu bucle original, no se ha perdido)
+        if (visibilidadStr != null) {
+            if (visibilidadStr.equals("Público")) {
+                esPublico = true;
+            } else if (visibilidadStr.equals("Meta")) {
+                esPublico = true;
+                // Verificación de seguridad extra: solo SUPERADMIN
+                if (creador.getRol() != null && creador.getRol().equalsIgnoreCase("SUPERADMIN")) {
+                    esOficial = true;
+                }
+            }
+        }
+
+        // 3. PREPARAR LA LISTA DE CARTAS
         ArrayList<ContieneCarta> listaParaGuardar = new ArrayList<>();
         if (stringCartas != null && !stringCartas.isEmpty()) {
             String[] cartasArray = stringCartas.split(","); 
@@ -68,9 +93,10 @@ public class GuardarMazoServlet extends HttpServlet {
         nuevoMazo.setNombreMazo(nombreMazo);
         nuevoMazo.setDescripcion(descripcionMazo);
         nuevoMazo.setEsPublico(esPublico);
-        nuevoMazo.setEsOficial(false);
+        nuevoMazo.setEsOficial(esOficial); 
         nuevoMazo.setIdUsuarioCreador(creador.getIdUsuario()); 
         nuevoMazo.setIdCartaLider(idLider != null ? idLider : "OP01-001"); 
+        nuevoMazo.setWinrate(winrate); // ASIGNAMOS EL WINRATE FLOAT
 
         // 5. BASE DE DATOS (EL CRUCE DE CAMINOS)
         try {
@@ -99,7 +125,6 @@ public class GuardarMazoServlet extends HttpServlet {
                     nuevoMazo.setIdMazo(idMazoFront); 
                     
                     if (dao.actualizarMazo(nuevoMazo)) {
-                        // Vaciamos el mazo viejo y metemos la lista nueva
                         dao.borrarCartasDeMazo(idMazoFront);
                         if (!listaParaGuardar.isEmpty()) {
                             dao.añadirCartasAMazo(idMazoFront, listaParaGuardar);
@@ -109,7 +134,6 @@ public class GuardarMazoServlet extends HttpServlet {
                         response.sendRedirect(request.getContextPath() + "/Views/deck-builder.jsp?error=true");
                     }
                 } else {
-                    // Intento de manipulación de ID en el HTML
                     response.sendRedirect(request.getContextPath() + "/Views/login.jsp?error=hack_detectado");
                 }
             }

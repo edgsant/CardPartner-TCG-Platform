@@ -10,7 +10,7 @@ public class MazoDAO {
     // ==========================================
     // 1. CONSTANTES SQL
     // ==========================================
-    private static final String SQL_INSERT_MAZO = "INSERT INTO MAZO (nombre_mazo, descripcion, es_publico, es_oficial, id_usuario_creador, id_carta_lider) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String SQL_INSERT_MAZO = "INSERT INTO MAZO (nombre_mazo, descripcion, es_publico, es_oficial, id_usuario_creador, id_carta_lider, winrate) VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String SQL_INSERT_CARTA_EN_MAZO = "INSERT INTO CONTIENE_CARTA (id_mazo, id_carta, cantidad) VALUES (?, ?, ?)";
     private static final String SQL_SELECT_POR_USUARIO = "SELECT m.*, c.nombre_carta, c.imagen, c.color FROM MAZO m INNER JOIN CARTA c ON m.id_carta_lider = c.id_carta WHERE m.id_usuario_creador = ? ORDER BY m.fecha_creacion DESC";
     private static final String SQL_DELETE_MAZO = "DELETE FROM MAZO WHERE id_mazo = ? AND id_usuario_creador = ?";
@@ -19,7 +19,7 @@ public class MazoDAO {
     private static final String SQL_SELECT_FAVORITOS = "SELECT m.*, c.nombre_carta, c.imagen, c.color FROM MAZO m INNER JOIN GUARDA_MAZO gm ON m.id_mazo = gm.id_mazo INNER JOIN CARTA c ON m.id_carta_lider = c.id_carta WHERE gm.id_usuario = ?";
     private static final String SQL_INSERT_FAVORITO = "INSERT INTO GUARDA_MAZO (id_usuario, id_mazo) VALUES (?, ?)";
     private static final String SQL_DELETE_FAVORITO = "DELETE FROM GUARDA_MAZO WHERE id_usuario = ? AND id_mazo = ?";
-    private static final String SQL_UPDATE_MAZO = "UPDATE MAZO SET nombre_mazo=?, descripcion=?, es_publico=?, id_carta_lider=? WHERE id_mazo=?";
+    private static final String SQL_UPDATE_MAZO = "UPDATE MAZO SET nombre_mazo=?, descripcion=?, es_publico=?, es_oficial=?, id_carta_lider=?, winrate=? WHERE id_mazo=?";
     private static final String SQL_DELETE_CARTAS_DE_MAZO = "DELETE FROM CONTIENE_CARTA WHERE id_mazo=?";
 
     // ==========================================
@@ -38,6 +38,7 @@ public class MazoDAO {
             ps.setBoolean(4, mazo.isEsOficial());
             ps.setInt(5, mazo.getIdUsuarioCreador());
             ps.setString(6, mazo.getIdCartaLider());
+            ps.setFloat(7, mazo.getWinrate()); // Es el séptimo "?" en el INSERT
             ps.executeUpdate();
             rs = ps.getGeneratedKeys();
             if (rs.next()) {
@@ -269,14 +270,16 @@ public class MazoDAO {
             ps.setString(1, m.getNombreMazo());
             ps.setString(2, m.getDescripcion());
             ps.setBoolean(3, m.isEsPublico());
-            ps.setString(4, m.getIdCartaLider());
-            ps.setInt(5, m.getIdMazo());
+            ps.setBoolean(4, m.isEsOficial()); // NUEVO
+            ps.setString(5, m.getIdCartaLider());
+            ps.setFloat(6, m.getWinrate()); // El winrate
+            ps.setInt(7, m.getIdMazo()); // El ID para el WHERE
             if (ps.executeUpdate() > 0) {
                 exito = true;
             }
         } catch (SQLException e) {
             System.err.println("Error al obtener actualizar mazo (idMazo = " + m.getIdMazo() + "): " + e.getMessage());
-            throw e; // <-- Lanzar al Servlet
+            throw e; 
         } finally {
             cerrarRecursos(con, ps, null);
         }

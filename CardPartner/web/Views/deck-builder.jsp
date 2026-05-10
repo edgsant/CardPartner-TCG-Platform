@@ -1,46 +1,51 @@
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
 <%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="modelo.Carta"%>
-<%@page import="modelo.Mazo"%>
-<%@page import="modelo.ContieneCarta"%>
+<%@page import="modelo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    List<Carta> listaLideres = (List<Carta>) request.getAttribute("listaLideres");
-    if (listaLideres == null) {
-        response.sendRedirect(request.getContextPath() + "/DeckBuilderServlet");
-        return; 
+    // ==========================================
+    // 1. SEGURIDAD Y CARGA DE DATOS
+    // ==========================================
+    Usuario usuarioLogueado = (Usuario) session.getAttribute("usuarioActivo");
+    if (usuarioLogueado == null) {
+        response.sendRedirect(request.getContextPath() + "/Views/login.jsp");
+        return;
     }
 
-    // ==========================================
-    // LÓGICA PARA PRE-RELLENAR SI ESTAMOS EDITANDO
-    // ==========================================
-    Mazo mazoAEditar = (Mazo) request.getAttribute("mazoAEditar");
-    List<ContieneCarta> cartasAEditar = (List<ContieneCarta>) request.getAttribute("cartasAEditar");
-    
-    String formNombre = "";
-    String formDesc = "";
-    String formVisibilidad = "Público";
-    String formLiderId = "";
-    String formLiderImg = request.getContextPath() + "/img/logo.png";
-    String formLiderColor = "";
-    String formIdMazo = ""; // Vacío significa "Mazo Nuevo"
-    String opacidadLogo = "0.3";
+    List<Carta> catalogo = (List<Carta>) request.getAttribute("catalogo");
+    if (catalogo == null) {
+        response.sendRedirect(request.getContextPath() + "/DeckBuilderServlet");
+        return;
+    }
 
-    if(mazoAEditar != null) {
-        formNombre = mazoAEditar.getNombreMazo();
-        formDesc = mazoAEditar.getDescripcion() != null ? mazoAEditar.getDescripcion() : "";
-        formVisibilidad = mazoAEditar.isEsPublico() ? "Público" : "Privado";
-        formIdMazo = String.valueOf(mazoAEditar.getIdMazo());
-        formLiderId = mazoAEditar.getIdCartaLider();
-        
-        if(mazoAEditar.getCartaLider() != null) {
-            formLiderColor = mazoAEditar.getCartaLider().getColor();
-            String raw = mazoAEditar.getCartaLider().getImagen();
-            if(raw != null && raw.toLowerCase().startsWith("http")) {
-                formLiderImg = "https://images.weserv.nl/?url=" + raw;
-            } else {
-                formLiderImg = request.getContextPath() + raw;
-            }
-            opacidadLogo = "1"; // Como ya hay líder, la foto se ve bien
+    // Datos de paginación y filtros
+    Integer paginaActual = (Integer) request.getAttribute("paginaActual");
+    Integer totalPaginas = (Integer) request.getAttribute("totalPaginas");
+    String colorFiltro = (request.getAttribute("colorFiltro") != null) ? (String) request.getAttribute("colorFiltro") : "";
+    String tipoFiltro = (request.getAttribute("tipoFiltro") != null) ? (String) request.getAttribute("tipoFiltro") : "";
+
+    // Mazo temporal (Carrito) y Líder
+    List<Carta> mazoTemporal = (List<Carta>) session.getAttribute("mazoTemporal");
+    if (mazoTemporal == null) mazoTemporal = new ArrayList<>();
+    Carta lider = (Carta) session.getAttribute("liderSeleccionado");
+
+    // Recuperar datos para edición/copia (incluyendo el WINRATE FLOAT)
+    String nombrePrevio = (session.getAttribute("mazoNombrePrevio") != null) ? (String)session.getAttribute("mazoNombrePrevio") : "";
+    String descPrevia = (session.getAttribute("mazoDescripcionPrevio") != null) ? (String)session.getAttribute("mazoDescripcionPrevio") : "";
+    String visibilidadPrevia = (session.getAttribute("mazoVisibilidadPrevia") != null) ? (String)session.getAttribute("mazoVisibilidadPrevia") : "Público";
+    Float winratePrevio = (session.getAttribute("mazoWinratePrevio") != null) ? (Float)session.getAttribute("mazoWinratePrevio") : 0.0f;
+
+    // Agrupación para la lista lateral
+    Map<String, Integer> conteoMazo = new HashMap<>();
+    Map<String, Carta> mapaCartasMazo = new HashMap<>();
+    for (Carta c : mazoTemporal) {
+        String idBase = c.getIdCarta().split("_")[0]; 
+        conteoMazo.put(idBase, conteoMazo.getOrDefault(idBase, 0) + 1);
+        if(!mapaCartasMazo.containsKey(idBase)) {
+            mapaCartasMazo.put(idBase, c);
         }
     }
 %>
@@ -49,257 +54,225 @@
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <title>Card Partner - Creador de Mazos</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/deckBuilderStyle.css?v=10">
-    <style>
-        .grid-lideres { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 15px; margin-top: 15px; max-height: 50vh; overflow-y: auto; padding-right: 10px; }
-        .lider-opcion { cursor: pointer; transition: transform 0.2s; text-align: center; }
-        .lider-opcion:hover { transform: scale(1.05); }
-        .lider-opcion img { width: 100%; border-radius: 8px; background-color: #222; }
-        .lider-opcion p { font-size: 12px; color: #333; margin-top: 5px; font-weight: bold; }
-        
-        .carta-wrapper { transition: transform 0.2s; position: relative; cursor: pointer; }
-        .carta-wrapper:hover { transform: scale(1.05); opacity: 0.8; }
-        .carta-wrapper::after { content: "➖ Quitar"; position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%); background: rgba(200, 0, 0, 0.9); color: white; font-size: 10px; padding: 2px 5px; border-radius: 4px; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
-        .carta-wrapper:hover::after { opacity: 1; }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <title>Deck Builder - Card Partner</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/deckBuilderStyle.css?v=<%= System.currentTimeMillis() %>">
 </head>
 <body>
-
     <div class="fondo-rosa">
         <div class="contenedor-principal">
             
             <jsp:include page="/components/cabecera.jsp" />
 
-            <main class="contenido-builder">
-                <form action="${pageContext.request.contextPath}/GuardarMazoServlet" method="POST" id="form-guardar-mazo">
-                    
-                    <input type="hidden" name="id_mazo" value="${mazoAEditar != null ? mazoAEditar.idMazo : '0'}">
+            <div class="db-container">
                 
+                <aside class="db-sidebar">
+                    <h2 style="margin-top: 0; color: #333; font-family: 'Montserrat', sans-serif;"><i class="fas fa-layer-group" style="color: #e91e63;"></i> Tu Mazo</h2>
                     
-                    <input type="hidden" name="lider_mazo" id="input_lider_mazo" value="<%= formLiderId %>"> 
-                    <input type="hidden" name="lista_cartas" id="input_lista_cartas" value=""> 
+                    <% String error = request.getParameter("error");
+                       String exito = request.getParameter("exito");
+                       if(error != null) {
+                           String txt = "Error en la regla del mazo.";
+                           if(error.equals("limite_copias")) txt = "Límite: Máximo 4 copias.";
+                           if(error.equals("color_invalido")) txt = "Color incompatible con tu Líder.";
+                           if(error.equals("mazo_lleno")) txt = "El mazo ya tiene 50 cartas.";
+                           if(error.equals("falta_lider")) txt = "Elige primero un Líder.";
+                    %>
+                        <div class="msg-box msg-error"><i class="fas fa-exclamation-triangle"></i> <%= txt %></div>
+                    <% } else if(exito != null) { %>
+                        <div class="msg-box msg-success"><i class="fas fa-check-circle"></i> Acción correcta.</div>
+                    <% } %>
 
-                    <div class="barra-superior-builder">
-                        <h2 class="titulo-seccion"><%= (mazoAEditar != null) ? "EDITANDO MAZO" : "DECK BUILDER" %></h2>
-                        <button type="submit" class="btn-guardar" style="border:none; cursor:pointer;">💾 <%= (mazoAEditar != null) ? "Actualizar Mazo" : "Guardar Mazo" %></button>
-                    </div>
-
-                    <div class="builder-header">
-                        <div class="lider-slot">
-                            <h3>LÍDER SELECCIONADO</h3>
-                            <div class="imagen-contenedor" style="display: flex; align-items: center; justify-content: center; background-color: #2a2a2a; border-radius: 8px; min-height: 250px;">
-                                <img src="<%= formLiderImg %>" alt="Líder" id="img_lider_preview" style="max-height: <%= (mazoAEditar != null) ? "100%" : "150px" %>; opacity: <%= opacidadLogo %>; object-fit: contain;">
+                    <div style="text-align: center; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 2px dashed #eee;">
+                        <h4 style="margin: 0 0 10px 0; color: #888; font-size: 0.85rem; text-transform: uppercase;">Líder</h4>
+                        <% if(lider != null) { 
+                            String imgLider = (lider.getImagen() != null && lider.getImagen().startsWith("http")) ? "https://images.weserv.nl/?url=" + lider.getImagen() : request.getContextPath() + "/img/logo.png";
+                        %>
+                            <img src="<%= imgLider %>" alt="Lider" style="width: 120px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" referrerpolicy="no-referrer">
+                            <p style="margin: 10px 0 5px 0; font-weight: bold;"><%= lider.getNombreCarta() %></p>
+                            <span style="font-size: 0.7rem; background: #333; color: white; padding: 2px 8px; border-radius: 10px;"><%= lider.getColor() %></span>
+                        <% } else { %>
+                            <div style="width: 120px; height: 168px; border: 2px dashed #ccc; border-radius: 10px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: #f9f9f9; color: #aaa; font-size: 0.8rem; padding: 10px; text-align: center;">
+                                Selecciona un Líder
                             </div>
-                            <a href="#modalLideres" class="btn-cambiar" style="text-decoration: none; text-align: center; display: inline-block;">Cambiar Líder</a>
-                        </div>
-
-                        <div class="deck-detalles">
-                                <h3>INFORMACIÓN DEL MAZO</h3>
-                                <div class="campo-form">
-                                    <label>Nombre del Mazo:</label>
-                                    <input type="text" name="nombre_mazo" id="input_nombre_mazo" value="<%= formNombre %>" placeholder="Ej: Mi Mazo Invencible" required>
-                                </div>
-                                <div class="campo-form">
-                                    <label>Descripción / Estrategia:</label>
-                                    <textarea name="descripcion_mazo" rows="3" placeholder="Explica aquí la estrategia de tu mazo..."><%= formDesc %></textarea>
-                                </div>
-                                <div class="campo-form">
-                                    <label>Visibilidad:</label>
-                                    <select name="visibilidad_mazo" style="font-family: 'Poppins', sans-serif; padding: 8px; border-radius: 8px; border: 1px solid #ccc;">
-                                        <option value="Público" <%= formVisibilidad.equals("Público") ? "selected" : "" %>>Público (Visible en Community Decks)</option>
-                                        <option value="Privado" <%= formVisibilidad.equals("Privado") ? "selected" : "" %>>Privado (Solo visible en mi Perfil)</option>
-                                    </select>
-                                </div>
-                        </div>
+                        <% } %>
                     </div>
 
-                    <div class="builder-cartas-seccion">
-                        <div class="cabecera-cartas">
-                            <h3>CARTAS AÑADIDAS <span id="contador_cartas">(0/50)</span></h3>
-                            <a href="#modalCartas" onclick="verificarLider(event)" class="btn-buscar-cartas" style="text-decoration: none; text-align: center; display: inline-block;">+ Añadir Cartas</a>
-                        </div>
-
-                        <div class="deck-grid" id="contenedor_cartas_mazo" style="min-height: 200px; display: flex; align-items: center; justify-content: center; border: 2px dashed #ccc; border-radius: 8px; margin-top: 15px;">
-                            <p style="color: #888; font-style: italic;">Aún no has añadido ninguna carta a tu mazo.</p>
-                        </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <h4 style="margin: 0; color: #888; font-size: 0.85rem;">CARTAS</h4>
+                        <span style="font-weight: bold; <%= mazoTemporal.size() == 50 ? "color:#2e7d32;" : "color:#e91e63;" %>"><%= mazoTemporal.size() %> / 50</span>
                     </div>
-                </form> 
-            </main>
-        </div>
-    </div>
+                    
+                    <div style="max-height: 300px; overflow-y: auto; margin-bottom: 20px;">
+                        <% if(conteoMazo.isEmpty()) { %>
+                            <p style="text-align: center; color: #ccc; font-style: italic; font-size: 0.9rem; padding: 20px;">Vacío</p>
+                        <% } else { 
+                            for(Map.Entry<String, Integer> entry : conteoMazo.entrySet()) {
+                                Carta cMazo = mapaCartasMazo.get(entry.getKey());
+                        %>
+                            <div class="mazo-lista-item">
+                                <span class="qty">x<%= entry.getValue() %></span>
+                                <span style="flex:1; margin: 0 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><%= cMazo.getNombreCarta() %></span>
+                                <form action="${pageContext.request.contextPath}/DeckBuilderServlet" method="POST" style="margin:0;">
+                                    <input type="hidden" name="accion" value="quitar">
+                                    <input type="hidden" name="idCarta" value="<%= cMazo.getIdCarta() %>">
+                                    <button type="submit" class="btn-remove"><i class="fas fa-minus"></i></button>
+                                </form>
+                            </div>
+                        <% } } %>
+                    </div>
 
-    <!-- Modales (Líderes y Cartas) idénticos al código anterior -->
-    <div id="modalLideres" class="modal-overlay">
-        <div class="modal-content" style="max-width: 800px;">
-            <a href="#" class="btn-cerrar">&times;</a>
-            <h2 class="titulo-seccion" style="font-size: 24px; margin-bottom: 10px; text-align: left;">Catálogo de Líderes</h2>
-            <div class="grid-lideres">
-                <%
-                    for(Carta lider : listaLideres) {
-                        String raw = (lider.getImagen() != null) ? lider.getImagen().trim() : "";
-                        String imgFinal = (!raw.isEmpty() && raw.toLowerCase().startsWith("http")) ? "https://images.weserv.nl/?url=" + raw : request.getContextPath() + (raw.isEmpty() ? "/img/logo.png" : raw);
-                        String nombreSafe = lider.getNombreCarta().replace("'", "\\'");
-                %>
-                <div class="lider-opcion" onclick="aplicarLider('<%= lider.getIdCarta() %>', '<%= nombreSafe %>', '<%= imgFinal %>', '<%= lider.getColor() %>')">
-                    <img src="<%= imgFinal %>" alt="<%= lider.getNombreCarta() %>" loading="lazy">
-                    <p><%= lider.getNombreCarta() %></p>
-                </div>
-                <% } %>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <% if (lider != null && mazoTemporal.size() == 50) { %>
+                            <button type="button" onclick="document.getElementById('modal-guardar-mazo').style.display='flex';" style="width: 100%; padding: 12px; background: #4CAF50; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+                                <i class="fas fa-save"></i> FINALIZAR MAZO
+                            </button>
+                        <% } else { %>
+                            <button type="button" disabled style="width: 100%; padding: 12px; background: #e0e0e0; color: #999; border: none; border-radius: 8px; cursor: not-allowed; font-weight: bold;">
+                                <i class="fas fa-lock"></i> Mazo Incompleto
+                            </button>
+                        <% } %>
+                        
+                        <form action="${pageContext.request.contextPath}/DeckBuilderServlet" method="POST" style="margin:0;">
+                            <input type="hidden" name="accion" value="limpiar">
+                            <button type="submit" style="width: 100%; padding: 8px; background: transparent; color: #999; border: 1px solid #ccc; border-radius: 8px; cursor: pointer;">Limpiar</button>
+                        </form>
+                    </div>
+                </aside>
+
+                <main class="db-main">
+                    
+                    <form action="${pageContext.request.contextPath}/DeckBuilderServlet" method="GET" class="db-filtros">
+                        <input type="hidden" name="accion" value="listar">
+                        
+                        <% if (lider == null) { %>
+                            <div class="filtro-grupo">
+                                <label>1. Filtrar Líder por Color:</label>
+                                <select name="color">
+                                    <option value="">Cualquier Color</option>
+                                    <option value="ROJO" <%= "ROJO".equals(colorFiltro) ? "selected" : "" %>>🔴 Rojo</option>
+                                    <option value="VERDE" <%= "VERDE".equals(colorFiltro) ? "selected" : "" %>>🟢 Verde</option>
+                                    <option value="AZUL" <%= "AZUL".equals(colorFiltro) ? "selected" : "" %>>🔵 Azul</option>
+                                    <option value="AMARILLO" <%= "AMARILLO".equals(colorFiltro) ? "selected" : "" %>>🟡 Amarillo</option>
+                                    <option value="MORADO" <%= "MORADO".equals(colorFiltro) ? "selected" : "" %>>🟣 Morado</option>
+                                    <option value="NEGRO" <%= "NEGRO".equals(colorFiltro) ? "selected" : "" %>>⚫ Negro</option>
+                                </select>
+                            </div>
+                        <% } else { %>
+                            <div class="filtro-grupo">
+                                <label>2. Buscar por Tipo:</label>
+                                <select name="tipo">
+                                    <option value="">Cualquier Tipo</option>
+                                    <option value="PERSONAJE" <%= "PERSONAJE".equals(tipoFiltro) ? "selected" : "" %>>Personaje</option>
+                                    <option value="EVENTO" <%= "EVENTO".equals(tipoFiltro) ? "selected" : "" %>>Evento</option>
+                                    <option value="ESCENARIO" <%= "ESCENARIO".equals(tipoFiltro) ? "selected" : "" %>>Escenario</option>
+                                </select>
+                            </div>
+                            <div style="flex: 1; align-self: center; font-size: 0.8rem; color: #2e7d32; background: #e8f5e9; padding: 10px; border-radius: 8px;">
+                                <i class="fas fa-info-circle"></i> Compatible con <%= lider.getNombreCarta() %>
+                            </div>
+                        <% } %>
+
+                        <button type="submit" style="padding: 11px 25px; background: #333; color: white; border: none; border-radius: 8px; cursor: pointer;">Buscar</button>
+                    </form>
+
+                    <div class="db-grid">
+                        <% for(Carta c : catalogo) { 
+                            String imgC = (c.getImagen() != null && c.getImagen().startsWith("http")) ? "https://images.weserv.nl/?url=" + c.getImagen() : request.getContextPath() + "/img/logo.png";
+                        %>
+                            <div class="db-card">
+                                <span class="badge-tipo"><%= c.getTipo() %></span>
+                                <img src="<%= imgC %>" alt="<%= c.getNombreCarta() %>" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='${pageContext.request.contextPath}/img/logo.png';">
+                                <p style="font-size: 0.8rem; font-weight: bold; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><%= c.getNombreCarta() %></p>
+                                <p style="font-size: 0.65rem; color: #999; margin-bottom: 8px;"><%= c.getIdCarta() %></p>
+                                
+                                <form action="${pageContext.request.contextPath}/DeckBuilderServlet" method="POST" style="margin:0;">
+                                    <input type="hidden" name="accion" value="agregar">
+                                    <input type="hidden" name="idCarta" value="<%= c.getIdCarta() %>">
+                                    <button type="submit" class="btn-add">
+                                        <%= "LIDER".equals(c.getTipo()) ? "Elegir" : "Añadir" %>
+                                    </button>
+                                </form>
+                            </div>
+                        <% } %>
+                    </div>
+
+                    <% if(totalPaginas > 1) { 
+                        String urlP = request.getContextPath() + "/DeckBuilderServlet?accion=listar&color=" + colorFiltro + "&tipo=" + tipoFiltro;
+                    %>
+                        <div class="db-pagination">
+                            <a href="<%= urlP %>&page=<%= paginaActual > 1 ? (paginaActual - 1) : 1 %>" class="<%= paginaActual == 1 ? "disabled" : "" %>">Anterior</a>
+                            <span>Página <%= paginaActual %> de <%= totalPaginas %></span>
+                            <a href="<%= urlP %>&page=<%= paginaActual < totalPaginas ? (paginaActual + 1) : totalPaginas %>" class="<%= paginaActual >= totalPaginas ? "disabled" : "" %>">Siguiente</a>
+                        </div>
+                    <% } %>
+                </main>
             </div>
         </div>
     </div>
 
-    <div id="modalCartas" class="modal-overlay">
-        <div class="modal-content" style="max-width: 900px;">
-            <a href="#" class="btn-cerrar">&times;</a>
-            <h2 class="titulo-seccion" style="font-size: 24px; margin-bottom: 10px; text-align: left;">Catálogo de Cartas</h2>
-            <p style="color: #666; margin-bottom: 20px;">Filtro activo para tu líder: <span id="span_colores_activos" style="font-weight:bold; color:#e83e8c;">Ninguno</span></p>
-            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                <input type="text" id="input_buscar_nombre" placeholder="Buscar por nombre..." style="flex: 1; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-family: 'Poppins', sans-serif;">
-                <button type="button" onclick="cargarCartas()" class="btn-filtro" style="cursor:pointer; border:none; padding: 10px 20px;">Buscar</button>
-            </div>
-            <div class="grid-lideres" id="grid_resultados_cartas" style="min-height: 200px;">
-                <p style="grid-column: 1 / -1; text-align: center; color: #888;">Buscando cartas en la base de datos...</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- JAVASCRIPT DEL BUILDER                     -->
-    <!-- ========================================== -->
-    <script>
-        let coloresPermitidosMazo = "<%= formLiderColor %>";
-        let mazoActual = {}; 
-        let totalCartas = 0;
-
-        // Si estamos editando, inyectamos las cartas que traemos de la BD
-        <% if (mazoAEditar != null && cartasAEditar != null) { %>
-            <% for (ContieneCarta cc : cartasAEditar) { 
-                String rawImg = cc.getCarta().getImagen();
-                String jsImg = (rawImg != null && rawImg.toLowerCase().startsWith("http")) ? "https://images.weserv.nl/?url=" + rawImg : request.getContextPath() + rawImg;
-            %>
-                mazoActual["<%= cc.getIdCarta() %>"] = { img: "<%= jsImg %>", cantidad: <%= cc.getCantidad() %> };
-                totalCartas += <%= cc.getCantidad() %>;
-            <% } %>
+    <div id="modal-guardar-mazo" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center;">
+        <div style="background:white; padding:30px; border-radius:15px; width:450px; position:relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <span onclick="document.getElementById('modal-guardar-mazo').style.display='none';" style="position:absolute; top:15px; right:20px; font-size:28px; cursor:pointer; color:#ccc;">&times;</span>
+            <h2 style="margin-top:0;">Guardar Mazo</h2>
             
-            // Dibujamos el mazo al cargar la página
-            window.onload = function() {
-                actualizarVistaMazo();
-            };
-        <% } %>
+            <form action="${pageContext.request.contextPath}/GuardarMazoServlet" method="POST">
+                <%-- Info oculta --%>
+                <% 
+                   StringBuilder sb = new StringBuilder();
+                   for(Map.Entry<String, Integer> e : conteoMazo.entrySet()) sb.append(e.getKey()).append(":").append(e.getValue()).append(",");
+                   String cartasStr = sb.length() > 0 ? sb.substring(0, sb.length()-1) : "";
+                %>
+                <input type="hidden" name="id_mazo" value="<%= (session.getAttribute("mazoEditandoId") != null) ? session.getAttribute("mazoEditandoId") : 0 %>">
+                <input type="hidden" name="lider_mazo" value="<%= (lider != null) ? lider.getIdCarta() : "" %>">
+                <input type="hidden" name="lista_cartas" value="<%= cartasStr %>">
 
-        // --- VALIDACIÓN AL GUARDAR ---
-        document.getElementById("form-guardar-mazo").addEventListener("submit", function(event) {
-            const liderSeleccionado = document.getElementById("input_lider_mazo").value;
-            if (!liderSeleccionado) {
-                event.preventDefault();
-                alert("Debes seleccionar un Líder antes de guardar el mazo.");
-                return;
-            }
-            if (totalCartas !== 50) {
-                event.preventDefault(); 
-                alert("⚠️ ¡Cuidado! Las reglas oficiales exigen que tu mazo principal tenga exactamente 50 cartas. Actualmente tienes " + totalCartas + ".");
-            }
-        });
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:bold;">Nombre:</label>
+                    <input type="text" name="nombre_mazo" value="<%= nombrePrevio %>" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;">
+                </div>
 
-        // --- LÓGICAS (Idénticas al anterior) ---
-        function verificarLider(event) {
-            const inputLider = document.getElementById("input_lider_mazo").value;
-            if (!inputLider) {
-                event.preventDefault(); 
-                alert("⚠️ ¡Alto ahí! Primero debes seleccionar un Líder.");
-            } else {
-                document.getElementById("span_colores_activos").innerText = coloresPermitidosMazo;
-                cargarCartas();
-            }
-        }
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:bold;">Descripción:</label>
+                    <textarea name="descripcion_mazo" rows="3" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd; resize:none;"><%= descPrevia %></textarea>
+                </div>
 
-        function aplicarLider(idCarta, nombreCarta, urlImagen, coloresCarta) {
-            if (totalCartas > 0 && idCarta !== document.getElementById("input_lider_mazo").value) {
-                if(!confirm("Si cambias de líder ahora, se vaciarán todas las cartas que ya habías añadido. ¿Estás seguro?")) {
-                    return; 
-                }
-                mazoActual = {};
-                totalCartas = 0;
-                actualizarVistaMazo();
-            }
-            document.getElementById("input_lider_mazo").value = idCarta;
-            const preview = document.getElementById("img_lider_preview");
-            preview.src = urlImagen;
-            preview.style.opacity = "1";
-            preview.style.maxHeight = "100%";
-            const inputNombre = document.getElementById("input_nombre_mazo");
-            if(inputNombre.value === "") {
-                inputNombre.value = "Mazo de " + nombreCarta;
-            }
-            coloresPermitidosMazo = coloresCarta;
-            window.location.hash = "#";
-        }
+                <div style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom:5px; font-weight:bold;">Visibilidad:</label>
+                    <select name="visibilidad_mazo" id="visibilidad_selector" onchange="toggleWinrate(this.value)" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;">
+                        <option value="Público" <%= "Público".equals(visibilidadPrevia) ? "selected" : "" %>>Público</option>
+                        <option value="Privado" <%= "Privado".equals(visibilidadPrevia) ? "selected" : "" %>>Privado</option>
+                        
+                        <%-- OPCIÓN META EXCLUSIVA --%>
+                        <% if (usuarioLogueado.getRol() != null && usuarioLogueado.getRol().equalsIgnoreCase("SUPERADMIN")) { %>
+                            <option value="Meta" <%= "Meta".equals(visibilidadPrevia) ? "selected" : "" %> style="color: #d32f2f; font-weight: bold;">🏆 Meta (Oficial)</option>
+                        <% } %>
+                    </select>
+                </div>
 
-        function cargarCartas() {
-            const contenedor = document.getElementById("grid_resultados_cartas");
-            const textoBusqueda = document.getElementById("input_buscar_nombre").value;
-            contenedor.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #888;">Cargando cartas...</p>';
-            const url = "${pageContext.request.contextPath}/CartasApiServlet?colores=" + encodeURIComponent(coloresPermitidosMazo) + "&nombre=" + encodeURIComponent(textoBusqueda);
-            fetch(url).then(response => response.json()).then(cartas => {
-                contenedor.innerHTML = ""; 
-                if(cartas.length === 0) {
-                    contenedor.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #888;">No se encontraron cartas.</p>';
-                    return;
-                }
-                cartas.forEach(carta => {
-                    let imgRaw = carta.imagen ? carta.imagen.trim() : "";
-                    let imgFinal = (imgRaw !== "" && imgRaw.toLowerCase().startsWith("http")) ? "https://images.weserv.nl/?url=" + imgRaw : "${pageContext.request.contextPath}" + (imgRaw === "" ? "/img/logo.png" : imgRaw);
-                    contenedor.innerHTML += `<div class="lider-opcion" onclick="añadirCartaAlMazo('\${carta.idCarta}', '\${imgFinal}')"><img src="\${imgFinal}" alt="\${carta.nombreCarta}" loading="lazy"><p>\${carta.nombreCarta}</p></div>`;
-                });
-            }).catch(error => {
-                contenedor.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #cc0000;">Error de conexión.</p>';
-            });
-        }
+                <div id="campo_winrate" style="display: <%= "Meta".equals(visibilidadPrevia) ? "block" : "none" %>; margin-bottom: 20px; background: #fff3e0; padding: 15px; border-radius: 8px; border: 1px solid #ffe0b2;">
+                    <label style="display:block; margin-bottom:5px; font-weight:bold; color: #e65100;">Porcentaje de Victoria (Winrate):</label>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <input type="number" step="0.1" name="winrate_mazo" min="0" max="100" value="<%= winratePrevio %>" style="width:100px; padding:10px; border-radius:8px; border:1px solid #ddd;">
+                        <span style="font-weight: bold; color: #e65100;">%</span>
+                    </div>
+                </div>
 
-        function añadirCartaAlMazo(idCarta, imgUrl) {
-            if (totalCartas >= 50) { alert("Límite de 50 cartas alcanzado."); return; }
-            if (mazoActual[idCarta]) {
-                if (mazoActual[idCarta].cantidad >= 4) { alert("Máximo 4 copias de la misma carta."); return; }
-                mazoActual[idCarta].cantidad++;
-            } else { mazoActual[idCarta] = { img: imgUrl, cantidad: 1 }; }
-            totalCartas++;
-            actualizarVistaMazo();
-        }
+                <script>
+                    // Función para mostrar/ocultar el winrate
+                    function toggleWinrate(val) {
+                        const campo = document.getElementById('campo_winrate');
+                        campo.style.display = (val === 'Meta') ? 'block' : 'none';
+                    }
+                </script>
 
-        function quitarCartaDelMazo(idCarta) {
-            if (mazoActual[idCarta]) {
-                mazoActual[idCarta].cantidad--;
-                totalCartas--;
-                if (mazoActual[idCarta].cantidad === 0) { delete mazoActual[idCarta]; }
-                actualizarVistaMazo();
-            }
-        }
-
-        function actualizarVistaMazo() {
-            const contenedor = document.getElementById("contenedor_cartas_mazo");
-            const contadorTxt = document.getElementById("contador_cartas");
-            const inputListaOculta = document.getElementById("input_lista_cartas");
-            contadorTxt.innerText = `(` + totalCartas + `/50)`;
-
-            if (totalCartas === 0) {
-                contenedor.innerHTML = '<p style="color: #888; font-style: italic;">Aún no has añadido ninguna carta a tu mazo.</p>';
-                contenedor.style.display = "flex";
-                inputListaOculta.value = "";
-                return;
-            }
-            contenedor.style.display = "grid"; 
-            contenedor.innerHTML = "";
-            let arrayFormatoBackend = [];
-            for (const [id, datos] of Object.entries(mazoActual)) {
-                contenedor.innerHTML += `<div class="carta-wrapper" onclick="quitarCartaDelMazo('\${id}')" title="Clic para quitar"><img src="\${datos.img}" alt="\${id}" class="carta-pequena"><span class="cantidad-carta">x\${datos.cantidad}</span></div>`;
-                arrayFormatoBackend.push(`\${id}:\${datos.cantidad}`);
-            }
-            inputListaOculta.value = arrayFormatoBackend.join(",");
-        }
-    </script>
+                <button type="submit" style="width:100%; padding:15px; background:#4CAF50; color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">
+                    <%= (session.getAttribute("mazoEditandoId") != null) ? "ACTUALIZAR" : "CREAR MAZO" %>
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

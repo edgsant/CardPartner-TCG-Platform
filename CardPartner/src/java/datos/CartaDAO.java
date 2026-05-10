@@ -233,4 +233,103 @@ public class CartaDAO {
             cerrarRecursos(pool, con, ps, null, "insertarOActualizarCarta");
         }
     }
+    
+    // 1. Obtener cartas aplicando REGLAS DE LÍDER (Filtros y Paginación)
+    public ArrayList<Carta> obtenerCatalogoFiltrado(String color, String tipo, int limite, int offset, Carta lider) throws SQLException {
+        ArrayList<Carta> lista = new ArrayList<>();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            StringBuilder sql = new StringBuilder("SELECT * FROM CARTA WHERE 1=1 ");
+            
+            // --- REGLAS DEL JUEGO ---
+            if (lider == null) {
+                // Si no hay líder en sesión, OBLIGAMOS a que el catálogo solo muestre líderes
+                sql.append("AND tipo = 'LIDER' ");
+            } else {
+                // Si ya hay líder, ocultamos los líderes del catálogo (ya no puedes elegir otro)
+                sql.append("AND tipo != 'LIDER' ");
+                
+                // Forzamos a que solo salgan cartas compatibles con los colores del líder
+                String[] coloresLider = lider.getColor().split(",");
+                sql.append("AND (");
+                for (int i = 0; i < coloresLider.length; i++) {
+                    sql.append("color LIKE '%").append(coloresLider[i].trim()).append("%' ");
+                    if (i < coloresLider.length - 1) sql.append("OR ");
+                }
+                sql.append("OR color = 'MULTICOLOR') ");
+            }
+
+            // Filtros manuales del usuario (Drop-downs)
+            if (color != null && !color.isEmpty()) sql.append("AND color LIKE ? ");
+            if (tipo != null && !tipo.isEmpty() && lider != null) sql.append("AND tipo = ? "); 
+            
+            sql.append("ORDER BY id_carta LIMIT ? OFFSET ?");
+            ps = con.prepareStatement(sql.toString());
+            
+            int pIndex = 1;
+            if (color != null && !color.isEmpty()) ps.setString(pIndex++, "%" + color + "%");
+            if (tipo != null && !tipo.isEmpty() && lider != null) ps.setString(pIndex++, tipo);
+            ps.setInt(pIndex++, limite);
+            ps.setInt(pIndex++, offset);
+            
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Carta c = new Carta();
+                c.setIdCarta(rs.getString("id_carta"));
+                c.setNombreCarta(rs.getString("nombre_carta"));
+                c.setImagen(rs.getString("imagen"));
+                c.setTipo(rs.getString("tipo"));
+                c.setColor(rs.getString("color"));
+                c.setCoste(rs.getInt("coste"));
+                c.setPoder(rs.getInt("poder"));
+                c.setPrecio(rs.getFloat("precio_mercado"));
+                lista.add(c);
+            }
+        } finally {
+            cerrarRecursos(pool, con, ps, rs, "obtenerCatalogoFiltrado");
+        }
+        return lista;
+    }
+
+    // 2. Contar cartas (Para que la paginación no se vuelva loca al filtrar)
+    public int contarCartasFiltradas(String color, String tipo, Carta lider) throws SQLException {
+        int total = 0;
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            StringBuilder sql = new StringBuilder("SELECT COUNT(*) as total FROM CARTA WHERE 1=1 ");
+            
+            if (lider == null) {
+                sql.append("AND tipo = 'LIDER' ");
+            } else {
+                sql.append("AND tipo != 'LIDER' ");
+                String[] coloresLider = lider.getColor().split(",");
+                sql.append("AND (");
+                for (int i = 0; i < coloresLider.length; i++) {
+                    sql.append("color LIKE '%").append(coloresLider[i].trim()).append("%' ");
+                    if (i < coloresLider.length - 1) sql.append("OR ");
+                }
+                sql.append("OR color = 'MULTICOLOR') ");
+            }
+
+            if (color != null && !color.isEmpty()) sql.append("AND color LIKE ? ");
+            if (tipo != null && !tipo.isEmpty() && lider != null) sql.append("AND tipo = ? ");
+            
+            ps = con.prepareStatement(sql.toString());
+            int pIndex = 1;
+            if (color != null && !color.isEmpty()) ps.setString(pIndex++, "%" + color + "%");
+            if (tipo != null && !tipo.isEmpty() && lider != null) ps.setString(pIndex++, tipo);
+            
+            rs = ps.executeQuery();
+            if (rs.next()) total = rs.getInt("total");
+        } finally {
+            cerrarRecursos(pool, con, ps, rs, "contarCartasFiltradas");
+        }
+        return total;
+    }
 }
