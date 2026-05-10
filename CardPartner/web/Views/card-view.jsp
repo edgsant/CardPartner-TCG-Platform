@@ -124,7 +124,7 @@
                                     <a href="${pageContext.request.contextPath}/Views/meta-decks.jsp" class="btn-accion-carta" style="flex: 1; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
                                         <i class="fas fa-layer-group"></i> Ver mazos
                                     </a>
-                                    <a href="https://www.cardmarket.com/es/OnePiece/Products/Search?searchString=<%= cartaActual.getIdCarta() %>" target="_blank" class="btn-comprar" style="flex: 1; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 0;">
+                                    <a href="https://www.cardmarket.com/es/OnePiece/Products/Search?searchString=<%= cartaActual.getIdCarta().split("_")[0] %>" target="_blank" class="btn-comprar" style="flex: 1; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 0;">
                                         <i class="fas fa-shopping-cart"></i> CardMarket
                                     </a>
                                 </div>
