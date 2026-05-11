@@ -2,9 +2,14 @@ package datos;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 import modelo.Articulo;
 
+/**
+ * Clase de Acceso a Datos (DAO) para la entidad Articulo. Se encarga de
+ * gestionar todas las operaciones CRUD y de búsqueda en la base de datos
+ * relacionadas con las noticias, guías y torneos, incluyendo la lógica de
+ * paginación. Esta clase delega la gestión de conexiones a ConnectionPool.
+ */
 public class ArticuloDAO {
 
     // Constantes SQL actualizadas con paginación y conteos
@@ -28,8 +33,13 @@ public class ArticuloDAO {
     private static final String SQL_COUNT_SEARCH = "SELECT COUNT(*) FROM ARTICULO WHERE titulo LIKE ? OR descripcion LIKE ?";
 
     /**
-     * Inserta un nuevo artículo y devuelve su ID autogenerado. Devuelve 0 si
-     * hubo un error.
+     * Inserta un nuevo artículo en la base de datos.
+     *
+     * * @param a El objeto Articulo que contiene los datos a insertar.
+     * @return El ID numérico autogenerado del artículo si la inserción fue
+     * exitosa; 0 si falló.
+     * @throws SQLException Si ocurre un error de acceso a la base de datos o en
+     * la sintaxis SQL.
      */
     public int crearArticulo(Articulo a) throws SQLException {
         int idGenerado = 0;
@@ -65,7 +75,17 @@ public class ArticuloDAO {
     }
 
     /**
-     * Devuelve una lista paginada con todos los artículos.
+     * Recupera una lista paginada de todos los artículos ordenados por fecha de
+     * creación descendente (los más nuevos primero).
+     *
+     * * @param limite El número máximo de artículos a recuperar (tamaño de la
+     * página).
+     * @param offset El número de artículos a ignorar desde el inicio
+     * (desplazamiento).
+     * @return Un ArrayList con los artículos encontrados. Estará vacío si no
+     * hay resultados.
+     * @throws SQLException Si ocurre un error durante la consulta a la base de
+     * datos.
      */
     public ArrayList<Articulo> obtenerTodos(int limite, int offset) throws SQLException {
         ArrayList<Articulo> lista = new ArrayList<>();
@@ -95,8 +115,17 @@ public class ArticuloDAO {
     }
 
     /**
-     * Devuelve una lista paginada de artículos filtrada por categoría
-     * ("NOTICIA", "GUIA", "TORNEO").
+     * Recupera una lista paginada de artículos filtrada por una categoría
+     * específica.
+     *
+     * * @param categoria La categoría a filtrar (ej: "NOTICIA", "GUIA" o
+     * "TORNEO").
+     * @param limite El número máximo de artículos a recuperar.
+     * @param offset El número de artículos a ignorar desde el inicio.
+     * @return Un ArrayList con los artículos que coinciden con la categoría
+     * indicada.
+     * @throws SQLException Si ocurre un error durante la consulta a la base de
+     * datos.
      */
     public ArrayList<Articulo> obtenerPorCategoria(String categoria, int limite, int offset) throws SQLException {
         ArrayList<Articulo> lista = new ArrayList<>();
@@ -127,8 +156,15 @@ public class ArticuloDAO {
     }
 
     /**
-     * Busca un artículo concreto por su ID (para cuando haces clic en "Leer
-     * más").
+     * Recupera un artículo específico de la base de datos utilizando su
+     * identificador único. Ideal para cargar la vista de detalle de un artículo
+     * completo.
+     *
+     * * @param idArticulo El ID numérico del artículo a buscar.
+     * @return El objeto Articulo si se encuentra; null si no existe ningún
+     * artículo con ese ID.
+     * @throws SQLException Si ocurre un error durante la consulta a la base de
+     * datos.
      */
     public Articulo obtenerPorId(int idArticulo) throws SQLException {
         Articulo articulo = null;
@@ -155,8 +191,13 @@ public class ArticuloDAO {
     }
 
     /**
-     * Devuelve el total de artículos en la base de datos (para calcular
-     * páginas).
+     * Cuenta el número total de artículos almacenados en la base de datos. Dato
+     * esencial para poder calcular matemáticamente el número total de páginas
+     * en el frontend.
+     *
+     * * @return El número total de artículos existentes.
+     * @throws SQLException Si ocurre un error durante el recuento en la base de
+     * datos.
      */
     public int contarTodos() throws SQLException {
         int total = 0;
@@ -183,7 +224,14 @@ public class ArticuloDAO {
     }
 
     /**
-     * Devuelve el total de artículos de una categoría específica.
+     * Cuenta el número total de artículos que pertenecen a una categoría
+     * específica.
+     *
+     * * @param categoria La categoría a contar (ej: "NOTICIA", "GUIA" o
+     * "TORNEO").
+     * @return El número total de artículos de esa categoría en concreto.
+     * @throws SQLException Si ocurre un error durante el recuento en la base de
+     * datos.
      */
     public int contarPorCategoria(String categoria) throws SQLException {
         int total = 0;
@@ -211,10 +259,16 @@ public class ArticuloDAO {
     }
 
     /**
-     * Actualiza los datos de un artículo existente.
+     * Actualiza los datos de un artículo existente en la base de datos. Nota:
+     * La 'fecha_edicion' se actualiza automáticamente mediante las reglas del
+     * motor SQL.
      *
-     * @return true si se actualizó correctamente.
-     * @throws SQLException si hay error en la base de datos.
+     * * @param a El objeto Articulo con los datos modificados y su ID original
+     * intacto.
+     * @return true si la actualización modificó la base de datos con éxito;
+     * false en caso contrario.
+     * @throws SQLException Si ocurre un error de acceso a la base de datos o en
+     * la instrucción de actualización.
      */
     public boolean actualizarArticulo(Articulo a) throws SQLException {
         boolean exito = false;
@@ -242,9 +296,13 @@ public class ArticuloDAO {
     }
 
     /**
-     * Elimina un artículo de la base de datos.
+     * Elimina de forma permanente un artículo de la base de datos mediante su
+     * identificador.
      *
-     * @return true si se eliminó correctamente.
+     * * @param idArticulo El ID numérico del artículo que se desea eliminar.
+     * @return true si el artículo fue eliminado exitosamente; false si no se
+     * encontró.
+     * @throws SQLException Si ocurre un error durante la eliminación.
      */
     public boolean borrarArticulo(int idArticulo) throws SQLException {
         boolean exito = false;
@@ -266,7 +324,17 @@ public class ArticuloDAO {
     }
 
     /**
-     * Busca artículos por título o descripción con soporte para paginación.
+     * Realiza una búsqueda de artículos donde el título o la descripción
+     * contengan la palabra clave introducida. Los resultados se devuelven
+     * paginados y ordenados por fecha descendente.
+     *
+     * * @param keyword La palabra o frase a buscar dentro de los campos de
+     * texto del artículo.
+     * @param limite El número máximo de artículos a recuperar.
+     * @param offset El número de artículos a ignorar desde el inicio.
+     * @return Un ArrayList con los artículos que contienen la palabra clave.
+     * @throws SQLException Si ocurre un error durante la búsqueda en la base de
+     * datos.
      */
     public ArrayList<Articulo> buscarArticulos(String keyword, int limite, int offset) throws SQLException {
         ArrayList<Articulo> lista = new ArrayList<>();
@@ -297,8 +365,13 @@ public class ArticuloDAO {
     }
 
     /**
-     * Cuenta el total de resultados para una búsqueda (necesario para la
-     * paginación del buscador).
+     * Cuenta el número total de artículos que coinciden con una palabra clave
+     * en su título o descripción. Obligatorio para implementar correctamente
+     * los botones de paginación tras una búsqueda.
+     *
+     * * @param keyword La palabra o frase buscada.
+     * @return El número total de resultados que coinciden con la búsqueda.
+     * @throws SQLException Si ocurre un error durante el recuento.
      */
     public int contarPorBusqueda(String keyword) throws SQLException {
         int total = 0;
@@ -326,8 +399,15 @@ public class ArticuloDAO {
     }
 
     /**
-     * Método auxiliar privado para no repetir código. Convierte una fila de
-     * MariaDB en un objeto Articulo.
+     * Método auxiliar que transforma la fila actual de un ResultSet en un
+     * objeto Articulo. Centraliza el mapeo relacional-objeto (ORM manual) para
+     * evitar código duplicado.
+     *
+     * * @param rs El ResultSet posicionado en la fila actual que se desea
+     * mapear.
+     * @return Un objeto Articulo poblado con los datos extraídos de la fila.
+     * @throws SQLException Si ocurre un error al extraer los datos de la
+     * columna.
      */
     private Articulo mapearArticulo(ResultSet rs) throws SQLException {
         Articulo a = new Articulo();
@@ -344,8 +424,14 @@ public class ArticuloDAO {
     }
 
     /**
-     * Método auxiliar para cerrar recursos de forma segura. Garantiza que la
-     * conexión se libere incluso si ResultSet o Statement fallan.
+     * Método auxiliar para cerrar de forma segura los recursos de JDBC.
+     * Intercepta posibles excepciones de cierre para garantizar que la conexión
+     * siempre sea devuelta al ConnectionPool, previniendo fugas de memoria y
+     * caídas del servidor.
+     *
+     * * @param con La conexión a la base de datos a liberar.
+     * @param ps El PreparedStatement a cerrar.
+     * @param rs El ResultSet a cerrar.
      */
     private void cerrarRecursos(Connection con, PreparedStatement ps, ResultSet rs) {
         if (rs != null) {
