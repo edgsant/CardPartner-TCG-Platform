@@ -26,7 +26,7 @@ CREATE TABLE CARTA (
     imagen VARCHAR(255), 
     tipo ENUM('LIDER', 'PERSONAJE', 'EVENTO', 'ESCENARIO', 'DON') NOT NULL,
     arquetipo VARCHAR(255),
-    color SET('ROJO', 'VERDE', 'AZUL', 'MORADO', 'NEGRO', 'AMARILLO', 'MULTICOLOR') NOT NULL,
+    color VARCHAR(100) NOT NULL, -- SOLUCIÓN: Cambiado a VARCHAR(100) para aceptar combinaciones con espacios
     coste INT,
     poder INT,
     atributo_combate ENUM('SLASH', 'STRIKE', 'RANGED', 'SPECIAL', 'WISDOM'),

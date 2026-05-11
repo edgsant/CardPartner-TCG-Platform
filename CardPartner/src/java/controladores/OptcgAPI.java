@@ -12,6 +12,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OptcgAPI {
 
@@ -43,7 +45,7 @@ public class OptcgAPI {
             CartaDAO cartaDAO = new CartaDAO();
             int cartasInsertadas = 0;
 
-            // NUEVO: Un "cerebro" temporal para recordar qué cartas hemos visto ya hoy (Artes Alternativos)
+            // Un "cerebro" temporal para recordar qué cartas hemos visto ya hoy (Artes Alternativos)
             HashMap<String, Integer> conteoCartas = new HashMap<>();
 
             // 3. Recorrer el Array
@@ -75,15 +77,15 @@ public class OptcgAPI {
                 conteoCartas.put(idBase, apariciones + 1);
 
                 Carta carta = new Carta();
-                carta.setIdCarta(idFinal); // Guardamos el ID modificado
-                carta.setNombreCarta(nombreFinal); // Guardamos el nombre con el sufijo
+                carta.setIdCarta(idFinal); 
+                carta.setNombreCarta(nombreFinal); 
                 
                 carta.setImagen(obtenerTexto(jsonCarta, "card_image", null));
                 carta.setArquetipo(obtenerTexto(jsonCarta, "sub_types", null));
                 
-                // Traducción y mapeo
+                // Traducción y mapeo (NUEVO MAPEO DE COLOR)
                 carta.setTipo(mapearTipo(obtenerTexto(jsonCarta, "card_type", "")));
-                carta.setColor(mapearColor(obtenerTexto(jsonCarta, "card_color", "")));
+                carta.setColor(extraerYTraducirColores(jsonCarta.get("card_color")));
                 carta.setAtributoCarta(mapearAtributo(obtenerTexto(jsonCarta, "attribute", "")));
 
                 // Conversión segura de números
@@ -108,7 +110,6 @@ public class OptcgAPI {
     // ESCUDOS ANTIMISSILES (Métodos de Seguridad)
     // ==========================================
     
-    // Extrae texto de forma segura comprobando que no sea "null" literal
     private static String obtenerTexto(JsonObject json, String clave, String valorPorDefecto) {
         if (json.has(clave) && !json.get(clave).isJsonNull()) {
             return json.get(clave).getAsString();
@@ -116,7 +117,6 @@ public class OptcgAPI {
         return valorPorDefecto;
     }
 
-    // Extrae números con decimales de forma segura
     private static double obtenerNumero(JsonObject json, String clave, double valorPorDefecto) {
         if (json.has(clave) && !json.get(clave).isJsonNull()) {
             try { return json.get(clave).getAsDouble(); } 
@@ -125,11 +125,9 @@ public class OptcgAPI {
         return valorPorDefecto;
     }
 
-    // Evita que el servidor colapse si la API mete letras en los campos de poder o coste
     private static int obtenerEnteroSeguro(String valor) {
         if (valor == null || valor.equals("NULL") || valor.isEmpty()) return 0;
         try {
-            // Extrae solo los números
             return Integer.parseInt(valor.replaceAll("[^0-9-]", ""));
         } catch (NumberFormatException e) {
             return 0; 
@@ -151,32 +149,48 @@ public class OptcgAPI {
         };
     }
 
-    private static String mapearColor(String colorEn) {
-        if (colorEn == null || colorEn.equals("NULL") || colorEn.isEmpty()) return "MULTICOLOR";
+    // NUEVO: Escáner inteligente de colores que soporta múltiples colores sin colapsar
+    private static String extraerYTraducirColores(JsonElement colElement) {
+        if (colElement == null || colElement.isJsonNull()) return "MULTICOLOR";
         
-        // Si la carta tiene dos colores (Ej: Red/Green), la definimos como MULTICOLOR
-        // Esto evita los avisos de "Data truncated" de MariaDB
-        if (colorEn.contains("/")) {
-            return "MULTICOLOR";
+        List<String> coloresEncontrados = new ArrayList<>();
+        
+        // Si la API devuelve un array: ["Red", "Green"]
+        if (colElement.isJsonArray()) {
+            JsonArray arr = colElement.getAsJsonArray();
+            for (JsonElement c : arr) {
+                if (c != null && !c.isJsonNull()) {
+                    aniadirColor(c.getAsString(), coloresEncontrados);
+                }
+            }
+        } else {
+            // Si devuelve un solo String: "Red/Green" o "Red Green"
+            String colorStr = colElement.getAsString();
+            aniadirColor(colorStr, coloresEncontrados);
         }
         
-        colorEn = colorEn.toUpperCase()
-                .replace("RED", "ROJO")
-                .replace("GREEN", "VERDE")
-                .replace("BLUE", "AZUL")
-                .replace("YELLOW", "AMARILLO")
-                .replace("PURPLE", "MORADO")
-                .replace("BLACK", "NEGRO")
-                .replace(" ", "")
-                .trim(); 
-                
-        return colorEn;
+        if (coloresEncontrados.isEmpty()) return "MULTICOLOR";
+        
+        // Une los colores encontrados con comas. Ej: "ROJO, VERDE"
+        return String.join(", ", coloresEncontrados);
+    }
+
+    // Función auxiliar que busca palabras clave en inglés y añade la española a la lista
+    private static void aniadirColor(String texto, List<String> lista) {
+        if (texto == null || texto.isEmpty()) return;
+        String upper = texto.toUpperCase();
+        
+        if (upper.contains("RED") && !lista.contains("ROJO")) lista.add("ROJO");
+        if (upper.contains("GREEN") && !lista.contains("VERDE")) lista.add("VERDE");
+        if (upper.contains("BLUE") && !lista.contains("AZUL")) lista.add("AZUL");
+        if (upper.contains("YELLOW") && !lista.contains("AMARILLO")) lista.add("AMARILLO");
+        if (upper.contains("PURPLE") && !lista.contains("MORADO")) lista.add("MORADO");
+        if (upper.contains("BLACK") && !lista.contains("NEGRO")) lista.add("NEGRO");
     }
 
     private static String mapearAtributo(String attrEn) {
         if (attrEn == null || attrEn.equals("NULL") || attrEn.isEmpty()) return null;
         
-        // Nos aseguramos de que solo pasen los atributos que tu base de datos conoce
         String upper = attrEn.toUpperCase().trim();
         if (upper.equals("SLASH") || upper.equals("STRIKE") || upper.equals("RANGED") || 
             upper.equals("SPECIAL") || upper.equals("WISDOM")) {

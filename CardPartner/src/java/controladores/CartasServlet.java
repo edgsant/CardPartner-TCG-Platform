@@ -51,9 +51,16 @@ public class CartasServlet extends HttpServlet {
         String[] tipos = request.getParameterValues("tipo");
         String[] atributos = request.getParameterValues("atributo");
 
+        // NUEVO: Recoger la cantidad de cartas por página (por defecto 25)
+        int limite = 25;
+        String sizeParam = request.getParameter("size");
+        if (sizeParam != null && !sizeParam.isEmpty()) {
+            try { limite = Integer.parseInt(sizeParam); } 
+            catch (NumberFormatException e) { limite = 25; }
+        }
+
         // 2. Matemáticas de Paginación
         int pagina = 1;
-        int limite = 18;
         String paginaParam = request.getParameter("pagina");
         if (paginaParam != null && !paginaParam.isEmpty()) {
             try { pagina = Integer.parseInt(paginaParam); if (pagina < 1) pagina = 1; } 
@@ -64,7 +71,7 @@ public class CartasServlet extends HttpServlet {
         try {
             CartaDAO cartaDAO = new CartaDAO();
 
-            // 3. Ejecutar consultas inteligentes
+            // 3. Ejecutar consultas inteligentes con el límite dinámico
             ArrayList<Carta> listaCartas = cartaDAO.filtrarCartas(nombre, colores, tipos, atributos, limite, offset);
             int totalCartas = cartaDAO.contarTotalCartas(nombre, colores, tipos, atributos);
             int totalPaginas = (int) Math.ceil((double) totalCartas / limite);
@@ -74,6 +81,7 @@ public class CartasServlet extends HttpServlet {
             request.setAttribute("paginaActual", pagina);
             request.setAttribute("totalPaginas", totalPaginas);
             request.setAttribute("totalRegistros", totalCartas);
+            request.setAttribute("registrosPorPagina", limite); // Enviamos el límite seleccionado
 
             // 5. Guardar selecciones para el Frontend (para que las casillas se queden marcadas)
             request.setAttribute("nombreBuscado", nombre);
@@ -87,6 +95,8 @@ public class CartasServlet extends HttpServlet {
             if (colores != null) for (String c : colores) queryFiltros.append("&color=").append(c);
             if (tipos != null) for (String t : tipos) queryFiltros.append("&tipo=").append(t);
             if (atributos != null) for (String a : atributos) queryFiltros.append("&atributo=").append(a);
+            // Añadimos el size a la query de paginación
+            queryFiltros.append("&size=").append(limite);
             
             request.setAttribute("queryFiltros", queryFiltros.toString());
 

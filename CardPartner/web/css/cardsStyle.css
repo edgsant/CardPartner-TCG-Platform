@@ -334,3 +334,181 @@ body {
 }
 
 .btn-cerrar:hover { color: #333; }
+
+/* =========================================
+   7. FILTROS HORIZONTALES Y BUSCADOR (FORZADO AL 100%)
+========================================= */
+.barra-busqueda-limpia {
+    border: none;
+    padding: 0;
+    width: 100%;
+    display: block;
+}
+
+.form-busqueda-limpio {
+    width: 100%;
+    display: block;
+}
+
+.filtros-horizontal {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Baja de línea en móviles */
+    gap: 15px;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    
+    /* FORZAMOS QUE OCUPE EL 100% DEL ESPACIO */
+    width: 100%; 
+    box-sizing: border-box; 
+    margin: 0 0 30px 0; 
+    border: 1px solid #eaeaea;
+}
+
+.input-buscador {
+    flex: 1; /* Estira la caja de texto en el espacio vacío */
+    min-width: 250px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-buscador:focus {
+    border-color: #e91e63;
+}
+
+.grupo-selector-size {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.label-size {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+.selector-size {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    outline: none;
+    background: #f9f9f9;
+}
+
+/* =========================================
+   8. PAGINACIÓN Y RESULTADOS
+========================================= */
+.contenedor-paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 40px 0;
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+.item-paginacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.item-paginacion:hover {
+    background: #f0f0f0;
+    border-color: #333;
+}
+
+.item-paginacion.active {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+.item-paginacion.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    background: #eee;
+}
+
+.puntos-suspensivos {
+    padding: 0 5px;
+    color: #888;
+    font-weight: bold;
+}
+
+.info-resultados {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+
+.mensaje-sin-resultados {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    color: #666;
+}
+
+/* =========================================
+   9. MODAL DE FILTROS AVANZADOS (AJUSTES)
+========================================= */
+.modal-filtros-avanzados {
+    max-width: 600px;
+    text-align: left;
+}
+
+.titulo-modal-filtros {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.label-filtro-categoria {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #d32f2f;
+}
+
+.grid-filtros-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.grid-filtros-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-aplicar-filtros {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
