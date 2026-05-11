@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 public class Mazo implements Serializable {
-    
+
     private int idMazo;
     private String nombreMazo;
     private String descripcion;
@@ -13,6 +13,7 @@ public class Mazo implements Serializable {
     private boolean esOficial;
     private float winrate;
     private int idUsuarioCreador;
+    private Usuario usuarioCreador;
     private String idCartaLider;
     private Carta cartaLider;
 
@@ -22,7 +23,7 @@ public class Mazo implements Serializable {
         this.winrate = 0.0f;
     }
 
-    public Mazo(int idMazo, String nombreMazo, String descripcion, Timestamp fechaCreacion, boolean esPublico, boolean esOficial, float winrate, int idUsuarioCreador, String idCartaLider, Carta cartaLider) {
+    public Mazo(int idMazo, String nombreMazo, String descripcion, Timestamp fechaCreacion, boolean esPublico, boolean esOficial, float winrate, int idUsuarioCreador, Usuario usuarioCreador, String idCartaLider, Carta cartaLider) {
         this.idMazo = idMazo;
         this.nombreMazo = nombreMazo;
         this.descripcion = descripcion;
@@ -31,6 +32,7 @@ public class Mazo implements Serializable {
         this.esOficial = esOficial;
         this.winrate = winrate;
         this.idUsuarioCreador = idUsuarioCreador;
+        this.usuarioCreador = usuarioCreador;
         this.idCartaLider = idCartaLider;
         this.cartaLider = cartaLider;
     }
@@ -113,6 +115,14 @@ public class Mazo implements Serializable {
 
     public void setIdCartaLider(String idCartaLider) {
         this.idCartaLider = idCartaLider;
+    }
+
+    public Usuario getUsuarioCreador() {
+        return usuarioCreador;
+    }
+
+    public void setUsuarioCreador(Usuario usuarioCreador) {
+        this.usuarioCreador = usuarioCreador;
     }
 
 }
