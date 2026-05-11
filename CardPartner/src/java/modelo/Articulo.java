@@ -13,12 +13,13 @@ public class Articulo implements Serializable {
     private String enlaceExterno;
     private String portada;
     private int idAdminAutor;
+    private Usuario adminAutor;
 
     public Articulo() {}
 
     public Articulo(int idArticulo, String titulo, String descripcion, String categoria, 
                     Timestamp fechaCreacion, Timestamp fechaEdicion, String enlaceExterno, 
-                    String portada, int idAdminAutor) {
+                    String portada, int idAdminAutor, Usuario adminAutor) {
         this.idArticulo = idArticulo;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -28,6 +29,7 @@ public class Articulo implements Serializable {
         this.enlaceExterno = enlaceExterno;
         this.portada = portada;
         this.idAdminAutor = idAdminAutor;
+        this.adminAutor = adminAutor;
     }
 
     public int getIdArticulo() {
@@ -100,6 +102,14 @@ public class Articulo implements Serializable {
 
     public void setIdAdminAutor(int idAdminAutor) {
         this.idAdminAutor = idAdminAutor;
+    }
+
+    public Usuario getAdminAutor() {
+        return adminAutor;
+    }
+
+    public void setAdminAutor(Usuario adminAutor) {
+        this.adminAutor = adminAutor;
     }
 
     
