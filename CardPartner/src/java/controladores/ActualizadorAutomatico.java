@@ -34,7 +34,7 @@ public class ActualizadorAutomatico implements ServletContextListener {
             } catch (Exception e) {
                 System.err.println("[ACTUALIZADOR] Fallo al sincronizar: " + e.getMessage());
             }
-        }, 1, 24, TimeUnit.HOURS);
+        }, 0, 24, TimeUnit.HOURS);
     }
 
     @Override
