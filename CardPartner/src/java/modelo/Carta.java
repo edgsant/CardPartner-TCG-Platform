@@ -13,12 +13,12 @@ public class Carta implements Serializable {
     private int coste;
     private int poder;
     private String atributoCarta;
-    private float precio;
+    private double precio;
 
     public Carta() {
     }
 
-    public Carta(String idCarta, String nombreCarta, String imagen, String tipo, String arquetipo, String color, int coste, int poder, String atributoCarta, float precio) {
+    public Carta(String idCarta, String nombreCarta, String imagen, String tipo, String arquetipo, String color, int coste, int poder, String atributoCarta, double precio) {
         this.idCarta = idCarta;
         this.nombreCarta = nombreCarta;
         this.imagen = imagen;
@@ -103,11 +103,11 @@ public class Carta implements Serializable {
         this.atributoCarta = atributoCarta;
     }
 
-    public float getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(float precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 

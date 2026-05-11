@@ -169,7 +169,7 @@ public class CartaDAO {
         c.setCoste(rs.getInt("coste"));
         c.setPoder(rs.getInt("poder"));
         c.setImagen(rs.getString("imagen"));
-        c.setPrecio(rs.getFloat("precio_mercado"));
+        c.setPrecio(rs.getDouble("precio_mercado"));
         return c;
     }
 
@@ -219,10 +219,10 @@ public class CartaDAO {
             ps.setInt(7, c.getCoste());
             ps.setInt(8, c.getPoder());
             ps.setString(9, c.getAtributoCarta()); // Puede ser null
-            ps.setFloat(10, c.getPrecio());
+            ps.setDouble(10, c.getPrecio());
             
             // Valores para la parte de UPDATE si la carta ya existe
-            ps.setFloat(11, c.getPrecio());
+            ps.setDouble(11, c.getPrecio());
             ps.setString(12, c.getImagen());
             
             return ps.executeUpdate() > 0;
@@ -285,7 +285,7 @@ public class CartaDAO {
                 c.setColor(rs.getString("color"));
                 c.setCoste(rs.getInt("coste"));
                 c.setPoder(rs.getInt("poder"));
-                c.setPrecio(rs.getFloat("precio_mercado"));
+                c.setPrecio(rs.getDouble("precio_mercado"));
                 lista.add(c);
             }
         } finally {

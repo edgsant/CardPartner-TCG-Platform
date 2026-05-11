@@ -80,7 +80,7 @@
                             <h3>PRECIO DE MERCADO (OPTCG API)</h3>
                             <%
                                 // Si el precio es 0, mostramos que no hay datos. Si no, le ponemos el símbolo de dólar.
-                                float precioActual = cartaActual.getPrecio();
+                                double precioActual = cartaActual.getPrecio();
                                 String textoPrecio = (precioActual > 0) ? "$" + String.format("%.2f", precioActual) : "No disponible";
                             %>
                             <p class="precio-destacado" style="font-size: 1.5rem; font-weight: bold; color: #2e7d32; margin-bottom: 15px;">
