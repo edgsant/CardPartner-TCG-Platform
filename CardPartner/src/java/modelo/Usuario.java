@@ -10,7 +10,7 @@ public class Usuario implements Serializable {
     private String apodoUsuario;
     private String email;
     private String password;
-    private InputStream avatar; 
+    private transient InputStream avatar; 
     private String rol;
     private Timestamp fechaRegistro;
 
