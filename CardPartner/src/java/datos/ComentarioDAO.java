@@ -19,11 +19,21 @@ public class ComentarioDAO {
 
     private static final String SQL_DELETE = "DELETE FROM COMENTARIO WHERE id_comentario = ? AND id_usuario_autor = ?";
 
+    private static final String SQL_COUNT_BY_MAZO = "SELECT COUNT(*) FROM COMENTARIO WHERE id_mazo_destino = ?";
+    private static final String SQL_DELETE_ADMIN = "DELETE FROM COMENTARIO WHERE id_comentario = ?";
+
     // ==========================================
     // 2. MÉTODOS CRUD
     // ==========================================
     /**
-     * Inserta un nuevo comentario asociado a un mazo.
+     * Inserta un nuevo comentario en la base de datos. Utiliza el objeto
+     * Usuario anidado en el Comentario para obtener el ID del autor.
+     *
+     * * @param c El objeto Comentario poblado con los datos del autor, mazo y
+     * contenido.
+     * @return true si el comentario se insertó correctamente.
+     * @throws SQLException Si hay un error de integridad (ej: autor o mazo
+     * inexistente).
      */
     public boolean crearComentario(Comentario c) throws SQLException {
         boolean exito = false;
@@ -47,7 +57,15 @@ public class ComentarioDAO {
     }
 
     /**
-     * Recupera todos los comentarios de un mazo específico.
+     * Recupera la lista de comentarios de un mazo, incluyendo el nombre de los
+     * autores. Realiza un INNER JOIN con la tabla USUARIO para evitar consultas
+     * adicionales en la vista. Los avatares no se cargan por rendimiento; se
+     * delegan al AvatarServlet.
+     *
+     * * @param idMazo ID del mazo del que se quieren leer los comentarios.
+     * @return ArrayList de comentarios ordenados del más reciente al más
+     * antiguo.
+     * @throws SQLException Si ocurre un error en la consulta JOIN.
      */
     public ArrayList<Comentario> obtenerComentariosPorMazo(int idMazo) throws SQLException {
         ArrayList<Comentario> lista = new ArrayList<>();
@@ -87,7 +105,15 @@ public class ComentarioDAO {
     }
 
     /**
-     * Permite a un usuario editar el contenido de su comentario.
+     * Modifica el texto de un comentario existente. Por seguridad, requiere que
+     * el ID del usuario coincida con el autor original.
+     *
+     * * @param idComentario ID del comentario a modificar.
+     * @param idUsuario ID del usuario que solicita la edición (comprobación de
+     * autoría).
+     * @param nuevoContenido El nuevo texto del comentario.
+     * @return true si la edición fue permitida y exitosa.
+     * @throws SQLException Si ocurre un error durante la actualización.
      */
     public boolean editarComentario(int idComentario, int idUsuario, String nuevoContenido) throws SQLException {
         boolean exito = false;
@@ -110,7 +136,14 @@ public class ComentarioDAO {
     }
 
     /**
-     * Elimina un comentario (requiere ID del usuario por seguridad).
+     * Elimina un comentario solicitado por su propio autor. Verifica que el ID
+     * del solicitante coincida con el ID del autor guardado en la base de
+     * datos.
+     *
+     * * @param idComentario ID del comentario a borrar.
+     * @param idUsuario ID del usuario que solicita el borrado.
+     * @return true si el borrado fue permitido y exitoso.
+     * @throws SQLException Si ocurre un error durante la eliminación.
      */
     public boolean borrarComentario(int idComentario, int idUsuario) throws SQLException {
         boolean exito = false;
@@ -132,7 +165,70 @@ public class ComentarioDAO {
     }
 
     /**
-     * Centraliza el cierre de recursos de forma segura (sin fugas de conexión).
+     * Cuenta el número total de comentarios asociados a un mazo específico.
+     * Utilizado para mostrar el contador de actividad en el catálogo o listas.
+     *
+     * * @param idMazo El ID del mazo a consultar.
+     * @return El número total de comentarios del mazo.
+     * @throws SQLException Si ocurre un error en la base de datos.
+     */
+    public int contarComentariosPorMazo(int idMazo) throws SQLException {
+        int total = 0;
+        Connection con = ConnectionPool.getInstance().getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            ps = con.prepareStatement(SQL_COUNT_BY_MAZO);
+            ps.setInt(1, idMazo);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                total = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al contar comentarios del mazo ID " + idMazo + ": " + e.getMessage());
+            throw e;
+        } finally {
+            cerrarRecursos(con, ps, rs);
+        }
+        return total;
+    }
+
+    /**
+     * Elimina un comentario de forma forzada sin verificar la autoría. Este
+     * método está diseñado para ser usado exclusivamente por administradores o
+     * moderadores en labores de gestión de contenido tóxico o inapropiado.
+     *
+     * * @param idComentario El ID del comentario que se desea eliminar.
+     * @return true si el comentario fue eliminado exitosamente.
+     * @throws SQLException Si ocurre un error durante la eliminación.
+     */
+    public boolean borrarComentarioPorModerador(int idComentario) throws SQLException {
+        boolean exito = false;
+        Connection con = ConnectionPool.getInstance().getConnection();
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(SQL_DELETE_ADMIN);
+            ps.setInt(1, idComentario);
+
+            exito = ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("Error (Admin) al borrar el comentario ID " + idComentario + ": " + e.getMessage());
+            throw e;
+        } finally {
+            cerrarRecursos(con, ps, null);
+        }
+        return exito;
+    }
+
+    /**
+     * Método auxiliar para cerrar de forma segura los recursos de JDBC.
+     * Intercepta posibles excepciones de cierre para garantizar que la conexión
+     * siempre sea devuelta al ConnectionPool, previniendo fugas de memoria y
+     * caídas del servidor.
+     *
+     * * @param con La conexión a la base de datos a liberar.
+     * @param ps El PreparedStatement a cerrar.
+     * @param rs El ResultSet a cerrar.
      */
     private void cerrarRecursos(Connection con, PreparedStatement ps, ResultSet rs) {
         if (rs != null) {
