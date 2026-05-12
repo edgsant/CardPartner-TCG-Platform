@@ -3,6 +3,12 @@ package datos;
 import java.sql.*;
 import modelo.Valoracion;
 
+/**
+ * Clase de Acceso a Datos (DAO) para la entidad Valoracion. Gestiona de forma
+ * exclusiva el sistema de puntuación (estrellas/notas) de los mazos. Delega los
+ * cálculos matemáticos (medias y recuentos) directamente al motor de la base de
+ * datos para maximizar el rendimiento.
+ */
 public class ValoracionDAO {
 
     // ==========================================
@@ -23,12 +29,21 @@ public class ValoracionDAO {
     // 2. MÉTODOS CRUD Y LÓGICA DE NEGOCIO
     // ==========================================
     /**
-     * Guarda una nueva valoración o actualiza la existente si el usuario ya
-     * había votado este mazo.
+     * Registra la puntuación otorgada por un usuario a un mazo específico.
+     * Utiliza una estrategia UPSERT (ON DUPLICATE KEY UPDATE): si es la primera
+     * vez que el usuario vota, se inserta el registro; si ya había votado, se
+     * actualiza su nota anterior.
+     *
+     * * @param v Objeto Valoracion que contiene el ID del usuario, el ID del
+     * mazo y la nota.
+     * @return true si la operación afectó a la base de datos exitosamente.
+     * @throws SQLException Si ocurre un error de acceso a datos o de integridad
+     * referencial.
      */
     public boolean guardarValoracion(Valoracion v) throws SQLException {
         boolean exito = false;
-        Connection con = ConnectionPool.getInstance().getConnection();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(SQL_UPSERT);
@@ -42,17 +57,26 @@ public class ValoracionDAO {
             System.err.println("Error al guardar valoración del usuario " + v.getIdUsuario() + " en mazo " + v.getIdMazo() + ": " + e.getMessage());
             throw e;
         } finally {
-            cerrarRecursos(con, ps, null);
+            cerrarRecursos(pool, con, ps, null, "guardarValoracion");
         }
         return exito;
     }
 
     /**
-     * Devuelve la puntuación media (ej. 4.2) de un mazo.
+     * Calcula la puntuación media global de un mazo basándose en todos los
+     * votos recibidos. Realiza el cálculo matemático (AVG) directamente en
+     * MariaDB por eficiencia.
+     *
+     * * @param idMazo El ID numérico del mazo a consultar.
+     * @return La nota media (ej. 4.5). Devuelve 0.0 si el mazo aún no tiene
+     * valoraciones.
+     * @throws SQLException Si ocurre un error al realizar el cálculo en la base
+     * de datos.
      */
     public double obtenerMediaPorMazo(int idMazo) throws SQLException {
         double media = 0.0;
-        Connection con = ConnectionPool.getInstance().getConnection();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -66,17 +90,24 @@ public class ValoracionDAO {
             System.err.println("Error al obtener la media del mazo " + idMazo + ": " + e.getMessage());
             throw e;
         } finally {
-            cerrarRecursos(con, ps, rs);
+            cerrarRecursos(pool, con, ps, rs, "obtenerMediaPorMazo");
         }
         return media;
     }
 
     /**
-     * Devuelve el total de personas que han votado un mazo.
+     * Obtiene el número total de usuarios que han valorado un mazo específico.
+     * Útil para mostrar en la interfaz textos como "4.5 estrellas (basado en 23
+     * reseñas)".
+     *
+     * * @param idMazo El ID numérico del mazo.
+     * @return El total de votos emitidos para ese mazo.
+     * @throws SQLException Si ocurre un error al realizar el conteo.
      */
     public int contarVotosPorMazo(int idMazo) throws SQLException {
         int total = 0;
-        Connection con = ConnectionPool.getInstance().getConnection();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -90,18 +121,26 @@ public class ValoracionDAO {
             System.err.println("Error al contar votos del mazo " + idMazo + ": " + e.getMessage());
             throw e;
         } finally {
-            cerrarRecursos(con, ps, rs);
+            cerrarRecursos(pool, con, ps, rs, "contarVotosPorMazo");
         }
         return total;
     }
 
     /**
-     * Obtiene la valoración específica de un usuario para pre-marcarle las
-     * estrellas. Devuelve null si el usuario no ha votado.
+     * Recupera la puntuación exacta que un usuario específico le dio a un mazo
+     * en concreto. Fundamental para pintar la interfaz del usuario y pre-marcar
+     * las estrellas que ya había elegido.
+     *
+     * * @param idMazo El ID del mazo consultado.
+     * @param idUsuario El ID del usuario que está navegando la página.
+     * @return El objeto Valoracion poblado, o null si el usuario no ha valorado
+     * este mazo nunca.
+     * @throws SQLException Si ocurre un error de consulta.
      */
     public Valoracion obtenerValoracionUsuario(int idMazo, int idUsuario) throws SQLException {
         Valoracion v = null;
-        Connection con = ConnectionPool.getInstance().getConnection();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -120,17 +159,25 @@ public class ValoracionDAO {
             System.err.println("Error al obtener valoración del usuario " + idUsuario + " en mazo " + idMazo + ": " + e.getMessage());
             throw e;
         } finally {
-            cerrarRecursos(con, ps, rs);
+            cerrarRecursos(pool, con, ps, rs, "obtenerValoracionUsuario");
         }
         return v;
     }
 
     /**
-     * Elimina la valoración de un usuario.
+     * Borra el voto de un usuario sobre un mazo, permitiéndole retirar su
+     * valoración.
+     *
+     * * @param idMazo El ID del mazo del que se quiere retirar el voto.
+     * @param idUsuario El ID del usuario que solicita la eliminación.
+     * @return true si la valoración existía y fue eliminada con éxito.
+     * @throws SQLException Si ocurre un error durante el borrado en la base de
+     * datos.
      */
     public boolean eliminarValoracion(int idMazo, int idUsuario) throws SQLException {
         boolean exito = false;
-        Connection con = ConnectionPool.getInstance().getConnection();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection con = pool.getConnection();
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(SQL_DELETE);
@@ -141,7 +188,7 @@ public class ValoracionDAO {
             System.err.println("Error al eliminar valoración del usuario " + idUsuario + " en mazo " + idMazo + ": " + e.getMessage());
             throw e;
         } finally {
-            cerrarRecursos(con, ps, null);
+            cerrarRecursos(pool, con, ps, null, "eliminarValoracion");
         }
         return exito;
     }
@@ -150,25 +197,36 @@ public class ValoracionDAO {
     // 3. MÉTODOS AUXILIARES
     // ==========================================
     /**
-     * Centraliza el cierre de recursos de forma segura (sin fugas de conexión).
+     * Centraliza y asegura el cierre de los recursos JDBC (ResultSet,
+     * PreparedStatement y Connection). Utiliza bloques try-catch individuales
+     * para evitar fugas de memoria y emplea la instrospección de Java para
+     * registrar dinámicamente la clase y el método en caso de error.
+     *
+     * * @param pool La instancia del ConnectionPool gestor.
+     * @param con La conexión a liberar.
+     * @param ps El PreparedStatement a cerrar.
+     * @param rs El ResultSet a cerrar.
+     * @param nombreMetodo Nombre del método invocador (para facilitar la
+     * depuración).
      */
-    private void cerrarRecursos(Connection con, PreparedStatement ps, ResultSet rs) {
+    private void cerrarRecursos(ConnectionPool pool, Connection con, PreparedStatement ps, ResultSet rs, String nombreMetodo) {
+        String ubicacion = this.getClass().getSimpleName() + "." + nombreMetodo;
         if (rs != null) {
             try {
                 rs.close();
             } catch (SQLException e) {
-                System.err.println("Error al cerrar ResultSet: " + e.getMessage());
+                System.err.println("Error RS en " + ubicacion + ": " + e.getMessage());
             }
         }
         if (ps != null) {
             try {
                 ps.close();
             } catch (SQLException e) {
-                System.err.println("Error al cerrar PreparedStatement: " + e.getMessage());
+                System.err.println("Error PS en " + ubicacion + ": " + e.getMessage());
             }
         }
-        if (con != null) {
-            ConnectionPool.getInstance().freeConnection(con);
+        if (pool != null && con != null) {
+            pool.freeConnection(con);
         }
     }
 }
