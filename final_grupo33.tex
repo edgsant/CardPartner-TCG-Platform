@@ -959,29 +959,29 @@
 		\subsection{Gestión y creación de mazos}
 			El constructor de mazos (Deckbuilder) ha sido implementado con ventanas emergentes modales que permiten seleccionar cartas, asignar la carta líder y configurar la composición completa de un mazo. Hemos decidido incluir tanto mazos de la comunidad como mazos oficiales/meta, diferenciándolos mediante el atributo \texttt{es\_publico} o \texttt{winrate}. Esto permite que los jugadores puedan crear, guardar y consultar mazos de manera flexible, mientras que los mazos oficiales permanecen verificados y orientados a la escena competitiva.\\
 
-			Además, se han desarrollado vistas de detalle de mazo que muestran el precio total, estadísticas y cartas contenidas, facilitando la toma de decisiones al jugador y mejorando la experiencia de navegación.
+			Además, se han creado vistas de detalle de mazo que muestran el precio total, estadísticas y cartas contenidas, facilitando la toma de decisiones al jugador y mejorando la experiencia de navegación.
 
 		\subsection{Catálogo de cartas y filtros}
-			Hemos implementado un catálogo completo de cartas, con filtros avanzados por nombre, color, tipo, coste y rareza. Cada carta muestra sus atributos principales y su precio de mercado. La decisión de incluir estos filtros se basa en la necesidad de los jugadores de localizar rápidamente cartas específicas y planificar la construcción de sus mazos de forma eficiente.
+			Hemos implementado un listado completo de todas cartas disponibles, con filtros avanzados por nombre, color, tipo, coste y rareza. Cada carta muestra sus atributos principales y su precio de mercado. La decisión de incluir estos filtros se basa en la necesidad de los jugadores de localizar rápidamente cartas específicas y planificar la construcción de sus mazos de forma eficiente.
 
 		\subsection{Comunidad e interacción}
-			Para fomentar la interacción, hemos integrado un sistema de comentarios y valoraciones en cada mazo. Los jugadores pueden publicar sus opiniones, sugerir cambios y puntuar mazos creados por otros usuarios. Esta funcionalidad se conecta directamente con la gestión de usuarios, asegurando que solo los jugadores registrados puedan participar, mientras que los visitantes pueden consultar el contenido publicado.
+			Se ha integrado un sistema de comentarios y valoraciones en cada mazo. Los jugadores pueden publicar sus opiniones, sugerir cambios y puntuar mazos creados por otros usuarios. Esta funcionalidad se conecta directamente con la gestión de usuarios, asegurando que solo los jugadores registrados puedan participar, mientras que los visitantes pueden consultar el contenido publicado.
 
 		\subsection{Contenido editorial}
-			Hemos implementado secciones de noticias, guías y torneos, gestionadas por los administradores. Esta elección permite mantener la plataforma actualizada, ofreciendo información relevante y útil para jugadores principiantes y experimentados, y consolidando a \textbf{Card Partner} como un punto de referencia dentro de la comunidad TCG.
+			Hemos desarrollado secciones de noticias, guías y torneos, gestionadas por los administradores. Esta elección permite mantener la plataforma actualizada, ofreciendo información relevante y útil para jugadores principiantes y experimentados, y consolidando a \textbf{Card Partner} como un punto de referencia dentro de la comunidad TCG.
 
 		\subsection{Sección TCG}
-			Aunque inicialmente se había considerado como ampliación futura, hemos decidido integrar la sección TCG de manera completa en esta entrega. Esta sección proporciona reglas, mecánicas y recursos adicionales del TCG de One Piece, ofreciendo una base educativa y de referencia para los nuevos jugadores, y permitiendo a los jugadores avanzados acceder a información sobre cartas y mazos oficiales.
+			Aunque inicialmente se había considerado como ampliación futura, hemos decidido integrar la sección TCG de manera completa en esta parte. Esta sección proporciona reglas, mecánicas y recursos adicionales del TCG de One Piece, ofreciendo una base educativa y de referencia para los nuevos jugadores, y permitiendo a los jugadores avanzados acceder a información sobre cartas y mazos oficiales.
 
 		\subsection{Justificación de la elección}
 			Hemos optado por implementar estas funcionalidades priorizando:
 
 			\begin{itemize}
-				\item La centralización de información y herramientas, evitando que los jugadores tengan que usar múltiples webs externas.
-				\item La claridad y facilidad de uso, con un panel de perfil único y vistas modales en el constructor de mazos.
-				\item La escalabilidad, permitiendo agregar nuevas cartas, mazos o secciones sin necesidad de reescribir la estructura base del sistema.
-				\item La interacción social, fomentando la participación de la comunidad mediante comentarios y valoraciones.
-				\item La coherencia con el modelo de dominio y la base de datos, asegurando que la estructura de información sea consistente y fácil de mantener.
+				\item Centralización de información y herramientas, evitando que los jugadores tengan que usar múltiples webs externas.
+				\item Claridad y facilidad de uso, con un panel de perfil único y vistas modales en el constructor de mazos.
+				\item Escalabilidad, permitiendo agregar nuevas cartas, mazos o secciones sin necesidad de reescribir la estructura base del sistema.
+				\item Interacción social, fomentando la participación de la comunidad mediante comentarios y valoraciones.
+				\item Coherencia con el modelo de dominio y la base de datos, asegurando que la estructura de información sea consistente y fácil de mantener.
 			\end{itemize}
 
 			Con estas decisiones, \textbf{Card Partner} ofrece una plataforma funcional, intuitiva y completa, que cubre las necesidades más importantes de los jugadores de TCG y justifica las elecciones de diseño realizadas en el desarrollo del sistema.
