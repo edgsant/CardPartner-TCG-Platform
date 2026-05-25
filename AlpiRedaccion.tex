@@ -279,6 +279,7 @@
 				
 	
 	\section{Especificación de requisitos}
+		En este apartado entraremos más en detalle de las características que vamos a desarrollar en nuestra aplicación web para poder satisfacer las demandas de los diferentes usuarios.\\
 		% La especificación de requisitos está organizada y numerada en bloques temáticos, y contiene RNF específicos y mensurables.\\
 		
 		% El modelo de dominio es el que está mejor resuelto: la herencia adecuada de Usuario en Jugador y Administrador, una clase asociativa Contiene con un atributo cantidad, enumeraciones particulares del dominio (tipos, colores,...), y una descripción textual que complementa de manera perfecta el diagrama.\\
@@ -294,8 +295,7 @@
 		% RF-5.2 ("Recomendados: Sugerencia de mazos para principiantes") no tiene una página estática propia clara; los mazos recomendados aparecen en el index pero no como sección independiente.\\
 
 		\subsection{Requisitos funcionales}
-            Los requisitos funcionales describen las acciones que los usuarios pueden realizar dentro de la aplicación. Hemos mantenido la organización por bloques temáticos para facilitar su lectura y relacionar cada requisito con una parte concreta del sistema.
-            
+            En esta sección describiremos las acciones que los usuarios pueden realizar dentro de la aplicación, manteniendo un organización por bloques temáticos para facilitar su lectura y poder relacionar cada requisito con su parte concreta dentro del sistema. 
             \noindent
             \begin{xltabular}{\textwidth}{|l|l|X|}
             	\hline
@@ -342,7 +342,7 @@
 
             \newpage
 		\subsection{Requisitos no funcionales}
-            Los requisitos no funcionales definen las condiciones de calidad que debe cumplir la aplicación. Hemos mantenido requisitos relacionados con rendimiento, usabilidad, seguridad, mantenibilidad y compatibilidad, adaptándolos al alcance real del proyecto.
+           	Sección dedicada a 	las condiciones de calidad que debe cumplir la aplicación, adaptando conceptos como rendimiento, usabilidad, seguridad, mantenibilidad y compatibilidad, adaptándolos al alcance real del proyecto.
             
             \noindent
             \begin{xltabular}{\textwidth}{|l|l|X|}
@@ -377,7 +377,7 @@
             \end{xltabular}
 
             \subsection{Requisitos de información}
-                Los requisitos de información describen los datos que el sistema debe almacenar y gestionar para que las funcionalidades anteriores puedan llevarse a cabo. Hemos definido estos requisitos a partir del modelo de dominio y de la estructura de la base de datos implementada.
+                En este puntos nos centramos en  describir los datos que el sistema debe almacenar y gestionar para que las funcionalidades anteriores puedan llevarse a cabo. Hemos definido estos requisitos a partir del modelo de dominio (punto \ref{dominio}) y de la estructura de la base de datos implementada(punto \ref{bbddEsquema}).
                 
                 \noindent
                 \begin{xltabular}{\textwidth}{|l|l|X|}
@@ -397,7 +397,7 @@
                 \end{xltabular}
 
         \subsection{Reglas de negocio}
-            Las reglas de negocio recogen las restricciones propias del dominio que deben cumplirse para que la información gestionada sea coherente. Hemos incluido estas reglas para concretar mejor el comportamiento esperado del sistema y evitar ambigüedades en la gestión de usuarios, cartas y mazos.
+			Llegados a este punto sólo nos queda mencionar las restricciones propias del dominio que deben cumplirse para que la información gestionada sea coherente. Hemos incluido estas reglas para concretar mejor el comportamiento esperado del sistema y evitar ambigüedades en la gestión de usuarios, cartas y mazos.
             
             \noindent
             \begin{xltabular}{\textwidth}{|l|X|}
@@ -427,160 +427,244 @@
 	% La relación Guarda entre Jugador y Mazo debería especificar si el jugador puede guardar únicamente mazos públicos de la comunidad o también mazos META oficiales. La multiplicidad está definida pero la restricción semántica no\\
 	
 	% No se modela la relación entre Articulo y las categorías (Noticia, Guía, Torneo) como una enumeración dentro de Articulo con categoria : CategoriaArticulo, cuando en el diagrama sí aparece correctamente. La descripción no lo menciona explícitamente.\\
-	\section{Modelo del dominio}
-		\subsection*{Diagrama del Modelo del dominio}	
+	\section{Modelo del dominio} \label{dominio}
+	 A lo largo de esta sección haremos representación visual y conceptual de las entidades principales que conforman \textit{CardPartnet}. Buscamos ofrecer una visión clara de la estructura de la información y la lógica subyacente, abstrayéndonos de los detalles técnicos de implementación puesto que se trataran en puntos posteriores de este informe..
+		\subsection{Diagrama del Modelo del dominio}	
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.9\textwidth]{Recursos/ModeloDominio_Grupo33.png}
-			\caption{Diagrama UML del Modelo de Dominio de Card Partner}
+			\caption{Diagrama UML del Modelo de Dominio de Card Partner donde definimo los conceptos clave de las reglas de negocio.}
 			\label{fig:modelo_dominio}
 		\end{figure}
-		
 	
         \subsection*{Descripción de las entidades}
-        
+        Teniendo la visión general de la aplicación, vamos a ir profundizando en cada una de las entidades, emplearemos pequeños diagramas, así como una explicación los atributos y las relaciones de cada una de ellas.
         \subsection{Usuarios y roles}
-        \begin{itemize}
-            \item \textbf{Usuario:} La clase Usuario representa la información de acceso y autenticación del usuario registrado en la web.\\
-            \textbf{Atributos:}
+        	La clase Usuario representa la información de acceso y autenticación del usuario registrado en la web.
+        	\begin{figure}[H]
+        		\centering
+        		% Columna izquierda: Imagen (45% del ancho de página)
+        		\begin{minipage}{0.45\textwidth}
+        			\centering
+        			\includegraphics[width=\textwidth]{Recursos/Users&Rols.png}
+        			\caption{Entidad Usuario}
+        			\label{fig:User&Rols}
+        		\end{minipage}
+        		\hfill % Espacio elástico de separación entre las dos columnas
+        		% Columna derecha: Lista de atributos (50% del ancho de página)
+        		\begin{minipage}{0.50\textwidth}
+        			\textbf{Atributos:}
+        			\begin{itemize}
+        				\item \texttt{id\_usuario}: identificador único del sistema.
+        				\item \texttt{apodo\_usuario}: nombre público elegido por el usuario.
+        				\item \texttt{email}: cuenta de correo electrónico asociada a la cuenta.
+        				\item \texttt{contrasena}: credencial del usuario (cifrada).
+        				\item \texttt{fecha\_registro}: fecha de creación de la cuenta.
+        				\item \texttt{avatar}: ruta a la imagen pública del perfil del usuario.
+        				\item \texttt{rol}: tipo de rol que determina los privilegios dentro de la web.\label{key}.
+        			\end{itemize}
+        		\end{minipage}
+        	\end{figure}
+            La relaciones que puede tener esta entidad son las siguientes:
             \begin{itemize}
-                \item id\_usuario : Identificador único del sistema
-                \item apodo\_usuario : Nombre público elegido por el usuario
-                \item email : Cuenta de correo electrónico asociada a la cuenta
-                \item contrasena : Credencial del usuario (cifrada)
-                \item fecha\_registro : Fecha de creación de la cuenta
-                \item avatar : Ruta a la imagen pública del perfil del usuario
-                \item rol : Tipo de rol que determina los privilegios dentro de la web
+                \item \textbf{Crea(n:m) }con MazoComunidad :  el Usuario puede crear mazos y publicarlos en la web.
+                \item \textbf{Guarda(n:m)} con Mazo : el Usuario puede guardar únicamente mazos visibles, es decir, mazos públicos de la comunidad o mazos oficiales/meta. No puede guardar mazos privados de otros usuarios.
+                \item \textbf{Escribe (1:n)} con Comentario : el Usuario puede publicar comentarios en los mazos.
+                \item \textbf{Valora (n:m)} con Mazo : el Usuario puede dar una valoración en los mazos.
+                \item \textbf{Publica(n:m)} con MazoOficial : sólo usuarios con rol ADMIN pueden publicar mazos oficiales/meta.
+                \item \textbf{Publica(n:m)} con Articulo : solo usuarios con rol ADMIN pueden publicar artículos (Noticias, Guías o Torneos).
             \end{itemize}
-            
-            \textbf{Relaciones:}
-            \begin{itemize}
-                \item Crea(n:m) con MazoComunidad : El Usuario puede crear mazos y publicarlos en la web
-                \item Guarda(n:m) con Mazo : El Usuario puede guardar únicamente mazos visibles, es decir, mazos públicos de la comunidad o mazos oficiales/meta. No puede guardar mazos privados de otros usuarios.
-                \item Escribe (1:n) con Comentario : El Usuario puede publicar comentarios en los mazos
-                \item Valora (n:m) con Mazo : El Usuario puede dar una valoración en los mazos
-                \item Publica(n:m) con MazoOficial : Solo usuarios con rol ADMIN pueden publicar mazos oficiales/meta
-                \item Publica(n:m) con Articulo : Solo usuarios con rol ADMIN pueden publicar artículos (Noticias, Guías o Torneos)
-            \end{itemize}
-        \end{itemize}
+ 
         
         \subsection{Cartas}
-        \begin{itemize}
-            \item \textbf{Carta:} La clase Carta representa la entidad central del TCG y su información estática.\\
-            \textbf{Atributos:}
+        La clase Carta representa la entidad central del TCG y su información estática.\\
+        \begin{figure}[H]
+        	\centering
+        	% Columna izquierda: Imagen (45% del ancho de página)
+        	\begin{minipage}{0.45\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{Recursos/Cards.png}
+        		\caption{Entidad Carta}
+        		\label{CartaEntity}
+        	\end{minipage}
+        	\hfill % Espacio elástico de separación entre las dos columnas
+        	% Columna derecha: Lista de atributos (50% del ancho de página)
+        	\begin{minipage}{0.50\textwidth}
+        		\textbf{Atributos:}
+        		\begin{itemize}
+        			\item id\_carta : código oficial de la carta.
+        			\item nombre\_carta : nombre de la carta.
+        			\item imagen\_enlace : ruta a la ilustración de la carta
+        			\item tipo : clasificación de la carta dentro del TCG de \textit{One Piece}.
+        			\item arquetipo : familia a la que pertenece la carta (pueden ser varias).
+        			\item color : clasificación de la carta dentro del TCG de \textit{One Piece}.
+        			\item coste : puntos necesarios para jugar la carta.
+        			\item poder : puntos de ataque de la carta.
+        			\item atributo :tipo de ataque de la carta.
+        			\item precio\_mercado : valor real de la carta.
+        		\end{itemize}
+        	\end{minipage}
+        \end{figure}
+        Las relaciones que presenta esta entidad son:
             \begin{itemize}
-                \item id\_carta : Código oficial de la carta
-                \item nombre\_carta : Nombre de la carta
-                \item imagen\_enlace : Ruta a la ilustración de la carta
-                \item tipo : Clasificación de la carta dentro del TCG de One Piece
-                \item arquetipo : Familia a la que pertenece la carta (pueden ser varias)
-                \item color : Clasificación de la carta dentro del TCG de One Piece
-                \item coste : Puntos necesarios para jugar la carta
-                \item poder : Puntos de ataque de la carta
-                \item atributo : Estilo de combate de la carta
-                \item precio\_mercado : Valor real de la carta
+                \item \textbf{Lidera(1:1)} con Mazo : identifica a la única carta líder obligatoria de un mazo.
+                \item \textbf{ContieneCarta(n:m)} con Mazo : identifica las cartas que componen un mazo, con cantidad.
             \end{itemize}
-            \textbf{Relaciones:}
-            \begin{itemize}
-                \item Lidera(1:1) con Mazo : Identifica a la única carta líder obligatoria de un mazo
-                \item ContieneCarta(n:m) con Mazo : Identifica las cartas que componen un mazo, con cantidad
-            \end{itemize}
-        \end{itemize}
+      
         
         \subsection{Mazos}
-        \begin{itemize}
-            \item \textbf{Mazo:} La clase Mazo representa la estructura común de cualquier mazo publicado en la web.\\
-            \textbf{Atributos:}
+        La entidad Mazo representa la estructura común de cualquier mazo publicado en la web.\\
+	        \begin{figure}[H]
+	        	\centering
+	        	% Columna izquierda: Imagen (45% del ancho de página)
+	        	\begin{minipage}{0.45\textwidth}
+	        		\centering
+	        		\includegraphics[width=\textwidth]{Recursos/deck.png}
+	        		\caption{Entidad Mazo}
+	        		\label{EntidadMazo}
+	        	\end{minipage}
+	        	\hfill % Espacio elástico de separación entre las dos columnas
+	        	% Columna derecha: Lista de atributos (50% del ancho de página)
+	        	\begin{minipage}{0.50\textwidth}
+	        		\textbf{Atributos:}
+	        		\begin{itemize}
+	        			 \item id\_mazo : identificador único del sistema.
+	        			\item nombre\_mazo : título asignado por el creador.
+	        			\item descripcion : texto explicativo del creador.
+	        			\item fecha\_creacion : fecha de creación del mazo.
+	        			\item precio\_total : precio total de todas las cartas que lo componen.
+	        		\end{itemize}
+	        	\end{minipage}
+	        \end{figure}
+       	Mazo presenta las siguientes relaciones:
             \begin{itemize}
-                \item id\_mazo : Identificador único del sistema
-                \item nombre\_mazo : Título asignado por el creador
-                \item descripcion : Texto explicativo del creador
-                \item fecha\_creacion : Fecha de creación del mazo
-                \item precio\_total : Precio total de todas las cartas que lo componen
+                \item Usuario: guarda y valora.
+                \item Carta: lidera y contieneCarta.
+                \item Comentario: pertenece.
             \end{itemize}
-            \textbf{Relaciones:}
-            \begin{itemize}
-                \item Usuario: Guarda y Valora
-                \item Carta: Lidera y ContieneCarta
-                \item Comentario: Pertenece
-            \end{itemize}
+         \subsubsection{Mazo de la comunidad}
             
-            \item \textbf{MazoComunidad:} La clase MazoComunidad representa aquellos mazos que han sido creados por un Usuario con rol JUGADOR.\\
-            \textbf{Atributos:}
-            \begin{itemize}
-                \item es\_publico : Identifica si el usuario creador ha hecho el mazo público o es privado
-            \end{itemize}
-            \textbf{Relaciones:}
-            \begin{itemize}
-                \item Usuario: Crea
-            \end{itemize}
+           	La clase MazoComunidad representa aquellos mazos que han sido creados por un Usuario con rol JUGADOR.
+			Dicha entidad presenta los siguientes atributos con sus respectivas relaciones \\
+			
+            \noindent % Evita que la primera columna tenga sangría
+            \begin{minipage}[c]{0.48\textwidth}
+            	\textbf{Atributos:}
+            	\begin{itemize}
+            		\item \texttt{es\_publico}: identifica si el usuario creador ha hecho el mazo público o es privado.
+            	\end{itemize}
+            \end{minipage}
+            \hfill % Añade un espacio elástico entre las dos columnas
+            \begin{minipage}[c]{0.48\textwidth}
+            	\textbf{Relaciones:}
+            	\begin{itemize}
+            		\item \textbf{Usuario:} crea.
+            	\end{itemize}
+            \end{minipage}
             
-            \item \textbf{MazoOficial:} La clase MazoOficial representa aquellos mazos creados por un Usuario con rol ADMIN y contiene datos verificados del entorno competitivo.\\
-            \textbf{Atributos:}
-            \begin{itemize}
-                \item winrate : Porcentaje de victorias del mazo en competiciones oficiales
-            \end{itemize}
-            \textbf{Relaciones:}
-            \begin{itemize}
-                \item Usuario: Publica
-            \end{itemize}
+           \subsubsection{Mazo Oficial}
             
-            \item \textbf{ContieneCarta:} Clase asociativa que representa la cantidad de copias de cada carta en un mazo.\\
-            \textbf{Atributos:}
-            \begin{itemize}
-                \item cantidad : Número de copias de la carta dentro del mazo
-            \end{itemize}
-        \end{itemize}
+          	Esta clase representa aquellos mazos creados por un Usuario con rol ADMIN y contiene datos verificados del entorno competitivo.\\
+          	 \begin{minipage}[t]{0.48\textwidth}
+          		\textbf{Atributos:}
+          		\begin{itemize}
+          			\item \textit{winrate }: porcentaje de victorias del mazo en competiciones oficiales
+          		\end{itemize}
+          	\end{minipage}
+          	\hfill % Añade un espacio elástico entre las dos columnas
+          	\begin{minipage}[t]{0.48\textwidth}
+          	 \textbf{Relaciones:}
+		          	\begin{itemize}
+		          		\item Usuario: publica
+		          	\end{itemize}
+          	\end{minipage}
+            
+           
+            \subsubsection{Contiene Carta}
+            Esta clase  asociativa  único atributo es \textbf{cantidad } que representa el número de copias de la carta dentro del mazo, ya que es la única información que aporta.
+           
+       
         
         \subsection{Interacción del usuario}
-        \begin{itemize}
-            \item \textbf{Comentario:} Representa la publicación que un Usuario deja en un Mazo.\\
-            \textbf{Atributos:}
-            \begin{itemize}
-                \item id\_comentario : Identificador único
-                \item contenido : Texto redactado por el usuario
-                \item fecha\_creacion : Fecha de creación del comentario
-                \item fecha\_edicion : Fecha de última edición
-            \end{itemize}
-            \textbf{Relaciones:}
-            \begin{itemize}
-                \item Mazo: Pertenece
-            \end{itemize}
-            
-            \item \textbf{Valoracion:} Clase asociativa entre Usuario y Mazo.\\
-            \textbf{Atributos:}
-            \begin{itemize}
-                \item fecha\_valoracion : Fecha de la valoración
-                \item puntuacion : Valor numérico asignado
-            \end{itemize}
-        \end{itemize}
+        En este apartado explicaremos más en profundidad las entidades que representan interacciones directas del usuario en el aspecto social.
+        	\subsubsection{Comentario}
+          	Entidad que representa la publicación que un Usuario deja en un Mazo.
+          	 \begin{figure}[H]
+          		\centering
+          		% Columna izquierda: Imagen (45% del ancho de página)
+          		\begin{minipage}{0.45\textwidth}
+          			\centering
+          			\includegraphics[width=\textwidth]{Recursos/Comentario.png}
+          			\caption{Entidad comentario.}
+          			\label{Entidadcomentario}
+          		\end{minipage}
+          		\hfill % Espacio elástico de separación entre las dos columnas
+          		% Columna derecha: Lista de atributos (50% del ancho de página)
+          		\begin{minipage}{0.50\textwidth}
+          			\textbf{Atributos:}
+          			\begin{itemize}
+          				\item id\_comentario : identificador único.
+          				\item contenido : texto redactado por el usuario.
+          				\item fecha\_creacion : fecha de creación del comentario.
+          				\item fecha\_edicion : fecha de última edición.
+          			\end{itemize}
+          		\end{minipage}
+          	\end{figure}
         
-        \subsection{Contenido social}
-        \begin{itemize}
-            \item \textbf{Articulo:} Contenidos publicados por Usuarios con rol ADMIN.\\
-            \textbf{Atributos:}
-            \begin{itemize}
-                \item id\_articulo : Identificador único
-                \item titulo : Titular del artículo
-                \item descripcion : Resumen del contenido
-                \item categoria : Tipo de artículo (Noticia, Guia, Torneo)
-                \item fecha\_creacion : Fecha de creación
-                \item fecha\_edicion : Fecha de última edición
-                \item enlace\_externo : URL de referencia
-                \item portada : Ruta de imagen miniatura
-            \end{itemize}
-            \textbf{Relaciones:}
-            \begin{itemize}
-                \item Usuario(ADMIN): Publica
-            \end{itemize}
-        \end{itemize}
-
+            Esta entidad sólo tiene una relación con la entidad mazo, la cual es de pertenencia.
+            \subsubsection{Valoración}
+            Clase asociativa entre Usuario y Mazo.\\
+			 \begin{figure}[H]
+				\centering
+				% Columna izquierda: Imagen (45% del ancho de página)
+				\begin{minipage}{0.45\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{Recursos/Valoración.png}
+					\caption{Entidad valoración.}
+					\label{Entidadcvaloracion}
+				\end{minipage}
+				\hfill % Espacio elástico de separación entre las dos columnas
+				% Columna derecha: Lista de atributos (50% del ancho de página)
+				\begin{minipage}{0.50\textwidth}
+					\textbf{Atributos:}
+					\begin{itemize}
+					 \item fecha\_valoracion : fecha de la valoración.
+					\item puntuacion : valor numérico asignado.
+					\end{itemize}
+				\end{minipage}
+			\end{figure}
+        
+        \subsection{Artículo}
+	         \begin{figure}[H]
+	        	\centering
+	        	% Columna izquierda: Imagen (45% del ancho de página)
+	        	\begin{minipage}{0.45\textwidth}
+	        		\centering
+	        		\includegraphics[width=\textwidth]{Recursos/Articulo.png}
+	        		\caption{Contenidos publicados por Usuarios con rol ADMIN.}
+	        		\label{EntidadArticulo}
+	        	\end{minipage}
+	        	\hfill % Espacio elástico de separación entre las dos columnas
+	        	% Columna derecha: Lista de atributos (50% del ancho de página)
+	        	\begin{minipage}{0.50\textwidth}
+	        		\textbf{Atributos:}
+	        		\begin{itemize}
+	        		 \item id\_articulo : identificador único.
+	        		\item titulo : titular del artículo.
+	        		\item descripcion : resumen del contenido.
+	        		\item categoria : tipo de artículo (Noticia, Guia, Torneo).
+	        		\item fecha\_creacion : fecha de creación.
+	        		\item fecha\_edicion : fecha de última edición.
+	        		\item enlace\_externo : URL de referencia.
+	        		\item portada : ruta de imagen miniatura
+	        		\end{itemize}
+	        	\end{minipage}
+	        \end{figure}
+            La cual presenta una única relación con la entidad Usuario (siempre que este tenga el rol de ADMIN), la cual vincula el artículo con el adminitrador que lo ha publicado.
         
 
-
-	\subsection{Etapas de desarrollo de nuestra aplicación web }
-	Una vez que tenemos claras las funcionalidades de nuestra web pasamos la parte ingenieril, la cual abordaremos en este informe.\\
-	Dicha parte aborda desde el bocetaje incial, como un \textit{frontent} estático, como la incorporación del \textit{backend} y por último la funcionalidad definitiva para hacer pasar a \textit{Card Partner} de una idea a una web funcional.
+\section{Desarrollo de CardPartner}	
+	Llegados a este punto, ya tenemos unos sólidos planos sobre cómo ha de ser nuestra aplicación web, por lo que a partir de este punto documentaremos las diferentes etapas en el desarrollo de \textit{Card Partner}  desde el bocetaje incial, pasando\textit{frontent} estático, la posterior incorporación del \textit{backend} y por último la funcionalidad definitiva para hacer pasar a \textit{Card Partner} de una idea a una web funcional.
 	\subsubsection{Primera versión del bocetaje}
 	En la primera fase hemos realizado unos esquemas a mano alzada sobre el aspecto y funcionalidades de la web (para consultar los bocetos con más detalle puesto que \underline{no} son imágenes vectorizadas diríjase a \href{https://uvaes-my.sharepoint.com/:b:/g/personal/alvaro_lopez_primo_estudiantes_uva_es/IQDlwgU7uvVIR4IvbixZFawhAXxjL6flgH43ePd4Q4bNtks?e=ghkMdm}{este enlace}).
 	\begin{figure}[H]
@@ -623,39 +707,28 @@
 	
 	
 	\subsubsection{Segunda versión del bocetaje}
-	Una vez que el grupo ha dado el visto bueno, decidimos emplear la herramienta draw.io para realizar  bocetos más limpios y organizados (para consultar los bocetos con más detalle, diríjase a \href{https://drive.google.com/file/d/1g8FwPydQRjYX_IET-vt37nWVM2JCpji7/view}{este enlace}). 
+	Una vez que como  grupo hemos dado el visto bueno, decidimos emplear la herramienta draw.io para realizar  bocetos más limpios y organizados (para consultar los bocetos con más detalle, diríjase a \href{https://drive.google.com/file/d/1g8FwPydQRjYX_IET-vt37nWVM2JCpji7/view}{este enlace}). 
 	
 	Para la implementación de todas las funcionalidades explicadas anteriormente, hemos optado por organizarlas en diferentes apartados:
-	\begin{itemize}
-		\item \textbf{Comunidad:}
-		\begin{itemize}
-			\item Guías
-			\item Noticias
-			\item Torneos
-		\end{itemize}
-		
-		\item \textbf{Mazos:}
-		\begin{itemize}
-			\item Meta y estadísticas
-			\item Mazos de la comunidad (incluye filtros de búsqueda, valoraciones y comentarios)
-			\item Creador de mazos
-		\end{itemize}
-		
-		\item \textbf{Cartas:}
-		\begin{itemize}
-			\item Listado de cartas (incluye filtros de búsqueda, precio, estadísticas)
-		\end{itemize}
-		
-		\item \textbf{Usuario:}
-		\begin{itemize}
-			\item Iniciar sesión/Crear cuenta
-			\item Información personal de la cuenta (correo, contraseña, etc.)
-			\item Mazos creados
-			\item Mazos publicados
-			\item Mazos guardados
-			\item Interacciones del usuario (comentarios/valoraciones)
-		\end{itemize}
-	\end{itemize} 
+	\begin{table}[H]
+		\centering
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash\bfseries}p{3cm}|>{\raggedright\arraybackslash}X|}
+			\hline
+			Módulo principal & Funcionalidades y características \\
+			\hline
+			Comunidad & Acceso a guías de aprendizaje, noticias sobre el juego y seguimiento de torneos. \\
+			\hline
+			Mazos & Consulta del meta actual con estadísticas, acceso a mazos de la comunidad (con filtros, valoraciones y comentarios) y una herramienta interactiva para la creación de mazos propios. \\
+			\hline
+			Cartas & Catálogo completo con listado de cartas, filtros de búsqueda avanzados, estadísticas detalladas y precios de mercado. \\
+			\hline
+			Usuario & Gestión integral de la cuenta: inicio de sesión, registro, edición de información personal (correo, contraseña) y un panel de control para administrar mazos (creados, publicados y guardados) e interacciones sociales. \\
+			\hline
+		\end{tabularx}
+		\caption{Descripción general de los módulos y funcionalidades de la plataforma.}
+		\label{tab:modulos_app}
+	\end{table}
 	%\newpage
 	A continuación añadimos imágenes que incluyen las diferentes vistas planteadas:
 	\begin{landscape}
@@ -851,7 +924,7 @@
 				\centering
 				\includegraphics[width=1\textwidth]{Recursos/CardPartner_DBv2.png}
 				\caption{Entidad-Relacion de la base de datos}
-				\label{fig:mapa_sitio}
+				\label{bbddEsquema}
 			\end{figure}
 			
 			
