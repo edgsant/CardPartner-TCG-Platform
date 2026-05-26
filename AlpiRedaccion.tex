@@ -831,49 +831,73 @@
 					\caption{\textbf{Boceto de la pestaña de cartas}}
 				\end{figure}
 				Similar a la pestaña de mazos, la pestaña de cartas nos incluye la lista de todas las cartas existentes. Encontramos filtros de búsqueda (color, coste, daño, mecánica, etc.) que nos ayudan a encontrar las cartas que más convengan al usuario. Si se selecciona una carta podemos visualizar información en detalle: El nombre de la carta, una imagen de ella, el texto de información que está incluido en la carta, el precio en la web de compraventa y links a la página oficial del juego relacionados con ella.
-	
-	
-	
-	
 	\newpage   
-		\subsection{Implemtanción de \textit{backend}}
+		\section{Implementación de funcionalidades.}
 			En este punto del desarrollo pasamos de una web estática a una aplicación web basada en JSP, Servlets, DAOs, clases de dominio y una base de datos relacional en MariaDB. 
 			Es decir, a partir de este punto vamos a ir añadiendo la parte dinámica de nuestra web, es decir, la funcionalidad.
-			\subsubsection{Diagrama del mapa del sitio web}
+			\subsection{Mapa del sitio web}
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.7\textwidth]{Recursos/Mapa Card Partner v3.png}
 					\caption{Estructura jerárquica y mapa del sitio web de Card Partner.}
 					\label{fig:mapa_sitio}
 				\end{figure}
-				\subsubsection{Descripción del mapa del sitio web}
-				El mapa del sitio web define la jerarquía de navegación y la reutilización de vistas y centralización de las herramientas. La estructura está diseñada para facilitar el acceso rápido a las diferentes herramientas de \textbf{Card Partner} a través de su menú de navegación en la barra superior de la página, disponible en cualquier momento.\\
+				Nuestro diseño está centrado en la navegabilidad, permitiendo un acceso rápido a las diferentes funcionalidades del sistio web desde el \textit{header} de la web.\\
 				
-				El mapa está estructurado en 4 niveles de profundidad para facilitar una entrada sencilla y estructurada a las herramientas:.\\
-				\begin{itemize}
-					\item \textbf{Nivel 0: Punto de entrada}\\
-						El nivel 0 es la base de la estructura de la web, la \textbf{Página Principal} y es el punto de entrada de los usuarios. Desde ahí se muestra accesos rápidos a diferentes subsecciones de la web que pueden ser interesantes para usuarios nuevos o novedades para los usuarios experimentados.\\
-					\item \textbf{Nivel 1: Navegación global}\\
-						El nivel 1 es la base de la navegación dentro de la web. El \textbf{Menú de navegación} es la barra de navegación accesible en todo momento que divide la web en 4 grandes secciones, correspondientes al nivel 2 que son las herramientas para el usuario\\
-					\item \textbf{Nivel 2: Herramientas y listados}\\
-						El nivel 2 son las diferentes herramientas y visualización de contenido que ofrece la web a los usuarios, que se han dividido en 4 secciones:
+				\subsection{Estratificación por niveless del mapa de \textit{Card Partner}}}
+					Para facilitar la comprensión de la imagen, vamos a añadir una explicación concisa sobre la arquitectura de la información que va a usar nuestra aplicación dividia en niveles en función de los clicks o interacciones que tiene que hacer el usuario para llegar a determinada funcionalidad.\\
+					Partiremos por el \textbf{nivel 0} o \textbf{el punto de entrada} es en el que se encuentra  la \textbf{página rincipal}, es decir, el punto de entrada de todo usuario a nuesta aplicación y a su vez el menú que permitirá acceder al resto de apartados de la misma.\\
+				\subsubsection{Nivel 1: \textit{header }y navegabilidad}
+					 \textbf{La \textit{header}l}: es el motor de navegabilidad de nuestra web, se encuentra en la parte superior de cada una de las vistas y nos permite dividir la web en las 4 grandes secciones que constituyen el siguiente nivel, de esta manera el usuario final podrá navegar por las diferentes funcionalidades de la web de una manera cómoda e intuitiva.\\
+					 Esto nos da acceso a todas las  \textbf{herramientas y listados}:
 						\begin{itemize}
-							\item \textbf{SOCIAL:} Este apartado mostrará 3 subsecciones que llevarán al \textbf{Listado de Artículos} que mostrará contenidos de  categorías de artículos diferentes (Noticias, Guías o Torneos) según desde dónde se acceda, y haciendo click en el artículo se redirigirá al usuario al sitio externo referido del artículo.
-							\item \textbf{CARTAS:} Este apartado llevará directamente al \textbf{Listado de cartas}, página donde se mostrarán las cartas del TCG y se podrá acceder a cada una de ellas, dirigiendo al \textbf{Visualizador de carta} que mostrará más información en detalle sobre la carta seleccionada.
-							\item \textbf{MAZOS:} Este apartado agrupa las herramientas referidas a los mazos; el \textbf{Creador de mazos} que es la herramienta que permitirá al usuario crear su propio mazo eligiendo las cartas de la web, y el \textbf{Listado de Mazos}, que desde esta sección se podrá acceder a 2 contenidos distintos, \textbf{Listado de mazos comunidad} que son los mazos creados y publicados por los usuarios de la web y \textbf{Listado mazos META}, que son los mazos más recomendados en la actualidad por toda la comunidad de TCG por sus estadísticas.
-							\item \textbf{USUARIO:} El apartado usuario se divide en 2 secciones en función si el usuario ha iniciado sesión o no.\\
-							Si no ha iniciado sesión, se podrá crear un nuevo usuario o iniciar sesión con una cuenta registrada, lo que devolverá al usuario a la página en la que se encontrase con las nuevas funcionalidades posibles con sesión iniciada.\\
-							Con la sesión iniciada, se mostrarán las secciones de \textbf{Gestión de Mi Cuenta} y las secciones de \textbf{Gestión de mazos creados}, \textbf{Gestión de mazos publicados} y \textbf{Gestión de mazos guardados}, que redirigirá al \textbf{Listado de Mazos} con los diferentes contenidos respectivamente, y a su vez podrá redirigir al \textbf{Creador de mazos} para editar los mazos del usuario.
+							\item \textbf{SOCIAL:}  apartado donde el usuario final podrá encontrar noticias, artículos y guías sobre el juego, se mostrarán 3 subsecciones como menús desplegables los caules permitiran acceder a cada una de estas categorías. \\\textbf{Listado de Artículos} que mostrará contenidos de  categorías de artículos diferentes (Noticias, Guías o Torneos) según desde dónde se acceda, y haciendo click en el artículo se redirigirá al usuario al sitio externo referido del artículo.
+							\item \textbf{CARTAS:} esta opción da acceso al \textbf{listado de cartas} del TCG donde el usuario podrá clickar sobre cada una de ellas para poder acceder a una vista detallada de la seleccionada.\\y se podrá acceder a cada una de ellas, dirigiendo al \textbf{Visualizador de carta} que mostrará más información en detalle sobre la carta seleccionada.
+							\item \textbf{MAZOS:}  apartado a que grupa todas las herramientas referidas a los mazos, permitiendo al usuario realizar acciones sobre este conjunto de cartas. 
+							\item \textbf{USUARIO:} sección de la web donde el cliente podrá realizar una serie de accines en función de su estado.\\
+							Si no ha iniciado sesión, le aparezán las opciones correspondientes para que pueda autenticarse en el sistema, una vez hecho esto, se le devolverá al \textbf{nivel 0} con una modificación en el \textbf{nivel 1} donde  se mostrarán las secciones de \textbf{Gestión de Mi Cuenta} y las secciones de \textbf{Gestión de mazos creados}, \textbf{Gestión de mazos publicados} y \textbf{Gestión de mazos guardados}, que redirigirá al \textbf{Listado de Mazos} con los diferentes contenidos respectivamente, y a su vez podrá redirigir al \textbf{Creador de mazos} para editar los mazos del usuario.
 							\item \textbf{TCG:} El apartado TCG mostrará la posible ampliación a futuro de la página web que cambiará el contexto del juego de cartas referido en toda la página.
+							
 						\end{itemize}
 						
-					\item \textbf{Nivel 3: Visualizadores y flujos verticales}\\
-						El nivel 3 es el referido a los visualizadores mencionados que ofrecen el máximo detalle del contenido de la web, donde convergen los distintos listados de contenido del nivel 2 y flujos de navegación cruzada representados con líneas discontinuas. 
-						\begin{itemize}
-							\item \textbf{Visualizador de carta:} accesible desde el listado de cartas, muestra los detalles de una carta y ofrecerá redireccionamiento a una web externa oficial sobre la carta.
+					\subsection{Nivel 2: visualizadores y flujos verticales}
+					En él encontramos las acciones que requieren 2 click por parte del usuario, donde ya se llega a una funcionalidad en concreto de la página, vamos a describir cada uno de estos apartados:
+					\begin{figure}[H]
+						\centering
+						\begin{subfigure}{0.45\textwidth}
+							\centering
+							\includegraphics[width=\textwidth]{Recursos/visualizadorCarta.png}
+							\caption{El \textbf{visualizador de carta} muestra los detalles concreto de una carta seleccionada por el usuario.}
+							\label{VC}
+						\end{subfigure}
+						\hfill 
+						\begin{subfigure}{0.45\textwidth}
+							\centering
+							\includegraphics[width=\textwidth]{Recursos/Mazos.png}
+							\caption{Misma estructura para los \textit{comunity} y \textit{meta decks}, se muestra una lista de los mazos de cada sección con una pequeña descripción y la imagen del líder de cada uno de ellos}
+							\label{VM}
+						\end{subfigure}
+					\end{figure}
+					\begin{figure}[H]
+						\centering
+						\begin{subfigure}{0.45\textwidth}
+							\centering
+							\includegraphics[width=\textwidth]{Recursos/Visualizador de Mazo.png}
+							\caption{El usuario podrá consultar todas las cartas de un mazo, con las recomendaciones de cantidad de copias de cada una de ellas.}
+							\label{VMazo}
+						\end{subfigure}
+						\hfill 
+						\begin{subfigure}{0.45\textwidth}
+							\centering
+							\includegraphics[width=\textwidth]{Recursos/Mazos.png}
+							\caption{Misma estructura para los \textit{comunity} y \textit{meta decks}, se muestra una lista de los mazos de cada sección con una pequeña descripción y la imagen del líder de cada uno de ellos}
+							\label{VM}
+						\end{subfigure}
+					\end{figure}
+					
 							\item \textbf{Visualizador del mazo:} Ofrece la lista de cartas e información adicional del mazo, además de direccionar al \textbf{Visualizador de carta} al seleccionar una carta del mazo para verla en más detalle o desde el mazo, poder ir al \textbf{Creador de mazos} con el contenido del mazo que está siendo visto para poder crear una copia y editar sus contenidos.
-						\end{itemize}
-				\end{itemize}
+							el \textbf{Creador de mazos} que es la herramienta que permitirá al usuario crear su propio mazo eligiendo las cartas de la web, y el \textbf{Listado de Mazos}, que desde esta sección se podrá acceder a 2 contenidos distintos, \textbf{Listado de mazos comunidad} que son los mazos creados y publicados por los usuarios de la web y \textbf{Listado mazos META}, que son los mazos más recomendados en la actualidad por toda la comunidad de TCG por sus estadísticas.
+					
 		
 		\newpage
 	
