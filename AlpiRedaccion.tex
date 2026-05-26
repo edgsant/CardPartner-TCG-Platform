@@ -1068,9 +1068,9 @@
 	
 	
 	\subsection{Inserción de los datos en las tablas}
-
+	
 	Una vez tenemos la estructura y la conexión del Apache con la bbdd, hemos desarrollado varios scripts, para poblarla, los cuales se encuentran en \textit{FIles/sql} dentro del Apache NetBeans.\\
-
+	
 	
 	
 	\begin{figure}[H]
@@ -1093,7 +1093,7 @@
 	\end{figure}
 	
 	\subsubsection{API para el catálogo de cartas}
-		En el anterior informe comentamos que quedaba como tarea pendiente el emplear una API para tener todo el catálogo de cartas del TCG, para ello hemos creado una clase específica para ello.
+	En el anterior informe comentamos que quedaba como tarea pendiente el emplear una API para tener todo el catálogo de cartas del TCG, para ello hemos creado una clase específica para ello.
 	\subsubsection{Consideraciones Técnicas}
 	El diseño implementa integridad referencial mediante el uso de \texttt{ON DELETE CASCADE}, asegurando que la eliminación de una entidad principal (como un usuario) limpie automáticamente sus datos dependientes. Además, se han optimizado los tipos de datos utilizando \texttt{ENUM} para categorías fijas y \texttt{SET} para la gestión de colores múltiples en las cartas.
 	\begin{itemize}
@@ -2436,27 +2436,9 @@
 		\caption{Credenciales de usuarios para pruebas de sistema}
 		\label{tab:usuarios_prueba}
 	\end{table}
-	
-	\section{Declaración de Uso de Inteligencia Artificial}
-	Para esta segunda entrega, se ha usado la IA Gemini como herramienta para dudas y mejoras del archivo LaTeX, revisión de los contenidos y evaluación de los mismos y diseño iterativo para mejorar lo ya realizado.\\
-	Además, se ha usado \href{https://gemini.google.com/share/7a923a0bfae8}{Gemini} para la generación del logo del proyecto.\\
-	\textbf{Ejemplos de prompts realizados:}
-	\begin{itemize}
-		\item 'Cómo funciona un servlet en java'
-		\item 'Que son los DAOs, DTOs y Servlets en java y como es el flujo de trabajo entre ellos'
-		\item 'Como hacer una conexión de MariaDB en ApacheNetBeans'
-		\item 'Haciendo push, a mis compañeros no les aparece la bbdd ¿es normal?'
-		\item 'Cómo puedo automatizar la instalación y creación de una bbdd con MariaDB'
-		\item 'Me puedes revisar los \textit{scripts} de creación de la base de datos'
-		\item 'Traduceme este \textit{script} de creación de bbdd para Windows en un .bat'
-		\item 'Cómo puedo testear que la base de datos se ha rellenado de manera correcta con los \textit{scrpts} sql'
-		\item 'Cómo me puedo saltar la política CORS para hacer peticiones a la web de bandai nanco sobre cartas del tcg de One Piece'
-		\item 'Cómo puedo cambiar la numeración de una página para sean botones y mejorar la navegabilidad por una lista de cartas'
-		\item 'Ayudame a mejorar el botón de filtros de la vista cartas'
-		\item '¿Cómo puedo añadir un mensaje de aviso que indique que no se puede acceder a esta vista sin estar loggeado?'
-		\item 'No logro que se apliquen los filtros en las cartas, ¿puedes echarme una mano?'
-	\end{itemize}	
 	\section{Anexo}
-		\subsection{API de las cartas}
-			\lstinputlisting[language=Java, caption={Clase completa.}],{CardPartner/src/java/controladores/OptcgAPI.java}
+	Adjuntamos el código de las modificamos más importantes para que se tenga un acceso más rápdio 
+	\subsection{API de las cartas}
+
+	
 \end{document}
