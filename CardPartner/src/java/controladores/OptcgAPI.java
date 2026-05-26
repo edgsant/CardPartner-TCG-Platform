@@ -26,6 +26,11 @@ public class OptcgAPI {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("User-Agent", "Mozilla/5.0");
+            
+            // 15 segundos para que la API acepte la conexión
+            conn.setConnectTimeout(15000); 
+            // 60 segundos de tiempo máximo de "silencio" (espera entre paquetes de datos)
+            conn.setReadTimeout(40000);
 
             if (conn.getResponseCode() != 200) {
                 return "Error de conexión: HTTP " + conn.getResponseCode();
