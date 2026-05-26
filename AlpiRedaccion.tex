@@ -38,6 +38,23 @@
 	inputencoding=utf8,
 	extendedchars=true,
 	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {Ñ}{{\~N}}1
+	{¡}{{!`}}1 {¿}{{?`}}1
+}
+\lstset{
+	language=Java,
+	basicstyle=\ttfamily\footnotesize,
+	keywordstyle=\color{blue}\bfseries,
+	stringstyle=\color{red},
+	commentstyle=\color{green!60!black},
+	numbers=left, 
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	frame=single, 
+	breaklines=true,
+	tabsize=4,        % <--- REDUCE EL TAMAÑO DEL TABULADOR AL ESTÁNDAR DE JAVA
+	keepspaces=true,  % <--- MANTIENE LA INDENTACIÓN EXACTA DE TU ARCHIVO
+	showtabs=false    % <--- EVITA QUE SE DIBUJEN SÍMBOLOS RAROS EN LOS TABS
 }
 
 % Hipervínculos
@@ -379,7 +396,6 @@
 	
 	\subsection{Requisitos de información}
 	En este puntos nos centramos en  describir los datos que el sistema debe almacenar y gestionar para que las funcionalidades anteriores puedan llevarse a cabo. Hemos definido estos requisitos a partir del modelo de dominio (punto \ref{dominio}) y de la estructura de la base de datos implementada(punto \ref{bbddEsquema}).
-	
 	\noindent
 	\begin{xltabular}{\textwidth}{|l|l|X|}
 		\hline
@@ -513,81 +529,8 @@
 	\end{itemize}
 	
 	
-	\subsection{Mazos}
-	La entidad Mazo representa la estructura común de cualquier mazo publicado en la web.\\
-	\begin{figure}[H]
-		\centering
-		% Columna izquierda: Imagen (45% del ancho de página)
-		\begin{minipage}{0.45\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{Recursos/deck.png}
-			\caption{Entidad Mazo}
-			\label{EntidadMazo}
-		\end{minipage}
-		\hfill % Espacio elástico de separación entre las dos columnas
-		% Columna derecha: Lista de atributos (50% del ancho de página)
-		\begin{minipage}{0.50\textwidth}
-			\textbf{Atributos:}
-			\begin{itemize}
-				\item id\_mazo : identificador único del sistema.
-				\item nombre\_mazo : título asignado por el creador.
-				\item descripcion : texto explicativo del creador.
-				\item fecha\_creacion : fecha de creación del mazo.
-				\item precio\_total : precio total de todas las cartas que lo componen.
-			\end{itemize}
-		\end{minipage}
-	\end{figure}
-	Mazo presenta las siguientes relaciones:
-	\begin{itemize}
-		\item Usuario: guarda y valora.
-		\item Carta: lidera y contieneCarta.
-		\item Comentario: pertenece.
-	\end{itemize}
-	\subsubsection{Mazo de la comunidad}
 	
-	La clase MazoComunidad representa aquellos mazos que han sido creados por un Usuario (con rol JUGADOR).
-	Dicha entidad presenta los siguientes atributos con sus respectivas relaciones \\
-	
-	\noindent % Evita que la primera columna tenga sangría
-	\begin{minipage}[c]{0.48\textwidth}
-		\textbf{Atributos:}
-		\begin{itemize}
-			\item \texttt{es\_publico}: identifica si el usuario creador ha hecho el mazo público o es privado.
-		\end{itemize}
-	\end{minipage}
-	\hfill % Añade un espacio elástico entre las dos columnas
-	\begin{minipage}[c]{0.48\textwidth}
-		\textbf{Relaciones:}
-		\begin{itemize}
-			\item \textbf{Usuario:} crea.
-		\end{itemize}
-	\end{minipage}
-	
-	\subsubsection{Mazo Oficial}
-	
-	Esta clase representa aquellos mazos creados por un Usuario con rol ADMIN y contiene datos verificados del entorno competitivo.\\
-	\begin{minipage}[t]{0.48\textwidth}
-		\textbf{Atributos:}
-		\begin{itemize}
-			\item \textit{winrate }: porcentaje de victorias del mazo en competiciones oficiales
-		\end{itemize}
-	\end{minipage}
-	\hfill % Añade un espacio elástico entre las dos columnas
-	\begin{minipage}[t]{0.48\textwidth}
-		\textbf{Relaciones:}
-		\begin{itemize}
-			\item Usuario: publica
-		\end{itemize}
-	\end{minipage}
-	
-	
-	\subsubsection{Contiene Carta}
-	Esta clase  asociativa  único atributo es \textbf{cantidad } que representa el número de copias de la carta dentro del mazo, ya que es la única información que aporta.
-	
-	
-	
-	\subsection{Interacción del usuario}
-	En este apartado explicaremos más en profundidad las entidades que representan interacciones directas del usuario en el aspecto social.
+
 	\subsubsection{Comentario}
 	Entidad que representa la publicación que un Usuario deja en un Mazo.
 	\begin{figure}[H]
@@ -663,7 +606,139 @@
 	\end{figure}
 	La cual presenta una única relación con la entidad Usuario (siempre que este tenga el rol de ADMIN), la cual vincula el artículo con el adminitrador que lo ha publicado.
 	
+	\subsection{Artículo}
+		\begin{figure}[H]
+			\centering
+			% Columna izquierda: Imagen (45% del ancho de página)
+			\begin{minipage}{0.45\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{Recursos/Articulo.png}
+				\caption{Contenidos publicados por Usuarios con rol ADMIN.}
+				\label{EA}
+			\end{minipage}
+			\hfill % Espacio elástico de separación entre las dos columnas
+			% Columna derecha: Lista de atributos (50% del ancho de página)
+			\begin{minipage}{0.50\textwidth}
+				\textbf{Atributos:}
+				\begin{itemize}
+					\item id\_articulo : identificador único.
+					\item titulo : titular del artículo.
+					\item descripcion : resumen del contenido.
+					\item categoria : tipo de artículo (Noticia, Guia, Torneo).
+					\item fecha\_creacion : fecha de creación.
+					\item fecha\_edicion : fecha de última edición.
+					\item enlace\_externo : URL de referencia.
+					\item portada : ruta de imagen miniatura
+				\end{itemize}
+			\end{minipage}
+		\end{figure}
+	\subsection{Mazos}
+	La entidad Mazo representa la estructura común de cualquier mazo publicado en la web.\\
+	\begin{figure}[H]
+		\centering
+		% Columna izquierda: Imagen (45% del ancho de página)
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{Recursos/deck.png}
+			\caption{Entidad Mazo}
+			\label{EntidadMazo}
+		\end{minipage}
+		\hfill % Espacio elástico de separación entre las dos columnas
+		% Columna derecha: Lista de atributos (50% del ancho de página)
+		\begin{minipage}{0.50\textwidth}
+			\textbf{Atributos:}
+			\begin{itemize}
+				\item id\_mazo : identificador único del sistema.
+				\item nombre\_mazo : título asignado por el creador.
+				\item descripcion : texto explicativo del creador.
+				\item fecha\_creacion : fecha de creación del mazo.
+				\item precio\_total : precio total de todas las cartas que lo componen.
+			\end{itemize}
+		\end{minipage}
+	\end{figure}
+	Mazo presenta las siguientes relaciones:
+	\begin{itemize}
+		\item Usuario: guarda y valora.
+		\item Carta: lidera y contieneCarta.
+		\item Comentario: pertenece.
+	\end{itemize}
+		\subsubsection{Mazo de la comunidad}
 	
+	La clase MazoComunidad representa aquellos mazos que han sido creados por un Usuario (con rol JUGADOR).
+	Dicha entidad presenta los siguientes atributos con sus respectivas relaciones \\
+	
+	\noindent % Evita que la primera columna tenga sangría
+	\begin{minipage}[c]{0.48\textwidth}
+		\textbf{Atributos:}
+		\begin{itemize}
+			\item \texttt{es\_publico}: identifica si el usuario creador ha hecho el mazo público o es privado.
+		\end{itemize}
+	\end{minipage}
+	\hfill % Añade un espacio elástico entre las dos columnas
+	\begin{minipage}[c]{0.48\textwidth}
+		\textbf{Relaciones:}
+		\begin{itemize}
+			\item \textbf{Usuario:} crea.
+		\end{itemize}
+	\end{minipage}
+	
+	\subsubsection{Mazo Oficial}
+	
+	Esta clase representa aquellos mazos creados por un Usuario con rol ADMIN y contiene datos verificados del entorno competitivo.\\
+	\begin{minipage}[t]{0.48\textwidth}
+		\textbf{Atributos:}
+		\begin{itemize}
+			\item \textit{winrate }: porcentaje de victorias del mazo en competiciones oficiales
+		\end{itemize}
+	\end{minipage}
+	\hfill % Añade un espacio elástico entre las dos columnas
+	\begin{minipage}[t]{0.48\textwidth}
+		\textbf{Relaciones:}
+		\begin{itemize}
+			\item Usuario: publica
+		\end{itemize}
+	\end{minipage}
+	
+	
+	\subsubsection{Contiene Carta}
+	Esta clase  asociativa  único atributo es \textbf{cantidad } que representa el número de copias de la carta dentro del mazo, ya que es la única información que aporta.
+	
+	
+	
+	\subsection{Interacción del usuario}
+	En este apartado explicaremos más en profundidad las entidades que representan interacciones directas del usuario en el aspecto social.
+	
+	
+	\subsection{Whislist}
+	La entidad representa la estructura común de cualquier mazo publicado en la web.\\
+	\begin{figure}[H]
+		\centering
+		% Columna izquierda: Imagen (45% del ancho de página)
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{Recursos/deck.png}
+			\caption{Entidad Mazo}
+			\label{EntidadMazo}
+		\end{minipage}
+		\hfill % Espacio elástico de separación entre las dos columnas
+		% Columna derecha: Lista de atributos (50% del ancho de página)
+		\begin{minipage}{0.50\textwidth}
+			\textbf{Atributos:}
+			\begin{itemize}
+				\item id\_mazo : identificador único del sistema.
+				\item nombre\_mazo : título asignado por el creador.
+				\item descripcion : texto explicativo del creador.
+				\item fecha\_creacion : fecha de creación del mazo.
+				\item precio\_total : precio total de todas las cartas que lo componen.
+			\end{itemize}
+		\end{minipage}
+	\end{figure}
+	Mazo presenta las siguientes relaciones:
+	\begin{itemize}
+		\item Usuario: guarda y valora.
+		\item Carta: lidera y contieneCarta.
+		\item Comentario: pertenece.
+	\end{itemize}
 	\section{Desarrollo de CardPartner}	
 	Llegados a este punto, ya tenemos unos sólidos planos sobre cómo ha de ser nuestra aplicación web, por lo que a partir de este punto documentaremos las diferentes etapas en el desarrollo de \textit{Card Partner}  desde el bocetaje incial, pasando\textit{frontent} estático, la posterior incorporación del \textit{backend} y por último la funcionalidad definitiva para hacer pasar a \textit{Card Partner} de una idea a una web funcional.
 	\subsection{Primera versión del bocetaje}
@@ -1023,84 +1098,20 @@
 		\caption{Resumen de la Arquitectura de Datos} 
 	\end{table}
 	
-	\subsubsection{Inserción de los datos en la BBDD en Apache NetBeans}
-	
-	\begin{figure}[H]
-		\centering
-		% Primera imagen
-		\begin{minipage}{0.45\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{Recursos/BBDD_CONEXION.png}
-			\caption{Hemos configurado la conexión en el Apache NetBeans con una base de datos MariaDB en el localhost con su puerto por defecto.}
-			\label{figmg1}
-		\end{minipage}
-		\hfill % Espacio elástico para separar las imágenes
-		% Segunda imagen
-		\begin{minipage}{0.45\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{Recursos/XMLBBDD.png}
-			\caption{Modificamos el \textit{context.xml} del editor para poder establecer la conexión permanente con la bbdd en nuestro proyecto.}
-			\label{figmg2}
-		\end{minipage}
-	\end{figure}
-	
-	
-	El problema que hemos tenido es que al establecer la conexión y hacer un \textit{push} al repositorio, Edgar, no tenía la conexión establecedia en el Apache, tras una tutoría con el profesor del laboratio, nos ha explicado que como no contamos con un servidor donde alojar la base de datos, realmente no había ninguna manera de hacer esta conexión persistente, por lo que tomamos la decisión de hacer unos scripts, que hagan la creación de la base de datos en local más simple, facilitando así su posterior conexión con el editor de código.\\ 
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=1\textwidth]{Recursos/creacionBBDD.png}
-		\caption{Además, para que todos tengamos las mismas tablas, hemos incluido el script \textit{CreacionDBv2.sql} para que genere automáticamente las tablas (por motivos de brevedad no hemos incluido todo el script ya que se puede consultar en \textit{Files/sql} dentro del apache)}.
-		\label{fig:creacion}
-	\end{figure}
-	
-	
-	\subsubsection{Inserción de los datos en las tablas}
-	Para esta parte, debido al poco tiempo que hemos tenido para desarrollar la práctica por el calendario tan ajustado de entregas del curso, hemos decidido tener 2 scripts .sql para poblar la base de datos, los cuales se encuentran en \textit{FIles/sql} dentro del Apache NetBeans.\\
-	
-	Adicionalmente, para que fuese más cómodo y por un tema de estructura y revisión del código, hay una carpeta en nuestro repositorio de git (por ende en el zip en el que hemos entregado la práctica) llamado \textit{DataBase} donde se encuentra el E/R, los scripts de creación de las tablas y  los encargados de poblararla, así como los JSONs de los que hemos partidos para las cartas.\\
-	
-	Queda pendiente para la siguiente entrega, modificar los DAOS y DTOs para que al emplear la librería java \hyperlink{https://mvnrepository.com/artifact/com.google.code.gson/gson/2.10.1}{GSON}, se encargue atuomáticamente de llenar la base de datos de cartas en función de un JSON, pero por motivos de coplejidad no hemos podido realizar dicha tarea para la actual entrega.\\
-	
-	\begin{figure}[htbp]
-		\centering
-		% Primera imagen
-		\begin{minipage}{0.45\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{Recursos/InsertUsuario.png}
-			\caption{Hacemos un insert, con la peculiaridad de que usamos el modificador de sentencia \textit{IGNORE} para que en caso de añadir más cartas, si encuentra la \textit{primarykey} en la bbdd pasa de él.}
-			\label{fig:imgInsert}
-		\end{minipage}
-		\hfill % Espacio elástico para separar las imágenes
-		% Segunda imagen
-		\begin{minipage}{0.45\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{Recursos/InsertCartas.png}
-			\caption{Script de población de la bbdd de cartas donde hemos insertado todas las cartas desde OP9 a OP12 además de un \textit{starter deck} para que los compañeros de front tengan cartas de sobra. Al igual que en el insert anterior empleamos el modificador de sentencia \textit{IGNORE}.}
-			\label{fig:insertarCartas}
-		\end{minipage}
-	\end{figure}
-	
-	\subsubsection{Consideraciones Técnicas}
-	El diseño implementa integridad referencial mediante el uso de \texttt{ON DELETE CASCADE}, asegurando que la eliminación de una entidad principal (como un usuario) limpie automáticamente sus datos dependientes. Además, se han optimizado los tipos de datos utilizando \texttt{ENUM} para categorías fijas y \texttt{SET} para la gestión de colores múltiples en las cartas.
-	\begin{itemize}
-		\item \textbf{Gestión de Tiempos (\textit{Timestamps} vs \textit{Date}):} Se ha optado por el uso de \texttt{TIMESTAMP} en lugar de \texttt{DATE} para columnas como \texttt{fecha\_registro} y \texttt{fecha\_edicion}. Esto permite una precisión de segundos y, sobre todo, aprovecha la funcionalidad \texttt{DEFAULT CURRENT\_TIMESTAMP} y \texttt{ON UPDATE CURRENT\_TIMESTAMP}, automatizando el seguimiento de cambios sin necesidad de lógica adicional en el backend.
-		
-		\item \textbf{Uso de Tipos Enumerados (\textit{ENUM} y \textit{SET}):} 
-		\begin{itemize}
-			\item Se emplea \texttt{ENUM} para roles y categorías de artículos para restringir los valores a un conjunto cerrado, mejorando el rendimiento y evitando datos inconsistentes.
-			\item Se utiliza \texttt{SET} para el atributo \texttt{color} en las cartas, ya que permite que una sola carta pertenezca a múltiples categorías simultáneamente (cartas multicolores) de forma eficiente a nivel de bits.
-		\end{itemize}
-		
-		\item \textbf{Política de Nulidad (\textit{Nullable}):} La mayoría de los campos críticos se han definido como \texttt{NOT NULL} para garantizar la calidad del dato. Los campos \texttt{NULL} (como \texttt{enlace\_externo} o \texttt{portada}) se reservan exclusivamente para información opcional o metadatos que no interrumpen el flujo principal de la aplicación.
-		
-		\item \textbf{Almacenamiento de Binarios:} Para los avatares de usuario, se ha seleccionado \texttt{MEDIUMBLOB}. Aunque el estándar suele ser guardar rutas de archivos, incluir el binario (hasta 16MB) facilita la portabilidad inicial del proyecto y simplifica la gestión de copias de seguridad de la base de datos completa.
-		
-		\item \textbf{Claves Primarias y Foráneas:} Se utilizan \texttt{INT AUTO\_INCREMENT} para entidades dinámicas (usuarios, mazos) para agilizar las búsquedas, mientras que las cartas utilizan un \texttt{VARCHAR(50)} como ID, permitiendo usar códigos alfanuméricos oficiales (ej: \"OP01-001\") que facilitan la integración con APIs externas.
-	\end{itemize}
+s
+	\subsubsection{APIs empleadas en nuestro sistema}
+		En relación a las entregas anteriores, teníamos un tema pendiente que era el uso de las APIs(\textit{Application Programming Interface}), la cual nos permite comunicarnos con otra aplicación de una manera sencilla, permitiéndonos introducir funcionalidades a \textit{Card Partner} sin tener que desarrollarlas nosotros mismos.
+	\subsubsection{API par ala obtención de las cartas}
+		Este era uno de los puntos pendientes de la anterior entrega, ya que como se ha podido ver en la figura \ref{fig:insertarCartas} teníamos una muestra limitada de cartas.\\
+		Teniendo más tiempo, hemos implementado el código que se ve en el punto \ref{JAVAAPI} de los anexos el cuál se encarga de hacer el papel de motor de sincronización de la plataforma, encargándose de consumir el catálogo completo de cartas desde una \textit{API REST} externa (empleamos la librería Google \textbf{GSON})\\
+		El funcionamiento es simple,  sistema establece una conexión HTTP, descarga el archivo JSON y lo procesa de manera iterativa, estableciendo unos \textit{timeouts} y unos métodos de \textit{parseo} evitando fallos críticos del sistema al procesar nodos JSON nulos, variables faltantes o formatos numéricos inconsistentes, asegurando que solo se persista información limpia y válida. Traduciendo la información al castellano y moidifcando aquellas cartas que tienen más de un color.\\
+		Una de las partes más tediosas de la práctica son los alter alternativos, los cuales comparten identificador con la carta pero tiene una ilustración diferente. Nuestro código al detectar un duplicado, altera dinámicamente el identificador (añadiendo sufijos indexados) y el título de la carta, evitando así colisiones de claves primarias.
+	\subsubsection{API de traducción}
+		La clase \textit{GeminiAPI} (la cuál se puede consultar en el punto \ref{JAVAGEMINI}) actúa como un servicio de traducción inteligente, integrándose mediante peticiones HTTP con la API de Groq y el modelo Llama-3, haciendo un especial incapie en la robustez de la respuestas, para que no aparezcan caracteres raro, como puede ser la traducción de una ñ o una tilde si el texto está en inglés, empleando JSONs para la comunicación con el servicio e implementando un mecanismo para que si la \textit{AI} no responde, se muestre el texto original en vez de un mensaje de error.\\
+		Hemos empleado este módulo adapta dinámicamente sus prompts en función del contexto del texto original, permitiéndonos entrenar este modelo para que utilice jerga específica de TCG (como \textit{Ramp} o \textit{Rested}), o que mantenga un tono natural en los comentarios de los usuarios. 
 	
 	\subsection{Descripción de la funcionalidad implementada y justificación de la elección}
-	En Card Partner, hemos implementado un conjunto de funcionalidades que reflejan tanto los requisitos identificados en las entregas anteriores como las necesidades reales de los jugadores de TCG. La elección de cada módulo se ha realizado teniendo en cuenta la experiencia de usuario, la coherencia con el modelo de dominio y la facilidad de mantenimiento del sistema.
+	
 	
 	\subsubsection{Gestión de usuarios y perfil}
 	Hemos desarrollado un sistema de usuarios que distingue claramente entre visitantes, jugadores registrados y administradores. Los visitantes pueden consultar contenido público, como cartas, noticias, guías, torneos y mazos públicos, sin necesidad de registrarse. Los jugadores registrados disponen de un perfil completo que les permite gestionar sus datos, cambiar la contraseña, crear y guardar mazos, comentar y valorar los mazos de la comunidad. Los administradores tienen privilegios para publicar mazos oficiales y artículos, así como mantener el contenido de la web actualizado.\\
@@ -1196,9 +1207,12 @@
 		\caption{Credenciales de usuarios para pruebas de sistema}
 		\label{tausuarios_prueba}
 	\end{table}
+	\newpage
 	\section{Anexo}
 	Adjuntamos el código de las modificamos más importantes para que se tenga un acceso más rápdio 
-	\subsection{API de las cartas}
+	\subsection{API de las cartas}\label{JAVAAPI}
+		\lstinputlisting[language=Java, caption={Clase completa OptcgAPI.}]{CardPartner/src/java/controladores/OptcgAPI.java}
+	\subsection{API de traducción}\label{JAVAGEMINI}
 	\lstinputlisting[language=Java, caption={Clase completa OptcgAPI.}]{CardPartner/src/java/controladores/OptcgAPI.java}
 	
 \end{document}
