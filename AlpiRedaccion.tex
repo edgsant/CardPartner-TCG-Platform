@@ -25,6 +25,18 @@
 
 % Listings para código
 \usepackage{listings}
+\lstset{
+	language=Java,
+	basicstyle=\ttfamily\footnotesize,
+	keywordstyle=\color{blue}\bfseries,
+	stringstyle=\color{red},
+	commentstyle=\color{green!60!black},
+	numbers=left, % Pone numeros de linea
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	frame=single, % Le pone un recuadro
+	breaklines=true % Evita que el codigo se salga del margen
+}
 \lstdefinestyle{terminal}{
 	backgroundcolor=\color{gray!10},
 	basicstyle=\ttfamily\small,
@@ -2443,14 +2455,8 @@
 		\item 'Ayudame a mejorar el botón de filtros de la vista cartas'
 		\item '¿Cómo puedo añadir un mensaje de aviso que indique que no se puede acceder a esta vista sin estar loggeado?'
 		\item 'No logro que se apliquen los filtros en las cartas, ¿puedes echarme una mano?'
-	\end{itemize}
-	
-	%\begin{itemize}
-	%   \item Herramientas utilizadas: hay que especificar qué herramientas de IA se han utilizado.
-	%  \item Propósito del uso: explicar cómo se ha utilizado cada herramienta.
-	% \item Alcance del uso: indicar en qué partes específicas del trabajo se ha recibido asistencia de una herramienta de IA.
-	%\item Prompts utilizados: incluir los prompts, preguntas o instrucciones exactas que se han
-	%introducido en la herramienta de IA.
-	%\end{itemize}
-	
+	\end{itemize}	
+	\section{Anexo}
+		\subsection{API de las cartas}
+			\lstinputlisting[language=Java, caption={Clase completa.}],{CardPartner/src/java/controladores/OptcgAPI.java}
 \end{document}
