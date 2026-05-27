@@ -180,7 +180,7 @@
 	%     El proyecto ha evolucionado de manera progresiva. En la primera entrega trabajamos principalmente sobre la idea inicial, el análisis del problema y los primeros bocetos. En la segunda entrega formalizamos el sistema mediante requisitos, modelo de dominio y mapa de navegación. En la tercera entrega avanzamos hacia una implementación funcional, incorporando JSP, CSS, Servlets, DAOs, clases de dominio y scripts SQL.\\
 	
 	%     Esta evolución nos ha permitido transformar \textit{Card Partner} de una propuesta conceptual a una aplicación web con una estructura técnica más completa. El resultado final mantiene la idea inicial de centralizar herramientas útiles para jugadores de TCG, pero incorpora una arquitectura más definida, una base de datos relacional, una separación clara entre vistas y lógica de servidor, y una organización más precisa de los distintos módulos de la plataforma.
-	
+	\newpage
 	\section{Contexto y problema abordado}        
 	El mundo de los TCG, o \textit{Trading Card Games}, ha crecido notablemente en los últimos años y cada vez reúne a más jugadores con perfiles muy distintos. Algunos usuarios se acercan por primera vez al juego y necesitan aprender sus reglas básicas, mientras que otros ya conocen las mecánicas y buscan herramientas para consultar mazos competitivos, estudiar cartas, revisar precios o compartir sus propios mazos con la comunidad.\\
 	
@@ -189,7 +189,7 @@
 	Por este motivo, hemos decidido plantear \textit{Card Partner} como una aplicación web centralizada \textit{All In One} para jugadores y aficionados a los TCG, renuniendo en un mismo sitio funcionalidades como  la consulta de cartas, visualización de sus precios, creación y gestión de mazos, consulta de mazos META, noticias, guías, torneos y funcionalidades sociales como comentarios, valoraciones y mazos guardados.\\
 	
 	Emplearemos como ejemplo el TCG de \textit{One Piece} por dos motivos, el primero es para acotar el problema, existen cientos de juegos de cartas con mayor o menos popularidad, si no tomamos uno como referencia para nuestra web tendríamos un problema casi inabarcable para 4 personas. El segundo es que es el TCG con el que más familiarizados estamos ya que muchos de los miembros de este grupo somos jugadores más o menos experimentados en este.
-	
+	\newpage
 	\subsection{Análisis de soluciones existentes}   \label{ASE}
 	Como ya hemos comentado en la sección anterior, ya hay aplicaciones web con un enfoque similar a lo que estamos planteando para esta entrega, por lo que hemos hecho un pequeño análisis de las mismas para ver sus fortalezas y debilidades.
 	\begin{table}[H]
@@ -211,7 +211,7 @@
 		\end{tabular}
 		\caption{Comparación de plataformas existentes relacionadas con \textit{One Piece} TCG}
 	\end{table}     
-	
+	\newpage
 	\section{\textit{CardPartner} como idea general}        
 	Esta revisión nos ha permitido tener muy claro el enfoque que le queremos dar a nuestra aplicación web
 	con ese enfoque \textit{All in One} que hemos comentado en el primer punto de este informe.\\
@@ -243,6 +243,7 @@
 	%• Se describirán las necesidades y expectativas reconocidas en el grupo de usuarios objetivo.
 	% USUARIOS (6,5/10)\\
 	% Se definen dos tipos de usuario a nivel de 'usuarios finales', con los perfiles claramente definidos. No se cita ningún tipo de usuario con capacidad de administración de la aplicación a nivel de 'backend'/mantenimiento. ¿Existe? Se debe concretar, ya que se está diseñando una aplicación que, posiblemente, requerirá mantenimiento y/o actualizaciones, gestión de los contenidos,... ¿Quién lo lleva a cabo?\\
+\newpage
 	\section{Usuarios objetivo}       
 	Teniendo claro la idea y funcionaliddes que deberá tener nuestra aplicación web, vamos a analizar los usuarios objetivos para la misma.
 	A continuación listaremos y añadiremos una pequeña descripción de los usuarios prototípicos de nuestra aplicación, aunque profundizaremos en cada uno de ellos en sus respectivos apartados de este informe consideramos que es importante tener una visión global de los mismos así como su clasificación.
@@ -280,22 +281,29 @@
 	
 	\subsection{Usuarios según su nivel de acceso}
 	Además del tipo de usuario, tenemos que tener en cuenta las funcionalidades que va a poder realizar sobre nuestro sistema en función del nivel de acceso con el que cuente, en concreto, tenemos 3 tipos, los visitantes, o aquellos usuarios que no tienen cuenta, los que sí la tienen y por último los administradores de \textit{Card Partner}.
+	\begin{itemize}
+		\item \textbf{Usuario \underline{no} registrado}: en esta clasificación encontramos a todos aquellos que no tienen una cuenta en nuestra apliación web. Por este motivo, tiene funciones limitados las cuales son: consultar el catálogo de cartas, las noticias, guías, información sobre torneos, los mazos meta y los mazos publicados por la comunidad. Su objetivo principal es explorar el contenido disponible antes de decidir si quiere registrarse.\\
+		Pese a no tener acceso a todas las funcionalidades de nuestra web, su experiencia ha de ser satisfactoria, ya que su motivo para visitarnos es obtener información ya sea de manera puntual o continuada.
+		\item \textbf{Usuario registrado}: aquel que ha creado una cuenta e iniciado sesión en la aplicación. Este perfil dispone de funcionalidades personalizadas, como la gestión del perfil, la creación de mazos, el guardado de mazos, la publicación de listas, la posibilidad de realizar comentarios así como la valoración de mazos creados por otros usuarios.\\
+		Este tipo de usuario constituye el núcleo de la comunidad de Card Partner, puesto que toda la aplicación gira entorno a estos, debido al especial incapie que hemos hecho en el apartado de mazos y al entorno social.
+		\item \textbf{Administrador o usuario de mantenimiento}: representa al usuario con permisos de gestión y mantenimiento dentro de la aplicación, acciones como gestionar el contenido de la web, publicar noticias, actualizar el catálogo de cartas o de mazos metas no deben depende en ningún momento de los dos tipos de usuarios mencionados anterioremente.\\
+		Entre sus funciones se encuentran la gestión de contenidos editoriales, como noticias, guías y torneos; la revisión de información relevante para la plataforma; la actualización de mazos oficiales o meta; y el mantenimiento general de los datos del sistema. De esta forma, el administrador actúa como responsable de que la información publicada sea coherente, esté actualizada y mantenga la calidad esperada.
+	\end{itemize}
 	
-	\subsubsection{Usuario \underline{no} registrado}
-	En esta clasificación encontramos a todos aquellos que no tienen una cuenta en nuestra apliación web. Por este motivo, tiene funciones limitados las cuales son: consultar el catálogo de cartas, las noticias, guías, información sobre torneos, los mazos meta y los mazos publicados por la comunidad. Su objetivo principal es explorar el contenido disponible antes de decidir si quiere registrarse.\\
-	Pese a no tener acceso a todas las funcionalidades de nuestra web, su experiencia ha de ser satisfactoria, ya que su motivo para visitarnos es obtener información ya sea de manera puntual o continuada.
+%	\subsubsection{Usuario \underline{no} registrado}
+%	En esta clasificación encontramos a todos aquellos que no tienen una cuenta en nuestra apliación web. Por este motivo, tiene funciones limitados las cuales son: consultar el catálogo de cartas, las noticias, guías, información sobre torneos, los mazos meta y los mazos publicados por la comunidad. Su objetivo principal es explorar el contenido disponible antes de decidir si quiere registrarse.\\
+%	Pese a no tener acceso a todas las funcionalidades de nuestra web, su experiencia ha de ser satisfactoria, ya que su motivo para visitarnos es obtener información ya sea de manera puntual o continuada.
+%	
+%	\subsubsection{Usuario registrado}
+%	Aquel que ha creado una cuenta e iniciado sesión en la aplicación. Este perfil dispone de funcionalidades personalizadas, como la gestión del perfil, la creación de mazos, el guardado de mazos, la publicación de listas, la posibilidad de realizar comentarios así como la valoración de mazos creados por otros usuarios.\\
+%	
+%	Este tipo de usuario constituye el núcleo de la comunidad de Card Partner, puesto que toda la aplicación gira entorno a estos, debido al especial incapie que hemos hecho en el apartado de mazos y al entorno social.
+%	
+%	\subsubsection{Administrador o usuario de mantenimiento}
+%	Representa al usuario con permisos de gestión y mantenimiento dentro de la aplicación, acciones como gestionar el contenido de la web, publicar noticias, actualizar el catálogo de cartas o de mazos metas no deben depende en ningún momento de los dos tipos de usuarios mencionados anterioremente.\\
+%	Entre sus funciones se encuentran la gestión de contenidos editoriales, como noticias, guías y torneos; la revisión de información relevante para la plataforma; la actualización de mazos oficiales o meta; y el mantenimiento general de los datos del sistema. De esta forma, el administrador actúa como responsable de que la información publicada sea coherente, esté actualizada y mantenga la calidad esperada.\\
 	
-	\subsubsection{Usuario registrado}
-	Aquel que ha creado una cuenta e iniciado sesión en la aplicación. Este perfil dispone de funcionalidades personalizadas, como la gestión del perfil, la creación de mazos, el guardado de mazos, la publicación de listas, la posibilidad de realizar comentarios así como la valoración de mazos creados por otros usuarios.\\
-	
-	Este tipo de usuario constituye el núcleo de la comunidad de Card Partner, puesto que toda la aplicación gira entorno a estos, debido al especial incapie que hemos hecho en el apartado de mazos y al entorno social.
-	
-	\subsubsection{Administrador o usuario de mantenimiento}
-	Representa al usuario con permisos de gestión y mantenimiento dentro de la aplicación, acciones como gestionar el contenido de la web, publicar noticias, actualizar el catálogo de cartas o de mazos metas no deben depende en ningún momento de los dos tipos de usuarios mencionados anterioremente.\\
-	
-	Entre sus funciones se encuentran la gestión de contenidos editoriales, como noticias, guías y torneos; la revisión de información relevante para la plataforma; la actualización de mazos oficiales o meta; y el mantenimiento general de los datos del sistema. De esta forma, el administrador actúa como responsable de que la información publicada sea coherente, esté actualizada y mantenga la calidad esperada.\\
-	
-	
+	\newpage
 	\section{Especificación de requisitos}
 	En este apartado entraremos más en detalle de las características que vamos a desarrollar en nuestra aplicación web para poder satisfacer las demandas de los diferentes usuarios.\\
 	% La especificación de requisitos está organizada y numerada en bloques temáticos, y contiene RNF específicos y mensurables.\\
@@ -492,7 +500,7 @@
 		\item \textbf{Publica(n:m)} con Articulo : solo usuarios con rol ADMIN pueden publicar artículos (Noticias, Guías o Torneos).
 	\end{itemize}
 	
-	
+	\newpage
 	\subsection{Cartas}
 	La clase Carta representa la entidad central del TCG y su información estática.\\
 	\begin{figure}[H]
@@ -527,84 +535,6 @@
 		\item \textbf{Lidera(1:1)} con Mazo : identifica a la única carta líder obligatoria de un mazo.
 		\item \textbf{ContieneCarta(n:m)} con Mazo : identifica las cartas que componen un mazo, con cantidad.
 	\end{itemize}
-	
-	
-	
-
-	\subsubsection{Comentario}
-	Entidad que representa la publicación que un Usuario deja en un Mazo.
-	\begin{figure}[H]
-		\centering
-		% Columna izquierda: Imagen (45% del ancho de página)
-		\begin{minipage}{0.45\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{Recursos/Comentario.png}
-			\caption{Entidad comentario.}
-			\label{Entidadcomentario}
-		\end{minipage}
-		\hfill % Espacio elástico de separación entre las dos columnas
-		% Columna derecha: Lista de atributos (50% del ancho de página)
-		\begin{minipage}{0.50\textwidth}
-			\textbf{Atributos:}
-			\begin{itemize}
-				\item id\_comentario : identificador único.
-				\item contenido : texto redactado por el usuario.
-				\item fecha\_creacion : fecha de creación del comentario.
-				\item fecha\_edicion : fecha de última edición.
-			\end{itemize}
-		\end{minipage}
-	\end{figure}
-	
-	Esta entidad sólo tiene una relación con la entidad mazo, la cual es de pertenencia.
-	\subsubsection{Valoración}
-	Clase asociativa entre Usuario y Mazo.\\
-	\begin{figure}[H]
-		\centering
-		% Columna izquierda: Imagen (45% del ancho de página)
-		\begin{minipage}{0.45\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{Recursos/Valoración.png}
-			\caption{Entidad valoración.}
-			\label{fn}
-		\end{minipage}
-		\hfill % Espacio elástico de separación entre las dos columnas
-		% Columna derecha: Lista de atributos (50% del ancho de página)
-		\begin{minipage}{0.50\textwidth}
-			\textbf{Atributos:}
-			\begin{itemize}
-				\item fecha\_valoracion : fecha de la valoración.
-				\item puntuacion : valor numérico asignado.
-			\end{itemize}
-		\end{minipage}
-	\end{figure}
-	
-	\subsection{Artículo}
-	\begin{figure}[H]
-		\centering
-		% Columna izquierda: Imagen (45% del ancho de página)
-		\begin{minipage}{0.45\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{Recursos/Articulo.png}
-			\caption{Contenidos publicados por Usuarios con rol ADMIN.}
-			\label{EA}
-		\end{minipage}
-		\hfill % Espacio elástico de separación entre las dos columnas
-		% Columna derecha: Lista de atributos (50% del ancho de página)
-		\begin{minipage}{0.50\textwidth}
-			\textbf{Atributos:}
-			\begin{itemize}
-				\item id\_articulo : identificador único.
-				\item titulo : titular del artículo.
-				\item descripcion : resumen del contenido.
-				\item categoria : tipo de artículo (Noticia, Guia, Torneo).
-				\item fecha\_creacion : fecha de creación.
-				\item fecha\_edicion : fecha de última edición.
-				\item enlace\_externo : URL de referencia.
-				\item portada : ruta de imagen miniatura
-			\end{itemize}
-		\end{minipage}
-	\end{figure}
-	La cual presenta una única relación con la entidad Usuario (siempre que este tenga el rol de ADMIN), la cual vincula el artículo con el adminitrador que lo ha publicado.
 	
 	\subsection{Artículo}
 		\begin{figure}[H]
@@ -707,38 +637,78 @@
 	
 	\subsection{Interacción del usuario}
 	En este apartado explicaremos más en profundidad las entidades que representan interacciones directas del usuario en el aspecto social.
-	
-	
-	\subsection{Whislist}
-	La entidad representa la estructura común de cualquier mazo publicado en la web.\\
+	\subsubsection{Comentario}
+	Entidad que representa la publicación que un Usuario deja en un Mazo.
 	\begin{figure}[H]
 		\centering
 		% Columna izquierda: Imagen (45% del ancho de página)
 		\begin{minipage}{0.45\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{Recursos/deck.png}
-			\caption{Entidad Mazo}
-			\label{EntidadMazo}
+			\includegraphics[width=\textwidth]{Recursos/Comentario.png}
+			\caption{Entidad comentario.}
+			\label{Entidadcomentario}
 		\end{minipage}
 		\hfill % Espacio elástico de separación entre las dos columnas
 		% Columna derecha: Lista de atributos (50% del ancho de página)
 		\begin{minipage}{0.50\textwidth}
 			\textbf{Atributos:}
 			\begin{itemize}
-				\item id\_mazo : identificador único del sistema.
-				\item nombre\_mazo : título asignado por el creador.
-				\item descripcion : texto explicativo del creador.
-				\item fecha\_creacion : fecha de creación del mazo.
-				\item precio\_total : precio total de todas las cartas que lo componen.
+				\item id\_comentario : identificador único.
+				\item contenido : texto redactado por el usuario.
+				\item fecha\_creacion : fecha de creación del comentario.
+				\item fecha\_edicion : fecha de última edición.
 			\end{itemize}
 		\end{minipage}
 	\end{figure}
-	Mazo presenta las siguientes relaciones:
+	Esta entidad sólo tiene una relación con la entidad mazo, la cual es de pertenencia.
+	\newpage
+	\subsubsection{Valoración}
+	Clase asociativa entre Usuario y Mazo.\\
+	\begin{figure}[H]
+		\centering
+		% Columna izquierda: Imagen (45% del ancho de página)
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{Recursos/Valoración.png}
+			\caption{Entidad valoración.}
+			\label{fn}
+		\end{minipage}
+		\hfill % Espacio elástico de separación entre las dos columnas
+		% Columna derecha: Lista de atributos (50% del ancho de página)
+		\begin{minipage}{0.50\textwidth}
+			\textbf{Atributos:}
+			\begin{itemize}
+				\item fecha\_valoracion : fecha de la valoración.
+				\item puntuacion : valor numérico asignado.
+			\end{itemize}
+		\end{minipage}
+	\end{figure}
+	\subsubsection{Whislist}
+	Esta entidad actúa como una clase asociativa que representa la interacción de guardado entre un Jugador y una carta.
+	\begin{figure}[H]
+		\centering
+		% Columna izquierda: Imagen (45% del ancho de página)
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{Recursos/Wishlist.png}
+			\caption{Entidad \textit{whishlist}}
+			\label{EW}
+		\end{minipage}
+		\hfill % Espacio elástico de separación entre las dos columnas
+		% Columna derecha: Lista de atributos (50% del ancho de página)
+		\begin{minipage}{0.50\textwidth}
+			\textbf{Atributos:}
+			\begin{itemize}
+				\item fecha\_añadido: 
+			\end{itemize}
+		\end{minipage}
+	\end{figure}
+	\textit{Whishlist} presenta las siguientes relaciones:
 	\begin{itemize}
-		\item Usuario: guarda y valora.
-		\item Carta: lidera y contieneCarta.
-		\item Comentario: pertenece.
+		\item Usuario: el cual ha de tener una sesión inciada en nuestra aplicación
+		\item Carta: la entidad que el usuario quiere añadir a su lista de deseados.
 	\end{itemize}
+	\newpage
 	\section{Desarrollo de CardPartner}	
 	Llegados a este punto, ya tenemos unos sólidos planos sobre cómo ha de ser nuestra aplicación web, por lo que a partir de este punto documentaremos las diferentes etapas en el desarrollo de \textit{Card Partner}  desde el bocetaje incial, pasando\textit{frontent} estático, la posterior incorporación del \textit{backend} y por último la funcionalidad definitiva para hacer pasar a \textit{Card Partner} de una idea a una web funcional.
 	\subsection{Primera versión del bocetaje}
@@ -1098,7 +1068,6 @@
 		\caption{Resumen de la Arquitectura de Datos} 
 	\end{table}
 	
-s
 	\subsubsection{APIs empleadas en nuestro sistema}
 		En relación a las entregas anteriores, teníamos un tema pendiente que era el uso de las APIs(\textit{Application Programming Interface}), la cual nos permite comunicarnos con otra aplicación de una manera sencilla, permitiéndonos introducir funcionalidades a \textit{Card Partner} sin tener que desarrollarlas nosotros mismos.
 	\subsubsection{API par ala obtención de las cartas}
@@ -1114,26 +1083,36 @@ s
 	
 	
 	\subsubsection{Gestión de usuarios y perfil}
-	Hemos desarrollado un sistema de usuarios que distingue claramente entre visitantes, jugadores registrados y administradores. Los visitantes pueden consultar contenido público, como cartas, noticias, guías, torneos y mazos públicos, sin necesidad de registrarse. Los jugadores registrados disponen de un perfil completo que les permite gestionar sus datos, cambiar la contraseña, crear y guardar mazos, comentar y valorar los mazos de la comunidad. Los administradores tienen privilegios para publicar mazos oficiales y artículos, así como mantener el contenido de la web actualizado.\\
+	Desarrollamos un sistema de usuarios que distingue entre visitantes, jugadores registrados y administradores.\\
+	 Los visitantes pueden consultar contenido público, como la lista de cartas, noticias, guías, torneos y mazos públicos mientras que los jugadores registrados disponen del acceso al todo el contenido público con el añadido de un perfil completo donde podrán gestionar sus datos, cambiar la contraseña, crear y guardar mazos, comentar y valorar los mazos de la comunidad. \\
+	 Por último os administradores tienen privilegios para publicar mazos oficiales y artículos, así como mantener el contenido de la web actualizado.\\
 	
-	Para esta funcionalidad, hemos decidido centralizar toda la gestión de datos en la sección de \textbf{Perfil}, permitiendo a los usuarios acceder a sus activos y configuraciones desde un único panel. Esta elección garantiza que la administración de la información sea intuitiva y accesible, evitando dispersión en múltiples páginas.
-	
-	\subsubsection{Gestión y creación de mazos}
-	El constructor de mazos (Deckbuilder) ha sido implementado con ventanas emergentes modales que permiten seleccionar cartas, asignar la carta líder y configurar la composición completa de un mazo. Hemos decidido incluir tanto mazos de la comunidad como mazos oficiales/meta, diferenciándolos mediante el atributo \texttt{es\_publico} o \texttt{winrate}. Esto permite que los jugadores puedan crear, guardar y consultar mazos de manera flexible, mientras que los mazos oficiales permanecen verificados y orientados a la escena competitiva.\\
-	
-	Además, se han creado vistas de detalle de mazo que muestran el precio total, estadísticas y cartas contenidas, facilitando la toma de decisiones al jugador y mejorando la experiencia de navegación.
+	Hemos decidido centralizar toda la gestión de datos en la sección de \textbf{Perfil}, permitiendo a los usuarios acceder a sus activos y configuraciones desde un único punto. Esta elección garantiza que la administración de la información sea intuitiva y accesible, evitando dispersión en múltiples páginas.
 	
 	\subsubsection{Catálogo de cartas y filtros}
-	Hemos implementado un listado completo de todas cartas disponibles, con filtros avanzados por nombre, color, tipo, coste y rareza. Cada carta muestra sus atributos principales y su precio de mercado. La decisión de incluir estos filtros se basa en la necesidad de los jugadores de localizar rápidamente cartas específicas y planificar la construcción de sus mazos de forma eficiente.
+	Para manejar el amplio repertorio de cartas que tiene el TCG de \textit{One Piece} hemos desarrollado filtros avanzados por nombre, color, tipo, coste y rareza, basándonos en la necesidad de los jugadores de localizar rápidamente cartas específicas y planificar la construcción de sus mazos de forma eficiente.\\
+	De tal manera que carta muestra sus atributos principales y su precio de mercado.
+	
+	\subsubsection{Gestión y creación de mazos}
+	El constructor de mazos o \textit{Deckbuilder} ha sido implementado con ventanas emergentes modales que permiten seleccionar cartas, asignar la carta líder y configurar la composición completa de un mazo, donde se aplica un filtro automático para sólo mostrar aquellas cartas compatibles por color y/o arquetipo con el líder.\\
+	En este campo tenemos dos tipos de mazos, los oficiales o \textit{META} y los comunitarios, empleando atributos como \texttt{es\_publico} o \texttt{winrate} para diferencialos.\\
+	Esto permite que los jugadores puedan crear, guardar y consultar mazos de manera flexible, mientras que los mazos oficiales permanecen verificados y orientados a la escena competitiva.\\
+	Además, se han creado vistas de detalle de mazo que muestran el precio total, estadísticas y cartas contenidas, facilitando la toma de decisiones al jugador y mejorando la experiencia de navegación.
+	
 	
 	\subsubsection{Comunidad e interacción}
-	Se ha integrado un sistema de comentarios y valoraciones en cada mazo. Los jugadores pueden publicar sus opiniones, sugerir cambios y puntuar mazos creados por otros usuarios. Esta funcionalidad se conecta directamente con la gestión de usuarios, asegurando que solo los jugadores registrados puedan participar, mientras que los visitantes pueden consultar el contenido publicado.
+	Se ha integrado un sistema de comentarios y valoraciones en cada mazo, permitiendo que los usuarios registrados pueden publicar sus opiniones, sugerir cambios y puntuar mazos creados por otros usuarios.\\
 	
-	\subsubsection{Contenido editorial}
-	Hemos desarrollado secciones de noticias, guías y torneos, gestionadas por los administradores. Esta elección permite mantener la plataforma actualizada, ofreciendo información relevante y útil para jugadores principiantes y experimentados, y consolidando a \textbf{Card Partner} como un punto de referencia dentro de la comunidad TCG.
+	\subsubsection{Social}
+	Como hemos mencionado en puntos anteriores la sección  de noticias, guías y torneos será gestionada por los administradores permitiéndonos mantener una calidad en los contenidos que se muestren en nuestra web consolidando a \textbf{Card Partner} como un punto de referencia dentro de la comunidad \textit{TCG.}
 	
 	\subsubsection{Sección TCG}
-	Aunque inicialmente se había considerado como ampliación futura, hemos decidido integrar la sección TCG de manera completa en esta parte. Esta sección proporciona reglas, mecánicas y recursos adicionales del TCG de One Piece, ofreciendo una base educativa y de referencia para los nuevos jugadores, y permitiendo a los jugadores avanzados acceder a información sobre cartas y mazos oficiales.
+		Al inicio de este documento comentábamos que íbamos a emplear el juego de cartas de \textit{One Piece} como referencia, pero consideramos que si la fórmula funciona adentrarnos en el resto de \textit{TCGs} es una tarea sencilla, ya que simplemente habría que adaptar lo que ya tenemos a cada una de las mecánicas, por eso hemos dejado esta sección donde el usuario podrá encontrarse con los principales juegos del mercado.
+		\begin{figure}
+			\centering	
+			\includegraphics[width=\textwidth]{Recursos/TCG.png}
+			\caption{\textit{Hub }de selección entre los TCGs}x
+		\end{figure}
 	
 	\subsection{Justificación de la elección}
 	Hemos optado por implementar estas funcionalidades priorizando:
