@@ -921,6 +921,7 @@
 		
 	\end{itemize}
 	
+	\newpage
 	\subsection{Nivel 2: visualizadores y flujos verticales}
 	En él encontramos las acciones que requieren 2 click por parte del usuario, donde ya se llega a una funcionalidad en concreto de la página, vamos a describir cada uno de estos apartados:
 	\begin{figure}[H]
@@ -1013,15 +1014,13 @@
 	
 	\subsection{Base de datos}
 	Para esta parte del desarrollo empezamos a implementar una bbdd, en concreto nos decantamos por  MariaDB a través de XAMPP para facilitar el trabajo de gestión y diseño, ya que permite usar phpMyAdmin desde navegadores web y gestionar la base de datos de manera visual y exportar o importar los scripts de creación e inserción de datos,  además de otras herramientas útiles (como el meter archivos .csv).
+	
 	\subsection{Cambios del Modelo de Dominio a Entidad-Relación}
-	Para traducir el modelo de dominio realizado en la práctica 2 al \textbf{modelo entidad-relación} de la se han realizado los siguientes cambios:
+	Para traducir el modelo de dominio realizado en la práctica 2 al \textbf{modelo entidad-relación} se han efectuado los siguientes cambios:
 	\begin{itemize}
-		\item \textbf{Usuario}: \\
-		Se ha traducido la relación de \textit{Usuario} como clase padre de \textit{Jugador} y \textit{Admin} a una sola tabla \texttt{Usuario} y un atributo ROL que especifique que tipo de usuario es.
-		\item \textbf{Mazo}: \\
-		Al igual que con \textit{Usuario}, la clase \textit{Mazo} se ha traducido a una única tabla \texttt{Mazo} y un atributo ES\_OFICIAL para hacer la distinción.
-		\item \textbf{Relaciones *:*}: \\
-		Las relaciones muchos a muchos entre \textit{Jugador}-\textbf{GUARDA}-\textit{Mazo}, \textit{Mazo}-\textbf{CONTIENE}-\textit{Carta} y \textit{Jugador}-\textbf{VALORA}-\textit{Mazo} se han traducido como las clases intermedias \texttt{GUARDA\_MAZO}, \texttt{CONTIENE\_CARTA} y \texttt{VALORACION} respectivamente.
+		\item \textbf{Usuario}: Se ha traducido la relación de \textit{Usuario} como clase padre de \textit{Jugador} y \textit{Admin} a una sola tabla \texttt{Usuario} y un atributo ROL que especifique qué tipo de usuario es.
+		\item \textbf{Mazo}: Al igual que con \textit{Usuario}, la clase \textit{Mazo} se ha traducido a una única tabla \texttt{Mazo} y un atributo ES\_OFICIAL para hacer la distinción.
+		\item \textbf{Relaciones *:*}: Las relaciones muchos a muchos entre \textit{Jugador}-\textbf{GUARDA}-\textit{Mazo}, \textit{Mazo}-\textbf{CONTIENE}-\textit{Carta} y \textit{Jugador}-\textbf{VALORA}-\textit{Mazo} se han traducido como las clases intermedias \texttt{GUARDA\_MAZO}, \texttt{CONTIENE\_CARTA} y \texttt{VALORACION} respectivamente.
 		
 	\end{itemize}
 	
@@ -1033,14 +1032,14 @@
 	\end{figure}
 	
 	
-	\subsubsection{Estructura de la Base de Datos}
+	\subsection{Estructura de la Base de Datos}
 	
-	(\texttt{cardpartner\_db} ) está diseñada bajo un modelo relacional orientado a la gestión de una comunidad de juegos de cartas coleccionables (TCG). Su arquitectura se divide en cuatro pilares fundamentales:
+	Nuestra base de datos (\texttt{cardpartner\_db} ) está diseñada bajo un modelo relacional orientado a la gestión de una comunidad de juegos de cartas coleccionables (TCG). Su arquitectura se divide en cuatro pilares fundamentales:
 	
 	\subsubsection{Componentes Principales}
 	
 	\begin{itemize}
-		\item \textbf{Gestión de Usuarios y Roles:} la entidad \texttt{USUARIO} centraliza el acceso y la seguridad, empleamos un sistema de roles (\textit{Jugador, Editor, Moderador, Superadmin}), el cual es una traducción directa de los niveles de privilegios en el sistema:
+		\item \textbf{Gestión de Usuarios y Roles:} la entidad \texttt{USUARIO} centraliza el acceso y la seguridad. Empleamos un sistema de roles (\textit{Jugador, Editor, Moderador, Superadmin}), el cual es una traducción directa de los niveles de privilegios en el sistema.
 		\item \textbf{Catálogo de Cartas y Mazos:} 
 		\begin{itemize}
 			\item \texttt{CARTA}: actúa como el diccionario técnico del juego, almacenando atributos estáticos como coste, poder, color y tipo.
@@ -1050,8 +1049,8 @@
 		\item \textbf{Sistema de Contenidos:} la entidad \texttt{ARTICULO} permite a los administradores gestionar noticias, guías y torneos, manteniendo la plataforma actualizada.
 	\end{itemize}
 	
-	\subsubsection{Resumen de Relaciones y Cardinalidad}
-	Teniendo ya claro la estructura de nuestra bbdd, vamos a pasar a las relaciones entre entidades y las cardinales de las mismas.
+	\subsection{Resumen de Relaciones y Cardinalidad}
+	Teniendo en claro la estructura de nuestra bbdd, pasaremos a explicar las relaciones entre entidades y las cardinales de las mismas.
 	\begin{table}[H]
 		\centering
 		\begin{tabularx}{\textwidth}{l l X}
@@ -1067,50 +1066,55 @@
 		\caption{Resumen de la Arquitectura de Datos} 
 	\end{table}
 	
-	\subsubsection{APIs empleadas en nuestro sistema}
-		En relación a las entregas anteriores, teníamos un tema pendiente que era el uso de las APIs(\textit{Application Programming Interface}), la cual nos permite comunicarnos con otra aplicación de una manera sencilla, permitiéndonos introducir funcionalidades a \textit{Card Partner} sin tener que desarrollarlas nosotros mismos.
-	\subsubsection{API par ala obtención de las cartas}
+	\subsection{APIs empleadas en nuestro sistema}
+		Uno de los aspectos que teníamos en mente para aplicar respecto a entregas anteriores era el uso de APIs (\textit{Application Programming Interface}), la cual nos otorga la posibilidad de comunicarnos con otra aplicación de una manera sencilla, permitiéndonos introducir funcionalidades extra a \textit{Card Partner} sin tener que desarrollarlas nosotros mismos, consiguiendo así ahorrarnos tiempo y generar menos archivos.
+	
+	\subsubsection{API encargada de la obtención de cartas}
 		Este era uno de los puntos pendientes de la anterior entrega, ya que como se ha podido ver en la figura \ref{fig:insertarCartas} teníamos una muestra limitada de cartas.\\
-		Teniendo más tiempo, hemos implementado el código que se ve en el punto \ref{JAVAAPI} de los anexos el cuál se encarga de hacer el papel de motor de sincronización de la plataforma, encargándose de consumir el catálogo completo de cartas desde una \textit{API REST} externa (empleamos la librería Google \textbf{GSON})\\
-		El funcionamiento es simple,  sistema establece una conexión HTTP, descarga el archivo JSON y lo procesa de manera iterativa, estableciendo unos \textit{timeouts} y unos métodos de \textit{parseo} evitando fallos críticos del sistema al procesar nodos JSON nulos, variables faltantes o formatos numéricos inconsistentes, asegurando que solo se persista información limpia y válida. Traduciendo la información al castellano y moidifcando aquellas cartas que tienen más de un color.\\
-		Una de las partes más tediosas de la práctica son los alter alternativos, los cuales comparten identificador con la carta pero tiene una ilustración diferente. Nuestro código al detectar un duplicado, altera dinámicamente el identificador (añadiendo sufijos indexados) y el título de la carta, evitando así colisiones de claves primarias.
+		Teniendo más tiempo, hemos implementado un código (se puede ver en la sección \ref{JAVAAPI} de los anexos) el cuál se encarga de hacer el papel de motor de sincronización de la plataforma, encargándose de generar el catálogo completo de cartas desde una \textit{API REST} externa (empleamos la librería Google \textbf{GSON}).\\
+		
+		El funcionamiento es simple, el sistema establece una conexión HTTP, descarga el archivo JSON correspondiente y lo procesa de manera iterativa, estableciendo unos \textit{timeouts} y métodos de \textit{parseo}, evitando fallos críticos del sistema al procesar nodos JSON nulos, variables faltantes o formatos numéricos inconsistentes, asegurando que solo se persista información limpia y válida. También traduce datos al castellano y nos permite añadir cartas que tienen más de un color.\\
+		
+		Una de las partes más tediosas de la práctica son los alter o artes alternativos, cartas que comparten el mismo id y los mismos atributos, variando únicamente el arte que muestran. Como no se pueden almacenar cartas con un mismo ID en la base de datos Nuestro código altera dinámicamente el identificador (añadiendo sufijos indexados) y el título de la carta, evitando así colisiones de claves primarias.
 	\subsubsection{API de traducción}
-		La clase \textit{GeminiAPI} (la cuál se puede consultar en el punto \ref{JAVAGEMINI}) actúa como un servicio de traducción inteligente, integrándose mediante peticiones HTTP con la API de Groq y el modelo Llama-3, haciendo un especial incapie en la robustez de la respuestas, para que no aparezcan caracteres raro, como puede ser la traducción de una ñ o una tilde si el texto está en inglés, empleando JSONs para la comunicación con el servicio e implementando un mecanismo para que si la \textit{AI} no responde, se muestre el texto original en vez de un mensaje de error.\\
-		Hemos empleado este módulo adapta dinámicamente sus prompts en función del contexto del texto original, permitiéndonos entrenar este modelo para que utilice jerga específica de TCG (como \textit{Ramp} o \textit{Rested}), o que mantenga un tono natural en los comentarios de los usuarios. 
+		La clase \textit{GeminiAPI} (la cuál se puede consultar en la sección \ref{JAVAGEMINI} de los anexos) actúa como un servicio de traducción inteligente, integrándose mediante peticiones HTTP con la API de Groq y el modelo Llama-3, mandando prompts a la LLM y obteniendo las respuestas de manera casi inmediata. Hacemos especial hincapié en la robustez de las respuestas, para que no aparezcan caracteres raro (como puede ser la traducción de una ñ o una tilde si el texto está en inglés) empleando JSONs para la comunicación con el servicio e implementando un mecanismo para que, si la \textit{IA} no responde, se muestre el texto original en vez de un mensaje de error.\\
+		
+		Este módulo adapta dinámicamente sus prompts en función del contexto del texto original, permitiéndonos entrenar este modelo para que utilice jerga específica de TCG (como \textit{Ramp} o \textit{Rested}), o que mantenga un tono natural en los comentarios de los usuarios. 
 	
 	\subsection{Descripción de la funcionalidad implementada y justificación de la elección}
 	
 	
 	\subsubsection{Gestión de usuarios y perfil}
-	Desarrollamos un sistema de usuarios que distingue entre visitantes, jugadores registrados y administradores.\\
-	 Los visitantes pueden consultar contenido público, como la lista de cartas, noticias, guías, torneos y mazos públicos mientras que los jugadores registrados disponen del acceso al todo el contenido público con el añadido de un perfil completo donde podrán gestionar sus datos, cambiar la contraseña, crear y guardar mazos, comentar y valorar los mazos de la comunidad. \\
-	 Por último os administradores tienen privilegios para publicar mazos oficiales y artículos, así como mantener el contenido de la web actualizado.\\
+	Desarrollamos un sistema de usuarios capaz de distinguir entre visitantes, jugadores registrados y administradores.\\
+	 Los visitantes pueden consultar contenido público, como la lista de cartas, noticias, guías, torneos y mazos públicos mientras que los jugadores registrados disponen de acceso completo a todo el contenido público con el añadido de un perfil personalizado donde podrán gestionar sus datos, cambiar la contraseña, crear y guardar mazos, comentar y valorar los mazos de la comunidad. \\
+	 Por último, los administradores tienen privilegios para publicar mazos oficiales y artículos, así como mantener el contenido de la web actualizado.\\
 	
 	Hemos decidido centralizar toda la gestión de datos en la sección de \textbf{Perfil}, permitiendo a los usuarios acceder a sus activos y configuraciones desde un único punto. Esta elección garantiza que la administración de la información sea intuitiva y accesible, evitando dispersión en múltiples páginas.
 	
 	\subsubsection{Catálogo de cartas y filtros}
 	Para manejar el amplio repertorio de cartas que tiene el TCG de \textit{One Piece} hemos desarrollado filtros avanzados por nombre, color, tipo, coste y rareza, basándonos en la necesidad de los jugadores de localizar rápidamente cartas específicas y planificar la construcción de sus mazos de forma eficiente.\\
-	De tal manera que carta muestra sus atributos principales y su precio de mercado.
+	A mayores la carta nos muestra el precio de mercado por el cual se vende en las plataformas online.
 	
 	\subsubsection{Gestión y creación de mazos}
-	El constructor de mazos o \textit{Deckbuilder} ha sido implementado con ventanas emergentes modales que permiten seleccionar cartas, asignar la carta líder y configurar la composición completa de un mazo, donde se aplica un filtro automático para sólo mostrar aquellas cartas compatibles por color y/o arquetipo con el líder.\\
-	En este campo tenemos dos tipos de mazos, los oficiales o \textit{META} y los comunitarios, empleando atributos como \texttt{es\_publico} o \texttt{winrate} para diferencialos.\\
-	Esto permite que los jugadores puedan crear, guardar y consultar mazos de manera flexible, mientras que los mazos oficiales permanecen verificados y orientados a la escena competitiva.\\
+	El constructor de mazos o \textit{Deckbuilder} ha sido implementado con ventanas emergentes modales que permiten filtrar y asignar la carta líder y así poder configurar la composición completa de un mazo, donde se aplica un filtro automático para mostrar sólo aquellas cartas compatibles por color y/o arquetipo con el líder.\\
+	
+	En este campo tenemos dos tipos de mazos, los oficiales o \textit{META} y los comunitarios, diferenciados a través de atributos como \texttt{es\_publico} o \texttt{winrate} para diferencialos. Esto permite que los jugadores puedan crear, guardar y consultar mazos de manera flexible, mientras que los mazos oficiales permanecen verificados y orientados a la escena competitiva.\\
+	
 	Además, se han creado vistas de detalle de mazo que muestran el precio total, estadísticas y cartas contenidas, facilitando la toma de decisiones al jugador y mejorando la experiencia de navegación.
 	
 	
 	\subsubsection{Comunidad e interacción}
-	Se ha integrado un sistema de comentarios y valoraciones en cada mazo, permitiendo que los usuarios registrados pueden publicar sus opiniones, sugerir cambios y puntuar mazos creados por otros usuarios.\\
+	Se ha integrado un sistema de comentarios y valoraciones en cada mazo, permitiendo que los usuarios registrados pueden publicar sus opiniones, sugerir cambios y puntuar mazos creados por otros usuarios.
 	
 	\subsubsection{Social}
-	Como hemos mencionado en puntos anteriores la sección  de noticias, guías y torneos será gestionada por los administradores permitiéndonos mantener una calidad en los contenidos que se muestren en nuestra web consolidando a \textbf{Card Partner} como un punto de referencia dentro de la comunidad \textit{TCG.}
+	Como hemos mencionado en puntos anteriores, la sección de noticias, guías y torneos será gestionada por los administradores permitiéndonos mantener una calidad en los contenidos que se muestren en nuestra web consolidando a \textbf{Card Partner} como un punto de referencia dentro de la comunidad \textit{TCG.}
 	
 	\subsubsection{Sección TCG}
-		Al inicio de este documento comentábamos que íbamos a emplear el juego de cartas de \textit{One Piece} como referencia, pero consideramos que si la fórmula funciona adentrarnos en el resto de \textit{TCGs} es una tarea sencilla, ya que simplemente habría que adaptar lo que ya tenemos a cada una de las mecánicas, por eso hemos dejado esta sección donde el usuario podrá encontrarse con los principales juegos del mercado.
-		\begin{figure}
+		Al inicio de este documento comentábamos que íbamos a emplear el juego de cartas de \textit{One Piece} como referencia, pero consideramos que si la fórmula funcionaba, adentrarnos en el resto de \textit{TCGs} sería una tarea sencilla, ya que simplemente habría que adaptar lo que ya tenemos a cada una de las mecánicas, por eso hemos dejado esta sección donde el usuario podrá encontrarse con los principales juegos del mercado.
+		\begin{figure}[H]
 			\centering	
 			\includegraphics[width=\textwidth]{Recursos/TCG.png}
-			\caption{\textit{Hub }de selección entre los TCGs}x
+			\caption{\textit{Hub}de selección entre los TCGs}
 		\end{figure}
 	
 	\subsection{Justificación de la elección}
@@ -1186,11 +1190,12 @@
 		\label{tausuarios_prueba}
 	\end{table}
 	\newpage
-	\section{Anexo}
-	Adjuntamos el código de las modificamos más importantes para que se tenga un acceso más rápdio 
-	\subsection{API de las cartas}\label{JAVAAPI}
+	\section*{Anexo}
+	\appendix
+	Adjuntamos el código de las modificamos más importantes para que se tenga un acceso más rápido 
+	\section{API de las cartas}\label{JAVAAPI}
 		\lstinputlisting[language=Java, caption={Clase completa OptcgAPI.}]{CardPartner/src/java/controladores/OptcgAPI.java}
-	\subsection{API de traducción}\label{JAVAGEMINI}
+	\section{API de traducción}\label{JAVAGEMINI}
 	\lstinputlisting[language=Java, caption={Clase completa OptcgAPI.}]{CardPartner/src/java/controladores/OptcgAPI.java}
 	
 \end{document}
