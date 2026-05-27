@@ -1,0 +1,167 @@
+\documentclass[10pt, aspectratio=169]{beamer}
+
+% --- Paquetes ----------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{multicol}
+% --- Configuración de Colores (Estilo UVa) ------------------------------------
+\definecolor{azulUVa}{RGB}{0, 51, 153}
+\definecolor{rojoUVa}{RGB}{193, 0, 60}
+\setbeamercolor{palette primary}{bg=azulUVa,fg=white}
+\setbeamercolor{palette secondary}{bg=rojoUVa,fg=white}
+\setbeamercolor{palette tertiary}{bg=black,fg=white}
+\setbeamercolor{structure}{fg=azulUVa}
+
+\usetheme{Madrid}
+
+% --- Configuración de Código --------------------------------------------------
+\lstset{
+	language=Java,
+	basicstyle=\ttfamily\tiny,
+	keywordstyle=\color{blue},
+	commentstyle=\color{green!60!black},
+	stringstyle=\color{rojoUVa},
+	breaklines=true,
+	tabsize=2,
+	showstringspaces=false
+}
+
+% --- Datos de la Portada -----------------------------------------------------
+\title[Card Partner]{Card Partner: All-in-One TCG Platform}
+\subtitle{Servicios y Sistemas Web - Laboratorio L2}
+\author[Grupo 33]{M. Álvarez, Á. López, S. Otero, E. Santiesteban}
+\institute[UVa]{Universidad de Valladolid}
+\date{Curso 25-26}
+
+% -----------------------------------------------------------------------------
+\begin{document}
+	
+	% --- Slide 1: Portada ---
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% --- Slide 2: Índice ---
+	\begin{frame}{¿Qué vamos a ver hoy?}
+		\begin{columns}[t]
+			\begin{column}{0.5\textwidth}
+				\tableofcontents[sections={1-3}]
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\tableofcontents[sections={4-6}]
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\section{El Concepto Card Partner}
+	\begin{frame}{Contexto y Problema}
+		\begin{itemize}
+			\item \textbf{Crecimiento de los TCG:} el mercado de cartas coleccionables está en auge (One Piece, Lorcana, etc.).
+			\item \textbf{Información Dispersa:} los jugadores deben saltar entre 4 webs distintas para precios, mazos, noticias y reglas.
+			\item \textbf{Barrera de Entrada:} los principiantes se sienten abrumados por la falta de guías centralizadas.
+		\end{itemize}
+		\vspace{0.3cm}
+		\begin{block}{Nuestra Propuesta}
+			Una aplicación web \textbf{All-in-One} que centraliza catálogo, mercado, construcción de mazos y comunidad en una experiencia fluida.
+		\end{block}
+	\end{frame}
+	
+	\section{Diferenciación Competitiva}
+	\begin{frame}{¿Por qué Card Partner es diferente?}
+		A diferencia de sitios como \textit{Card Market} o \textit{Limitless TCG}, nosotros aportamos:
+		\vspace{0.3cm}
+		\begin{description}
+			\item[Enfoque Social Real:] ristema de comentarios y valoraciones para democratizar el "META".
+			\item[Gestión de Colección:] \textit{wishlist} integrada y gestión de mazos personales/públicos.
+			\item[Inteligencia Contextual:] traducción asistida por IA que entiende la jerga técnica (Ramp, OTK, Mill).
+			\item[Visualización Dinámica:] constructor de mazos con filtros inteligentes basados en el líder seleccionado.
+		\end{description}
+	\end{frame}
+	
+\section{Arquitectura del Sistema}
+\begin{frame}{Stack Tecnológico y Datos}
+	\begin{columns} % <-- AQUÍ PLURAL
+		
+		\begin{column}{0.6\textwidth} % <-- ABRES COLUMNA 1
+			\textbf{Backend \& Frontend:}
+			\begin{itemize}
+				\item JSP y Servlets (Arquitectura MVC).
+				\item DAOs para abstracción de persistencia.
+				\item Base de Datos MariaDB (Relacional).
+			\end{itemize}
+			\textbf{Pilares de Información:}
+			\begin{itemize}
+				\item Usuarios (Roles: Jugador, Editor, Admin).
+				\item Catálogo Técnico (Cartas, Atributos, Precios).
+				\item Interacción (Comentarios, Valoraciones, Wishlist).
+			\end{itemize}
+		\end{column} % <-- CIERRAS COLUMNA 1
+		
+		\begin{column}{0.4\textwidth} % <-- ABRES COLUMNA 2
+			\begin{figure}
+				\centering
+				\includegraphics[width=\textwidth]{Recursos/CardPartner_DBv2.png}
+				\caption{Esquema Relacional}
+			\end{figure}
+		\end{column} % <-- CIERRAS COLUMNA 2
+		
+	\end{columns} % <-- AQUÍ PLURAL
+\end{frame}
+			
+			\section{El Corazón: Integración de APIs}
+			\begin{frame}{Sincronización Automática (OPTCG API)}
+				\textbf{Reto:} Mantener 2000+ cartas actualizadas manualmente es imposible.
+				\begin{itemize}
+					\item \textbf{Consumo REST:} uso de la librería \textbf{GSON} para parsear JSONs masivos.
+					\item \textbf{Artes Alternativos:} algoritmo basado en \texttt{HashMap} para detectar duplicados y asignar sufijos de ID (\texttt{\_p1}, \texttt{\_p2}).
+					\item \textbf{Robustez:} implementación de "Escudos Antimisioles" (timeouts y validadores de nulos).
+				\end{itemize}
+				\begin{exampleblock}{Resultado}
+					Base de datos siempre al día con los últimos lanzamientos de Bandai de forma autónoma.
+				\end{exampleblock}
+			\end{frame}
+			
+			\begin{frame}[fragile]{Inteligencia Artificial Contextual (Gemini/Groq)}
+				\textbf{Diferenciador Clave:} traducción que no parece de Google.
+				\begin{itemize}
+					\item \textbf{Llama-3 via Groq:} integración mediante HTTP Post.
+					\item \textbf{Prompts Dinámicos:} la IA recibe instrucciones distintas según si traduce un mazo (técnico) o un comentario (natural).
+					\item \textbf{Tolerancia a Fallos:} si la API no responde, el sistema muestra el texto original sin romper la interfaz.
+				\end{itemize}
+				\vspace{0.2cm}
+				\begin{lstlisting}
+					String instruccion = switch (tipo) {
+						case "MAZO" -> "Translate using TCG jargon (Ramp, OTK). ONLY output text: ";
+						...
+					};
+				\end{lstlisting}
+			\end{frame}
+			
+			\section{Funcionalidades Estrella}
+			\begin{frame}{Demo de Capacidades}
+				\begin{itemize}
+					\item \textbf{Constructor de Mazos:} ventanas modales y filtros automáticos por color/arquetipo del líder.
+					\item \textbf{Módulo Social:} rankings de mazos por \textit{winrate} y popularidad entre usuarios.
+					\item \textbf{TCG Hub:} estructura preparada para escalar a otros juegos (Magic, Pokémon) con un solo click.
+				\end{itemize}
+			\end{frame}
+			
+			\section{Conclusión}
+			\begin{frame}{Trabajo Realizado y Futuro}
+				\begin{itemize}
+					\item \textbf{Logro:} hemos transformado un concepto estático en una herramienta funcional capaz de gestionar miles de registros.
+					\item \textbf{Tecnología:} ha combinación de DAOs sólidos y APIs externas nos da una escalabilidad profesional.
+					\item \textbf{Próximos Pasos:} automatización total de \textit{Wishlist} y comparador de precios en tiempo real entre vendedores.
+				\end{itemize}
+				\vspace{0.5cm}
+				\centering
+				\Huge \textcolor{azulUVa}{\textbf{¡Muchas gracias!}}\\
+				\vspace{0.5cm}
+				\Large ¿Preguntas?
+			\end{frame}
+			
+		\end{document}
