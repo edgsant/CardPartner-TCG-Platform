@@ -8,6 +8,13 @@
 \usepackage{booktabs}
 \usepackage{listings}
 \usepackage{multicol}
+\usepackage[table]{xcolor} % UNA SOLA VEZ Y CON [table]
+\usepackage{booktabs}
+\usepackage{xltabular}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{multirow}
 % --- Configuración de Colores (Estilo UVa) ------------------------------------
 \definecolor{azulUVa}{RGB}{0, 51, 153}
 \definecolor{rojoUVa}{RGB}{193, 0, 60}
@@ -32,8 +39,8 @@
 
 % --- Datos de la Portada -----------------------------------------------------
 \title[Card Partner]{Card Partner: All-in-One TCG Platform}
-\subtitle{Servicios y Sistemas Web - Laboratorio L2}
-\author[Grupo 33]{M. Álvarez, Á. López, S. Otero, E. Santiesteban}
+\subtitle{Servicios y Sistemas Web}
+\author[Grupo 33]{Marcos, Sergio, Edgar, Álvaro}
 \institute[UVa]{Universidad de Valladolid}
 \date{Curso 25-26}
 
@@ -57,12 +64,42 @@
 		\end{columns}
 	\end{frame}
 	
-	\section{El Concepto Card Partner}
+	\section{Presentación del grupo 33}
+	\begin{frame}{¿Quiénes somos los creadores de \textit{Card Partner}?}
+		\begin{table}
+			\centering
+			\scriptsize % Reducimos la fuente para que el texto largo no sature la slide
+			\renewcommand{\arraystretch}{1.2}
+			% Ajustamos columnas proporcionalmente al ancho de la diapositiva (Suma 0.90)
+			\begin{tabular}{|>{\raggedright\arraybackslash}p{0.25\textwidth}|>{\centering\arraybackslash}p{0.10\textwidth}|>{\raggedright\arraybackslash}p{0.55\textwidth}|}
+				\hline
+				\textbf{Nombre} & \textbf{\%} & \textbf{Responsabilidad principal} \\
+				\hline
+				\hline
+				\multicolumn{3}{|c|}{\textbf{Equipo Frontend}} \\
+				\hline
+				Marcos  & 25\% & Vistas de cartas, apartado social, navegabilidad general, revisión visual y maquetación. \\
+				\hline
+				Sergio  & 25\% & Vistas de mazos, login, registro, página principal, constructor de mazos e integración visual. \\
+				\hline
+				\hline
+				\multicolumn{3}{|c|}{\textbf{Equipo Backend y Gestión de Datos}} \\
+				\hline
+				Álvaro  & 25\% & Esquema BBDD, colaboración modelo E-R, población de datos, \textit{scripts} MariaDB en local y redacción técnica. \\
+				\hline
+				Edgar  & 25\% & creación modelo E-R, esquemas BBDD, clases del modelo, DAOs y DTOs. \\
+				\hline
+			\end{tabular}
+		\end{table}
+	\end{frame}
+	
+	\section{El Concepto \textit{Card Partner}}
 	\begin{frame}{Contexto y Problema}
+		
 		\begin{itemize}
-			\item \textbf{Crecimiento de los TCG:} el mercado de cartas coleccionables está en auge (One Piece, Lorcana, etc.).
-			\item \textbf{Información Dispersa:} los jugadores deben saltar entre 4 webs distintas para precios, mazos, noticias y reglas.
-			\item \textbf{Barrera de Entrada:} los principiantes se sienten abrumados por la falta de guías centralizadas.
+			\item \textbf{Crecimiento de los TCG:} este \textit{hobby} ha ganado mucha popularidad en los últimos años.
+			\item \textbf{Información Dispersa:} los jugadores deben desplazarse entre diferentes webs para conseguir la información necesaria
+			\item \textbf{Barrera de Entrada:} los principiantes se sienten abrumados por un mundo tan complejo.
 		\end{itemize}
 		\vspace{0.3cm}
 		\begin{block}{Nuestra Propuesta}
@@ -70,20 +107,20 @@
 		\end{block}
 	\end{frame}
 	
-	\section{Diferenciación Competitiva}
+	\section{Diferencia con las aplicaciones actuales}
 	\begin{frame}{¿Por qué Card Partner es diferente?}
 		A diferencia de sitios como \textit{Card Market} o \textit{Limitless TCG}, nosotros aportamos:
 		\vspace{0.3cm}
 		\begin{description}
-			\item[Enfoque Social Real:] ristema de comentarios y valoraciones para democratizar el "META".
-			\item[Gestión de Colección:] \textit{wishlist} integrada y gestión de mazos personales/públicos.
-			\item[Inteligencia Contextual:] traducción asistida por IA que entiende la jerga técnica (Ramp, OTK, Mill).
-			\item[Visualización Dinámica:] constructor de mazos con filtros inteligentes basados en el líder seleccionado.
+			\item[Enfoque Social:] enfoque claro en que se genere una comunidad de jugadores en nuestra aplicación.
+			\item[Gestión de Colección:] \textit{wishlist} integrada para facilitar la gestión del catálofo de cartas.
+			\item[Inteligencia Contextual:] traducción de jerga técnica asistida por IA.
+			\item[Visualización Dinámica:] constructor de mazos con filtros inteligentes basados en el líder. seleccionado.
 		\end{description}
 	\end{frame}
 	
 \section{Arquitectura del Sistema}
-\begin{frame}{Stack Tecnológico y Datos}
+\begin{frame}{Tecnologías empleadas y BBDD}
 	\begin{columns} % <-- AQUÍ PLURAL
 		
 		\begin{column}{0.6\textwidth} % <-- ABRES COLUMNA 1
@@ -112,41 +149,42 @@
 	\end{columns} % <-- AQUÍ PLURAL
 \end{frame}
 			
-			\section{El Corazón: Integración de APIs}
-			\begin{frame}{Sincronización Automática (OPTCG API)}
+		\section{Integración de APIs}
+			\begin{frame}{OPTCG API}
 				\textbf{Reto:} Mantener 2000+ cartas actualizadas manualmente es imposible.
 				\begin{itemize}
-					\item \textbf{Consumo REST:} uso de la librería \textbf{GSON} para parsear JSONs masivos.
-					\item \textbf{Artes Alternativos:} algoritmo basado en \texttt{HashMap} para detectar duplicados y asignar sufijos de ID (\texttt{\_p1}, \texttt{\_p2}).
-					\item \textbf{Robustez:} implementación de "Escudos Antimisioles" (timeouts y validadores de nulos).
+					\item \textbf{Consumo REST:} usamos  la librería \textbf{GSON} para procesar JSONs masivos.
+					\item \textbf{Artes Alternativos:} algoritmo basado en un  \texttt{HashMap} para detectar duplicados y asignar sufijos de ID (\texttt{\_p1}, \texttt{\_p2}).
+					\item \textbf{Robustez:} hemos implementado mecanismos para asgurarnos de que la información se almacena en el formato correcto
 				\end{itemize}
 				\begin{exampleblock}{Resultado}
 					Base de datos siempre al día con los últimos lanzamientos de Bandai de forma autónoma.
 				\end{exampleblock}
 			\end{frame}
 			
-			\begin{frame}[fragile]{Inteligencia Artificial Contextual (Gemini/Groq)}
-				\textbf{Diferenciador Clave:} traducción que no parece de Google.
-				\begin{itemize}
-					\item \textbf{Llama-3 via Groq:} integración mediante HTTP Post.
-					\item \textbf{Prompts Dinámicos:} la IA recibe instrucciones distintas según si traduce un mazo (técnico) o un comentario (natural).
-					\item \textbf{Tolerancia a Fallos:} si la API no responde, el sistema muestra el texto original sin romper la interfaz.
-				\end{itemize}
-				\vspace{0.2cm}
-				\begin{lstlisting}
-					String instruccion = switch (tipo) {
-						case "MAZO" -> "Translate using TCG jargon (Ramp, OTK). ONLY output text: ";
-						...
-					};
-				\end{lstlisting}
-			\end{frame}
+		\begin{frame}[fragile]{Traducción contextual (Gemini/Groq)}
+			\textbf{Reto:} Permitir que usuarios con distintos idiomas puedan emplear nuestra \textit{app}
+			\begin{itemize}
+				\item \textbf{Llama-3 via Groq:} integración mediante HTTP Post.
+				\item \textbf{Prompts Dinámicos:} la AI recibe instrucciones distintas según si traduce un mazo (técnico) o un comentario (natural).
+				\item \textbf{Tolerancia a Fallos:} si la API no responde, el sistema muestra el texto original sin romper la interfaz.
+			\end{itemize}
+			\vspace{0.2cm}
+			\begin{lstlisting}
+				String instruccion = switch (tipo) {
+					case "MAZO" -> "Translate using TCG jargon (Ramp, OTK). ONLY output text: ";
+					...
+				};
+			\end{lstlisting}
+		\end{frame}
 			
 			\section{Funcionalidades Estrella}
-			\begin{frame}{Demo de Capacidades}
+			\begin{frame}{Puntos fuertes de la aplicación}
 				\begin{itemize}
-					\item \textbf{Constructor de Mazos:} ventanas modales y filtros automáticos por color/arquetipo del líder.
-					\item \textbf{Módulo Social:} rankings de mazos por \textit{winrate} y popularidad entre usuarios.
-					\item \textbf{TCG Hub:} estructura preparada para escalar a otros juegos (Magic, Pokémon) con un solo click.
+					\item \textbf{Constructor de Mazos:} ventanas modales y filtros automáticos por color/arquetipo del líder para facilitar la creación de \textit{decks}.
+					\item \textbf{InteracciónSocial:} posibilidad de generar una comunidad mediante las propuestas de interacción entre usuarios que hemos desarrollado.
+					\item \textbf{Precios realistas}: permitimos a los usuarios consultar un precio de mercado realista de las cartas.
+					\item \textbf{TCG Hub:} estructura preparada para escalar a otros juegos (Magic, Pokémon) con una simple adaptación al formato
 				\end{itemize}
 			\end{frame}
 			
@@ -155,13 +193,21 @@
 				\begin{itemize}
 					\item \textbf{Logro:} hemos transformado un concepto estático en una herramienta funcional capaz de gestionar miles de registros.
 					\item \textbf{Tecnología:} ha combinación de DAOs sólidos y APIs externas nos da una escalabilidad profesional.
-					\item \textbf{Próximos Pasos:} automatización total de \textit{Wishlist} y comparador de precios en tiempo real entre vendedores.
+					\item \textbf{Próximos Pasos:} implementación de los diferentes TCGs, posibilidad de hacer un apartado de \textit{marketplace} para poder intercambiar las cartas.
 				\end{itemize}
-				\vspace{0.5cm}
+			\end{frame}
+			\section{Demo técnica}
+			\begin{frame}{Vamos a ver \textit{Card Partner} en funcionamiento}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.8\textwidth]{Recursos/Kalgara.png}
+			\end{figure}
+			\end{frame}
+			\begin{frame}{Despedida}
 				\centering
 				\Huge \textcolor{azulUVa}{\textbf{¡Muchas gracias!}}\\
 				\vspace{0.5cm}
-				\Large ¿Preguntas?
-			\end{frame}
-			
-		\end{document}
+				\Large{¿Preguntas?}
+		\end{frame}
+		
+	\end{document}
