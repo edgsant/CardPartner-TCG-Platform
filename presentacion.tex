@@ -149,18 +149,35 @@
 	\end{columns} % <-- AQUÍ PLURAL
 \end{frame}
 			
-		\section{Integración de APIs}
-			\begin{frame}{OPTCG API}
-				\textbf{Reto:} Mantener 2000+ cartas actualizadas manualmente es imposible.
-				\begin{itemize}
-					\item \textbf{Consumo REST:} usamos  la librería \textbf{GSON} para procesar JSONs masivos.
-					\item \textbf{Artes Alternativos:} algoritmo basado en un  \texttt{HashMap} para detectar duplicados y asignar sufijos de ID (\texttt{\_p1}, \texttt{\_p2}).
-					\item \textbf{Robustez:} hemos implementado mecanismos para asgurarnos de que la información se almacena en el formato correcto
-				\end{itemize}
-				\begin{exampleblock}{Resultado}
-					Base de datos siempre al día con los últimos lanzamientos de Bandai de forma autónoma.
-				\end{exampleblock}
-			\end{frame}
+\begin{frame}{Integración de APIs: OPTCG API}
+	\begin{columns}[c] % Alineación centrada verticalmente
+		% --- Columna de Texto (55% del ancho) ---
+		\begin{column}{0.55\textwidth}
+			\textbf{Reto:} Sincronizar +2000 cartas manualmente es inviable.
+			
+			\begin{itemize}
+				\item \scriptsize \textbf{Consumo REST:} Uso de \textbf{GSON} para el parseo de JSONs masivos de forma eficiente.
+				\item \scriptsize \textbf{Artes Alternativos:} Algoritmo con \texttt{HashMap} para evitar colisiones de ID asignando sufijos (\texttt{\_p1}, \texttt{\_p2}).
+				\item \scriptsize \textbf{Robustez:} Sanitización de datos y validación de formatos en la capa de persistencia.
+			\end{itemize}
+			
+			\begin{exampleblock}{Resultado}
+				\small Base de datos siempre actualizada con los lanzamientos de Bandai de forma autónoma.
+			\end{exampleblock}
+		\end{column}
+		
+		% --- Columna de Imágenes (40% del ancho) ---
+		\begin{column}{0.40\textwidth}
+			\centering
+			\begin{figure}
+				\includegraphics[width=0.45\textwidth]{Recursos/dfV1.png}
+				\vspace{0.3cm} % Espacio entre imágenes
+				\includegraphics[width=0.45\textwidth]{Recursos/dfV2.png}
+				\caption{\tiny Evolución de los datos}
+			\end{figure}
+		\end{column} % <-- Aquí estaba el fallo (antes ponía </column>)
+	\end{columns}
+\end{frame}
 			
 		\begin{frame}[fragile]{Traducción contextual (Gemini/Groq)}
 			\textbf{Reto:} Permitir que usuarios con distintos idiomas puedan emplear nuestra \textit{app}
