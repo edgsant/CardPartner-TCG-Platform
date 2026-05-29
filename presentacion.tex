@@ -123,22 +123,23 @@
 \begin{frame}{Tecnologías empleadas y BBDD}
 	\begin{columns} % <-- AQUÍ PLURAL
 		
-		\begin{column}{0.6\textwidth} % <-- ABRES COLUMNA 1
+		\begin{column}{0.4\textwidth} 
+				\textbf{Pilares de Información:}
+			\begin{itemize}
+				\item Usuarios (Roles: jugador, editor, admin).
+				\item Catálogo Técnico (cartas, atributos, precios).
+				\item Interacción (comentarios, valoraciones, \textit{wishlist}).
+			\end{itemize}% <-- ABRES COLUMNA 1
 			\textbf{Backend \& Frontend:}
 			\begin{itemize}
 				\item JSP y Servlets (Arquitectura MVC).
 				\item DAOs para abstracción de persistencia.
-				\item Base de Datos MariaDB (Relacional).
+				\item Base de Datos MariaDB.
 			\end{itemize}
-			\textbf{Pilares de Información:}
-			\begin{itemize}
-				\item Usuarios (Roles: Jugador, Editor, Admin).
-				\item Catálogo Técnico (Cartas, Atributos, Precios).
-				\item Interacción (Comentarios, Valoraciones, Wishlist).
-			\end{itemize}
+		
 		\end{column} % <-- CIERRAS COLUMNA 1
 		
-		\begin{column}{0.4\textwidth} % <-- ABRES COLUMNA 2
+		\begin{column}{0.6\textwidth} % <-- ABRES COLUMNA 2
 			\begin{figure}
 				\centering
 				\includegraphics[width=\textwidth]{Recursos/CardPartner_DBv2.png}
@@ -173,7 +174,7 @@
 				\includegraphics[width=0.45\textwidth]{Recursos/dfV1.png}
 				\vspace{0.3cm} % Espacio entre imágenes
 				\includegraphics[width=0.45\textwidth]{Recursos/dfV2.png}
-				\caption{\tiny Evolución de los datos}
+				\caption{\tiny Artes alternativos}
 			\end{figure}
 		\end{column} % <-- Aquí estaba el fallo (antes ponía </column>)
 	\end{columns}
