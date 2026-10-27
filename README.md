@@ -9,6 +9,17 @@ Una aplicación web centralizada para jugadores y aficionados a los juegos de ca
 *   **Traducción Contextual con IA:** Integración de Llama-3 (vía Groq) para traducir comentarios y jerga técnica específica de los TCG (como "Ramp" u "OTK").
 *   **Gestión de Usuarios y Roles:** Diferenciación de accesos para visitantes, jugadores registrados y administradores (gestión de torneos, noticias y guías).
 
+## 📺 Demo del Proyecto
+
+![Página de Inicio](./Imagenes/01_Start.gif)
+*Vista de la página principal para visitantes no registrados.*
+
+![Constructor de Mazos](./Imagenes/02_Decks.gif)
+*Gestión de sesión iniciada y herramientas de usuario.*
+
+![Perfil y Traducción IA](./Imagenes/03_profile.gif)
+*Vista de detalle de mazo con botón de traducción de jerga mediante IA.*
+
 ## 🛠️ Stack Tecnológico
 *   **Backend:** Java (JSP y Servlets) bajo arquitectura MVC.
 *   **Persistencia:** Base de datos relacional MariaDB, gestionada mediante patrones DAO y DTO.
