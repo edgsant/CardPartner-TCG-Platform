@@ -18,7 +18,7 @@ Una aplicación web centralizada para jugadores y aficionados a los juegos de ca
 *Gestión de sesión iniciada y herramientas de usuario.*
 
 ![Perfil y Traducción IA](./Imagenes/03_profile.gif)
-*Vista de detalle de mazo con botón de traducción de jerga mediante IA.*
+*Vista del perfil del usuario.*
 
 ## 🛠️ Stack Tecnológico
 *   **Backend:** Java (JSP y Servlets) bajo arquitectura MVC.
